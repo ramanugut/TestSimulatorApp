@@ -1,0 +1,241 @@
+
+{
+    "testName": "ICT1541 Chapter 11",
+    "questions": [
+      {
+        "text": "Which of the following best describes system development?",
+        "options": ["A. Creating new hardware", "B. Developing social media platforms", "C. The process of creating and maintaining information systems", "D. Learning programming languages"],
+        "correctAnswer": "C. The process of creating and maintaining information systems",
+        "explanation": "System development involves creating and maintaining information systems, including planning, analysis, design, implementation, and support."
+      },
+      {
+        "text": "True or False: The system development life cycle (SDLC) is a structured approach used for developing information systems.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "The SDLC is a structured framework used for developing and maintaining information systems."
+      },
+      {
+        "text": "Which phase of the SDLC involves gathering and analyzing requirements?",
+        "options": ["A. Planning", "B. Design", "C. Analysis", "D. Implementation"],
+        "correctAnswer": "C. Analysis",
+        "explanation": "The analysis phase focuses on gathering and analyzing user requirements to understand what the system should accomplish."
+      },
+      {
+        "text": "Which of the following is the first step in the system development life cycle?",
+        "options": ["A. Analysis", "B. Planning", "C. Design", "D. Implementation"],
+        "correctAnswer": "B. Planning",
+        "explanation": "The planning phase is the first step in the SDLC and involves determining the project scope, objectives, and feasibility."
+      },
+      {
+        "text": "Which SDLC phase involves creating the physical and logical design of the system?",
+        "options": ["A. Analysis", "B. Planning", "C. Design", "D. Implementation"],
+        "correctAnswer": "C. Design",
+        "explanation": "The design phase involves creating detailed designs for the system's components, architecture, and user interface."
+      },
+      {
+        "text": "True or False: Implementation is the phase where the system is actually built and deployed.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Implementation is the phase where the system is developed, tested, and deployed to the users."
+      },
+      {
+        "text": "Which of the following is used to assess the technical feasibility of a project?",
+        "options": ["A. Risk assessment", "B. SWOT analysis", "C. Technical assessment", "D. Feasibility study"],
+        "correctAnswer": "D. Feasibility study",
+        "explanation": "A feasibility study evaluates a project's technical, economic, and operational feasibility to determine its viability."
+      },
+      {
+        "text": "Which phase of the SDLC includes identifying potential solutions and evaluating alternatives?",
+        "options": ["A. Planning", "B. Analysis", "C. Design", "D. Implementation"],
+        "correctAnswer": "B. Analysis",
+        "explanation": "The analysis phase includes identifying potential solutions and evaluating alternatives based on user requirements."
+      },
+      {
+        "text": "Which of the following is NOT a common system development methodology?",
+        "options": ["A. Agile", "B. Waterfall", "C. DevOps", "D. Photoshop"],
+        "correctAnswer": "D. Photoshop",
+        "explanation": "Photoshop is a graphic design tool, not a system development methodology. Agile, Waterfall, and DevOps are common methodologies."
+      },
+      {
+        "text": "What is a prototype in the context of system development?",
+        "options": ["A. The final version of a system", "B. A working model used to demonstrate the system's functionality", "C. A list of system requirements", "D. A software tool for writing code"],
+        "correctAnswer": "B. A working model used to demonstrate the system's functionality",
+        "explanation": "A prototype is a working model of the system used to demonstrate its functionality and gather feedback from users."
+      },
+      {
+        "text": "True or False: Agile methodology focuses on iterative development and collaboration between teams.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Agile methodology emphasizes iterative development, flexibility, and collaboration between development teams and stakeholders."
+      },
+      {
+        "text": "Which of the following best describes the waterfall model?",
+        "options": ["A. A sequential development process", "B. An iterative process", "C. A random process", "D. A backward process"],
+        "correctAnswer": "A. A sequential development process",
+        "explanation": "The waterfall model is a sequential process where each phase must be completed before the next phase begins."
+      },
+      {
+        "text": "Which phase of the SDLC involves testing the system to ensure it meets requirements?",
+        "options": ["A. Analysis", "B. Planning", "C. Testing", "D. Maintenance"],
+        "correctAnswer": "C. Testing",
+        "explanation": "The testing phase ensures that the system meets requirements and functions correctly by identifying and fixing any defects."
+      },
+      {
+        "text": "What is the purpose of user acceptance testing (UAT)?",
+        "options": ["A. To create the system design", "B. To verify that the system meets user requirements", "C. To assess project feasibility", "D. To develop code"],
+        "correctAnswer": "B. To verify that the system meets user requirements",
+        "explanation": "User Acceptance Testing (UAT) is conducted to ensure that the system meets user requirements and is ready for deployment."
+      },
+      {
+        "text": "Which phase of the SDLC is concerned with deploying and supporting the system after it goes live?",
+        "options": ["A. Design", "B. Maintenance", "C. Testing", "D. Analysis"],
+        "correctAnswer": "B. Maintenance",
+        "explanation": "The maintenance phase involves deploying the system and providing ongoing support, updates, and enhancements."
+      },
+      {
+        "text": "True or False: A feasibility study is conducted only in the planning phase of the SDLC.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "Feasibility studies can be conducted at various stages of the SDLC to evaluate the project's viability and feasibility."
+      },
+      {
+        "text": "Which type of feasibility considers whether the system can be developed within the specified budget and timeline?",
+        "options": ["A. Operational feasibility", "B. Economic feasibility", "C. Technical feasibility", "D. Financial feasibility"],
+        "correctAnswer": "B. Economic feasibility",
+        "explanation": "Economic feasibility assesses whether the system can be developed within the specified budget and timeline."
+      },
+      {
+        "text": "Which of the following is a key advantage of using the Agile methodology?",
+        "options": ["A. Fixed requirements", "B. Inflexible planning", "C. Iterative development and flexibility", "D. Minimal user involvement"],
+        "correctAnswer": "C. Iterative development and flexibility",
+        "explanation": "Agile methodology offers iterative development, flexibility, and responsiveness to change."
+      },
+      {
+        "text": "True or False: System testing is conducted after the system has been deployed to users.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "System testing is conducted before deployment to ensure that the system is free of defects and meets requirements."
+      },
+      {
+        "text": "What does the acronym UML stand for in system design?",
+        "options": ["A. Unified Memory Language", "B. Unified Modeling Language", "C. Universal Modeling Language", "D. Unique Modeling Language"],
+        "correctAnswer": "B. Unified Modeling Language",
+        "explanation": "UML stands for Unified Modeling Language and is used to create visual models of a system's structure and behavior."
+      },
+      {
+        "text": "Which diagram is used to represent the flow of data within a system?",
+        "options": ["A. Use case diagram", "B. Class diagram", "C. Data flow diagram (DFD)", "D. State diagram"],
+        "correctAnswer": "C. Data flow diagram (DFD)",
+        "explanation": "A Data Flow Diagram (DFD) is used to visualize the flow of data within a system."
+      },
+      {
+        "text": "Which phase of the SDLC involves converting user requirements into system specifications?",
+        "options": ["A. Analysis", "B. Design", "C. Planning", "D. Testing"],
+        "correctAnswer": "B. Design",
+        "explanation": "The design phase involves converting user requirements into detailed system specifications and architecture."
+      },
+      {
+        "text": "True or False: Parallel implementation involves running the new system alongside the old system until the new system is fully operational.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Parallel implementation involves running both systems simultaneously until the new system is proven to work effectively."
+      },
+      {
+        "text": "Which of the following is NOT a system implementation strategy?",
+        "options": ["A. Direct cutover", "B. Parallel implementation", "C. Phased implementation", "D. System redesign"],
+        "correctAnswer": "D. System redesign",
+        "explanation": "System redesign is not an implementation strategy. The valid strategies are direct cutover, parallel, and phased implementation."
+      },
+      {
+        "text": "What is the purpose of a system walkthrough?",
+        "options": ["A. To debug code", "B. To review system requirements", "C. To visually inspect system architecture", "D. To evaluate system performance"],
+        "correctAnswer": "B. To review system requirements",
+        "explanation": "A system walkthrough is used to review system requirements, design, or code to identify issues and ensure compliance."
+      },
+      {
+        "text": "True or False: In the waterfall model, each phase must be completed before the next phase begins.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "The waterfall model is a sequential process where each phase must be completed before moving to the next."
+      },
+      {
+        "text": "Which of the following is a disadvantage of using the waterfall model?",
+        "options": ["A. Clear project objectives", "B. Fixed requirements", "C. High flexibility", "D. Easy to manage"],
+        "correctAnswer": "B. Fixed requirements",
+        "explanation": "The waterfall model has fixed requirements, making it difficult to accommodate changes once the project is underway."
+      },
+      {
+        "text": "Which type of feasibility focuses on whether the system can be implemented using existing technology?",
+        "options": ["A. Operational feasibility", "B. Economic feasibility", "C. Technical feasibility", "D. Financial feasibility"],
+        "correctAnswer": "C. Technical feasibility",
+        "explanation": "Technical feasibility assesses whether the system can be implemented using existing technology and technical resources."
+      },
+      {
+        "text": "What is the purpose of a project scope statement?",
+        "options": ["A. To define project objectives, deliverables, and boundaries", "B. To outline coding standards", "C. To design database models", "D. To assess system performance"],
+        "correctAnswer": "A. To define project objectives, deliverables, and boundaries",
+        "explanation": "A project scope statement defines project objectives, deliverables, and boundaries to ensure that the project stays on track."
+      },
+      {
+        "text": "Which SDLC methodology divides the project into smaller, more manageable segments?",
+        "options": ["A. Waterfall", "B. Agile", "C. Big Bang", "D. Spiral"],
+        "correctAnswer": "D. Spiral",
+        "explanation": "The Spiral model divides the project into smaller, more manageable segments and includes iterative development cycles."
+      },
+      {
+        "text": "True or False: The primary purpose of system documentation is to provide a detailed explanation of the system's components and functionality.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "System documentation provides a detailed explanation of the system's components, functionality, and usage."
+      },
+      {
+        "text": "Which of the following tools is used to create a visual representation of the system's structure and behavior?",
+        "options": ["A. Data dictionary", "B. System walkthrough", "C. UML diagrams", "D. SWOT analysis"],
+        "correctAnswer": "C. UML diagrams",
+        "explanation": "UML diagrams are used to create visual representations of the system's structure and behavior."
+      },
+      {
+        "text": "Which type of diagram is used to show the interactions between different components of a system?",
+        "options": ["A. Class diagram", "B. Sequence diagram", "C. Data flow diagram", "D. State diagram"],
+        "correctAnswer": "B. Sequence diagram",
+        "explanation": "Sequence diagrams show the interactions between different components of a system over time."
+      },
+      {
+        "text": "What is the purpose of a use case diagram?",
+        "options": ["A. To describe data flow", "B. To show system performance", "C. To represent interactions between users and the system", "D. To create a project timeline"],
+        "correctAnswer": "C. To represent interactions between users and the system",
+        "explanation": "Use case diagrams represent interactions between users (actors) and the system, showing how users interact with the system to achieve goals."
+      },
+      {
+        "text": "True or False: A project manager is responsible for overseeing the entire system development process.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "The project manager oversees the entire system development process, ensuring that the project meets its objectives and timeline."
+      },
+      {
+        "text": "Which of the following is NOT a key activity in the maintenance phase of the SDLC?",
+        "options": ["A. Bug fixing", "B. System enhancements", "C. Code testing", "D. User training"],
+        "correctAnswer": "D. User training",
+        "explanation": "User training is usually conducted during system implementation. Maintenance focuses on bug fixing, system enhancements, and support."
+      },
+      {
+        "text": "Which SDLC phase involves assessing the current system and identifying areas for improvement?",
+        "options": ["A. Planning", "B. Analysis", "C. Design", "D. Maintenance"],
+        "correctAnswer": "B. Analysis",
+        "explanation": "The analysis phase involves assessing the current system, gathering requirements, and identifying areas for improvement."
+      },
+      {
+        "text": "True or False: A Gantt chart is a project management tool used to visualize project timelines and tasks.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Gantt charts are used in project management to visualize project timelines, tasks, and dependencies."
+      },
+      {
+        "text": "Which of the following is used to evaluate the potential risks associated with a project?",
+        "options": ["A. Feasibility study", "B. SWOT analysis", "C. Risk assessment", "D. Technical assessment"],
+        "correctAnswer": "C. Risk assessment",
+        "explanation": "Risk assessment involves evaluating potential risks and developing strategies to mitigate them."
+      }
+    ]
+  }
+  

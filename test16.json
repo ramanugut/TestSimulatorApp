@@ -1,0 +1,665 @@
+{
+    "testName": "ICT1541 Final Test 1",
+    "questions": [
+      {
+        "text": "Which of the following best defines the term network?",
+        "options": [
+          "a. Two or more computers connected together to share resources.",
+          "b. A powerful, high-capacity computer you access using the Internet.",
+          "c. A global collection of millions of computers linked together to share information.",
+          "d. A group of collaborative tools used to create apps."
+        ],
+        "correctAnswer": "a. Two or more computers connected together to share resources.",
+        "explanation": "A network is defined as two or more computers connected together to share resources, such as files and printers."
+      },
+      {
+        "text": "Memory consists of the following three elements.",
+        "options": [
+          "a. Electric components that store instructions waiting to be executed by the processor.",
+          "b. Data needed by instructions.",
+          "c. Results of processing data into information.",
+          "d. High-speed data connections."
+        ],
+        "correctAnswer": "a, b, c",
+        "explanation": "Memory stores instructions waiting to be executed, the data needed by these instructions, and the results of processing this data into useful information."
+      },
+      {
+        "text": "Which of the following best defines Big Data?",
+        "options": [
+          "a. An online community where users share their interests, stories, and more.",
+          "b. Large and complex data sources that defy easy management with traditional data processing methods.",
+          "c. A global collection of millions of computers linked together to share information.",
+          "d. The study of technology that helps one become an educated and productive member of the digital world."
+        ],
+        "correctAnswer": "b. Large and complex data sources that defy easy management with traditional data processing methods.",
+        "explanation": "Big Data refers to extremely large and complex data sets that are difficult to process and manage using traditional data processing tools."
+      },
+      {
+        "text": "The ethical, legal, and productive use of technology are aspects of being a digital _____.",
+        "options": [
+          "a. Expert",
+          "b. Native",
+          "c. Denizen",
+          "d. Citizen"
+        ],
+        "correctAnswer": "d. Citizen",
+        "explanation": "Being a digital citizen involves the ethical, legal, and productive use of technology."
+      },
+      {
+        "text": "The first generation of computers used cylindrical glass tubes that controlled the flow of electrons, called ______ tubes.",
+        "options": [
+          "a. Flux",
+          "b. Distribution",
+          "c. Vacuum",
+          "d. Circulation"
+        ],
+        "correctAnswer": "c. Vacuum",
+        "explanation": "First generation computers used vacuum tubes to control the flow of electrons."
+      },
+      {
+        "text": "Mina is doing research before buying her first car. She lives in an area with a lot of snow and ice during the winter, so she wants one that has electronic stability control. During her research, she finds that this technology is included in many cars using a/n ______ computer.",
+        "options": [
+          "a. Bluetooth",
+          "b. Remote-controlled",
+          "c. Adaptive",
+          "d. Embedded"
+        ],
+        "correctAnswer": "d. Embedded",
+        "explanation": "An embedded computer is a special-purpose computer that is part of a larger product, such as electronic stability control in a car."
+      },
+      {
+        "text": "Which of the following are examples of first generation computers?",
+        "options": [
+          "a. ENIAC",
+          "b. UNIVAC",
+          "c. Apple II",
+          "d. IBM PC"
+        ],
+        "correctAnswer": "a, b",
+        "explanation": "ENIAC and UNIVAC are examples of first generation computers, which used vacuum tubes."
+      },
+      {
+        "text": "Javed lives in a rural neighborhood, where, unlike other students who live on campus with high-speed Internet access, his connection speed is slow and unreliable. The difference between Javed and his fellow students is an example of the digital ______.",
+        "options": [
+          "a. Divide",
+          "b. Chasm",
+          "c. Abyss",
+          "d. Fracture"
+        ],
+        "correctAnswer": "a. Divide",
+        "explanation": "The term 'digital divide' refers to the gap between those who have easy access to technology and those who do not."
+      },
+      {
+        "text": "A freestanding booth usually placed in a public area that can contain a display device used to show information to the public or event attendees is called a/n ____. ",
+        "options": [
+          "a. Kiosk",
+          "b. Booth",
+          "c. Stall",
+          "d. Cubicle"
+        ],
+        "correctAnswer": "a. Kiosk",
+        "explanation": "A kiosk is a small freestanding booth that can contain a display device used to show information to the public."
+      },
+      {
+        "text": "Thea recently was a victim of pretexting. Which of the following best describes what might have happened to Thea?",
+        "options": [
+          "a. An attacker called her pretending to be from a legitimate research firm and asked her for personal information.",
+          "b. Using a change-of-address form, an attacker diverted her mail to a post office box so that she didn't see the changes made.",
+          "c. Her wallet was stolen, and the thief used information in the documents it contained to commit identity theft.",
+          "d. She answered a query on an online social media site that revealed information that enabled an attacker to determine her passwords."
+        ],
+        "correctAnswer": "a. An attacker called her pretending to be from a legitimate research firm and asked her for personal information.",
+        "explanation": "Pretexting is a social engineering attack where an attacker pretends to be someone else to gain access to information."
+      },
+      {
+        "text": "A computer or device that provides services and connections to other computers or devices on a network is called a/n ____.",
+        "options": [
+          "a. Host",
+          "b. Node",
+          "c. Server",
+          "d. ISP"
+        ],
+        "correctAnswer": "c. Server",
+        "explanation": "A server is a computer or device that provides services and connections to other computers or devices on a network."
+      },
+      {
+        "text": "Which of the following best defines the term net neutrality?",
+        "options": [
+          "a. Website content must not be biased.",
+          "b. One website has the same priority or value as other websites.",
+          "c. The Internet does not belong to any organization or nation.",
+          "d. Developing nations must receive the same service as others."
+        ],
+        "correctAnswer": "b. One website has the same priority or value as other websites.",
+        "explanation": "Net neutrality is the principle that Internet service providers should treat all data on the Internet the same, without discrimination."
+      },
+      {
+        "text": "Which of the following best describes the role of the W3C?",
+        "options": [
+          "a. Releasing rules surrounding Internet access.",
+          "b. Setting standards for routing data and securing websites.",
+          "c. Publishing standards for building webpages and enabling web access.",
+          "d. Providing Internet access to users for a fee."
+        ],
+        "correctAnswer": "c. Publishing standards for building webpages and enabling web access.",
+        "explanation": "The World Wide Web Consortium (W3C) is responsible for developing web standards, including HTML and CSS, to ensure the long-term growth of the Web."
+      },
+      {
+        "text": "Which of the following best describes the role of the IETF?",
+        "options": [
+          "a. Releasing rules surrounding Internet access.",
+          "b. Setting standards for routing data and securing websites.",
+          "c. Publishing standards for building webpages and enabling web access.",
+          "d. Providing Internet access to users for a fee."
+        ],
+        "correctAnswer": "b. Setting standards for routing data and securing websites.",
+        "explanation": "The Internet Engineering Task Force (IETF) develops and promotes voluntary Internet standards, including the standards that comprise the Internet protocol suite (TCP/IP)."
+      },
+      {
+        "text": "Which two of the following were goals of the ARPANET project?",
+        "options": [
+          "a. Allow scientists at different locations to share information and work together on projects.",
+          "b. Enable businesses to operate more efficiently by creating services such as email.",
+          "c. Create an educational system that promoted global equality and access.",
+          "d. Function even if part of the network were disabled or destroyed."
+        ],
+        "correctAnswer": "a, d",
+        "explanation": "ARPANET was designed to allow scientists to share information and work together, and to be resilient in the event of network damage."
+      },
+      {
+        "text": "Sonja is taking a class on how to develop webpages. She recently learned about ______, which is an approach used to adapt the layout of a website to fit the screen on which it is being displayed.",
+        "options": [
+          "a. CSS",
+          "b. HTML",
+          "c. RWD",
+          "d. HTTP"
+        ],
+        "correctAnswer": "c. RWD",
+        "explanation": "Responsive Web Design (RWD) is an approach that allows web pages to adapt to the screen size of different devices, providing an optimal user experience."
+      },
+      {
+        "text": "Which of the following best defines the term protocol?",
+        "options": [
+          "a. The unique number assigned to a computer connected to the Internet.",
+          "b. The order in which webpage content loads in a browser.",
+          "c. Guidelines web developers use to ensure accessibility.",
+          "d. A common set of rules for exchanging information."
+        ],
+        "correctAnswer": "d. A common set of rules for exchanging information.",
+        "explanation": "A protocol is a standard set of rules that allow electronic devices to communicate with each other."
+      },
+      {
+        "text": "The DNS is the method the Internet uses to store domain names and their corresponding _____.",
+        "options": [
+          "a. IP addresses",
+          "b. Protocols",
+          "c. Top-level domain",
+          "d. Script"
+        ],
+        "correctAnswer": "a. IP addresses",
+        "explanation": "The Domain Name System (DNS) translates domain names into IP addresses, which are used to locate and identify devices on networks."
+      },
+      {
+        "text": "Which of the following best describes how webpages use cookies?",
+        "options": [
+          "a. To keep track of the path you followed to display a webpage.",
+          "b. To identify individual servers on the Internet.",
+          "c. To store information, such as items you view or purchase.",
+          "d. To identify the type of device accessing the website."
+        ],
+        "correctAnswer": "c. To store information, such as items you view or purchase.",
+        "explanation": "Cookies are small files that websites use to store information about users, such as items they view or purchase, to enhance their browsing experience."
+      },
+      {
+        "text": "Dennis is connecting his computer to his school's wireless network. Which of the following statements about considerations Dennis should make is not true?",
+        "options": [
+          "a. The school's Wi-Fi network likely will provide a faster connection than a mobile hotspot.",
+          "b. He may be asked to enter a wireless network key or authentication.",
+          "c. He should turn off his computer when he is not using it so it is not constantly connected.",
+          "d. He will need to know the WAP to find the wireless network."
+        ],
+        "correctAnswer": "d. He will need to know the WAP to find the wireless network.",
+        "explanation": "WAP stands for Wireless Application Protocol, which is not related to finding a wireless network. Dennis will need the network name (SSID) instead."
+      },
+      {
+        "text": "Input is the action of ______.",
+        "options": [
+          "a. Entering data",
+          "b. Running a query",
+          "c. Producing information",
+          "d. Instructing hardware"
+        ],
+        "correctAnswer": "a. Entering data",
+        "explanation": "Input refers to the action of entering data into a computer or device for processing."
+      },
+      {
+        "text": "Output is the action of ______.",
+        "options": [
+          "a. Entering data",
+          "b. Running a query",
+          "c. Producing information",
+          "d. Instructing hardware"
+        ],
+        "correctAnswer": "c. Producing information",
+        "explanation": "Output refers to the action of producing information as a result of data processing by the computer."
+      },
+      {
+        "text": "Which of the following best defines a command?",
+        "options": [
+          "a. A request from the operating system to produce output",
+          "b. An instruction that causes a program or app to perform a specific action",
+          "c. A marketing tool that encourages users to take action",
+          "d. A response from a user to a message displayed by a program or app"
+        ],
+        "correctAnswer": "b. An instruction that causes a program or app to perform a specific action",
+        "explanation": "A command is an instruction given to a computer program to perform a specific action."
+      },
+      {
+        "text": "Which of the following is not an example of output?",
+        "options": [
+          "a. Text",
+          "b. Graphics",
+          "c. Audio",
+          "d. Data"
+        ],
+        "correctAnswer": "d. Data",
+        "explanation": "Data is input that is processed by a computer, whereas output refers to the information produced."
+      },
+      {
+        "text": "A toggle key is a key that will alternate views or ______ each time you press it.",
+        "options": [
+          "a. Turn a feature on or off",
+          "b. Process data into information",
+          "c. Switch to another user",
+          "d. Navigate to another part of the screen"
+        ],
+        "correctAnswer": "a. Turn a feature on or off",
+        "explanation": "A toggle key, such as Caps Lock, alternates between turning a feature on or off each time it is pressed."
+      },
+      {
+        "text": "A function key is programmed to ______.",
+        "options": [
+          "a. Perform calculations",
+          "b. Issue a command to a computer",
+          "c. Display messages from the operating system",
+          "d. Provide the user with contextual help"
+        ],
+        "correctAnswer": "b. Issue a command to a computer",
+        "explanation": "Function keys are programmed to issue specific commands to the computer, such as opening a particular program."
+      },
+      {
+        "text": "Juan's new laptop has a touch screen. When he stretches, or moves two fingers apart, he can _____ on the screen.",
+        "options": [
+          "a. Zoom in",
+          "b. Scroll",
+          "c. Move an item",
+          "d. Activate a link"
+        ],
+        "correctAnswer": "a. Zoom in",
+        "explanation": "Using the stretching gesture on a touch screen allows Juan to zoom in on content."
+      },
+      {
+        "text": "Juan's new laptop has a touch screen. When he swipes, he can _____ on the screen.",
+        "options": [
+          "a. Zoom in",
+          "b. Scroll",
+          "c. Move an item",
+          "d. Activate a link"
+        ],
+        "correctAnswer": "b. Scroll",
+        "explanation": "Swiping on a touch screen is typically used to scroll through content."
+      },
+      {
+        "text": "A graphics tablet also is called a/n ______.",
+        "options": [
+          "a. Wireframe",
+          "b. Capture pad",
+          "c. Digitizer",
+          "d. Drawing board"
+        ],
+        "correctAnswer": "c. Digitizer",
+        "explanation": "A graphics tablet, also known as a digitizer, allows artists to draw on the tablet's surface, which is then translated into digital form on a computer."
+      },
+      {
+        "text": "When editing a digital video, morphing is used to ______.",
+        "options": [
+          "a. Transform one video image into another image",
+          "b. Split the video into specific scenes",
+          "c. Zoom in and out on a portion of the screen",
+          "d. Add voice-over narration"
+        ],
+        "correctAnswer": "a. Transform one video image into another image",
+        "explanation": "Morphing is a special effect in video editing used to transform one image into another seamlessly."
+      },
+      {
+        "text": "In secondary storage, a computer keeps ______.",
+        "options": [
+          "a. Data, information, programs, and applications",
+          "b. Operating system settings",
+          "c. Archived and infrequently accessed items",
+          "d. Updates and other files that have not been scanned or verified"
+        ],
+        "correctAnswer": "a. Data, information, programs, and applications",
+        "explanation": "Secondary storage refers to storage devices, such as hard drives, where data, programs, and applications are kept permanently."
+      },
+      {
+        "text": "A storage medium's capacity refers to the ______.",
+        "options": [
+          "a. Maximum transfer rate it can tolerate",
+          "b. Number of bytes it can hold",
+          "c. Ability it has to access virtual memory",
+          "d. Access it has to cloud and other external media"
+        ],
+        "correctAnswer": "b. Number of bytes it can hold",
+        "explanation": "The capacity of a storage medium is the maximum amount of data that can be stored, usually measured in bytes."
+      },
+      {
+        "text": "Access time measures which two of the following?",
+        "options": [
+          "a. How much time it takes a storage device to locate an item on a storage medium",
+          "b. How much time it takes to upload data to a cloud server",
+          "c. How much time is required to deliver an item from memory to the processor",
+          "d. How much time is required to create an index of a storage medium's contents"
+        ],
+        "correctAnswer": "a, c",
+        "explanation": "Access time refers to the time required to locate data on a storage medium and the time to deliver that data to the processor."
+      },
+      {
+        "text": "Businesses often use cloud storage for backup, but might also use a tape drive, which is a storage device that stores data on ______ tapes.",
+        "options": [
+          "a. Optical",
+          "b. CRT",
+          "c. Magnetic",
+          "d. USB"
+        ],
+        "correctAnswer": "c. Magnetic",
+        "explanation": "Tape drives use magnetic tapes to store data, providing a cost-effective solution for large-scale backups."
+      },
+      {
+        "text": "Maggie is considering methods to encrypt her data and files. She knows that which of the following is not true about encryption?",
+        "options": [
+          "a. It takes less time to open and access encrypted files than unencrypted files.",
+          "b. Only authorized people can access encrypted data.",
+          "c. All programs use the process of cryptography.",
+          "d. Mathematical functions, called algorithms, scramble the data."
+        ],
+        "correctAnswer": "a. It takes less time to open and access encrypted files than unencrypted files.",
+        "explanation": "Encrypted files take more time to open and access due to the need for decryption."
+      },
+      {
+        "text": "Depending on how the magnetic particles on a hard disk are aligned, they represent either ______.",
+        "options": [
+          "a. RAM or ROM",
+          "b. Data or information",
+          "c. A 0 bit or a 1 bit",
+          "d. A GB or a TB"
+        ],
+        "correctAnswer": "c. A 0 bit or a 1 bit",
+        "explanation": "The alignment of magnetic particles on a hard disk determines whether they represent a binary 0 or 1."
+      },
+      {
+        "text": "In a hard disk, the platter allows ______.",
+        "options": [
+          "a. Data to move freely between storage and memory",
+          "b. Audio to be translated from analog to digital",
+          "c. Contaminated items to be cleaned",
+          "d. Items to be recorded magnetically on its surface"
+        ],
+        "correctAnswer": "d. Items to be recorded magnetically on its surface",
+        "explanation": "The platter in a hard disk is the part where data is recorded magnetically."
+      },
+      {
+        "text": "Erykah is formatting the hard disk on her computer, which ______.",
+        "options": [
+          "a. Divides it into tracks and sectors",
+          "b. Gives it a name and unique identifier",
+          "c. Erases the factory default files and folders",
+          "d. Defines its form factor"
+        ],
+        "correctAnswer": "a. Divides it into tracks and sectors",
+        "explanation": "Formatting a hard disk involves dividing it into tracks and sectors, allowing it to store data."
+      },
+      {
+        "text": "The defragmentation process is used to address ______.",
+        "options": [
+          "a. Scratches on the platter",
+          "b. Compressing and uncompressing data files",
+          "c. Incompatible program files",
+          "d. Issues caused by data being saved to nonconsecutive segments"
+        ],
+        "correctAnswer": "d. Issues caused by data being saved to nonconsecutive segments",
+        "explanation": "Defragmentation reorganizes fragmented data so that related items are stored together, improving access time."
+      },
+      {
+        "text": "Which of the following is not true about read/write heads?",
+        "options": [
+          "a. A head actuator on the hard disk attaches to arms that move it.",
+          "b. The mechanism presses down hard on the disk's recording surface.",
+          "c. Each platter has two read/write heads, one for each side.",
+          "d. The platter spins to create a cushion of air between it and the read/write head."
+        ],
+        "correctAnswer": "b. The mechanism presses down hard on the disk's recording surface.",
+        "explanation": "Read/write heads do not press down hard on the disk surface; they float on a cushion of air."
+      },
+      {
+        "text": "An operating system also is called a/n ______.",
+        "options": [
+          "a. Platform",
+          "b. Form factor",
+          "c. CPU",
+          "d. Guidance program"
+        ],
+        "correctAnswer": "a. Platform",
+        "explanation": "An operating system acts as a platform that supports the execution of applications on a computer."
+      },
+      {
+        "text": "On a mobile device, the operating system likely resides on firmware, which consists of ______.",
+        "options": [
+          "a. Interlocking silicon semi-conductors that respond to electronic charges",
+          "b. ROM chips or flash memory chips that store permanent instructions",
+          "c. Metal pins that translate instructions into machine language",
+          "d. Virtual storage sectors that contain an activity log"
+        ],
+        "correctAnswer": "b. ROM chips or flash memory chips that store permanent instructions",
+        "explanation": "Firmware is stored on ROM or flash memory chips and contains permanent instructions for the device."
+      },
+      {
+        "text": "A GUI is a collective term for all of the ways you ______.",
+        "options": [
+          "a. Upload data to the cloud",
+          "b. Manage storage and memory resources",
+          "c. Interact with a device",
+          "d. Create visual output"
+        ],
+        "correctAnswer": "c. Interact with a device",
+        "explanation": "A Graphical User Interface (GUI) allows users to interact with a device through graphical elements like icons and buttons."
+      },
+      {
+        "text": "A dialog box is a box with controls designed to let you ______.",
+        "options": [
+          "a. Train the system to recognize your voice commands",
+          "b. Access features without interacting with the operating system",
+          "c. Move files and folders by dragging them on the desktop",
+          "d. Tell the operating system how to complete a command"
+        ],
+        "correctAnswer": "d. Tell the operating system how to complete a command",
+        "explanation": "A dialog box provides options that help you tell the operating system how to complete specific actions."
+      },
+      {
+        "text": "A utility is an operating systems app or program that enables you to ______.",
+        "options": [
+          "a. Perform maintenance-type tasks related to managing the computer or device",
+          "b. Make selections on a menu, submenu, or dialog box",
+          "c. Control the source of your device's electric or battery power",
+          "d. Translate gesture commands into machine language"
+        ],
+        "correctAnswer": "a. Perform maintenance-type tasks related to managing the computer or device",
+        "explanation": "Utilities are programs that help manage, maintain, and control computer resources, such as disk cleanup and antivirus."
+      },
+      {
+        "text": "Colleen is using a system at the office where she is an intern that requires her to type commands, such as dir to view a directory of files. Colleen is using a/n ______.",
+        "options": [
+          "a. Input control system",
+          "b. Command-line interface",
+          "c. GUI",
+          "d. Directive-based OS"
+        ],
+        "correctAnswer": "b. Command-line interface",
+        "explanation": "A command-line interface (CLI) requires users to type commands to interact with the computer, unlike a graphical user interface (GUI)."
+      },
+      {
+        "text": "On a computer system, resources are the components ______.",
+        "options": [
+          "a. Required to perform work",
+          "b. To which the system does not have access",
+          "c. That extend the system's capabilities",
+          "d. Of data and information"
+        ],
+        "correctAnswer": "a. Required to perform work",
+        "explanation": "Resources in a computer system refer to the components needed to perform tasks, such as CPU, memory, and storage."
+      },
+      {
+        "text": "In an operating system, a page is the ______.",
+        "options": [
+          "a. List of the utilities and tools required to run the OS and the system's apps",
+          "b. Amount of data and program instructions that can swap at a given time",
+          "c. Interface upon which icons and buttons are placed for easy access",
+          "d. Current activity being conducted"
+        ],
+        "correctAnswer": "b. Amount of data and program instructions that can swap at a given time",
+        "explanation": "A page in an operating system refers to a fixed-length block of memory used in paging to store data and program instructions."
+      },
+      {
+        "text": "Eva's computer has been working very slowly. She calls the IT help desk at her office, and they say the computer is likely thrashing, which means that the operating system ______.",
+        "options": [
+          "a. Has competing resources that are trying to execute at the same time",
+          "b. Is spending more of its time paging than executing apps",
+          "c. Is infected with a virus and cannot access its quarantined files",
+          "d. Has not been updated and needs patches and service packs to run"
+        ],
+        "correctAnswer": "b. Is spending more of its time paging than executing apps",
+        "explanation": "Thrashing occurs when the operating system spends most of its time swapping data between memory and disk, rather than executing applications, due to insufficient RAM."
+      },
+      {
+        "text": "A background program is one that is ______.",
+        "options": [
+          "a. Archived to save storage",
+          "b. Not currently operating",
+          "c. Running but not in use",
+          "d. An operating system utility"
+        ],
+        "correctAnswer": "c. Running but not in use",
+        "explanation": "A background program runs without being actively used by the user, such as system processes and services."
+      },
+      {
+        "text": "In project development, documentation is the ______.",
+        "options": [
+          "a. Collection and summary of data, information, and deliverables specific to the project",
+          "b. User manual created during the last stage of development",
+          "c. List of developer guidelines that they follow",
+          "d. Reference material used to learn the code needed"
+        ],
+        "correctAnswer": "a. Collection and summary of data, information, and deliverables specific to the project",
+        "explanation": "Documentation in project development refers to the comprehensive record of the project's data, requirements, design, and deliverables."
+      },
+      {
+        "text": "Arthi is talking to a colleague about the app she is developing. Her colleague asks her what the scope of the project is. She answers his question by telling him the project's ______.",
+        "options": [
+          "a. System requirements",
+          "b. Goals, objectives, and explanations",
+          "c. Tools and languages",
+          "d. Ideal users"
+        ],
+        "correctAnswer": "b. Goals, objectives, and explanations",
+        "explanation": "The scope of a project defines its goals, objectives, deliverables, and limits, which are used to guide its development."
+      },
+      {
+        "text": "Arthi is talking to a colleague about the app she is developing. Her colleague asks her about the project's UX goals. She describes how she is addressing the ______.",
+        "options": [
+          "a. Budget and schedule for the project",
+          "b. Roles of members of the team for the project",
+          "c. User's reaction to and interaction with the product",
+          "d. Expected income and net profit of the product"
+        ],
+        "correctAnswer": "c. User's reaction to and interaction with the product",
+        "explanation": "UX (User Experience) goals focus on optimizing how users interact with and feel about the product, ensuring ease of use and satisfaction."
+      },
+      {
+        "text": "A macro is a/n ______.",
+        "options": [
+          "a. App that is expected to have a global impact",
+          "b. Project that has experienced feature creep",
+          "c. Development team member who is in charge of coding",
+          "d. Series of statements that instructs a program or app how to complete a task"
+        ],
+        "correctAnswer": "d. Series of statements that instructs a program or app how to complete a task",
+        "explanation": "A macro is a set of instructions that automate repetitive tasks in a program or application."
+      },
+      {
+        "text": "The planning phase for a project begins with the ______.",
+        "options": [
+          "a. Request for the project",
+          "b. Approval of the budget and schedule",
+          "c. Evaluation of the design specifications",
+          "d. List of tools needed for development"
+        ],
+        "correctAnswer": "a. Request for the project",
+        "explanation": "The planning phase starts with a project request, which outlines the need for the project and initiates its planning and development."
+      },
+      {
+        "text": "Theo is on the project development team for a new app his company is creating. He was tasked with assessing the feasibility of the project. He will help determine the ______.",
+        "options": [
+          "a. Technical requirements needed to complete the project",
+          "b. Measure of the suitability of the development process to the project",
+          "c. Mockup of the final design using wireframes",
+          "d. Vendors, designers, and coders needed to develop the project"
+        ],
+        "correctAnswer": "b. Measure of the suitability of the development process to the project",
+        "explanation": "Feasibility analysis is used to assess whether a project can be successfully completed given the resources, technology, and time available."
+      },
+      {
+        "text": "Marlo is on the project team for a new app. During the design phase, Marlo and the team _____.",
+        "options": [
+          "a. Perform a detailed analysis and preliminary investigation",
+          "b. Ask potential users to test the product for feedback",
+          "c. Acquire the necessary hardware and programming tools",
+          "d. Determine whether the profits will outweigh the development costs"
+        ],
+        "correctAnswer": "c. Acquire the necessary hardware and programming tools",
+        "explanation": "During the design phase, the team acquires the necessary hardware and tools to create the project."
+      },
+      {
+        "text": "A prototype is a model that ______ the program or app.",
+        "options": [
+          "a. Demonstrates the functionality of",
+          "b. Is distributed to users to test",
+          "c. Is used to select colours and other design specifications for",
+          "d. Determines the languages and tools needed to develop"
+        ],
+        "correctAnswer": "a. Demonstrates the functionality of",
+        "explanation": "A prototype is a working model that demonstrates how the final product will function."
+      },
+      {
+        "text": "Emily is on the project team for a new app. During the implementation phase, Emily and the team _____.",
+        "options": [
+          "a. Perform a detailed analysis and preliminary investigation",
+          "b. Install and test the product, including each individual component and how it works with other programs and apps",
+          "c. Acquire the necessary hardware and programming tools",
+          "d. Determine whether the profits will outweigh the development costs"
+        ],
+        "correctAnswer": "b. Install and test the product, including each individual component and how it works with other programs and apps",
+        "explanation": "The implementation phase involves installing, testing, and integrating the system or application components."
+      },
+      {
+        "text": "With a direct conversion, _____.",
+        "options": [
+          "a. The user stops using the old product and begins using the new product on a certain date",
+          "b. The old product is run alongside the new product for a specified time",
+          "c. Each location converts at a separate time",
+          "d. Only one location in an organization uses the new product so that it can be tested"
+        ],
+        "correctAnswer": "a. The user stops using the old product and begins using the new product on a certain date",
+        "explanation": "Direct conversion means the new system replaces the old one on a scheduled date, without overlap."
+      }
+    ]
+  }

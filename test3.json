@@ -1,0 +1,319 @@
+{
+    "testName": "ICT1511 Final Exam",
+    "questions": [
+        {
+            "text": "Objects communicate with one another by sending _____.",
+            "options": ["A. Signals", "B. Data", "C. Messages", "D. Packets"],
+            "correctAnswer": "C. Messages",
+            "explanation": "In object-oriented programming, objects interact by sending messages to each other, which involve invoking methods."
+        },
+        {
+            "text": "___ are used in cases where we know that the value will never vary during the execution of the program.",
+            "options": ["A. Variables", "B. Constants", "C. Operators", "D. Functions"],
+            "correctAnswer": "B. Constants",
+            "explanation": "Constants are fixed values that do not change during the program's execution."
+        },
+        {
+            "text": "A(n) _____ is a symbol used within an expression or equation that tells the computer how to process the data.",
+            "options": ["A. Variable", "B. Operator", "C. Constant", "D. Identifier"],
+            "correctAnswer": "B. Operator",
+            "explanation": "Operators define how data is processed and include arithmetic, relational, and logical operations."
+        },
+        {
+            "text": "The minimum number of iterations in a post-test loop is _____.",
+            "options": ["A. 0", "B. 1", "C. 2", "D. Unlimited"],
+            "correctAnswer": "B. 1",
+            "explanation": "A post-test loop (such as a 'do-while' loop) guarantees at least one execution before testing the condition."
+        },
+        {
+            "text": "The relationships between classes are categorized as _____, aggregation, and inheritance.",
+            "options": ["A. Association", "B. Composition", "C. Generalization", "D. Specialization"],
+            "correctAnswer": "A. Association",
+            "explanation": "Association defines a 'has-a' relationship between classes."
+        },
+        {
+            "text": "The name of an algorithm starts with a(n) _____ letter.",
+            "options": ["A. Uppercase", "B. Lowercase", "C. Symbol", "D. Number"],
+            "correctAnswer": "A. Uppercase",
+            "explanation": "By convention, algorithm names typically start with a capital letter for readability."
+        },
+        {
+            "text": "Encapsulation can also be referred to as data _____.",
+            "options": ["A. Hiding", "B. Processing", "C. Sharing", "D. Abstraction"],
+            "correctAnswer": "A. Hiding",
+            "explanation": "Encapsulation restricts direct access to object data, ensuring it is accessed only through methods."
+        },
+        {
+            "text": "____ data items may involve organizing them, checking them for accuracy, or performing mathematical operations on them.",
+            "options": ["A. Processing", "B. Initializing", "C. Storing", "D. Declaring"],
+            "correctAnswer": "A. Processing",
+            "explanation": "Processing refers to manipulating data to achieve desired outcomes."
+        },
+        {
+            "text": "When multiple choices have to be made, it is better to use the ____ structure that branches on the appropriate set of instructions depending on the value of a given expression.",
+            "options": ["A. Sequence", "B. Selection", "C. Iteration", "D. Recursion"],
+            "correctAnswer": "B. Selection",
+            "explanation": "Selection structures like 'if-else' and 'switch' statements help make decisions based on conditions."
+        },
+        {
+            "text": "___ involves repeating the statements contained in a loop body.",
+            "options": ["A. Iteration", "B. Selection", "C. Sequencing", "D. Recursion"],
+            "correctAnswer": "A. Iteration",
+            "explanation": "Iteration allows repeating a set of instructions until a condition is met."
+        },
+        {
+            "text": "Operations of a class are also referred to as __Modules___.",
+            "options": ["A. Methods", "B. Attributes", "C. Constructors", "D. Objects"],
+            "correctAnswer": "A. Methods",
+            "explanation": "Methods define the behavior and operations that can be performed on an object."
+        },
+        {
+            "text": "The value in the _____ statement is compared to each value following the case statement. If a match is found, the statements following the case are executed.",
+            "options": ["A. Switch", "B. If", "C. Else", "D. Loop"],
+            "correctAnswer": "A. Switch",
+            "explanation": "The switch statement evaluates a variable and executes code based on matching cases."
+        },
+        {
+            "text": "When using the _____ logical operator, only one of the expressions must be True to yield True.",
+            "options": ["A. AND", "B. OR", "C. NOT", "D. XOR"],
+            "correctAnswer": "B. OR",
+            "explanation": "The OR logical operator returns true if at least one operand is true."
+        },
+        {
+            "text": "A collection of data stored under a single name is referred to as a _____.",
+            "options": ["A. Array", "B. Variable", "C. Object", "D. Function"],
+            "correctAnswer": "A. Array",
+            "explanation": "An array is a collection of elements stored under one variable name and indexed."
+        },
+        {
+            "text": "In computing and mathematics, the term ___evaluate__ is often used to mean 'find the result'.",
+            "options": ["A. Execute", "B. Evaluate", "C. Assign", "D. Compare"],
+            "correctAnswer": "B. Evaluate",
+            "explanation": "Evaluating an expression involves calculating its value based on the given data and operations."
+        },
+        {
+            "text": "Test data must include a sample of every category and must also be _____.",
+            "options": ["A. Minimal", "B. Random", "C. Comprehensive", "D. Incomplete"],
+            "correctAnswer": "C. Comprehensive",
+            "explanation": "Comprehensive test data ensures that all possible scenarios are tested, including edge cases."
+        },
+        {
+            "text": "In the ____ structure no steps are left out, and no steps are repeated.",
+            "options": ["A. Sequence", "B. Loop", "C. Conditional", "D. Recursive"],
+            "correctAnswer": "A. Sequence",
+            "explanation": "The sequence structure executes statements in order without repetition or skipping steps."
+        },
+        {
+            "text": "Conditions that determine whether a loop is re-entered or exited are usually constructed with _____ operators.",
+            "options": ["A. Logical", "B. Arithmetic", "C. Relational", "D. Bitwise"],
+            "correctAnswer": "C. Relational",
+            "explanation": "Relational operators (like <, >, ==) are used in loop conditions to control repetition."
+        },
+
+
+        {
+            "text": "The algorithm is the steps to solve a problem, and the pseudocode is the way in which these steps are expressed.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Pseudocode is a high-level description of an algorithm used for understanding or planning code."
+        },
+
+        {
+            "text": "Methods in object-oriented programs use sequence, selection, and looping structures and make use of arrays.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "These structures are fundamental in procedural and object-oriented programming."
+        },
+        {
+            "text": "Conditional structures may not be nested as this will yield various complex program workflows.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "Conditional structures can be nested to handle complex conditions effectively."
+        },
+        {
+            "text": "A hierarchy chart contains details of each module and how the modules are related.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Hierarchy charts show the relationships between modules in a program."
+        },
+        {
+            "text": "Every file must have an extension.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "File extensions help identify the type of file and its format."
+        },
+        {
+            "text": "Intermediate variables may be used to assist with calculations.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Intermediate variables hold temporary results, making calculations more manageable."
+        },
+        {
+            "text": "The for loop counter may be incremented or decremented by any number.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "The loop counter in a 'for' loop can be modified by any value (e.g., increment by 2 or decrement by 3)."
+        },
+        {
+            "text": "In a loop algorithm that computes non-negative integers, the value '-1' can be set as the sentinel value as the computation will never encounter that value as a legitimate processing output.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "A sentinel value is a special value that is not a valid output, used to terminate loops."
+        },
+        {
+            "text": "The for loop is a good tool when working with arrays because you frequently need to process every element of an array from beginning to end.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "For loops are ideal for iterating through arrays as they allow easy indexing and traversal."
+        },
+        {
+            "text": "A student mark is an example of a numeric field.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Student marks are represented as numerical values for calculation and comparison."
+        },
+        {
+            "text": "A computer can receive data via a keyboard, scanner, or other input device.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Input devices allow data entry into a computer system."
+        },
+        {
+            "text": "You use nested if and if/else statements to perform conditional evaluations that must be executed after the original conditional evaluation.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Nested if statements allow for further decision-making based on previous conditions."
+        },
+        {
+            "text": "A variable name can contain letters and numbers.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Variable names can include letters, numbers, and underscores but cannot start with a number."
+        },
+        {
+            "text": "If you can write a solution in 200 steps/statements or in 20 statements, clearly the more effective solution is the 20 statement one.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Efficiency in programming aims to reduce the number of statements without losing functionality."
+        },
+
+        {
+            "text": "Object-oriented programmers sometimes say an object is one ____ of a class.",
+            "options": ["A. Enumeration", "B. Instantiation", "C. Member", "D. Reference"],
+            "correctAnswer": "B. Instantiation",
+            "explanation": "An object is an instance of a class in object-oriented programming."
+        },
+        {
+            "text": "How would you set up the following arithmetic equation? A customer pays 500 Rand for a coffee maker after a discount of 20%. What is the original price of the coffee maker?",
+            "options": [
+                "A. price = cost + discount",
+                "B. price = cost - discount",
+                "C. price = cost / ((100 - discount) / 100)",
+                "D. None of the above"
+            ],
+            "correctAnswer": "C. price = cost / ((100 - discount) / 100)",
+            "explanation": "The original price is calculated using the formula: price = final price / (1 - discount/100)."
+        },
+        {
+            "text": "How many lines of output will be displayed when the following code is executed?\ndisplay “Hello”\nfor x = 1 to 4\ndisplay “Outer loop”, x\nfor y = 1 to 6 step 3\nif y >= x then\ndisplay “Inner loop”, y\nendif\nnext y\nnext x\ndisplay “end”",
+            "options": ["A. 11", "B. 10", "C. 9", "D. 8"],
+            "correctAnswer": "A. 11",
+            "explanation": "The code outputs 11 lines including the nested loop executions."
+        },
+        {
+            "text": "Which of the ‘if’ statements below is the correct one for the following problem statement? To earn a medal in a competition, a participant must cycle at least 20 kilometers and swim 500 meters.",
+            "options": [
+                "A. if cycleDist <= 20 AND swimDist <= 500 then display “July qualifies for a medal” else display “July does not qualify for a medal” endif",
+                "B. if cycleDist >= 20 AND swimDist >= 500 then display “July qualifies for a medal” else display “July does not qualify for a medal” endif",
+                "C. if cycleDist > 20 AND swimDist > 500 then display “July qualifies for a medal” else display “July does not qualify for a medal” endif",
+                "D. if cycleDist <> 20 AND swimDist <> 500 then display “July qualifies for a medal” else display “July does not qualify for a medal” endif"
+            ],
+            "correctAnswer": "B. if cycleDist >= 20 AND swimDist >= 500 then display “July qualifies for a medal” else display “July does not qualify for a medal” endif",
+            "explanation": "The correct 'if' statement checks for equal to or greater than the required values."
+        },
+        {
+            "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n\nif interest < 1000 then\n tax = 0\nelse\n if interest <= 2000 then\n tax = (interest – 1000) * 0.075\n else\n tax = (interest – 1100) * 0.095\nendif\nendif",
+            "options": [
+                "A. select case\n case < 1000\n tax = 0\n case <= 2000\n tax = (interest – 1000) * 0.075\n case else\n tax = (interest – 1100) * 0.095\n endselect",
+                "B. select case interest\n case < 1000\n tax = 0\n case <= 2000\n tax = (interest – 1000) * 0.075\n else\n tax = (interest – 1100) * 0.095\n endselect",
+                "C. select case interest\n case < 1000\n tax = 0\n case <= 2000\n tax = (interest – 1000) * 0.075\n case else\n tax = (interest – 1100) * 0.095\n endselect",
+                "D. select case interest\n case < 1000\n tax = 0\n case <= 2000\n tax = (interest – 1000) * 0.075\n case\n tax = (interest – 1100) * 0.095\n endselect"
+            ],
+            "correctAnswer": "B. select case interest\n case < 1000\n tax = 0\n case <= 2000\n tax = (interest – 1000) * 0.075\n else\n tax = (interest – 1100) * 0.095\n endselect",
+            "explanation": "The 'select case' statement in option B correctly replicates the logic of the given 'if' statement."
+        },
+        {
+            "text": "A file type can be represented by:",
+            "options": [
+                "A. file name",
+                "B. file extension",
+                "C. file identifier",
+                "D. None of the above"
+            ],
+            "correctAnswer": "B. file extension",
+            "explanation": "The file extension, such as `.txt` or `.docx`, represents the file type."
+        },
+        {
+            "text": "What would be the value of the variable 'B' in the following pseudocode if the value of variable 'A' is 5.2 and the value of variable 'B' is 15?\n\nif A = 5.2 then\n if B > 20 then\n A = A + 5\n else\n B = B – 3.5\n endif\nelse\n if A = 6 then\n A = 0\n B = 0\n endif\nendif",
+            "options": ["A. 15", "B. 11.5", "C. 0", "D. 5.2"],
+            "correctAnswer": "B. 11.5",
+            "explanation": "The value of B is reduced by 3.5 as it is less than 20."
+        },
+        {
+            "text": "What would be displayed as the daily dosage of medicine to be administered to a dog weighing 4.9 kilograms in the given pseudocode?",
+            "options": [
+                "A. The dog must receive a daily dose of 7.0 ml",
+                "B. The dog must receive a daily dose of 9.0 ml",
+                "C. The weight must be in kg and to the nearest 500g, e.g., 3, 3.5, or 4",
+                "D. The weight must be numeric"
+            ],
+            "correctAnswer": "B. The dog must receive a daily dose of 9.0 ml",
+            "explanation": "Based on the conditions in the pseudocode, the appropriate dosage is calculated as 9.0 ml."
+        },
+        {
+            "text": "The mechanism that binds code and data together and keeps them secure from the outside world is known as:",
+            "options": [
+                "A. Abstraction",
+                "B. Inheritance",
+                "C. Polymorphism",
+                "D. Encapsulation"
+            ],
+            "correctAnswer": "D. Encapsulation",
+            "explanation": "Encapsulation restricts direct access to data by bundling it with related methods."
+        },
+        {
+            "text": "What will be the value of the variable 'x' after the following loop is executed?\n\nfor x = 7 to 34 step 5",
+            "options": ["A. 34", "B. 35", "C. 36", "D. 37"],
+            "correctAnswer": "B. 35",
+            "explanation": "The loop will terminate when x exceeds 34, making the last value of x 35."
+        },
+        {
+            "text": "In a group of nested loops, which loop is executed the most number of times?",
+            "options": ["A. The outermost loop", "B. The innermost loop", "C. All loops are executed the same number of times", "D. Cannot be determined without knowing the size of the loops"],
+            "correctAnswer": "B. The innermost loop",
+            "explanation": "The innermost loop completes all its iterations for every single iteration of the outer loops."
+        },
+        {
+            "text": "What is a sequential file used by a program to store new data, by writing it to the file, called?",
+            "options": [
+                "A. Appended file",
+                "B. Input file",
+                "C. Output file",
+                "D. Sequence file"
+            ],
+            "correctAnswer": "A. Appended file",
+            "explanation": "An appended file allows new data to be added to the existing contents."
+        },
+        {
+            "text": "Objects often need to hold _____ about themselves.",
+            "options": [
+                "A. Scope",
+                "B. Information",
+                "C. Member",
+                "D. Reference"
+            ],
+            "correctAnswer": "B. Information",
+            "explanation": "Objects hold information or state that defines their properties."
+        }
+    ]
+}

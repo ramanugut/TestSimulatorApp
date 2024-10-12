@@ -1,0 +1,234 @@
+{
+    "testName": "ICT1541 Chapter 9",
+    "questions": [
+      {
+        "text": "Which of the following best describes a database?",
+        "options": ["A. A collection of related files", "B. A group of connected devices", "C. A collection of unorganized data", "D. A network protocol"],
+        "correctAnswer": "A. A collection of related files",
+        "explanation": "A database is a structured collection of related files, tables, or records stored electronically."
+      },
+      {
+        "text": "True or False: A primary key uniquely identifies each record in a database table.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "A primary key is a unique identifier for each record in a database table and ensures that no two records are the same."
+      },
+      {
+        "text": "Which of the following is used to retrieve and manipulate data in a database?",
+        "options": ["A. HTML", "B. CSS", "C. SQL", "D. HTTP"],
+        "correctAnswer": "C. SQL",
+        "explanation": "SQL (Structured Query Language) is used to query, retrieve, and manipulate data in a relational database."
+      },
+      {
+        "text": "What is the main purpose of a database management system (DBMS)?",
+        "options": ["A. To delete data", "B. To manage and control database access", "C. To design web pages", "D. To compile code"],
+        "correctAnswer": "B. To manage and control database access",
+        "explanation": "A DBMS is software that provides a systematic way to create, retrieve, update, and manage data in a database."
+      },
+      {
+        "text": "Which of the following is a popular open-source relational database management system?",
+        "options": ["A. MySQL", "B. Microsoft Word", "C. Adobe Photoshop", "D. Google Chrome"],
+        "correctAnswer": "A. MySQL",
+        "explanation": "MySQL is a widely used open-source relational database management system (RDBMS)."
+      },
+      {
+        "text": "True or False: A foreign key in a database table is used to establish relationships between two tables.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "A foreign key is a field in one table that references the primary key in another table to establish a relationship."
+      },
+      {
+        "text": "What type of database stores data in rows and columns?",
+        "options": ["A. Object-oriented database", "B. Relational database", "C. NoSQL database", "D. Graph database"],
+        "correctAnswer": "B. Relational database",
+        "explanation": "Relational databases store data in rows and columns and use tables to organize data in a structured format."
+      },
+      {
+        "text": "Which of the following is NOT a type of NoSQL database?",
+        "options": ["A. Document-based", "B. Key-value store", "C. Column-based", "D. Relational database"],
+        "correctAnswer": "D. Relational database",
+        "explanation": "NoSQL databases include document-based, key-value, and column-based databases. Relational databases use a different data model."
+      },
+      {
+        "text": "Which of the following best describes a data warehouse?",
+        "options": ["A. A collection of email addresses", "B. A centralized repository for storing large volumes of data", "C. A file sharing system", "D. A network switch"],
+        "correctAnswer": "B. A centralized repository for storing large volumes of data",
+        "explanation": "A data warehouse is a centralized repository used for storing large volumes of structured and unstructured data."
+      },
+      {
+        "text": "True or False: The ERD (Entity Relationship Diagram) is used to visualize the structure and relationships in a database.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "ERDs (Entity Relationship Diagrams) are graphical representations used to visualize the entities and relationships in a database."
+      },
+      {
+        "text": "Which type of database system allows data to be stored in multiple locations and accessed globally?",
+        "options": ["A. Centralized database", "B. Distributed database", "C. Hierarchical database", "D. Object-oriented database"],
+        "correctAnswer": "B. Distributed database",
+        "explanation": "Distributed databases store data across multiple locations and allow users to access it globally."
+      },
+      {
+        "text": "Which of the following best describes a schema in a database?",
+        "options": ["A. A database index", "B. A structured framework or blueprint of the database", "C. A row in a table", "D. A user query"],
+        "correctAnswer": "B. A structured framework or blueprint of the database",
+        "explanation": "A schema defines the structure of a database, including tables, fields, and relationships."
+      },
+      {
+        "text": "Which of the following is an example of a non-relational database?",
+        "options": ["A. MongoDB", "B. MySQL", "C. Oracle Database", "D. PostgreSQL"],
+        "correctAnswer": "A. MongoDB",
+        "explanation": "MongoDB is a non-relational, document-based NoSQL database."
+      },
+      {
+        "text": "True or False: SQL databases are well-suited for complex transactions and maintaining data integrity.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "SQL databases are designed to handle complex transactions and maintain data integrity with ACID properties."
+      },
+      {
+        "text": "What is normalization in the context of databases?",
+        "options": ["A. A process to create duplicate records", "B. A process to increase redundancy", "C. A process to organize data and reduce redundancy", "D. A process to delete data"],
+        "correctAnswer": "C. A process to organize data and reduce redundancy",
+        "explanation": "Normalization is a process used to organize data within a database to minimize redundancy and improve integrity."
+      },
+      {
+        "text": "Which of the following is NOT a type of database relationship?",
+        "options": ["A. One-to-One", "B. One-to-Many", "C. Many-to-Many", "D. One-to-None"],
+        "correctAnswer": "D. One-to-None",
+        "explanation": "One-to-None is not a type of database relationship. The valid relationships are One-to-One, One-to-Many, and Many-to-Many."
+      },
+      {
+        "text": "True or False: A database index improves the speed of data retrieval operations.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Indexes improve the speed of data retrieval by allowing faster access to rows in a table."
+      },
+      {
+        "text": "Which type of database table relationship allows a single record in one table to be linked to multiple records in another table?",
+        "options": ["A. One-to-One", "B. One-to-Many", "C. Many-to-Many", "D. Self-referencing"],
+        "correctAnswer": "B. One-to-Many",
+        "explanation": "In a One-to-Many relationship, a single record in one table can be linked to multiple records in another table."
+      },
+      {
+        "text": "What is the main advantage of using a relational database?",
+        "options": ["A. Limited data storage", "B. Easy to integrate multimedia", "C. Data integrity and structured relationships", "D. No need for schemas"],
+        "correctAnswer": "C. Data integrity and structured relationships",
+        "explanation": "Relational databases provide data integrity and support structured relationships between tables."
+      },
+      {
+        "text": "Which of the following is a key feature of the ACID properties in databases?",
+        "options": ["A. Automation", "B. Consistency", "C. Deletion", "D. Isolation"],
+        "correctAnswer": "B. Consistency",
+        "explanation": "ACID properties (Atomicity, Consistency, Isolation, Durability) ensure reliable database transactions."
+      },
+      {
+        "text": "True or False: A trigger in a database is a stored procedure that automatically executes in response to certain events.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Triggers are stored procedures that execute automatically in response to specific events, such as updates or inserts."
+      },
+      {
+        "text": "Which of the following is a NoSQL database that is commonly used for storing large-scale data?",
+        "options": ["A. SQL Server", "B. MongoDB", "C. SQLite", "D. PostgreSQL"],
+        "correctAnswer": "B. MongoDB",
+        "explanation": "MongoDB is a NoSQL database that is used for storing and managing large-scale data."
+      },
+      {
+        "text": "Which of the following best describes a data mart?",
+        "options": ["A. A temporary data storage area", "B. A subset of a data warehouse", "C. A data sorting algorithm", "D. A database management system"],
+        "correctAnswer": "B. A subset of a data warehouse",
+        "explanation": "A data mart is a subset of a data warehouse, usually focused on a specific business line or team."
+      },
+      {
+        "text": "True or False: A view in a database is a virtual table that is based on the result of a query.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "A view is a virtual table that displays data from one or more tables based on a specific query."
+      },
+      {
+        "text": "Which of the following is used to uniquely identify each row in a database table?",
+        "options": ["A. Attribute", "B. Index", "C. Primary Key", "D. Foreign Key"],
+        "correctAnswer": "C. Primary Key",
+        "explanation": "A primary key uniquely identifies each row in a table and prevents duplicate records."
+      },
+      {
+        "text": "Which type of query retrieves data from one or more tables in a database?",
+        "options": ["A. Update Query", "B. Delete Query", "C. Select Query", "D. Insert Query"],
+        "correctAnswer": "C. Select Query",
+        "explanation": "Select queries are used to retrieve and display data from one or more tables in a database."
+      },
+      {
+        "text": "True or False: An SQL injection attack involves inserting malicious SQL code into a query to manipulate the database.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "SQL injection attacks involve inserting malicious SQL code into a query to manipulate or access unauthorized data."
+      },
+      {
+        "text": "Which of the following statements removes all records from a table without deleting the table itself?",
+        "options": ["A. DELETE", "B. DROP", "C. TRUNCATE", "D. SELECT"],
+        "correctAnswer": "C. TRUNCATE",
+        "explanation": "The TRUNCATE statement removes all records from a table but retains the table structure."
+      },
+      {
+        "text": "Which of the following is NOT a type of database?",
+        "options": ["A. Hierarchical", "B. Relational", "C. Distributed", "D. PDF Database"],
+        "correctAnswer": "D. PDF Database",
+        "explanation": "There is no such thing as a PDF database. Valid types include hierarchical, relational, and distributed databases."
+      },
+      {
+        "text": "Which of the following commands is used to add a new record to a database table?",
+        "options": ["A. SELECT", "B. INSERT", "C. UPDATE", "D. DELETE"],
+        "correctAnswer": "B. INSERT",
+        "explanation": "The INSERT statement adds a new record to a database table."
+      },
+      {
+        "text": "True or False: A database view can be used to simplify complex queries.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Views can be used to simplify complex queries by presenting data in a more readable format."
+      },
+      {
+        "text": "Which of the following is a type of join that returns all records when there is a match in both tables?",
+        "options": ["A. Inner Join", "B. Outer Join", "C. Cross Join", "D. Self Join"],
+        "correctAnswer": "A. Inner Join",
+        "explanation": "An inner join returns only the records that have matching values in both tables."
+      },
+      {
+        "text": "What is a primary key constraint used for?",
+        "options": ["A. To allow duplicate records", "B. To uniquely identify each row in a table", "C. To delete records", "D. To format data"],
+        "correctAnswer": "B. To uniquely identify each row in a table",
+        "explanation": "A primary key constraint ensures that each row in a table is unique and prevents duplicate records."
+      },
+      {
+        "text": "True or False: A foreign key in one table references a primary key in another table.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "A foreign key in one table references the primary key in another table to establish a relationship between the tables."
+      },
+      {
+        "text": "Which of the following describes a unique constraint in a database?",
+        "options": ["A. It allows only one record in the table", "B. It enforces the uniqueness of a column or combination of columns", "C. It restricts the length of a string", "D. It prevents records from being updated"],
+        "correctAnswer": "B. It enforces the uniqueness of a column or combination of columns",
+        "explanation": "A unique constraint ensures that all values in a column or combination of columns are unique."
+      },
+      {
+        "text": "Which of the following is used to link two or more tables together based on a related column?",
+        "options": ["A. Join", "B. Query", "C. View", "D. Index"],
+        "correctAnswer": "A. Join",
+        "explanation": "Joins are used to link tables together based on a related column to retrieve data from multiple tables."
+      },
+      {
+        "text": "Which of the following is used to enforce referential integrity between two tables?",
+        "options": ["A. Primary Key", "B. Foreign Key", "C. Index", "D. Unique Key"],
+        "correctAnswer": "B. Foreign Key",
+        "explanation": "A foreign key is used to enforce referential integrity between two tables by linking a primary key in one table to a column in another."
+      },
+      {
+        "text": "Which of the following statements is used to modify existing records in a database table?",
+        "options": ["A. SELECT", "B. INSERT", "C. UPDATE", "D. DELETE"],
+        "correctAnswer": "C. UPDATE",
+        "explanation": "The UPDATE statement is used to modify existing records in a database table."
+      }
+    ]
+  }
+  

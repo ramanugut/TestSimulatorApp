@@ -1,0 +1,180 @@
+{
+    "testName": "ICT1541 Chapter 6",
+    "questions": [
+      {
+        "text": "Which component is considered the 'brain' of the computer?",
+        "options": ["A. Hard Drive", "B. RAM", "C. CPU", "D. Power Supply"],
+        "correctAnswer": "C. CPU",
+        "explanation": "The CPU (Central Processing Unit) is known as the brain of the computer as it performs most of the processing."
+      },
+      {
+        "text": "True or False: RAM is a type of temporary storage that is erased when power is lost.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "RAM (Random Access Memory) is volatile memory, which means it loses its data when the power is turned off."
+      },
+      {
+        "text": "What type of memory stores permanent data that cannot be easily modified?",
+        "options": ["A. ROM", "B. RAM", "C. Cache Memory", "D. Virtual Memory"],
+        "correctAnswer": "A. ROM",
+        "explanation": "ROM (Read-Only Memory) stores data permanently and is used for firmware."
+      },
+      {
+        "text": "Which part of the CPU performs arithmetic and logical operations?",
+        "options": ["A. Control Unit", "B. ALU", "C. RAM", "D. Cache"],
+        "correctAnswer": "B. ALU",
+        "explanation": "The Arithmetic Logic Unit (ALU) performs arithmetic and logical operations in the CPU."
+      },
+      {
+        "text": "Which type of memory is used to increase the speed of data access for frequently used instructions?",
+        "options": ["A. RAM", "B. ROM", "C. Cache Memory", "D. Hard Disk"],
+        "correctAnswer": "C. Cache Memory",
+        "explanation": "Cache memory stores frequently accessed data to improve processing speed."
+      },
+      {
+        "text": "What is a system bus?",
+        "options": ["A. A physical cable", "B. A network device", "C. A pathway for data transmission inside a computer", "D. A type of power supply"],
+        "correctAnswer": "C. A pathway for data transmission inside a computer",
+        "explanation": "A system bus is a pathway that transfers data between components inside the computer."
+      },
+      {
+        "text": "True or False: The motherboard is the main circuit board in a computer.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "The motherboard is the primary circuit board that holds the CPU, memory, and other essential components."
+      },
+      {
+        "text": "Which component provides the main interface for connecting peripherals to the computer?",
+        "options": ["A. CPU", "B. RAM", "C. Ports", "D. Cache"],
+        "correctAnswer": "C. Ports",
+        "explanation": "Ports, such as USB and HDMI, provide interfaces for connecting external devices."
+      },
+      {
+        "text": "What is the primary function of a power supply unit in a desktop computer?",
+        "options": ["A. To store data", "B. To cool the system", "C. To convert AC power to DC power", "D. To connect to the network"],
+        "correctAnswer": "C. To convert AC power to DC power",
+        "explanation": "The power supply converts AC power from the outlet to the DC power required by the computer components."
+      },
+      {
+        "text": "Which memory type is used by the CPU to store data it is currently processing?",
+        "options": ["A. RAM", "B. ROM", "C. Cache Memory", "D. Virtual Memory"],
+        "correctAnswer": "A. RAM",
+        "explanation": "RAM (Random Access Memory) temporarily holds data and programs that the CPU is currently using."
+      },
+      {
+        "text": "True or False: Virtual memory is a section of a hard drive that is used as an extension of RAM.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Virtual memory uses a portion of the hard drive to extend the capacity of RAM."
+      },
+      {
+        "text": "Which of the following devices is used to cool the internal components of a computer?",
+        "options": ["A. Hard Drive", "B. CPU", "C. Fan", "D. RAM"],
+        "correctAnswer": "C. Fan",
+        "explanation": "Cooling fans help regulate the temperature of the internal components to prevent overheating."
+      },
+      {
+        "text": "What is the role of a heat sink?",
+        "options": ["A. To store data", "B. To process instructions", "C. To dissipate heat from components", "D. To increase storage capacity"],
+        "correctAnswer": "C. To dissipate heat from components",
+        "explanation": "A heat sink absorbs and dissipates heat from components like the CPU to keep them cool."
+      },
+      {
+        "text": "Which port is used for high-definition video and audio transmission to monitors?",
+        "options": ["A. USB", "B. HDMI", "C. Serial Port", "D. Ethernet"],
+        "correctAnswer": "B. HDMI",
+        "explanation": "HDMI (High-Definition Multimedia Interface) is used for transmitting high-definition video and audio."
+      },
+      {
+        "text": "What does BIOS stand for?",
+        "options": ["A. Basic Input Output System", "B. Binary Input Output System", "C. Base Integrated Operating System", "D. Binary Integrated Operating System"],
+        "correctAnswer": "A. Basic Input Output System",
+        "explanation": "BIOS is the Basic Input Output System that initializes hardware during the booting process."
+      },
+      {
+        "text": "True or False: Flash memory is used to store BIOS settings.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Flash memory is used to store BIOS settings as it retains data without power."
+      },
+      {
+        "text": "Which of the following is an example of non-volatile memory?",
+        "options": ["A. RAM", "B. Cache Memory", "C. ROM", "D. Register"],
+        "correctAnswer": "C. ROM",
+        "explanation": "ROM (Read-Only Memory) retains its contents even when the power is turned off."
+      },
+      {
+        "text": "What is the function of a network interface card (NIC)?",
+        "options": ["A. To process data", "B. To manage files", "C. To connect to a network", "D. To perform calculations"],
+        "correctAnswer": "C. To connect to a network",
+        "explanation": "A NIC (Network Interface Card) enables a computer to connect to a network."
+      },
+      {
+        "text": "What type of memory is used to store the operating system and system files required to boot up the computer?",
+        "options": ["A. ROM", "B. RAM", "C. Cache Memory", "D. Virtual Memory"],
+        "correctAnswer": "A. ROM",
+        "explanation": "ROM (Read-Only Memory) stores the firmware, which includes the operating system and boot files."
+      },
+      {
+        "text": "Which of the following is NOT a type of bus found in computers?",
+        "options": ["A. Data Bus", "B. Address Bus", "C. Control Bus", "D. Heat Sink Bus"],
+        "correctAnswer": "D. Heat Sink Bus",
+        "explanation": "There is no such thing as a Heat Sink Bus; the other three are types of buses used for data transfer in computers."
+      },
+      {
+        "text": "What is the purpose of a surge protector?",
+        "options": ["A. To provide extra memory", "B. To increase processor speed", "C. To protect against power surges", "D. To enhance graphics performance"],
+        "correctAnswer": "C. To protect against power surges",
+        "explanation": "Surge protectors prevent damage to electronic devices from sudden power spikes."
+      },
+      {
+        "text": "True or False: The motherboard is also known as the system board.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "The motherboard is commonly referred to as the system board as it holds the primary components."
+      },
+      {
+        "text": "Which of the following is the most common type of port used for external devices?",
+        "options": ["A. Serial Port", "B. HDMI Port", "C. USB Port", "D. Parallel Port"],
+        "correctAnswer": "C. USB Port",
+        "explanation": "USB (Universal Serial Bus) ports are the most common for connecting external devices like keyboards and mice."
+      },
+      {
+        "text": "Which component is responsible for holding the instructions and data currently being processed by the CPU?",
+        "options": ["A. Hard Disk", "B. ROM", "C. RAM", "D. USB"],
+        "correctAnswer": "C. RAM",
+        "explanation": "RAM (Random Access Memory) temporarily holds data and instructions that the CPU is currently processing."
+      },
+      {
+        "text": "What does the term 'bit' stand for?",
+        "options": ["A. Binary Digit", "B. Byte Information Technology", "C. Binary Input", "D. Bitrate Indicator"],
+        "correctAnswer": "A. Binary Digit",
+        "explanation": "Bit stands for Binary Digit, the smallest unit of data in computing, representing either a 0 or a 1."
+      },
+      {
+        "text": "True or False: A graphics card is an example of an adapter card that enhances the visual output of a computer.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Graphics cards are adapter cards that enhance a computer's ability to render graphics and display visuals."
+      },
+      {
+        "text": "What is a USB hub used for?",
+        "options": ["A. To store files", "B. To expand the number of USB ports available", "C. To connect to a Wi-Fi network", "D. To increase memory"],
+        "correctAnswer": "B. To expand the number of USB ports available",
+        "explanation": "A USB hub allows users to connect multiple devices to a single USB port by providing additional ports."
+      },
+      {
+        "text": "Which of the following memory types is known for its high-speed access and is located within the CPU?",
+        "options": ["A. RAM", "B. ROM", "C. Cache Memory", "D. Hard Disk"],
+        "correctAnswer": "C. Cache Memory",
+        "explanation": "Cache memory is a small, high-speed memory located inside the CPU to improve data access time."
+      },
+      {
+        "text": "Which of the following is NOT a hardware component?",
+        "options": ["A. RAM", "B. CPU", "C. ROM", "D. Operating System"],
+        "correctAnswer": "D. Operating System",
+        "explanation": "The operating system is a software component, while RAM, CPU, and ROM are hardware components."
+      }
+    ]
+  }
+  

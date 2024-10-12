@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Test Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include the Roboto font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+</head>
+<body>
+    <!-- Floating Header -->
+    <div id="floating-header">
+        <div id="floating-timer">Time Remaining: <span id="floating-time">00:00</span></div>
+        <div id="floating-progress">
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="progress-text">0%</div>
+        </div>
+        <!-- Stats Dropdown -->
+        <div id="stats-dropdown" class="dropdown">
+            <button class="dropbtn">Today's Stats</button>
+            <div id="stats-content" class="dropdown-content">
+                <!-- Stats will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Exam Test Application</h1>
+
+            <!-- Timer Input -->
+            <div class="timer-container">
+                <label for="timer-input">Set Timer (minutes):</label>
+                <input type="number" id="timer-input" value="30">
+                <!-- Start Test Button -->
+                <button id="start-test">Start Test</button>
+                <!-- Pause Timer Button -->
+                <button id="pause-timer">Pause Timer</button>
+            </div>
+
+            <!-- Pass Mark Input -->
+            <div class="pass-mark-container">
+                <label for="pass-mark-input">Set Pass Mark (%):</label>
+                <input type="number" id="pass-mark-input" value="50">
+            </div>
+
+            <!-- Study Mode Toggle -->
+            <div class="study-mode-container">
+                <label for="study-mode-toggle">Study Mode:</label>
+                <input type="checkbox" id="study-mode-toggle">
+            </div>
+
+            <!-- Test Selection Dropdown -->
+            <div class="test-selection">
+                <label for="test-select">Select Test:</label>
+                <select id="test-select">
+                    <!-- Options will be dynamically inserted here by JavaScript -->
+                </select>
+            </div>
+
+            <!-- Dark Mode Button -->
+            <div class="dark-mode-container">
+                <button id="dark-mode-toggle">Toggle Dark Mode</button>
+            </div>
+        </header>
+
+        <!-- Questions Container -->
+        <main id="questions-container">
+            <!-- Questions will be dynamically inserted here using JavaScript -->
+        </main>
+
+        <!-- Pagination Controls -->
+        <div id="pagination-controls" class="hidden">
+            <button id="prev-page">Previous</button>
+            <span id="page-info"></span>
+            <button id="next-page">Next</button>
+        </div>
+
+        <!-- Score Container -->
+        <div id="score-container" class="hidden" style="display: none;">
+            <h2>Your Score: <span id="score"></span></h2>
+            <p id="result-message"></p>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div id="floating-actions">
+        <button id="submit-test">Submit Test</button>
+        <button id="reset-test">Reset Test</button>
+        <button id="download-results">Download Results as PDF</button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">&#8679;</button>
+
+    <!-- Link the JavaScript file -->
+    <script src="script.js"></script>
+    <!-- Load jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</body>
+</html>

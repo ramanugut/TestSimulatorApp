@@ -1,0 +1,210 @@
+{
+    "testName": "ICT1541 Chapter 12",
+    "questions": [
+      {
+        "text": "Which of the following best defines artificial intelligence (AI)?",
+        "options": ["A. The ability of computers to perform tasks that require human intelligence", "B. A software that prevents malware", "C. A programming language", "D. A type of database"],
+        "correctAnswer": "A. The ability of computers to perform tasks that require human intelligence",
+        "explanation": "AI refers to the capability of machines to perform tasks that typically require human intelligence, such as learning, problem-solving, and decision-making."
+      },
+      {
+        "text": "True or False: Machine learning is a subset of artificial intelligence.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Machine learning is a subset of AI that enables machines to learn from data and improve over time without being explicitly programmed."
+      },
+      {
+        "text": "Which of the following is an example of AI application?",
+        "options": ["A. Word processing", "B. Speech recognition", "C. Spreadsheet software", "D. Text formatting"],
+        "correctAnswer": "B. Speech recognition",
+        "explanation": "Speech recognition, like that used in virtual assistants (e.g., Siri, Alexa), is an example of AI technology."
+      },
+      {
+        "text": "Which type of AI simulates human conversation using text or speech?",
+        "options": ["A. Expert system", "B. Neural network", "C. Chatbot", "D. Decision tree"],
+        "correctAnswer": "C. Chatbot",
+        "explanation": "A chatbot is an AI application designed to simulate human conversation using text or speech."
+      },
+      {
+        "text": "Which of the following is a branch of AI focused on creating systems that learn from data?",
+        "options": ["A. Programming", "B. Hardware design", "C. Machine learning", "D. Database management"],
+        "correctAnswer": "C. Machine learning",
+        "explanation": "Machine learning is a branch of AI focused on developing systems that can learn from and make predictions based on data."
+      },
+      {
+        "text": "What does NLP stand for in the context of AI?",
+        "options": ["A. Neural Linguistic Programming", "B. Natural Language Processing", "C. Network Language Protocol", "D. Neural Linkage Pathway"],
+        "correctAnswer": "B. Natural Language Processing",
+        "explanation": "NLP stands for Natural Language Processing and involves the interaction between computers and human languages."
+      },
+      {
+        "text": "True or False: A neural network is a series of algorithms that mimic the operations of a human brain.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Neural networks are a series of algorithms designed to recognize patterns and mimic the way a human brain processes information."
+      },
+      {
+        "text": "Which of the following is NOT a common application of AI in everyday technology?",
+        "options": ["A. Digital assistants", "B. Search engines", "C. Word processors", "D. Image recognition"],
+        "correctAnswer": "C. Word processors",
+        "explanation": "Word processors are not an AI application; AI is commonly used in digital assistants, search engines, and image recognition."
+      },
+      {
+        "text": "Which of the following is a framework for building machine learning models?",
+        "options": ["A. TensorFlow", "B. Adobe Photoshop", "C. Microsoft Excel", "D. Google Docs"],
+        "correctAnswer": "A. TensorFlow",
+        "explanation": "TensorFlow is an open-source framework for building machine learning models and deep learning applications."
+      },
+      {
+        "text": "What is a robot in the context of AI?",
+        "options": ["A. A physical machine that performs automated tasks", "B. A software bug", "C. A type of programming language", "D. A method of encryption"],
+        "correctAnswer": "A. A physical machine that performs automated tasks",
+        "explanation": "Robots are machines that can perform tasks automatically, often controlled by AI or programmed logic."
+      },
+      {
+        "text": "True or False: Deep learning is a subset of machine learning focused on neural networks with many layers.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Deep learning is a subset of machine learning that uses neural networks with multiple layers to learn from data."
+      },
+      {
+        "text": "Which of the following AI techniques is used to find patterns in large datasets?",
+        "options": ["A. Data mining", "B. Data warehousing", "C. Data formatting", "D. Data deletion"],
+        "correctAnswer": "A. Data mining",
+        "explanation": "Data mining is the process of finding patterns, correlations, and anomalies within large datasets."
+      },
+      {
+        "text": "What is the primary goal of using expert systems in business?",
+        "options": ["A. To replace human workers", "B. To make decisions based on expert knowledge", "C. To compile code", "D. To create images"],
+        "correctAnswer": "B. To make decisions based on expert knowledge",
+        "explanation": "Expert systems use expert knowledge to make decisions and solve complex problems in business environments."
+      },
+      {
+        "text": "Which of the following is NOT a component of a neural network?",
+        "options": ["A. Neurons", "B. Layers", "C. Axons", "D. Weights"],
+        "correctAnswer": "C. Axons",
+        "explanation": "Neural networks consist of neurons, layers, and weights, but axons are not part of neural networks—they are part of biological neural systems."
+      },
+      {
+        "text": "True or False: Supervised learning uses labeled data to train AI models.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Supervised learning involves using labeled data to train models, where the input-output pairs are known."
+      },
+      {
+        "text": "Which type of AI learning involves an agent taking actions to maximize a reward?",
+        "options": ["A. Supervised learning", "B. Unsupervised learning", "C. Reinforcement learning", "D. Data mining"],
+        "correctAnswer": "C. Reinforcement learning",
+        "explanation": "Reinforcement learning involves an agent learning to take actions in an environment to maximize cumulative rewards."
+      },
+      {
+        "text": "Which of the following is a commonly used programming language in AI development?",
+        "options": ["A. JavaScript", "B. Python", "C. HTML", "D. CSS"],
+        "correctAnswer": "B. Python",
+        "explanation": "Python is widely used in AI development due to its simplicity and the availability of various AI and machine learning libraries."
+      },
+      {
+        "text": "What does IoT stand for?",
+        "options": ["A. Internet of Technology", "B. Internet of Things", "C. Information of Technology", "D. Integration of Things"],
+        "correctAnswer": "B. Internet of Things",
+        "explanation": "IoT stands for Internet of Things, which refers to the network of physical devices connected to the Internet to collect and exchange data."
+      },
+      {
+        "text": "True or False: IoT devices can communicate with each other over the Internet.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "IoT devices are designed to communicate and interact with each other over the Internet."
+      },
+      {
+        "text": "Which of the following is an example of an IoT device?",
+        "options": ["A. Smart thermostat", "B. Spreadsheet software", "C. Graphic design tool", "D. Database management system"],
+        "correctAnswer": "A. Smart thermostat",
+        "explanation": "A smart thermostat is an IoT device that can be controlled remotely and adjusts the temperature based on user preferences."
+      },
+      {
+        "text": "Which of the following is a benefit of IoT technology?",
+        "options": ["A. Increased device management complexity", "B. Enhanced automation and data-driven decision making", "C. Reduced connectivity", "D. Limited scalability"],
+        "correctAnswer": "B. Enhanced automation and data-driven decision making",
+        "explanation": "IoT technology enhances automation and enables data-driven decision making through real-time data collection and analysis."
+      },
+      {
+        "text": "What is a smart home?",
+        "options": ["A. A home that has a fast Internet connection", "B. A home equipped with IoT devices for automation and control", "C. A home with solar panels", "D. A home located in a city"],
+        "correctAnswer": "B. A home equipped with IoT devices for automation and control",
+        "explanation": "A smart home is equipped with IoT devices, allowing automation and remote control of lighting, heating, security, and other systems."
+      },
+      {
+        "text": "True or False: Wearable devices like fitness trackers are considered part of the Internet of Things.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Wearable devices like fitness trackers are part of the IoT, as they collect and transmit data over the Internet."
+      },
+      {
+        "text": "Which of the following IoT applications is used to monitor and control industrial equipment?",
+        "options": ["A. Smart grid", "B. Industrial IoT (IIoT)", "C. Smart city", "D. E-commerce"],
+        "correctAnswer": "B. Industrial IoT (IIoT)",
+        "explanation": "Industrial IoT (IIoT) is used to monitor and control industrial equipment, improving efficiency and reducing downtime."
+      },
+      {
+        "text": "Which protocol is commonly used for communication between IoT devices?",
+        "options": ["A. HTTP", "B. MQTT", "C. FTP", "D. SMTP"],
+        "correctAnswer": "B. MQTT",
+        "explanation": "MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used for communication between IoT devices."
+      },
+      {
+        "text": "True or False: Edge computing processes data close to where it is generated, reducing latency and bandwidth use.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Edge computing processes data near its source, reducing the need to transmit large amounts of data to central servers."
+      },
+      {
+        "text": "Which of the following is a key challenge associated with IoT security?",
+        "options": ["A. Increased battery life", "B. Secure communication", "C. Data privacy and device vulnerabilities", "D. Enhanced processing power"],
+        "correctAnswer": "C. Data privacy and device vulnerabilities",
+        "explanation": "Data privacy and vulnerabilities in IoT devices are key security challenges due to the vast number of connected devices and potential attack vectors."
+      },
+      {
+        "text": "What is a smart city?",
+        "options": ["A. A city with a high population density", "B. A city that uses IoT technology to manage resources and services", "C. A city with many computers", "D. A city without pollution"],
+        "correctAnswer": "B. A city that uses IoT technology to manage resources and services",
+        "explanation": "A smart city uses IoT technology to efficiently manage resources, services, and infrastructure such as transportation, waste, and utilities."
+      },
+      {
+        "text": "True or False: AI and IoT are unrelated technologies.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "AI and IoT are often integrated, with AI providing the intelligence needed to process and analyze the data collected by IoT devices."
+      },
+      {
+        "text": "Which of the following AI techniques is used to analyze and interpret the meaning of human language?",
+        "options": ["A. Data mining", "B. Image processing", "C. Natural Language Processing (NLP)", "D. Genetic algorithms"],
+        "correctAnswer": "C. Natural Language Processing (NLP)",
+        "explanation": "Natural Language Processing (NLP) is used to analyze, understand, and interpret human language in text and speech."
+      },
+      {
+        "text": "Which of the following best describes the term 'big data'?",
+        "options": ["A. Small datasets", "B. Structured and unstructured data too large to be processed by traditional methods", "C. A type of operating system", "D. A programming language"],
+        "correctAnswer": "B. Structured and unstructured data too large to be processed by traditional methods",
+        "explanation": "Big data refers to large volumes of structured and unstructured data that require advanced processing techniques."
+      },
+      {
+        "text": "True or False: A neural network consists of layers of interconnected nodes or neurons.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Neural networks are composed of layers of interconnected nodes (neurons) that process and transmit information."
+      },
+      {
+        "text": "Which of the following is a key benefit of using AI in healthcare?",
+        "options": ["A. Slower diagnosis", "B. Higher costs", "C. Reduced error rates and improved patient care", "D. Decreased use of data"],
+        "correctAnswer": "C. Reduced error rates and improved patient care",
+        "explanation": "AI in healthcare can reduce error rates, enhance diagnostic accuracy, and improve patient care through data analysis and predictive analytics."
+      },
+      {
+        "text": "Which of the following IoT applications is used to monitor agricultural conditions?",
+        "options": ["A. Smart home", "B. Precision agriculture", "C. Smart city", "D. Healthcare IoT"],
+        "correctAnswer": "B. Precision agriculture",
+        "explanation": "Precision agriculture uses IoT sensors to monitor soil conditions, weather, and crop health to optimize farming practices."
+      }
+    ]
+  }
+  

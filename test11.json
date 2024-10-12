@@ -1,0 +1,210 @@
+{
+    "testName": "ICT1541 Chapter 8",
+    "questions": [
+      {
+        "text": "Which of the following is a type of storage device that uses magnetic disks to store data?",
+        "options": ["A. Solid-state drive", "B. Hard disk drive", "C. Optical disc", "D. USB flash drive"],
+        "correctAnswer": "B. Hard disk drive",
+        "explanation": "Hard disk drives use magnetic disks to store data and are commonly found in older computer systems."
+      },
+      {
+        "text": "True or False: SSDs (Solid-State Drives) have no moving parts and are generally faster than HDDs.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "SSDs are faster and more reliable than HDDs because they have no moving parts and use flash memory."
+      },
+      {
+        "text": "Which storage medium uses lasers to read and write data?",
+        "options": ["A. Hard disk", "B. SSD", "C. Optical disc", "D. RAM"],
+        "correctAnswer": "C. Optical disc",
+        "explanation": "Optical discs, like CDs and DVDs, use lasers to read and write data onto the disc surface."
+      },
+      {
+        "text": "What does RAID stand for in the context of storage?",
+        "options": ["A. Random Access Internal Disk", "B. Redundant Array of Independent Disks", "C. Read Access Information Data", "D. Real Array Input Device"],
+        "correctAnswer": "B. Redundant Array of Independent Disks",
+        "explanation": "RAID is a method of combining multiple hard drives for increased performance and redundancy."
+      },
+      {
+        "text": "Which of the following is a type of volatile memory?",
+        "options": ["A. Hard disk", "B. RAM", "C. Flash drive", "D. CD-ROM"],
+        "correctAnswer": "B. RAM",
+        "explanation": "RAM (Random Access Memory) is volatile memory that loses its data when power is turned off."
+      },
+      {
+        "text": "Which type of optical disc is used for high-definition video storage?",
+        "options": ["A. CD", "B. DVD", "C. Blu-ray", "D. VHS"],
+        "correctAnswer": "C. Blu-ray",
+        "explanation": "Blu-ray discs have a higher capacity and are used for storing high-definition video content."
+      },
+      {
+        "text": "True or False: A USB flash drive is a type of removable storage that uses flash memory.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "USB flash drives are portable storage devices that use flash memory to store data."
+      },
+      {
+        "text": "What is the primary benefit of using cloud storage?",
+        "options": ["A. Increased processing speed", "B. Reduced power consumption", "C. Access from any device with an internet connection", "D. Enhanced graphics performance"],
+        "correctAnswer": "C. Access from any device with an internet connection",
+        "explanation": "Cloud storage allows users to access their files from any device connected to the internet."
+      },
+      {
+        "text": "Which of the following best describes an external hard drive?",
+        "options": ["A. A drive that is built into the computer", "B. A portable storage device connected via USB or other ports", "C. A drive used to store only temporary data", "D. A drive that uses optical technology"],
+        "correctAnswer": "B. A portable storage device connected via USB or other ports",
+        "explanation": "External hard drives are portable storage devices that connect to computers via USB or other interfaces."
+      },
+      {
+        "text": "What does the term 'capacity' refer to in storage devices?",
+        "options": ["A. The physical size of the device", "B. The number of connections", "C. The amount of data a device can hold", "D. The speed of data transfer"],
+        "correctAnswer": "C. The amount of data a device can hold",
+        "explanation": "Capacity refers to the total amount of data that a storage device can store."
+      },
+      {
+        "text": "Which of the following storage devices typically has the highest capacity?",
+        "options": ["A. USB flash drive", "B. CD", "C. SSD", "D. Hard disk drive"],
+        "correctAnswer": "D. Hard disk drive",
+        "explanation": "Hard disk drives (HDDs) usually offer higher storage capacities compared to other types of storage."
+      },
+      {
+        "text": "True or False: Formatting a disk removes all data permanently and cannot be undone.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "While formatting removes data from the disk, data recovery tools can sometimes retrieve the information unless it is overwritten."
+      },
+      {
+        "text": "Which of the following is an example of an optical storage device?",
+        "options": ["A. SSD", "B. RAM", "C. Blu-ray Disc", "D. Flash Drive"],
+        "correctAnswer": "C. Blu-ray Disc",
+        "explanation": "Blu-ray Discs are optical storage devices that use laser technology for reading and writing data."
+      },
+      {
+        "text": "Which type of storage is used for long-term data storage and backups?",
+        "options": ["A. RAM", "B. ROM", "C. Tape Drive", "D. CPU Cache"],
+        "correctAnswer": "C. Tape Drive",
+        "explanation": "Tape drives are used for long-term data storage and backups due to their high capacity and durability."
+      },
+      {
+        "text": "Which of the following is a drawback of using a hard disk drive compared to an SSD?",
+        "options": ["A. Higher cost", "B. Higher power consumption", "C. Slower speed and mechanical parts", "D. Lower capacity"],
+        "correctAnswer": "C. Slower speed and mechanical parts",
+        "explanation": "HDDs have moving parts, making them slower and more prone to mechanical failure compared to SSDs."
+      },
+      {
+        "text": "True or False: RAID 0 provides redundancy by storing data across multiple disks.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "RAID 0 does not provide redundancy. It stripes data across multiple disks for increased speed but lacks fault tolerance."
+      },
+      {
+        "text": "What is the purpose of disk defragmentation?",
+        "options": ["A. To delete unnecessary files", "B. To rearrange fragmented data for faster access", "C. To format the disk", "D. To create backup copies of data"],
+        "correctAnswer": "B. To rearrange fragmented data for faster access",
+        "explanation": "Disk defragmentation rearranges fragmented data so that files are stored contiguously, improving access speed."
+      },
+      {
+        "text": "Which storage type uses flash memory and has no moving parts?",
+        "options": ["A. Hard Disk Drive", "B. SSD", "C. Optical Disc", "D. Tape Drive"],
+        "correctAnswer": "B. SSD",
+        "explanation": "Solid-State Drives (SSDs) use flash memory and have no moving parts, making them faster and more reliable."
+      },
+      {
+        "text": "Which of the following is NOT a type of flash memory?",
+        "options": ["A. SSD", "B. USB Drive", "C. Blu-ray Disc", "D. SD Card"],
+        "correctAnswer": "C. Blu-ray Disc",
+        "explanation": "Blu-ray Discs are optical storage media, whereas SSDs, USB Drives, and SD Cards use flash memory."
+      },
+      {
+        "text": "True or False: A hybrid drive combines the benefits of both SSDs and HDDs.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Hybrid drives combine the speed of SSDs and the storage capacity of HDDs in one device."
+      },
+      {
+        "text": "Which of the following storage devices is considered the fastest in terms of data access speed?",
+        "options": ["A. HDD", "B. SSD", "C. DVD", "D. Tape Drive"],
+        "correctAnswer": "B. SSD",
+        "explanation": "SSDs have the fastest data access speed due to their use of flash memory and lack of mechanical parts."
+      },
+      {
+        "text": "Which storage medium is often used for archival purposes due to its durability and low cost?",
+        "options": ["A. SSD", "B. RAM", "C. Tape Drive", "D. Blu-ray Disc"],
+        "correctAnswer": "C. Tape Drive",
+        "explanation": "Tape drives are durable and cost-effective, making them suitable for archival purposes."
+      },
+      {
+        "text": "Which of the following is a disadvantage of using cloud storage?",
+        "options": ["A. Accessibility", "B. Scalability", "C. Dependency on internet connection", "D. Reduced hardware requirements"],
+        "correctAnswer": "C. Dependency on internet connection",
+        "explanation": "Cloud storage relies on an internet connection, which can be a disadvantage if connectivity is not available."
+      },
+      {
+        "text": "Which of the following optical storage devices has the highest storage capacity?",
+        "options": ["A. CD", "B. DVD", "C. Blu-ray", "D. Tape Drive"],
+        "correctAnswer": "C. Blu-ray",
+        "explanation": "Blu-ray discs offer higher storage capacity compared to CDs and DVDs."
+      },
+      {
+        "text": "True or False: Tape drives are commonly used for long-term data storage and backup purposes.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Tape drives are often used for long-term data storage and backup due to their reliability and high capacity."
+      },
+      {
+        "text": "Which of the following storage devices is most commonly used in portable devices like smartphones and cameras?",
+        "options": ["A. CD", "B. SD Card", "C. Hard Disk Drive", "D. Tape Drive"],
+        "correctAnswer": "B. SD Card",
+        "explanation": "SD cards are small, portable storage devices commonly used in smartphones and cameras."
+      },
+      {
+        "text": "Which type of storage is used in most modern laptops for primary storage due to its speed and reliability?",
+        "options": ["A. Hard Disk Drive", "B. Tape Drive", "C. SSD", "D. Optical Drive"],
+        "correctAnswer": "C. SSD",
+        "explanation": "SSDs are commonly used in modern laptops for their speed, reliability, and power efficiency."
+      },
+      {
+        "text": "Which storage device is used to read and write data using laser technology?",
+        "options": ["A. Hard Disk Drive", "B. USB Flash Drive", "C. Optical Disc Drive", "D. SSD"],
+        "correctAnswer": "C. Optical Disc Drive",
+        "explanation": "Optical disc drives use laser technology to read and write data on CDs, DVDs, and Blu-ray discs."
+      },
+      {
+        "text": "True or False: Hard disk drives (HDDs) are less prone to physical damage compared to SSDs.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "HDDs have mechanical parts and are more susceptible to physical damage than SSDs, which have no moving parts."
+      },
+      {
+        "text": "Which of the following technologies is used for high-capacity data storage in cloud environments?",
+        "options": ["A. Tape Drive", "B. SSD", "C. NAS (Network Attached Storage)", "D. Optical Disc"],
+        "correctAnswer": "C. NAS (Network Attached Storage)",
+        "explanation": "NAS is used in cloud environments to provide high-capacity data storage with easy accessibility over a network."
+      },
+      {
+        "text": "Which of the following is NOT an example of a removable storage device?",
+        "options": ["A. USB Flash Drive", "B. External Hard Drive", "C. DVD", "D. RAM"],
+        "correctAnswer": "D. RAM",
+        "explanation": "RAM is not a removable storage device. It is used as temporary, volatile memory inside computers."
+      },
+      {
+        "text": "What is the purpose of an M.2 SSD?",
+        "options": ["A. To increase RAM capacity", "B. To provide compact, high-speed storage", "C. To manage network traffic", "D. To improve GPU performance"],
+        "correctAnswer": "B. To provide compact, high-speed storage",
+        "explanation": "M.2 SSDs are designed for compact, high-speed storage and are commonly used in modern laptops and desktops."
+      },
+      {
+        "text": "Which of the following is a storage device that allows data access over a network?",
+        "options": ["A. RAM", "B. SSD", "C. NAS", "D. Optical Disc"],
+        "correctAnswer": "C. NAS",
+        "explanation": "Network Attached Storage (NAS) is a storage device that allows data access over a network."
+      },
+      {
+        "text": "Which technology is used for high-speed data transfer in gaming consoles and high-end PCs?",
+        "options": ["A. SATA", "B. USB 2.0", "C. NVMe SSD", "D. DVD"],
+        "correctAnswer": "C. NVMe SSD",
+        "explanation": "NVMe (Non-Volatile Memory Express) SSDs provide high-speed data transfer, making them ideal for gaming consoles and high-end PCs."
+      }
+    ]
+  }
+  

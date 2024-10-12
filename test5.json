@@ -1,0 +1,230 @@
+{
+  "testName": "ICT1541 Module 2",
+  "questions": [
+    {
+      "text": "Which of the following accurately describes the evolution of the Internet?",
+      "options": [
+        "A. It began as a small network called ARPANET.",
+        "B. It was initially developed for e-commerce.",
+        "C. It started as a public network for consumers.",
+        "D. It evolved from the World Wide Web."
+      ],
+      "correctAnswer": "A. It began as a small network called ARPANET.",
+      "explanation": "The Internet began as ARPANET in the late 1960s, primarily used for research and communication between scientists."
+    },
+    {
+      "text": "True or False: ARPANET was the first form of the Internet.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "ARPANET was the precursor to the modern Internet, allowing multiple computers to communicate on a single network."
+    },
+    {
+      "text": "Which of these was a major goal of ARPANET's development?",
+      "options": [
+        "A. To enable commercial transactions online",
+        "B. To link military computers in case of an attack",
+        "C. To create the first email service",
+        "D. To establish the World Wide Web"
+      ],
+      "correctAnswer": "B. To link military computers in case of an attack",
+      "explanation": "ARPANET was developed to ensure communication and data sharing even if parts of the network were destroyed."
+    },
+    {
+      "text": "Which of the following best describes the role of the World Wide Web?",
+      "options": [
+        "A. It is a protocol for sending emails.",
+        "B. It is a subset of the Internet used for displaying and linking documents.",
+        "C. It is a programming language used for web development.",
+        "D. It is a type of software used for social media."
+      ],
+      "correctAnswer": "B. It is a subset of the Internet used for displaying and linking documents.",
+      "explanation": "The World Wide Web is a service of the Internet used for linking and displaying documents using web browsers."
+    },
+    {
+      "text": "True or False: The Internet and the World Wide Web are synonymous terms.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "B. False",
+      "explanation": "The Internet is the global network of computers, while the World Wide Web is a service that uses this network to display information."
+    },
+    {
+      "text": "Which of the following is a common type of broadband Internet connection?",
+      "options": [
+        "A. Dial-up",
+        "B. Satellite",
+        "C. Modem",
+        "D. Ethernet"
+      ],
+      "correctAnswer": "B. Satellite",
+      "explanation": "Satellite is a form of broadband Internet that provides high-speed connectivity to remote locations."
+    },
+    {
+      "text": "True or False: DSL (Digital Subscriber Line) uses the existing telephone network for Internet connectivity.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "DSL utilizes the existing copper telephone lines to provide broadband Internet without interrupting phone services."
+    },
+    {
+      "text": "Which broadband technology uses glass or plastic threads to transmit data as light?",
+      "options": [
+        "A. DSL",
+        "B. Fiber-optic",
+        "C. Satellite",
+        "D. Cable"
+      ],
+      "correctAnswer": "B. Fiber-optic",
+      "explanation": "Fiber-optic technology transmits data as light through glass or plastic threads, offering high-speed Internet connections."
+    },
+    {
+      "text": "What is the main advantage of fiber-optic Internet connections?",
+      "options": [
+        "A. Lower cost",
+        "B. Higher speed and reliability",
+        "C. Easier installation",
+        "D. Availability in rural areas"
+      ],
+      "correctAnswer": "B. Higher speed and reliability",
+      "explanation": "Fiber-optic connections offer higher speed and better reliability compared to other broadband technologies."
+    },
+    {
+      "text": "True or False: Cable Internet service is faster than dial-up and uses the same coaxial cables as television.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "Cable Internet is faster than dial-up and utilizes the same coaxial cables that are used for television services."
+    },
+    {
+      "text": "Which of the following is the purpose of an IP address?",
+      "options": [
+        "A. To provide a unique identifier for a device on a network",
+        "B. To act as a security key for a computer",
+        "C. To store user information",
+        "D. To connect multiple devices within a LAN"
+      ],
+      "correctAnswer": "A. To provide a unique identifier for a device on a network",
+      "explanation": "An IP address uniquely identifies each device connected to a network, enabling communication and data transfer."
+    },
+    {
+      "text": "True or False: A domain name is a textual representation of an IP address.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "Domain names are human-readable addresses that correspond to numeric IP addresses, making it easier to remember websites."
+    },
+    {
+      "text": "What is the role of a DNS server?",
+      "options": [
+        "A. To assign IP addresses to devices",
+        "B. To translate domain names into IP addresses",
+        "C. To store website data",
+        "D. To manage network security"
+      ],
+      "correctAnswer": "B. To translate domain names into IP addresses",
+      "explanation": "A DNS server translates domain names into their corresponding IP addresses, enabling browsers to locate websites."
+    },
+    {
+      "text": "Which of the following is a valid example of an IP address?",
+      "options": [
+        "A. 192.168.1.1",
+        "B. www.example.com",
+        "C. 255.255",
+        "D. user@domain"
+      ],
+      "correctAnswer": "A. 192.168.1.1",
+      "explanation": "An IP address is represented in a numeric format like 192.168.1.1, which uniquely identifies devices on a network."
+    },
+    {
+      "text": "True or False: IPv4 is the current standard for IP addresses, but it will be replaced by IPv6.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "IPv4 is currently the most widely used format for IP addresses, but it is being replaced by IPv6 due to the growing number of devices."
+    },
+    {
+      "text": "Which of the following can a web address be used for?",
+      "options": [
+        "A. To find an email address",
+        "B. To access a specific webpage",
+        "C. To identify a network printer",
+        "D. To locate a mobile device"
+      ],
+      "correctAnswer": "B. To access a specific webpage",
+      "explanation": "A web address (URL) is used to locate and access a specific webpage on the World Wide Web."
+    },
+    {
+      "text": "True or False: A search engine helps users locate information based on keywords.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "Search engines like Google or Bing help users locate information on the web based on the keywords they provide."
+    },
+    {
+      "text": "What is a URL?",
+      "options": [
+        "A. An Internet Service Provider",
+        "B. A domain name",
+        "C. A web address used to access a specific page",
+        "D. A type of broadband connection"
+      ],
+      "correctAnswer": "C. A web address used to access a specific page",
+      "explanation": "A URL (Uniform Resource Locator) is a web address that specifies the location of a resource on the Internet."
+    },
+    {
+      "text": "Which of the following is part of a URL?",
+      "options": [
+        "A. Browser",
+        "B. Domain name",
+        "C. Operating system",
+        "D. Hardware component"
+      ],
+      "correctAnswer": "B. Domain name",
+      "explanation": "A URL typically includes a domain name, which is the part that identifies the website being accessed."
+    },
+    {
+      "text": "True or False: A URL can include a file path to specify the location of a file on a server.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "A URL can include a file path to direct users to a specific file within a website or web server."
+    },
+    {
+      "text": "Which of the following types of websites allows users to connect, communicate, and share content with other users?",
+      "options": [
+        "A. Educational website",
+        "B. Online social network",
+        "C. Retail website",
+        "D. Informational website"
+      ],
+      "correctAnswer": "B. Online social network",
+      "explanation": "Online social networks such as Facebook and LinkedIn allow users to connect, communicate, and share content."
+    },
+    {
+      "text": "True or False: Informational websites are mainly used for e-commerce.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "B. False",
+      "explanation": "Informational websites are designed to provide factual information on a variety of topics and are not focused on e-commerce."
+    },
+    {
+      "text": "Which of the following types of websites is designed to help users buy and sell goods online?",
+      "options": [
+        "A. Retail website",
+        "B. Educational website",
+        "C. Online forum",
+        "D. Blog"
+      ],
+      "correctAnswer": "A. Retail website",
+      "explanation": "Retail websites like Amazon and eBay are designed specifically for buying and selling goods and services online."
+    },
+    {
+      "text": "Which type of website uses interactive applications to enable real-time communication?",
+      "options": [
+        "A. Blog",
+        "B. Online social network",
+        "C. Email website",
+        "D. Chat room"
+      ],
+      "correctAnswer": "D. Chat room",
+      "explanation": "Chat rooms are websites or applications that use interactive applications for real-time communication between users."
+    },
+    {
+      "text": "True or False: Online forums are used for real-time communication.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "B. False",
+      "explanation": "Online forums are used for asynchronous communication, allowing users to post and reply to messages over time."
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+    "testName": "ICT1511 Complete assignment 1 semester 2 2019",
+    "questions": [
+        {
+            "text": "It is often necessary to determine the exact outcome of a set of instructions in an algorithm or program. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Determining the exact outcome helps ensure the algorithm is functioning correctly, making debugging and validation easier."
+        },
+        {
+            "text": "A trace table must always be used to test the entire algorithm to ensure calculations were done correctly. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Trace tables are useful for verifying if an algorithm produces the expected results step-by-step."
+        },
+        {
+            "text": "Test data is used to determine if the program renders the correct output. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Test data helps verify the program's output against expected results."
+        },
+        {
+            "text": "A comment can be included anywhere in an algorithm. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Comments can be inserted at any point to explain the code or provide additional context."
+        },
+        {
+            "text": "Algorithms do not need names that describe the function or purpose of the algorithm. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "Descriptive names improve code readability and help in understanding the algorithm's functionality."
+        },
+        {
+            "text": "Intermediate variables may be used to assist with calculations. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Intermediate variables store temporary results, making complex calculations easier to manage."
+        },
+        {
+            "text": "When only the sequence structure is used in an algorithm, it means that the steps are processed in the order that they are given. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "The sequence structure follows a straightforward order of execution."
+        },
+        {
+            "text": "Considering the information provided, the output displayed will be 'Jason earned R 1431.30 for the week'. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "The algorithm must be evaluated to confirm if it matches the expected output."
+        },
+        {
+            "text": "Which of the following keywords indicates the mathematical operation of subtraction?",
+            "options": ["A. Combined", "B. Product of", "C. Difference", "D. Yields"],
+            "correctAnswer": "C. Difference",
+            "explanation": "The term 'difference' refers to the result of subtracting one number from another."
+        },
+        {
+            "text": "Which of the following is a valid variable name?",
+            "options": ["A. theAddressOfTheCompanyInTshwane", "B. grade&mark", "C. empName", "D. 5472"],
+            "correctAnswer": "C. empName",
+            "explanation": "Variable names must not contain special characters or start with numbers."
+        },
+
+        {
+            "text": "What will be the value of total after execution of the following statement? Assume that number = 2. total = number + 2 * number + 4 \\ (number + 1)",
+            "options": ["A. 7", "B. 8", "C. 9", "D. 13"],
+            "correctAnswer": "C. 9",
+            "explanation": "The equation simplifies to total = 2 + 2*2 + 4 \\ (2+1) = 2 + 4 + 4\\3 = 2 + 4 + 1 = 9."
+        },
+        {
+            "text": "The following statement would result in an answer of data type _______. answer = 9 ^ 2 \\ 8 + 16 * 2 / 3",
+            "options": ["A. Real", "B. Integer", "C. Boolean", "D. Character"],
+            "correctAnswer": "A. Real",
+            "explanation": "The operations involve a combination of integers and divisions, leading to a real number."
+        },
+        {
+            "text": "What is the value of x in the following equation? x = 98 / (3 + 2 ^ 2) – 11 + 96 mod 7 – 6",
+            "options": ["A. 2", "B. 6", "C. 3", "D. 5"],
+            "correctAnswer": "B. 6",
+            "explanation": "The equation simplifies to: x = 98 / (3 + 4) – 11 + 96 mod 7 – 6 = 98/7 - 11 + 5 - 6 = 14 - 11 + 5 - 6 = 2."
+        },
+        {
+            "text": "In data hierarchy, which of the following is the smallest element?",
+            "options": ["A. Database", "B. Record", "C. Character", "D. Field"],
+            "correctAnswer": "C. Character",
+            "explanation": "A character is the smallest unit of data in the hierarchy, representing a single letter, digit, or symbol."
+        },
+        {
+            "text": "What is the value of x in the following equation? x = 64 mod 29 – (3 * 7 + 28 / 4) + 19 * 8",
+            "options": ["A. 113", "B. 205", "C. 130", "D. 150"],
+            "correctAnswer": "A. 113",
+            "explanation": "The equation simplifies to: x = 64 mod 29 - (21 + 7) + 19*8 = 6 - 28 + 152 = 113."
+        },
+        {
+            "text": "Test data is used to determine if the program renders the correct output. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Test data helps verify the program's output against expected results."
+        },
+        {
+            "text": "When writing an algorithm for a calculation, the programmer needs to ensure that the calculation has been done correctly, but do not necessarily need to know the result. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "It is essential to know the result for testing and validating the algorithm."
+        },
+        {
+            "text": "Even when carefully planned and written correctly, programmers can’t assume that their algorithm is error-free. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Errors can still occur even in well-planned algorithms, making testing crucial."
+        },
+        {
+            "text": "A trace table contains a column per instruction. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "A trace table typically has columns for variables and expressions, not each instruction."
+        },
+        {
+            "text": "Considering the information provided, the output displayed will be 'The value of C is 33'. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "The result depends on the algorithm provided and needs to be evaluated."
+        },
+        {
+            "text": "Test data must include a sample of every category of correct data only. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "Test data should include incorrect data to test how the program handles errors."
+        },
+        {
+            "text": "Comments may be placed anywhere in the algorithm. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Comments can be added at any point in the code to explain or provide context."
+        },
+        {
+            "text": "Comments can contain any text you wish to include. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Comments are not executed and can include any text for documentation purposes."
+        },
+        {
+            "text": "A comment must be on a separate line as an instruction. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "Comments can be included inline, provided they do not interfere with the code."
+        },
+        {
+            "text": "Algorithms do not need names that describe the function or purpose of the algorithm. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "Descriptive names are crucial for code readability and maintenance."
+        },
+        {
+            "text": "The processing column of an IPO chart contains the algorithm. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "The processing column outlines the algorithmic steps for transforming inputs into outputs."
+        },
+        {
+            "text": "Intermediate variables may be used to assist with calculations. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Intermediate variables store temporary results, making calculations more manageable."
+        },
+        {
+            "text": "The selection structure can be a simple if statement. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Selection structures include simple 'if' statements to evaluate conditions."
+        },
+        {
+            "text": "The order of execution of logical operators can be changed using _____.",
+            "options": ["A. Parentheses", "B. Brackets", "C. Braces", "D. Quotation marks"],
+            "correctAnswer": "A. Parentheses",
+            "explanation": "Parentheses alter the normal precedence of operators in expressions."
+        },
+        {
+            "text": "In an if statement, the else clause is executed when the condition is not TRUE. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "The 'else' clause handles cases where the 'if' condition evaluates to false."
+        },
+        {
+            "text": "Expressions that compare operands are called _____.",
+            "options": ["A. Arithmetic expressions", "B. Relational expressions", "C. Logical expressions", "D. Boolean expressions"],
+            "correctAnswer": "B. Relational expressions",
+            "explanation": "Relational expressions compare two operands to yield a Boolean value."
+        },
+        {
+            "text": "All the relational operators have _____ priority.",
+            "options": ["A. Equal", "B. Different", "C. Higher", "D. Lower"],
+            "correctAnswer": "A. Equal",
+            "explanation": "Relational operators have the same priority level, regardless of the type of comparison."
+        },
+        {
+            "text": "A _____ operator joins two Boolean expressions to yield a Boolean answer.",
+            "options": ["A. Logical", "B. Arithmetic", "C. Assignment", "D. Relational"],
+            "correctAnswer": "A. Logical",
+            "explanation": "Logical operators connect Boolean expressions, such as 'AND', 'OR', and 'NOT'."
+        },
+        {
+            "text": "The NOT operator is a _____ operator, meaning it takes only one operand.",
+            "options": ["A. Binary", "B. Ternary", "C. Unary", "D. Quaternary"],
+            "correctAnswer": "C. Unary",
+            "explanation": "The NOT operator negates a single operand, making it a unary operator."
+        },
+        {
+            "text": "In computing and mathematics, the term _____ is often used to mean 'find the result'.",
+            "options": ["A. Simplify", "B. Evaluate", "C. Execute", "D. Solve"],
+            "correctAnswer": "B. Evaluate",
+            "explanation": "The term 'evaluate' refers to calculating the value of an expression."
+        },
+        {
+            "text": "When using the _____ logical operator, only one of the expressions must be True to yield True.",
+            "options": ["A. AND", "B. OR", "C. NOT", "D. XOR"],
+            "correctAnswer": "B. OR",
+            "explanation": "The OR operator returns true if at least one of the operands is true."
+        },
+        {
+            "text": "When using the _____ logical operator, both expressions must be True to yield True.",
+            "options": ["A. AND", "B. OR", "C. NOT", "D. XOR"],
+            "correctAnswer": "A. AND",
+            "explanation": "The AND operator returns true only if both operands are true."
+        },
+        {
+            "text": "The _____ clause is the part of the decision that holds the action or actions that execute when the tested condition in the decision is true.",
+            "options": ["A. if", "B. then", "C. else", "D. case"],
+            "correctAnswer": "B. then",
+            "explanation": "The 'then' clause in an if-then statement specifies what to do when the condition is true."
+        },
+
+        {
+            "text": "What is the value of x in the following equation? x = 44 mod 5 + 23 / 5 - 2 * 3",
+            "options": ["A. 2", "B. 2.6", "C. 6", "D. 7.4"],
+            "correctAnswer": "A. 2",
+            "explanation": "The equation simplifies to: x = 44 % 5 + 23 / 5 - 2 * 3 = 4 + 4.6 - 6 = 2.6."
+          },
+          {
+            "text": "What is the value of x in the following equation? x = (16 - 4 * 2) + 32 / 8 * 14 / 3",
+            "options": ["A. 26.66", "B. 42.66", "C. 42", "D. 26"],
+            "correctAnswer": "B. 42.66",
+            "explanation": "The equation simplifies to: x = (16 - 8) + 32 / 8 * 14 / 3 = 8 + 4 * 14 / 3 = 42.66."
+          },
+          {
+            "text": "Comments may be placed anywhere in the algorithm. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Comments can be added at any point in the code to explain or provide context."
+          },
+          {
+            "text": "A comment must be on a separate line as an instruction. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "Comments can be included inline, provided they do not interfere with the code."
+          },
+          {
+            "text": "The sequence structure can be used when only simple steps are required in an algorithm. True or False?",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Sequence structure means executing instructions in the order they are given."
+          },
+          {
+            "text": "The order of execution of logical operators can be changed using _____.",
+            "options": ["A. Parentheses", "B. Brackets", "C. Braces", "D. Quotation marks"],
+            "correctAnswer": "A. Parentheses",
+            "explanation": "Parentheses alter the normal precedence of operators in expressions."
+          },
+          {
+            "text": "Which control statement allows a programmer to provide different options in an algorithm?",
+            "options": ["A. If", "B. Loop", "C. Case", "D. None of the above"],
+            "correctAnswer": "A. If",
+            "explanation": "An if statement is used to provide different branches of action depending on conditions."
+          },
+          {
+            "text": "The NOT operator is a _____ operator, meaning it takes only one operand.",
+            "options": ["A. Binary", "B. Ternary", "C. Unary", "D. Quaternary"],
+            "correctAnswer": "C. Unary",
+            "explanation": "The NOT operator negates a single operand, making it a unary operator."
+          }
+    ]
+}

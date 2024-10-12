@@ -1,0 +1,1700 @@
+{
+  "testName": "ICT1511 - MOC EXAM",
+  "questions": [
+    {
+      "text": "____ are the characteristics that define an object.",
+      "options": [
+        "a. Instances",
+        "b. Attributes",
+        "c. Methods",
+        "d. Behaviors"
+      ],
+      "correctAnswer": "b. Attributes",
+      "explanation": "Attributes are characteristics that define an object in object-oriented programming."
+    },
+    {
+      "text": "_____ is a unique tag, usually a number, identifies the file within the file system.",
+      "options": [
+        "a. File name",
+        "b. File identifier",
+        "c. None of the above",
+        "d. File Type"
+      ],
+      "correctAnswer": "b. File identifier",
+      "explanation": "A file identifier is a unique tag, usually a number, that identifies the file within the file system."
+    },
+    {
+      "text": "____ Contains stored data that can be specified as input to a program when read from the file during processing.",
+      "options": [
+        "a. input File",
+        "b. Output file",
+        "c. retired file",
+        "d. serial file"
+      ],
+      "correctAnswer": "a. input File",
+      "explanation": "An input file contains stored data that can be specified as input to a program when read from the file during processing."
+    },
+    {
+      "text": "A file type can be represented by",
+      "options": [
+        "a. file name",
+        "b. file extension",
+        "c. None of the above",
+        "d. file identifier"
+      ],
+      "correctAnswer": "b. file extension",
+      "explanation": "A file type can be represented by its file extension."
+    },
+    {
+      "text": "An _____ contains stored data that can be specified as input to a program when read from the file during processing.",
+      "options": [
+        "a. input file",
+        "b. output file",
+        "c. data file",
+        "d. text file"
+      ],
+      "correctAnswer": "a. input file",
+      "explanation": "An input file contains stored data that can be specified as input to a program when read from the file during processing."
+    },
+    {
+      "text": "By using the specific system call, you can",
+      "options": [
+        "a. open the file",
+        "b. write into the file",
+        "c. all of the above",
+        "d. read the file"
+      ],
+      "correctAnswer": "c. all of the above",
+      "explanation": "System calls allow various operations such as opening, writing into, and reading a file."
+    },
+    {
+      "text": "How would you access the 10th record in the sequential file?",
+      "options": [
+        "a. none of the above",
+        "b. go straight to the record",
+        "c. You have to go through all the 9 records first",
+        "d. input into the file first"
+      ],
+      "correctAnswer": "c. You have to go through all the 9 records first",
+      "explanation": "In a sequential file, records are accessed one after another."
+    },
+    {
+      "text": "In most programming languages, before an application can use a data file, it must ____.",
+      "options": [
+        "a. open the file",
+        "b. prepare the file",
+        "c. close the file",
+        "d. read the file"
+      ],
+      "correctAnswer": "a. open the file",
+      "explanation": "Before using a data file, it must be opened by the application."
+    },
+    {
+      "text": "Mapping of files is managed by _____",
+      "options": [
+        "a. file metadata",
+        "b. file system",
+        "c. virtual memory",
+        "d. page table"
+      ],
+      "correctAnswer": "b. file system",
+      "explanation": "The file system manages the mapping of files."
+    },
+    {
+      "text": "Text files are also known as _____",
+      "options": [
+        "a. random access files",
+        "b. None of the above",
+        "c. data access files",
+        "d. sequential access files"
+      ],
+      "correctAnswer": "d. sequential access files",
+      "explanation": "Text files are typically accessed sequentially, hence known as sequential access files."
+    },
+    {
+      "text": "The characters in a text file are stored in a _____ manner, one record after another.",
+      "options": [
+        "a. fixed",
+        "b. random",
+        "c. sequential",
+        "d. direct"
+      ],
+      "correctAnswer": "c. sequential",
+      "explanation": "Characters in a text file are stored sequentially, one record after another."
+    },
+    {
+      "text": "A sub procedure is valuable because it:",
+      "options": [
+        "a. limits the number of times the code can be accessed",
+        "b. splits the logic to solve a problem into small, manageable units",
+        "c. makes code easier to maintain",
+        "d. Both a and b"
+      ],
+      "correctAnswer": "b. splits the logic to solve a problem into small, manageable units",
+      "explanation": "Sub procedures help split the logic of a program into small, manageable units, making the code easier to maintain."
+    },
+    {
+      "text": "Depending on the programming language being used, modules are also known as ____.",
+      "options": [
+        "a. subroutines, procedures, or methods",
+        "b. procedures, functions, or containers",
+        "c. tasks, functions, or methods",
+        "d. subroutines, receptacles, or methods"
+      ],
+      "correctAnswer": "a. subroutines, procedures, or methods",
+      "explanation": "Modules are often referred to as subroutines, procedures, or methods depending on the language."
+    },
+    {
+      "text": "From how many places in the code can a procedure be called?",
+      "options": [
+        "a. 0",
+        "b. 1",
+        "c. 2",
+        "d. As many times as needed"
+      ],
+      "correctAnswer": "d. As many times as needed",
+      "explanation": "Procedures can typically be called as many times as needed."
+    },
+    {
+      "text": "How many return statements are allowed in a Function Procedure?",
+      "options": [
+        "a. 1",
+        "b. 2",
+        "c. There is no limit.",
+        "d. None of the above"
+      ],
+      "correctAnswer": "a. 1",
+      "explanation": "A function procedure generally allows only one return statement."
+    },
+    {
+      "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nWrite a program that allows the user to enter the age of a mother and her daughter in years. Calculate the sum of their age, the difference in their age, and the product of their age. Show the output on the screen.",
+      "options": [
+        "a. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge / daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
+        
+        "b. \n<pre>\nAgeCalculations\n  enter motherAge\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge / daughterAge\n  display sum, difference, product\nend\n</pre>",
+        
+        "c. \n<pre>\nAgeCalculation\n  display 'Provide the first number'\n  enter number1\n  display 'Provide the second number'\n  enter number2\n  sum = number1 + number2\n  difference = number1 - number2\n  product = number1 * number2\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
+        
+        "d. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge * daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>"
+      ],
+      "correctAnswer": "d. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge * daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
+      "explanation": "Option d correctly calculates the sum, difference, and product of the ages using multiplication for the product instead of division."
+    },
+    
+  {
+    "text": "Provided the problem statement below, which of the following algorithms will solve the problem? A student name and three test marks are entered, the average mark must be calculated and it must be determined if the student passes or fails (mark equal or above 50%). The student name, average and result must be displayed on screen.",
+    "options": [
+        "<pre><code>Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n \nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults(message)\nend</code></pre>",
+        "<pre><code>Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n \nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve()\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults()\nend</code></pre>",
+        "<pre><code>CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n \nDetermineResults(valAve)\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve (valTest1, valTest2, valTest3)\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults(message)\nend</code></pre>",
+        "<pre><code>Function CalcAve ()\n  return (valTest1 + valTest2 + valTest3) / 3\n \nFunction DetermineResults()\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve (valTest1, valTest2, valTest3)\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults(message)\nend</code></pre>"
+    ],
+    "correctAnswer": "<pre><code>Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n \nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults(message)\nend</code></pre>",
+    "explanation": "Option 'a' is correct because it correctly passes the test marks to the function to calculate the average, and returns the appropriate message for the student based on the calculated average."
+},
+{
+  "text": "Provided the problem statement below, which of the following algorithms will solve the problem? Reginald went to a shop to buy a number of fruit bars. The amount due must be calculated and 14% VAT added. The calculated value must be displayed on the screen.",
+  "options": [
+      "<pre><code>Function CalcAmntDue ()\n  Return (valNum * valPrice * 1.14)\n \nShoppingProgram\n  display \"Enter the number of fruit bars bought\"\n  enter numberItems\n  display \"Enter the price of a fruit bar\"\n  enter price\n  amtDue = CalcAmntDue (numItems, price)\n  display \"The amount due is R\", amtDue\nend</code></pre>",
+      "<pre><code>Function CalcAmntDue (valNum, valPrice)\n  Return (valNum * valPrice * 1.14)\n \nShoppingProgram\n  display \"Enter the number of fruit bars bought\"\n  enter numberItems\n  display \"Enter the price of a fruit bar\"\n  enter price\n  amtDue = CalcAmntDue (numItems, price)\n  display \"The amount due is R\", amtDue\nend</code></pre>",
+      "<pre><code>CalcAmntDue (valNum, valPrice)\n  Return (valNum * valPrice * 1.14)\n \nShoppingProgram\n  display \"Enter the number of fruit bars bought\"\n  enter numberItems\n  display \"Enter the price of a fruit bar\"\n  enter price\n  amtDue = CalcAmntDue (numItems, price)\n  display \"The amount due is R\", amtDue\nend</code></pre>",
+      "<pre><code>Function CalcAmntDue (valNum, valPrice)\n  Return (valNum * valPrice * 1.14)\n \nShoppingProgram\n  display \"Enter the number of fruit bars bought\"\n  enter numberItems\n  display \"Enter the price of a fruit bar\"\n  enter price\n  amtDue = CalcAmntDue (valNum, valPrice)\n  display \"The amount due is R\", amtDue\nend</code></pre>"
+  ],
+  "correctAnswer": "<pre><code>Function CalcAmntDue (valNum, valPrice)\n  Return (valNum * valPrice * 1.14)\n \nShoppingProgram\n  display \"Enter the number of fruit bars bought\"\n  enter numberItems\n  display \"Enter the price of a fruit bar\"\n  enter price\n  amtDue = CalcAmntDue (numItems, price)\n  display \"The amount due is R\", amtDue\nend</code></pre>",
+  "explanation": "Option 'b' is correct because it correctly passes both the number of items and the price as arguments to the function that calculates the amount due, including the VAT."
+},
+
+        {
+            "text": "The methodology where code is broken into small, logical procedures is called:",
+            "options": [
+                "a. functional programming",
+                "b. modular programming",
+                "c. granular programming",
+                "d. event-driven programming"
+            ],
+            "correctAnswer": "b. modular programming",
+            "explanation": "Modular programming involves breaking down code into small, logical procedures or modules."
+        },
+        {
+            "text": "The process of breaking down a large program into modules is called ____.",
+            "options": [
+                "a. fragmentation",
+                "b. modularization",
+                "c. decomposing",
+                "d. caching"
+            ],
+            "correctAnswer": "b. modularization",
+            "explanation": "The process of breaking down a large program into modules is known as modularization."
+        },
+        {
+            "text": "When a program has several modules calling other modules, programmers often use a program ____, which operates similarly to an organizational chart, to show the overall picture of how modules are related to one another.",
+            "options": [
+                "a. flow chart",
+                "b. data diagram",
+                "c. hierarchy chart",
+                "d. tree chart"
+            ],
+            "correctAnswer": "c. hierarchy chart",
+            "explanation": "A hierarchy chart shows the relationship between modules in a program, similar to an organizational chart."
+        },
+        {
+            "text": "A ____ relates parallel arrays.",
+            "options": [
+                "a. subscript",
+                "b. key",
+                "c. superscript",
+                "d. postscript"
+            ],
+            "correctAnswer": "b. key",
+            "explanation": "A key relates parallel arrays by providing an index to access corresponding elements."
+        },
+        {
+            "text": "A program contains an array that holds all the names of the days of the week. Which of the following is true?",
+            "options": [
+                "a. The highest subscript is 6",
+                "b. The highest subscript is 12",
+                "c. The highest subscript is 7",
+                "d. The lowest subscript is 1"
+            ],
+            "correctAnswer": "a. The highest subscript is 6",
+            "explanation": "Since array indexing starts at 0, an array of 7 elements would have a highest subscript of 6."
+        },
+        {
+            "text": "A two-dimensional array contains two dimensions:",
+            "options": [
+                "a. height and width",
+                "b. breadth and height",
+                "c. size and scope",
+                "d. depth and width"
+            ],
+            "correctAnswer": "a. height and width",
+            "explanation": "A two-dimensional array is often visualized as a table with rows (height) and columns (width)."
+        },
+        {
+            "text": "An array can be used to replace ____.",
+            "options": [
+                "a. records",
+                "b. loops",
+                "c. methods",
+                "d. nested decisions"
+            ],
+            "correctAnswer": "a. records",
+            "explanation": "Arrays can store multiple items of the same type, similar to records."
+        },
+
+        {
+          "text": "The methodology where code is broken into small, logical procedures is called:",
+          "options": [
+              "a. functional programming",
+              "b. modular programming",
+              "c. granular programming",
+              "d. event-driven programming"
+          ],
+          "correctAnswer": "b. modular programming",
+          "explanation": "Modular programming involves breaking down code into small, logical procedures or modules."
+      },
+      {
+          "text": "The process of breaking down a large program into modules is called ____.",
+          "options": [
+              "a. fragmentation",
+              "b. modularization",
+              "c. decomposing",
+              "d. caching"
+          ],
+          "correctAnswer": "b. modularization",
+          "explanation": "The process of breaking down a large program into modules is known as modularization."
+      },
+      {
+          "text": "When a program has several modules calling other modules, programmers often use a program ____, which operates similarly to an organizational chart, to show the overall picture of how modules are related to one another.",
+          "options": [
+              "a. flow chart",
+              "b. data diagram",
+              "c. hierarchy chart",
+              "d. tree chart"
+          ],
+          "correctAnswer": "c. hierarchy chart",
+          "explanation": "A hierarchy chart shows the relationship between modules in a program, similar to an organizational chart."
+      },
+      {
+          "text": "A ____ relates parallel arrays.",
+          "options": [
+              "a. subscript",
+              "b. key",
+              "c. superscript",
+              "d. postscript"
+          ],
+          "correctAnswer": "b. key",
+          "explanation": "A key relates parallel arrays by providing an index to access corresponding elements."
+      },
+      {
+          "text": "A program contains an array that holds all the names of the days of the week. Which of the following is true?",
+          "options": [
+              "a. The highest subscript is 6",
+              "b. The highest subscript is 12",
+              "c. The highest subscript is 7",
+              "d. The lowest subscript is 1"
+          ],
+          "correctAnswer": "a. The highest subscript is 6",
+          "explanation": "Since array indexing starts at 0, an array of 7 elements would have a highest subscript of 6."
+      },
+      {
+          "text": "A two-dimensional array contains two dimensions:",
+          "options": [
+              "a. height and width",
+              "b. breadth and height",
+              "c. size and scope",
+              "d. depth and width"
+          ],
+          "correctAnswer": "a. height and width",
+          "explanation": "A two-dimensional array is often visualized as a table with rows (height) and columns (width)."
+      },
+      {
+          "text": "An array can be used to replace ____.",
+          "options": [
+              "a. records",
+              "b. loops",
+              "c. methods",
+              "d. nested decisions"
+          ],
+          "correctAnswer": "a. records",
+          "explanation": "Arrays can store multiple items of the same type, similar to records."
+      },
+
+      {
+        "text": "An array is a  ____ of values in computer memory.",
+        "options": [
+            "a. set",
+            "b. record",
+            "c. accumulation",
+            "d. list"
+        ],
+        "correctAnswer": "d. list",
+        "explanation": "An array is a list of values stored in consecutive memory locations."
+    },
+    {
+        "text": "An array whose elements you can access using a single subscript is a ____ array.",
+        "options": [
+            "a. single-dimensional",
+            "b. one-dimensional",
+            "c. multi-dimensional",
+            "d. non-dimensional"
+        ],
+        "correctAnswer": "b. one-dimensional",
+        "explanation": "A one-dimensional array allows access to elements using a single index or subscript."
+    },
+    {
+        "text": "Array elements all have the same ____ in common.",
+        "options": [
+            "a. pointer",
+            "b. data type",
+            "c. memory location",
+            "d. value"
+        ],
+        "correctAnswer": "b. data type",
+        "explanation": "All elements in an array share the same data type."
+    },
+    {
+        "text": "Each element in a two-dimensional array requires ____ subscript(s) to reference it.",
+        "options": [
+            "a. two",
+            "b. three",
+            "c. one",
+            "d. four"
+        ],
+        "correctAnswer": "a. two",
+        "explanation": "A two-dimensional array requires two subscripts (row and column) to reference an element."
+    },
+    {
+        "text": "Every array has a  ____ size.",
+        "options": [
+            "a. infinite",
+            "b. variable",
+            "c. finite",
+            "d. constant"
+        ],
+        "correctAnswer": "c. finite",
+        "explanation": "Arrays have a finite size, defined when they are declared."
+    },
+    {
+        "text": "In a ____, items in a list are compared with each other in pairs.",
+        "options": [
+            "a. shell sort",
+            "b. bubble sort",
+            "c. matrix sort",
+            "d. quick sort"
+        ],
+        "correctAnswer": "b. bubble sort",
+        "explanation": "In a bubble sort, items are compared in pairs and swapped if necessary, 'bubbling' larger elements to the top."
+    },
+
+          {
+              "text": "How many times would 'Hello World' be displayed when the following is executed?\n<pre><code>ShowHelloWorld\n  a = 0\n  display 'Hello World'\n  do\n    display 'Hello World'\n    a = a + 1\n  loop until a < 5\nend</code></pre>",
+              "options": [
+                  "a. none",
+                  "b. infinite",
+                  "c. 6",
+                  "d. 5"
+              ],
+              "correctAnswer": "b. infinite",
+              "explanation": "Since the condition 'a < 5' is never satisfied, the loop continues infinitely."
+          },
+          {
+            "text": "How many times would 'Hello World' be displayed when the following is executed?\n<pre><code>ShowHelloWorld\n  a = 0\n  display 'Hello World'\n  do\n    display 'Hello World'\n  loop until a < 5\nend</code></pre>",
+            "options": [
+                "a. infinite",
+                "b. 1",
+                "c. none",
+                "d. 2"
+            ],
+            "correctAnswer": "a. infinite",
+            "explanation": "Since the value of 'a' is never incremented, the loop condition 'a < 5' is always true, leading to an infinite loop."
+        },
+        {
+            "text": "How many times would 'Hello World' be displayed when the following is executed?\n<pre><code>ShowHelloWorld\n  a = 0\n  display 'Hello World'\n  do while a < 5\n    display 'Hello World'\n    a = a + 1\n  loop\nend</code></pre>",
+            "options": [
+                "a. none",
+                "b. 5",
+                "c. 7",
+                "d. 6"
+            ],
+            "correctAnswer": "b. 5",
+            "explanation": "The loop condition checks 'a < 5' and increments 'a' with each iteration, so 'Hello World' is displayed 5 times."
+        },
+        {
+          "text": "How many times would 'Hello World' be displayed when the following is executed?\n<pre><code>ShowHelloWorld\n  a = 0\n  display 'Hello World'\n  do while a < 5\n    display 'Hello World'\n  loop\nend</code></pre>",
+          "options": [
+              "a. infinite",
+              "b. 6",
+              "c. none",
+              "d. 5"
+          ],
+          "correctAnswer": "a. infinite",
+          "explanation": "Since the loop condition 'a < 5' is not updated within the loop, it results in an infinite loop."
+      },
+      {
+          "text": "How many times would 'Programming is fun' be displayed when the following is executed?\n<pre><code>ProgrammingIsFun\n  x = 2\n  y = 3\n  do\n    x = x + 1\n    do while y <= 5\n      display 'Programming is Fun'\n      y = y + 2\n    loop\n    display 'Programming is Fun'\n  loop until x = 6\n  display 'Programming is Fun'\nend</code></pre>",
+          "options": [
+              "a. 6",
+              "b. 5",
+              "c. infinite",
+              "d. 7"
+          ],
+          "correctAnswer": "d. 7",
+          "explanation": "The inner loop executes twice (when y = 3 and y = 5), and the outer loop executes 4 times (from x = 3 to x = 6), plus the final display, resulting in 7 total displays."
+      },
+      {
+          "text": "In a ____, the loop body executes at least one time because the loop control variable is not tested until after one iteration.",
+          "options": [
+              "a. nested loop",
+              "b. loop control",
+              "c. post-test loop",
+              "d. pre-test loop"
+          ],
+          "correctAnswer": "c. post-test loop",
+          "explanation": "A post-test loop evaluates the condition after the loop body executes, ensuring at least one iteration."
+      },
+      {
+          "text": "Indicate what will be displayed after the following code has been executed if the user enters the following: empNum 90008936, deptCode HT, annSal 45000; empNum 90008966, deptCode AY, annSal 85000; empNum 90008745, deptCode KC, annSal 30000; empNum 0.",
+          "options": [
+              "a. The total amount for annual increases is R9600",
+              "b. The total amount for annual increases is R10125",
+              "c. The total amount for annual increases is R169930",
+              "d. The total amount for annual increases is R9675"
+          ],
+          "correctAnswer": "d. The total amount for annual increases is R9675",
+          "explanation": "The total increase is calculated based on department codes and annual salary, resulting in R9675."
+      },
+      {
+        "text": "Indicate what will be displayed after the following code has been executed if the user enters totAmount = 5000 and monthAmount = 400.\n<pre>\nCalculateSavings\n  finalAmount = 0\n  noMonths = 0\n  display 'Provide the amount that Pule wants to save'\n  enter totAmount\n  display 'The monthly amount that he is able to save'\n  enter monthAmount\n  do\n    if finalAmount < 1000 then\n      finalAmount = finalAmount * 1.07\n    else\n      finalAmount = finalAmount * 1.09\n    enif\n    finalAmount = finalAmount + monthAmount\n    noMonths = noMonths + 1\n  loop until finalAmount >= totAmount\n  display 'Pule had to save ', noMonths, ' months to reach his goal'\nend\n</pre>",
+        "options": [
+          "a. Pule had to save 8 months to reach his goal",
+          "b. None of the above",
+          "c. Pule had to save 9 months to reach his goal",
+          "d. Pule had to save 10 months to reach his goal"
+        ],
+        "correctAnswer": "c. Pule had to save 9 months to reach his goal",
+        "explanation": "The loop iterates each month, increasing the finalAmount based on the monthly contribution and applying different interest rates depending on whether finalAmount is above or below 1000. With the values entered (totAmount = 5000, monthAmount = 400), the loop completes after 9 months."
+      },
+      
+      {
+        "text": "Indicate what will be displayed after the following code has been executed.",
+        "table": "<pre>CompareLoop                | CompareLoop\n----------------------------------------\na = 1                     | a = 1\nb = 2                     | b = 2\ndo while a <> 5           | do\n  a = a + 1               |   a = a + 1\n  b = b + 2               |   b = b + 2\nloop                      | loop until a <> 5\ndisplay 'b = ', b         | display 'b = ', b\nend                       | end</pre>",
+        "options": [
+            "a. b = 10 b = 8",
+            "b. b = 10 b = 4",
+            "c. b = 8 b = 8",
+            "d. b = 10 b = 10"
+        ],
+        "correctAnswer": "a. b = 10 b = 8",
+        "explanation": "The first loop uses 'do while', and the second loop uses 'loop until', leading to different values for 'b' after the iterations."
+    },
+    {
+      "text": "A  ____ is a repeating flow of logic with no end.",
+      "options": [
+          "a. variable",
+          "b. nonterminated condition",
+          "c. decision symbol",
+          "d. infinite loop"
+      ],
+      "correctAnswer": "d. infinite loop",
+      "explanation": "An infinite loop is a flow of logic that repeats indefinitely without a terminating condition."
+  },
+  {
+      "text": "A  ____ is any numeric variable you use to count the number of times an event has occurred.",
+      "options": [
+          "a. index",
+          "b. key",
+          "c. counter",
+          "d. accumulator"
+      ],
+      "correctAnswer": "c. counter",
+      "explanation": "A counter is a variable that increments to count occurrences of an event."
+  },
+  {
+      "text": "A  ____ loop executes a predetermined number of times.",
+      "options": [
+          "a. infinite",
+          "b. fixed count",
+          "c. indefinite",
+          "d. terminal"
+      ],
+      "correctAnswer": "b. fixed count",
+      "explanation": "A fixed count loop runs for a set number of iterations."
+  },
+  {
+      "text": "After execution of the following loop, what would be the value of x?\n<pre><code>for x = 16 to 39 step 5</code></pre>",
+      "options": [
+          "a. 39",
+          "b. 41",
+          "c. 40",
+          "d. 38"
+      ],
+      "correctAnswer": "b. 41",
+      "explanation": "The loop increments 'x' by 5 starting at 16, and the final value after the last step is 41."
+  },
+  {
+      "text": "How many lines of output will be displayed when the following code is executed?\n<pre><code>display 'Hello'\nfor x = 1 to 4\n  display 'Outer loop', x\n  for y = 1 to 6 step 2\n    if y > x then\n      display 'Inner loop', y\n    endif\n  next y\nnext x\ndisplay 'end'</code></pre>",
+      "options": [
+          "a. 14",
+          "b. 8",
+          "c. 12",
+          "d. 10"
+      ],
+      "correctAnswer": "a. 14",
+      "explanation": "The outer loop runs 4 times, and the inner loop displays values based on the condition, totaling 14 lines of output."
+  },
+  {
+    "text": "How many lines of output will be displayed when the following code is executed?\n<pre><code>display 'Hello'\nfor x = 1 to 4\n  display 'Outer loop', x\n  for y = 1 to 6 step 3\n    if y >= x then\n      display 'Inner loop', y\n    endif\n  next y\nnext x\ndisplay 'end'</code></pre>",
+    "options": [
+        "a. 11",
+        "b. 8",
+        "c. 10",
+        "d. 9"
+    ],
+    "correctAnswer": "a. 11",
+    "explanation": "The outer loop runs 4 times, and the inner loop displays values based on the condition, leading to a total of 11 lines of output."
+},
+{
+    "text": "How many times will the following loop execute?\n<pre><code>for x = 20 to 1 step -1</code></pre>",
+    "options": [
+        "a. 20",
+        "b. 19",
+        "c. 0",
+        "d. 21"
+    ],
+    "correctAnswer": "b. 19",
+    "explanation": "The loop decrements from 20 to 1, executing 19 times."
+},
+{
+    "text": "How many times will the following loop execute?\n<pre><code>for x = 7 to 34 step 5</code></pre>",
+    "options": [
+        "a. 7",
+        "b. 4",
+        "c. 6",
+        "d. 5"
+    ],
+    "correctAnswer": "d. 5",
+    "explanation": "The loop increments from 7 to 34 in steps of 5, executing 5 times."
+},
+{
+    "text": "In a group of nested loops, which loop is executed the most number of times?",
+    "options": [
+        "a. the innermost loop",
+        "b. cannot be determined without knowing the size of the loops",
+        "c. the outermost loop",
+        "d. all loops are executed the same number of times"
+    ],
+    "correctAnswer": "a. the innermost loop",
+    "explanation": "The innermost loop executes the most number of times since it is nested within other loops."
+},
+{
+    "text": "The amount by which a for loop control variable changes is often called a ____ value.",
+    "options": [
+        "a. sentinel",
+        "b. key",
+        "c. step",
+        "d. group"
+    ],
+    "correctAnswer": "c. step",
+    "explanation": "The step value is the amount by which a loop control variable changes in each iteration of a for loop."
+},
+
+{
+  "text": "If x = 10 and y = 8, what will be displayed after the following statements have been executed?\n<pre><code>if x mod y < y \\ x then\n  display '1'\nelse\n  if x + y <> x * 2 - 2 then\n    display '2'\n  else\n    if x / 2 > y \\ 2 then\n      display '3'\n    else\n      if x > y + 2 then\n        display '4'\n      else\n        display '5'\n      endif\n    endif\n  endif\nendif</code></pre>",
+  "options": [
+      "a. 3",
+      "b. 2",
+      "c. 4",
+      "d. 1"
+  ],
+  "correctAnswer": "c. 4",
+  "explanation": "The logic evaluates to '4' based on the conditions and the values of x and y."
+},
+{
+  "text": "If x = 15 and y = 5, what will be displayed after the following statements have been executed?\n<pre><code>if x mod y < y \\ x then\n  display '1'\nelse\n  if x + y <> x * 2 - 2 then\n    display '2'\n  else\n    if x / 2 > y \\ 2 then\n      display '3'\n    else\n      if x > y + 2 then\n        display '4'\n      else\n        display '5'\n      endif\n    endif\n  endif\nendif</code></pre>",
+  "options": [
+      "a. 1",
+      "b. 3",
+      "c. 2",
+      "d. 4"
+  ],
+  "correctAnswer": "a. 1",
+  "explanation": "The first condition is true, so '1' is displayed."
+},
+{
+  "text": "Provided below is a select case statement. Which of the following if statements can be used to replace the select case statement?\n<pre><code>select case number\n  case 1\n    display 'Group 1'\n  case 3\n    display 'Group 3'\n  case else\n    display 'Group unknown'\nendselect</code></pre>",
+  "options": [
+      "a. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else display 'Group unknown' endif",
+      "b. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else if number <> 1 OR 3 then display 'Group unknown' endif",
+      "c. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' endif else display 'Group unknown' endif",
+      "d. if number = 1 then display 'Group 1' endif if number = 3 then display 'Group 3' endif if number <> 1 OR 3 then display 'Group unknown' endif"
+  ],
+  "correctAnswer": "a. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else display 'Group unknown' endif",
+  "explanation": "This if-else structure closely mirrors the logic of the select case statement."
+},
+{
+  "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n<pre><code>if code = 'S' then\n  weather = 'Sunny'\nelse\n  if code = 'SC' then\n    weather = 'Sunny with clouds'\n  else\n    if code = 'C' then\n      weather = 'Cloudy'\n    else\n      if code = 'CR' then\n        weather = 'Cloudy with Rain'\n      else\n        if code = 'R' then\n          weather = 'Rain'\n        else\n          weather = 'Hail'\n        endif\n      endif\n    endif\n  endif\nendif</code></pre>",
+  "options": [
+      "a. select case\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   else\n     weather = 'Hail'\nendselect",
+      "b. select case\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   case else\n     weather = 'Hail'\nendselect",
+      "c. select case\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   case else\n     weather = 'Hail'\nend",
+      "d. select case code\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   case else\n     weather = 'Hail'\nendselect"
+  ],
+  "correctAnswer": "d. select case code\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   case else\n     weather = 'Hail'\nendselect",
+  "explanation": "The select case structure uses 'code' to determine the weather based on its value, mimicking the logic of the original if statement."
+},
+
+{
+  "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n<pre><code>if grade = 'A' then\n  price = price * 2\nelse\n  if grade = 'B' then\n    price = price * 1.14\n  else\n    if grade = 'C' then\n      price = price * 0.9125\n    else\n      if price > 50 then\n        price = price + 5\n      else\n        price = price - 4\n      endif\n    endif\n  endif\nendif</code></pre>",
+  "options": [
+      "a. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect",
+      "b. select case\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect",
+      "c. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case price > 50 then\n    if then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect",
+      "d. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case price > 50 then\n    price = price + 5\n  case else\n    price = price - 4\nendselect"
+  ],
+  "correctAnswer": "a. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect",
+  "explanation": "Option a properly handles the nested if-else structure within a select case statement."
+},
+{
+  "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n<pre><code>if interest < 1000 then\n  tax = 0\nelse\n  if interest <= 2000 then\n    tax = (interest - 1000) * 0.075\n  else\n    tax = (interest - 1100) * 0.095\n  endif\nendif</code></pre>",
+  "options": [
+      "a. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect",
+      "b. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case\n    tax = (interest - 1100) * 0.095\nendselect",
+      "c. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  else\n    tax = (interest - 1100) * 0.095\nendselect",
+      "d. select case\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect"
+  ],
+  "correctAnswer": "a. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect",
+  "explanation": "Option a properly mimics the nested if-else logic using a select case statement."
+},
+{
+  "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n<pre><code>if name = 'Sally' or name = 'Tania' then\n  display 'It’s a girl'\nelse\n  if name = 'Jim' or name = 'John' or name = 'Russel' then\n    display 'It’s a boy'\n  endif\nendif</code></pre>",
+  "options": [
+      "a. select case name\n  case 'Sally', 'Tania'\n    display 'It’s a girl'\n  case 'Jim', 'John', 'Russel'\n    display 'It’s a boy'\nendselect",
+      "b. select case name\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case 'Russel'\n    display 'It’s a boy'\nendselect",
+      "c. select case name\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case else\n    display 'It’s a boy'\nendselect",
+      "d. select case\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case 'Russel'\n    display 'It’s a boy'\nendselect"
+  ],
+  "correctAnswer": "a. select case name\n  case 'Sally', 'Tania'\n    display 'It’s a girl'\n  case 'Jim', 'John', 'Russel'\n    display 'It’s a boy'\nendselect",
+  "explanation": "Option a correctly handles multiple case conditions for displaying 'It’s a girl' or 'It’s a boy.'"
+},
+{
+  "text": "What will be the value of the variable “B” in the following pseudocode if the value of variable “A” is 5.2 and the value of variable “B” is 15?\n<pre><code>if A = 5.2 then\n  if B > 20 then\n    A = A + 5\n  else\n    B = B - 3.5\n  endif\nelse\n  if A = 6 then\n    A = 0\n    B = 0\n  endif\nendif</code></pre>",
+  "options": [
+      "a. 5.2",
+      "b. 11.5",
+      "c. 15",
+      "d. 0"
+  ],
+  "correctAnswer": "b. 11.5",
+  "explanation": "Since A is equal to 5.2 and B is less than 20, B is reduced by 3.5, resulting in 11.5."
+},
+{
+  "text": "What would be displayed as the daily dosage of medicine to be administered to a dog weighing 10 kilograms in the following pseudocode?\n<pre><code>if dogWeight numeric then\n  number500 = dogWeight * 2\n  if number500 MOD 1 = 0 then\n    if dogWeight < 5 then\n      medicine = number500 * 1\n    else\n      if dogWeight <= 8 then\n        medicine = number500 * 0.9\n      else\n        if dogWeight <= 12 then\n          medicine = number500 * 0.75\n        else\n          medicine = number500 * 0.6\n        endif\n      endif\n    endif\n    display 'The dog must receive a daily dose of ', medicine, 'ml.'\n  else\n    display 'The weight must be in kg and to the nearest 500g, e.g., 3, 3.5 or 4'\n  endif\nelse\n  display 'The weight must be numeric'\nendif</code></pre>",
+  "options": [
+      "a. The weight must be in kg and to the nearest 500g, e.g., 3, 3.5 or 4",
+      "b. The dog must receive a daily dose of 14.4 ml",
+      "c. The weight must be numeric",
+      "d. The dog must receive a daily dose of 18.0 ml"
+  ],
+  "correctAnswer": "b. The dog must receive a daily dose of 14.4 ml",
+  "explanation": "For a dog weighing 10 kg, the calculated dosage is 10 * 2 = 20. Since the weight falls within the range of 9 to 12 kg, the dosage is 20 * 0.75 = 14.4 ml."
+},
+
+{
+  "text": "What would be displayed as the daily dosage of medicine to be administered to a dog weighing 25.5 kilograms in the following pseudocode?\n<pre><code>if dogWeight numeric then\n  number500 = dogWeight * 2\n  if number500 MOD 1 = 0 then\n    if dogWeight < 5 then\n      medicine = number500 * 1\n    else\n      if dogWeight <= 8 then\n        medicine = number500 * 0.9\n      else\n        if dogWeight <= 12 then\n          medicine = number500 * 0.75\n        else\n          medicine = number500 * 0.6\n        endif\n      endif\n    endif\n    display 'The dog must receive a daily dose of ', medicine, 'ml.'\n  else\n    display 'The weight must be in kg and to the nearest 500g, e.g. 3, 3.5 or 4'\n  endif\nelse\n  display 'The weight must be numeric'\nendif</code></pre>",
+  "options": [
+      "a. The dog must receive a daily dose of 14 ml",
+      "b. The weight must be numeric",
+      "c. The dog must receive a daily dose of 18 ml",
+      "d. The dog must receive a daily dose of 30 ml"
+  ],
+  "correctAnswer": "d. The dog must receive a daily dose of 30 ml",
+  "explanation": "For a dog weighing 25.5 kg, the calculated dosage is 25.5 * 2 = 51, and the dosage is based on 51 * 0.6 = 30 ml since it falls above the 12 kg range."
+},
+{
+  "text": "A ____ expression is one that represents only one of two states, usually expressed as true or false.",
+  "options": [
+      "a. single-alternative",
+      "b. If",
+      "c. If-then-else",
+      "d. Boolean"
+  ],
+  "correctAnswer": "d. Boolean",
+  "explanation": "A Boolean expression represents either true or false."
+},
+{
+  "text": "A ____ decision is a decision in which two conditions must be true for an action to take place.",
+  "options": [
+      "a. OR",
+      "b. NOT",
+      "c. AND",
+      "d. IF"
+  ],
+  "correctAnswer": "c. AND",
+  "explanation": "An AND decision requires both conditions to be true for an action to occur."
+},
+{
+  "text": "Both operands in a comparison expression must be the same ____.",
+  "options": [
+      "a. value",
+      "b. length",
+      "c. name",
+      "d. data type"
+  ],
+  "correctAnswer": "d. data type",
+  "explanation": "In a comparison expression, both operands must be of the same data type for a valid comparison."
+},
+{
+  "text": "For maximum efficiency, a good rule of thumb in an AND decision is to ____.",
+  "options": [
+      "a. first ask the question that is more likely to be true",
+      "b. rewrite it as an OR decision and ask the question more likely to be false",
+      "c. first ask the question that is more likely to be false",
+      "d. rewrite it as an OR decision and ask the question more likely to be true"
+  ],
+  "correctAnswer": "c. first ask the question that is more likely to be false",
+  "explanation": "For efficiency, you should ask the question that is more likely to be false first in an AND decision to avoid unnecessary evaluations."
+},
+
+{
+  "text": "For maximum efficiency, a good rule of thumb in an OR decision is to ____.",
+  "options": [
+      "a. rewrite it as an AND decision and ask the question more likely to be false",
+      "b. first ask the question that is more likely to be false",
+      "c. first ask the question that is more likely to be true",
+      "d. rewrite it as an AND decision and ask the question more likely to be true"
+  ],
+  "correctAnswer": "c. first ask the question that is more likely to be true",
+  "explanation": "In an OR decision, you should ask the question more likely to be true first to avoid unnecessary evaluations."
+},
+{
+  "text": "If x = 8, what will be displayed after execution of the following statement?\n<pre><code>if x >= 8 then\n  x = x + 5\n  display 'x = ', x\nelse\n  x = x - 6\n  display 'x is ', x\nendif</code></pre>",
+  "options": [
+      "a. None of the above",
+      "b. x = 8",
+      "c. x is 8",
+      "d. x is 13"
+  ],
+  "correctAnswer": "d. x is 13",
+  "explanation": "Since x is equal to 8 and x >= 8 is true, 8 + 5 equals 13, so 'x = 13' will be displayed."
+},
+{
+  "text": "Most programming languages allow you to ask two or more questions in a single comparison by using a ____ operator that joins decisions in a single statement.",
+  "options": [
+      "a. OR",
+      "b. IF",
+      "c. NOT",
+      "d. AND"
+  ],
+  "correctAnswer": "a. OR",
+  "explanation": "The OR operator allows you to join multiple conditions in a single comparison."
+},
+{
+  "text": "The ____ clause is the part of the decision that holds the action or actions that execute when the tested condition in the decision is true.",
+  "options": [
+      "a. else",
+      "b. endif",
+      "c. boolean",
+      "d. if-then"
+  ],
+  "correctAnswer": "d. if-then",
+  "explanation": "The if-then clause contains the actions that execute when the condition is true."
+},
+{
+  "text": "What would be the answer to the following expression?\n<pre><code>7 > 7 AND 8 < 4 ^ 2</code></pre>",
+  "options": [
+      "a. None of the above",
+      "b. 7",
+      "c. FALSE",
+      "d. TRUE"
+  ],
+  "correctAnswer": "c. FALSE",
+  "explanation": "Since 7 is not greater than 7, the expression evaluates to FALSE."
+},
+{
+  "text": "When you ask multiple questions before an outcome is determined, you create a ____ condition.",
+  "options": [
+      "a. single-alternative",
+      "b. dual-alternative",
+      "c. compound",
+      "d. nested"
+  ],
+  "correctAnswer": "c. compound",
+  "explanation": "A compound condition involves multiple questions being asked before an outcome is determined."
+},
+
+{
+  "text": "____ provide an overview of input to the method, the processing steps that must occur, and the result.",
+  "options": [
+      "a. Hierarchy charts",
+      "b. IPO charts",
+      "c. Stacks",
+      "d. Flowcharts"
+  ],
+  "correctAnswer": "b. IPO charts",
+  "explanation": "IPO charts (Input-Processing-Output) provide an overview of the input, processing, and output of a method."
+},
+{
+  "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nPeter bought 18 cupcakes for his son's birthday, they cost R4.50 each. Write a program that will accept the input from the user and then calculate the amount due by multiplying the number of cupcakes by the price and then adding 14% VAT to the amount. Display the final amount he owes on the screen.\n<pre><code>CalculateAmountDue\n  vatPerc = 0.14\n  display 'Provide the quantity bought'\n  enter quantity\n  display 'Provide the price of 1 item'\n  enter price\n  amount = quantity * price\n  vat = amount * vatPerc\n  finalAmount = amount + vat\n  display 'The final amount due is R ', finalAmount\nend</code></pre>",
+  "options": [
+      "a. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend",
+      "b. CalculateAmountDue\n      enter quantity\n      enter price\n      finalAmount = price * quantity * vat\n      display 'The final amount due is R ', finalAmount\nend",
+      "c. CalculateAmountDue\n      vat = 14%\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend",
+      "d. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      display 'Provide the price of 1 item'\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend"
+  ],
+  "correctAnswer": "a. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend",
+  "explanation": "Option a correctly handles both the input, calculations, and VAT addition, providing the final amount."
+},
+{
+  "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nThe cellular company charges 50 cents per minute for the first three minutes of a call, regardless of the length of the call, for every minute after the first three minutes an additional 15 cents is added to the cost, VAT of 14% is added to the total cost of the call. Write a program that allows the user to enter the duration of a phone call in minutes. Calculate and display the price of the phone call the user made for calls longer than 3 minutes.\n<pre><code>CalculatePriceCall\n  basicAmt = 0.50\n  display 'Enter call time in minutes'\n  enter timeMinutes\n  basicAmt += (timeMinutes - 3) * 0.65\n  vat = basicAmt * 0.14\n  finalAmt = basicAmt + vat\n  display 'The cost of the call is R', finalAmt\nend</code></pre>",
+  "options": [
+      "a. CalculatePriceCall\n      basicAmt = 0.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend",
+      "b. CalculatePriceCall\n      basicAmt = 1.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend",
+      "c. CalculatePriceCall\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt = (timeMinutes - 3) * 0.15\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend",
+      "d. CalculatePriceCall\n      basicAmt = 0.50\n      enter timeMinutes\n      basicAmt = (timeMinutes - 3) * 0.15\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend"
+  ],
+  "correctAnswer": "a. CalculatePriceCall\n      basicAmt = 0.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend",
+  "explanation": "Option a correctly calculates the basic amount, applies VAT, and calculates the final cost of the call."
+},
+{
+  "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nWrite a program that allows the user to enter the age of a mother and her daughter in years. Calculate the sum of their age, the difference in their age, and the product of their age. Show the output on the screen.",
+  "options": [
+    "a. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge / daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
+    
+    "b. \n<pre>\nAgeCalculations\n  enter motherAge\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge / daughterAge\n  display sum, difference, product\nend\n</pre>",
+    
+    "c. \n<pre>\nAgeCalculation\n  display 'Provide the first number'\n  enter number1\n  display 'Provide the second number'\n  enter number2\n  sum = number1 + number2\n  difference = number1 - number2\n  product = number1 * number2\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
+    
+    "d. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge * daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>"
+  ],
+  "correctAnswer": "d. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge * daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
+  "explanation": "Option d correctly calculates the sum, difference, and product of the ages using multiplication for the product instead of division."
+},
+
+{
+  "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nWrite a program that allows the user to enter their name and ID number into text fields, show the information on the computer screen with an appropriate legend.\n<pre><code>ShowItemData\n  display 'Provide the name'\n  enter name\n  display 'Provide the ID'\n  enter id\n  display 'The name of the person is ', name\n  display 'The ID of the person is ', id\nend</code></pre>",
+  "options": [
+      "a. ShowItemData\n      display 'Provide the name'\n      enter name\n      display 'Provide the ID'\n      enter id\n      display 'The name of the person is ', name\n      display 'The ID of the person is ', id\nend",
+      "b. ShowItemData\n      enter name\n      enter id\n      display name\n      display id\nend",
+      "c. ShowItemData\n      display 'Provide the name'\n      display 'Provide the ID'\n      display 'The name of the person is ', name\n      display 'The ID of the person is ', id\nend",
+      "d. ShowItemData\n      display 'Provide the name'\n      enter text\n      display 'Provide the ID'\n      enter text\n      display label\n      display label\nend"
+  ],
+  "correctAnswer": "a. ShowItemData\n      display 'Provide the name'\n      enter name\n      display 'Provide the ID'\n      enter id\n      display 'The name of the person is ', name\n      display 'The ID of the person is ', id\nend",
+  "explanation": "Option a handles the user input for name and ID, then displays the information with proper labeling."
+},
+
+{
+  "text": "Following is a problem statement. Which of the below is the correct trace table for the problem statement when using test data: motherAge = 45, daughterAge = 18?\nWrite a program that allows the user to enter the age of a mother and her daughter in years. Calculate the sum of their age, the difference in their age, and the product of their age. Show the output on the screen.",
+  "options": [
+    "a. Instruction | motherAge | daughterAge | output\n    display | | | Provide the age of the mother\n    enter | 45 | | \n    display | | | Provide the age of the daughter\n    enter | 18 | | \n    display | | | The sum is 63\n    display | | | The difference is 27\n    display | | | The product is 864",
+    
+    "b. Instruction | motherAge | daughterAge | sum | difference | product | output\n    display | | | | | | Provide the age of the mother\n    enter | 45 | | | | |\n    display | | | | | | Provide the age of the daughter\n    enter | 18 | | 63 | 27 | 864\n    display | 63 | | | | | The sum is 63\n    display | 27 | | | | | The difference is 27\n    display | 864 | | | | | The product is 864",
+    
+    "c. Instruction | motherAge | daughterAge | output\n    display | | | Provide the age of the mother\n    enter | 45 | | \n    display | | | Provide the age of the daughter\n    enter | 18 | | \n    display | | | The sum is \n    display | | | The difference is \n    display | | | The product is ",
+    
+    "d. Instruction | motherAge | daughterAge | sum | difference | product | output\n    display | | | | | | Provide the age of the mother\n    enter | 45 | | | | |\n    display | | | | | | Provide the age of the daughter\n    enter | 18 | | | | |\n    display | | | | 63 | | The sum is 63\n    display | | | | 27 | | The difference is 27\n    display | | | | 864 | | The product is 864"
+  ],
+  "correctAnswer": "a. Instruction | motherAge | daughterAge | output\n    display | | | Provide the age of the mother\n    enter | 45 | | \n    display | | | Provide the age of the daughter\n    enter | 18 | | \n    display | | | The sum is 63\n    display | | | The difference is 27\n    display | | | The product is 864",
+  "explanation": "Option a correctly traces the program steps with accurate calculations for sum, difference, and product of the mother and daughter’s ages."
+},
+{
+  "text": "Following is a problem statement. Which of the below is the correct trace table for the problem statement when using test data: motherAge = 45, daughterAge = 18?\nWrite a program that allows the user to enter the age of a mother and her daughter in years. Calculate the sum of their age, the difference in their age, and the product of their age. Show the output on the screen.",
+  "options": [
+    "a. \n<pre>\nInstruction | motherAge | daughterAge | output\n--------------------------------------------\ndisplay     |           |              | Provide the age of the mother\nenter       | 45        |              | \ndisplay     |           |              | Provide the age of the daughter\nenter       |           | 18           | \ndisplay     |           |              | The sum is 63\ndisplay     |           |              | The difference is 27\ndisplay     |           |              | The product is 864\n</pre>",
+    
+    "b. \n<pre>\nInstruction | motherAge | daughterAge | sum | difference | product | output\n--------------------------------------------------------------------\ndisplay     |           |              |     |            |         | Provide the age of the mother\nenter       | 45        |              |     |            |         |\ndisplay     |           |              |     |            |         | Provide the age of the daughter\nenter       |           | 18           | 63  | 27         | 864     |\ndisplay     |           |              |     |            |         | The sum is 63\ndisplay     |           |              |     |            |         | The difference is 27\ndisplay     |           |              |     |            |         | The product is 864\n</pre>",
+    
+    "c. \n<pre>\nInstruction | motherAge | daughterAge | output\n--------------------------------------------\ndisplay     |           |              | Provide the age of the mother\nenter       | 45        |              | \ndisplay     |           |              | Provide the age of the daughter\nenter       |           | 18           | \ndisplay     |           |              | The sum is \ndisplay     |           |              | The difference is \ndisplay     |           |              | The product is \n</pre>",
+    
+    "d. \n<pre>\nInstruction | motherAge | daughterAge | sum | difference | product | output\n--------------------------------------------------------------------\ndisplay     |           |              |     |            |         | Provide the age of the mother\nenter       | 45        |              |     |            |         |\ndisplay     |           |              |     |            |         | Provide the age of the daughter\nenter       |           | 18           |     |            |         |\ndisplay     |           |              | 63  | 27         | 864     | The sum is 63\ndisplay     |           |              | 63  | 27         | 864     | The difference is 27\ndisplay     |           |              | 63  | 27         | 864     | The product is 864\n</pre>"
+  ],
+  "correctAnswer": "a. \n<pre>\nInstruction | motherAge | daughterAge | output\n--------------------------------------------\ndisplay     |           |              | Provide the age of the mother\nenter       | 45        |              | \ndisplay     |           |              | Provide the age of the daughter\nenter       |           | 18           | \ndisplay     |           |              | The sum is 63\ndisplay     |           |              | The difference is 27\ndisplay     |           |              | The product is 864\n</pre>",
+  "explanation": "Option a correctly traces the program steps with accurate calculations for sum, difference, and product of the mother and daughter’s ages."
+},
+{
+  "text": "Following is a problem statement. Which of the below is the correct trace table for the problem statement when using test data: name = Themba, id = 8803190067087?\nWrite a program that allows the user to enter their name and ID number into text fields, show the information on the computer screen with an appropriate legend.",
+  "options": [
+    "a. \n<pre>\nInstruction | name     | id           | output\n----------------------------------------------\ndisplay     |          |              | Provide the name\nenter       | Themba   |              |\ndisplay     |          |              | Provide the ID\nenter       |          | 8803190067087|\ndisplay     |          |              | The name of the person is Themba\ndisplay     |          |              | The ID of the person is 8803190067087\n</pre>",
+    
+    "b. \n<pre>\nInstruction | name  | id           | output\n----------------------------------------------\ndisplay     |       |              | Provide the name\nenter       | Text  |              |\ndisplay     |       |              | Provide the ID\nenter       |       | Text         |\ndisplay     |       |              | Label\ndisplay     |       |              | Label\n</pre>",
+    
+    "c. \n<pre>\nInstruction | name     | id           | output\n----------------------------------------------\nenter       | Themba   |              |\nenter       |          | 8803190067087|\ndisplay     |          |              | The name of the person is Themba\ndisplay     |          |              | The ID of the person is 8803190067087\n</pre>",
+    
+    "d. \n<pre>\nInstruction | name     | id           | output\n----------------------------------------------\ndisplay     |          |              | Provide the name\ndisplay     |          |              | Provide the ID\ndisplay     |          |              | The name of the person is Themba\ndisplay     |          |              | The ID of the person is 8803190067087\n</pre>"
+  ],
+  "correctAnswer": "a. \n<pre>\nInstruction | name     | id           | output\n----------------------------------------------\ndisplay     |          |              | Provide the name\nenter       | Themba   |              |\ndisplay     |          |              | Provide the ID\nenter       |          | 8803190067087|\ndisplay     |          |              | The name of the person is Themba\ndisplay     |          |              | The ID of the person is 8803190067087\n</pre>",
+  "explanation": "Option a correctly traces the program steps, capturing the user input for name and ID, and displaying them with the proper labels."
+},
+{
+  "text": "Following is a problem statement. Which of the below is the correct trace table for the problem statement when using test data: timeMinutes = 15?\nThe cellular company charges 50 cents per minute for the first three minutes of a call, regardless of the length of the call. For every minute after the first three minutes, an additional 15 cents is added to the cost. VAT of 14% is added to the total cost of the call. Write a program that allows the user to enter the duration of a phone call in minutes. Calculate and display the price of the phone call the user made for calls longer than 3 minutes.",
+  "options": [
+    "a. \n<pre>\nInstruction | basicAmt | timeMinutes | vat  | finalAmt | Output\n-------------------------------------------------------------\nassign      | 1.50     |             |      |          | \ndisplay     |          |             |      |          | Enter call time in minutes\nenter       |          | 15          |      |          |\ncalculate   | 3.30     |             | 0.46 | 3.76     |\ndisplay     |          |             |      |          | The cost of the call is R3.76\n</pre>",
+    
+    "b. \n<pre>\nInstruction | basicAmt | timeMinutes | vat | finalAmt | Output\n-------------------------------------------------------------\nassign      | 1.50     |             |     |          | \ndisplay     |          |             |     |          | Enter call time in minutes\nenter       |          | 15          |     |          |\ncalculate   | 9.30     |             | 1.30| 10.60    |\ndisplay     |          |             |     |          | The cost of the call is R10.60\n</pre>",
+    
+    "c. \n<pre>\nInstruction | basicAmt | timeMinutes | vat | finalAmt | Output\n-------------------------------------------------------------\nassign      | 0.50     |             |     |          | \nenter       |          | 15          |     |          |\ncalculate   | 2.30     |             | 0.32| 2.62     |\ndisplay     |          |             |     |          | The cost of the call is R2.62\n</pre>",
+    
+    "d. \n<pre>\nInstruction | basicAmt | timeMinutes | vat | finalAmt | Output\n-------------------------------------------------------------\nassign      | 1.50     |             |     |          | \ndisplay     |          |             |     |          | Enter call time in minutes\nenter       |          | 15          |     |          |\ncalculate   | 9.30     |             | 1.30| 10.60    |\ndisplay     |          |             |     |          | The cost of the call is R10.60\n</pre>"
+  ],
+  "correctAnswer": "a. \n<pre>\nInstruction | basicAmt | timeMinutes | vat  | finalAmt | Output\n-------------------------------------------------------------\nassign      | 1.50     |             |      |          | \ndisplay     |          |             |      |          | Enter call time in minutes\nenter       |          | 15          |      |          |\ncalculate   | 3.30     |             | 0.46 | 3.76     |\ndisplay     |          |             |      |          | The cost of the call is R3.76\n</pre>",
+  "explanation": "Option a correctly calculates the cost of the phone call, accounting for the first three minutes at R1.50, additional minutes at R0.15, and 14% VAT, providing the final amount of R3.76."
+},
+
+{
+  "text": "Following is a problem statement. Which of the below is the correct trace table for the problem statement?\nPeter bought 18 cupcakes for his son's birthday, they cost R4.50 each. Write a program that will accept the input from the user and then calculate the amount due by multiplying the number of cupcakes by the price and then adding 14% VAT to the amount. Display the final amount he owes on the screen.",
+  "options": [
+    "a. \n<pre>\nInstruction | quantity | price | amount | vat   | finalAmt | output\n-----------------------------------------------------------------\ndisplay     |          |       |        |       |          | Provide the quantity bought\nenter       | 18       |       |        |       |          |\ndisplay     |          |       |        |       |          | Provide the price of 1 item\nenter       |          | 4.50  |        |       |          |\ncalculate   | 81       |       |        | 11.34 | 92.34    |\ndisplay     |          |       |        |       |          | The final amount due is R92.34\n</pre>",
+    "b. \n<pre>\nInstruction | quantity | price | output\n--------------------------------------------\ndisplay     |          |       | Provide the quantity bought\nenter       | 18       |       | \ndisplay     |          |       | Provide the price of 1 item\nenter       |          | 4.50  | \ndisplay     |          |       | The final amount due is R92.34\n</pre>",
+    "c. \n<pre>\nInstruction | quantity | price | amount | vat   | finalAmt | output\n-----------------------------------------------------------------\nenter       | 18       |       |        |       |          |\nenter       |          | 4.50  |        |       |          |\ncalculate   | 81       |       | 11.34  | 92.34 |          |\ndisplay     |          |       |        |       |          | The final amount due is R92.34\n</pre>",
+    "d. \n<pre>\nInstruction | quantity | price | amount | vat   | finalAmt | output\n-----------------------------------------------------------------\ndisplay     |          |       |        |       |          | Provide the quantity bought\nenter       | 18       |       |        |       |          |\ndisplay     |          |       |        |       |          | Provide the price of 1 item\nenter       |          | 4.50  |        |       |          |\ncalculate   | 81       |       | 11.34  | 92.34 |          |\ndisplay     |          |       |        |       |          | The final amount due is R92.34\n</pre>"
+  ],
+  "correctAnswer": "a. \n<pre>\nInstruction | quantity | price | amount | vat   | finalAmt | output\n-----------------------------------------------------------------\ndisplay     |          |       |        |       |          | Provide the quantity bought\nenter       | 18       |       |        |       |          |\ndisplay     |          |       |        |       |          | Provide the price of 1 item\nenter       |          | 4.50  |        |       |          |\ncalculate   | 81       |       | 11.34  | 92.34 |          |\ndisplay     |          |       |        |       |          | The final amount due is R92.34\n</pre>",
+  "explanation": "Option a correctly traces the calculation steps, including VAT, for determining the final cost."
+},
+{
+  "text": "Following is a problem statement. Which of the below provides is the correct variables used for the problem statement?\nPeter bought 18 cupcakes for his son's birthday, they cost R4,50 each. Write a program that will accept the input from the user and then calculate the amount due by multiplying the number of cupcakes by the price and then adding 14% VAT to the amount. Display the final amount he owes on the screen.",
+  "options": [
+    "a. \n<pre>\nDescription     | Type    | Variable name\n----------------------------------------------------\nInput           | integer | quantity\nInput           | real    | price\nIntermediate    | real    | amount\nIntermediate    | real    | vat\nOutput          | real    | finalAmount\n</pre>",
+
+    "b. \n<pre>\nDescription     | Type    | Variable name\n----------------------------------------------------\nInput           | integer | quantity\nInput           | real    | price\nIntermediate    | real    | amount\nIntermediate    | real    | vat\nOutput          | real    | finalAmount\n</pre>",
+
+    "c. \n<pre>\nDescription     | Type    | Variable name\n----------------------------------------------------\nInput           | integer | quantity\nInput           | real    | price\nOutput          | real    | finalAmount\n</pre>",
+
+    "d. \n<pre>\nDescription     | Type    | Variable name\n----------------------------------------------------\nInput           | real    | quantity\nInput           | integer | price\nOutput          | integer | finalAmount\n</pre>"
+  ],
+  "correctAnswer": "a. \n<pre>\nDescription     | Type    | Variable name\n----------------------------------------------------\nInput           | integer | quantity\nInput           | real    | price\nIntermediate    | real    | amount\nIntermediate    | real    | vat\nOutput          | real    | finalAmount\n</pre>",
+  "explanation": "Option a correctly identifies the variable types and names used to solve the problem."
+},
+
+{
+  "text": "____ data items may involve organizing or sorting them, checking them for accuracy, or performing calculations with them.",
+  "options": [
+    "a. Processing",
+    "b. Inputting",
+    "c. Outputting",
+    "d. Converting"
+  ],
+  "correctAnswer": "a. Processing",
+  "explanation": "Processing refers to operations performed on data, such as organizing, sorting, checking for accuracy, or performing calculations."
+},
+{
+  "text": "An algorithm is divided into phases, which of the following is not one of those phases?",
+  "options": [
+    "a. Calculating",
+    "b. Data",
+    "c. Information",
+    "d. Processing"
+  ],
+  "correctAnswer": "b. Data",
+  "explanation": "Data is not a phase of an algorithm. Algorithms typically consist of processing, calculation, and information output, but data itself is not considered a phase."
+},
+
+{
+  "text": "Following is a problem statement. Which of the following algorithms will solve the problem statement?\nCreate an HTML document that calculates the square meter of carpet required to carpet a room. Include three text boxes. Create one text box for the width of the room in meters and another for the length of the room in meters. Also create a text box for the cost per square meter of carpeting. When you calculate the cost, add 25% to the total number of square meter to account for cupboards and other features in the room. Display the total cost in an alert dialog box.",
+  "options": [
+    "a. \n<pre>\ncalculateCarpetCost\n    display 'Enter the width of the room in meter'\n    display 'Enter the length of the room in meter'\n    display 'Enter the cost per square meters of carpet'\n    squareFootage = width * length\n    costPerFootage = squareFootage * cost\n    totalCost = cost *0.25\n    display 'The total cost to carpet this room is R' + totalCost\nend\n</pre>",
+    
+    "b. \n<pre>\ncalculateCarpetCost\n    display 'Enter the width of the room in meter'\n    display 'Enter the length of the room in meter'\n    display 'Enter the cost per square meters of carpet'\n    squareFootage = width * length\n    totalCost = costPerFootage * 1.25\n    display 'The total cost to carpet this room is R' + totalCost\nend\n</pre>",
+    
+    "c. \n<pre>\ncalculateCarpetCost\n    display 'Enter the width of the room in meter'\n    enter width\n    display 'Enter the length of the room in meter'\n    enter length\n    display 'Enter the cost per square meters of carpet'\n    enter cost\n    squareFootage = (width * length) * 1.25\n    totalCost = squareFootage * cost\n    display 'The total cost to carpet this room is R' + totalCost\nend\n</pre>",
+    
+    "d. \n<pre>\ncalculateCarpetCost\n    enter the width of the room in meter\n    enter the length of the room in meter\n    Enter the cost per square meters of carpet\n    squareFootage = width * length\n    costPerFootage = squareFootage * cost\n    totalCost = cost *0.25\n    display 'The total cost to carpet this room is R' + totalCost\nend\n</pre>"
+  ],
+  "correctAnswer": "c. \n<pre>\ncalculateCarpetCost\n    display 'Enter the width of the room in meter'\n    enter width\n    display 'Enter the length of the room in meter'\n    enter length\n    display 'Enter the cost per square meters of carpet'\n    enter cost\n    squareFootage = (width * length) * 1.25\n    totalCost = squareFootage * cost\n    display 'The total cost to carpet this room is R' + totalCost\nend\n</pre>",
+  "explanation": "Option c correctly calculates the square footage and cost by taking into account the extra 25% for cupboards and other features."
+},
+
+{
+  "text": "Following is a problem statement. Which of the following algorithms will solve the problem statement?\nWrite a script that plays a 'guess the number' game as follows: Your program chooses the number to be guessed by selecting a random integer in the range 1 to 1000. The script displays the prompt 'Guess a number between 1 and 1000' next to a text field. The player types a first guess into the text field and clicks a button to submit the guess to the script. If the player’s guess is incorrect, your program should display 'Too high. Try again' or 'Too low. Try again' in the browser’s status bar to help the player 'zero in' on the correct answer, and should clear the text field so the user can enter the next guess. When the user enters the correct answer, display 'Congratulations. You guessed the number!' in the status bar, and clear the text field so the user can play again.",
+  "options": [
+    "a. \n<pre>\nguessGame\n  select randomNum\n  display 'Guess a number between 1 and 1000'\n  get guess\n  if guess > randomNum\n    display 'Too high. Try again'\n  else if guess < randomNum\n    display 'Too low. Try again'\n  else\n    display 'Congratulations. You guessed the number!'\n  endif\nendif\nend\n</pre>",
+    "b. \n<pre>\nguessGame\n  select randomNum\n  display 'Guess a number between 1 and 1000'\n  get guess\n  if guess < randomNum\n    display 'Too high. Try again'\n  else if guess > randomNum\n    display 'Too low. Try again'\n  else\n    display 'Congratulations. You guessed the number!'\n    select randomNum\n  endif\nendif\nend\n</pre>",
+    "c. \n<pre>\nguessGame\n  select randomNum\n  display 'Guess a number between 1 and 1000'\n  get guess\n  if guess > randomNum\n    display 'Too high. Try again'\n    clear text box\n  else if guess < randomNum\n    display 'Too low. Try again'\n    clear text box\n  else\n    display 'Congratulations. You guessed the number!'\n    clear text box\n    select randomNum\n  endif\nendif\nend\n</pre>",
+    "d. \n<pre>\nguessGame\n  select randomNum\n  display 'Guess a number between 1 and 1000'\n  get guess\n  if guess > randomNum\n    display 'Too high. Try again'\n  else if guess < randomNum\n    display 'Too low. Try again'\n  else\n    display 'Congratulations. You guessed the number!'\n    select randomNum\n  endif\nendif\nend\n</pre>"
+  ],
+  "correctAnswer": "c. \n<pre>\nguessGame\n  select randomNum\n  display 'Guess a number between 1 and 1000'\n  get guess\n  if guess > randomNum\n    display 'Too high. Try again'\n    clear text box\n  else if guess < randomNum\n    display 'Too low. Try again'\n    clear text box\n  else\n    display 'Congratulations. You guessed the number!'\n    clear text box\n    select randomNum\n  endif\nendif\nend\n</pre>",
+  "explanation": "Option c correctly handles clearing the text field after every guess and reselecting a new random number after the game ends."
+},
+{
+  "text": "Following is a problem statement. Which of the following algorithms will solve the problem statement?\nWrite a script that uses random number generation to create sentences. Use four arrays of string called article, noun, verb, and preposition. Create a sentence by selecting a word at random from each array in the following order: article noun verb preposition article noun. As each word is picked, concatenate it to the previous words in the sentence. The words should be separated by spaces. When the completed sentence is output, it should start with a capital letter and end with a period. Generate 20 sentences to form a short story, output the results in an HTML textarea, and display 'Once upon a time...' and 'THE END'.",
+  "options": [
+    "a. \n<pre>\ngenerateStory\n  display 'Once upon a time ...'\n  randomSentence\n    var article = ['the', 'a', 'one', 'some', 'any'];\n    var noun = ['boy', 'girl', 'dog', 'town', 'car'];\n    var verb = ['drove', 'jumped', 'ran', 'walked', 'skipped'];\n    var prep = ['to', 'from', 'over', 'under', 'on'];\n    sentence = article(arrayNumber);\n    sentence += ' ' + noun(arrayNumber);\n    sentence += ' ' + verb(arrayNumber);\n    sentence += ' ' + prep(arrayNumber);\n    sentence += ' ' + article(arrayNumber);\n    sentence += ' ' + noun(arrayNumber);\n    sentence += '.';\n  end\n  display sentence\n  display 'THE END'\nend\n</pre>",
+    "b. \n<pre>\ngenerateStory\n  display 'Once upon a time ...'\n  randomSentence\n    var article = ['the', 'a', 'one', 'some', 'any'];\n    var noun = ['boy', 'girl', 'dog', 'town', 'car'];\n    var verb = ['drove', 'jumped', 'ran', 'walked', 'skipped'];\n    var prep = ['to', 'from', 'over', 'under', 'on'];\n    repeat 20 times\n    sentence = article(arrayNumber);\n    sentence += ' ' + noun(arrayNumber);\n    sentence += ' ' + verb(arrayNumber);\n    sentence += ' ' + prep(arrayNumber);\n    sentence += ' ' + article(arrayNumber);\n    sentence += ' ' + noun(arrayNumber);\n    sentence += '.';\n    display sentence\n  end repeat\n  display 'THE END'\nend\n</pre>",
+    "c. \n<pre>\ngenerateStory\n  display 'Once upon a time ...'\n  repeat 20 times\n  randomSentence\n    var article = ['the', 'a', 'one', 'some', 'any'];\n    var noun = ['boy', 'girl', 'dog', 'town', 'car'];\n    var verb = ['drove', 'jumped', 'ran', 'walked', 'skipped'];\n    var prep = ['to', 'from', 'over', 'under', 'on'];\n    sentence = article(arrayNumber);\n    sentence += ' ' + noun(arrayNumber);\n    sentence += ' ' + verb(arrayNumber);\n    sentence += ' ' + prep(arrayNumber);\n    sentence += ' ' + article(arrayNumber);\n    sentence += ' ' + noun(arrayNumber);\n    sentence += '.';\n  end\n  display sentence\nend repeat\n  display 'THE END'\nend\n</pre>",
+    "d. \n<pre>\ngenerateStory\n  display 'Once upon a time ...'\n  var article = ['the', 'a', 'one', 'some', 'any'];\n  var noun = ['boy', 'girl', 'dog', 'town', 'car'];\n  var verb = ['drove', 'jumped', 'ran', 'walked', 'skipped'];\n  var prep = ['to', 'from', 'over', 'under', 'on'];\n  sentence = article(arrayNumber);\n  sentence += ' ' + noun(arrayNumber);\n  sentence += ' ' + verb(arrayNumber);\n  sentence += ' ' + prep(arrayNumber);\n  sentence += ' ' + article(arrayNumber);\n  sentence += ' ' + noun(arrayNumber);\n  sentence += '.';\n  display sentence\n  display 'THE END'\nend\n</pre>"
+  ],
+  "correctAnswer": "b. \n<pre>\ngenerateStory\n  display 'Once upon a time ...'\n  randomSentence\n    var article = ['the', 'a', 'one', 'some', 'any'];\n    var noun = ['boy', 'girl', 'dog', 'town', 'car'];\n    var verb = ['drove', 'jumped', 'ran', 'walked', 'skipped'];\n    var prep = ['to', 'from', 'over', 'under', 'on'];\n    repeat 20 times\n    sentence = article(arrayNumber);\n    sentence += ' ' + noun(arrayNumber);\n    sentence += ' ' + verb(arrayNumber);\n    sentence += ' ' + prep(arrayNumber);\n    sentence += ' ' + article(arrayNumber);\n    sentence += ' ' + noun(arrayNumber);\n    sentence += '.';\n    display sentence\n  end repeat\n  display 'THE END'\nend\n</pre>",
+  "explanation": "Option b generates 20 sentences for the story and correctly handles the flow by repeating the process of sentence generation."
+},
+{
+  "text": "Following is a problem statement. Which of the following algorithms will solve the problem statement?\nYou can determine whether a year is a leap year by testing if it is divisible by 4. However, years that are also divisible by 100 are not leap years, unless they are also divisible by 400. Write a script that allows a user to enter a year and determine whether the year entered is a leap year. Display an alert dialog box to the user stating whether they year they entered is a leap year or a standard year.",
+  "options": [
+    "a. \n<pre>\ncheckLeapYear\n  display 'Enter the year'\n  enter year\n  if year / 4 equal 0\n    display 'The year you entered is a leap year.'\n  else if year / 400 equal 0\n    display 'The year you entered is a leap year.'\n  else if year / 100 equal 0\n    display 'The year you entered is a standard year.'\n  endif\nendif\nend\n</pre>",
+    "b. \n<pre>\ncheckLeapYear\n  display 'Enter the year'\n  enter year\n  year / 4 not equal 0\n  display 'The year you entered is a standard year.'\n  year / 400 equal 0\n  'The year you entered is a leap year.'\n  year / 100 equal 0\n  'The year you entered is a standard year.'\n  year / 4 equal 0\n  display 'The year is a leap year.'\nend\n</pre>",
+    "c. \n<pre>\ncheckLeapYear\n  display 'Enter the year'\n  enter year\n  if year / 4 not equal 0\n    display 'The year you entered is a standard year.'\n  else if year / 400 equal 0\n    display 'The year you entered is a leap year.'\n  else if year / 100 equal 0\n    display 'The year you entered is a standard year.'\n  else\n    display 'The year is a leap year.'\n  endif\nendif\nend\n</pre>",
+    "d. \n<pre>\ncheckLeapYear\n  display 'Enter the year'\n  enter year\n  if year / 4 not equal 0\n    display 'The year you entered is a standard year.'\n  else if year / 400 equal 0\n    display 'The year you entered is a leap year.'\n  else\n    display 'The year is a standard year.'\n  endif\nendif\nend\n</pre>"
+  ],
+  "correctAnswer": "c. \n<pre>\ncheckLeapYear\n  display 'Enter the year'\n  enter year\n  if year / 4 not equal 0\n    display 'The year you entered is a standard year.'\n  else if year / 400 equal 0\n    display 'The year you entered is a leap year.'\n  else if year / 100 equal 0\n    display 'The year you entered is a standard year.'\n  else\n    display 'The year is a leap year.'\n  endif\nendif\nend\n</pre>",
+  "explanation": "Option c implements the correct logic to check if the year is divisible by 4, 100, and 400, correctly identifying leap years."
+},
+{
+  "text": "Following is a problem statement. Which of the following algorithms will solve the problem statement?\nYou convert a Fahrenheit temperature to Celsius using the following formula: (fahrenheitTemp – 32) * 0.55. Write a script that allows a user to enter a Fahrenheit temperature and convert it to Celsius. The temperature should be rounded to the nearest whole number.",
+  "options": [
+    "a. \n<pre>\nconvertToFahrenheit\n  display 'Enter the temperature in Fahrenheit'\n  celsius = (fahrenheitTemp – 32) * 0.55\n  display 'The temperature you entered in Fahrenheit is equal to ' + celsius + ' in Celsius'\nend\n</pre>",
+    "b. \n<pre>\nconvertToFahrenheit\n  display 'Enter the temperature in Fahrenheit'\n  enter fahrenheitTemp\n  round celsius = (fahrenheitTemp – 32) * 0.55\n  display 'The temperature you entered in Fahrenheit is equal to ' + celsius + ' in Celsius'\nend\n</pre>",
+    "c. \n<pre>\nconvertToFahrenheit\n  display 'Enter the temperature in Fahrenheit'\n  enter fahrenheitTemp\n  celsius = (fahrenheitTemp – 32) * 0.55\n  display 'The temperature you entered in Fahrenheit is equal to ' + celsius + ' in Celsius'\nend\n</pre>",
+    "d. \n<pre>\nconvertToFahrenheit\n  display 'Enter the temperature in Fahrenheit'\n  enter fahrenheitTemp\n  celsius = fahrenheitTemp – 32 * 0.55\n  display 'The temperature you entered in Fahrenheit is equal to ' + celsius + ' in Celsius'\nend\n</pre>"
+  ],
+  "correctAnswer": "b. \n<pre>\nconvertToFahrenheit\n  display 'Enter the temperature in Fahrenheit'\n  enter fahrenheitTemp\n  round celsius = (fahrenheitTemp – 32) * 0.55\n  display 'The temperature you entered in Fahrenheit is equal to ' + celsius + ' in Celsius'\nend\n</pre>",
+  "explanation": "Option b correctly rounds the Celsius temperature after calculating the conversion from Fahrenheit."
+},
+{
+  "text": "Following is a problem statement. Which of the following provides the correct IPO for the problem statement?\nCreate an HTML document that calculates the square meter of carpet required to carpet a room. Include three text boxes. Create one text box for the width of the room in meters and another for the length of the room in meters. Also create a text box for the cost per square meter of carpeting. When you calculate the cost, add 25% to the total number of square meter to account for cupboards and other features in the room. Display the total cost in an alert dialog box.",
+  "options": [
+    "a. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nwidth          | Get width, length, cost from user       | totalCost\nlength         | Calculate squareFootage                 |\ncost           | Calculate costPerFootage                |\n              | Calculate totalCost                     |\n              | Display totalCost                       |\n</pre>",
+    "b. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nwidth          | Get width, length, cost from user       | totalCost\nlength         | Calculate cost                          |\ncost           | Calculate totalCost                     |\n              | Display totalCost                       |\n</pre>",
+    "c. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nwidth          | Get width, length, cost from user       | totalCost\nlength         | Calculate squareFootage                 |\ncost           | Calculate totalCost                     |\n              | Display totalCost                       |\n</pre>",
+    "d. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nwidth          | Get width, length, cost from user       | totalCost\nlength         | Calculate squareFootage                 |\ncost           | Calculate cost                          |\n              | Calculate totalCost                     |\n              | Display totalCost                       |\n</pre>"
+  ],
+  "correctAnswer": "a. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nwidth          | Get width, length, cost from user       | totalCost\nlength         | Calculate squareFootage                 |\ncost           | Calculate costPerFootage                |\n              | Calculate totalCost                     |\n              | Display totalCost                       |\n</pre>",
+  "explanation": "Option a correctly represents the Input, Processing, and Output needed to solve the problem of calculating the carpet cost, including getting the user inputs, calculating the total cost, and displaying it."
+},
+{
+  "text": "Following is a problem statement. Which of the following provides the correct IPO for the problem statement?\nWrite a script that plays a 'guess the number' game as follows: Your program chooses the number to be guessed by selecting a random integer in the range 1 to 1000. The script displays the prompt 'Guess a number between 1 and 1000' next to a text field. The player types a first guess into the text field and clicks a button to submit the guess to the script. If the player's guess is incorrect, your program should display 'Too high. Try again' or 'Too low. Try again' in the browser's status bar to help the player 'zero in' on the correct answer, and should clear the text field so the user can enter the next guess. When the user enters the correct answer, display 'Congratulations. You guessed the number!' in the status bar, and clear the text field so the user can play again.",
+  "options": [
+    "a. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nrandomNum      | Get guess from user                     | message\nguess          | Compare numbers                         |\n              | Select low, high, correct message        |\n              | Clear text box                           |\n              | Display message                          |\n</pre>",
+    "b. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nrandomNum      | Select randomNum                        | message\nguess          | Get guess from user                     |\n              | Select low, high, correct message        |\n              | Display message                          |\n</pre>",
+    "c. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nrandomNum      | Select randomNum                        | message\nguess          | Get guess from user                     |\n              | Compare numbers                         |\n              | Select low, high, correct message        |\n</pre>",
+    "d. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nrandomNum      | Select randomNum                        | message\nguess          | Get guess from user                     |\n              | Compare numbers                         |\n              | Select low, high                         |\n              | Clear text box                           |\n              | Display message                          |\n              | Select correct message                   |\n              | Display message                          |\n              | Clear text box                           |\n              | Select randomNum                         |\n</pre>"
+  ],
+  "correctAnswer": "a. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\nrandomNum      | Get guess from user                     | message\nguess          | Compare numbers                         |\n              | Select low, high, correct message        |\n              | Clear text box                           |\n              | Display message                          |\n</pre>",
+  "explanation": "Option a correctly represents the Input, Processing, and Output needed to solve the problem of the 'guess the number' game, including getting the user input, comparing it to the randomly generated number, and displaying appropriate messages." 
+},
+{
+  "text": "Following is a problem statement. Which of the following provides the correct IPO for the problem statement?\nWrite a script that uses random number generation to create sentences. Use four arrays of strings called article, noun, verb, and preposition. Create a sentence by selecting a word at random from each array in the following order: article noun verb preposition article noun. As each word is picked, concatenate it to the previous words in the sentence. The words should be separated by spaces. When the completed sentence is output, it should start with a capital letter and end with a period (full stop).\n\nThe arrays should be filled as follows: the article array should contain the articles 'the', 'a', 'one', 'some', and 'any'; the noun array should contain the nouns 'boy', 'girl', 'dog', 'town', and 'car'; the verb array should contain the verbs 'drove', 'jumped', 'ran', 'walked', and 'skipped'; the preposition array should contain the prepositions 'to', 'from', 'over', 'under', and 'on'.\n\nThe program should generate 20 sentences to form a short story and output the results to an HTML textarea. The story should begin with a line reading 'Once upon a time ...' and end with a line reading 'THE END'.",
+  "options": [
+    "a. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\narray          | Select words                             | sentence\n              | Concatenate words and spaces             |\n              | Change first word, first letter to capital letter |\n              | Add full stop                            |\n              | Display story                            |\n</pre>",
+    "b. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\narticleArray   | Select word from nounArray               | sentence\nnounArray      | Change first word, first letter to capital letter |\nverbArray      | Add first word to sentence               |\nprepArray      | Add space and nounArray word to sentence |\n              | Add space and verbArray word to sentence |\n              | Add space and prepArray word to sentence |\n              | Add space and articleArray word to sentence |\n              | Add space and nounArray word to sentence |\n              | Add period to sentence                   |\n              | Display sentence                         |\n              | Display 'THE END'                        |\n</pre>",
+    "c. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\narticleArray   | Display 'Once upon a time...'           | sentence\nnounArray      | Repeat 20 times                          |\nverbArray      | Select word from nounArray               |\nprepArray      | Change first word, first letter to capital letter |\n              | Add first word to sentence               |\n              | Add space and nounArray word to sentence |\n              | Add space and verbArray word to sentence |\n              | Add space and prepArray word to sentence |\n              | Add space and articleArray word to sentence |\n              | Add space and nounArray word to sentence |\n              | Add period to sentence                   |\n              | Display sentence                         |\n              | Display 'THE END'                        |\n</pre>",
+    "d. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\narticleArray   | Display 'Once upon a time...'           | sentence\nnounArray      | Select words                             |\nverbArray      | Concatenate words and spaces             |\nprepArray      | Change first word, first letter to capital letter |\n              | Add period to sentence                   |\n              | Display sentence                         |\n              | Display 'THE END'                        |\n</pre>"
+  ],
+  "correctAnswer": "a. \n<pre>\nInput          | Processing                              | Output\n------------------------------------------------------------\narray          | Select words                             | sentence\n              | Concatenate words and spaces             |\n              | Change first word, first letter to capital letter |\n              | Add full stop                            |\n              | Display story                            |\n</pre>",
+  "explanation": "Option a correctly represents the Input, Processing, and Output needed to solve the problem of generating sentences using random number generation, including selecting words from arrays, concatenating them into a proper sentence, and formatting the output." 
+},
+
+{
+  "text": "A variable to indicate an hourly tariff paid for an employee would be of data type _______",
+  "options": [
+    "a. character",
+    "b. Boolean",
+    "c. integer",
+    "d. Real"
+  ],
+  "correctAnswer": "d. Real",
+  "explanation": "The hourly tariff is a numeric value that may have decimal points, hence the data type should be 'Real'."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A customer pays 500 Rand for a coffee maker after a discount of 20%. What is the original price of the coffee maker?",
+  "options": [
+    "a. price = cost - discount",
+    "b. price = cost / ((100 - discount) / 100)",
+    "c. none of the above",
+    "d. price = cost + discount"
+  ],
+  "correctAnswer": "b. price = cost / ((100 - discount) / 100)",
+  "explanation": "To find the original price, divide the final price by the factor representing the remaining percentage after the discount."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A group of 22 students goes on a trip. They prepare enough food to last 18 days. If 14 additional students join them at the last minute, how many days will their food last?",
+  "options": [
+    "a. daysLast = daysPrep * sGroup1 + sGroup2",
+    "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
+    "c. daysLast = daysPrep / (sGroup1 + sGroup2)",
+    "d. none of the above"
+  ],
+  "correctAnswer": "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
+  "explanation": "The food will now have to be shared among a larger group, so multiply the initial days of food by the initial group size and divide by the total number of students."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A rugby team lost 5 meters and then gained 9. What is the team's progress?",
+  "options": [
+    "a. progress = lost - gained",
+    "b. progress = -lost + gained",
+    "c. progress = lost + gained",
+    "d. none of the above"
+  ],
+  "correctAnswer": "b. progress = -lost + gained",
+  "explanation": "Since the meters lost need to be subtracted, use a negative sign before 'lost', then add the meters gained."
+},
+{
+  "text": "How would you set up the following arithmetic equation? Maria bought 10 notebooks costing 5 Rand each and 5 pens costing 2 Rand each. How much did Maria pay?",
+  "options": [
+    "a. payment = notebooks + pens",
+    "b. none of the above",
+    "c. payment = (notebook * 5) + (pens * 2)",
+    "d. payment = (notebook + pens) * 5 * 2"
+  ],
+  "correctAnswer": "c. payment = (notebook * 5) + (pens * 2)",
+  "explanation": "The correct setup multiplies the quantity by the price for both notebooks and pens and then adds the two values."
+},
+{
+  "text": "A variable to indicate an hourly tariff paid for an employee would be of data type _______",
+  "options": [
+    "a. character",
+    "b. Boolean",
+    "c. integer",
+    "d. Real"
+  ],
+  "correctAnswer": "d. Real",
+  "explanation": "The hourly tariff is a numeric value that may have decimal points, hence the data type should be 'Real'."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A customer pays 500 Rand for a coffee maker after a discount of 20%. What is the original price of the coffee maker?",
+  "options": [
+    "a. price = cost - discount",
+    "b. price = cost / ((100 - discount) / 100)",
+    "c. none of the above",
+    "d. price = cost + discount"
+  ],
+  "correctAnswer": "b. price = cost / ((100 - discount) / 100)",
+  "explanation": "To find the original price, divide the final price by the factor representing the remaining percentage after the discount."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A group of 22 students goes on a trip. They prepare enough food to last 18 days. If 14 additional students join them at the last minute, how many days will their food last?",
+  "options": [
+    "a. daysLast = daysPrep * sGroup1 + sGroup2",
+    "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
+    "c. daysLast = daysPrep / (sGroup1 + sGroup2)",
+    "d. none of the above"
+  ],
+  "correctAnswer": "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
+  "explanation": "The food will now have to be shared among a larger group, so multiply the initial days of food by the initial group size and divide by the total number of students."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A rugby team lost 5 meters and then gained 9. What is the team's progress?",
+  "options": [
+    "a. progress = lost - gained",
+    "b. progress = -lost + gained",
+    "c. progress = lost + gained",
+    "d. none of the above"
+  ],
+  "correctAnswer": "b. progress = -lost + gained",
+  "explanation": "Since the meters lost need to be subtracted, use a negative sign before 'lost', then add the meters gained."
+},
+{
+  "text": "How would you set up the following arithmetic equation? Maria bought 10 notebooks costing 5 Rand each and 5 pens costing 2 Rand each. How much did Maria pay?",
+  "options": [
+    "a. payment = notebooks + pens",
+    "b. none of the above",
+    "c. payment = (notebook * 5) + (pens * 2)",
+    "d. payment = (notebook + pens) * 5 * 2"
+  ],
+  "correctAnswer": "c. payment = (notebook * 5) + (pens * 2)",
+  "explanation": "The correct setup multiplies the quantity by the price for both notebooks and pens and then adds the two values."
+},
+{
+  "text": "If a variable is of type Integer, which of the following would be a possible value?",
+  "options": [
+    "a. 758.80",
+    "b. 758",
+    "c. B758",
+    "d. None of the above"
+  ],
+  "correctAnswer": "b. 758",
+  "explanation": "An integer is a whole number without decimals, so 758 is the correct option."
+},
+{
+  "text": "If a variable is of type String, which of the following would be a possible value?",
+  "options": [
+    "a. \"bam bam\"",
+    "b. \"b\"",
+    "c. true",
+    "d. none of the above"
+  ],
+  "correctAnswer": "a. \"bam bam\"",
+  "explanation": "A String can contain text or characters, and \"bam bam\" is a valid String value."
+},
+{
+  "text": "In data hierarchy, which element normally groups related fields together?",
+  "options": [
+    "a. File",
+    "b. Field",
+    "c. Table",
+    "d. Record"
+  ],
+  "correctAnswer": "d. Record",
+  "explanation": "A record is a collection of related fields that typically represent a single entity."
+},
+{
+  "text": "In data hierarchy, which of the following is the smallest element?",
+  "options": [
+    "a. Character",
+    "b. Record",
+    "c. Database",
+    "d. Field"
+  ],
+  "correctAnswer": "a. Character",
+  "explanation": "A character is the smallest element in the data hierarchy, representing a single letter, digit, or symbol."
+},
+{
+  "text": "Indicate which of the following is a valid variable name:",
+  "options": [
+    "a. theAddressOfTheCompanyInTshwane",
+    "b. empName",
+    "c. 5472",
+    "d. none of the above"
+  ],
+  "correctAnswer": "b. empName",
+  "explanation": "Variable names cannot start with a digit, and 'empName' is a valid identifier."
+},
+
+{
+  "text": "A variable to indicate an hourly tariff paid for an employee would be of data type _______",
+  "options": [
+    "a. character",
+    "b. Boolean",
+    "c. integer",
+    "d. Real"
+  ],
+  "correctAnswer": "d. Real",
+  "explanation": "The hourly tariff is a numeric value that may have decimal points, hence the data type should be 'Real'."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A customer pays 500 Rand for a coffee maker after a discount of 20%. What is the original price of the coffee maker?",
+  "options": [
+    "a. price = cost - discount",
+    "b. price = cost / ((100 - discount) / 100)",
+    "c. none of the above",
+    "d. price = cost + discount"
+  ],
+  "correctAnswer": "b. price = cost / ((100 - discount) / 100)",
+  "explanation": "To find the original price, divide the final price by the factor representing the remaining percentage after the discount."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A group of 22 students goes on a trip. They prepare enough food to last 18 days. If 14 additional students join them at the last minute, how many days will their food last?",
+  "options": [
+    "a. daysLast = daysPrep * sGroup1 + sGroup2",
+    "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
+    "c. daysLast = daysPrep / (sGroup1 + sGroup2)",
+    "d. none of the above"
+  ],
+  "correctAnswer": "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
+  "explanation": "The food will now have to be shared among a larger group, so multiply the initial days of food by the initial group size and divide by the total number of students."
+},
+{
+  "text": "How would you set up the following arithmetic equation? A rugby team lost 5 meters and then gained 9. What is the team's progress?",
+  "options": [
+    "a. progress = lost - gained",
+    "b. progress = -lost + gained",
+    "c. progress = lost + gained",
+    "d. none of the above"
+  ],
+  "correctAnswer": "b. progress = -lost + gained",
+  "explanation": "Since the meters lost need to be subtracted, use a negative sign before 'lost', then add the meters gained."
+},
+{
+  "text": "How would you set up the following arithmetic equation? Maria bought 10 notebooks costing 5 Rand each and 5 pens costing 2 Rand each. How much did Maria pay?",
+  "options": [
+    "a. payment = notebooks + pens",
+    "b. none of the above",
+    "c. payment = (notebook * 5) + (pens * 2)",
+    "d. payment = (notebook + pens) * 5 * 2"
+  ],
+  "correctAnswer": "c. payment = (notebook * 5) + (pens * 2)",
+  "explanation": "The correct setup multiplies the quantity by the price for both notebooks and pens and then adds the two values."
+},
+{
+  "text": "If a variable is of type Integer, which of the following would be a possible value?",
+  "options": [
+    "a. 758.80",
+    "b. 758",
+    "c. B758",
+    "d. None of the above"
+  ],
+  "correctAnswer": "b. 758",
+  "explanation": "An integer is a whole number without decimals, so 758 is the correct option."
+},
+{
+  "text": "If a variable is of type String, which of the following would be a possible value?",
+  "options": [
+    "a. \"bam bam\"",
+    "b. \"b\"",
+    "c. true",
+    "d. none of the above"
+  ],
+  "correctAnswer": "a. \"bam bam\"",
+  "explanation": "A String can contain text or characters, and \"bam bam\" is a valid String value."
+},
+{
+  "text": "In data hierarchy, which element normally groups related fields together?",
+  "options": [
+    "a. File",
+    "b. Field",
+    "c. Table",
+    "d. Record"
+  ],
+  "correctAnswer": "d. Record",
+  "explanation": "A record is a collection of related fields that typically represent a single entity."
+},
+{
+  "text": "In data hierarchy, which of the following is the smallest element?",
+  "options": [
+    "a. Character",
+    "b. Record",
+    "c. Database",
+    "d. Field"
+  ],
+  "correctAnswer": "a. Character",
+  "explanation": "A character is the smallest element in the data hierarchy, representing a single letter, digit, or symbol."
+},
+{
+  "text": "Indicate which of the following is a valid variable name:",
+  "options": [
+    "a. theAddressOfTheCompanyInTshwane",
+    "b. empName",
+    "c. 5472",
+    "d. none of the above"
+  ],
+  "correctAnswer": "b. empName",
+  "explanation": "Variable names cannot start with a digit, and 'empName' is a valid identifier."
+},
+{
+  "text": "A database consists of a number of related files or tables.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "A database is composed of related files or tables that store data systematically."
+},
+{
+  "text": "A file is a collection of related records.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "A file contains related records that are stored together."
+},
+{
+  "text": "A value can be assigned to a variable while the statements in the algorithm are being processed.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Values can be assigned to variables during algorithm execution."
+},
+{
+  "text": "A variable name can contain letters and numbers.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Variable names can include both letters and numbers, but cannot start with a number."
+},
+{
+  "text": "A variable name may contain special characters.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "Variable names cannot contain special characters, except for underscores." 
+},
+{
+  "text": "Addition will be executed before division in the following statement: answer = x ^ 6 + 2 - y * 2 mod 3 / 2",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "According to operator precedence, multiplication, division, and modulus are performed before addition and subtraction."
+},
+{
+  "text": "An integer variable contains a positive or negative number with a decimal part.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "An integer variable does not contain a decimal part; it is a whole number."
+},
+{
+  "text": "Constants have a fixed value that cannot change throughout the entire program.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Constants are values that remain the same throughout the execution of a program."
+},
+{
+  "text": "In arithmetic operators, addition and subtraction have a higher precedence than the negation operator.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "The negation operator has a higher precedence than addition and subtraction."
+},
+{
+  "text": "In arithmetic operators, multiplication and division operators have a higher precedence than the modulus.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "Multiplication, division, and modulus all have the same precedence."
+},
+{
+  "text": "A computer can assign a value to a variable by giving it an initial value, assigning a value as a result of processing, and keeping information for later use.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "A computer can assign values in different ways, including initializing a variable, computing a value, or storing a value for later use."
+},
+{
+  "text": "A computer cannot understand and process statements written in pseudocode.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Pseudocode is an informal representation that humans use to plan an algorithm; computers cannot directly execute it."
+},
+{
+  "text": "A computer can receive data via a keyboard, scanner, or other input device.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Computers receive data through various input devices like keyboards and scanners."
+},
+{
+  "text": "A flowchart is an English-like representation of the logical steps necessary to solve a problem.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "A flowchart is a visual representation of the logical steps required to solve a problem, not an English-like textual representation."
+},
+{
+  "text": "A pseudocode solution need only be written one statement per line, big tasks need not be broken down into smaller tasks.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "Pseudocode should break big tasks into smaller, manageable steps to effectively solve a problem."
+},
+{
+  "text": "All the steps needed to solve the problem must be written down in any sequence.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "Steps must be written in a logical sequence to ensure the problem is correctly solved."
+},
+{
+  "text": "An algorithm can be written in pseudocode",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Pseudocode is a common way to express an algorithm in a readable format."
+},
+{
+  "text": "Deleting all unnecessary information from the problem statement can help you arrive at the crux of the problem.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Removing extraneous details allows you to focus on the core problem and find a solution more effectively."
+},
+{
+  "text": "If you can write a solution in 200 steps/statements or in 20 statements, clearly the more effective solution is the 20-statement one.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "A shorter solution that accomplishes the same task is generally more efficient and preferable."
+},
+{
+  "text": "Input is processed to produce meaningful data.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Input is processed by the computer to generate meaningful and useful information."
+},
+{
+  "text": "It is important to look at a problem from different angles and to consider different ways to solve it.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "True",
+  "explanation": "Evaluating a problem from multiple perspectives helps in finding the most efficient solution."
+},
+{
+  "text": "It is not possible to solve a problem if it contains redundant information.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "correctAnswer": "False",
+  "explanation": "Redundant information does not make a problem unsolvable; it can be ignored or removed to simplify the solution."
+},
+{
+  "text": "____ is a programming model that focuses on an application's components and data and the methods you need to manipulate them.",
+  "options": [
+    "a. Classical programming",
+    "b. Functional programming",
+    "c. Procedural programming",
+    "d. Object-oriented programming"
+  ],
+  "correctAnswer": "d. Object-oriented programming",
+  "explanation": "Object-oriented programming is centered around objects, which are instances of classes that encapsulate data and methods."
+},
+{
+  "text": "____ methods are those for which no object needs to exist",
+  "options": [
+    "a. Public",
+    "b. Dynamic",
+    "c. Static",
+    "d. Private"
+  ],
+  "correctAnswer": "c. Static",
+  "explanation": "Static methods belong to the class rather than an instance, and therefore do not require an object to be invoked."
+},
+{
+  "text": "_____ members of a base class are never accessible to a derived class.",
+  "options": [
+    "a. All of the above",
+    "b. Private",
+    "c. Public",
+    "d. Protected"
+  ],
+  "correctAnswer": "b. Private",
+  "explanation": "Private members are only accessible within the class they are declared in and are not accessible to derived classes."
+},
+{
+  "text": "_____ allows one class to be created from another class.",
+  "options": [
+    "a. Inheritance",
+    "b. Polymorphism",
+    "c. Encapsulation",
+    "d. All of the above"
+  ],
+  "correctAnswer": "a. Inheritance",
+  "explanation": "Inheritance allows a new class to inherit properties and behaviors from an existing class."
+},
+{
+  "text": "A ____ is a set of program statements that lists the characteristics of each object and the methods each object can use.",
+  "options": [
+    "a. class definition",
+    "b. class reference",
+    "c. class interface",
+    "d. class model"
+  ],
+  "correctAnswer": "a. class definition",
+  "explanation": "A class definition provides a blueprint for objects, defining their attributes and methods."
+},
+{
+  "text": "A property that has a _______ scope is visible within the object it applies and to other objects within the same system.",
+  "options": [
+    "a. Public",
+    "b. Private",
+    "c. Dynamic",
+    "d. Static"
+  ],
+  "correctAnswer": "a. Public",
+  "explanation": "Public properties are accessible from outside the object, including from other objects in the same system."
+},
+{
+  "text": "A template or plan for building objects is known as a _____.",
+  "options": [
+    "a. template",
+    "b. building block",
+    "c. class",
+    "d. plan"
+  ],
+  "correctAnswer": "c. class",
+  "explanation": "A class serves as a blueprint for creating objects in object-oriented programming."
+},
+{
+  "text": "Attributes of a class are normally accessed through _____ operations by the outside world.",
+  "options": [
+    "a. protected",
+    "b. public",
+    "c. None of the above",
+    "d. private"
+  ],
+  "correctAnswer": "b. public",
+  "explanation": "Public methods or properties provide access to a class's attributes from outside the class."
+},
+{
+  "text": "Data inside a class is normally _____.",
+  "options": [
+    "a. public",
+    "b. protected",
+    "c. private",
+    "d. none of the above"
+  ],
+  "correctAnswer": "c. private",
+  "explanation": "Data inside a class is often kept private to protect it from unintended interference and to enforce encapsulation."
+}
+  
+]
+}

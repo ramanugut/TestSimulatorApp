@@ -1,0 +1,252 @@
+{
+    "testName": "ICT1541 Chapter 10",
+    "questions": [
+      {
+        "text": "Which of the following best describes system software?",
+        "options": ["A. Software designed for user productivity", "B. Software that manages computer resources", "C. Software used for graphic design", "D. Software for managing social media"],
+        "correctAnswer": "B. Software that manages computer resources",
+        "explanation": "System software includes operating systems and utilities that manage and control computer hardware."
+      },
+      {
+        "text": "True or False: An operating system acts as an intermediary between the user and the computer hardware.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "The operating system manages hardware resources and provides a user interface."
+      },
+      {
+        "text": "Which of the following is a type of user interface?",
+        "options": ["A. Command-line interface", "B. Compiler", "C. Firewall", "D. Router"],
+        "correctAnswer": "A. Command-line interface",
+        "explanation": "A command-line interface allows users to interact with the operating system using text commands."
+      },
+      {
+        "text": "Which operating system is commonly used in servers and enterprise environments?",
+        "options": ["A. Windows 10", "B. macOS", "C. Linux", "D. iOS"],
+        "correctAnswer": "C. Linux",
+        "explanation": "Linux is widely used in servers and enterprise environments due to its stability and flexibility."
+      },
+      {
+        "text": "What is the primary purpose of a device driver?",
+        "options": ["A. To protect against viruses", "B. To provide network security", "C. To enable communication between the operating system and hardware devices", "D. To enhance software graphics"],
+        "correctAnswer": "C. To enable communication between the operating system and hardware devices",
+        "explanation": "Device drivers are programs that allow the operating system to communicate with hardware devices like printers and graphics cards."
+      },
+      {
+        "text": "Which of the following is a type of system utility?",
+        "options": ["A. Spreadsheet software", "B. Disk cleanup", "C. Database management", "D. Photo editing"],
+        "correctAnswer": "B. Disk cleanup",
+        "explanation": "Disk cleanup is a system utility that removes unnecessary files to free up disk space."
+      },
+      {
+        "text": "True or False: A kernel is the core component of an operating system that manages system resources.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "The kernel is the central part of an operating system, managing hardware and system resources."
+      },
+      {
+        "text": "Which type of software is responsible for managing hardware and providing an environment for running applications?",
+        "options": ["A. Application software", "B. System software", "C. Malware", "D. Utility software"],
+        "correctAnswer": "B. System software",
+        "explanation": "System software, including operating systems, manages hardware and provides an environment for running applications."
+      },
+      {
+        "text": "Which of the following is NOT a function of an operating system?",
+        "options": ["A. Memory management", "B. File management", "C. Network management", "D. Video production"],
+        "correctAnswer": "D. Video production",
+        "explanation": "Operating systems handle memory, file, and network management but are not used for video production."
+      },
+      {
+        "text": "What does GUI stand for in computing?",
+        "options": ["A. General User Interaction", "B. Graphical User Interface", "C. Group User Interface", "D. Global Utility Interface"],
+        "correctAnswer": "B. Graphical User Interface",
+        "explanation": "GUI stands for Graphical User Interface, which allows users to interact with software using graphical elements like icons and buttons."
+      },
+      {
+        "text": "True or False: A file system is used to organize and store files on a storage device.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "File systems are used to manage and organize files and directories on storage devices."
+      },
+      {
+        "text": "Which type of software provides tools for managing hardware and software resources on a computer?",
+        "options": ["A. Application software", "B. System software", "C. Programming software", "D. Web browsers"],
+        "correctAnswer": "B. System software",
+        "explanation": "System software includes operating systems and utilities that manage hardware and software resources."
+      },
+      {
+        "text": "Which of the following is an example of a desktop operating system?",
+        "options": ["A. Windows 10", "B. Android", "C. iOS", "D. RouterOS"],
+        "correctAnswer": "A. Windows 10",
+        "explanation": "Windows 10 is a popular desktop operating system used on personal computers."
+      },
+      {
+        "text": "Which of the following is an example of a mobile operating system?",
+        "options": ["A. Linux", "B. Windows Server", "C. macOS", "D. Android"],
+        "correctAnswer": "D. Android",
+        "explanation": "Android is a mobile operating system designed for smartphones and tablets."
+      },
+      {
+        "text": "True or False: Multitasking allows multiple programs to run simultaneously on a computer.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Multitasking enables multiple applications to run at the same time on an operating system."
+      },
+      {
+        "text": "What is the primary function of an operating system’s file manager?",
+        "options": ["A. To scan for viruses", "B. To manage files and folders", "C. To compile code", "D. To edit photos"],
+        "correctAnswer": "B. To manage files and folders",
+        "explanation": "The file manager in an operating system is responsible for organizing and managing files and directories."
+      },
+      {
+        "text": "Which of the following is an open-source operating system?",
+        "options": ["A. Windows", "B. macOS", "C. Linux", "D. iOS"],
+        "correctAnswer": "C. Linux",
+        "explanation": "Linux is an open-source operating system that can be freely modified and distributed."
+      },
+      {
+        "text": "Which command-line interface command is used to display the contents of a directory in Windows?",
+        "options": ["A. cd", "B. ls", "C. dir", "D. rm"],
+        "correctAnswer": "C. dir",
+        "explanation": "The 'dir' command is used in the Windows command-line interface to display the contents of a directory."
+      },
+      {
+        "text": "True or False: System utilities are software tools used to maintain and optimize system performance.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "System utilities like disk cleanup and defragmentation tools are used to maintain and optimize system performance."
+      },
+      {
+        "text": "Which of the following is a security feature used to protect an operating system from unauthorized access?",
+        "options": ["A. Screen saver", "B. Password protection", "C. Wallpaper", "D. Calculator"],
+        "correctAnswer": "B. Password protection",
+        "explanation": "Password protection is a security feature used to restrict access to the operating system and files."
+      },
+      {
+        "text": "Which of the following allows users to run multiple operating systems on a single physical machine?",
+        "options": ["A. Firewall", "B. Antivirus software", "C. Virtualization", "D. Multitasking"],
+        "correctAnswer": "C. Virtualization",
+        "explanation": "Virtualization allows multiple operating systems to run on a single physical machine using virtual machines."
+      },
+      {
+        "text": "What is the function of the Task Manager in Windows?",
+        "options": ["A. To display system performance", "B. To manage files", "C. To edit text files", "D. To browse the web"],
+        "correctAnswer": "A. To display system performance",
+        "explanation": "The Task Manager displays system performance and allows users to monitor and manage processes."
+      },
+      {
+        "text": "True or False: An embedded operating system is used in specialized devices like ATMs and smart appliances.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Embedded operating systems are designed for specialized devices and have limited functionality compared to general-purpose OS."
+      },
+      {
+        "text": "Which of the following types of software is responsible for translating programming code into machine language?",
+        "options": ["A. File manager", "B. Compiler", "C. Antivirus software", "D. Media player"],
+        "correctAnswer": "B. Compiler",
+        "explanation": "Compilers translate high-level programming code into machine language that can be executed by the CPU."
+      },
+      {
+        "text": "Which operating system is developed by Apple and is used on Macintosh computers?",
+        "options": ["A. Windows", "B. Linux", "C. iOS", "D. macOS"],
+        "correctAnswer": "D. macOS",
+        "explanation": "macOS is developed by Apple and is used on Macintosh computers."
+      },
+      {
+        "text": "Which of the following is a real-time operating system used in critical applications like industrial controls?",
+        "options": ["A. Windows", "B. Linux", "C. RTOS", "D. Android"],
+        "correctAnswer": "C. RTOS",
+        "explanation": "Real-Time Operating Systems (RTOS) are used in critical applications that require real-time response."
+      },
+      {
+        "text": "True or False: Disk fragmentation occurs when files are stored in non-contiguous clusters on a disk.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Disk fragmentation happens when files are stored in different locations on the disk, slowing down access times."
+      },
+      {
+        "text": "Which type of operating system allows multiple users to access and use the computer resources simultaneously?",
+        "options": ["A. Single-user", "B. Multi-user", "C. Real-time", "D. Batch"],
+        "correctAnswer": "B. Multi-user",
+        "explanation": "Multi-user operating systems allow multiple users to access the computer at the same time."
+      },
+      {
+        "text": "Which of the following software tools can be used to diagnose and repair issues with a hard drive?",
+        "options": ["A. Disk Defragmenter", "B. Disk Cleanup", "C. Disk Scanner", "D. Antivirus"],
+        "correctAnswer": "C. Disk Scanner",
+        "explanation": "A Disk Scanner is used to diagnose and repair issues such as bad sectors on a hard drive."
+      },
+      {
+        "text": "Which of the following software tools helps to reduce disk fragmentation?",
+        "options": ["A. Disk Cleanup", "B. Disk Defragmenter", "C. Task Manager", "D. Backup software"],
+        "correctAnswer": "B. Disk Defragmenter",
+        "explanation": "Disk Defragmenter is used to rearrange fragmented files on a disk to improve access speed."
+      },
+      {
+        "text": "True or False: Multithreading allows a single process to execute multiple threads simultaneously.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Multithreading enables a single process to have multiple threads running concurrently."
+      },
+      {
+        "text": "Which of the following is an example of utility software?",
+        "options": ["A. Disk Cleanup", "B. Spreadsheet", "C. Web browser", "D. Email client"],
+        "correctAnswer": "A. Disk Cleanup",
+        "explanation": "Utility software like Disk Cleanup helps maintain and optimize the system."
+      },
+      {
+        "text": "Which of the following describes open-source software?",
+        "options": ["A. Software with a closed-source code", "B. Software that can be freely modified and distributed", "C. Software with proprietary restrictions", "D. Software that cannot be edited"],
+        "correctAnswer": "B. Software that can be freely modified and distributed",
+        "explanation": "Open-source software is freely available and can be modified and distributed by anyone."
+      },
+      {
+        "text": "True or False: The boot process is the process of starting or restarting a computer and loading the operating system.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "The boot process initializes hardware and loads the operating system when a computer is started or restarted."
+      },
+      {
+        "text": "Which of the following types of operating systems is designed to be used on embedded systems?",
+        "options": ["A. Real-Time Operating System", "B. Network Operating System", "C. Multi-user Operating System", "D. Batch Operating System"],
+        "correctAnswer": "A. Real-Time Operating System",
+        "explanation": "Real-Time Operating Systems are designed for embedded systems and applications that require real-time responses."
+      },
+      {
+        "text": "Which of the following commands is used to delete a directory in the Windows command-line interface?",
+        "options": ["A. mkdir", "B. dir", "C. rmdir", "D. copy"],
+        "correctAnswer": "C. rmdir",
+        "explanation": "The 'rmdir' command is used to delete directories in the Windows command-line interface."
+      },
+      {
+        "text": "True or False: A process in an operating system is an instance of a program in execution.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "A process is an instance of a program that is currently being executed by the operating system."
+      },
+      {
+        "text": "Which of the following best describes a shell in computing?",
+        "options": ["A. A hardware component", "B. A software interface for accessing the operating system", "C. A type of database", "D. A network device"],
+        "correctAnswer": "B. A software interface for accessing the operating system",
+        "explanation": "A shell is a software interface that allows users to interact with the operating system using commands."
+      },
+      {
+        "text": "Which of the following terms refers to temporarily storing data to free up RAM?",
+        "options": ["A. Caching", "B. Swapping", "C. Virtualization", "D. Buffering"],
+        "correctAnswer": "B. Swapping",
+        "explanation": "Swapping temporarily moves data from RAM to a storage device to free up memory for other processes."
+      },
+      {
+        "text": "True or False: A daemon is a background process that runs without user interaction.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Daemons are background processes that run without user intervention to perform specific tasks."
+      },
+      {
+        "text": "What is the main function of a task scheduler in an operating system?",
+        "options": ["A. To schedule appointments", "B. To allocate CPU time to processes", "C. To edit text files", "D. To browse the web"],
+        "correctAnswer": "B. To allocate CPU time to processes",
+        "explanation": "The task scheduler allocates CPU time to processes and manages task execution."
+      }
+    ]
+  }
+  

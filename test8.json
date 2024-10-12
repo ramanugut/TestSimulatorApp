@@ -1,0 +1,171 @@
+  
+
+
+{
+    "testName": "ICT1541 Chapter 5",
+    "questions": [
+      {
+        "text": "What is the main purpose of a firewall in a computer network?",
+        "options": ["A. To manage files", "B. To filter incoming and outgoing traffic", "C. To store data", "D. To defragment the hard disk"],
+        "correctAnswer": "B. To filter incoming and outgoing traffic",
+        "explanation": "A firewall is used to filter network traffic and protect against unauthorized access."
+      },
+      {
+        "text": "Which of the following is an example of a strong password?",
+        "options": ["A. password123", "B. 12345678", "C. MyDog'sName!2024", "D. qwerty"],
+        "correctAnswer": "C. MyDog'sName!2024",
+        "explanation": "Strong passwords include a mix of letters, numbers, and special characters and are not easily guessable."
+      },
+      {
+        "text": "True or False: Encryption is used to convert readable data into an unreadable format to protect its confidentiality.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Encryption transforms data into an unreadable format to ensure that only authorized users can read it."
+      },
+      {
+        "text": "Which of the following is NOT a type of malware?",
+        "options": ["A. Virus", "B. Spyware", "C. Firewall", "D. Worm"],
+        "correctAnswer": "C. Firewall",
+        "explanation": "Firewalls are security tools, whereas viruses, spyware, and worms are types of malware."
+      },
+      {
+        "text": "What is the primary goal of a denial of service (DoS) attack?",
+        "options": ["A. To steal user passwords", "B. To prevent access to network resources", "C. To spread malware", "D. To back up data"],
+        "correctAnswer": "B. To prevent access to network resources",
+        "explanation": "A DoS attack overwhelms a network, making it unavailable to legitimate users."
+      },
+      {
+        "text": "Which of the following best describes phishing?",
+        "options": ["A. An attempt to trick someone into providing sensitive information", "B. A method for protecting emails", "C. A software used to encrypt data", "D. A tool for managing passwords"],
+        "correctAnswer": "A. An attempt to trick someone into providing sensitive information",
+        "explanation": "Phishing is a type of social engineering that aims to obtain sensitive information through deceptive emails or websites."
+      },
+      {
+        "text": "Which of the following is a tool that can be used to detect and remove malware?",
+        "options": ["A. Web browser", "B. Task manager", "C. Antivirus software", "D. Video player"],
+        "correctAnswer": "C. Antivirus software",
+        "explanation": "Antivirus software is designed to detect, block, and remove malicious software from a computer."
+      },
+      {
+        "text": "True or False: Social engineering is a method used to bypass security by exploiting human behavior.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Social engineering involves manipulating people into divulging confidential information or performing actions that compromise security."
+      },
+      {
+        "text": "Which of the following is an example of biometric security?",
+        "options": ["A. Password authentication", "B. Fingerprint scanner", "C. Security questions", "D. Username"],
+        "correctAnswer": "B. Fingerprint scanner",
+        "explanation": "Biometric security involves using physical characteristics, such as fingerprints, for authentication."
+      },
+      {
+        "text": "Which law or regulation is designed to protect the privacy of student education records?",
+        "options": ["A. FERPA", "B. HIPAA", "C. GDPR", "D. SOX"],
+        "correctAnswer": "A. FERPA",
+        "explanation": "The Family Educational Rights and Privacy Act (FERPA) protects the privacy of student education records."
+      },
+      {
+        "text": "True or False: Ethical hacking is the practice of testing systems for vulnerabilities with permission.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Ethical hacking involves legally testing systems for vulnerabilities to improve security."
+      },
+      {
+        "text": "Which of the following is NOT a type of digital security threat?",
+        "options": ["A. Phishing", "B. Hacking", "C. Password manager", "D. Malware"],
+        "correctAnswer": "C. Password manager",
+        "explanation": "Password managers are used to store and manage passwords securely, not a security threat."
+      },
+      {
+        "text": "What is the main purpose of two-factor authentication (2FA)?",
+        "options": ["A. To store data in the cloud", "B. To enhance security by requiring two forms of identification", "C. To increase download speed", "D. To manage cookies"],
+        "correctAnswer": "B. To enhance security by requiring two forms of identification",
+        "explanation": "2FA adds an additional layer of security by requiring users to provide two types of credentials to verify their identity."
+      },
+      {
+        "text": "Which of the following is used to keep track of changes made to files or documents?",
+        "options": ["A. Backup", "B. Version control", "C. Firewall", "D. Disk cleanup"],
+        "correctAnswer": "B. Version control",
+        "explanation": "Version control systems keep track of changes to files and documents, making it easy to review and revert changes if needed."
+      },
+      {
+        "text": "True or False: A botnet is a network of computers infected with malware that can be controlled remotely.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Botnets are networks of infected computers that can be controlled remotely for malicious purposes."
+      },
+      {
+        "text": "Which of the following best describes ransomware?",
+        "options": ["A. Software that tracks user behavior", "B. Software that demands payment to restore access to data", "C. A tool used for disk optimization", "D. A program used for photo editing"],
+        "correctAnswer": "B. Software that demands payment to restore access to data",
+        "explanation": "Ransomware is a type of malware that encrypts a user's data and demands payment for its release."
+      },
+      {
+        "text": "Which of the following is NOT a recommended way to protect your privacy online?",
+        "options": ["A. Using strong passwords", "B. Sharing personal information freely on social media", "C. Enabling two-factor authentication", "D. Avoiding suspicious links and downloads"],
+        "correctAnswer": "B. Sharing personal information freely on social media",
+        "explanation": "Sharing personal information freely on social media can compromise your privacy and security."
+      },
+      {
+        "text": "What does GDPR stand for?",
+        "options": ["A. Global Data Protection Regulation", "B. General Data Protection Regulation", "C. General Digital Privacy Rights", "D. Global Digital Privacy Rights"],
+        "correctAnswer": "B. General Data Protection Regulation",
+        "explanation": "GDPR is a regulation that governs data protection and privacy in the European Union."
+      },
+      {
+        "text": "Which of the following is a method used to secure wireless networks?",
+        "options": ["A. Open Wi-Fi access", "B. WEP encryption", "C. WPA2 encryption", "D. Using the default router password"],
+        "correctAnswer": "C. WPA2 encryption",
+        "explanation": "WPA2 is a secure encryption protocol used to protect wireless networks."
+      },
+      {
+        "text": "True or False: Digital forensics is the process of investigating cybercrimes by gathering and analyzing evidence from digital devices.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Digital forensics involves the recovery and analysis of data from digital devices to investigate cybercrimes."
+      },
+      {
+        "text": "Which of the following describes the ethical principle of integrity in digital security?",
+        "options": ["A. Ensuring that information is accurate and not altered", "B. Sharing information freely", "C. Hacking systems to discover vulnerabilities", "D. Providing access to unauthorized users"],
+        "correctAnswer": "A. Ensuring that information is accurate and not altered",
+        "explanation": "Integrity involves ensuring that information remains accurate, consistent, and free from unauthorized alterations."
+      },
+      {
+        "text": "Which type of attack involves sending a flood of network requests to overload a system?",
+        "options": ["A. Phishing attack", "B. Denial of Service (DoS) attack", "C. Man-in-the-middle attack", "D. SQL injection attack"],
+        "correctAnswer": "B. Denial of Service (DoS) attack",
+        "explanation": "A DoS attack involves sending a large number of requests to overwhelm a system and disrupt its services."
+      },
+      {
+        "text": "True or False: A backup is a copy of data stored separately to prevent data loss.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Backups are copies of data stored separately to protect against data loss in case of system failure or attack."
+      },
+      {
+        "text": "Which of the following is NOT an example of a digital security threat?",
+        "options": ["A. Password manager", "B. Virus", "C. Trojan horse", "D. Spyware"],
+        "correctAnswer": "A. Password manager",
+        "explanation": "Password managers are security tools, while viruses, Trojan horses, and spyware are digital security threats."
+      },
+      {
+        "text": "What is the purpose of a digital certificate?",
+        "options": ["A. To manage passwords", "B. To verify the identity of a user or website", "C. To remove malware", "D. To create digital images"],
+        "correctAnswer": "B. To verify the identity of a user or website",
+        "explanation": "Digital certificates are used to verify the identity of users and websites to establish trust."
+      },
+      {
+        "text": "Which of the following is a network security protocol used to secure data transmitted over Wi-Fi?",
+        "options": ["A. WPA3", "B. HTTP", "C. FTP", "D. SMTP"],
+        "correctAnswer": "A. WPA3",
+        "explanation": "WPA3 is the latest security protocol designed to protect data transmitted over Wi-Fi networks."
+      },
+      {
+        "text": "True or False: A rootkit is a type of malware designed to gain administrative control over a system.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Rootkits are a type of malware that hide themselves and gain administrative access to a system."
+      }
+    ]
+  }
+  

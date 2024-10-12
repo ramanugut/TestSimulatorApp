@@ -1,0 +1,324 @@
+{
+  "testName": "ICT1541 - Module 1",
+  "questions": [
+    {
+      "text": "Which of the following devices is typically more portable than a desktop but has a physical keyboard?",
+      "options": [
+        "A. Desktop",
+        "B. Laptop",
+        "C. Smartphone",
+        "D. Tablet"
+      ],
+      "correctAnswer": "B. Laptop",
+      "explanation": "Laptops are designed to be portable and have a built-in keyboard, making them more portable than desktops."
+    },
+    {
+      "text": "True or False: Tablets are usually more powerful than laptops for computing tasks.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "B. False",
+      "explanation": "Laptops typically have more powerful hardware than tablets, making them better suited for computing tasks."
+    },
+    {
+      "text": "Which of the following is a primary use of servers in business environments?",
+      "options": [
+        "A. Web browsing",
+        "B. Managing network resources",
+        "C. Video editing",
+        "D. Playing games"
+      ],
+      "correctAnswer": "B. Managing network resources",
+      "explanation": "Servers are used to manage network resources such as file storage, printer sharing, and user authentication."
+    },
+    {
+      "text": "Which device category would a 'two-in-one' computer that can switch between laptop and tablet modes fall under?",
+      "options": [
+        "A. Laptop",
+        "B. Hybrid device",
+        "C. Desktop",
+        "D. Smartphone"
+      ],
+      "correctAnswer": "B. Hybrid device",
+      "explanation": "Two-in-one devices are known as hybrid devices because they can function as both a laptop and a tablet."
+    },
+    {
+      "text": "Which type of device is specifically designed for reading e-books and has an e-ink display?",
+      "options": [
+        "A. Digital media player",
+        "B. Smartphone",
+        "C. E-book reader",
+        "D. Wearable device"
+      ],
+      "correctAnswer": "C. E-book reader",
+      "explanation": "E-book readers use e-ink technology, which is easy on the eyes and designed for reading digital books."
+    },
+    {
+      "text": "True or False: Information is the result of processing raw data to reveal meaning.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "Information is processed data that has been organized to provide value and meaning."
+    },
+    {
+      "text": "What is the primary purpose of data in a computing system?",
+      "options": [
+        "A. To be stored permanently",
+        "B. To be processed into information",
+        "C. To be visualized only",
+        "D. To be deleted after use"
+      ],
+      "correctAnswer": "B. To be processed into information",
+      "explanation": "Data is collected and processed by computing systems to generate meaningful information."
+    },
+    {
+      "text": "Which of the following best describes information?",
+      "options": [
+        "A. Unprocessed facts",
+        "B. Organized and processed data",
+        "C. Data that cannot be used",
+        "D. Random numbers and characters"
+      ],
+      "correctAnswer": "B. Organized and processed data",
+      "explanation": "Information is data that has been organized and processed to provide meaning and value."
+    },
+    {
+      "text": "Which of these terms refers to data that has been given meaning through context and interpretation?",
+      "options": [
+        "A. Data",
+        "B. Information",
+        "C. Input",
+        "D. Output"
+      ],
+      "correctAnswer": "B. Information",
+      "explanation": "Information is the result of data being processed and given context and interpretation."
+    },
+    {
+      "text": "True or False: The purpose of data is to represent information in a meaningful way.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "Data is used to represent information in a structured and meaningful way when processed."
+    },
+    {
+      "text": "Which of the following differentiates a laptop from a desktop computer?",
+      "options": [
+        "A. Laptops are portable, while desktops are stationary",
+        "B. Laptops are less powerful than desktops",
+        "C. Laptops cannot connect to the Internet",
+        "D. Desktops have longer battery life"
+      ],
+      "correctAnswer": "A. Laptops are portable, while desktops are stationary",
+      "explanation": "Laptops are designed for portability, whereas desktops are designed for stationary use."
+    },
+    {
+      "text": "Which component is typically found in desktops but is integrated differently in laptops?",
+      "options": [
+        "A. Monitor",
+        "B. Hard drive",
+        "C. Motherboard",
+        "D. All of the above"
+      ],
+      "correctAnswer": "D. All of the above",
+      "explanation": "Desktops have separate components like a monitor and motherboard, while in laptops these are compactly integrated."
+    },
+    {
+      "text": "True or False: All-in-one desktops have the CPU and monitor integrated into a single unit.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "All-in-one desktops integrate all the main components into a single unit to save space."
+    },
+    {
+      "text": "Which of the following input devices is primarily used for gaming and ergonomic use?",
+      "options": [
+        "A. Standard keyboard",
+        "B. Ergonomic keyboard",
+        "C. Gaming keyboard",
+        "D. Compact keyboard"
+      ],
+      "correctAnswer": "C. Gaming keyboard",
+      "explanation": "Gaming keyboards are designed specifically for gaming purposes with specialized keys and features."
+    },
+    {
+      "text": "True or False: A digital camera can also be used as a scanner.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "B. False",
+      "explanation": "A digital camera is used for capturing images, whereas a scanner is used to digitize printed images or text."
+    },
+    {
+      "text": "Which of the following best defines a smartphone?",
+      "options": [
+        "A. A device used for making calls only",
+        "B. A portable device that combines mobile telephony with computing functions",
+        "C. A device used only for sending emails",
+        "D. A desktop computer with call functionality"
+      ],
+      "correctAnswer": "B. A portable device that combines mobile telephony with computing functions",
+      "explanation": "Smartphones are portable devices that offer both communication and computing capabilities."
+    },
+    {
+      "text": "Which of the following is NOT a feature of modern digital cameras?",
+      "options": [
+        "A. Image capture",
+        "B. Image storage",
+        "C. Video recording",
+        "D. Internet browsing"
+      ],
+      "correctAnswer": "D. Internet browsing",
+      "explanation": "Digital cameras are designed primarily for capturing and storing images and videos, not for browsing the Internet."
+    },
+    {
+      "text": "Which of these is a type of wearable device?",
+      "options": [
+        "A. Desktop",
+        "B. Laptop",
+        "C. Smartwatch",
+        "D. Smartphone"
+      ],
+      "correctAnswer": "C. Smartwatch",
+      "explanation": "A smartwatch is a type of wearable device that can connect to smartphones and other devices."
+    },
+    {
+      "text": "True or False: E-book readers are primarily used for browsing the web.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "B. False",
+      "explanation": "E-book readers are specifically designed for reading digital books, not for general web browsing."
+    },
+    {
+      "text": "True or False: The web and the Internet are the same thing.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "B. False",
+      "explanation": "The Internet is a global network of computers, while the web is a service that uses the Internet to display information."
+    },
+    {
+      "text": "Which of the following is a type of online social network?",
+      "options": [
+        "A. Spreadsheet",
+        "B. Browser",
+        "C. Facebook",
+        "D. Operating System"
+      ],
+      "correctAnswer": "C. Facebook",
+      "explanation": "Facebook is an example of an online social network where people can share information and connect with others."
+    },
+    {
+      "text": "What is the role of a search engine?",
+      "options": [
+        "A. To browse websites",
+        "B. To store web pages",
+        "C. To locate information based on keywords",
+        "D. To create web pages"
+      ],
+      "correctAnswer": "C. To locate information based on keywords",
+      "explanation": "Search engines help locate information on the web based on the keywords entered by users."
+    },
+    {
+      "text": "True or False: A web server is responsible for storing and delivering webpages to clients upon request.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "A web server stores and delivers webpages when requested by a browser."
+    },
+    {
+      "text": "Which of these is a potential digital security risk?",
+      "options": [
+        "A. Email",
+        "B. Virus",
+        "C. Word Processor",
+        "D. Calculator"
+      ],
+      "correctAnswer": "B. Virus",
+      "explanation": "Viruses are malicious programs that pose a significant security risk to digital systems."
+    },
+    {
+      "text": "True or False: An operating system is the main software that controls all computer activities.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "The operating system manages all hardware and software resources on a computer."
+    },
+    {
+      "text": "Which of these is NOT a digital security risk?",
+      "options": [
+        "A. Malware",
+        "B. Phishing",
+        "C. Firewall",
+        "D. Spyware"
+      ],
+      "correctAnswer": "C. Firewall",
+      "explanation": "A firewall is a security tool that helps protect against security risks, rather than being a risk itself."
+    },
+    {
+      "text": "Which type of software manages hardware resources and provides an environment for applications?",
+      "options": [
+        "A. Application Software",
+        "B. System Software",
+        "C. Utility Software",
+        "D. Graphics Software"
+      ],
+      "correctAnswer": "B. System Software",
+      "explanation": "System software, such as operating systems, manages hardware and provides an environment for other software."
+    },
+    {
+      "text": "True or False: An operating system is required for any computer or mobile device to function.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "Without an operating system, a computer or mobile device cannot function as it manages hardware and software resources."
+    },
+    {
+      "text": "Which of these is NOT a type of operating system?",
+      "options": [
+        "A. Windows",
+        "B. Linux",
+        "C. Android",
+        "D. Photoshop"
+      ],
+      "correctAnswer": "D. Photoshop",
+      "explanation": "Photoshop is a graphics editing software, not an operating system."
+    },
+    {
+      "text": "Which of the following technologies is used for wireless communication?",
+      "options": [
+        "A. Bluetooth",
+        "B. HDMI",
+        "C. USB",
+        "D. Ethernet"
+      ],
+      "correctAnswer": "A. Bluetooth",
+      "explanation": "Bluetooth is a technology used for short-range wireless communication between devices."
+    },
+    {
+      "text": "Which of these is an example of a wired technology?",
+      "options": [
+        "A. Wi-Fi",
+        "B. Bluetooth",
+        "C. USB",
+        "D. NFC"
+      ],
+      "correctAnswer": "C. USB",
+      "explanation": "USB is a wired technology used for connecting peripherals to a computer."
+    },
+    {
+      "text": "True or False: Wi-Fi is a form of wireless communication.",
+      "options": ["A. True", "B. False"],
+      "correctAnswer": "A. True",
+      "explanation": "Wi-Fi is a wireless technology used for networking and Internet access."
+    },
+    {
+      "text": "Which of the following is a potential health risk associated with prolonged technology use?",
+      "options": [
+        "A. Increased productivity",
+        "B. Repetitive strain injuries",
+        "C. Faster typing speed",
+        "D. Better vision"
+      ],
+      "correctAnswer": "B. Repetitive strain injuries",
+      "explanation": "Prolonged technology use, especially without breaks, can lead to repetitive strain injuries such as carpal tunnel syndrome."
+    },
+    {
+      "text": "Which of these ergonomic practices is recommended to reduce health-related injuries?",
+      "options": [
+        "A. Use a chair with good lumbar support",
+        "B. Use a computer in a dimly lit room",
+        "C. Place the monitor at eye level or below",
+        "D. Both A and C"
+      ],
+      "correctAnswer": "D. Both A and C",
+      "explanation": "Ergonomic practices like using a chair with good lumbar support and placing the monitor at or below eye level can reduce health-related injuries."
+    }
+  ]
+}

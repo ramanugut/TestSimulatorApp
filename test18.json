@@ -1,0 +1,16 @@
+{
+    "testName": "Test",
+    "questions": [
+         {
+      "text": "Indicate what will be displayed after the following code has been executed if the user enters totAmount - 5000 and monthAmount - 400.\nCalculateSavings\n  finalAmount = 0\n  noMonths = 0\n  display 'Provide the amount that Pule wants to save'\n  enter totAmount\n  display 'The monthly amount that he is able to save'\n  enter monthAmount\n  do\n    if finalAmount < 1000 then\n      finalAmount = finalAmount * 1.07\n    else\n      finalAmount = finalAmount * 1.09\n    enif\n    finalAmount = finalAmount + monthAmount\n    noMonths = noMonths + 1\n  loop until finalAmount >= totAmount\n  display 'Pule had to save ', noMonths, ' months to reach his goal'\nend",
+      "options": [
+        "a. Pule had to save 8 months to reach his goal",
+        "b. None of the above",
+        "c. Pule had to save 9 months to reach his goal",
+        "d. Pule had to save 10 months to reach his goal"
+      ],
+      "correctAnswer": "c. Pule had to save 9 months to reach his goal",
+      "explanation": "The loop iterates until 'finalAmount' reaches or exceeds 'totAmount'. Considering the interest added each month and the monthly saving amount, Pule ends up needing 9 months to reach his savings goal of 5000."
+    }
+    ]
+}

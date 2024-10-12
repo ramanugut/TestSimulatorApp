@@ -1,0 +1,180 @@
+{
+    "testName": "ICT1541 Chapter 3",
+    "questions": [
+      {
+        "text": "Which type of computer is designed to provide services and resources to other computers on a network?",
+        "options": ["A. Tablet", "B. Server", "C. Laptop", "D. All-in-One"],
+        "correctAnswer": "B. Server",
+        "explanation": "A server is designed to provide services, resources, and data to other computers on a network."
+      },
+      {
+        "text": "Which of the following devices is NOT considered a mobile device?",
+        "options": ["A. Smartphone", "B. Tablet", "C. Desktop", "D. E-book Reader"],
+        "correctAnswer": "C. Desktop",
+        "explanation": "Desktops are stationary devices, while smartphones, tablets, and e-book readers are portable."
+      },
+      {
+        "text": "True or False: An e-book reader is a type of embedded computer.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "An e-book reader is a dedicated device for reading digital books, not an embedded computer."
+      },
+      {
+        "text": "Which of the following is a type of specialized computer used for point-of-sale transactions?",
+        "options": ["A. Desktop", "B. POS Terminal", "C. Tablet", "D. Smartphone"],
+        "correctAnswer": "B. POS Terminal",
+        "explanation": "POS terminals are specialized computers used in retail stores for managing sales transactions."
+      },
+      {
+        "text": "Which of the following devices is typically used in banks for cash withdrawals and deposits?",
+        "options": ["A. Kiosk", "B. ATM", "C. Desktop", "D. Server"],
+        "correctAnswer": "B. ATM",
+        "explanation": "ATMs are specialized terminals used in banks to allow customers to perform financial transactions."
+      },
+      {
+        "text": "Which device is often used for reading electronic books and periodicals?",
+        "options": ["A. Digital Camera", "B. Tablet", "C. E-book Reader", "D. Smartphone"],
+        "correctAnswer": "C. E-book Reader",
+        "explanation": "E-book readers are designed specifically for reading digital books and periodicals."
+      },
+      {
+        "text": "Which of the following is NOT a characteristic of a server?",
+        "options": ["A. Provides resources to other computers", "B. Performs complex calculations", "C. Offers file storage and management", "D. Displays webpages"],
+        "correctAnswer": "D. Displays webpages",
+        "explanation": "Servers do not display webpages; they host and serve them to clients."
+      },
+      {
+        "text": "True or False: A tablet is considered a mobile device because it is lightweight and portable.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Tablets are mobile devices due to their lightweight design and portability."
+      },
+      {
+        "text": "What type of device is often embedded in appliances and cars to perform dedicated functions?",
+        "options": ["A. Tablet", "B. Desktop", "C. Embedded Computer", "D. E-book Reader"],
+        "correctAnswer": "C. Embedded Computer",
+        "explanation": "Embedded computers are used in appliances, cars, and other devices to perform dedicated functions."
+      },
+      {
+        "text": "Which of the following is a major benefit of using cloud computing?",
+        "options": ["A. Limited storage capacity", "B. Local data storage", "C. Access to files from anywhere", "D. Requires hardware maintenance"],
+        "correctAnswer": "C. Access to files from anywhere",
+        "explanation": "Cloud computing allows users to access files and applications from any location with an internet connection."
+      },
+      {
+        "text": "True or False: Desktops are more portable than laptops.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "Desktops are stationary and less portable compared to laptops."
+      },
+      {
+        "text": "Which of the following is NOT a special-purpose computer?",
+        "options": ["A. POS Terminal", "B. ATM", "C. Laptop", "D. Game Console"],
+        "correctAnswer": "C. Laptop",
+        "explanation": "Laptops are general-purpose computers, while POS terminals, ATMs, and game consoles are special-purpose."
+      },
+      {
+        "text": "Which of the following health issues is commonly associated with prolonged computer use?",
+        "options": ["A. Eyestrain", "B. Migraine", "C. Foot Pain", "D. Sunburn"],
+        "correctAnswer": "A. Eyestrain",
+        "explanation": "Prolonged computer use can lead to eyestrain due to staring at screens for extended periods."
+      },
+      {
+        "text": "Which of the following is an ergonomic principle for setting up a workspace?",
+        "options": ["A. Keep the monitor at eye level", "B. Use bright lighting", "C. Place keyboard above shoulder height", "D. Sit on a high stool"],
+        "correctAnswer": "A. Keep the monitor at eye level",
+        "explanation": "An ergonomic workspace should have the monitor at eye level to reduce neck strain."
+      },
+      {
+        "text": "Which type of computing device is designed to be highly portable and lightweight?",
+        "options": ["A. Desktop", "B. Laptop", "C. Server", "D. Mainframe"],
+        "correctAnswer": "B. Laptop",
+        "explanation": "Laptops are designed for portability, making them lightweight and easy to carry."
+      },
+      {
+        "text": "Which of the following is used to secure a laptop and prevent theft?",
+        "options": ["A. Surge Protector", "B. Cable Lock", "C. USB Port", "D. Mouse"],
+        "correctAnswer": "B. Cable Lock",
+        "explanation": "Cable locks are used to secure laptops to a stationary object to prevent theft."
+      },
+      {
+        "text": "True or False: An all-in-one desktop has a separate tower component.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "All-in-one desktops integrate all components into a single unit, without a separate tower."
+      },
+      {
+        "text": "Which of the following is a handheld computing device that is small enough to fit in one hand?",
+        "options": ["A. Server", "B. Mainframe", "C. Stick Computer", "D. Kiosk"],
+        "correctAnswer": "C. Stick Computer",
+        "explanation": "Stick computers are small computing devices that are typically the size of a USB flash drive."
+      },
+      {
+        "text": "Which type of computer is best suited for running high-performance applications and storing large amounts of data?",
+        "options": ["A. Laptop", "B. Desktop", "C. Server", "D. Tablet"],
+        "correctAnswer": "C. Server",
+        "explanation": "Servers are designed for high-performance applications and large data storage needs."
+      },
+      {
+        "text": "What type of input device is used to capture images or video?",
+        "options": ["A. Printer", "B. Monitor", "C. Digital Camera", "D. Mouse"],
+        "correctAnswer": "C. Digital Camera",
+        "explanation": "Digital cameras are used to capture images and videos."
+      },
+      {
+        "text": "True or False: Cloud storage is a form of local storage.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "Cloud storage is remote storage accessed over the internet, not local storage."
+      },
+      {
+        "text": "Which of the following devices is NOT a portable computing device?",
+        "options": ["A. Laptop", "B. Desktop", "C. Tablet", "D. Smartphone"],
+        "correctAnswer": "B. Desktop",
+        "explanation": "Desktops are stationary and not considered portable computing devices."
+      },
+      {
+        "text": "What is the primary function of an ATM?",
+        "options": ["A. To browse the internet", "B. To make phone calls", "C. To perform banking transactions", "D. To edit documents"],
+        "correctAnswer": "C. To perform banking transactions",
+        "explanation": "ATMs are used by customers to perform various banking transactions."
+      },
+      {
+        "text": "Which of the following is a dedicated device used for playing digital media such as music and videos?",
+        "options": ["A. Server", "B. Laptop", "C. Portable Media Player", "D. Desktop"],
+        "correctAnswer": "C. Portable Media Player",
+        "explanation": "Portable media players are used for playing digital media like music and videos."
+      },
+      {
+        "text": "Which type of computer is designed for use in a stationary location?",
+        "options": ["A. Desktop", "B. Laptop", "C. Tablet", "D. Smartphone"],
+        "correctAnswer": "A. Desktop",
+        "explanation": "Desktops are designed for use in a fixed location and are not portable."
+      },
+      {
+        "text": "True or False: A gaming console is an example of a special-purpose computer.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Game consoles are designed specifically for gaming and are considered special-purpose computers."
+      },
+      {
+        "text": "Which of the following devices is typically used for printing text and graphics on paper?",
+        "options": ["A. Monitor", "B. Mouse", "C. Printer", "D. Keyboard"],
+        "correctAnswer": "C. Printer",
+        "explanation": "Printers are used to produce text and graphics on physical media like paper."
+      },
+      {
+        "text": "What is the purpose of a surge protector?",
+        "options": ["A. To protect against power surges", "B. To increase internet speed", "C. To prevent software crashes", "D. To cool the computer"],
+        "correctAnswer": "A. To protect against power surges",
+        "explanation": "Surge protectors help safeguard electronic devices from power surges."
+      },
+      {
+        "text": "True or False: Digital cameras can only capture still images.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "Digital cameras can capture both still images and videos."
+      }
+    ]
+  }
+  

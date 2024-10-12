@@ -1,0 +1,192 @@
+{
+    "testName": "ICT1541 Chapter 7",
+    "questions": [
+      {
+        "text": "Which of the following best describes a network?",
+        "options": ["A. A collection of interconnected devices", "B. A single computer", "C. A type of software", "D. A peripheral device"],
+        "correctAnswer": "A. A collection of interconnected devices",
+        "explanation": "A network is a collection of computers and devices connected together to share resources and information."
+      },
+      {
+        "text": "True or False: A local area network (LAN) covers a larger geographic area than a wide area network (WAN).",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "B. False",
+        "explanation": "A LAN covers a smaller geographic area like a single building, while a WAN covers larger areas such as cities or countries."
+      },
+      {
+        "text": "Which of the following is an example of a protocol used for transferring files over the Internet?",
+        "options": ["A. FTP", "B. HTTP", "C. SMTP", "D. IMAP"],
+        "correctAnswer": "A. FTP",
+        "explanation": "FTP (File Transfer Protocol) is used to transfer files between computers over the Internet."
+      },
+      {
+        "text": "Which device is used to amplify and regenerate network signals?",
+        "options": ["A. Router", "B. Switch", "C. Repeater", "D. Hub"],
+        "correctAnswer": "C. Repeater",
+        "explanation": "Repeaters amplify and regenerate network signals to extend the range of a network."
+      },
+      {
+        "text": "Which type of network topology has a central hub and nodes connected to it?",
+        "options": ["A. Ring", "B. Star", "C. Mesh", "D. Bus"],
+        "correctAnswer": "B. Star",
+        "explanation": "In a star topology, each device is connected to a central hub, which manages data transmission."
+      },
+      {
+        "text": "Which of the following is used to uniquely identify a device on a network?",
+        "options": ["A. MAC Address", "B. Subnet Mask", "C. IP Address", "D. DNS"],
+        "correctAnswer": "A. MAC Address",
+        "explanation": "A MAC (Media Access Control) address is a unique identifier assigned to a network interface card (NIC)."
+      },
+      {
+        "text": "Which of the following protocols is commonly used to encrypt web traffic?",
+        "options": ["A. FTP", "B. HTTP", "C. HTTPS", "D. IMAP"],
+        "correctAnswer": "C. HTTPS",
+        "explanation": "HTTPS (Hypertext Transfer Protocol Secure) encrypts web traffic for secure communication."
+      },
+      {
+        "text": "True or False: A router is used to connect multiple networks together.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Routers connect multiple networks and direct data between them."
+      },
+      {
+        "text": "Which of the following is NOT a network topology?",
+        "options": ["A. Bus", "B. Star", "C. Ring", "D. Pointer"],
+        "correctAnswer": "D. Pointer",
+        "explanation": "Pointer is not a network topology. The valid topologies include Bus, Star, Ring, and Mesh."
+      },
+      {
+        "text": "What is the purpose of a firewall?",
+        "options": ["A. To block unauthorized access", "B. To increase download speed", "C. To store data", "D. To transmit data"],
+        "correctAnswer": "A. To block unauthorized access",
+        "explanation": "A firewall monitors and controls incoming and outgoing network traffic to prevent unauthorized access."
+      },
+      {
+        "text": "Which protocol is used for email transmission over the Internet?",
+        "options": ["A. FTP", "B. SMTP", "C. HTTP", "D. POP3"],
+        "correctAnswer": "B. SMTP",
+        "explanation": "SMTP (Simple Mail Transfer Protocol) is used to send emails from a client to a server or between servers."
+      },
+      {
+        "text": "Which of the following is a common wireless communication protocol?",
+        "options": ["A. Ethernet", "B. Bluetooth", "C. USB", "D. SATA"],
+        "correctAnswer": "B. Bluetooth",
+        "explanation": "Bluetooth is a wireless communication protocol used for short-range data transmission."
+      },
+      {
+        "text": "True or False: A mesh network topology connects each node to every other node in the network.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "In a mesh topology, each node is interconnected with every other node to ensure redundancy and reliability."
+      },
+      {
+        "text": "Which type of device connects multiple computers in a network but does not manage data traffic?",
+        "options": ["A. Router", "B. Switch", "C. Hub", "D. Repeater"],
+        "correctAnswer": "C. Hub",
+        "explanation": "A hub connects multiple devices but does not manage data traffic like a switch or router."
+      },
+      {
+        "text": "What is the role of DNS in a network?",
+        "options": ["A. To route data packets", "B. To assign IP addresses", "C. To resolve domain names to IP addresses", "D. To encrypt network traffic"],
+        "correctAnswer": "C. To resolve domain names to IP addresses",
+        "explanation": "DNS (Domain Name System) translates domain names into IP addresses."
+      },
+      {
+        "text": "Which of the following best describes an intranet?",
+        "options": ["A. A public network", "B. A secure internal network within an organization", "C. A network connecting different organizations", "D. A network for storing backups"],
+        "correctAnswer": "B. A secure internal network within an organization",
+        "explanation": "An intranet is a private network accessible only to an organization's employees or members."
+      },
+      {
+        "text": "Which network device connects multiple networks and routes data between them?",
+        "options": ["A. Hub", "B. Switch", "C. Router", "D. Firewall"],
+        "correctAnswer": "C. Router",
+        "explanation": "Routers connect different networks and route data based on IP addresses."
+      },
+      {
+        "text": "Which of the following is a method for securing wireless networks?",
+        "options": ["A. Using WEP encryption", "B. Using the default router password", "C. Keeping the network open", "D. Disabling encryption"],
+        "correctAnswer": "A. Using WEP encryption",
+        "explanation": "WEP, WPA, and WPA2 encryption protocols are used to secure wireless networks."
+      },
+      {
+        "text": "Which protocol is responsible for assigning IP addresses in a network?",
+        "options": ["A. DNS", "B. DHCP", "C. HTTP", "D. HTTPS"],
+        "correctAnswer": "B. DHCP",
+        "explanation": "DHCP (Dynamic Host Configuration Protocol) assigns IP addresses to devices on a network."
+      },
+      {
+        "text": "True or False: An access point is used to extend the range of a wireless network.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Access points are used to increase the range of wireless networks by connecting additional devices."
+      },
+      {
+        "text": "Which of the following best describes bandwidth?",
+        "options": ["A. The physical size of a network", "B. The number of devices on a network", "C. The amount of data that can be transmitted over a network in a given time", "D. The security level of a network"],
+        "correctAnswer": "C. The amount of data that can be transmitted over a network in a given time",
+        "explanation": "Bandwidth is the maximum amount of data that can be transmitted over a network in a specific time period."
+      },
+      {
+        "text": "Which of the following devices connects devices within the same network and manages traffic based on MAC addresses?",
+        "options": ["A. Router", "B. Switch", "C. Hub", "D. Repeater"],
+        "correctAnswer": "B. Switch",
+        "explanation": "Switches manage network traffic by forwarding data to specific devices based on their MAC addresses."
+      },
+      {
+        "text": "Which of the following is a security protocol used to protect data during transmission?",
+        "options": ["A. FTP", "B. SSL/TLS", "C. SMTP", "D. POP3"],
+        "correctAnswer": "B. SSL/TLS",
+        "explanation": "SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are protocols used to encrypt data during transmission."
+      },
+      {
+        "text": "Which of the following is used to create a secure connection over an unsecured network?",
+        "options": ["A. Router", "B. Firewall", "C. VPN", "D. Switch"],
+        "correctAnswer": "C. VPN",
+        "explanation": "A VPN (Virtual Private Network) creates a secure, encrypted connection over an unsecured network like the Internet."
+      },
+      {
+        "text": "True or False: An IP address is a unique identifier for devices on a network.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "An IP address uniquely identifies devices on a network, allowing data to be sent and received."
+      },
+      {
+        "text": "Which of the following network devices operates at the data link layer of the OSI model?",
+        "options": ["A. Router", "B. Switch", "C. Hub", "D. Firewall"],
+        "correctAnswer": "B. Switch",
+        "explanation": "Switches operate at the data link layer, forwarding data based on MAC addresses."
+      },
+      {
+        "text": "Which of the following network components is used to protect against unauthorized access to a network?",
+        "options": ["A. Hub", "B. Switch", "C. Firewall", "D. Repeater"],
+        "correctAnswer": "C. Firewall",
+        "explanation": "Firewalls monitor and control incoming and outgoing traffic to protect networks from unauthorized access."
+      },
+      {
+        "text": "Which type of address is used to uniquely identify a device within a local network?",
+        "options": ["A. IP Address", "B. MAC Address", "C. URL", "D. DNS Address"],
+        "correctAnswer": "B. MAC Address",
+        "explanation": "MAC (Media Access Control) addresses uniquely identify devices within a local network."
+      },
+      {
+        "text": "Which of the following best describes a virtual private network (VPN)?",
+        "options": ["A. A public network", "B. A private network accessible through the Internet", "C. A network for local devices only", "D. A wireless network"],
+        "correctAnswer": "B. A private network accessible through the Internet",
+        "explanation": "A VPN allows secure remote access to a private network over the Internet."
+      },
+      {
+        "text": "Which of the following is used to resolve domain names to IP addresses?",
+        "options": ["A. DHCP", "B. DNS", "C. IP", "D. HTTP"],
+        "correctAnswer": "B. DNS",
+        "explanation": "DNS (Domain Name System) resolves domain names to their corresponding IP addresses."
+      },
+      {
+        "text": "Which protocol is used to secure data transferred between web browsers and servers?",
+        "options": ["A. FTP", "B. SMTP", "C. HTTPS", "D. POP3"],
+        "correctAnswer": "C. HTTPS",
+        "explanation": "HTTPS (Hypertext Transfer Protocol Secure) is used to encrypt data transferred between web browsers and servers."
+      }
+    ]
+  }
+  

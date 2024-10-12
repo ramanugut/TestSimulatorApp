@@ -1,0 +1,179 @@
+{
+    "testName": "ICT1541 Chapter 4",
+    "questions": [
+      {
+        "text": "Which of the following is NOT considered a type of software?",
+        "options": ["A. System software", "B. Application software", "C. Utility software", "D. Network software"],
+        "correctAnswer": "D. Network software",
+        "explanation": "System software, application software, and utility software are recognized software categories, whereas network software refers to protocols and hardware for networking."
+      },
+      {
+        "text": "What is the primary purpose of productivity software?",
+        "options": ["A. To edit photos", "B. To enhance system performance", "C. To assist in personal and business document creation", "D. To provide video editing features"],
+        "correctAnswer": "C. To assist in personal and business document creation",
+        "explanation": "Productivity software helps in creating documents, presentations, spreadsheets, and other content."
+      },
+      {
+        "text": "Which of the following is a popular example of a word processing application?",
+        "options": ["A. Microsoft Word", "B. Adobe Photoshop", "C. Google Chrome", "D. Windows Defender"],
+        "correctAnswer": "A. Microsoft Word",
+        "explanation": "Microsoft Word is a widely used word processing application for creating text-based documents."
+      },
+      {
+        "text": "True or False: Utility software is used to maintain and optimize the performance of a computer.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Utility software includes tools like disk cleanup, antivirus programs, and defragmenters to maintain system performance."
+      },
+      {
+        "text": "Which type of software is used to develop webpages?",
+        "options": ["A. Spreadsheet software", "B. Database software", "C. Web authoring software", "D. Presentation software"],
+        "correctAnswer": "C. Web authoring software",
+        "explanation": "Web authoring software, such as Adobe Dreamweaver, is used to create and edit webpages."
+      },
+      {
+        "text": "Which of the following is NOT a type of graphic design software?",
+        "options": ["A. Adobe Illustrator", "B. CorelDRAW", "C. Microsoft Excel", "D. Canva"],
+        "correctAnswer": "C. Microsoft Excel",
+        "explanation": "Microsoft Excel is a spreadsheet application, not a graphic design tool."
+      },
+      {
+        "text": "True or False: Antivirus software protects computers from malware and other malicious threats.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Antivirus software helps detect and remove malware from computers."
+      },
+      {
+        "text": "Which type of software allows users to create spreadsheets for organizing data?",
+        "options": ["A. Presentation software", "B. Word processing software", "C. Spreadsheet software", "D. Web authoring software"],
+        "correctAnswer": "C. Spreadsheet software",
+        "explanation": "Spreadsheet software is used to organize data, perform calculations, and create charts."
+      },
+      {
+        "text": "Which software is typically used to create visual presentations?",
+        "options": ["A. Microsoft PowerPoint", "B. Google Chrome", "C. Skype", "D. Mozilla Firefox"],
+        "correctAnswer": "A. Microsoft PowerPoint",
+        "explanation": "Microsoft PowerPoint is a presentation software used to create visual slideshows."
+      },
+      {
+        "text": "Which type of application would be most useful for storing large amounts of structured data?",
+        "options": ["A. Database software", "B. Web browser", "C. Video editing software", "D. Email client"],
+        "correctAnswer": "A. Database software",
+        "explanation": "Database software like Microsoft Access is used for storing and managing structured data."
+      },
+      {
+        "text": "What does 'OS' stand for in computing?",
+        "options": ["A. Optical System", "B. Output System", "C. Operating System", "D. Online System"],
+        "correctAnswer": "C. Operating System",
+        "explanation": "An Operating System (OS) is software that manages computer hardware and software resources."
+      },
+      {
+        "text": "True or False: An application suite is a collection of related applications bundled together.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Application suites, like Microsoft Office, bundle related applications for productivity."
+      },
+      {
+        "text": "Which of the following software is primarily used for photo editing?",
+        "options": ["A. Microsoft Word", "B. Adobe Photoshop", "C. Microsoft Excel", "D. Google Docs"],
+        "correctAnswer": "B. Adobe Photoshop",
+        "explanation": "Adobe Photoshop is a popular software for editing and manipulating photos."
+      },
+      {
+        "text": "Which of the following is an example of a mobile app?",
+        "options": ["A. Microsoft Word", "B. Android Messages", "C. Google Chrome", "D. Windows 10"],
+        "correctAnswer": "B. Android Messages",
+        "explanation": "Android Messages is a messaging app specifically designed for mobile devices."
+      },
+      {
+        "text": "What is the purpose of an antivirus program?",
+        "options": ["A. To browse the web", "B. To create documents", "C. To protect against malware", "D. To store files"],
+        "correctAnswer": "C. To protect against malware",
+        "explanation": "Antivirus programs detect, block, and remove malware from a system."
+      },
+      {
+        "text": "True or False: Presentation software is used to create animations and special effects.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Presentation software often includes features for creating animations and special effects in slides."
+      },
+      {
+        "text": "Which of the following is NOT a typical feature of spreadsheet software?",
+        "options": ["A. Data analysis", "B. Creating charts", "C. Photo editing", "D. Performing calculations"],
+        "correctAnswer": "C. Photo editing",
+        "explanation": "Photo editing is not a feature of spreadsheet software like Excel."
+      },
+      {
+        "text": "Which software is used to convert programming instructions into machine code?",
+        "options": ["A. Compiler", "B. Database", "C. Spreadsheet", "D. Presentation"],
+        "correctAnswer": "A. Compiler",
+        "explanation": "A compiler converts high-level programming instructions into machine code."
+      },
+      {
+        "text": "Which type of software is used to compress files and save disk space?",
+        "options": ["A. Disk cleaner", "B. File compression software", "C. Photo editor", "D. Spreadsheet"],
+        "correctAnswer": "B. File compression software",
+        "explanation": "File compression software compresses files to reduce their size and save disk space."
+      },
+      {
+        "text": "True or False: An IDE (Integrated Development Environment) is used for software development.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "IDEs provide tools like code editors, debuggers, and compilers to assist in software development."
+      },
+      {
+        "text": "Which of the following software is typically used to protect sensitive data?",
+        "options": ["A. Graphics software", "B. Encryption software", "C. Media player", "D. Email client"],
+        "correctAnswer": "B. Encryption software",
+        "explanation": "Encryption software is used to protect data by converting it into an unreadable format."
+      },
+      {
+        "text": "What is the purpose of a firewall?",
+        "options": ["A. To cool down the system", "B. To filter network traffic", "C. To defragment the disk", "D. To clean up temporary files"],
+        "correctAnswer": "B. To filter network traffic",
+        "explanation": "A firewall filters incoming and outgoing network traffic to protect against unauthorized access."
+      },
+      {
+        "text": "True or False: Presentation software can be used to create interactive slideshows.",
+        "options": ["A. True", "B. False"],
+        "correctAnswer": "A. True",
+        "explanation": "Presentation software includes tools to create interactive slideshows and presentations."
+      },
+      {
+        "text": "Which of the following is NOT an example of an operating system?",
+        "options": ["A. Linux", "B. Windows", "C. MacOS", "D. Microsoft Office"],
+        "correctAnswer": "D. Microsoft Office",
+        "explanation": "Microsoft Office is an application suite, not an operating system."
+      },
+      {
+        "text": "Which of the following tools is used to help prevent identity theft?",
+        "options": ["A. Password manager", "B. Presentation software", "C. Web browser", "D. Media player"],
+        "correctAnswer": "A. Password manager",
+        "explanation": "Password managers help store and manage passwords securely to prevent identity theft."
+      },
+      {
+        "text": "Which type of software is used to perform tasks related to file management and maintenance?",
+        "options": ["A. Graphics software", "B. Utility software", "C. Database software", "D. Word processor"],
+        "correctAnswer": "B. Utility software",
+        "explanation": "Utility software helps manage files, perform maintenance, and optimize system performance."
+      },
+      {
+        "text": "What does 'GUI' stand for?",
+        "options": ["A. Graphical User Interface", "B. General Utility Interface", "C. Group Utility Interface", "D. Global User Input"],
+        "correctAnswer": "A. Graphical User Interface",
+        "explanation": "GUI stands for Graphical User Interface, which allows users to interact with software using graphical elements."
+      },
+      {
+        "text": "Which of the following tools is used to organize and view personal schedules?",
+        "options": ["A. Graphics software", "B. Calendar app", "C. Media player", "D. Encryption software"],
+        "correctAnswer": "B. Calendar app",
+        "explanation": "Calendar apps are used to manage and organize personal and professional schedules."
+      },
+      {
+        "text": "Which type of software is used for developing, testing, and debugging programs?",
+        "options": ["A. Spreadsheet", "B. Integrated Development Environment (IDE)", "C. Database", "D. Presentation"],
+        "correctAnswer": "B. Integrated Development Environment (IDE)",
+        "explanation": "IDEs are used for software development and provide tools like editors, compilers, and debuggers."
+      }
+    ]
+  }
