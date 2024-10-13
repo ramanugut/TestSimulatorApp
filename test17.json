@@ -45,17 +45,7 @@
       "correctAnswer": "b. file extension",
       "explanation": "A file type can be represented by its file extension."
     },
-    {
-      "text": "An _____ contains stored data that can be specified as input to a program when read from the file during processing.",
-      "options": [
-        "a. input file",
-        "b. output file",
-        "c. data file",
-        "d. text file"
-      ],
-      "correctAnswer": "a. input file",
-      "explanation": "An input file contains stored data that can be specified as input to a program when read from the file during processing."
-    },
+
     {
       "text": "By using the specific system call, you can",
       "options": [
@@ -181,17 +171,17 @@
       "explanation": "Option d correctly calculates the sum, difference, and product of the ages using multiplication for the product instead of division."
     },
     
-  {
-    "text": "Provided the problem statement below, which of the following algorithms will solve the problem? A student name and three test marks are entered, the average mark must be calculated and it must be determined if the student passes or fails (mark equal or above 50%). The student name, average and result must be displayed on screen.",
-    "options": [
-        "<pre><code>Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n \nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults(message)\nend</code></pre>",
-        "<pre><code>Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n \nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve()\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults()\nend</code></pre>",
-        "<pre><code>CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n \nDetermineResults(valAve)\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve (valTest1, valTest2, valTest3)\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults(message)\nend</code></pre>",
-        "<pre><code>Function CalcAve ()\n  return (valTest1 + valTest2 + valTest3) / 3\n \nFunction DetermineResults()\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve (valTest1, valTest2, valTest3)\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults(message)\nend</code></pre>"
-    ],
-    "correctAnswer": "<pre><code>Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n \nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = \"fail\"\n  else\n    message = \"pass\"\n  endif\nreturn message\n \nShowResults\n  display \"Enter the student name\"\n  enter studentName\n  display \"Enter the first test mark\"\n  enter testMark1\n  display \"Enter the second test mark\"\n  enter testMark2\n  display \"Enter the third test mark\"\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display \"The average mark for \", studentName, \" is \", average\n  display \"This student will \", DetermineResults(message)\nend</code></pre>",
-    "explanation": "Option 'a' is correct because it correctly passes the test marks to the function to calculate the average, and returns the appropriate message for the student based on the calculated average."
-},
+    {
+      "text": "Provided the problem statement below, which of the following algorithms will solve the problem?\nA student name and three test marks are entered, the average mark must be calculated and it must be determined if the student passes or fails (mark equal or above 50%). The student name, average and result must be displayed on screen.\n<pre><code>Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n\nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = 'fail'\n  else\n    message = 'pass'\n  endif\nreturn message\n\nShowResults\n  display 'Enter the student name'\n  enter studentName\n  display 'Enter the first test mark'\n  enter testMark1\n  display 'Enter the second test mark'\n  enter testMark2\n  display 'Enter the third test mark'\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display 'The average mark for ', studentName, ' is ', average\n  display 'This student will ', DetermineResults(message)\nend</code></pre>",
+      "options": [
+          "a.<pre><code> Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n\nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = 'fail'\n  else\n    message = 'pass'\n  endif\nreturn message\n\nShowResults\n  display 'Enter the student name'\n  enter studentName\n  display 'Enter the first test mark'\n  enter testMark1\n  display 'Enter the second test mark'\n  enter testMark2\n  display 'Enter the third test mark'\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display 'The average mark for ', studentName, ' is ', average\n  display 'This student will ', DetermineResults(message)\nend</code></pre>",
+          "b.<pre><code> Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n\nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = 'fail'\n  else\n    message = 'pass'\n  endif\nreturn message\n\nShowResults\n  display 'Enter the student name'\n  enter studentName\n  display 'Enter the first test mark'\n  enter testMark1\n  display 'Enter the second test mark'\n  enter testMark2\n  display 'Enter the third test mark'\n  enter testMark3\n  average = CalcAve()\n  display 'The average mark for ', studentName, ' is ', average\n  display 'This student will ', DetermineResults()\nend</code></pre>",
+          "c.<pre><code> CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n\nDetermineResults(valAve)\n  if valAve < 50 then\n    message = 'fail'\n  else\n    message = 'pass'\n  endif\nreturn message\n\nShowResults\n  display 'Enter the student name'\n  enter studentName\n  display 'Enter the first test mark'\n  enter testMark1\n  display 'Enter the second test mark'\n  enter testMark2\n  display 'Enter the third test mark'\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display 'The average mark for ', studentName, ' is ', average\n  display 'This student will ', DetermineResults(message)\nend</code></pre>",
+          "d.<pre><code> Function CalcAve ()\n  return (valTest1 + valTest2 + valTest3) / 3\n\nFunction DetermineResults()\n  if valAve < 50 then\n    message = 'fail'\n  else\n    message = 'pass'\n  endif\nreturn message\n\nShowResults\n  display 'Enter the student name'\n  enter studentName\n  display 'Enter the first test mark'\n  enter testMark1\n  display 'Enter the second test mark'\n  enter testMark2\n  display 'Enter the third test mark'\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display 'The average mark for ', studentName, ' is ', average\n  display 'This student will ', DetermineResults(message)\nend</code></pre>"
+      ],
+      "correctAnswer": "<pre><code>a. Function CalcAve (valTest1, valTest2, valTest3)\n  return (valTest1 + valTest2 + valTest3) / 3\n\nFunction DetermineResults(valAve)\n  if valAve < 50 then\n    message = 'fail'\n  else\n    message = 'pass'\n  endif\nreturn message\n\nShowResults\n  display 'Enter the student name'\n  enter studentName\n  display 'Enter the first test mark'\n  enter testMark1\n  display 'Enter the second test mark'\n  enter testMark2\n  display 'Enter the third test mark'\n  enter testMark3\n  average = CalcAve(valTest1, valTest2, valTest3)\n  display 'The average mark for ', studentName, ' is ', average\n  display 'This student will ', DetermineResults(message)\nend</code></pre>",
+      "explanation": "Option a correctly handles the calculation of the average, the determination of pass or fail, and displays the results with appropriate inputs."
+    },
 {
   "text": "Provided the problem statement below, which of the following algorithms will solve the problem? Reginald went to a shop to buy a number of fruit bars. The amount due must be calculated and 14% VAT added. The calculated value must be displayed on the screen.",
   "options": [
@@ -237,84 +227,10 @@
             "correctAnswer": "c. hierarchy chart",
             "explanation": "A hierarchy chart shows the relationship between modules in a program, similar to an organizational chart."
         },
-        {
-            "text": "A ____ relates parallel arrays.",
-            "options": [
-                "a. subscript",
-                "b. key",
-                "c. superscript",
-                "d. postscript"
-            ],
-            "correctAnswer": "b. key",
-            "explanation": "A key relates parallel arrays by providing an index to access corresponding elements."
-        },
-        {
-            "text": "A program contains an array that holds all the names of the days of the week. Which of the following is true?",
-            "options": [
-                "a. The highest subscript is 6",
-                "b. The highest subscript is 12",
-                "c. The highest subscript is 7",
-                "d. The lowest subscript is 1"
-            ],
-            "correctAnswer": "a. The highest subscript is 6",
-            "explanation": "Since array indexing starts at 0, an array of 7 elements would have a highest subscript of 6."
-        },
-        {
-            "text": "A two-dimensional array contains two dimensions:",
-            "options": [
-                "a. height and width",
-                "b. breadth and height",
-                "c. size and scope",
-                "d. depth and width"
-            ],
-            "correctAnswer": "a. height and width",
-            "explanation": "A two-dimensional array is often visualized as a table with rows (height) and columns (width)."
-        },
-        {
-            "text": "An array can be used to replace ____.",
-            "options": [
-                "a. records",
-                "b. loops",
-                "c. methods",
-                "d. nested decisions"
-            ],
-            "correctAnswer": "a. records",
-            "explanation": "Arrays can store multiple items of the same type, similar to records."
-        },
 
-        {
-          "text": "The methodology where code is broken into small, logical procedures is called:",
-          "options": [
-              "a. functional programming",
-              "b. modular programming",
-              "c. granular programming",
-              "d. event-driven programming"
-          ],
-          "correctAnswer": "b. modular programming",
-          "explanation": "Modular programming involves breaking down code into small, logical procedures or modules."
-      },
-      {
-          "text": "The process of breaking down a large program into modules is called ____.",
-          "options": [
-              "a. fragmentation",
-              "b. modularization",
-              "c. decomposing",
-              "d. caching"
-          ],
-          "correctAnswer": "b. modularization",
-          "explanation": "The process of breaking down a large program into modules is known as modularization."
-      },
-      {
-          "text": "When a program has several modules calling other modules, programmers often use a program ____, which operates similarly to an organizational chart, to show the overall picture of how modules are related to one another.",
-          "options": [
-              "a. flow chart",
-              "b. data diagram",
-              "c. hierarchy chart",
-              "d. tree chart"
-          ],
-          "correctAnswer": "c. hierarchy chart",
-          "explanation": "A hierarchy chart shows the relationship between modules in a program, similar to an organizational chart."
-      },
+
+
+
       {
           "text": "A ____ relates parallel arrays.",
           "options": [
@@ -460,17 +376,7 @@
             "correctAnswer": "b. 5",
             "explanation": "The loop condition checks 'a < 5' and increments 'a' with each iteration, so 'Hello World' is displayed 5 times."
         },
-        {
-          "text": "How many times would 'Hello World' be displayed when the following is executed?\n<pre><code>ShowHelloWorld\n  a = 0\n  display 'Hello World'\n  do while a < 5\n    display 'Hello World'\n  loop\nend</code></pre>",
-          "options": [
-              "a. infinite",
-              "b. 6",
-              "c. none",
-              "d. 5"
-          ],
-          "correctAnswer": "a. infinite",
-          "explanation": "Since the loop condition 'a < 5' is not updated within the loop, it results in an infinite loop."
-      },
+
       {
           "text": "How many times would 'Programming is fun' be displayed when the following is executed?\n<pre><code>ProgrammingIsFun\n  x = 2\n  y = 3\n  do\n    x = x + 1\n    do while y <= 5\n      display 'Programming is Fun'\n      y = y + 2\n    loop\n    display 'Programming is Fun'\n  loop until x = 6\n  display 'Programming is Fun'\nend</code></pre>",
           "options": [
@@ -494,16 +400,17 @@
           "explanation": "A post-test loop evaluates the condition after the loop body executes, ensuring at least one iteration."
       },
       {
-          "text": "Indicate what will be displayed after the following code has been executed if the user enters the following: empNum 90008936, deptCode HT, annSal 45000; empNum 90008966, deptCode AY, annSal 85000; empNum 90008745, deptCode KC, annSal 30000; empNum 0.",
-          "options": [
-              "a. The total amount for annual increases is R9600",
-              "b. The total amount for annual increases is R10125",
-              "c. The total amount for annual increases is R169930",
-              "d. The total amount for annual increases is R9675"
-          ],
-          "correctAnswer": "d. The total amount for annual increases is R9675",
-          "explanation": "The total increase is calculated based on department codes and annual salary, resulting in R9675."
+        "text": "Indicate what will be displayed after the following code has been executed if the user enters the following empNum 90008936, deptCode HT, annSal 45000, empNum 90008966, deptCode AY, annSal 85000, empNum 90008745, deptCode KC, annSal 30000, empNum 0.\n\n<pre>\nCalculateIncreases\n~ As no sentinel has been suggested, an employee number of 0 will terminate the program\n  display “Enter the employee number for the first employee”\n  enter empNum\n  totalIncAmt = 0\n  do while empNum <> 0\n    display “Enter the department code for this employee”\n    enter deptCode\n    display “Enter the current annual salary for this employee”\n    enter annSal\n    select case deptCode\n      case “AY”\n        incAmt = annSal * 0.06\n      case “HT”\n        incAmt = annSal * 0.063\n      case “KL”\n        incAmt = annSal * 0.069\n      case Other\n        incAmt = annSal * 0.058\n    endselect\n    annSal = annSal + incAmt\n    totalIncAmt = totalIncAmt + incAmt\n    display “Enter the employee number for the next employee”\n    enter empNum\n  loop\n  display “The total amount for annual increases is R”, totalIncAmt\nend\n</pre>",
+        "options": [
+          "a. The total amount for annual increases is R9600",
+          "b. The total amount for annual increases is R10125",
+          "c. The total amount for annual increases is R169930",
+          "d. The total amount for annual increases is R9675"
+        ],
+        "correctAnswer": "b. The total amount for annual increases is R10125",
+        "explanation": "<pre>\nThe calculation of the salary increases for each employee is as follows:\n- HT: R45000 * 0.063 = R2835\n- AY: R85000 * 0.06 = R5100\n- KC (Other): R30000 * 0.058 = R1740\nTotal increase amount = R2835 + R5100 + R1740 = R10125.\n</pre>"
       },
+      
       {
         "text": "Indicate what will be displayed after the following code has been executed if the user enters totAmount = 5000 and monthAmount = 400.\n<pre>\nCalculateSavings\n  finalAmount = 0\n  noMonths = 0\n  display 'Provide the amount that Pule wants to save'\n  enter totAmount\n  display 'The monthly amount that he is able to save'\n  enter monthAmount\n  do\n    if finalAmount < 1000 then\n      finalAmount = finalAmount * 1.07\n    else\n      finalAmount = finalAmount * 1.09\n    enif\n    finalAmount = finalAmount + monthAmount\n    noMonths = noMonths + 1\n  loop until finalAmount >= totAmount\n  display 'Pule had to save ', noMonths, ' months to reach his goal'\nend\n</pre>",
         "options": [
@@ -647,9 +554,10 @@
       "c. 4",
       "d. 1"
   ],
-  "correctAnswer": "c. 4",
-  "explanation": "The logic evaluates to '4' based on the conditions and the values of x and y."
+  "correctAnswer": "a. 3",
+  "explanation": "The condition 'x / 2 > y \\ 2' is true, leading to the display of '3'."
 },
+
 {
   "text": "If x = 15 and y = 5, what will be displayed after the following statements have been executed?\n<pre><code>if x mod y < y \\ x then\n  display '1'\nelse\n  if x + y <> x * 2 - 2 then\n    display '2'\n  else\n    if x / 2 > y \\ 2 then\n      display '3'\n    else\n      if x > y + 2 then\n        display '4'\n      else\n        display '5'\n      endif\n    endif\n  endif\nendif</code></pre>",
   "options": [
@@ -664,57 +572,60 @@
 {
   "text": "Provided below is a select case statement. Which of the following if statements can be used to replace the select case statement?\n<pre><code>select case number\n  case 1\n    display 'Group 1'\n  case 3\n    display 'Group 3'\n  case else\n    display 'Group unknown'\nendselect</code></pre>",
   "options": [
-      "a. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else display 'Group unknown' endif",
-      "b. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else if number <> 1 OR 3 then display 'Group unknown' endif",
-      "c. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' endif else display 'Group unknown' endif",
-      "d. if number = 1 then display 'Group 1' endif if number = 3 then display 'Group 3' endif if number <> 1 OR 3 then display 'Group unknown' endif"
+      "<pre><code>a. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else display 'Group unknown' endif</code></pre>",
+      "<pre><code>b. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else if number <> 1 OR 3 then display 'Group unknown' endif</code></pre>",
+      "<pre><code>c. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' endif else display 'Group unknown' endif</code></pre>",
+      "<pre><code>d. if number = 1 then display 'Group 1' endif if number = 3 then display 'Group 3' endif if number <> 1 OR 3 then display 'Group unknown' endif</code></pre>"
   ],
-  "correctAnswer": "a. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else display 'Group unknown' endif",
+  "correctAnswer": "<pre><code>a. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else display 'Group unknown' endif</code></pre>",
   "explanation": "This if-else structure closely mirrors the logic of the select case statement."
 },
+
 {
-  "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n<pre><code>if code = 'S' then\n  weather = 'Sunny'\nelse\n  if code = 'SC' then\n    weather = 'Sunny with clouds'\n  else\n    if code = 'C' then\n      weather = 'Cloudy'\n    else\n      if code = 'CR' then\n        weather = 'Cloudy with Rain'\n      else\n        if code = 'R' then\n          weather = 'Rain'\n        else\n          weather = 'Hail'\n        endif\n      endif\n    endif\n  endif\nendif</code></pre>",
+  "text": "Provided below is a select case statement. Which of the following if statements can be used to replace the select case statement?\n<pre><code>select case number\n  case 1\n    display 'Group 1'\n  case 3\n    display 'Group 3'\n  case else\n    display 'Group unknown'\nendselect</code></pre>",
   "options": [
-      "a. select case\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   else\n     weather = 'Hail'\nendselect",
-      "b. select case\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   case else\n     weather = 'Hail'\nendselect",
-      "c. select case\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   case else\n     weather = 'Hail'\nend",
-      "d. select case code\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   case else\n     weather = 'Hail'\nendselect"
+      "<pre><code>a. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else display 'Group unknown' endif</code></pre>",
+      "<pre><code>b. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else if number <> 1 OR 3 then display 'Group unknown' endif</code></pre>",
+      "<pre><code>c. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' endif else display 'Group unknown' endif</code></pre>",
+      "<pre><code>d. if number = 1 then display 'Group 1' endif if number = 3 then display 'Group 3' endif if number <> 1 OR 3 then display 'Group unknown' endif</code></pre>"
   ],
-  "correctAnswer": "d. select case code\n   case 'S'\n     weather = 'Sunny'\n   case 'SC'\n     weather = 'Sunny with clouds'\n   case 'C'\n     weather = 'Cloudy'\n   case 'CR'\n     weather = 'Cloudy with Rain'\n   case 'R'\n     weather = 'Rain'\n   case else\n     weather = 'Hail'\nendselect",
-  "explanation": "The select case structure uses 'code' to determine the weather based on its value, mimicking the logic of the original if statement."
+  "correctAnswer": "<pre><code>a. if number = 1 then display 'Group 1' else if number = 3 then display 'Group 3' else display 'Group unknown' endif</code></pre>",
+  "explanation": "This if-else structure closely mirrors the logic of the select case statement."
 },
+
 
 {
   "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n<pre><code>if grade = 'A' then\n  price = price * 2\nelse\n  if grade = 'B' then\n    price = price * 1.14\n  else\n    if grade = 'C' then\n      price = price * 0.9125\n    else\n      if price > 50 then\n        price = price + 5\n      else\n        price = price - 4\n      endif\n    endif\n  endif\nendif</code></pre>",
   "options": [
-      "a. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect",
-      "b. select case\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect",
-      "c. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case price > 50 then\n    if then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect",
-      "d. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case price > 50 then\n    price = price + 5\n  case else\n    price = price - 4\nendselect"
+      "<pre><code>a. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect</code></pre>",
+      "<pre><code>b. select case\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect</code></pre>",
+      "<pre><code>c. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case price > 50 then\n    if then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect</code></pre>",
+      "<pre><code>d. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case price > 50 then\n    price = price + 5\n  case else\n    price = price - 4\nendselect</code></pre>"
   ],
-  "correctAnswer": "a. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect",
+  "correctAnswer": "<pre><code>a. select case grade\n  case 'A'\n    price = price * 2\n  case 'B'\n    price = price * 1.14\n  case 'C'\n    price = price * 0.9125\n  case else\n    if price > 50 then\n      price = price + 5\n    else\n      price = price - 4\n    endif\nendselect</code></pre>",
   "explanation": "Option a properly handles the nested if-else structure within a select case statement."
 },
+
 {
   "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n<pre><code>if interest < 1000 then\n  tax = 0\nelse\n  if interest <= 2000 then\n    tax = (interest - 1000) * 0.075\n  else\n    tax = (interest - 1100) * 0.095\n  endif\nendif</code></pre>",
   "options": [
-      "a. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect",
-      "b. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case\n    tax = (interest - 1100) * 0.095\nendselect",
-      "c. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  else\n    tax = (interest - 1100) * 0.095\nendselect",
-      "d. select case\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect"
+    "<pre><code>a. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect</code></pre>",
+    "<pre><code>b. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case\n    tax = (interest - 1100) * 0.095\nendselect</code></pre>",
+    "<pre><code>c. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  else\n    tax = (interest - 1100) * 0.095\nendselect</code></pre>",
+    "<pre><code>d. select case\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect</code></pre>"
   ],
-  "correctAnswer": "a. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect",
+  "correctAnswer": "<pre><code>a. select case interest\n  case < 1000\n    tax = 0\n  case <= 2000\n    tax = (interest - 1000) * 0.075\n  case else\n    tax = (interest - 1100) * 0.095\nendselect</code></pre>",
   "explanation": "Option a properly mimics the nested if-else logic using a select case statement."
 },
 {
   "text": "Provided below is an if statement. Which of the following select case statements can be used to replace the if statement?\n<pre><code>if name = 'Sally' or name = 'Tania' then\n  display 'It’s a girl'\nelse\n  if name = 'Jim' or name = 'John' or name = 'Russel' then\n    display 'It’s a boy'\n  endif\nendif</code></pre>",
   "options": [
-      "a. select case name\n  case 'Sally', 'Tania'\n    display 'It’s a girl'\n  case 'Jim', 'John', 'Russel'\n    display 'It’s a boy'\nendselect",
-      "b. select case name\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case 'Russel'\n    display 'It’s a boy'\nendselect",
-      "c. select case name\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case else\n    display 'It’s a boy'\nendselect",
-      "d. select case\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case 'Russel'\n    display 'It’s a boy'\nendselect"
+    "<pre><code>a. select case name\n  case 'Sally', 'Tania'\n    display 'It’s a girl'\n  case 'Jim', 'John', 'Russel'\n    display 'It’s a boy'\nendselect</code></pre>",
+    "<pre><code>b. select case name\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case 'Russel'\n    display 'It’s a boy'\nendselect</code></pre>",
+    "<pre><code>c. select case name\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case else\n    display 'It’s a boy'\nendselect</code></pre>",
+    "<pre><code>d. select case\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Sally'\n    display 'It’s a girl'\n  case 'Jim'\n    display 'It’s a boy'\n  case 'John'\n    display 'It’s a boy'\n  case 'Russel'\n    display 'It’s a boy'\nendselect</code></pre>"
   ],
-  "correctAnswer": "a. select case name\n  case 'Sally', 'Tania'\n    display 'It’s a girl'\n  case 'Jim', 'John', 'Russel'\n    display 'It’s a boy'\nendselect",
+  "correctAnswer": "<pre><code>a. select case name\n  case 'Sally', 'Tania'\n    display 'It’s a girl'\n  case 'Jim', 'John', 'Russel'\n    display 'It’s a boy'\nendselect</code></pre>",
   "explanation": "Option a correctly handles multiple case conditions for displaying 'It’s a girl' or 'It’s a boy.'"
 },
 {
@@ -877,66 +788,42 @@
 {
   "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nPeter bought 18 cupcakes for his son's birthday, they cost R4.50 each. Write a program that will accept the input from the user and then calculate the amount due by multiplying the number of cupcakes by the price and then adding 14% VAT to the amount. Display the final amount he owes on the screen.\n<pre><code>CalculateAmountDue\n  vatPerc = 0.14\n  display 'Provide the quantity bought'\n  enter quantity\n  display 'Provide the price of 1 item'\n  enter price\n  amount = quantity * price\n  vat = amount * vatPerc\n  finalAmount = amount + vat\n  display 'The final amount due is R ', finalAmount\nend</code></pre>",
   "options": [
-      "a. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend",
-      "b. CalculateAmountDue\n      enter quantity\n      enter price\n      finalAmount = price * quantity * vat\n      display 'The final amount due is R ', finalAmount\nend",
-      "c. CalculateAmountDue\n      vat = 14%\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend",
-      "d. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      display 'Provide the price of 1 item'\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend"
+    "<pre><code>a. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend</code></pre>",
+    "<pre><code>b. CalculateAmountDue\n      enter quantity\n      enter price\n      finalAmount = price * quantity * vat\n      display 'The final amount due is R ', finalAmount\nend</code></pre>",
+    "<pre><code>c. CalculateAmountDue\n      vat = 14%\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend</code></pre>",
+    "<pre><code>d. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      display 'Provide the price of 1 item'\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend</code></pre>"
   ],
-  "correctAnswer": "a. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend",
+  "correctAnswer": "<pre><code>a. CalculateAmountDue\n      vatPerc = 0.14\n      display 'Provide the quantity bought'\n      enter quantity\n      display 'Provide the price of 1 item'\n      enter price\n      amount = quantity * price\n      vat = amount * vatPerc\n      finalAmount = amount + vat\n      display 'The final amount due is R ', finalAmount\nend</code></pre>",
   "explanation": "Option a correctly handles both the input, calculations, and VAT addition, providing the final amount."
 },
+
 {
   "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nThe cellular company charges 50 cents per minute for the first three minutes of a call, regardless of the length of the call, for every minute after the first three minutes an additional 15 cents is added to the cost, VAT of 14% is added to the total cost of the call. Write a program that allows the user to enter the duration of a phone call in minutes. Calculate and display the price of the phone call the user made for calls longer than 3 minutes.\n<pre><code>CalculatePriceCall\n  basicAmt = 0.50\n  display 'Enter call time in minutes'\n  enter timeMinutes\n  basicAmt += (timeMinutes - 3) * 0.65\n  vat = basicAmt * 0.14\n  finalAmt = basicAmt + vat\n  display 'The cost of the call is R', finalAmt\nend</code></pre>",
   "options": [
-      "a. CalculatePriceCall\n      basicAmt = 0.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend",
-      "b. CalculatePriceCall\n      basicAmt = 1.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend",
-      "c. CalculatePriceCall\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt = (timeMinutes - 3) * 0.15\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend",
-      "d. CalculatePriceCall\n      basicAmt = 0.50\n      enter timeMinutes\n      basicAmt = (timeMinutes - 3) * 0.15\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend"
+      "<pre><code>a. CalculatePriceCall\n      basicAmt = 0.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend</code></pre>",
+      "<pre><code>b. CalculatePriceCall\n      basicAmt = 1.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend</code></pre>",
+      "<pre><code>c. CalculatePriceCall\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt = (timeMinutes - 3) * 0.15\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend</code></pre>",
+      "<pre><code>d. CalculatePriceCall\n      basicAmt = 0.50\n      enter timeMinutes\n      basicAmt = (timeMinutes - 3) * 0.15\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend</code></pre>"
   ],
-  "correctAnswer": "a. CalculatePriceCall\n      basicAmt = 0.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend",
+  "correctAnswer": "<pre><code>a. CalculatePriceCall\n      basicAmt = 0.50\n      display 'Enter call time in minutes'\n      enter timeMinutes\n      basicAmt += (timeMinutes - 3) * 0.65\n      vat = basicAmt * 0.14\n      finalAmt = basicAmt + vat\n      display 'The cost of the call is R', finalAmt\nend</code></pre>",
   "explanation": "Option a correctly calculates the basic amount, applies VAT, and calculates the final cost of the call."
 },
-{
-  "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nWrite a program that allows the user to enter the age of a mother and her daughter in years. Calculate the sum of their age, the difference in their age, and the product of their age. Show the output on the screen.",
-  "options": [
-    "a. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge / daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
-    
-    "b. \n<pre>\nAgeCalculations\n  enter motherAge\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge / daughterAge\n  display sum, difference, product\nend\n</pre>",
-    
-    "c. \n<pre>\nAgeCalculation\n  display 'Provide the first number'\n  enter number1\n  display 'Provide the second number'\n  enter number2\n  sum = number1 + number2\n  difference = number1 - number2\n  product = number1 * number2\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
-    
-    "d. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge * daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>"
-  ],
-  "correctAnswer": "d. \n<pre>\nAgeCalculations\n  display 'Provide the age of the mother'\n  enter motherAge\n  display 'Provide the age of the daughter'\n  enter daughterAge\n  sum = motherAge + daughterAge\n  difference = motherAge - daughterAge\n  product = motherAge * daughterAge\n  display 'The sum is ', sum\n  display 'The difference is ', difference\n  display 'The product is ', product\nend\n</pre>",
-  "explanation": "Option d correctly calculates the sum, difference, and product of the ages using multiplication for the product instead of division."
-},
+
 
 {
   "text": "Following is a problem statement. Which of the below algorithms should be used to solve the problem statement?\nWrite a program that allows the user to enter their name and ID number into text fields, show the information on the computer screen with an appropriate legend.\n<pre><code>ShowItemData\n  display 'Provide the name'\n  enter name\n  display 'Provide the ID'\n  enter id\n  display 'The name of the person is ', name\n  display 'The ID of the person is ', id\nend</code></pre>",
   "options": [
-      "a. ShowItemData\n      display 'Provide the name'\n      enter name\n      display 'Provide the ID'\n      enter id\n      display 'The name of the person is ', name\n      display 'The ID of the person is ', id\nend",
-      "b. ShowItemData\n      enter name\n      enter id\n      display name\n      display id\nend",
-      "c. ShowItemData\n      display 'Provide the name'\n      display 'Provide the ID'\n      display 'The name of the person is ', name\n      display 'The ID of the person is ', id\nend",
-      "d. ShowItemData\n      display 'Provide the name'\n      enter text\n      display 'Provide the ID'\n      enter text\n      display label\n      display label\nend"
+      "<pre><code>a. ShowItemData\n  display 'Provide the name'\n  enter name\n  display 'Provide the ID'\n  enter id\n  display 'The name of the person is ', name\n  display 'The ID of the person is ', id\nend</code></pre>",
+      "<pre><code>b. ShowItemData\n  enter name\n  enter id\n  display name\n  display id\nend</code></pre>",
+      "<pre><code>c. ShowItemData\n  display 'Provide the name'\n  display 'Provide the ID'\n  display 'The name of the person is ', name\n  display 'The ID of the person is ', id\nend</code></pre>",
+      "<pre><code>d. ShowItemData\n  display 'Provide the name'\n  enter text\n  display 'Provide the ID'\n  enter text\n  display label\n  display label\nend</code></pre>"
   ],
-  "correctAnswer": "a. ShowItemData\n      display 'Provide the name'\n      enter name\n      display 'Provide the ID'\n      enter id\n      display 'The name of the person is ', name\n      display 'The ID of the person is ', id\nend",
+  "correctAnswer": "<pre><code>a. ShowItemData\n  display 'Provide the name'\n  enter name\n  display 'Provide the ID'\n  enter id\n  display 'The name of the person is ', name\n  display 'The ID of the person is ', id\nend</code></pre>",
   "explanation": "Option a handles the user input for name and ID, then displays the information with proper labeling."
 },
 
-{
-  "text": "Following is a problem statement. Which of the below is the correct trace table for the problem statement when using test data: motherAge = 45, daughterAge = 18?\nWrite a program that allows the user to enter the age of a mother and her daughter in years. Calculate the sum of their age, the difference in their age, and the product of their age. Show the output on the screen.",
-  "options": [
-    "a. Instruction | motherAge | daughterAge | output\n    display | | | Provide the age of the mother\n    enter | 45 | | \n    display | | | Provide the age of the daughter\n    enter | 18 | | \n    display | | | The sum is 63\n    display | | | The difference is 27\n    display | | | The product is 864",
-    
-    "b. Instruction | motherAge | daughterAge | sum | difference | product | output\n    display | | | | | | Provide the age of the mother\n    enter | 45 | | | | |\n    display | | | | | | Provide the age of the daughter\n    enter | 18 | | 63 | 27 | 864\n    display | 63 | | | | | The sum is 63\n    display | 27 | | | | | The difference is 27\n    display | 864 | | | | | The product is 864",
-    
-    "c. Instruction | motherAge | daughterAge | output\n    display | | | Provide the age of the mother\n    enter | 45 | | \n    display | | | Provide the age of the daughter\n    enter | 18 | | \n    display | | | The sum is \n    display | | | The difference is \n    display | | | The product is ",
-    
-    "d. Instruction | motherAge | daughterAge | sum | difference | product | output\n    display | | | | | | Provide the age of the mother\n    enter | 45 | | | | |\n    display | | | | | | Provide the age of the daughter\n    enter | 18 | | | | |\n    display | | | | 63 | | The sum is 63\n    display | | | | 27 | | The difference is 27\n    display | | | | 864 | | The product is 864"
-  ],
-  "correctAnswer": "a. Instruction | motherAge | daughterAge | output\n    display | | | Provide the age of the mother\n    enter | 45 | | \n    display | | | Provide the age of the daughter\n    enter | 18 | | \n    display | | | The sum is 63\n    display | | | The difference is 27\n    display | | | The product is 864",
-  "explanation": "Option a correctly traces the program steps with accurate calculations for sum, difference, and product of the mother and daughter’s ages."
-},
+
+
 {
   "text": "Following is a problem statement. Which of the below is the correct trace table for the problem statement when using test data: motherAge = 45, daughterAge = 18?\nWrite a program that allows the user to enter the age of a mother and her daughter in years. Calculate the sum of their age, the difference in their age, and the product of their age. Show the output on the screen.",
   "options": [
@@ -1177,61 +1064,7 @@
   "correctAnswer": "c. payment = (notebook * 5) + (pens * 2)",
   "explanation": "The correct setup multiplies the quantity by the price for both notebooks and pens and then adds the two values."
 },
-{
-  "text": "A variable to indicate an hourly tariff paid for an employee would be of data type _______",
-  "options": [
-    "a. character",
-    "b. Boolean",
-    "c. integer",
-    "d. Real"
-  ],
-  "correctAnswer": "d. Real",
-  "explanation": "The hourly tariff is a numeric value that may have decimal points, hence the data type should be 'Real'."
-},
-{
-  "text": "How would you set up the following arithmetic equation? A customer pays 500 Rand for a coffee maker after a discount of 20%. What is the original price of the coffee maker?",
-  "options": [
-    "a. price = cost - discount",
-    "b. price = cost / ((100 - discount) / 100)",
-    "c. none of the above",
-    "d. price = cost + discount"
-  ],
-  "correctAnswer": "b. price = cost / ((100 - discount) / 100)",
-  "explanation": "To find the original price, divide the final price by the factor representing the remaining percentage after the discount."
-},
-{
-  "text": "How would you set up the following arithmetic equation? A group of 22 students goes on a trip. They prepare enough food to last 18 days. If 14 additional students join them at the last minute, how many days will their food last?",
-  "options": [
-    "a. daysLast = daysPrep * sGroup1 + sGroup2",
-    "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
-    "c. daysLast = daysPrep / (sGroup1 + sGroup2)",
-    "d. none of the above"
-  ],
-  "correctAnswer": "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
-  "explanation": "The food will now have to be shared among a larger group, so multiply the initial days of food by the initial group size and divide by the total number of students."
-},
-{
-  "text": "How would you set up the following arithmetic equation? A rugby team lost 5 meters and then gained 9. What is the team's progress?",
-  "options": [
-    "a. progress = lost - gained",
-    "b. progress = -lost + gained",
-    "c. progress = lost + gained",
-    "d. none of the above"
-  ],
-  "correctAnswer": "b. progress = -lost + gained",
-  "explanation": "Since the meters lost need to be subtracted, use a negative sign before 'lost', then add the meters gained."
-},
-{
-  "text": "How would you set up the following arithmetic equation? Maria bought 10 notebooks costing 5 Rand each and 5 pens costing 2 Rand each. How much did Maria pay?",
-  "options": [
-    "a. payment = notebooks + pens",
-    "b. none of the above",
-    "c. payment = (notebook * 5) + (pens * 2)",
-    "d. payment = (notebook + pens) * 5 * 2"
-  ],
-  "correctAnswer": "c. payment = (notebook * 5) + (pens * 2)",
-  "explanation": "The correct setup multiplies the quantity by the price for both notebooks and pens and then adds the two values."
-},
+
 {
   "text": "If a variable is of type Integer, which of the following would be a possible value?",
   "options": [
@@ -1288,116 +1121,7 @@
   "explanation": "Variable names cannot start with a digit, and 'empName' is a valid identifier."
 },
 
-{
-  "text": "A variable to indicate an hourly tariff paid for an employee would be of data type _______",
-  "options": [
-    "a. character",
-    "b. Boolean",
-    "c. integer",
-    "d. Real"
-  ],
-  "correctAnswer": "d. Real",
-  "explanation": "The hourly tariff is a numeric value that may have decimal points, hence the data type should be 'Real'."
-},
-{
-  "text": "How would you set up the following arithmetic equation? A customer pays 500 Rand for a coffee maker after a discount of 20%. What is the original price of the coffee maker?",
-  "options": [
-    "a. price = cost - discount",
-    "b. price = cost / ((100 - discount) / 100)",
-    "c. none of the above",
-    "d. price = cost + discount"
-  ],
-  "correctAnswer": "b. price = cost / ((100 - discount) / 100)",
-  "explanation": "To find the original price, divide the final price by the factor representing the remaining percentage after the discount."
-},
-{
-  "text": "How would you set up the following arithmetic equation? A group of 22 students goes on a trip. They prepare enough food to last 18 days. If 14 additional students join them at the last minute, how many days will their food last?",
-  "options": [
-    "a. daysLast = daysPrep * sGroup1 + sGroup2",
-    "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
-    "c. daysLast = daysPrep / (sGroup1 + sGroup2)",
-    "d. none of the above"
-  ],
-  "correctAnswer": "b. daysLast = daysPrep * sGroup1 / (sGroup1 + sGroup2)",
-  "explanation": "The food will now have to be shared among a larger group, so multiply the initial days of food by the initial group size and divide by the total number of students."
-},
-{
-  "text": "How would you set up the following arithmetic equation? A rugby team lost 5 meters and then gained 9. What is the team's progress?",
-  "options": [
-    "a. progress = lost - gained",
-    "b. progress = -lost + gained",
-    "c. progress = lost + gained",
-    "d. none of the above"
-  ],
-  "correctAnswer": "b. progress = -lost + gained",
-  "explanation": "Since the meters lost need to be subtracted, use a negative sign before 'lost', then add the meters gained."
-},
-{
-  "text": "How would you set up the following arithmetic equation? Maria bought 10 notebooks costing 5 Rand each and 5 pens costing 2 Rand each. How much did Maria pay?",
-  "options": [
-    "a. payment = notebooks + pens",
-    "b. none of the above",
-    "c. payment = (notebook * 5) + (pens * 2)",
-    "d. payment = (notebook + pens) * 5 * 2"
-  ],
-  "correctAnswer": "c. payment = (notebook * 5) + (pens * 2)",
-  "explanation": "The correct setup multiplies the quantity by the price for both notebooks and pens and then adds the two values."
-},
-{
-  "text": "If a variable is of type Integer, which of the following would be a possible value?",
-  "options": [
-    "a. 758.80",
-    "b. 758",
-    "c. B758",
-    "d. None of the above"
-  ],
-  "correctAnswer": "b. 758",
-  "explanation": "An integer is a whole number without decimals, so 758 is the correct option."
-},
-{
-  "text": "If a variable is of type String, which of the following would be a possible value?",
-  "options": [
-    "a. \"bam bam\"",
-    "b. \"b\"",
-    "c. true",
-    "d. none of the above"
-  ],
-  "correctAnswer": "a. \"bam bam\"",
-  "explanation": "A String can contain text or characters, and \"bam bam\" is a valid String value."
-},
-{
-  "text": "In data hierarchy, which element normally groups related fields together?",
-  "options": [
-    "a. File",
-    "b. Field",
-    "c. Table",
-    "d. Record"
-  ],
-  "correctAnswer": "d. Record",
-  "explanation": "A record is a collection of related fields that typically represent a single entity."
-},
-{
-  "text": "In data hierarchy, which of the following is the smallest element?",
-  "options": [
-    "a. Character",
-    "b. Record",
-    "c. Database",
-    "d. Field"
-  ],
-  "correctAnswer": "a. Character",
-  "explanation": "A character is the smallest element in the data hierarchy, representing a single letter, digit, or symbol."
-},
-{
-  "text": "Indicate which of the following is a valid variable name:",
-  "options": [
-    "a. theAddressOfTheCompanyInTshwane",
-    "b. empName",
-    "c. 5472",
-    "d. none of the above"
-  ],
-  "correctAnswer": "b. empName",
-  "explanation": "Variable names cannot start with a digit, and 'empName' is a valid identifier."
-},
+
 {
   "text": "A database consists of a number of related files or tables.",
   "options": [
