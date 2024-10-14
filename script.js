@@ -229,48 +229,51 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Check if test has been submitted or is in study mode to display feedback
-            if (testSubmitted) {
-                const userAnswer = userAnswers[actualIndex];
-                let isCorrect = false;
+      if (testSubmitted) {
+        const userAnswer = userAnswers[actualIndex];
+        let isCorrect = false;
 
-                if (userAnswer !== undefined && userAnswer.trim() !== "") {
-                    if (userAnswer.trim().toLowerCase() === question.correctAnswer.trim().toLowerCase()) {
-                        isCorrect = true;
-                    }
-                }
+        if (userAnswer !== undefined && userAnswer.trim() !== "") {
+          if (
+            userAnswer.trim().toLowerCase() ===
+            question.correctAnswer.trim().toLowerCase()
+          ) {
+            isCorrect = true;
+          }
+        }
 
-                if (isCorrect) {
-                    questionElement.classList.add('correct');
-                } else {
-                    questionElement.classList.add('incorrect');
-                }
+        if (isCorrect) {
+          questionElement.classList.add("correct");
+        } else {
+          questionElement.classList.add("incorrect");
+        }
 
-                let feedbackElement = document.createElement("p");
-                feedbackElement.classList.add("feedback");
+        let feedbackElement = document.createElement("p");
+        feedbackElement.classList.add("feedback");
 
-                if (isCorrect) {
-                    feedbackElement.textContent = "Correct!";
-                    feedbackElement.classList.add('correct');
-                } else {
-                    feedbackElement.textContent = "Incorrect.";
-                    feedbackElement.classList.add('incorrect');
+        if (isCorrect) {
+          feedbackElement.textContent = "Correct!";
+          feedbackElement.classList.add("correct");
+        } else {
+          feedbackElement.textContent = "Incorrect.";
+          feedbackElement.classList.add("incorrect");
 
-                    // Also show the correct answer and explanation
-                    const correctAnswerElement = document.createElement("p");
-                    correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
-                    correctAnswerElement.classList.add('correct-answer');
-                    questionElement.appendChild(correctAnswerElement);
+          // Also show the correct answer and explanation
+          const correctAnswerElement = document.createElement("p");
+          correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
+          correctAnswerElement.classList.add("correct-answer");
+          questionElement.appendChild(correctAnswerElement);
 
-                    if (question.explanation) {
-                        const explanationElement = document.createElement("p");
-                        explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
-                        explanationElement.classList.add('explanation');
-                        questionElement.appendChild(explanationElement);
-                    }
-                }
+          if (question.explanation) {
+            const explanationElement = document.createElement("p");
+            explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
+            explanationElement.classList.add("explanation");
+            questionElement.appendChild(explanationElement);
+          }
+        }
 
-                questionElement.appendChild(feedbackElement);
-            }
+        questionElement.appendChild(feedbackElement);
+      }
       if (isStudyMode) {
         const answerElement = document.createElement("p");
         answerElement.classList.add("correct-answer");
@@ -279,11 +282,10 @@ document.addEventListener("DOMContentLoaded", function () {
         questionElement.appendChild(answerElement);
       }
 
-            questionsContainer.appendChild(questionElement);
-        });
-        updateProgress();
-    }
-
+      questionsContainer.appendChild(questionElement);
+    });
+    updateProgress();
+  }
     function updateProgress() {
         const totalQuestions = questions.length;
         const answeredQuestions = Object.keys(userAnswers).filter(index => {
