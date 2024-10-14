@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Check if test has been submitted or is in study mode to display feedback
-            if (testSubmitted || isStudyMode) {
+            if (testSubmitted) {
                 const userAnswer = userAnswers[actualIndex];
                 let isCorrect = false;
 
@@ -271,6 +271,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 questionElement.appendChild(feedbackElement);
             }
+      if (isStudyMode) {
+        const answerElement = document.createElement("p");
+        answerElement.classList.add("correct-answer");
+        answerElement.style.color = "#3483eb";
+        answerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}<br><strong>Explanation:</strong> ${question.explanation}`;
+        questionElement.appendChild(answerElement);
+      }
 
             questionsContainer.appendChild(questionElement);
         });
