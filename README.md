@@ -1,7 +1,10 @@
 # TestSimulatorApp
 
 Author: Ramanugu Thembuluwo Marven
-Module: ICT1511
+How To Contact me: ramanugut@gmail.com
+Module Currently Loaded: UNISA - ICT1511, ICT1541, ICT1532, ICT1521
+
+More modules will be added either on request or as time goes on.
 
 EASY ACCESS:
 Just go to this link to access the app, either from your phone or computer.
