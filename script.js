@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Load test files dynamically into the dropdown menu 
-    const testFiles = ["test1.json", "test2.json", "test3.json", "test4.json", "test5.json", "test6.json", "test7.json", "test8.json", "test9.json", "test10.json", "test11.json", "test12.json", "test13.json", "test14.json", "test15.json", "test16.json", "test17.json", "test18.json", "test19.json", "test20.json" /* , "test21.json", "test22.json", "test23.json", "test24.json", "test25.json", "test26.json", "test27.json", "test28.json", "test29.json", "test30.json", "test31.json", "test32.json", "test33.json", "test34.json", "test35.json", "test36.json", "test37.json", "test38.json", "test39.json", "test40.json", "test41.json", "test42.json", "test43.json", "test44.json", "test45.json", "test46.json", "test47.json", "test48.json", "test49.json", "test50.json"*/];
+    const testFiles = ["test1.json", "test2.json", "test3.json", "test4.json", "test5.json", "test6.json", "test7.json", "test8.json", "test9.json", "test10.json", "test11.json", "test12.json", "test13.json", "test14.json", "test15.json", "test16.json", "test17.json", "test18.json", "test19.json" /* , "test20.json" , "test21.json", "test22.json", "test23.json", "test24.json", "test25.json", "test26.json", "test27.json", "test28.json", "test29.json", "test30.json", "test31.json", "test32.json", "test33.json", "test34.json", "test35.json", "test36.json", "test37.json", "test38.json", "test39.json", "test40.json", "test41.json", "test42.json", "test43.json", "test44.json", "test45.json", "test46.json", "test47.json", "test48.json", "test49.json", "test50.json"*/];
 
 
     function loadTestFiles() {
