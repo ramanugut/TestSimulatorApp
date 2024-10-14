@@ -3,6 +3,14 @@
 Author: Ramanugu Thembuluwo Marven
 Module: ICT1511
 
+EASY ACCESS:
+Just go to this link to access the app, either from your phone or computer.
+App Link: https://ramanugut.github.io/TestSimulatorApp/
+
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+
+For use in VS CODE:
 You will need VS Code to run this as it is depending on the live server.
 
 DOWNLOAD VS Code here if you don't have it yet: https://code.visualstudio.com/download
