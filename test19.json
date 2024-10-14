@@ -1,0 +1,345 @@
+{
+  "testName": "ICT1541 QUIZ FROM ASSESSMENT ",
+  "questions": [
+    {
+      "text": "A keyboard, mouse, and microphone all are examples of peripheral devices.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Peripheral devices are external hardware that connects to a computer, like keyboards, mice, and microphones, to input data."
+    },
+    {
+      "text": "A mainframe is a network of several servers together in a single location.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "A mainframe is a powerful computer that can handle vast amounts of data and transactions but is not simply a network of servers."
+    },
+    {
+      "text": "Most handheld game devices can communicate wirelessly with other similar devices for multiplayer gaming.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Handheld gaming devices often include wireless communication features like Bluetooth or Wi-Fi to connect for multiplayer gaming."
+    },
+    {
+      "text": "Older USB devices run faster in a new USB port.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Older USB devices operate at their maximum designed speed, even when plugged into newer ports."
+    },
+    {
+      "text": "Bluetooth devices have to be within about 33 feet of each other.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Bluetooth typically works within a range of about 33 feet (10 meters) for optimal connectivity."
+    },
+    {
+      "text": "A(n) ______ notification is a message that initiates from the sending location without a request from the receiver. With a(n) ______ notification, the receiver requests information from the sending location.",
+      "options": ["A. push, pull", "B. input, output", "C. opt-in, opt-out", "D. receive, request"],
+      "correctAnswer": "A",
+      "explanation": "A push notification is sent from the sender without a request, while a pull notification requires the receiver to request the data."
+    },
+    {
+      "text": "Which of the following are two main components on the motherboard?",
+      "options": ["A. memory and storage", "B. interpreter and compiler", "C. processor and memory", "D. compiler and processor"],
+      "correctAnswer": "C",
+      "explanation": "The processor and memory are crucial components on the motherboard responsible for computing power and data handling."
+    },
+    {
+      "text": "Programs that enable you to perform maintenance-type tasks are called operating systems.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Programs that handle maintenance tasks are called utility software, not operating systems."
+    },
+    {
+      "text": "The laws against plagiarism are the same whether copying content from a respected news source, a personal blog, or social media.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Plagiarism laws apply equally to any copied content, regardless of the source."
+    },
+    {
+      "text": "You should use a database rather than a spreadsheet if you want to collect, reorganize, and filter data, and/or create reports from the data.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Databases are designed for managing, filtering, and reporting large datasets, unlike spreadsheets which are better for small-scale data management."
+    },
+    {
+      "text": "You should run multiple antivirus programs on your computer or mobile device.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Running multiple antivirus programs can cause conflicts and reduce the efficiency of detecting threats."
+    },
+    {
+      "text": "A power management tool monitors a laptop or mobile device's battery usage.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Power management tools are designed to monitor and optimize battery usage on laptops and mobile devices."
+    },
+    {
+      "text": "Search tools typically use a(n) ______, which stores a variety of information about a file.",
+      "options": ["A. index", "B. signature", "C. directory", "D. header"],
+      "correctAnswer": "A",
+      "explanation": "An index is used by search tools to store metadata and information about files for faster retrieval."
+    },
+    {
+      "text": "Under what category of programs and apps do screen savers and backup programs fall?",
+      "options": ["A. productivity", "B. security", "C. file, disk, and system management", "D. personal interest"],
+      "correctAnswer": "C",
+      "explanation": "Screen savers and backup programs are categorized under file, disk, and system management tools."
+    },
+    {
+      "text": "Which of the following is NOT an example of an operating system?",
+      "options": ["A. macOS", "B. Android", "C. Office", "D. Windows"],
+      "correctAnswer": "C",
+      "explanation": "Microsoft Office is productivity software, not an operating system."
+    },
+{
+      "text": "Which of the following is responsible for designing and developing information systems?",
+      "options": ["1. Program developer", "2. Systems analyst", "3. Systems programmer", "4. Cloud architect"],
+      "correctAnswer": "2",
+      "explanation": "A systems analyst is responsible for designing and developing information systems, ensuring they meet the business and user requirements."
+    },
+    {
+      "text": "Which protocol specifies rules for transferring files from one computer to another?",
+      "options": ["1. Internet Protocol", "2. File Transfer Protocol", "3. Transmission Control Protocol", "4. Computer Transfer Protocol"],
+      "correctAnswer": "2",
+      "explanation": "File Transfer Protocol (FTP) is the standard protocol used for transferring files between computers over a network."
+    },
+    {
+      "text": "Which of the following best describes the role of a UX specialist?",
+      "options": [
+        "1. Directs and implements an organization's use of Internet and social media marketing.",
+        "2. Writes and develops web content and layouts so that they appear at the beginning of search results.",
+        "3. Integrates apps and data to provide an application that manages a company's relationships with customers.",
+        "4. Plans and designs software and apps that consider a user's reaction to a program and its interface."
+      ],
+      "correctAnswer": "4",
+      "explanation": "A UX specialist focuses on the user's interaction with software, designing apps and interfaces to enhance user experience."
+    },
+    {
+      "text": "Which of the following is recommended to avoid malware infections?",
+      "options": [
+        "1. Some software touted as offering malware protection actually installs more malware.",
+        "2. Flash memory storage from a friend should be safe to use without scanning.",
+        "3. Malware authors typically avoid social media.",
+        "4. If a pop-up window warns you that your computer is infected with a virus, follow its instructions."
+      ],
+      "correctAnswer": "1",
+      "explanation": "Malware can sometimes be disguised as anti-malware software, so caution is advised before downloading and using such programs."
+    },
+    {
+      "text": "Your store uses a bar code reader to process items during checkout. What type of technology does the bar code reader use?",
+      "options": ["1. Light sources", "2. Sonar", "3. Laser beams", "4. Radio frequency"],
+      "correctAnswer": "3",
+      "explanation": "Bar code readers use laser beams to scan barcodes and interpret the data for checkout."
+    },
+    {
+      "text": "Your friend Luis recently was the victim of identity theft and has asked your advice for how to protect himself in the future. You tell Luis that he should install software that protects network resources from outside intrusions, called a(n) ______.",
+      "options": ["1. Tracking cookie", "2. Firewall", "3. Hot spot", "4. Security scanner"],
+      "correctAnswer": "2",
+      "explanation": "A firewall is a security tool that protects a network from unauthorized access and external threats."
+    },
+    {
+      "text": "The major carriers of network traffic are known collectively as the Internet ______.",
+      "options": ["1. Bandwidth", "2. Highway", "3. Backbone", "4. Conductors"],
+      "correctAnswer": "3",
+      "explanation": "The Internet backbone refers to the principal data routes and high-capacity networks that carry the majority of Internet traffic."
+    },
+    {
+      "text": "You are looking for a browser that will run on your computer, which uses the Linux operating system. Which of the following is an option for you?",
+      "options": ["1. Internet Explorer", "2. Chrome", "3. Firefox", "4. Safari"],
+      "correctAnswer": "3",
+      "explanation": "Firefox is one of the browsers compatible with Linux, offering users open-source and cross-platform support."
+    },
+    {
+      "text": "Which of the following is given as a reason for the popularity of video games?",
+      "options": ["1. Convergence", "2. Availability of gaming controllers", "3. The social aspect", "4. Mobility"],
+      "correctAnswer": "3",
+      "explanation": "Video games are popular because they allow players to connect socially, fostering interaction and competition with others."
+    },
+    {
+      "text": "Which manufacturer uses the term AirPods to refer to headphones that fit in your ear and connect wirelessly to devices?",
+      "options": ["1. Apple", "2. Samsung", "3. Nokia", "4. Blackberry"],
+      "correctAnswer": "1",
+      "explanation": "Apple introduced AirPods, their wireless earbuds, which connect via Bluetooth to other Apple devices."
+    },
+    {
+      "text": "NFC is a technology that uses close-range radio signals to transmit data between devices or a device and a tag.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "NFC (Near Field Communication) allows data exchange over very short distances, often used in contactless payments and data sharing."
+    },
+    {
+      "text": "When purchasing a digital camera, you do not need to worry about the memory card because all cameras use the same memory cards.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "2",
+      "explanation": "Different digital cameras use various types of memory cards, so it's important to check compatibility before purchasing."
+    },
+    {
+      "text": "Hypertext Markup Language (HTML) uses a set of codes called attributes to format documents for display in a browser.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "HTML attributes provide additional information about elements, helping to control their appearance and functionality in web browsers."
+    },
+    {
+      "text": "Some DSL installations include a dial tone, providing users with both voice and data communications.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "DSL can provide both internet and voice communication simultaneously over the same line in some installations."
+    },
+    {
+      "text": "Many smartphones and mobile devices have software that shows the approximate location of devices and computers.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "Many devices come with GPS or tracking software that can show the location of the device or nearby computers."
+    },
+    {
+      "text": "Word processing, presentation, and personal finance are types of personal interest applications.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "2",
+      "explanation": "These are productivity applications, not personal interest applications, which are typically more focused on hobbies or leisure."
+    },
+    {
+      "text": "Critics say that the Anticybersquatting Consumer Protection Act prohibits free speech and free market.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "Critics argue that the Anticybersquatting Consumer Protection Act can limit freedom of speech and business opportunities by restricting certain domain registrations."
+    },
+    {
+      "text": "http://www.nps.gov is an example of a URL.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "A URL (Uniform Resource Locator) is the web address used to locate a resource on the Internet, like the National Park Service site."
+    },
+    {
+      "text": "Mobile payment providers state that the use of their payment apps is more secure than using a credit card.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "Mobile payment providers claim that their systems, often using encryption and tokenization, offer more security than traditional credit card use."
+    },
+    {
+      "text": "C++ and JavaScript are examples of programming languages.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "C++ and JavaScript are both popular programming languages used to develop software and web applications."
+    },
+    {
+      "text": "A type of a message that is a short note, typically fewer than 300 characters, sent to or from a smartphone or mobile device is called…",
+      "options": ["1. Voice mail message", "2. Text message", "3. Picture message", "4. Video message"],
+      "correctAnswer": "2",
+      "explanation": "A text message (SMS) is typically a short message, usually under 300 characters, sent between mobile devices."
+    },
+    {
+      "text": "A(n) ______ contains keys you press to enter data and instructions into a computer or mobile device.",
+      "options": ["1. Keyboard", "2. Mouse", "3. Touchpad", "4. Scanner"],
+      "correctAnswer": "1",
+      "explanation": "A keyboard is an input device that contains keys used to input data and commands into a computer or mobile device."
+    },
+    {
+      "text": "An IP address is short for…",
+      "options": ["1. Internet Process address", "2. Internet Product address", "3. Internet Protocol address", "4. International Protocol address"],
+      "correctAnswer": "3",
+      "explanation": "An IP address (Internet Protocol address) is a unique identifier for devices on a network."
+    },
+    {
+      "text": "A computer designed to be stationary, where its components fit on or under a desk or table is called…",
+      "options": ["1. Laptop", "2. Desktop", "3. Tablet", "4. Printer"],
+      "correctAnswer": "2",
+      "explanation": "A desktop computer is designed to remain in one location, often on a desk, and is not portable like laptops or tablets."
+    },
+    {
+      "text": "A ______ is someone who uses the internet or network to destroy or damage computers for political reasons.",
+      "options": ["1. Cyberextortionist", "2. Cyberterrorist", "3. Hacker", "4. Cybercriminal"],
+      "correctAnswer": "2",
+      "explanation": "A cyberterrorist uses the internet to attack computer systems, often with political motives."
+    },
+    {
+      "text": "______ is the process of converting data that is readable by humans into encoded characters to prevent unauthorized access.",
+      "options": ["1. Encryption", "2. Decryption", "3. Compression", "4. Decompression"],
+      "correctAnswer": "1",
+      "explanation": "Encryption is the process of converting readable data into encoded characters to protect it from unauthorized access."
+    },
+    {
+      "text": "A ______ is a network that connects computers and devices in a limited geographical area, such as a home, school, or office building.",
+      "options": ["1. PAN", "2. WAN", "3. MAN", "4. LAN"],
+      "correctAnswer": "4",
+      "explanation": "A Local Area Network (LAN) connects devices within a limited area, such as a building or campus."
+    },
+    {
+      "text": "A ______ is a field that uniquely identifies each record in a file.",
+      "options": ["1. Key field", "2. Primary key", "3. Composite key", "4. Record"],
+      "correctAnswer": "2",
+      "explanation": "A primary key is a unique identifier for each record in a database, ensuring that no two records are identical."
+    },
+    {
+      "text": "Other computers and mobile devices on the network that rely on the server for its resources are called…",
+      "options": ["1. Clients", "2. Ethernet", "3. Bandwidth", "4. Capping"],
+      "correctAnswer": "1",
+      "explanation": "Clients are devices on a network that request resources or services from a server."
+    },
+    {
+      "text": "A device that performs the functions of a router and also a broadband modem is called…",
+      "options": ["1. Mobile broadband wireless router", "2. Broadband router", "3. Transmission media", "4. Wide area network"],
+      "correctAnswer": "2",
+      "explanation": "A broadband router combines the functionalities of a modem and a router, enabling internet access and network management."
+    },
+    {
+      "text": "A portable media player is a mobile device on which you can store, organize, and play or view digital media.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "Portable media players allow users to store and play digital media such as music, videos, and photos."
+    },
+    {
+      "text": "An output device is any hardware component that allows you to enter data and instructions into a computer or mobile device.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "2",
+      "explanation": "An output device conveys information from a computer to the user, such as a monitor or printer. Input devices like keyboards are used to enter data."
+    },
+    {
+      "text": "An input device is any hardware component that conveys information from a computer or mobile device to one or two people.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "2",
+      "explanation": "An input device is used to enter data into a system, while output devices convey information out of the system."
+    },
+    {
+      "text": "The domain name system is the method that the internet uses to store domain names and the corresponding IP addresses.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "The domain name system (DNS) maps human-readable domain names to their respective IP addresses."
+    },
+    {
+      "text": "A chat is a non-real-time typed conversation that takes place on a computer or mobile device with many other online users.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "2",
+      "explanation": "Chat is a real-time communication method, allowing users to type and send messages instantly."
+    },
+    {
+      "text": "The term cybercrimes refers to online or Internet-based illegal acts such as distributing malicious software or committing identity theft.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "Cybercrimes involve illegal activities conducted over the internet, such as hacking, phishing, or distributing malware."
+    },
+    {
+      "text": "Information theft occurs when someone steals personal or confidential information.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "Information theft refers to the act of stealing personal or sensitive data, often for malicious purposes like identity theft."
+    },
+    {
+      "text": "A digital certificate is a notice that guarantees a user or a website is legitimate.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "Digital certificates verify the authenticity of websites or users, ensuring they are legitimate and secure."
+    },
+    {
+      "text": "A cookie is a small text file that a web server stores on a computer.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "A cookie is a small text file that websites store on your device to remember preferences or track activity."
+    },
+    {
+      "text": "A router is a communications device that connects multiple computers or other routers together and transmits data to its correct destination on a network.",
+      "options": ["1. True", "2. False"],
+      "correctAnswer": "1",
+      "explanation": "A router directs data traffic between devices on a network, ensuring it reaches the correct destination."
+    }
+  ]
+}
