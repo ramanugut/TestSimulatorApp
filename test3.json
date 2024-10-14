@@ -284,8 +284,8 @@
         {
             "text": "What will be the value of the variable 'x' after the following loop is executed?\n\nfor x = 7 to 34 step 5",
             "options": ["A. 34", "B. 35", "C. 36", "D. 37"],
-            "correctAnswer": "B. 35",
-            "explanation": "The loop will terminate when x exceeds 34, making the last value of x 35."
+            "correctAnswer": "D. 37",
+            "explanation": "The loop stops when x exceeds 34, so the loop stops at x = 37. However, the last valid iteration before x exceeds 34 is when x = 32. Final value: After the loop terminates, x will be 37, because that’s the value of x when it exits the loop."
         },
         {
             "text": "In a group of nested loops, which loop is executed the most number of times?",
