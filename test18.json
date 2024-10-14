@@ -1,16 +1,345 @@
 {
-    "testName": "Test",
-    "questions": [
-         {
-      "text": "Indicate what will be displayed after the following code has been executed if the user enters totAmount - 5000 and monthAmount - 400.\nCalculateSavings\n  finalAmount = 0\n  noMonths = 0\n  display 'Provide the amount that Pule wants to save'\n  enter totAmount\n  display 'The monthly amount that he is able to save'\n  enter monthAmount\n  do\n    if finalAmount < 1000 then\n      finalAmount = finalAmount * 1.07\n    else\n      finalAmount = finalAmount * 1.09\n    enif\n    finalAmount = finalAmount + monthAmount\n    noMonths = noMonths + 1\n  loop until finalAmount >= totAmount\n  display 'Pule had to save ', noMonths, ' months to reach his goal'\nend",
+  "testName": "ICT1541 ASSESSMENTS QUIZ",
+  "questions": [
+    {
+      "text": "Which of the following is NOT true about memory and storage?",
       "options": [
-        "a. Pule had to save 8 months to reach his goal",
-        "b. None of the above",
-        "c. Pule had to save 9 months to reach his goal",
-        "d. Pule had to save 10 months to reach his goal"
+        "A. Hard disks and solid-state disks generally have the largest storage capacities.",
+        "B. Storage devices often also function as a source of input and output.",
+        "C. Most memory keeps data and instructions permanently.",
+        "D. A storage device records and/or retrieves items to and from storage media."
       ],
-      "correctAnswer": "c. Pule had to save 9 months to reach his goal",
-      "explanation": "The loop iterates until 'finalAmount' reaches or exceeds 'totAmount'. Considering the interest added each month and the monthly saving amount, Pule ends up needing 9 months to reach his savings goal of 5000."
+      "correctAnswer": "C",
+      "explanation": "Memory, such as RAM, is typically volatile and does not keep data permanently, whereas storage devices like hard disks store data permanently."
+    },
+    {
+      "text": "Which of the following is NOT recommended advice to protect your computer from malware?",
+      "options": [
+        "A. Disconnect your computer from the Internet before opening email attachments.",
+        "B. Close spyware windows.",
+        "C. Remove firewall software and hardware.",
+        "D. Scan removable media before using."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Removing firewall software or hardware exposes your system to potential cyberattacks. Firewalls are essential for network security."
+    },
+    {
+      "text": "A fingerprint is a small version of a larger image.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "A fingerprint is a biometric identifier, not an image version. It is used to authenticate users based on unique patterns."
+    },
+    {
+      "text": "Dial-up access is a type of broadband digital Internet connection.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Dial-up is a slower, analog connection, while broadband refers to faster digital internet connections."
+    },
+    {
+      "text": "Data that a computer accepts and processes is called ______.",
+      "options": [
+        "A. input",
+        "B. digital facts",
+        "C. information",
+        "D. bytes"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Input refers to any data or instructions a computer receives and processes."
+    },
+    {
+      "text": "Which of the following is recommended to avoid malware infections?",
+      "options": [
+        "A. Some software touted as offering malware protection actually installs more malware.",
+        "B. Flash memory storage from a friend should be safe to use without scanning.",
+        "C. Malware authors typically avoid social media.",
+        "D. If a pop-up window warns you that your computer is infected with a virus, follow its instructions."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Some malware can disguise itself as antivirus software, making it crucial to verify the authenticity of security software."
+    },
+    {
+      "text": "The operating system serves as the interface between the user, applications, and hardware.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "The operating system provides a platform that manages hardware resources and enables communication between applications and the user."
+    },
+    {
+      "text": "Cambria and Calibri are examples of font styles.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Cambria and Calibri are examples of font families, not styles. Font styles include bold, italic, etc."
+    },
+    {
+      "text": "Which of the following best describes a single sign-on account?",
+      "options": [
+        "A. A security measure that allows only one failed login attempt.",
+        "B. An individual's unique identity required to access an organization's network.",
+        "C. When you enter your name into one account and you are automatically signed into other accounts and services.",
+        "D. An organization's shared login credentials for general network access."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Single sign-on allows users to log in once and gain access to multiple systems without entering credentials repeatedly."
+    },
+    {
+      "text": "A password ______ is a service that stores all of your account information securely.",
+      "options": [
+        "A. vault",
+        "B. binder",
+        "C. manager",
+        "D. collection"
+      ],
+      "correctAnswer": "C",
+      "explanation": "A password manager securely stores and organizes your login credentials for easy access and protection."
+    },
+    {
+      "text": "A front-side bus is part of the motherboard and connects the processor to main memory.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "The front-side bus is a data channel that connects the CPU to the system's main memory (RAM)."
+    },
+    {
+      "text": "The power supply converts the wall outlet DC power into AC power.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "The power supply converts AC power from the outlet into DC power used by the computer's internal components."
+    },
+    {
+      "text": "Which of the following is NOT true about QR codes?",
+      "options": [
+        "A. QR codes store information in both a vertical and horizontal direction.",
+        "B. QR codes can be read with a QR bar code reader or a QR code reader app on a smartphone.",
+        "C. Most QR code reader apps show the address of the website that will be displayed.",
+        "D. If the QR code directs you to a website displaying a form, enter your personal information to ensure your safety."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Never enter personal information on a website linked through a QR code unless you trust the source."
+    },
+    {
+      "text": "Which of the following is NOT true about protecting your credit cards from scanning devices?",
+      "options": [
+        "A. Security experts recommend placing each of your credit cards in separate locations, rather than stacking them.",
+        "B. Some signals have a range as far as 30 feet.",
+        "C. The radio waves do not penetrate metal or water easily.",
+        "D. The words PayPass, PayWave, and Blink are indicators that your credit card has RFID technology."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Stacking credit cards does not necessarily increase risk. Using protective sleeves or wallets designed to block RFID signals is more effective."
+    },
+    {
+      "text": "Hard drives and flash memory storage use direct access storage techniques.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Direct access storage allows data to be retrieved directly from any location on the storage medium, unlike sequential access."
+    },
+    {
+      "text": "Two types of smart cards are contact and contactless.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Contact smart cards must be inserted into a reader, while contactless cards use radio frequency for transactions."
+    },
+    {
+      "text": "In situations when a boot disk is required to restart a computer or device, the boot disk is referred to as ______ media.",
+      "options": [
+        "A. startup",
+        "B. recovery",
+        "C. instructional",
+        "D. restoration"
+      ],
+      "correctAnswer": "B",
+      "explanation": "A recovery disk is used to boot and repair a system that cannot start from its primary drive."
+    },
+    {
+      "text": "Two types of operating system user interfaces are graphical and ______.",
+      "options": [
+        "A. command-line",
+        "B. 3D",
+        "C. navigational",
+        "D. text-based"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Operating systems may offer a graphical user interface (GUI) or a command-line interface (CLI) for user interaction."
+    },
+    {
+      "text": "Routers along the Internet backbone forward data packets to their destination using the fastest available path.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Routers on the Internet backbone ensure data packets take the fastest and most efficient route to their destination."
+    },
+    {
+      "text": "Larger networks typically use a switch, while smaller networks use a hub.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Switches are used in both small and large networks to manage traffic more efficiently than hubs."
+    },
+    {
+      "text": "A(n) ______ database is a huge database used to analyze transactions.",
+      "options": [
+        "A. object-oriented",
+        "B. relational",
+        "C. data warehouse",
+        "D. distributed"
+      ],
+      "correctAnswer": "C",
+      "explanation": "A data warehouse is a large database that stores and analyzes large volumes of transactions to support decision making."
+    },
+    {
+      "text": "A(n) ______ is an item that contains data, as well as the actions that read or process the data.",
+      "options": [
+        "A. table",
+        "B. field",
+        "C. record",
+        "D. object"
+      ],
+      "correctAnswer": "D",
+      "explanation": "In object-oriented programming, an object contains data and the methods (actions) that process that data."
+    },
+    {
+      "text": "A data ______ contains data about each file in the database and each field in those files.",
+      "options": [
+        "A. encyclopedia",
+        "B. reference",
+        "C. guide",
+        "D. dictionary"
+      ],
+      "correctAnswer": "D",
+      "explanation": "A data dictionary provides details about the structure of each file and field in a database."
+    },
+    {
+      "text": "In some database programs, a data file is referred to as a(n) ______.",
+      "options": [
+        "A. table",
+        "B. unit",
+        "C. record",
+        "D. sheet"
+      ],
+      "correctAnswer": "A",
+      "explanation": "In database systems, a table refers to a structured file consisting of rows (records) and columns (fields)."
+    },
+    {
+      "text": "A(n) ______ is the smallest unit of data a user accesses.",
+      "options": [
+        "A. record",
+        "B. file",
+        "C. field",
+        "D. symbol"
+      ],
+      "correctAnswer": "C",
+      "explanation": "A field is the smallest unit of data in a database, representing individual data elements like a name or price."
+    },
+    {
+      "text": "A numeric check determines whether a number is within a specified range.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "A range check, not a numeric check, ensures that a number falls within a specified range."
+    },
+    {
+      "text": "A consistency check tests the data in two or more associated fields to ensure that the relationship is logical and that the data is in the correct format.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "A consistency check ensures that data entered into related fields is logically consistent."
+    },
+    {
+      "text": "In a typical file processing system, each department or area within an organization has its own set of files.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "In a traditional file processing system, different departments maintain separate files, often leading to data redundancy."
+    },
+    {
+      "text": "When an organization uses the database approach, many programs and users share the data in the database.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "In a database approach, multiple programs and users can share the same data, reducing redundancy and improving efficiency."
+    },
+    {
+      "text": "A back end is a program that generally has a more user-friendly interface than the DBMS.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "A back end typically refers to the database or server side, not the user-friendly front end interface."
+    },
+    {
+      "text": "Which of the following MIS reports usually includes tables and graphs?",
+      "options": [
+        "A. Detailed",
+        "B. Summary",
+        "C. Exception",
+        "D. General"
+      ],
+      "correctAnswer": "B",
+      "explanation": "A summary report condenses data and often includes visual elements like tables and graphs to represent information."
+    },
+    {
+      "text": "Which of the following MIS reports identifies data outside of a normal condition?",
+      "options": [
+        "A. Detailed",
+        "B. Summary",
+        "C. Exception",
+        "D. General"
+      ],
+      "correctAnswer": "C",
+      "explanation": "An exception report highlights data that falls outside of established norms or thresholds."
+    },
+    {
+      "text": "A(n) ______ system captures and stores human knowledge and then imitates human reasoning and decision making.",
+      "options": [
+        "A. analytical",
+        "B. anthropomorphic",
+        "C. decision",
+        "D. expert"
+      ],
+      "correctAnswer": "D",
+      "explanation": "An expert system uses artificial intelligence to mimic human decision-making by capturing and applying knowledge."
+    },
+    {
+      "text": "______ information is available when the decision maker needs it.",
+      "options": [
+        "A. Timely",
+        "B. Accessible",
+        "C. Verifiable",
+        "D. Organized"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Timely information is available at the right time, enabling decision makers to act effectively."
+    },
+    {
+      "text": "A(n) ______ system is a set of hardware, software, data, people, and procedures that work together.",
+      "options": [
+        "A. information",
+        "B. communications",
+        "C. business",
+        "D. proficiency"
+      ],
+      "correctAnswer": "A",
+      "explanation": "An information system integrates all these components to process and manage data effectively."
+    },
+    {
+      "text": "When you use a credit card to purchase an item, you are interacting with a CMS.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "A CMS (Content Management System) is used for managing digital content, while credit card transactions involve financial systems."
+    },
+    {
+      "text": "Most TPSs use OLTP because users need information immediately.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Online Transaction Processing (OLTP) allows users to access and update information in real-time for immediate decision making."
+    },
+    {
+      "text": "Information systems support daily, short-term, and long-range information requirements of users in a company.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Information systems are designed to meet the information needs of users at all levels of the organization, from daily operations to long-term planning."
+    },
+    {
+      "text": "To assist with sound decision making, information must have value.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Valuable information is accurate, timely, relevant, and helps decision makers achieve their objectives."
+    },
+    {
+      "text": "Most information gains value with time.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Most information loses value over time as it becomes outdated or irrelevant to decision-making."
     }
-    ]
+  ]
 }
