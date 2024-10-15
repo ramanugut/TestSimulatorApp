@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentPage = 1;
   const questionsPerPage = 10;
   let userAnswers = {};
-
+ 
   // HTML element references
   const questionsContainer = document.getElementById("questions-container");
   const timerInput = document.getElementById("timer-input");
