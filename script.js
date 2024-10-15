@@ -1,8 +1,101 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialization of global variables
   let questions = [];
   let currentPage = 1;
   const questionsPerPage = 10;
   let userAnswers = {};
+
+  // Stats tracking
+  let testStats = {
+    testsTaken: 0,
+    testsPassed: 0,
+    testsFailed: 0,
+    testsAbandoned: 0,
+    passedTests: [],
+    failedTests: [],
+    abandonedTests: [],
+  };
+
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split("T")[0];
+
+  // Load stats from localStorage
+  function loadStats() {
+    const storedDate = localStorage.getItem("statsDate");
+    if (storedDate === today) {
+      const storedStats = JSON.parse(localStorage.getItem("testStats"));
+      if (storedStats) {
+        testStats = storedStats;
+      }
+    } else {
+      // New day, reset stats
+      localStorage.setItem("statsDate", today);
+      saveStats();
+    }
+    updateStatsDisplay();
+  }
+
+  // Save stats to localStorage
+  function saveStats() {
+    localStorage.setItem("testStats", JSON.stringify(testStats));
+  }
+
+  // Update stats display
+  function updateStatsDisplay() {
+    const statsContent = document.getElementById("stats-content");
+    if (statsContent) {
+      statsContent.innerHTML = `
+                <h3>Today's Stats</h3>
+                <div class="stat-item"><span>Total Tests Taken:</span> ${
+                  testStats.testsTaken
+                }</div>
+                <div class="stat-item passed"><span>Tests Passed:</span> ${
+                  testStats.testsPassed
+                }</div>
+                <ul>${testStats.passedTests
+                  .map((test) => `<li>${test}</li>`)
+                  .join("")}</ul>
+                <div class="stat-item failed"><span>Tests Failed:</span> ${
+                  testStats.testsFailed
+                }</div>
+                <ul>${testStats.failedTests
+                  .map((test) => `<li>${test}</li>`)
+                  .join("")}</ul>
+                <div class="stat-item abandoned"><span>Tests Abandoned:</span> ${
+                  testStats.testsAbandoned
+                }</div>
+                <ul>${testStats.abandonedTests
+                  .map((test) => `<li>${test}</li>`)
+                  .join("")}</ul>
+                <button id="reset-stats-button" class="reset-stats-button">Reset Stats</button>
+            `;
+
+      // Add event listener for reset stats button
+      const resetStatsButton = document.getElementById("reset-stats-button");
+      if (resetStatsButton) {
+        resetStatsButton.addEventListener("click", resetStats);
+      }
+    }
+  }
+
+  function resetStats() {
+    // Reset the stats object
+    testStats = {
+      testsTaken: 0,
+      testsPassed: 0,
+      testsFailed: 0,
+      testsAbandoned: 0,
+      passedTests: [],
+      failedTests: [],
+      abandonedTests: [],
+    };
+    // Save to localStorage
+    saveStats();
+    // Update the stats display
+    updateStatsDisplay();
+  }
+
+  loadStats();
 
   // HTML element references
   const questionsContainer = document.getElementById("questions-container");
@@ -32,17 +125,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let isTimerPaused = false;
   let timerStarted = false;
   let testInProgress = false;
-  let testSubmitted = false; // Flag to indicate if the test has been submitted
+  let testSubmitted = false;
 
-  // Initialize timer display
   floatingTimeDisplay.textContent = `${timerInput.value}:00`;
 
-  // Update timer display when timer input changes
-  timerInput.addEventListener("input", () => {
-    floatingTimeDisplay.textContent = `${timerInput.value}:00`;
-  });
-
-  // Dark Mode Toggle Implementation
+  //SECTION 2 Handle Dark Mode theme based on user preferences*******************************************************
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
     darkModeToggle.textContent = "Disable Dark Mode";
@@ -64,8 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
       darkModeToggle.textContent = "Disable Dark Mode";
     }
   });
-
-  // Load test files dynamically into the dropdown menu
+  // Test file references
   const testFiles = [
     "test1.json",
     "test2.json",
@@ -84,10 +170,9 @@ document.addEventListener("DOMContentLoaded", function () {
     "test15.json",
     "test16.json",
     "test17.json",
-    "test18.json",
-    "test19.json" /* , "test20.json" , "test21.json", "test22.json", "test23.json", "test24.json", "test25.json", "test26.json", "test27.json", "test28.json", "test29.json", "test30.json", "test31.json", "test32.json", "test33.json", "test34.json", "test35.json", "test36.json", "test37.json", "test38.json", "test39.json", "test40.json", "test41.json", "test42.json", "test43.json", "test44.json", "test45.json", "test46.json", "test47.json", "test48.json", "test49.json", "test50.json"*/,
   ];
 
+  // Load test files into the select element
   function loadTestFiles() {
     let firstTestLoaded = false;
     let fetchPromises = testFiles.map((filename) => {
@@ -130,8 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  loadTestFiles();
-
+  //SECTION 3 Load questions from selected file *********************************************************************
   function loadQuestions(filename) {
     fetch(filename)
       .then((response) => {
@@ -148,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
           currentPage = 1;
           userAnswers = {};
           testInProgress = false;
-          testSubmitted = false; // Reset the submitted flag
+          testSubmitted = false;
           timerStarted = false;
           isTimerPaused = false;
           clearInterval(timer);
@@ -167,6 +251,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  // Load the test files into the dropdown on page load
+  loadTestFiles();
+
+  //SECTION 4 Render questions and set up pagination*****************************************************************************************************
   function renderQuestions() {
     questionsContainer.innerHTML = "";
     const startIndex = (currentPage - 1) * questionsPerPage;
@@ -189,11 +277,11 @@ document.addEventListener("DOMContentLoaded", function () {
           const optionId = `question-${actualIndex}-option-${option}`;
 
           optionElement.innerHTML = `
-                        <label>
-                            <input type="radio" id="${optionId}" name="question-${actualIndex}" value="${option}">
-                            ${option}
-                        </label>
-                    `;
+                    <label>
+                        <input type="radio" id="${optionId}" name="question-${actualIndex}" value="${option}">
+                        ${option}
+                    </label>
+                `;
 
           const radioInput = optionElement.querySelector('input[type="radio"]');
           radioInput.addEventListener("change", (event) => {
@@ -211,7 +299,6 @@ document.addEventListener("DOMContentLoaded", function () {
             radioInput.checked = true;
           }
 
-          // If test has been submitted, disable the inputs
           if (testSubmitted) {
             radioInput.disabled = true;
           }
@@ -241,7 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
           inputElement.value = userAnswers[actualIndex];
         }
 
-        // If test has been submitted, disable the inputs
         if (testSubmitted) {
           inputElement.disabled = true;
         }
@@ -249,58 +335,19 @@ document.addEventListener("DOMContentLoaded", function () {
         questionElement.appendChild(inputElement);
       }
 
-      // Check if test has been submitted or is in study mode to display feedback
-      if (testSubmitted) {
-        const userAnswer = userAnswers[actualIndex];
-        let isCorrect = false;
-
-        if (userAnswer !== undefined && userAnswer.trim() !== "") {
-          if (
-            userAnswer.trim().toLowerCase() ===
-            question.correctAnswer.trim().toLowerCase()
-          ) {
-            isCorrect = true;
-          }
-        }
-
-        if (isCorrect) {
-          questionElement.classList.add("correct");
-        } else {
-          questionElement.classList.add("incorrect");
-        }
-
-        let feedbackElement = document.createElement("p");
-        feedbackElement.classList.add("feedback");
-
-        if (isCorrect) {
-          feedbackElement.textContent = "Correct!";
-          feedbackElement.classList.add("correct");
-        } else {
-          feedbackElement.textContent = "Incorrect.";
-          feedbackElement.classList.add("incorrect");
-
-          // Also show the correct answer and explanation
-          const correctAnswerElement = document.createElement("p");
-          correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
-          correctAnswerElement.classList.add("correct-answer");
-          questionElement.appendChild(correctAnswerElement);
-
-          if (question.explanation) {
-            const explanationElement = document.createElement("p");
-            explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
-            explanationElement.classList.add("explanation");
-            questionElement.appendChild(explanationElement);
-          }
-        }
-
-        questionElement.appendChild(feedbackElement);
-      }
+      // Handle study mode
       if (isStudyMode) {
-        const answerElement = document.createElement("p");
-        answerElement.classList.add("correct-answer");
-        answerElement.style.color = "#3483eb";
-        answerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}<br><strong>Explanation:</strong> ${question.explanation}`;
-        questionElement.appendChild(answerElement);
+        const correctAnswerElement = document.createElement("p");
+        correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
+        correctAnswerElement.classList.add("study-correct-answer");
+        questionElement.appendChild(correctAnswerElement);
+
+        if (question.explanation) {
+          const explanationElement = document.createElement("p");
+          explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
+          explanationElement.classList.add("study-explanation");
+          questionElement.appendChild(explanationElement);
+        }
       }
 
       questionsContainer.appendChild(questionElement);
@@ -308,27 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgress();
   }
 
-  function updateProgress() {
-    const totalQuestions = questions.length;
-    const answeredQuestions = Object.keys(userAnswers).filter((index) => {
-      const answer = userAnswers[index];
-      return (
-        answer !== null &&
-        answer !== undefined &&
-        answer.toString().trim() !== ""
-      );
-    }).length;
-    const progressPercent = Math.round(
-      (answeredQuestions / totalQuestions) * 100
-    );
-    floatingProgressDisplay.querySelector(
-      "#progress-text"
-    ).textContent = `${progressPercent}%`;
-    floatingProgressDisplay.querySelector(
-      "#progress-bar"
-    ).style.width = `${progressPercent}%`;
-  }
-
+  // Pagination controls for previous and next pages
   function updatePaginationControls() {
     paginationControls.classList.remove("hidden");
     const totalPages = Math.ceil(questions.length / questionsPerPage);
@@ -353,7 +380,27 @@ document.addEventListener("DOMContentLoaded", function () {
       updatePaginationControls();
     }
   });
+  function generateTableHTML(tableData) {
+    let tableHTML = '<table border="1">';
+    tableHTML += "<thead><tr>";
+    Object.keys(tableData[0]).forEach((header) => {
+      tableHTML += `<th>${header}</th>`;
+    });
+    tableHTML += "</tr></thead><tbody>";
 
+    tableData.forEach((row) => {
+      tableHTML += "<tr>";
+      Object.values(row).forEach((value) => {
+        tableHTML += `<td>${value}</td>`;
+      });
+      tableHTML += "</tr>";
+    });
+
+    tableHTML += "</tbody></table>";
+    return tableHTML;
+  }
+
+  //SECTION 5 Timer functionality for the test ***************************************************************************
   function startTimer() {
     if (timerStarted) return;
     timerStarted = true;
@@ -373,11 +420,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   }
 
+  // Update the timer display with the current remaining time
   function updateTimerDisplay(minutes, seconds) {
     const timeString = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
     floatingTimeDisplay.textContent = timeString;
   }
 
+  // Pause or continue the timer when the button is pressed
   function pauseOrContinueTimer() {
     if (!timerStarted) return;
     if (isTimerPaused) {
@@ -389,6 +438,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Event listener for timer pause/continue button
+  pauseTimerButton.addEventListener("click", pauseOrContinueTimer);
+
+  // Start test button event listener to initialize the timer
+  startTestButton.addEventListener("click", () => {
+    startTimer();
+    startTestButton.disabled = true;
+    submitButton.disabled = false;
+    testInProgress = true;
+    console.log("Start Test button clicked. Submit button enabled.");
+  });
+
+  //SECTION 6 Submit test and grade the answers*************************************************************************************
   function submitTest() {
     console.log("submitTest function called");
     try {
@@ -398,7 +460,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const userAnswer = userAnswers[index];
         console.log(`Question ${index + 1}, User Answer:`, userAnswer);
 
-        if (userAnswer === undefined || userAnswer.trim() === "") {
+        if (
+          userAnswer === undefined ||
+          (typeof userAnswer === "string" && userAnswer.trim() === "")
+        ) {
           unansweredQuestions.push(index + 1);
         }
       });
@@ -420,48 +485,131 @@ document.addEventListener("DOMContentLoaded", function () {
       isTimerPaused = false;
       timerStarted = false;
       testInProgress = false;
-      testSubmitted = true; // Set the submitted flag to true
+      testSubmitted = true;
       let score = 0;
 
       submitButton.style.display = "none";
 
-      // Calculate the score
+      const passMark = parseInt(passMarkInput.value);
+
+      // Iterate through each question to evaluate and provide feedback
       questions.forEach((question, index) => {
         const userAnswer = userAnswers[index];
         let isCorrect = false;
+        const isMultipleCorrect = Array.isArray(question.correctAnswer);
 
-        if (userAnswer !== undefined && userAnswer.trim() !== "") {
+        // Determine if the answer is correct
+        if (isMultipleCorrect) {
+          const selectedOptions = Array.isArray(userAnswer)
+            ? userAnswer.map((option) => option.trim().toLowerCase())
+            : [];
+
+          const correctAnswers = question.correctAnswer.map((answer) =>
+            answer.trim().toLowerCase()
+          );
+          selectedOptions.sort();
+          correctAnswers.sort();
+          isCorrect =
+            JSON.stringify(selectedOptions) === JSON.stringify(correctAnswers);
+        } else {
           if (
+            typeof userAnswer === "string" &&
             userAnswer.trim().toLowerCase() ===
-            question.correctAnswer.trim().toLowerCase()
+              question.correctAnswer.trim().toLowerCase()
           ) {
             isCorrect = true;
             score++;
           }
         }
+
+        // Apply feedback to the question element
+        const questionElement = questionsContainer.querySelector(
+          `[data-question-index="${index}"]`
+        );
+        if (questionElement) {
+          let feedbackElement = document.createElement("p");
+          feedbackElement.classList.add("feedback");
+
+          if (isCorrect) {
+            questionElement.classList.add("correct");
+            feedbackElement.textContent = "Correct!";
+            feedbackElement.classList.add("correct");
+          } else {
+            questionElement.classList.add("incorrect");
+            feedbackElement.textContent = "Incorrect.";
+            feedbackElement.classList.add("incorrect");
+
+            // Display correct answer and explanation if available
+            const correctAnswerElement = document.createElement("p");
+            correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
+            correctAnswerElement.classList.add("correct-answer");
+            questionElement.appendChild(correctAnswerElement);
+
+            if (question.explanation) {
+              const explanationElement = document.createElement("p");
+              explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
+              explanationElement.classList.add("explanation");
+              questionElement.appendChild(explanationElement);
+            }
+          }
+
+          questionElement.appendChild(feedbackElement);
+
+          // Ensure user selections are preserved and highlighted correctly
+          if (question.options && question.options.length > 0) {
+            const inputs = questionElement.querySelectorAll("input");
+            inputs.forEach((input) => {
+              if (Array.isArray(userAnswer)) {
+                // Handle multiple answers (checkbox)
+                input.checked = userAnswer.includes(input.value);
+              } else if (typeof userAnswer === "string") {
+                // Handle single answer (radio)
+                input.checked = userAnswer === input.value;
+              }
+              input.disabled = true; // Disable input to prevent changes after submission
+            });
+          } else {
+            // Handle text-based answers
+            const textInput =
+              questionElement.querySelector('input[type="text"]');
+            if (textInput) {
+              textInput.value = userAnswer || "";
+              textInput.disabled = true; // Disable text input after submission
+            }
+          }
+        }
       });
 
+      // Update the score display
       scoreElement.textContent = `${score} / ${questions.length}`;
-
       scoreContainer.style.display = "block";
       scoreContainer.classList.remove("hidden");
 
-      const passMark = parseInt(passMarkInput.value);
+      // Display pass or fail message
       resultMessageElement.textContent = "";
       resultMessageElement.classList.remove("pass-message", "fail-message");
+
+      const testName = testSelect.options[testSelect.selectedIndex].textContent;
+
+      testStats.testsTaken++;
 
       if ((score / questions.length) * 100 >= passMark) {
         resultMessageElement.textContent = "You Passed!";
         resultMessageElement.classList.add("pass-message");
+        testStats.testsPassed++;
+        testStats.passedTests.push(testName);
       } else {
         resultMessageElement.textContent = "You Failed.";
         resultMessageElement.classList.add("fail-message");
+        testStats.testsFailed++;
+        testStats.failedTests.push(testName);
       }
 
-      console.log("Test grading completed. Score:", score);
+      // Save stats and update display
+      saveStats();
+      updateStatsDisplay();
 
-      // Re-render the current page to display feedback
-      renderQuestions();
+      console.log("Test grading completed. Score:", score);
     } catch (error) {
       console.error("Error in submitTest:", error);
       alert(
@@ -470,6 +618,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Event listener for test submission button
+  submitButton.addEventListener("click", submitTest);
+
+  // Reset test to its initial state
   function resetTest() {
     clearInterval(timer);
     floatingTimeDisplay.textContent = `${timerInput.value}:00`;
@@ -480,7 +632,7 @@ document.addEventListener("DOMContentLoaded", function () {
     timerStarted = false;
     isTimerPaused = false;
     testInProgress = false;
-    testSubmitted = false; // Reset the submitted flag
+    testSubmitted = false;
     pauseTimerButton.textContent = "Pause Timer";
     floatingProgressDisplay.querySelector("#progress-text").textContent = `0%`;
     floatingProgressDisplay.querySelector("#progress-bar").style.width = `0%`;
@@ -491,6 +643,32 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgress();
   }
 
+  // Event listener for test reset button
+  resetButton.addEventListener("click", resetTest);
+
+  //SECTION 7 Update the progress of answered questions**************************************************************************************
+  function updateProgress() {
+    const totalQuestions = questions.length;
+    const answeredQuestions = Object.keys(userAnswers).filter((index) => {
+      const answer = userAnswers[index];
+      return (
+        answer !== null &&
+        answer !== undefined &&
+        answer.toString().trim() !== ""
+      );
+    }).length;
+    const progressPercent = Math.round(
+      (answeredQuestions / totalQuestions) * 100
+    );
+    floatingProgressDisplay.querySelector(
+      "#progress-text"
+    ).textContent = `${progressPercent}%`;
+    floatingProgressDisplay.querySelector(
+      "#progress-bar"
+    ).style.width = `${progressPercent}%`;
+  }
+
+  // Download results as a PDF using jsPDF
   function downloadResultsAsPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -563,28 +741,16 @@ document.addEventListener("DOMContentLoaded", function () {
     doc.save("test_results.pdf");
   }
 
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  submitButton.disabled = true;
-
-  startTestButton.addEventListener("click", () => {
-    startTimer();
-    startTestButton.disabled = true;
-    submitButton.disabled = false;
-    testInProgress = true;
-    console.log("Start Test button clicked. Submit button enabled.");
-  });
-  pauseTimerButton.addEventListener("click", pauseOrContinueTimer);
-  submitButton.addEventListener("click", submitTest);
-  resetButton.addEventListener("click", resetTest);
+  // Event listener for downloading results as a PDF
   downloadButton.addEventListener("click", downloadResultsAsPDF);
 
+  //SECTION 8 Study mode toggle functionality**************************************************************************************************
+  studyModeToggle.addEventListener("change", () => {
+    isStudyMode = studyModeToggle.checked;
+    renderQuestions();
+  });
+
+  // Event listener for changing the test selection
   testSelect.addEventListener("change", () => {
     if (testInProgress || timerStarted) {
       const confirmSwitch = confirm(
@@ -594,6 +760,14 @@ document.addEventListener("DOMContentLoaded", function () {
         testSelect.value = testSelect.dataset.previousValue;
         return;
       } else {
+        // Update stats for abandoned test
+        testStats.testsAbandoned++;
+        const testName =
+          testSelect.options[testSelect.selectedIndex].textContent;
+        testStats.abandonedTests.push(testName);
+        saveStats();
+        updateStatsDisplay();
+
         resetTest();
         loadQuestions(testSelect.value);
       }
@@ -605,11 +779,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   testSelect.dataset.previousValue = testSelect.value;
 
-  studyModeToggle.addEventListener("change", () => {
-    isStudyMode = studyModeToggle.checked;
-    renderQuestions();
-  });
-
+  // Back-to-top button functionality
   const backToTopButton = document.getElementById("back-to-top");
 
   window.addEventListener("scroll", () => {
@@ -626,4 +796,16 @@ document.addEventListener("DOMContentLoaded", function () {
   backToTopButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  // Shuffle the array of questions for random order
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Initially disable submit button
+  submitButton.disabled = true;
 });
