@@ -170,6 +170,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "test15.json",
     "test16.json",
     "test17.json",
+    "test18.json",
+    "test19.json",
   ];
 
   // Load test files into the select element
