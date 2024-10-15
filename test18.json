@@ -9,7 +9,7 @@
         "C. Most memory keeps data and instructions permanently.",
         "D. A storage device records and/or retrieves items to and from storage media."
       ],
-      "correctAnswer": "C",
+      "correctAnswer": "C. Most memory keeps data and instructions permanently.",
       "explanation": "Memory, such as RAM, is typically volatile and does not keep data permanently, whereas storage devices like hard disks store data permanently."
     },
     {
@@ -20,7 +20,7 @@
         "C. Remove firewall software and hardware.",
         "D. Scan removable media before using."
       ],
-      "correctAnswer": "C",
+      "correctAnswer": "C. Remove firewall software and hardware.",
       "explanation": "Removing firewall software or hardware exposes your system to potential cyberattacks. Firewalls are essential for network security."
     },
     {
@@ -43,7 +43,7 @@
         "C. information",
         "D. bytes"
       ],
-      "correctAnswer": "A",
+      "correctAnswer": "A. input",
       "explanation": "Input refers to any data or instructions a computer receives and processes."
     },
     {
@@ -54,7 +54,7 @@
         "C. Malware authors typically avoid social media.",
         "D. If a pop-up window warns you that your computer is infected with a virus, follow its instructions."
       ],
-      "correctAnswer": "A",
+      "correctAnswer": "A. Some software touted as offering malware protection actually installs more malware.",
       "explanation": "Some malware can disguise itself as antivirus software, making it crucial to verify the authenticity of security software."
     },
     {
@@ -77,7 +77,7 @@
         "C. When you enter your name into one account and you are automatically signed into other accounts and services.",
         "D. An organization's shared login credentials for general network access."
       ],
-      "correctAnswer": "C",
+      "correctAnswer": "C. When you enter your name into one account and you are automatically signed into other accounts and services.",
       "explanation": "Single sign-on allows users to log in once and gain access to multiple systems without entering credentials repeatedly."
     },
     {
@@ -88,7 +88,7 @@
         "C. manager",
         "D. collection"
       ],
-      "correctAnswer": "C",
+      "correctAnswer": "C. manager",
       "explanation": "A password manager securely stores and organizes your login credentials for easy access and protection."
     },
     {
@@ -111,7 +111,7 @@
         "C. Most QR code reader apps show the address of the website that will be displayed.",
         "D. If the QR code directs you to a website displaying a form, enter your personal information to ensure your safety."
       ],
-      "correctAnswer": "D",
+      "correctAnswer": "D. If the QR code directs you to a website displaying a form, enter your personal information to ensure your safety.",
       "explanation": "Never enter personal information on a website linked through a QR code unless you trust the source."
     },
     {
@@ -122,7 +122,7 @@
         "C. The radio waves do not penetrate metal or water easily.",
         "D. The words PayPass, PayWave, and Blink are indicators that your credit card has RFID technology."
       ],
-      "correctAnswer": "A",
+      "correctAnswer": "A. Security experts recommend placing each of your credit cards in separate locations, rather than stacking them.",
       "explanation": "Stacking credit cards does not necessarily increase risk. Using protective sleeves or wallets designed to block RFID signals is more effective."
     },
     {
@@ -145,7 +145,7 @@
         "C. instructional",
         "D. restoration"
       ],
-      "correctAnswer": "B",
+      "correctAnswer": "B. recovery",
       "explanation": "A recovery disk is used to boot and repair a system that cannot start from its primary drive."
     },
     {
@@ -156,7 +156,7 @@
         "C. navigational",
         "D. text-based"
       ],
-      "correctAnswer": "A",
+      "correctAnswer": "A. command-line",
       "explanation": "Operating systems may offer a graphical user interface (GUI) or a command-line interface (CLI) for user interaction."
     },
     {
@@ -179,7 +179,7 @@
         "C. data warehouse",
         "D. distributed"
       ],
-      "correctAnswer": "C",
+      "correctAnswer": "C. data warehouse",
       "explanation": "A data warehouse is a large database that stores and analyzes large volumes of transactions to support decision making."
     },
     {
@@ -190,7 +190,7 @@
         "C. record",
         "D. object"
       ],
-      "correctAnswer": "D",
+      "correctAnswer": "D. object",
       "explanation": "In object-oriented programming, an object contains data and the methods (actions) that process that data."
     },
     {
@@ -201,7 +201,7 @@
         "C. guide",
         "D. dictionary"
       ],
-      "correctAnswer": "D",
+      "correctAnswer": "D. dictionary",
       "explanation": "A data dictionary provides details about the structure of each file and field in a database."
     },
     {
@@ -212,7 +212,7 @@
         "C. record",
         "D. sheet"
       ],
-      "correctAnswer": "A",
+      "correctAnswer": "A. table",
       "explanation": "In database systems, a table refers to a structured file consisting of rows (records) and columns (fields)."
     },
     {
@@ -223,7 +223,7 @@
         "C. field",
         "D. symbol"
       ],
-      "correctAnswer": "C",
+      "correctAnswer": "C. field",
       "explanation": "A field is the smallest unit of data in a database, representing individual data elements like a name or price."
     },
     {
@@ -264,7 +264,7 @@
         "C. Exception",
         "D. General"
       ],
-      "correctAnswer": "B",
+      "correctAnswer": "B. Summary",
       "explanation": "A summary report condenses data and often includes visual elements like tables and graphs to represent information."
     },
     {
@@ -275,7 +275,7 @@
         "C. Exception",
         "D. General"
       ],
-      "correctAnswer": "C",
+      "correctAnswer": "C. Exception",
       "explanation": "An exception report highlights data that falls outside of established norms or thresholds."
     },
     {
@@ -286,7 +286,7 @@
         "C. decision",
         "D. expert"
       ],
-      "correctAnswer": "D",
+      "correctAnswer": "D. expert",
       "explanation": "An expert system uses artificial intelligence to mimic human decision-making by capturing and applying knowledge."
     },
     {
@@ -297,49 +297,50 @@
         "C. Verifiable",
         "D. Organized"
       ],
-      "correctAnswer": "A",
+      "correctAnswer": "A. Timely",
       "explanation": "Timely information is available at the right time, enabling decision makers to act effectively."
     },
     {
-      "text": "A(n) ______ system is a set of hardware, software, data, people, and procedures that work together.",
-      "options": [
-        "A. information",
-        "B. communications",
-        "C. business",
-        "D. proficiency"
-      ],
-      "correctAnswer": "A",
-      "explanation": "An information system integrates all these components to process and manage data effectively."
-    },
-    {
-      "text": "When you use a credit card to purchase an item, you are interacting with a CMS.",
-      "options": ["True", "False"],
-      "correctAnswer": "False",
-      "explanation": "A CMS (Content Management System) is used for managing digital content, while credit card transactions involve financial systems."
-    },
-    {
-      "text": "Most TPSs use OLTP because users need information immediately.",
-      "options": ["True", "False"],
-      "correctAnswer": "True",
-      "explanation": "Online Transaction Processing (OLTP) allows users to access and update information in real-time for immediate decision making."
-    },
-    {
-      "text": "Information systems support daily, short-term, and long-range information requirements of users in a company.",
-      "options": ["True", "False"],
-      "correctAnswer": "True",
-      "explanation": "Information systems are designed to meet the information needs of users at all levels of the organization, from daily operations to long-term planning."
-    },
-    {
-      "text": "To assist with sound decision making, information must have value.",
-      "options": ["True", "False"],
-      "correctAnswer": "True",
-      "explanation": "Valuable information is accurate, timely, relevant, and helps decision makers achieve their objectives."
-    },
-    {
-      "text": "Most information gains value with time.",
-      "options": ["True", "False"],
-      "correctAnswer": "False",
-      "explanation": "Most information loses value over time as it becomes outdated or irrelevant to decision-making."
-    }
+  "text": "A(n) ______ system is a set of hardware, software, data, people, and procedures that work together.",
+  "options": [
+    "A. information",
+    "B. communications",
+    "C. business",
+    "D. proficiency"
+  ],
+  "correctAnswer": "A. information",
+  "explanation": "An information system integrates all these components to process and manage data effectively."
+},
+{
+  "text": "When you use a credit card to purchase an item, you are interacting with a CMS.",
+  "options": ["True", "False"],
+  "correctAnswer": "False",
+  "explanation": "A CMS (Content Management System) is used for managing digital content, while credit card transactions involve financial systems."
+},
+{
+  "text": "Most TPSs use OLTP because users need information immediately.",
+  "options": ["True", "False"],
+  "correctAnswer": "True",
+  "explanation": "Online Transaction Processing (OLTP) allows users to access and update information in real-time for immediate decision making."
+},
+{
+  "text": "Information systems support daily, short-term, and long-range information requirements of users in a company.",
+  "options": ["True", "False"],
+  "correctAnswer": "True",
+  "explanation": "Information systems are designed to meet the information needs of users at all levels of the organization, from daily operations to long-term planning."
+},
+{
+  "text": "To assist with sound decision making, information must have value.",
+  "options": ["True", "False"],
+  "correctAnswer": "True",
+  "explanation": "Valuable information is accurate, timely, relevant, and helps decision makers achieve their objectives."
+},
+{
+  "text": "Most information gains value with time.",
+  "options": ["True", "False"],
+  "correctAnswer": "False",
+  "explanation": "Most information loses value over time as it becomes outdated or irrelevant to decision-making."
+}
+
   ]
 }
