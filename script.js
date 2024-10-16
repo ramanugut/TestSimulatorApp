@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test1.json",
     "test2.json",
     "test3.json",
-    "test4.json",
+   /* "test4.json",
     "test5.json",
     "test6.json",
     "test7.json",
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test14.json",
     "test15.json",
     "test16.json",
-    "test17.json",
+    "test17.json", */
     "test18.json",
     "test19.json" 
   ];
