@@ -153,10 +153,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // Test file references
   const testFiles = [
-    "test1.json",
+   /* "test1.json",
     "test2.json",
     "test3.json",
-   /* "test4.json",
+    "test4.json",
     "test5.json",
     "test6.json",
     "test7.json",
