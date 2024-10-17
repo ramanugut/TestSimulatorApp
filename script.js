@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => {
           console.error("Error loading test name:", error);
           const errorOption = document.createElement("option");
-          errorOption.textContent = `Error loading ${filename}`;
+          errorOption.textContent = `This test is not yet loaded with questions ${filename}`;
           errorOption.disabled = true;
           testSelect.appendChild(errorOption);
         });
