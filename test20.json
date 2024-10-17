@@ -140,6 +140,147 @@
       "options": ["True", "False"],
       "correctAnswer": "True",
       "explanation": "IT specialty workstations ensure proper tracking of all organizational assets."
+    },
+            {
+      "text": "Which of the following connector types uses a single RCA style connector?",
+      "options": ["a. DVI", "b. VGA", "c. RGB", "d. Composite video"],
+      "correctAnswer": "d",
+      "explanation": "Composite video uses a single RCA connector to transmit video signals."
+    },
+    {
+      "text": "The basis of problem management is the identification, prioritization, and ownership of incidents.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "Problem management focuses on managing and resolving incidents efficiently."
+    },
+    {
+      "text": "What is each pixel addressed by to vary the intensity of RGB values in an LCD monitor?",
+      "options": ["a. Light-emitting diode", "b. HDCP", "c. Transistor", "d. VESA"],
+      "correctAnswer": "c",
+      "explanation": "Each pixel in an LCD is controlled by a transistor to vary RGB intensities."
+    },
+    {
+      "text": "Which term refers to the type of memory that loses its contents when power isn’t present?",
+      "options": ["a. Volatile", "b. Asynchronous", "c. Dynamic", "d. Synchronous"],
+      "correctAnswer": "a",
+      "explanation": "Volatile memory requires power to maintain its stored data."
+    },
+    {
+      "text": "What technology should replacement headphones use to connect to a phone without a headphone jack?",
+      "options": ["a. Wi-Fi", "b. Lightning", "c. Bluetooth", "d. Near-Field Communication"],
+      "correctAnswer": "c",
+      "explanation": "Bluetooth headphones connect wirelessly and are compatible with phones without audio jacks."
+    },
+    {
+      "text": "Which of the following is NOT a Thicknet cable?",
+      "options": ["a. RG-8", "b. RG-11", "c. RG-54", "d. None of the above"],
+      "correctAnswer": "c",
+      "explanation": "RG-54 is not a recognized Thicknet cable."
+    },
+    {
+      "text": "What drone feature may not be functioning correctly if the drone fails to record its location?",
+      "options": ["a. CDMA", "b. PRL", "c. GSM", "d. GPS"],
+      "correctAnswer": "d",
+      "explanation": "GPS provides location data and is essential for mapping drones."
+    },
+    {
+      "text": "Which Windows operating system cannot be upgraded to any edition of Windows Vista?",
+      "options": [
+        "a. Windows 2000 Professional",
+        "b. Windows XP Home",
+        "c. Windows XP Professional",
+        "d. Windows XP Media Center"
+      ],
+      "correctAnswer": "a",
+      "explanation": "Windows 2000 Professional does not support direct upgrades to Vista."
+    },
+    {
+      "text": "Which of the following allows for the farthest transmission distance for data?",
+      "options": ["a. Bluetooth", "b. Single-mode fiber", "c. RG-6 cable", "d. CAT6 cable"],
+      "correctAnswer": "b",
+      "explanation": "Single-mode fiber supports the longest transmission distances for data."
+    },
+    {
+      "text": "Host names identified in an MX record must have what other type of record associated with them?",
+      "options": [
+        "a. AAAA",
+        "b. DomainKeys Identified Mail (DKIM)",
+        "c. Master boot record (MBR)",
+        "d. A"
+      ],
+      "correctAnswer": ["a", "d"],
+      "explanation": "MX records require associated AAAA and A records for IPv6 and IPv4, respectively."
+    },
+    {
+      "text": "What type of expansion slot is preferred today for high-performance graphics adapters?",
+      "options": ["a. PCI", "b. AGP", "c. SATA", "d. PCIe"],
+      "correctAnswer": "d",
+      "explanation": "PCIe slots provide the bandwidth needed for modern high-performance graphics cards."
+    },
+    {
+      "text": "What technology failed to function if a customer’s phone was not recognized at checkout?",
+      "options": ["a. Near-Field Communication", "b. Biometrics", "c. Password", "d. Keyboard"],
+      "correctAnswer": "a",
+      "explanation": "Near-Field Communication (NFC) is used for contactless payments."
+    },
+    {
+      "text": "Current is a degree of opposition to the current caused by characteristics of the conductor, measured in Ohms (Ω or R).",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Resistance, not current, is measured in Ohms (Ω)."
+    },
+    {
+      "text": "Which of the following uses a single connector to deliver both video and audio?",
+      "options": ["a. DVI", "b. Serial", "c. VGA", "d. HDMI"],
+      "correctAnswer": "d",
+      "explanation": "HDMI can transmit both video and audio through a single cable."
+    },
+    {
+      "text": "Which installation type can be used for identical operating system installations on multiple computers?",
+      "options": [
+        "a. Multiboot",
+        "b. Image deployment",
+        "c. Remote network",
+        "d. Clean",
+        "e. Unattended"
+      ],
+      "correctAnswer": "b",
+      "explanation": "Image deployment ensures consistent installations across multiple systems."
+    },
+    {
+      "text": "Which cable type should be used to prevent interference when running cables over light fixtures?",
+      "options": ["a. CAT5e", "b. CAT6", "c. Coaxial", "d. Multimode fiber"],
+      "correctAnswer": "d",
+      "explanation": "Multimode fiber is resistant to electromagnetic interference from light fixtures."
+    },
+    {
+      "text": "Desktops have fewer field replaceable units (FRUs) than laptops.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Laptops have fewer FRUs than desktops due to their compact design."
+    },
+    {
+      "text": "What type of network connection protocol tunnels traffic to provide a secure connection utilizing encryption and authentication?",
+      "options": [
+        "a. VPN",
+        "b. SNMP",
+        "c. VLAN",
+        "d. Data leak/loss prevention (DLP)"
+      ],
+      "correctAnswer": "a",
+      "explanation": "VPNs securely tunnel traffic with encryption and authentication."
+    },
+    {
+      "text": "Which of the following are the numbers of pins found on DIMM modules for desktop motherboards? (Choose two.)",
+      "options": ["a. 200", "b. 184", "c. 180", "d. 204", "e. 240"],
+      "correctAnswer": ["b", "e"],
+      "explanation": "DIMMs with 184 and 240 pins are used in desktop motherboards."
+    },
+    {
+      "text": "What would a privacy shield block from recording during meetings?",
+      "options": ["a. Webcam", "b. Docking station", "c. Speakers", "d. Headset"],
+      "correctAnswer": "a",
+      "explanation": "Privacy shields block the webcam to prevent unauthorized video recording."
     }
     ]
   }
