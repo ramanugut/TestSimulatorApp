@@ -1,0 +1,436 @@
+{
+    "testName": "ICT1531 Moc Exam",
+    "questions": [
+    {
+      "text": "In which type of join are all rows from the table listed first in the query included, regardless of whether they match rows from the table listed second in the query?",
+      "options": [
+        "a. right outer join",
+        "b. left outer join",
+        "c. left inner join",
+        "d. right inner join"
+      ],
+      "correctAnswer": "b. left outer join",
+      "explanation": "In a left outer join, all rows from the table on the left (listed first) are included, even if they don't match rows on the right."
+    },
+    {
+      "text": "In a relational database, _____",
+      "options": [
+        "a. relations must include repeating groups",
+        "b. each row should be unique",
+        "c. columns should be ordered correctly",
+        "d. rows must be ordered numerically"
+      ],
+      "correctAnswer": "b. each row should be unique",
+      "explanation": "Each row must be unique in a relational database, with no identical rows."
+    },
+    {
+      "text": "The default transaction mode in Oracle, which commits each action query as soon as the user executes the query, is _____",
+      "options": [
+        "a. Autocommit",
+        "b. Run",
+        "c. Execute",
+        "d. Enabled"
+      ],
+      "correctAnswer": "a. Autocommit",
+      "explanation": "Autocommit commits (makes permanent) each action query immediately after execution."
+    },
+    {
+      "text": "The SALES_REP table consists of the sales representatives' IDs, first names, last names, addresses, mobile numbers, total commissions, and _____",
+      "options": [
+        "a. customers",
+        "b. commission rates",
+        "c. total sales",
+        "d. invoice numbers"
+      ],
+      "correctAnswer": "b. commission rates",
+      "explanation": "The table stores sales rep information, including commission rates and IDs."
+    },
+    {
+      "text": "When creating a stored procedure to retrieve a single row with embedded SQL, you must place the procedural code _____",
+      "options": [
+        "a. within the DELIMITER clause",
+        "b. after the DECLARE statement",
+        "c. between the BEGIN and END commands",
+        "d. inside a SELECT or WHERE clause"
+      ],
+      "correctAnswer": "c. between the BEGIN and END commands",
+      "explanation": "Procedural code must be placed between the BEGIN and END commands."
+    },
+    {
+      "text": "Diamonds are sometimes used in E-R diagrams to _____",
+      "options": [
+        "a. describe the relationship between two tables",
+        "b. represent individual tables",
+        "c. indicate which entity is on the 'many' side of a one-to-many relationship",
+        "d. identify the names of entities in a database"
+      ],
+      "correctAnswer": "a. describe the relationship between two tables",
+      "explanation": "In E-R diagrams, diamonds represent relationships between entities."
+    },
+    {
+      "text": "What keyword do you use to tell MySQL to use a different character to signal the end of a statement when executing multiple commands?",
+      "options": [
+        "a. END",
+        "b. OUT",
+        "c. DELIMITER",
+        "d. STATEMENT"
+      ],
+      "correctAnswer": "c. DELIMITER",
+      "explanation": "The DELIMITER keyword tells MySQL to treat statements separated by the defined delimiter as one block."
+    },
+    {
+      "text": "When a query includes the clause `FROM CLIENT A, CLIENT B`, SQL will _____",
+      "options": [
+        "a. perform an inner join",
+        "b. treat it as a query of two tables, A and B",
+        "c. treat it as a union of two tables, A and B",
+        "d. perform an outer join"
+      ],
+      "correctAnswer": "b. treat it as a query of two tables, A and B",
+      "explanation": "SQL interprets this as a query involving two instances of the CLIENT table."
+    },
+    {
+      "text": "When adding a row with incomplete data to a SQL table, _____",
+      "options": [
+        "a. you use the INSERT command and enter a value of null for columns without data",
+        "b. you must change the table structure to mark all rows as NOT NULL",
+        "c. you use the INSERT command and name the columns for which you are entering data",
+        "d. the DBMS will reject the new row the first time you execute the command"
+      ],
+      "correctAnswer": "c. you use the INSERT command and name the columns for which you are entering data",
+      "explanation": "You can insert rows with partial data by specifying columns and leaving others null."
+    },
+    {
+      "text": "Preceding a condition with which SQL operator reverses the truth of the original condition?",
+      "options": [
+        "a. REVERSE",
+        "b. NULL",
+        "c. NOT",
+        "d. OR"
+      ],
+      "correctAnswer": "c. NOT",
+      "explanation": "The NOT operator reverses the truth of the specified condition."
+    },
+    {
+      "text": "Which command shows the structure of the COFFEE table, including column names, data types, and null acceptance?",
+      "options": [
+        "a. CREATE TABLE COFFEE;",
+        "b. SELECT COFFEE;",
+        "c. SHOW COFFEE;",
+        "d. DESCRIBE COFFEE;"
+      ],
+      "correctAnswer": "d. DESCRIBE COFFEE;",
+      "explanation": "The DESCRIBE command reveals the structure of the table, including its columns and types."
+    },
+    {
+      "text": "When designing a database, _____",
+      "options": [
+        "a. you can identify relationships by looking for matching rows",
+        "b. relationships may be determined directly from the requirements",
+        "c. functional dependencies should not be in the same table",
+        "d. the 'many' part of a relationship is always the primary key"
+      ],
+      "correctAnswer": "b. relationships may be determined directly from the requirements",
+      "explanation": "Database design often involves identifying relationships directly from business requirements."
+    },
+    {
+      "text": "In SQL, the specific order of query results is determined by the _____",
+      "options": [
+        "a. operator",
+        "b. sort key",
+        "c. primary key",
+        "d. WHERE clause"
+      ],
+      "correctAnswer": "b. sort key",
+      "explanation": "The ORDER BY clause specifies the sort key for ordered results."
+    },
+    {
+      "text": "When an OWNER table stores information for a StayWell property, which data is stored?",
+      "options": [
+        "a. an owner ID for each person",
+        "b. a group ID instead of an owner ID",
+        "c. a row for each individual owner",
+        "d. only the primary contact"
+      ],
+      "correctAnswer": "d. only the primary contact",
+      "explanation": "StayWell stores only the primary contact information for owners."
+    },
+    {
+      "text": "Which SQL command changes the default database to SPIDERS?",
+      "options": [
+        "a. USE SPIDERS;",
+        "b. SHOW SPIDERS;",
+        "c. CREATE SPIDERS;",
+        "d. ALTER DATABASE SPIDERS;"
+      ],
+      "correctAnswer": "a. USE SPIDERS;",
+      "explanation": "The `USE` command sets the default database to the specified name."
+    },
+    {
+      "text": "One can successfully design a database system without fully understanding functional dependence.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Functional dependence is essential for creating efficient and normalized databases."
+    },
+    {
+      "text": "What happens if Samantha tries to insert a row into a table through a view that shows only part of the base table?",
+      "options": [
+        "a. The new row will contain several null values.",
+        "b. The INSERT will fail if all columns in the base table allow nulls.",
+        "c. A row with a duplicate primary key may be added.",
+        "d. The INSERT will automatically be rejected."
+      ],
+      "correctAnswer": "a. The new row will contain several null values.",
+      "explanation": "The DBMS inserts null values for columns not included in the view."
+    },
+    {
+      "text": "When renaming columns for a view, the new names are included in _____",
+      "options": [
+        "a. parentheses",
+        "b. square brackets",
+        "c. single quotes",
+        "d. double quotes"
+      ],
+      "correctAnswer": "a. parentheses",
+      "explanation": "Column names are enclosed in parentheses following the view name."
+    },
+    {
+      "text": "Which MySQL command displays all tables in the ELPATRON database?",
+      "options": [
+        "```sql\nSELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');\n```",
+        "```sql\nSHOW TABLES WHERE TABLE_SCHEMA = ELPATRON;\n```",
+        "```sql\nSELECT * FROM USER_OBJECTS 'ELPATRON';\n```",
+        "```sql\nSELECT * FROM INFORMATION_SCHEMA.VIEWS WHERE (TABLE_SCHEMA = 'ELPATRON');\n```"
+      ],
+      "correctAnswer": "```sql\nSELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');\n```",
+      "explanation": "This query lists all tables in the specified schema."
+    },
+    {
+      "text": "Once you've verified that an update is correct, which command makes it permanent?",
+      "options": [
+        "a. COMMIT",
+        "b. UPDATE",
+        "c. SAVE",
+        "d. ROLL"
+      ],
+      "correctAnswer": "a. COMMIT",
+      "explanation": "The COMMIT command saves changes permanently in the database."
+    },
+    {
+      "text": "In which type of join are all rows from the table listed first in the query included, regardless of whether they match rows from the table listed second in the query?",
+      "options": [
+        "a. right outer join",
+        "b. left outer join",
+        "c. left inner join",
+        "d. right inner join"
+      ],
+      "correctAnswer": "b. left outer join",
+      "explanation": "In a left outer join, all rows from the table on the left (listed first) are included, even if they don't match rows on the right."
+    },
+    {
+      "text": "In a relational database, _____",
+      "options": [
+        "a. relations must include repeating groups",
+        "b. each row should be unique",
+        "c. columns should be ordered correctly",
+        "d. rows must be ordered numerically"
+      ],
+      "correctAnswer": "b. each row should be unique",
+      "explanation": "Each row must be unique in a relational database, with no identical rows."
+    },
+    {
+      "text": "The default transaction mode in Oracle, which commits each action query as soon as the user executes the query, is _____",
+      "options": [
+        "a. Autocommit",
+        "b. Run",
+        "c. Execute",
+        "d. Enabled"
+      ],
+      "correctAnswer": "a. Autocommit",
+      "explanation": "Autocommit commits (makes permanent) each action query immediately after execution."
+    },
+    {
+      "text": "The SALES_REP table consists of the sales representatives' IDs, first names, last names, addresses, mobile numbers, total commissions, and _____",
+      "options": [
+        "a. customers",
+        "b. commission rates",
+        "c. total sales",
+        "d. invoice numbers"
+      ],
+      "correctAnswer": "b. commission rates",
+      "explanation": "The table stores sales rep information, including commission rates and IDs."
+    },
+    {
+      "text": "When creating a stored procedure to retrieve a single row with embedded SQL, you must place the procedural code _____",
+      "options": [
+        "a. within the DELIMITER clause",
+        "b. after the DECLARE statement",
+        "c. between the BEGIN and END commands",
+        "d. inside a SELECT or WHERE clause"
+      ],
+      "correctAnswer": "c. between the BEGIN and END commands",
+      "explanation": "Procedural code must be placed between the BEGIN and END commands."
+    },
+    {
+      "text": "Diamonds are sometimes used in E-R diagrams to _____",
+      "options": [
+        "a. describe the relationship between two tables",
+        "b. represent individual tables",
+        "c. indicate which entity is on the 'many' side of a one-to-many relationship",
+        "d. identify the names of entities in a database"
+      ],
+      "correctAnswer": "a. describe the relationship between two tables",
+      "explanation": "In E-R diagrams, diamonds represent relationships between entities."
+    },
+    {
+      "text": "What keyword do you use to tell MySQL to use a different character to signal the end of a statement when executing multiple commands?",
+      "options": [
+        "a. END",
+        "b. OUT",
+        "c. DELIMITER",
+        "d. STATEMENT"
+      ],
+      "correctAnswer": "c. DELIMITER",
+      "explanation": "The DELIMITER keyword tells MySQL to treat statements separated by the defined delimiter as one block."
+    },
+    {
+      "text": "When a query includes the clause `FROM CLIENT A, CLIENT B`, SQL will _____",
+      "options": [
+        "a. perform an inner join",
+        "b. treat it as a query of two tables, A and B",
+        "c. treat it as a union of two tables, A and B",
+        "d. perform an outer join"
+      ],
+      "correctAnswer": "b. treat it as a query of two tables, A and B",
+      "explanation": "SQL interprets this as a query involving two instances of the CLIENT table."
+    },
+    {
+      "text": "When adding a row with incomplete data to a SQL table, _____",
+      "options": [
+        "a. you use the INSERT command and enter a value of null for columns without data",
+        "b. you must change the table structure to mark all rows as NOT NULL",
+        "c. you use the INSERT command and name the columns for which you are entering data",
+        "d. the DBMS will reject the new row the first time you execute the command"
+      ],
+      "correctAnswer": "c. you use the INSERT command and name the columns for which you are entering data",
+      "explanation": "You can insert rows with partial data by specifying columns and leaving others null."
+    },
+    {
+      "text": "Preceding a condition with which SQL operator reverses the truth of the original condition?",
+      "options": [
+        "a. REVERSE",
+        "b. NULL",
+        "c. NOT",
+        "d. OR"
+      ],
+      "correctAnswer": "c. NOT",
+      "explanation": "The NOT operator reverses the truth of the specified condition."
+    },
+    {
+      "text": "Which command shows the structure of the COFFEE table, including column names, data types, and null acceptance?",
+      "options": [
+        "a. CREATE TABLE COFFEE;",
+        "b. SELECT COFFEE;",
+        "c. SHOW COFFEE;",
+        "d. DESCRIBE COFFEE;"
+      ],
+      "correctAnswer": "d. DESCRIBE COFFEE;",
+      "explanation": "The DESCRIBE command reveals the structure of the table, including its columns and types."
+    },
+    {
+      "text": "When designing a database, _____",
+      "options": [
+        "a. you can identify relationships by looking for matching rows",
+        "b. relationships may be determined directly from the requirements",
+        "c. functional dependencies should not be in the same table",
+        "d. the 'many' part of a relationship is always the primary key"
+      ],
+      "correctAnswer": "b. relationships may be determined directly from the requirements",
+      "explanation": "Database design often involves identifying relationships directly from business requirements."
+    },
+    {
+      "text": "In SQL, the specific order of query results is determined by the _____",
+      "options": [
+        "a. operator",
+        "b. sort key",
+        "c. primary key",
+        "d. WHERE clause"
+      ],
+      "correctAnswer": "b. sort key",
+      "explanation": "The ORDER BY clause specifies the sort key for ordered results."
+    },
+    {
+      "text": "When an OWNER table stores information for a StayWell property, which data is stored?",
+      "options": [
+        "a. an owner ID for each person",
+        "b. a group ID instead of an owner ID",
+        "c. a row for each individual owner",
+        "d. only the primary contact"
+      ],
+      "correctAnswer": "d. only the primary contact",
+      "explanation": "StayWell stores only the primary contact information for owners."
+    },
+    {
+      "text": "Which SQL command changes the default database to SPIDERS?",
+      "options": [
+        "a. USE SPIDERS;",
+        "b. SHOW SPIDERS;",
+        "c. CREATE SPIDERS;",
+        "d. ALTER DATABASE SPIDERS;"
+      ],
+      "correctAnswer": "a. USE SPIDERS;",
+      "explanation": "The `USE` command sets the default database to the specified name."
+    },
+    {
+      "text": "One can successfully design a database system without fully understanding functional dependence.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Functional dependence is essential for creating efficient and normalized databases."
+    },
+    {
+      "text": "What happens if Samantha tries to insert a row into a table through a view that shows only part of the base table?",
+      "options": [
+        "a. The new row will contain several null values.",
+        "b. The INSERT will fail if all columns in the base table allow nulls.",
+        "c. A row with a duplicate primary key may be added.",
+        "d. The INSERT will automatically be rejected."
+      ],
+      "correctAnswer": "a. The new row will contain several null values.",
+      "explanation": "The DBMS inserts null values for columns not included in the view."
+    },
+    {
+      "text": "When renaming columns for a view, the new names are included in _____",
+      "options": [
+        "a. parentheses",
+        "b. square brackets",
+        "c. single quotes",
+        "d. double quotes"
+      ],
+      "correctAnswer": "a. parentheses",
+      "explanation": "Column names are enclosed in parentheses following the view name."
+    },
+    {
+      "text": "Which MySQL command displays all tables in the ELPATRON database?",
+      "options": [
+        "```sql\nSELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');\n```",
+        "```sql\nSHOW TABLES WHERE TABLE_SCHEMA = ELPATRON;\n```",
+        "```sql\nSELECT * FROM USER_OBJECTS 'ELPATRON';\n```",
+        "```sql\nSELECT * FROM INFORMATION_SCHEMA.VIEWS WHERE (TABLE_SCHEMA = 'ELPATRON');\n```"
+      ],
+      "correctAnswer": "```sql\nSELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');\n```",
+      "explanation": "This query lists all tables in the specified schema."
+    },
+    {
+      "text": "Once you've verified that an update is correct, which command makes it permanent?",
+      "options": [
+        "a. COMMIT",
+        "b. UPDATE",
+        "c. SAVE",
+        "d. ROLL"
+      ],
+      "correctAnswer": "a. COMMIT",
+      "explanation": "The COMMIT command saves changes permanently in the database."
+    }
+    ]
+  }
+  
