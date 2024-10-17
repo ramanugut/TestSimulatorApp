@@ -1,0 +1,146 @@
+{
+    "testName": "ICT1531 Moc Exam",
+    "questions": [
+ {
+      "text": "(SFF) case designs are semi-portable, space-saving designs typically used for domestic entertainment that will not look out of place in a living room.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "SFF cases are compact and aesthetically suited for home entertainment systems."
+    },
+    {
+      "text": "A server technician has received a non-standard external drive. It appears older since it does not connect to USB, but it is not recognized when connected. The technician suspects it needs to be powered. Which of the following should the technician try?",
+      "options": ["a. Molex", "b. SATA power connector", "c. IDE", "d. eSATAp"],
+      "correctAnswer": "a. Molex",
+      "explanation": "Molex connectors provide power to older drives."
+    },
+    {
+      "text": "What type of network connection protocol tunnels traffic to provide a secure connection utilizing encryption and authentication technology?",
+      "options": ["a. DLP", "b. VLAN", "c. SNMP", "d. VPN"],
+      "correctAnswer": "d. VPN",
+      "explanation": "VPNs provide secure and encrypted connections over the internet."
+    },
+    {
+      "text": "After initial troubleshooting, your audio still isn't working right. Which utility can you use to check for internal Windows errors relating to sound?",
+      "options": [
+        "a. DirectX diagnostic utility",
+        "b. Control Panel Troubleshooting applet",
+        "c. Control Panel Sound applet",
+        "d. MSINFO system information utility"
+      ],
+      "correctAnswer": "a. DirectX diagnostic utility",
+      "explanation": "The DirectX utility identifies sound-related issues."
+    },
+    {
+      "text": "A device management system was configured to only download updates for mobile devices while on Wi-Fi. Why might an IT department disable the use of cellular data for device updates?",
+      "options": ["a. Data caps", "b. Testing connectivity", "c. Disabling security", "d. Increasing speed"],
+      "correctAnswer": "a. Data caps",
+      "explanation": "Restricting updates to Wi-Fi avoids exceeding data limits."
+    },
+    {
+      "text": "A brand new network associate sets up phone lines at a new location. What type of connector will the network associate need?",
+      "options": ["a. RJ11", "b. UTP", "c. RJ45", "d. LC"],
+      "correctAnswer": "a. RJ11",
+      "explanation": "RJ11 connectors are used for telephone lines."
+    },
+    {
+      "text": "Which of the following are standards used by coaxial cable? (Choose two.)",
+      "options": ["a. RG-59", "b. RJ-11", "c. RG-6", "d. RJ-45"],
+      "correctAnswer": ["a. RG-59", "c. RG-6"],
+      "explanation": "RG-59 and RG-6 are commonly used for coaxial cables."
+    },
+    {
+      "text": "Which of the following is true about 64-bit support in Windows?",
+      "options": [
+        "a. All workstation product lines from Windows Vista through Windows 10 come in both 32-bit and 64-bit editions",
+        "b. 32-bit support was removed beginning with Windows 8.1",
+        "c. Home editions are 32-bit while professional editions are 64-bit",
+        "d. 64-bit support was first introduced in Windows 7"
+      ],
+      "correctAnswer": "a",
+      "explanation": "Both 32-bit and 64-bit editions have been available since Vista."
+    },
+    {
+      "text": "A network administrator is expanding the company network with new settings and requirements for switches, VLANs, and IP subsets. What is the purpose of what the administrator is doing?",
+      "options": [
+        "a. To use unmanaged switches to connect more clients without requiring configuration or intervention",
+        "b. To assign an FQDN, managed by using a DNS within the organization VLAN",
+        "c. To match the cable type and switches with sufficient ports to meet demand on the enterprise network",
+        "d. To divide the VLAN into multiple secure broadcast domains through managed switches, allowing additional remote access via VPNs"
+      ],
+      "correctAnswer": "d",
+      "explanation": "Dividing VLANs enhances security and enables remote access."
+    },
+    {
+      "text": "A ______-wheel printer is an impact printer that could produce letters using only the font that was on the wheel installed in the printer.",
+      "options": ["a. Laser", "b. Dot matrix", "c. Daisy", "d. Head"],
+      "correctAnswer": "c",
+      "explanation": "Daisy-wheel printers use rotating wheels with built-in fonts."
+    },
+    {
+      "text": "A parent has purchased an older laptop for their child to do schoolwork but finds the laptop has USB 1.1 connections. Which of the following should the parent use to be compatible?",
+      "options": ["a. USB 3 Type B Micro", "b. Lightning", "c. USB 3 Type A", "d. USB 3 Type B"],
+      "correctAnswer": "c",
+      "explanation": "USB 3 Type A connectors are backward compatible with USB 1.1."
+    },
+    {
+      "text": "A data center administrator is setting up new fiber drops and needs a commonly used connector since they are specific to multi-mode networks. Which connector should the administrator use?",
+      "options": ["a. LC", "b. SC", "c. F-type", "d. ST"],
+      "correctAnswer": "a",
+      "explanation": "LC connectors are widely used for multi-mode fiber networks."
+    },
+    {
+      "text": "Which of the following interfaces are used to simultaneously transfer video and audio at high rates?",
+      "options": ["a. S-Video", "b. DVI-I", "c. HDMI", "d. DVI-D"],
+      "correctAnswer": "c",
+      "explanation": "HDMI can transfer both video and audio."
+    },
+    {
+      "text": "Which of the following motherboards was originally designed for industrial applications and is also used in firewalls, home theatre PCs, and embedded car computers?",
+      "options": ["a. Micro-ATX", "b. ITX", "c. ATX", "d. Mini-ATX"],
+      "correctAnswer": "b",
+      "explanation": "ITX motherboards are known for their compact and versatile design."
+    },
+    {
+      "text": "Which of the following cables uses both the T568A and T568B standards?",
+      "options": ["a. Ethernet", "b. Fiber", "c. Coaxial", "d. HDMI"],
+      "correctAnswer": "a",
+      "explanation": "Ethernet cables can use either T568A or T568B wiring standards."
+    },
+    {
+      "text": "Which protocol maintains a database containing statistics related to the activity of devices for review?",
+      "options": ["a. DHCP", "b. POP3", "c. IMAP", "d. SNMP"],
+      "correctAnswer": "d",
+      "explanation": "SNMP is used to monitor and manage network devices."
+    },
+    {
+      "text": "Linux is based on the MAC OS Platform.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "Linux and macOS are distinct platforms, although both are Unix-like."
+    },
+    {
+      "text": "You have a computer with Windows 7 on it. You need to upgrade it to Windows 8.1 and deploy it to a new employee. Which is the best upgrade type for this situation?",
+      "options": [
+        "a. Clean installation",
+        "b. Either, depending on whether you're booting locally or from the network",
+        "c. In-place upgrade",
+        "d. Either, depending on user account type"
+      ],
+      "correctAnswer": "c",
+      "explanation": "An in-place upgrade retains settings and files while upgrading the OS."
+    },
+    {
+      "text": "Which touch screen technology requires you to touch the surface with an electrically conductive object?",
+      "options": ["a. Resistive", "b. Capacitive", "c. Surface acoustic wave", "d. Resistive acoustic wave"],
+      "correctAnswer": "b",
+      "explanation": "Capacitive touchscreens require conductive materials like fingers."
+    },
+    {
+      "text": "IT Specialty workstation is the set of management policies that include information about the financial and contractual specifications of all the hardware and software components present in an organization's inventory.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "IT specialty workstations ensure proper tracking of all organizational assets."
+    }
+    ]
+  }
+  
