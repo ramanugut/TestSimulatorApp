@@ -1,0 +1,137 @@
+{
+    "testName": "ICT1521 Assessment 1 2024",
+    "questions": [
+      {
+        "text": "Which MySQL command do you use to remove an entire row from a table?",
+        "options": [
+          "ERASE",
+          "DELETE",
+          "REMOVE",
+          "DROP"
+        ],
+        "correctAnswer": "DELETE",
+        "explanation": "When you need to delete a row from a table, you can use the DELETE command."
+      },
+      {
+        "text": "What special value is used in SQL to represent cases in which an actual value is unknown, unavailable, or not applicable?",
+        "options": [
+          "varchar",
+          "not null",
+          "empty",
+          "null"
+        ],
+        "correctAnswer": "null",
+        "explanation": "In SQL, null is a special value used to represent cases in which an actual value is unknown, unavailable, or not applicable."
+      },
+      {
+        "text": "Which MySQL command do you use to define a table's structure by listing its columns, data types, and column lengths?",
+        "options": [
+          "NEW TABLE",
+          "ADD TABLE",
+          "CREATE TABLE",
+          "DEFINE TABLE"
+        ],
+        "correctAnswer": "CREATE TABLE",
+        "explanation": "The CREATE TABLE command is used to describe the layout of a table, including column names, data types, and lengths."
+      },
+      {
+        "text": "You indicate the end of a SQL command by typing a ____.",
+        "options": [
+          "column",
+          "period",
+          "semicolon",
+          "comma"
+        ],
+        "correctAnswer": "semicolon",
+        "explanation": "A semicolon ends a statement in SQL."
+      },
+      {
+        "text": "Which of the following is a valid name for a table?",
+        "options": [
+          "TBL_1",
+          "4_tbl",
+          "2_TBL",
+          "TBL 3"
+        ],
+        "correctAnswer": "TBL_1",
+        "explanation": "Table names must start with a letter and can contain letters, numbers, and underscores, but cannot contain spaces."
+      },
+      {
+        "text": "A text file with a .sql extension that contains SQL commands is a _____.",
+        "options": [
+          "script file",
+          "command file",
+          "batch process",
+          "SQL plugin"
+        ],
+        "correctAnswer": "script file",
+        "explanation": "SQL commands can be saved in a text file with .sql extension, known as a script file."
+      },
+      {
+        "text": "It is recommended that table names be limited to _____.",
+        "options": [
+          "12 characters",
+          "24 characters",
+          "30 characters",
+          "14 characters"
+        ],
+        "correctAnswer": "30 characters",
+        "explanation": "Most database systems recommend limiting identifier names to 30 characters for compatibility and readability."
+      },
+      {
+        "text": "A relation that does not contain any repeating groups is in _____.",
+        "options": [
+          "third normal form",
+          "second normal form",
+          "Boyce-Codd normal form",
+          "first normal form"
+        ],
+        "correctAnswer": "first normal form",
+        "explanation": "A table (relation) is in first normal form (1NF) when it does not contain a repeating group."
+      },
+      {
+        "text": "The process of determining the particular tables and columns that will comprise a database is known as _____.",
+        "options": [
+          "relational management",
+          "database design",
+          "normalization",
+          "qualification"
+        ],
+        "correctAnswer": "database design",
+        "explanation": "Database design is the process of determining the structure of a database, including its tables and columns."
+      },
+      {
+        "text": "A property of an entity is _____.",
+        "options": [
+          "an attribute",
+          "a table row",
+          "its association with other entities",
+          "like a noun"
+        ],
+        "correctAnswer": "an attribute",
+        "explanation": "An attribute is a property or characteristic of an entity."
+      },
+      {
+        "text": "The duplication of data is formally called _____.",
+        "options": [
+          "replication",
+          "an anomaly",
+          "a repeating group",
+          "redundancy"
+        ],
+        "correctAnswer": "redundancy",
+        "explanation": "When the same data appears in multiple places in a database, it is called redundancy."
+      },
+      {
+        "text": "To examine the structure of a table in MySQL, including column names and data types, you use the _____ command.",
+        "options": [
+          "SHOW",
+          "CREATE",
+          "DESCRIBE",
+          "SELECT"
+        ],
+        "correctAnswer": "DESCRIBE",
+        "explanation": "The DESCRIBE command shows the structure of a table, including column names, data types, and null status."
+      }
+    ]
+  }
