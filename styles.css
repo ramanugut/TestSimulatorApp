@@ -123,7 +123,8 @@ header h1 {
 .pass-mark-container,
 .study-mode-container,
 .test-selection,
-.dark-mode-container {
+.dark-mode-container,
+.upload-test {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -159,6 +160,23 @@ input[type="text"]:focus {
 input[type="checkbox"] {
     width: 18px;
     height: 18px;
+}
+
+input[type="file"] {
+    color: var(--text-color);
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #0288d1;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    opacity: 0.8;
 }
 
 /* Buttons */
@@ -266,6 +284,26 @@ button#dark-mode-toggle {
 input[type="text"] {
     width: 100%;
     margin-top: 0.5rem;
+}
+
+.bookmark-button {
+    background-color: #ffeb3b;
+    color: #000000;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    float: right;
+}
+
+.bookmark-button.active {
+    background-color: #24ff07;
+}
+
+.bookmark-button:hover {
+    opacity: 0.8;
 }
 
 /* Pagination Controls */
@@ -395,7 +433,8 @@ input[type="text"] {
     .pass-mark-container,
     .study-mode-container,
     .dark-mode-container,
-    .test-selection {
+    .test-selection,
+    .upload-test {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -465,6 +504,15 @@ body.dark-mode .explanation {
     color: var(--text-color);
 }
 
+body.dark-mode .bookmark-button {
+    background-color: #ffd740;
+    color: #000000;
+}
+
+body.dark-mode .bookmark-button.active {
+    background-color: #24ff07;
+}
+
 /* Accessibility Enhancements */
 a {
     color: inherit;
@@ -481,7 +529,6 @@ input:focus {
 label[for] {
     cursor: pointer;
 }
-
 
 /* Stats Container */
 #stats-container {
@@ -516,9 +563,6 @@ label[for] {
     color: var(--text-color);
 }
 
-/* Existing CSS code above */
-
-/* Dropdown Menu */
 /* Dropdown Menu */
 .dropdown {
     position: relative;
@@ -622,7 +666,6 @@ label[for] {
     }
 }
 
-
 .study-correct-answer,
 .study-explanation {
     color: var(--study-mode-color);
@@ -630,9 +673,7 @@ label[for] {
     font-style: italic;
 }
 
-
 /* Miscellaneous */
 .hidden {
     display: none;
 }
-
