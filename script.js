@@ -1,9 +1,22 @@
+// script.js
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialization of global variables
+  //************************ SECTION 1: INITIALIZATION ************************//
+
+  // Global variables
   let questions = [];
   let currentPage = 1;
   const questionsPerPage = 10;
   let userAnswers = {};
+  let timer;
+  let remainingTime;
+  let isStudyMode = false;
+  let isTimerPaused = false;
+  let timerStarted = false;
+  let testInProgress = false;
+  let testSubmitted = false;
+  let currentTestFile = "";
+  let bookmarkedQuestions = new Set();
 
   // Stats tracking
   let testStats = {
@@ -97,6 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadStats();
 
+  //************************ SECTION 2: ELEMENT REFERENCES ************************//
+
   // HTML element references
   const questionsContainer = document.getElementById("questions-container");
   const timerInput = document.getElementById("timer-input");
@@ -118,18 +133,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevPageButton = document.getElementById("prev-page");
   const nextPageButton = document.getElementById("next-page");
   const pageInfo = document.getElementById("page-info");
-
-  let timer;
-  let remainingTime;
-  let isStudyMode = false;
-  let isTimerPaused = false;
-  let timerStarted = false;
-  let testInProgress = false;
-  let testSubmitted = false;
+  const uploadTestInput = document.getElementById("upload-test-input");
 
   floatingTimeDisplay.textContent = `${timerInput.value}:00`;
 
-  //SECTION 2 Handle Dark Mode theme based on user preferences*******************************************************
+  //************************ SECTION 3: THEME HANDLING ************************//
+
+  // Handle Dark Mode theme based on user preferences
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
     darkModeToggle.textContent = "Disable Dark Mode";
@@ -151,36 +161,22 @@ document.addEventListener("DOMContentLoaded", function () {
       darkModeToggle.textContent = "Disable Dark Mode";
     }
   });
+
+  //************************ SECTION 4: TEST FILE LOADING ************************//
+
   // Test file references
   const testFiles = [
-   /* "test1.json",
+    // Add your test files here
+    "test1.json",
     "test2.json",
     "test3.json",
-    "test4.json",
-    "test5.json",
-    "test6.json",
-    "test7.json",
-    "test8.json",
-    "test9.json",
-    "test10.json",
-    "test11.json",
-    "test12.json",
-    "test13.json",
-    "test14.json",
-    "test15.json",
-    "test16.json",
-    "test17.json", 
-    "test18.json",
-    "test19.json" */
-    "test20.json",
-    "test21.json",
-    "test22.json", 
-   /* "test23.json",
-    "test24.json" */
+    // For demonstration, we'll use a sample test file
+    "sample_test.json",
   ];
 
   // Load test files into the select element
   function loadTestFiles() {
+    testSelect.innerHTML = ""; // Clear existing options
     let firstTestLoaded = false;
     let fetchPromises = testFiles.map((filename) => {
       return fetch(filename)
@@ -207,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => {
           console.error("Error loading test name:", error);
           const errorOption = document.createElement("option");
-          errorOption.textContent = `This test is not yet loaded with questions ${filename}`;
+          errorOption.textContent = `Error loading ${filename}`;
           errorOption.disabled = true;
           testSelect.appendChild(errorOption);
         });
@@ -222,46 +218,61 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  //SECTION 3 Load questions from selected file *********************************************************************
-  function loadQuestions(filename) {
-    fetch(filename)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Error loading file: ${response.statusText}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        questions = shuffleArray(data.questions || []);
-        if (questions.length === 0) {
-          questionsContainer.innerHTML = `<p>No questions available in the selected file.</p>`;
-        } else {
-          currentPage = 1;
-          userAnswers = {};
-          testInProgress = false;
-          testSubmitted = false;
-          timerStarted = false;
-          isTimerPaused = false;
-          clearInterval(timer);
-          startTestButton.disabled = false;
-          submitButton.disabled = true;
-          floatingTimeDisplay.textContent = `${timerInput.value}:00`;
-          pauseTimerButton.textContent = "Pause Timer";
-          renderQuestions();
-          updatePaginationControls();
-          updateProgress();
-        }
-      })
-      .catch((error) => {
-        console.error("Error loading questions:", error);
-        questionsContainer.innerHTML = `<p>Unable to load questions. Please try again or select another test.</p>`;
-      });
-  }
-
   // Load the test files into the dropdown on page load
   loadTestFiles();
 
-  //SECTION 4 Render questions and set up pagination*****************************************************************************************************
+  //************************ SECTION 5: QUESTION LOADING ************************//
+
+  // Load questions from selected file
+  function loadQuestions(filename, customData = null) {
+    currentTestFile = filename;
+    if (customData) {
+      questions = shuffleArray(customData.questions || []);
+      initializeTest();
+    } else {
+      fetch(filename)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Error loading file: ${response.statusText}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          questions = shuffleArray(data.questions || []);
+          initializeTest();
+        })
+        .catch((error) => {
+          console.error("Error loading questions:", error);
+          questionsContainer.innerHTML = `<p>Unable to load questions. Please try again or select another test.</p>`;
+        });
+    }
+  }
+
+  // Initialize test variables and UI
+  function initializeTest() {
+    if (questions.length === 0) {
+      questionsContainer.innerHTML = `<p>No questions available in the selected file.</p>`;
+    } else {
+      currentPage = 1;
+      userAnswers = {};
+      testInProgress = false;
+      testSubmitted = false;
+      timerStarted = false;
+      isTimerPaused = false;
+      bookmarkedQuestions = new Set();
+      clearInterval(timer);
+      startTestButton.disabled = false;
+      submitButton.disabled = true;
+      floatingTimeDisplay.textContent = `${timerInput.value}:00`;
+      pauseTimerButton.textContent = "Pause Timer";
+      renderQuestions();
+      updatePaginationControls();
+      updateProgress();
+    }
+  }
+
+  //************************ SECTION 6: RENDERING QUESTIONS ************************//
+
   function renderQuestions() {
     questionsContainer.innerHTML = "";
     const startIndex = (currentPage - 1) * questionsPerPage;
@@ -274,7 +285,29 @@ document.addEventListener("DOMContentLoaded", function () {
       questionElement.classList.add("question");
       questionElement.setAttribute("data-question-index", actualIndex);
 
-      questionElement.innerHTML = `<p>${actualIndex + 1}. ${question.text}</p>`;
+      // Bookmark Button
+      const bookmarkButton = document.createElement("button");
+      bookmarkButton.classList.add("bookmark-button");
+      bookmarkButton.textContent = "Bookmark";
+      if (bookmarkedQuestions.has(actualIndex)) {
+        bookmarkButton.classList.add("active");
+      }
+      bookmarkButton.addEventListener("click", () => {
+        if (bookmarkedQuestions.has(actualIndex)) {
+          bookmarkedQuestions.delete(actualIndex);
+          bookmarkButton.classList.remove("active");
+        } else {
+          bookmarkedQuestions.add(actualIndex);
+          bookmarkButton.classList.add("active");
+        }
+        saveProgress();
+      });
+      questionElement.appendChild(bookmarkButton);
+
+      // Question Text
+      const questionTextElement = document.createElement("p");
+      questionTextElement.innerHTML = `${actualIndex + 1}. ${question.text}`;
+      questionElement.appendChild(questionTextElement);
 
       if (question.options && question.options.length > 0) {
         const optionsList = document.createElement("ul");
@@ -300,6 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
               submitButton.disabled = false;
               testInProgress = true;
             }
+            saveProgress();
           });
 
           if (userAnswers[actualIndex] === option) {
@@ -329,6 +363,7 @@ document.addEventListener("DOMContentLoaded", function () {
             submitButton.disabled = false;
             testInProgress = true;
           }
+          saveProgress();
         });
 
         if (userAnswers[actualIndex]) {
@@ -358,11 +393,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       questionsContainer.appendChild(questionElement);
+
+      // Apply feedback if the test has been submitted
+      if (testSubmitted) {
+        applyFeedback(questionElement, question, actualIndex);
+      }
     });
     updateProgress();
   }
 
-  // Pagination controls for previous and next pages
+  //************************ SECTION 7: PAGINATION CONTROLS ************************//
+
   function updatePaginationControls() {
     paginationControls.classList.remove("hidden");
     const totalPages = Math.ceil(questions.length / questionsPerPage);
@@ -387,27 +428,9 @@ document.addEventListener("DOMContentLoaded", function () {
       updatePaginationControls();
     }
   });
-  function generateTableHTML(tableData) {
-    let tableHTML = '<table border="1">';
-    tableHTML += "<thead><tr>";
-    Object.keys(tableData[0]).forEach((header) => {
-      tableHTML += `<th>${header}</th>`;
-    });
-    tableHTML += "</tr></thead><tbody>";
 
-    tableData.forEach((row) => {
-      tableHTML += "<tr>";
-      Object.values(row).forEach((value) => {
-        tableHTML += `<td>${value}</td>`;
-      });
-      tableHTML += "</tr>";
-    });
+  //************************ SECTION 8: TIMER FUNCTIONALITY ************************//
 
-    tableHTML += "</tbody></table>";
-    return tableHTML;
-  }
-
-  //SECTION 5 Timer functionality for the test ***************************************************************************
   function startTimer() {
     if (timerStarted) return;
     timerStarted = true;
@@ -424,16 +447,15 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(timer);
         submitTest();
       }
+      saveProgress();
     }, 1000);
   }
 
-  // Update the timer display with the current remaining time
   function updateTimerDisplay(minutes, seconds) {
     const timeString = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
     floatingTimeDisplay.textContent = timeString;
   }
 
-  // Pause or continue the timer when the button is pressed
   function pauseOrContinueTimer() {
     if (!timerStarted) return;
     if (isTimerPaused) {
@@ -445,10 +467,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Event listener for timer pause/continue button
   pauseTimerButton.addEventListener("click", pauseOrContinueTimer);
 
-  // Start test button event listener to initialize the timer
   startTestButton.addEventListener("click", () => {
     startTimer();
     startTestButton.disabled = true;
@@ -457,7 +477,8 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Start Test button clicked. Submit button enabled.");
   });
 
-  //SECTION 6 Submit test and grade the answers*************************************************************************************
+  //************************ SECTION 9: TEST SUBMISSION ************************//
+
   function submitTest() {
     console.log("submitTest function called");
     try {
@@ -501,88 +522,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Iterate through each question to evaluate and provide feedback
       questions.forEach((question, index) => {
-        const userAnswer = userAnswers[index];
-        let isCorrect = false;
-        const isMultipleCorrect = Array.isArray(question.correctAnswer);
-
-        // Determine if the answer is correct
-        if (isMultipleCorrect) {
-          const selectedOptions = Array.isArray(userAnswer)
-            ? userAnswer.map((option) => option.trim().toLowerCase())
-            : [];
-
-          const correctAnswers = question.correctAnswer.map((answer) =>
-            answer.trim().toLowerCase()
-          );
-          selectedOptions.sort();
-          correctAnswers.sort();
-          isCorrect =
-            JSON.stringify(selectedOptions) === JSON.stringify(correctAnswers);
-        } else {
-          if (
-            typeof userAnswer === "string" &&
-            userAnswer.trim().toLowerCase() ===
-              question.correctAnswer.trim().toLowerCase()
-          ) {
-            isCorrect = true;
-            score++;
-          }
-        }
-
-        // Apply feedback to the question element
         const questionElement = questionsContainer.querySelector(
           `[data-question-index="${index}"]`
         );
         if (questionElement) {
-          let feedbackElement = document.createElement("p");
-          feedbackElement.classList.add("feedback");
-
+          const isCorrect = applyFeedback(questionElement, question, index);
           if (isCorrect) {
-            questionElement.classList.add("correct");
-            feedbackElement.textContent = "Correct!";
-            feedbackElement.classList.add("correct");
-          } else {
-            questionElement.classList.add("incorrect");
-            feedbackElement.textContent = "Incorrect.";
-            feedbackElement.classList.add("incorrect");
-
-            // Display correct answer and explanation if available
-            const correctAnswerElement = document.createElement("p");
-            correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
-            correctAnswerElement.classList.add("correct-answer");
-            questionElement.appendChild(correctAnswerElement);
-
-            if (question.explanation) {
-              const explanationElement = document.createElement("p");
-              explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
-              explanationElement.classList.add("explanation");
-              questionElement.appendChild(explanationElement);
-            }
-          }
-
-          questionElement.appendChild(feedbackElement);
-
-          // Ensure user selections are preserved and highlighted correctly
-          if (question.options && question.options.length > 0) {
-            const inputs = questionElement.querySelectorAll("input");
-            inputs.forEach((input) => {
-              if (Array.isArray(userAnswer)) {
-                // Handle multiple answers (checkbox)
-                input.checked = userAnswer.includes(input.value);
-              } else if (typeof userAnswer === "string") {
-                // Handle single answer (radio)
-                input.checked = userAnswer === input.value;
-              }
-              input.disabled = true; // Disable input to prevent changes after submission
-            });
-          } else {
-            // Handle text-based answers
-            const textInput =
-              questionElement.querySelector('input[type="text"]');
-            if (textInput) {
-              textInput.value = userAnswer || "";
-              textInput.disabled = true; // Disable text input after submission
-            }
+            score++;
           }
         }
       });
@@ -617,6 +563,9 @@ document.addEventListener("DOMContentLoaded", function () {
       updateStatsDisplay();
 
       console.log("Test grading completed. Score:", score);
+
+      // Clear saved progress
+      clearSavedProgress();
     } catch (error) {
       console.error("Error in submitTest:", error);
       alert(
@@ -625,11 +574,117 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Event listener for test submission button
   submitButton.addEventListener("click", submitTest);
 
-  // Reset test to its initial state
+  //************************ SECTION 10: APPLY FEEDBACK ************************//
+
+  function applyFeedback(questionElement, question, index) {
+    const userAnswer = userAnswers[index];
+    let isCorrect = false;
+    const isMultipleCorrect = Array.isArray(question.correctAnswer);
+
+    // Determine if the answer is correct
+    if (isMultipleCorrect) {
+      const selectedOptions = Array.isArray(userAnswer)
+        ? userAnswer.map((option) => option.trim().toLowerCase())
+        : [];
+
+      const correctAnswers = question.correctAnswer.map((answer) =>
+        answer.trim().toLowerCase()
+      );
+      selectedOptions.sort();
+      correctAnswers.sort();
+      isCorrect =
+        JSON.stringify(selectedOptions) === JSON.stringify(correctAnswers);
+    } else {
+      if (
+        typeof userAnswer === "string" &&
+        userAnswer.trim().toLowerCase() ===
+          question.correctAnswer.trim().toLowerCase()
+      ) {
+        isCorrect = true;
+      }
+    }
+
+    // Apply feedback to the question element
+    let feedbackElement = document.createElement("p");
+    feedbackElement.classList.add("feedback");
+
+    if (isCorrect) {
+      questionElement.classList.add("correct");
+      feedbackElement.textContent = "Correct!";
+      feedbackElement.classList.add("correct");
+    } else {
+      questionElement.classList.add("incorrect");
+      feedbackElement.textContent = "Incorrect.";
+      feedbackElement.classList.add("incorrect");
+
+      // Display correct answer and explanation if available
+      const correctAnswerElement = document.createElement("p");
+      correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
+      correctAnswerElement.classList.add("correct-answer");
+      questionElement.appendChild(correctAnswerElement);
+
+      if (question.explanation) {
+        const explanationElement = document.createElement("p");
+        explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
+        explanationElement.classList.add("explanation");
+        questionElement.appendChild(explanationElement);
+      }
+    }
+
+    questionElement.appendChild(feedbackElement);
+
+    // Ensure user selections are preserved and highlighted correctly
+    if (question.options && question.options.length > 0) {
+      const inputs = questionElement.querySelectorAll("input");
+      inputs.forEach((input) => {
+        if (Array.isArray(userAnswer)) {
+          // Handle multiple answers (checkbox)
+          input.checked = userAnswer.includes(input.value);
+        } else if (typeof userAnswer === "string") {
+          // Handle single answer (radio)
+          input.checked = userAnswer === input.value;
+        }
+        input.disabled = true; // Disable input to prevent changes after submission
+      });
+    } else {
+      // Handle text-based answers
+      const textInput = questionElement.querySelector('input[type="text"]');
+      if (textInput) {
+        textInput.value = userAnswer || "";
+        textInput.disabled = true; // Disable text input after submission
+      }
+    }
+
+    // Disable bookmark button after submission
+    const bookmarkButton = questionElement.querySelector(".bookmark-button");
+    if (bookmarkButton) {
+      bookmarkButton.disabled = true;
+    }
+
+    return isCorrect;
+  }
+
+  //************************ SECTION 11: TEST RESET ************************//
+
   function resetTest() {
+    if (testInProgress || timerStarted) {
+      const confirmReset = confirm(
+        "Are you sure you want to reset the current test?"
+      );
+      if (!confirmReset) {
+        return;
+      } else {
+        // Update stats for abandoned test
+        testStats.testsAbandoned++;
+        const testName =
+          testSelect.options[testSelect.selectedIndex].textContent;
+        testStats.abandonedTests.push(testName);
+        saveStats();
+        updateStatsDisplay();
+      }
+    }
     clearInterval(timer);
     floatingTimeDisplay.textContent = `${timerInput.value}:00`;
     questionsContainer.innerHTML = "";
@@ -644,16 +699,18 @@ document.addEventListener("DOMContentLoaded", function () {
     floatingProgressDisplay.querySelector("#progress-text").textContent = `0%`;
     floatingProgressDisplay.querySelector("#progress-bar").style.width = `0%`;
     userAnswers = {};
+    bookmarkedQuestions = new Set();
     currentPage = 1;
     renderQuestions();
     updatePaginationControls();
     updateProgress();
+    clearSavedProgress();
   }
 
-  // Event listener for test reset button
   resetButton.addEventListener("click", resetTest);
 
-  //SECTION 7 Update the progress of answered questions**************************************************************************************
+  //************************ SECTION 12: PROGRESS TRACKING ************************//
+
   function updateProgress() {
     const totalQuestions = questions.length;
     const answeredQuestions = Object.keys(userAnswers).filter((index) => {
@@ -675,7 +732,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ).style.width = `${progressPercent}%`;
   }
 
-  // Download results as a PDF using jsPDF
+  //************************ SECTION 13: DOWNLOAD RESULTS ************************//
+
   function downloadResultsAsPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -748,16 +806,17 @@ document.addEventListener("DOMContentLoaded", function () {
     doc.save("test_results.pdf");
   }
 
-  // Event listener for downloading results as a PDF
   downloadButton.addEventListener("click", downloadResultsAsPDF);
 
-  //SECTION 8 Study mode toggle functionality**************************************************************************************************
+  //************************ SECTION 14: STUDY MODE ************************//
+
   studyModeToggle.addEventListener("change", () => {
     isStudyMode = studyModeToggle.checked;
     renderQuestions();
   });
 
-  // Event listener for changing the test selection
+  //************************ SECTION 15: TEST SELECTION ************************//
+
   testSelect.addEventListener("change", () => {
     if (testInProgress || timerStarted) {
       const confirmSwitch = confirm(
@@ -786,7 +845,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   testSelect.dataset.previousValue = testSelect.value;
 
-  // Back-to-top button functionality
+  //************************ SECTION 16: BACK TO TOP BUTTON ************************//
+
   const backToTopButton = document.getElementById("back-to-top");
 
   window.addEventListener("scroll", () => {
@@ -804,7 +864,8 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // Shuffle the array of questions for random order
+  //************************ SECTION 17: SHUFFLE QUESTIONS ************************//
+
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -815,4 +876,81 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initially disable submit button
   submitButton.disabled = true;
+
+  //************************ SECTION 18: UPLOAD CUSTOM TEST FILE ************************//
+
+  uploadTestInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file && file.name.endsWith(".json")) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          const testName = data.testName || "Custom Test";
+          const option = document.createElement("option");
+          option.value = file.name;
+          option.textContent = testName;
+          testSelect.appendChild(option);
+          testSelect.value = file.name;
+          loadQuestions(file.name, data);
+          testSelect.dataset.previousValue = file.name;
+          alert("Custom test loaded successfully!");
+        } catch (error) {
+          console.error("Error parsing JSON file:", error);
+          alert("Invalid JSON file. Please select a valid test file.");
+        }
+      };
+      reader.readAsText(file);
+    } else {
+      alert("Please select a valid JSON file.");
+    }
+  });
+
+  //************************ SECTION 19: SAVE AND RESUME PROGRESS ************************//
+
+  function saveProgress() {
+    const progressData = {
+      userAnswers,
+      remainingTime,
+      currentPage,
+      testInProgress,
+      testSubmitted,
+      currentTestFile,
+      bookmarkedQuestions: Array.from(bookmarkedQuestions),
+    };
+    localStorage.setItem("testProgress", JSON.stringify(progressData));
+  }
+
+  function loadProgress() {
+    const savedProgress = JSON.parse(localStorage.getItem("testProgress"));
+    if (savedProgress && savedProgress.currentTestFile === currentTestFile) {
+      userAnswers = savedProgress.userAnswers;
+      remainingTime = savedProgress.remainingTime;
+      currentPage = savedProgress.currentPage;
+      testInProgress = savedProgress.testInProgress;
+      testSubmitted = savedProgress.testSubmitted;
+      bookmarkedQuestions = new Set(savedProgress.bookmarkedQuestions);
+
+      if (testInProgress) {
+        startTimer();
+      }
+
+      renderQuestions();
+      updatePaginationControls();
+      updateProgress();
+    }
+  }
+
+  function clearSavedProgress() {
+    localStorage.removeItem("testProgress");
+  }
+
+  window.addEventListener("beforeunload", () => {
+    if (testInProgress || timerStarted) {
+      saveProgress();
+    }
+  });
+
+  // Load progress on page load
+  loadProgress();
 });
