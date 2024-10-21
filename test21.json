@@ -1,5 +1,5 @@
 {
-    "testName": "ICT1521 Test Questions",
+    "testName": "ICT1521 EXAM Questions",
     "questions": [
     {
       "text": "In which type of join are all rows from the table listed first in the query included, regardless of whether they match rows from the table listed second in the query?",
