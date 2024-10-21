@@ -167,9 +167,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Test file references
   const testFiles = [
     // Add your test files here
-    "test1.json",
-    "test2.json",
-    "test3.json",
+    "test20.json",
+    "test21.json",
+    "test22.json",
     // For demonstration, we'll use a sample test file
     "sample_test.json",
   ];
