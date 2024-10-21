@@ -173,6 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test23.json",
     "test24.json",
     "test25.json",
+    "test26.json",
     // For demonstration, we'll use a sample test file
    // "sample_test.json",
   ];
