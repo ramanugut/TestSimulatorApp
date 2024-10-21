@@ -1,0 +1,186 @@
+{
+    "testName": "ICT1532 Assessment 1 2024",
+    "questions": [
+      {
+        "text": "True or false? When a NIC is in promiscuous mode, it will process only the frames in which the destination MAC address matches its own MAC address.",
+        "options": ["True", "False"],
+        "correctAnswer": "False",
+        "explanation": "In promiscuous mode, the NIC captures all traffic regardless of the destination MAC address."
+      },
+      {
+        "text": "The interface on the access point used to connect to the existing wired network is typically called.",
+        "options": ["Port Antenna", "WAN", "Transmitter", "Wireless NIC"],
+        "correctAnswer": "WAN",
+        "explanation": "A WAN port connects the access point to the wired network."
+      },
+      {
+        "text": "An IPv6 subnet ID is how many bits long?",
+        "options": ["16", "64", "32", "128"],
+        "correctAnswer": "16",
+        "explanation": "The IPv6 subnet ID field is 16 bits long."
+      },
+      {
+        "text": "What type of network do you need to implement to separate traffic while maintaining access to other network resources?",
+        "options": ["Wireless network", "WAN", "Internetwork", "WPAN"],
+        "correctAnswer": "Internetwork",
+        "explanation": "An internetwork separates and manages traffic across multiple networks."
+      },
+      {
+        "text": "What problem occurs when signals weaken over a long cable distance?",
+        "options": ["Electromagnetic interference", "Attenuation", "RF interference", "Crosstalk"],
+        "correctAnswer": "Attenuation",
+        "explanation": "Attenuation refers to the weakening of signal strength over distance."
+      },
+      {
+        "text": "True or false? SSL is not considered a secure transfer protocol.",
+        "options": ["True", "False"],
+        "correctAnswer": "False",
+        "explanation": "SSL provides encrypted and secure data transmission."
+      },
+      {
+        "text": "In a computer's IP settings, what is the router address for packets intended for external networks?",
+        "options": ["Default gateway", "External gateway", "DMZ firewall", "Default subnet mask"],
+        "correctAnswer": "Default gateway",
+        "explanation": "The default gateway routes packets outside of the local network."
+      },
+      {
+        "text": "Which of the following is a unique NIC identifier?",
+        "options": ["WINS", "MAC", "SSH", "DNS"],
+        "correctAnswer": "MAC",
+        "explanation": "A MAC address uniquely identifies a NIC."
+      },
+      {
+        "text": "What is the 12-digit hexadecimal address used by every NIC called?",
+        "options": ["MAC address", "Default gateway", "IPv6 address", "Subnet mask"],
+        "correctAnswer": "MAC address",
+        "explanation": "The MAC address is a unique hardware address for each NIC."
+      },
+      {
+        "text": "True or false? A WAN is the only way to connect computers across different countries.",
+        "options": ["True", "False"],
+        "correctAnswer": "False",
+        "explanation": "Technologies like VPNs can also connect geographically distant networks."
+      },
+      {
+        "text": "Which Ethernet standard supports 40 and 100 Gbps over copper up to 7 meters?",
+        "options": ["802.3ae", "802.3u", "802.3z", "802.3ba"],
+        "correctAnswer": "802.3ba",
+        "explanation": "The 802.3ba standard specifies high-speed Ethernet."
+      },
+      {
+        "text": "Which path would a signal follow from the WAN to a network node?",
+        "options": [
+          "2, 1, 5, 1, 3, 4, 6",
+          "6, 1, 3, 4, 5, 4, 6",
+          "2, 1, 3, 1, 5, 4, 6",
+          "2, 1, 3, 4, 5, 4, 6"
+        ],
+        "correctAnswer": "2, 1, 3, 1, 5, 4, 6",
+        "explanation": "The correct route uses entrance facility, backbone cabling, and other connections."
+      },
+      {
+        "text": "True or false? IANA implemented classful IPv6 addresses to distinguish between network and host portions.",
+        "options": ["True", "False"],
+        "correctAnswer": "False",
+        "explanation": "IPv6 uses CIDR, not classful addressing."
+      },
+      {
+        "text": "What type of cable connects a computer to an RJ-45 jack?",
+        "options": ["Patch cable", "Cable segment", "Patch panel", "Backbone cable"],
+        "correctAnswer": "Patch cable",
+        "explanation": "A patch cable connects devices to network ports or jacks."
+      },
+      {
+        "text": "What media access method does Ethernet use?",
+        "options": ["CSMA/CD", "Polling", "CSMA/CA", "Token passing"],
+        "correctAnswer": "CSMA/CD",
+        "explanation": "Ethernet uses CSMA/CD to manage network traffic and avoid collisions."
+      },
+      {
+        "text": "What device serves as the endpoint for a dedicated connection between an ISP and a customer?",
+        "options": ["NIU", "CSU/DSU", "DTE", "Line driver"],
+        "correctAnswer": "CSU/DSU",
+        "explanation": "A CSU/DSU provides connectivity between the ISP and customer."
+      },
+      {
+        "text": "What happens to Wi-Fi signals when they pass through walls?",
+        "options": [
+          "Reflections occur causing attenuation.",
+          "Absorption occurs and the signals attenuate.",
+          "Scattering and multipath occurs.",
+          "Diffraction occurs and the signals are amplified."
+        ],
+        "correctAnswer": "Absorption occurs and the signals attenuate.",
+        "explanation": "Walls absorb Wi-Fi signals, reducing their strength."
+      },
+      {
+        "text": "What is the name of cabling that connects floors in a building?",
+        "options": ["Lateral", "Routing", "Plenum", "Vertical"],
+        "correctAnswer": "Vertical",
+        "explanation": "Vertical cabling runs between floors."
+      },
+      {
+        "text": "What information is required to connect to a wireless network?",
+        "options": ["Frequency", "Username", "Password", "SSID"],
+        "correctAnswer": "SSID",
+        "explanation": "The SSID identifies the wireless network to connect to."
+      },
+      {
+        "text": "Which record must be configured in DNS to deliver mail to an IP address?",
+        "options": ["CNAME", "SMTP record", "DNS record", "MX record"],
+        "correctAnswer": "MX record",
+        "explanation": "An MX record directs email to the correct server."
+      },
+      {
+        "text": "What are the original four NAPs called?",
+        "options": [
+          "Commercial Internet Exchange (CIX) points",
+          "Private Internet exchange points",
+          "Public Internet exchange points",
+          "Federal Internet Exchange (FIX) points"
+        ],
+        "correctAnswer": "Public Internet exchange points",
+        "explanation": "Public Internet exchange points were part of the original internet backbone."
+      },
+      {
+        "text": "What could prevent you from connecting to a radio wireless device?",
+        "options": [
+          "All of the options are correct",
+          "Security settings preventing connections",
+          "Wireless router turned off",
+          "Out of range"
+        ],
+        "correctAnswer": "All of the options are correct",
+        "explanation": "Any of these factors could disrupt wireless connectivity."
+      },
+      {
+        "text": "What must be done after installing a DHCP Server in a domain?",
+        "options": [
+          "Enable the Active Directory.",
+          "Modify the firewall rules.",
+          "Authorize it.",
+          "Activate it."
+        ],
+        "correctAnswer": "Authorize it.",
+        "explanation": "The DHCP server must be authorized in Active Directory before it can lease addresses."
+      },
+      {
+        "text": "Which subnet mask provides 16 bits of host address space?",
+        "options": [
+          "255.255.255.0",
+          "255.255.0.0",
+          "255.16.0.0",
+          "255.255.255.16"
+        ],
+        "correctAnswer": "255.255.0.0",
+        "explanation": "A subnet mask of 255.255.0.0 provides 16 bits for host addresses."
+      },
+      {
+        "text": "What properties of a cable are distorted by sharp bends?",
+        "options": ["Replaceability", "Reliability", "Electrical", "Fire resistance"],
+        "correctAnswer": "Electrical",
+        "explanation": "Sharp bends can distort the electrical properties of a cable."
+      }
+    ]
+  }
+  

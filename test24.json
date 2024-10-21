@@ -1,0 +1,302 @@
+{
+  "testName": "ICT1532 Assessment 3 2024",
+  "questions": [
+    {
+      "text": "If IPsec is used to provide a secure network tunnel over the internet, ____________ negotiates the security associations.",
+      "options": [
+        "None of the options are correct",
+        "WEP-AES",
+        "ESP",
+        "L2TP",
+        "IKE"
+      ],
+      "correctAnswer": "IKE",
+      "explanation": "IKE (Internet Key Exchange) is responsible for negotiating security associations in IPsec."
+    },
+    {
+      "text": "If a number of Virtual machines are connected to a physical NIC a _____ can be installed to provide VLAN functions.",
+      "options": [
+        "Virtual switch",
+        "Install a VNIC",
+        "VLAN switch",
+        "Only option is to have a physical switch connected to each NIC on the Host machine.",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "Virtual switch",
+      "explanation": "A virtual switch can be installed to provide VLAN functions for multiple virtual machines connected to a physical NIC."
+    },
+    {
+      "text": "In what way does a PKI certificate differ from a self-signed SSL certificate?",
+      "options": [
+        "None of the options are correct",
+        "The one will be signed by the CA's private key.",
+        "They are the same.",
+        "The one will be signed by the CA's public key.",
+        "The one will be 64bit."
+      ],
+      "correctAnswer": "The one will be signed by the CA's private key.",
+      "explanation": "A PKI certificate is signed by a Certificate Authority's private key, while a self-signed certificate is signed by its own private key."
+    },
+    {
+      "text": "If an attack focus the exploit the applications of a system, the ________ of the OSI model is targeted.",
+      "options": [
+        "Network layer",
+        "None of the options are correct",
+        "Session layer",
+        "Layer 3",
+        "Hardware layer"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "Application-level attacks typically target the Application layer (Layer 7) of the OSI model, which is not listed among the options."
+    },
+    {
+      "text": "When a message to be sent over a public network such as the Internet, is hashed, _________ is enforced.",
+      "options": [
+        "Confidentiality",
+        "Trust",
+        "Access control",
+        "Integrity",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "Integrity",
+      "explanation": "Hashing a message ensures its integrity, allowing the recipient to verify that the message hasn't been altered during transmission."
+    },
+    {
+      "text": "Which VoIP protocol provides integrity features?",
+      "options": [
+        "H.323",
+        "None of the options are correct",
+        "H.232",
+        "SIP",
+        "RTP"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "The listed VoIP protocols (H.323, SIP, RTP) do not inherently provide integrity features. Integrity in VoIP is typically provided by additional security protocols like SRTP or IPSec."
+    },
+    {
+      "text": "In what way does a PKI certificate differ from a self-signed SSL certificate?",
+      "options": [
+        "The one will have a CA signature.",
+        "X.509 format",
+        "PKL",
+        "None of the options are correct.",
+        "The SSL certificate binds to the arp"
+      ],
+      "correctAnswer": "The one will have a CA signature.",
+      "explanation": "A PKI certificate is signed by a trusted Certificate Authority (CA), while a self-signed certificate is signed by its own creator."
+    },
+    {
+      "text": "Policies used to discourage users from ignoring good security practices are considered to be a security tool known as:",
+      "options": [
+        "None of the options are correct",
+        "Selective",
+        "Corrective",
+        "Integrity",
+        "Availability"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "Policies used to discourage users from ignoring good security practices are typically referred to as 'Deterrent' controls, which is not listed among the options."
+    },
+    {
+      "text": "VPN access is often associated with using a ______",
+      "options": [
+        "Rado server",
+        "PKE",
+        "Asymmetric encryption",
+        "None of the options are correct",
+        "Ticket"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "VPN access is often associated with using a RADIUS server for authentication, which is not listed among the options."
+    },
+    {
+      "text": "In order to block users from accessing outside email servers not part of the corporate network a firewall rule can be set to:",
+      "options": [
+        "Deny port packets routed via port 25",
+        "None of the options are correct",
+        "Deny POP3 packets",
+        "Alter the Level 7 header",
+        "Deny \"email\" from external to internal"
+      ],
+      "correctAnswer": "Deny POP3 packets",
+      "explanation": "Blocking POP3 packets would prevent users from accessing outside email servers, as POP3 is a common protocol for retrieving email from a server."
+    },
+    {
+      "text": "Compared to SFTP, FTPS is basically the same protocol.",
+      "options": [
+        "False, FTPS uses 3DES.",
+        "False, as SFTP replaced FTP.",
+        "Indeed, as it uses port 23.",
+        "None of the options are correct.",
+        "True"
+      ],
+      "correctAnswer": "False, as SFTP replaced FTP.",
+      "explanation": "SFTP (SSH File Transfer Protocol) and FTPS (FTP over SSL/TLS) are different protocols. SFTP is a separate protocol that provides file transfer functionality over SSH, while FTPS is FTP with added SSL/TLS encryption."
+    },
+    {
+      "text": "A network based firewall is typically a firewall are often a ________.",
+      "options": [
+        "Part of Windows",
+        "Application",
+        "Hardware appliance",
+        "None of the options are correct",
+        "Hub"
+      ],
+      "correctAnswer": "Hardware appliance",
+      "explanation": "Network-based firewalls are typically implemented as dedicated hardware appliances designed specifically for firewall functionality."
+    },
+    {
+      "text": "The fundamental technology used for SAN storage approaches is",
+      "options": [
+        "Fibre channel",
+        "Hive",
+        "Nvme",
+        "None of the options are correct",
+        "HVAC"
+      ],
+      "correctAnswer": "Fibre channel",
+      "explanation": "Fibre Channel is a fundamental technology used in Storage Area Network (SAN) approaches, providing high-speed data transfer between servers and storage devices."
+    },
+    {
+      "text": "__________ allows a host to exist only as software.",
+      "options": [
+        "Instantiation",
+        "Virtualization",
+        "None of the options are correct",
+        "Hyper Linking",
+        "Outlining"
+      ],
+      "correctAnswer": "Virtualization",
+      "explanation": "Virtualization technology allows a host to exist as software, creating virtual instances of computer hardware platforms, storage devices, and network resources."
+    },
+    {
+      "text": "Considering the fact that analogue video or audio uses a lot of data to digitize, __________ can be used to mitigate this.",
+      "options": [
+        "a trunk",
+        "None of the options are correct",
+        "an assembler",
+        "a codec",
+        "SIP"
+      ],
+      "correctAnswer": "a codec",
+      "explanation": "A codec (coder-decoder) is used to compress and decompress digital audio and video data, reducing the amount of data needed to represent the analogue signal."
+    },
+    {
+      "text": "When a message to be sent over a public network such as the Internet, is encrypted, _________ is enforced.",
+      "options": [
+        "Access control",
+        "Hashing",
+        "Integrity",
+        "Trust",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "Encryption of a message primarily enforces confidentiality, which is not listed among the options."
+    },
+    {
+      "text": "What feature primary helps to protect against DoS attacks?",
+      "options": [
+        "dictionaries",
+        "Loop protection",
+        "DMZ",
+        "firewalls",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "Loop protection",
+      "explanation": "Loop protection is a feature that can help prevent certain types of DoS attacks, particularly those that exploit network loops to overwhelm systems."
+    },
+    {
+      "text": "Compared to HTTP, HTTPS is a new protocol.",
+      "options": [
+        "Depends if SMTPS is part of the transmission.",
+        "Indeed, as it uses port 8080.",
+        "False, as it is basically HTTP through TLS",
+        "False, HTTPS uses a PGP session.",
+        "None of the options are correct."
+      ],
+      "correctAnswer": "False, as it is basically HTTP through TLS",
+      "explanation": "HTTPS is not a new protocol, but rather HTTP transmitted over a secure TLS/SSL connection."
+    },
+    {
+      "text": "True or false. Biometrics systems cannot be subverted.",
+      "options": [
+        "False",
+        "True"
+      ],
+      "correctAnswer": "False",
+      "explanation": "Biometric systems, while generally secure, can still be subverted through various means such as spoofing or replay attacks."
+    },
+    {
+      "text": "When a site-to-site VPN is instantiated, the secure tunnel will run from:",
+      "options": [
+        "Node to Node",
+        "Switch to Firewall",
+        "None of the options are correct",
+        "Node to Firewall",
+        "Firewall to Firewall"
+      ],
+      "correctAnswer": "Firewall to Firewall",
+      "explanation": "In a site-to-site VPN, the secure tunnel typically runs from one site's firewall to the other site's firewall, creating a secure connection between the two networks."
+    },
+    {
+      "text": "A protocol analyser is also known as a:",
+      "options": [
+        "scanner",
+        "network scanner",
+        "port scanner",
+        "network mapper",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "A protocol analyzer is also known as a packet sniffer or network analyzer, which are not listed among the options."
+    },
+    {
+      "text": "To see what TCP vulnerabilities are found on a host a _____________ can be used.",
+      "options": [
+        "Security policy",
+        "Host address",
+        "None of the options are correct",
+        "Port Scanner",
+        "Sniffer"
+      ],
+      "correctAnswer": "Port Scanner",
+      "explanation": "A port scanner is used to identify open ports on a host, which can reveal potential TCP vulnerabilities."
+    },
+    {
+      "text": "Upper Layers of the OSI model use ____ to secure the network environment.",
+      "options": [
+        "Symmetric Encryption.",
+        "PGP.",
+        "None of the options are correct",
+        "SSH.",
+        "Blowfish."
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "Upper layers of the OSI model typically use various security protocols and mechanisms, not just one specific encryption method. The correct answer would depend on the specific application and security requirements."
+    },
+    {
+      "text": "Kerberos uses a _______ approach to allow users to gain access to certain network facilities.",
+      "options": [
+        "Handshake",
+        "SOCKS",
+        "None of the options are correct",
+        "Asymmetric",
+        "Ticket"
+      ],
+      "correctAnswer": "Ticket",
+      "explanation": "Kerberos uses a ticket-based approach for authentication and authorization, allowing users to access network resources securely."
+    },
+    {
+      "text": "VPN access is often associated with using a ______",
+      "options": [
+        "RADIUS server",
+        "Asymmetric encryption",
+        "PKE",
+        "Fibre trunk",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "RADIUS server",
+      "explanation": "VPN access is often associated with using a RADIUS (Remote Authentication Dial-In User Service) server for authentication and authorization of remote users."
+    }
+  ]
+}
