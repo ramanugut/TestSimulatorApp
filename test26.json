@@ -1,137 +1,445 @@
 {
-    "testName": "ICT1521 Assessment 1 2024",
-    "questions": [
-      {
-        "text": "Which MySQL command do you use to remove an entire row from a table?",
-        "options": [
-          "ERASE",
-          "DELETE",
-          "REMOVE",
-          "DROP"
-        ],
-        "correctAnswer": "DELETE",
-        "explanation": "When you need to delete a row from a table, you can use the DELETE command."
-      },
-      {
-        "text": "What special value is used in SQL to represent cases in which an actual value is unknown, unavailable, or not applicable?",
-        "options": [
-          "varchar",
-          "not null",
-          "empty",
-          "null"
-        ],
-        "correctAnswer": "null",
-        "explanation": "In SQL, null is a special value used to represent cases in which an actual value is unknown, unavailable, or not applicable."
-      },
-      {
-        "text": "Which MySQL command do you use to define a table's structure by listing its columns, data types, and column lengths?",
-        "options": [
-          "NEW TABLE",
-          "ADD TABLE",
-          "CREATE TABLE",
-          "DEFINE TABLE"
-        ],
-        "correctAnswer": "CREATE TABLE",
-        "explanation": "The CREATE TABLE command is used to describe the layout of a table, including column names, data types, and lengths."
-      },
-      {
-        "text": "You indicate the end of a SQL command by typing a ____.",
-        "options": [
-          "column",
-          "period",
-          "semicolon",
-          "comma"
-        ],
-        "correctAnswer": "semicolon",
-        "explanation": "A semicolon ends a statement in SQL."
-      },
-      {
-        "text": "Which of the following is a valid name for a table?",
-        "options": [
-          "TBL_1",
-          "4_tbl",
-          "2_TBL",
-          "TBL 3"
-        ],
-        "correctAnswer": "TBL_1",
-        "explanation": "Table names must start with a letter and can contain letters, numbers, and underscores, but cannot contain spaces."
-      },
-      {
-        "text": "A text file with a .sql extension that contains SQL commands is a _____.",
-        "options": [
-          "script file",
-          "command file",
-          "batch process",
-          "SQL plugin"
-        ],
-        "correctAnswer": "script file",
-        "explanation": "SQL commands can be saved in a text file with .sql extension, known as a script file."
-      },
-      {
-        "text": "It is recommended that table names be limited to _____.",
-        "options": [
-          "12 characters",
-          "24 characters",
-          "30 characters",
-          "14 characters"
-        ],
-        "correctAnswer": "30 characters",
-        "explanation": "Most database systems recommend limiting identifier names to 30 characters for compatibility and readability."
-      },
-      {
-        "text": "A relation that does not contain any repeating groups is in _____.",
-        "options": [
-          "third normal form",
-          "second normal form",
-          "Boyce-Codd normal form",
-          "first normal form"
-        ],
-        "correctAnswer": "first normal form",
-        "explanation": "A table (relation) is in first normal form (1NF) when it does not contain a repeating group."
-      },
-      {
-        "text": "The process of determining the particular tables and columns that will comprise a database is known as _____.",
-        "options": [
-          "relational management",
-          "database design",
-          "normalization",
-          "qualification"
-        ],
-        "correctAnswer": "database design",
-        "explanation": "Database design is the process of determining the structure of a database, including its tables and columns."
-      },
-      {
-        "text": "A property of an entity is _____.",
-        "options": [
-          "an attribute",
-          "a table row",
-          "its association with other entities",
-          "like a noun"
-        ],
-        "correctAnswer": "an attribute",
-        "explanation": "An attribute is a property or characteristic of an entity."
-      },
-      {
-        "text": "The duplication of data is formally called _____.",
-        "options": [
-          "replication",
-          "an anomaly",
-          "a repeating group",
-          "redundancy"
-        ],
-        "correctAnswer": "redundancy",
-        "explanation": "When the same data appears in multiple places in a database, it is called redundancy."
-      },
-      {
-        "text": "To examine the structure of a table in MySQL, including column names and data types, you use the _____ command.",
-        "options": [
-          "SHOW",
-          "CREATE",
-          "DESCRIBE",
-          "SELECT"
-        ],
-        "correctAnswer": "DESCRIBE",
-        "explanation": "The DESCRIBE command shows the structure of a table, including column names, data types, and null status."
-      }
-    ]
-  }
+    "testName": "2024 ICT1521 Assessment 1",
+      "questions": [
+        {
+          "text": "StayWell rents out and helps to maintain _____.",
+          "options": [
+            "one- to five-bedroom properties",
+            "apartments in the New York City area",
+            "medical equipment",
+            "office buildings for educational organizations"
+          ],
+          "correctAnswer": "one- to five-bedroom properties",
+          "explanation": "StayWell finds and manages accommodation for owners of student accommodation in the Seattle area. The company rents out and helps to maintain 1–5-bedroom properties located in two main areas in the city, Columbia City and Georgetown."
+        },
+        {
+          "text": "If a StayWell administrator needs to know where a resident lives, he or she should consult which tables?",
+          "options": [
+            "RESIDENTS and PROPERTY",
+            "SERVICE_CATEGORY and SERVICE_REQUEST",
+            "RESIDENTS and OFFICE",
+            "OFFICE and PROPERTY"
+          ],
+          "correctAnswer": "RESIDENTS and PROPERTY",
+          "explanation": "The RESIDENT column includes the first name and last name for each of the residents, along with a resident ID. The PROPERTY_ID is the unique identification number of the property in which they are staying. The PROPERTY table provides details about the property associated with the PROPERTY_ID."
+        },
+        {
+          "text": "In general, when designing tables, which type of structure is most preferable?",
+          "options": [
+            "detailed",
+            "simple",
+            "complete",
+            "complex"
+          ],
+          "correctAnswer": "simple",
+          "explanation": "While it might seem inefficient to use two rows to store information that could be represented in one row, simpler structures are generally preferable. This is why, for example, invoice lines appear in a separate table rather than being combined into a more complex structure."
+        },
+        {
+          "text": "What special value is used in SQL to represent cases in which an actual value is unknown, unavailable, or not applicable?",
+          "options": [
+            "varchar",
+            "not null",
+            "empty",
+            "null"
+          ],
+          "correctAnswer": "null",
+          "explanation": "In SQL, when values for one or more columns are unknown or unavailable, a special value called 'null' is used to represent cases in which an actual value is unknown, unavailable, or not applicable."
+        },
+        {
+          "text": "In the StayWell database, each rental property is identified by _____.",
+          "options": [
+            "a combination of letters and numbers",
+            "a unique character value",
+            "a unique integer",
+            "the owner's owner ID"
+          ],
+          "correctAnswer": "a unique integer",
+          "explanation": "Each property at each location is identified by a property ID. The property ID is an integer unique for each property."
+        },
+        {
+          "text": "The KimTay database stores several items for each customer's invoice, including the _____.",
+          "options": [
+            "discount percentage",
+            "invoice total",
+            "line totals (extensions)",
+            "invoice date"
+          ],
+          "correctAnswer": "invoice date",
+          "explanation": "KimTay Pet Supplies must store several items in the database for each customer's invoice, including the invoice number, the date the invoice was placed, and the ID of the customer that placed the invoice. The result of multiplying the number of units ordered by the quoted price is not stored because the database can calculate it when needed."
+        },
+        {
+          "text": "A table in second normal form should be improved to third normal form because _____.",
+          "options": [
+            "its determinants can cause update anomalies",
+            "this reduces the number of relations in the database",
+            "its candidate keys can cause update anomalies",
+            "this eliminates repeating groups that waste space"
+          ],
+          "correctAnswer": "its determinants can cause update anomalies",
+          "explanation": "Any column (or collection of columns) that determines another column is called a determinant. Determinants can cause update anomalies. A table's primary key is a determinant. In fact, by definition, any candidate key is a determinant. A table is in third normal form (3NF) when it is in second normal form and the only determinants it contains are candidate keys."
+        },
+        {
+          "text": "A text file with a .sql extension that contains SQL commands is a _____.",
+          "options": [
+            "script file",
+            "command file",
+            "batch process",
+            "SQL plugin"
+          ],
+          "correctAnswer": "script file",
+          "explanation": "MySQL lets you save SQL commands so you can use them again without retyping them. In MySQL, as well as in many other DBMSs, you save commands in a script file, or simply a script, which is a text file."
+        },
+        {
+          "text": "It is recommended that table names be limited to _____.",
+          "options": [
+            "12 characters",
+            "24 characters",
+            "30 characters",
+            "14 characters"
+          ],
+          "correctAnswer": "30 characters",
+          "explanation": "If you adhere to these guidelines for naming identifiers when using a DBMS, it is rare that you will have an issue. (1.) The identifier name cannot exceed 30 characters. (2.) The identifier name must start with a letter. (3.) The identifier name can contain letters, numbers, and underscores (_). (4.) The identifier name cannot contain spaces."
+        },
+        {
+          "text": "Which statement regarding primary keys is true?",
+          "options": [
+            "You can identify primary keys for tables by examining sample data.",
+            "Some tables include more than one column that can be used as a primary key.",
+            "By definition, a primary key always consists of a single column.",
+            "All primary keys are values generated by database software"
+          ],
+          "correctAnswer": "Some tables include more than one column that can be used as a primary key.",
+          "explanation": "Column A (or a collection of columns) is the primary key for a table if all columns in the table are functionally dependent on A. The only way to determine functional dependencies is to examine the user's policies. Sometimes you might identify one or more columns that you can use as a table's primary key."
+        },
+        {
+          "text": "Pete would like to set up a database called BAKE_SALE_FUNDRAISER so that he can begin defining the objects within it. Which MySQL command should Pete use?",
+          "options": [
+            "CREATE DATABASE BAKE_SALE_FUNDRAISER;",
+            "ACTIVATE DATABASE: BAKE_SALE_FUNDRAISER",
+            "ACTIVATE DATABASE BAKE_SALE_FUNDRAISER;",
+            "CREATE DATABASE: BAKE_SALE_FUNDRAISER"
+          ],
+          "correctAnswer": "CREATE DATABASE BAKE_SALE_FUNDRAISER;",
+          "explanation": "Prior to defining the objects within a database, the first step is to create the database itself. The command in MySQL to create a database is CREATE DATABASE followed by the name of the database. Note that a semicolon ends the command."
+        },
+        {
+          "text": "Which field of the SERVICE_REQUEST table in the StayWell database indicates the issue reported by the resident who made the request?",
+          "options": [
+            "SERVICE_DESCRIPTION",
+            "CATEGORY_DESCRIPTION",
+            "STATUS",
+            "DESCRIPTION"
+          ],
+          "correctAnswer": "DESCRIPTION",
+          "explanation": "The DESCRIPTION column of the SERVICE_REQUEST table details the issues—e.g., 'The bathroom doors does not close properly.'"
+        },
+        {
+          "text": "Within an entity-relationship diagram, which of the following would indicate that the relationship between A and B is one (A) to many (B)?",
+          "options": [
+            "An arrow drawn from rectangle B points to rectangle A.",
+            "A line with a letter n beside it is drawn from a diamond to rectangle A.",
+            "A line drawn from rectangle A ends in a crow's foot at rectangle B.",
+            "A line with a number 1 beside it is drawn from rectangle A to rectangle B."
+          ],
+          "correctAnswer": "A line drawn from rectangle A ends in a crow's foot at rectangle B.",
+          "explanation": "One style of E-R diagram is to represent the many side of a relationship between tables with a crow's foot. The crow's foot represents the many part of the relationship."
+        },
+        {
+          "text": "A relational database _____.",
+          "options": [
+            "implements relationships through common table rows",
+            "consists of relationships between entities",
+            "consists of tables called relations",
+            "implements relationships through repeating groups"
+          ],
+          "correctAnswer": "consists of tables called relations",
+          "explanation": "A relational database is a collection of tables like the ones you examined for KimTay Pet Supplies in Module 1."
+        },
+        {
+          "text": "One of the categories of update anomalies is _____.",
+          "options": [
+            "qualifications",
+            "inconsistent data",
+            "functional dependencies",
+            "functional splits"
+          ],
+          "correctAnswer": "inconsistent data",
+          "explanation": "The more serious types of problems caused by redundancy are called update anomalies and they fall into four categories: updates, inconsistent data, additions, and deletions."
+        },
+        {
+          "text": "Which SQL command do you use to remove an entire row from a table?",
+          "options": [
+            "ERASE",
+            "DELETE",
+            "REMOVE",
+            "DROP"
+          ],
+          "correctAnswer": "DELETE",
+          "explanation": "When you need to delete a row from a table, you can use the DELETE command."
+        },
+        {
+          "text": "Jahann wants to examine the structure of the COFFEE table, which was created by a colleague, including the column names, data types, and acceptance/nonacceptance of null values. Which command should Janice execute?",
+          "options": [
+            "SHOW COFFEE;",
+            "CREATE TABLE COFFEE;",
+            "DESCRIBE COFFEE;",
+            "SELECT COFFEE;"
+          ],
+          "correctAnswer": "DESCRIBE COFFEE;",
+          "explanation": "In MySQL, you can use the DESCRIBE command to list all the columns in a table and their properties. The result indicates the name of each column in the table, along with its data type and length. The Null column indicates whether the field can accept a value of null."
+        },
+        {
+          "text": "Which of the following tables is in third normal form, given that DOC_ID determines DOC_FIRST_NAME and DOC_LAST_NAME?",
+          "options": [
+            "PATIENT (PATIENT_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NO, DOC_ID)",
+            "PATIENT (PATIENT_ID, FIRST_NAME, LAST_NAME, DOC_ID, DOC_FIRST_NAME, DOC_LAST_NAME)",
+            "PATIENT (PATIENT_ID, DOC_ID, FIRST_NAME, LAST_NAME, (ADMIT_DATE, RELEASE_DATE))",
+            "PATIENT (PATIENT_ID, FIRST_NAME, LAST_NAME, VISIT_DATE, (SERVICE, BILLING_CODE))"
+          ],
+          "correctAnswer": "PATIENT (PATIENT_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NO, DOC_ID)",
+          "explanation": "This table is in third normal form because it contains only the DOC_ID and not the dependent attributes (DOC_FIRST_NAME and DOC_LAST_NAME) that are determined by it."
+        },
+        {
+          "text": "Which of the following is a valid name for a table?",
+          "options": [
+            "TBL_1",
+            "4 tbl",
+            "2_TBL",
+            "TBL 3"
+          ],
+          "correctAnswer": "TBL_1",
+          "explanation": "If you adhere to these guidelines for naming identifiers when using a DBMS, it is rare that you will have an issue. (1.) The identifier name cannot exceed 30 characters. (2.) The identifier name must start with a letter. (3.) The identifier name can contain letters, numbers, and underscores (_). (4.) The identifier name cannot contain spaces."
+        },
+        {
+          "text": "You indicate the end of a SQL command by typing a ____.",
+          "options": [
+            "column",
+            "period",
+            "semicolon",
+            "comma"
+          ],
+          "correctAnswer": "semicolon",
+          "explanation": "A semicolon ends a statement in SQL."
+        },
+        {
+          "text": "KimTay's management would like to set up a structure that contains different categories of information and the relationships between these categories. In other words, they want a _____.",
+          "options": [
+            "spreadsheet",
+            "digital template",
+            "database",
+            "table"
+          ],
+          "correctAnswer": "database",
+          "explanation": "A database is a structure that contains different categories of information and the relationships between these categories. For example, the KimTay Pet Supplies database contains information about categories such as sales representatives (sales reps), customers, invoices, and items."
+        },
+        {
+          "text": "Which MySQL command do you use to define a table's structure by listing its columns, data types, and column lengths?",
+          "options": [
+            "NEW TABLE",
+            "ADD TABLE",
+            "CREATE TABLE",
+            "DEFINE TABLE"
+          ],
+          "correctAnswer": "CREATE TABLE",
+          "explanation": "You use the CREATE TABLE command to describe the layout of a table. The word TABLE is followed by the name of the table to be created and then by the names and data types of the columns that the table contains."
+        },
+        {
+          "text": "At KimTay, the invoice total appears in which section of the invoice?",
+          "options": [
+            "footing",
+            "body",
+            "top",
+            "heading"
+          ],
+          "correctAnswer": "footing",
+          "explanation": "The sample invoice shown in Figure 1-1 has three sections. The footing (bottom) of the invoice contains the invoice total."
+        },
+        {
+          "text": "A relation that does not contain any repeating groups is in _____.",
+          "options": [
+            "third normal form",
+            "second normal form",
+            "Boyce-Codd normal form",
+            "first normal form"
+          ],
+          "correctAnswer": "first normal form",
+          "explanation": "A table (relation) is in first normal form (1NF) when it does not contain a repeating group."
+        },
+        {
+          "text": "The process of determining the particular tables and columns that will comprise a database is known as _____.",
+          "options": [
+            "relational management",
+            "database design",
+            "normalization",
+            "qualification"
+          ],
+          "correctAnswer": "database design",
+          "explanation": "The process of determining the particular tables and columns that comprise a database is known as database design."
+        },
+        {
+          "text": "StayWell stores information about the facilities where student residents live in the _____ table.",
+          "options": [
+            "OFFICE",
+            "PROPERTY",
+            "OWNER",
+            "RENTAL_UNIT"
+          ],
+          "correctAnswer": "PROPERTY",
+          "explanation": "Each property at each location is identified by a property ID in the PROPERTY table. Each property also includes the office number that manages the property, address, floor size, the number of bedrooms, the number of floors, monthly rent per property, and the owner number."
+        },
+        {
+          "text": "A property of an entity is _____.",
+          "options": [
+            "an attribute",
+            "a table row",
+            "its association with other entities",
+            "like a noun"
+          ],
+          "correctAnswer": "an attribute",
+          "explanation": "An attribute is a property of an entity."
+        },
+        {
+          "text": "The duplication of data is formally called _____.",
+          "options": [
+            "replication",
+            "an anomaly",
+            "a repeating group",
+            "redundancy"
+          ],
+          "correctAnswer": "redundancy",
+          "explanation": "Sometimes the same attribute data occurs twice in one table. This duplication (formally called redundancy) causes several problems."
+        },
+        {
+          "text": "The StayWell database's OWNER table _____.",
+          "options": [
+            "includes property IDs",
+            "includes single rows with multiple data entries",
+            "omits property IDs",
+            "cannot be easily cross-referenced to the PROPERTY table"
+          ],
+          "correctAnswer": "omits property IDs",
+          "explanation": "It might at first seem reasonable to include property IDs in the OWNER table, as it would only add one more column. However, if you look at the tables, you notice that there are more properties than owners because some owners have more than one property managed by StayWell."
+        },
+        {
+          "text": "When you are designing a database, _____.",
+          "options": [
+            "the many part of a relationship between tables occurs where the matching column is the primary key",
+            "attributes with functional dependencies should not be placed together in the same table",
+            "you might be able to determine the relationships between tables directly from the requirements",
+            "one useful approach to identifying relationships between tables is to look for matching rows"
+          ],
+          "correctAnswer": "you might be able to determine the relationships between tables directly from the requirements",
+          "explanation": "The sixth step to complete to design a database for a set of requirements is to identify any relationships between tables. In some cases, you might be able to determine the relationships directly from the requirements. If not, look for matching columns in the tables you created."
+        },
+        {
+          "text": "An owner number in the OWNER table in the StayWell database consists of _____ uppercase letters followed by a three-digit number.",
+          "options": [
+            "two",
+            "three",
+            "five",
+            "four"
+          ],
+          "correctAnswer": "two",
+          "explanation": "Each owner is identified by a unique owner number that consists of two uppercase letters followed by a three-digit number."
+        },
+        {
+          "text": "Qawe has written some commands in MySQL Workbench that he expects to run regularly, and he would like to save them for future use. What should he do next?",
+          "options": [
+            "copy and paste the query into a .txt file",
+            "click on File, then Save Script As",
+            "click on Query, then select Execute",
+            "select a script from within his file system and click Open"
+          ],
+          "correctAnswer": "click on File, then Save Script As",
+          "explanation": "To create a script in MySQL: (1) Enter the command, or commands, you would like to comprise the script in the query pane. (2) On the MySQL Workbench main menu, click on the File menu and select the Save Script As option. (3) You may now navigate to a location in your file system you would like to save the script. (4) Enter a name for your script in the File name: text box. Note the file type is an SQL file with an extension of .sql. (5) When you are finished, click the Save button."
+        },
+        {
+          "text": "The KimTay INVOICES table consists of the invoice number, invoice date, and _____.",
+          "options": [
+            "quoted price",
+            "quantity",
+            "item ID",
+            "customer ID"
+          ],
+          "correctAnswer": "customer ID",
+          "explanation": "In the table named INVOICES, you see that there are eight invoices which are identified with the numbers 14216, 14219, 14222, 14224, 14228, 14231, 14233, and 14237. Invoice number 14216 was placed on November 15, 2021, by customer 125 (Joey Smith)."
+        },
+        {
+          "text": "KimTay's database allows sales reps to sell the same item for different prices by _____.",
+          "options": [
+            "including a PRICE column in the ITEM table",
+            "using the prices from the ITEM table in the invoice body",
+            "including a QUOTED_PRICE column in the INVOICE_LINE table",
+            "omitting price information from the ITEM table"
+          ],
+          "correctAnswer": "including a QUOTED_PRICE column in the INVOICE_LINE table",
+          "explanation": "Because KimTay Pet Supplies wants the flexibility to quote and charge different prices to different customers, the QUOTED_PRICE column is included in the INVOICE_LINE table. If the QUOTED_PRICE column did not appear in the INVOICE_LINE table, you would need to obtain the price for an item on an invoice line by looking up the price in the ITEM table."
+        },
+        {
+          "text": "Information about the services requested by StayWell residents is stored in the _____ table.",
+          "options": [
+            "SERVICE_REQUEST",
+            "OWNER",
+            "PROPERTY",
+            "LOCATION"
+          ],
+          "correctAnswer": "SERVICE_REQUEST",
+          "explanation": "The SERVICE_REQUEST table shows requests that residents have put into the offices for maintenance."
+        },
+        {
+          "text": "Each row in the PROPERTY table in the StayWell database contains a property _____ that identifies that particular property.",
+          "options": [
+            "name",
+            "ID",
+            "sequence",
+            "owner"
+          ],
+          "correctAnswer": "ID",
+          "explanation": "Each property at each location is identified by a property ID, as seen in the PROPERTY table in Figure 1-6."
+        },
+        {
+          "text": "Suppose you have a table with a primary key composed of two columns. When another column in this table is dependent on only one of the two columns in the primary key, this poses a risk for _____.",
+          "options": [
+            "qualification errors",
+            "functional dependency",
+            "update anomalies",
+            "function splitting"
+          ],
+          "correctAnswer": "update anomalies",
+          "explanation": "Update anomalies occur because a nonkey column is dependent on only a portion of the primary key and not on the complete primary key."
+        },
+        {
+          "text": "When the commonly accepted shorthand representation is used to describe a database, _____.",
+          "options": [
+            "it is always acceptable to qualify column names",
+            "tables cannot contain columns with duplicate names",
+            "each column name appears on its own line",
+            "the first attributes from each row are listed in parentheses"
+          ],
+          "correctAnswer": "it is always acceptable to qualify column names",
+          "explanation": "There is a commonly accepted shorthand representation to show the tables and columns in a relational database: for each table, you write the name of the table and then within parentheses list all of the columns in the table. In this representation, each table appears on its own line. Some tables may contain columns with duplicate names. It is always acceptable to qualify column names, even when there is no potential for confusion."
+        },
+        {
+          "text": "Diamonds are sometimes used in E-R diagrams to _____.",
+          "options": [
+            "indicate which entity is on the \"many\" side of a one-to-many relationship",
+            "describe the relationship between two tables",
+            "identify the names of entities in a database",
+            "represent individual tables"
+          ],
+          "correctAnswer": "describe the relationship between two tables",
+          "explanation": "In the original style of E-R diagrams, relationships are indicated in diamonds that describe the relationship."
+        },
+        {
+          "text": "You are working with a QUOTATIONS table that contains no repeating groups and has a primary key consisting of the SERVICE_CODE and SPECS columns. You realize that some other columns in the table functionally depend on either SERVICE_CODE or SPECS, but not both, whereas the rest depend on both. How should you improve this table?",
+          "options": [
+            "eliminate any columns that determine other columns from the table",
+            "combine SERVICE_CODE and SPECS into a single-column primary key",
+            "replace it with three tables with the following primary keys: SERVICE_CODE, SPECS, and SERVICE_CODE plus SPECS",
+            "remove the multiple entries from the SERVICE_CODE and SPECS columns"
+          ],
+          "correctAnswer": "replace it with three tables with the following primary keys: SERVICE_CODE, SPECS, and SERVICE_CODE plus SPECS",
+          "explanation": "You want to be able to convert tables to second normal form. First, take each subset of the set of columns that make up the primary key and begin a new table with this subset as its primary key. Next, place each of the other columns with the appropriate primary key; that is, place each one with the minimal collection of columns on which it depends."
+        }
+      ]
+    }
