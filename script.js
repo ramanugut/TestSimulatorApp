@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Test file references
   const testFiles = [
     // Add your test files here
-   // "test20.json",
+    // "test20.json",
     "test21.json",
     "test22.json",
     "test23.json",
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test26.json",
     "test27.json",
     // For demonstration, we'll use a sample test file
-   // "sample_test.json",
+    // "sample_test.json",
   ];
 
   // Load test files into the select element
@@ -382,8 +382,11 @@ document.addEventListener("DOMContentLoaded", function () {
         questionElement.appendChild(inputElement);
       }
 
-      // Handle study mode
-      if (isStudyMode) {
+      // Apply feedback if the test has been submitted
+      if (testSubmitted) {
+        applyFeedback(questionElement, question, actualIndex);
+      } else if (isStudyMode) {
+        // Handle study mode
         const correctAnswerElement = document.createElement("p");
         correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
         correctAnswerElement.classList.add("study-correct-answer");
@@ -398,11 +401,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       questionsContainer.appendChild(questionElement);
-
-      // Apply feedback if the test has been submitted
-      if (testSubmitted) {
-        applyFeedback(questionElement, question, actualIndex);
-      }
     });
     updateProgress();
   }
@@ -525,16 +523,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const passMark = parseInt(passMarkInput.value);
 
-      // Iterate through each question to evaluate and provide feedback
+      // Calculate the score without relying on DOM elements
       questions.forEach((question, index) => {
-        const questionElement = questionsContainer.querySelector(
-          `[data-question-index="${index}"]`
-        );
-        if (questionElement) {
-          const isCorrect = applyFeedback(questionElement, question, index);
-          if (isCorrect) {
-            score++;
+        const userAnswer = userAnswers[index];
+        let isCorrect = false;
+        const isMultipleCorrect = Array.isArray(question.correctAnswer);
+
+        // Determine if the answer is correct
+        if (isMultipleCorrect) {
+          const selectedOptions = Array.isArray(userAnswer)
+            ? userAnswer.map((option) => option.trim().toLowerCase())
+            : [];
+
+          const correctAnswers = question.correctAnswer.map((answer) =>
+            answer.trim().toLowerCase()
+          );
+          selectedOptions.sort();
+          correctAnswers.sort();
+          isCorrect =
+            JSON.stringify(selectedOptions) === JSON.stringify(correctAnswers);
+        } else {
+          if (
+            typeof userAnswer === "string" &&
+            userAnswer.trim().toLowerCase() ===
+              question.correctAnswer.trim().toLowerCase()
+          ) {
+            isCorrect = true;
           }
+        }
+
+        if (isCorrect) {
+          score++;
         }
       });
 
@@ -571,6 +590,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Clear saved progress
       clearSavedProgress();
+
+      // Re-render current page to show feedback
+      renderQuestions();
     } catch (error) {
       console.error("Error in submitTest:", error);
       alert(
@@ -623,22 +645,22 @@ document.addEventListener("DOMContentLoaded", function () {
       questionElement.classList.add("incorrect");
       feedbackElement.textContent = "Incorrect.";
       feedbackElement.classList.add("incorrect");
-
-      // Display correct answer and explanation if available
-      const correctAnswerElement = document.createElement("p");
-      correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
-      correctAnswerElement.classList.add("correct-answer");
-      questionElement.appendChild(correctAnswerElement);
-
-      if (question.explanation) {
-        const explanationElement = document.createElement("p");
-        explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
-        explanationElement.classList.add("explanation");
-        questionElement.appendChild(explanationElement);
-      }
     }
 
     questionElement.appendChild(feedbackElement);
+
+    // Display correct answer and explanation for all questions
+    const correctAnswerElement = document.createElement("p");
+    correctAnswerElement.innerHTML = `<strong>Correct Answer:</strong> ${question.correctAnswer}`;
+    correctAnswerElement.classList.add("correct-answer");
+    questionElement.appendChild(correctAnswerElement);
+
+    if (question.explanation) {
+      const explanationElement = document.createElement("p");
+      explanationElement.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
+      explanationElement.classList.add("explanation");
+      questionElement.appendChild(explanationElement);
+    }
 
     // Ensure user selections are preserved and highlighted correctly
     if (question.options && question.options.length > 0) {
@@ -646,10 +668,15 @@ document.addEventListener("DOMContentLoaded", function () {
       inputs.forEach((input) => {
         if (Array.isArray(userAnswer)) {
           // Handle multiple answers (checkbox)
-          input.checked = userAnswer.includes(input.value);
+          input.checked = userAnswer.some(
+            (answer) =>
+              answer.trim().toLowerCase() === input.value.trim().toLowerCase()
+          );
         } else if (typeof userAnswer === "string") {
           // Handle single answer (radio)
-          input.checked = userAnswer === input.value;
+          input.checked =
+            userAnswer.trim().toLowerCase() ===
+            input.value.trim().toLowerCase();
         }
         input.disabled = true; // Disable input to prevent changes after submission
       });
