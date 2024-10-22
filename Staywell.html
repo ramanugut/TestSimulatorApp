@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staywell Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4b0082;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #d8bfd8;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Staywell Database</h1>
+        </header>
+
+        <!-- Office Table -->
+        <h2>Office</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>OFFICE_NUM</th>
+                    <th>OFFICE_NAME</th>
+                    <th>ADDRESS</th>
+                    <th>AREA</th>
+                    <th>CITY</th>
+                    <th>STATE</th>
+                    <th>ZIP_CODE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>StayWell-Columbia City</td><td>1135 N. Wells Avenue</td><td>Columbia City</td><td>Seattle</td><td>WA</td><td>98118</td></tr>
+                <tr><td>2</td><td>StayWell-Georgetown</td><td>986 S. Madison Rd</td><td>Georgetown</td><td>Seattle</td><td>WA</td><td>98108</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Owner Table -->
+        <h2>Owner</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>OWNER_NUM</th>
+                    <th>LAST_NAME</th>
+                    <th>FIRST_NAME</th>
+                    <th>ADDRESS</th>
+                    <th>CITY</th>
+                    <th>STATE</th>
+                    <th>ZIP_CODE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>MO100</td><td>Moore</td><td>Elle-May</td><td>8006 W. Newport Ave.</td><td>Reno</td><td>NV</td><td>89508</td></tr>
+                <tr><td>PA101</td><td>Patel</td><td>Makesh</td><td>7337 Sheffield St.</td><td>Seattle</td><td>WA</td><td>98119</td></tr>
+                <tr><td>AK102</td><td>Aksoy</td><td>Ceyda</td><td>411 Griffin Rd.</td><td>Seattle</td><td>WA</td><td>98131</td></tr>
+                <tr><td>CO103</td><td>Cole</td><td>Meerab</td><td>9486 Circle Ave.</td><td>Olympia</td><td>WA</td><td>98506</td></tr>
+                <tr><td>KO104</td><td>Kowalczyk</td><td>Jakub</td><td>7431 S. Bishop St.</td><td>Bellingham</td><td>WA</td><td>98226</td></tr>
+                <tr><td>SI105</td><td>Sims</td><td>Haydon</td><td>527 Primrose Rd.</td><td>Portland</td><td>OR</td><td>97203</td></tr>
+                <tr><td>BU106</td><td>Burke</td><td>Ernest</td><td>613 Old Pleasant St.</td><td>Twin Falls</td><td>ID</td><td>83303</td></tr>
+                <tr><td>RE107</td><td>Redman</td><td>Seth</td><td>7681 Fordham St.</td><td>Seattle</td><td>WA</td><td>98119</td></tr>
+                <tr><td>LO108</td><td>Lopez</td><td>Janine</td><td>9856 Pumpkin Hill Ln.</td><td>Everett</td><td>WA</td><td>98213</td></tr>
+                <tr><td>BI109</td><td>Bianchi</td><td>Nicole</td><td>7990 Willow Dr.</td><td>New York</td><td>NY</td><td>10005</td></tr>
+                <tr><td>JO110</td><td>Jones</td><td>Ammarah</td><td>730 Military Ave.</td><td>Seattle</td><td>WA</td><td>98126</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Property Table -->
+        <h2>Property</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>PROPERTY_ID</th>
+                    <th>OFFICE_NUM</th>
+                    <th>ADDRESS</th>
+                    <th>SQR_FT</th>
+                    <th>BDRMS</th>
+                    <th>FLOORS</th>
+                    <th>MONTHLY_RENT</th>
+                    <th>OWNER_NUM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>1</td><td>30 West Thomas Rd.</td><td>1,600</td><td>3</td><td>1</td><td>$1,400</td><td>BU106</td></tr>
+                <tr><td>2</td><td>1</td><td>782 Queen Ln.</td><td>2,100</td><td>4</td><td>2</td><td>$1,900</td><td>AK102</td></tr>
+                <tr><td>3</td><td>1</td><td>9800 Sunbeam Ave.</td><td>1,005</td><td>2</td><td>1</td><td>$1,200</td><td>BI109</td></tr>
+                <tr><td>4</td><td>1</td><td>105 North Illinois Rd.</td><td>1,750</td><td>3</td><td>1</td><td>$1,650</td><td>KO104</td></tr>
+                <tr><td>5</td><td>1</td><td>887 Vine Rd.</td><td>1,160</td><td>3</td><td>1</td><td>$1,150</td><td>SI105</td></tr>
+                <tr><td>6</td><td>1</td><td>8 Laurel Dr.</td><td>2,125</td><td>4</td><td>2</td><td>$2,150</td><td>MO100</td></tr>
+                <tr><td>7</td><td>2</td><td>447 Goldfield St.</td><td>1,675</td><td>3</td><td>1</td><td>$1,700</td><td>CO103</td></tr>
+                <tr><td>8</td><td>1</td><td>594 Leatherwood Dr.</td><td>2,700</td><td>5</td><td>2</td><td>$2,750</td><td>KO104</td></tr>
+                <tr><td>9</td><td>2</td><td>504 Windsor Ave.</td><td>1,400</td><td>3</td><td>1</td><td>$1,650</td><td>PA101</td></tr>
+                <tr><td>10</td><td>2</td><td>891 Alton Dr.</td><td>1,300</td><td>3</td><td>1</td><td>$1,200</td><td>LO108</td></tr>
+                <tr><td>11</td><td>1</td><td>9531 Sherwood Rd.</td><td>1,075</td><td>2</td><td>1</td><td>$1,000</td><td>JO110</td></tr>
+                <tr><td>12</td><td>2</td><td>2 Bow Ridge Ave.</td><td>1,405</td><td>3</td><td>2</td><td>$1,700</td><td>RE107</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Service Category Table -->
+        <h2>Service Category</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>CATEGORY_NUM</th>
+                    <th>CATEGORY_DESCRIPTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Plumbing</td></tr>
+                <tr><td>2</td><td>Heating</td></tr>
+                <tr><td>3</td><td>Painting</td></tr>
+                <tr><td>4</td><td>Electrical systems</td></tr>
+                <tr><td>5</td><td>Carpentry</td></tr>
+                <tr><td>6</td><td>Furniture replacement</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Service Request Table -->
+        <h2>Service Request</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>SERVICE_ID</th>
+                    <th>PROPERTY_ID</th>
+                    <th>CATEGORY_NUMBER</th>
+                    <th>OFFICE_NUM</th>
+                    <th>DESCRIPTION</th>
+                    <th>STATUS</th>
+                    <th>EST_HOURS</th>
+                    <th>SPENT_HOURS</th>
+                    <th>NEXT_SERVICE_DATE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>11</td><td>2</td><td>2</td><td>The second bedroom upstairs is not heating up at night.</td><td>Problem confirmed. Central heating engineer scheduled.</td><td>2</td><td>1</td><td>11/01/2019</td></tr>
+                <tr><td>2</td><td>1</td><td>4</td><td>1</td><td>A new strip light is needed for the kitchen.</td><td>Scheduled</td><td>1</td><td>0</td><td>10/02/2019</td></tr>
+                <tr><td>3</td><td>6</td><td>5</td><td>1</td><td>The bathroom door does not close properly.</td><td>Scheduled</td><td>3</td><td>1</td><td>11/09/2019</td></tr>
+                <tr><td>4</td><td>2</td><td>4</td><td>1</td><td>New outlet requested for the first upstairs bedroom.</td><td>Scheduled</td><td>1</td><td>0</td><td>10/02/2019</td></tr>
+                <tr><td>5</td><td>8</td><td>3</td><td>2</td><td>New paint job requested for the common area (lounge).</td><td>Open</td><td>10</td><td>0</td><td></td></tr>
+                <tr><td>6</td><td>4</td><td>1</td><td>1</td><td>Shower is dripping when not in use.</td><td>Problem confirmed. Plumber scheduled.</td><td>4</td><td>2</td><td>10/07/2019</td></tr>
+                <tr><td>7</td><td>2</td><td>2</td><td>1</td><td>Heating unit smells like it’s burning.</td><td>Service rep confirmed issue as dust buildup.</td><td>1</td><td>0</td><td>10/09/2019</td></tr>
+                <tr><td>8</td><td>9</td><td>1</td><td>2</td><td>Kitchen sink does not drain properly.</td><td>Problem confirmed. Plumber scheduled.</td><td>6</td><td>2</td><td>11/12/2019</td></tr>
+                <tr><td>9</td><td>12</td><td>6</td><td>2</td><td>New sofa requested.</td><td>Open</td><td>2</td><td>0</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <!-- Residents Table -->
+        <h2>Residents</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>RESIDENT_ID</th>
+                    <th>FIRST_NAME</th>
+                    <th>SURNAME</th>
+                    <th>PROPERTY_ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Albie</td><td>O’Ryan</td><td>1</td></tr>
+                <tr><td>2</td><td>Tariq</td><td>Khan</td><td>1</td></tr>
+                <tr><td>3</td><td>Ismail</td><td>Salib</td><td>2</td></tr>
+                <tr><td>4</td><td>Callen</td><td>Beck</td><td>2</td></tr>
+                <tr><td>5</td><td>Milosz</td><td>Polansky</td><td>2</td></tr>
+                <tr><td>6</td><td>Ashanti</td><td>Lucas</td><td>2</td></tr>
+                <tr><td>7</td><td>Randy</td><td>Woodrue</td><td>3</td></tr>
+                <tr><td>8</td><td>Aislinn</td><td>Lawrence</td><td>3</td></tr>
+                <tr><td>9</td><td>Monique</td><td>French</td><td>3</td></tr>
+                <tr><td>10</td><td>Amara</td><td>Dejuswan</td><td>4</td></tr>
+                <tr><td>11</td><td>Rosalie</td><td>Blackmore</td><td>4</td></tr>
+                <tr><td>12</td><td>Carina</td><td>Britton</td><td>4</td></tr>
+                <tr><td>13</td><td>Valentino</td><td>Ortega</td><td>5</td></tr>
+                <tr><td>14</td><td>Kaylem</td><td>Kent</td><td>5</td></tr>
+                <tr><td>15</td><td>Alessia</td><td>Wagner</td><td>6</td></tr>
+                <tr><td>16</td><td>Tyrone</td><td>Galvan</td><td>6</td></tr>
+                <tr><td>17</td><td>Constance</td><td>Fleming</td><td>6</td></tr>
+                <tr><td>18</td><td>Eamonn</td><td>Bain</td><td>6</td></tr>
+                <tr><td>19</td><td>Misbah</td><td>Yacob</td><td>7</td></tr>
+                <tr><td>20</td><td>Gianluca</td><td>Esposito</td><td>7</td></tr>
+                <tr><td>21</td><td>Elinor</td><td>Lake</td><td>7</td></tr>
+                <tr><td>22</td><td>Ray</td><td>Rosas</td><td>8</td></tr>
+                <tr><td>23</td><td>Damon</td><td>Caldwell</td><td>8</td></tr>
+                <tr><td>24</td><td>Dawood</td><td>Busby</td><td>8</td></tr>
+                <tr><td>25</td><td>Dora</td><td>Harris</td><td>9</td></tr>
+                <tr><td>26</td><td>Leroy</td><td>Stokes</td><td>9</td></tr>
+                <tr><td>27</td><td>Tamia</td><td>Hess</td><td>9</td></tr>
+                <tr><td>28</td><td>Amelia</td><td>Sanders</td><td>9</td></tr>
+                <tr><td>29</td><td>Zarah</td><td>Byers</td><td>10</td></tr>
+                <tr><td>30</td><td>Sara</td><td>Farrow</td><td>10</td></tr>
+                <tr><td>31</td><td>Delilah</td><td>Roy</td><td>10</td></tr>
+                <tr><td>32</td><td>Dougie</td><td>McDaniel</td><td>10</td></tr>
+                <tr><td>33</td><td>Tahir</td><td>Halabi</td><td>11</td></tr>
+                <tr><td>34</td><td>Mila</td><td>Zhikin</td><td>12</td></tr>
+                <tr><td>35</td><td>Glenn</td><td>Donovan</td><td>12</td></tr>
+                <tr><td>36</td><td>Zayn</td><td>Fowler</td><td>12</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
