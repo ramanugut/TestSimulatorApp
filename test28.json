@@ -10,12 +10,18 @@
         "correctAnswer": "a. True",
         "explanation": "The DESCRIBE command is used to view the structure of a table, including its columns, data types, and column lengths."
       },
-      {
-        "text": "Write a MySQL command to create a table called CANDY that contains the following columns: Candy ID, five characters; will function as primary key. Candy name, 25 characters. Description, 50 characters. Quantity per unit, whole number.",
-        "options": [],
-        "correctAnswer": "CREATE TABLE Candy (CandyID VARCHAR(5) PRIMARY KEY, CandyName VARCHAR(25), Description VARCHAR(50), QuantityPerUnit INT);",
-        "explanation": "The command includes a primary key and sets data types for each column, ensuring appropriate length for strings."
-      },
+{
+  "text": "Write a MySQL command to create a table called CANDY that contains the following columns: Candy ID, five characters; will function as a primary key. Candy name, 25 characters. Description, 50 characters. Quantity per unit, whole number.",
+  "options": [
+    "a. <pre><code>CREATE TABLE Candy (\n    CandyID CHAR(5) PRIMARY KEY,\n    CandyName VARCHAR(25),\n    Description TEXT,\n    QuantityPerUnit INTEGER\n);</code></pre>",
+    "b. <pre><code>CREATE TABLE Candy (\n    CandyID VARCHAR(5) PRIMARY KEY,\n    CandyName VARCHAR(25),\n    Description VARCHAR(50),\n    QuantityPerUnit INT\n);</code></pre>",
+    "c. <pre><code>CREATE TABLE Candy (\n    CandyID VARCHAR(5),\n    CandyName VARCHAR(25),\n    Description VARCHAR(50),\n    QuantityPerUnit INT\n);</code></pre>",
+    "d. <pre><code>CREATE TABLE Candy (\n    CandyID VARCHAR(5) NOT NULL,\n    CandyName VARCHAR(25) UNIQUE,\n    Description CHAR(50),\n    QuantityPerUnit INT,\n    PRIMARY KEY (CandyID)\n);</code></pre>"
+  ],
+  "correctAnswer": "b. <pre><code>CREATE TABLE Candy (\n    CandyID VARCHAR(5) PRIMARY KEY,\n    CandyName VARCHAR(25),\n    Description VARCHAR(50),\n    QuantityPerUnit INT\n);</code></pre>",
+  "explanation": "Option B is correct because CandyID is declared as VARCHAR(5) with a primary key constraint. CandyName and Description have the correct VARCHAR lengths of 25 and 50, respectively. QuantityPerUnit is a whole number represented correctly by INT."
+},
+
       {
         "text": "In an entity-relationship (E-R) diagram, tables are represented by _____.",
         "options": [
@@ -36,12 +42,18 @@
         "correctAnswer": "b. False",
         "explanation": "The SERVICE_CATEGORY table includes service details but does not store service fees."
       },
-      {
-        "text": "What are a script file and a script repository?",
-        "options": [],
-        "correctAnswer": "Script File = A plain text file containing instructions written in a specific scripting language like SQL; Script Repository = A storage where a collection of script files are stored, organized, and managed.",
-        "explanation": "Script files store executable commands, while repositories manage collections of these scripts."
-      },
+{
+  "text": "What are a script file and a script repository?",
+  "options": [
+    "a. Script File = A binary file used to store compiled code; Script Repository = A library of only compiled scripts for execution.",
+    "b. Script File = A file containing SQL queries that run automatically on startup; Script Repository = A temporary cache where scripts are stored until executed.",
+    "c. Script File = A plain text file containing instructions written in a specific scripting language like SQL; Script Repository = A storage where a collection of script files are stored, organized, and managed.",
+    "d. Script File = A web-based tool to generate SQL queries; Script Repository = An online platform that executes SQL scripts in real-time."
+  ],
+  "correctAnswer": "c. Script File = A plain text file containing instructions written in a specific scripting language like SQL; Script Repository = A storage where a collection of script files are stored, organized, and managed.",
+  "explanation": "Script files store executable commands, while repositories manage collections of these scripts."
+},
+
       {
         "text": "How many tables make up the KimTay database?",
         "options": [
