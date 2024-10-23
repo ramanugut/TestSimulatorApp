@@ -1,0 +1,396 @@
+{
+    "testName": "2024 ICT1521 MOC EXAM 2",
+    "questions": [
+    {
+        "text": "The SALES_REP table consists of the sales representatives’ IDs, first names, last names, addresses, mobile numbers, total commissions, and _____.",
+        "options": [
+            "a. total sales",
+            "b. customers",
+            "c. commission rates",
+            "d. invoice numbers"
+        ],
+        "correctAnswer": "a. total sales",
+        "explanation": "In many business databases, the 'total sales' metric is commonly stored alongside other commission data for sales representatives to track performance."
+    },
+    {
+        "text": "If Mack wants to display the number of days between two dates, such as the current date and an invoice date from a table, which function can he use in his MySQL query to accomplish this?",
+        "options": [
+            "a. <pre><code>DATE_ADD()</code></pre>",
+            "b. <pre><code>DATEDIFF()</code></pre>",
+            "c. <pre><code>SUBTRACT()</code></pre>",
+            "d. <pre><code>SYSDATE()</code></pre>"
+        ],
+        "correctAnswer": "b. <pre><code>DATEDIFF()</code></pre>",
+        "explanation": "The DATEDIFF() function in MySQL returns the difference in days between two dates."
+    },
+    {
+        "text": "The types of constraints supported in SQL are ____.",
+        "options": [
+            "a. foreign keys, qualifiers, and naming conventions",
+            "b. user privileges, data types, and legal values",
+            "c. primary keys, foreign keys, and legal values",
+            "d. data types, indexes, and system catalogs"
+        ],
+        "correctAnswer": "c. primary keys, foreign keys, and legal values",
+        "explanation": "SQL constraints ensure data integrity by enforcing rules, such as primary keys and foreign keys."
+    },
+    {
+        "text": "What is the term for the letter S or the letter D in the following query?\n\n<pre><code>SELECT S.SERVER_ID, S.LAST_NAME, D.DINER_ID, D.LAST_NAME\nFROM SERVER S, DINER D\nWHERE (S.SERVER_ID = D.SERVER_ID)</code></pre>",
+        "options": [
+            "a. operator",
+            "b. set",
+            "c. qualifier",
+            "d. alias"
+        ],
+        "correctAnswer": "d. alias",
+        "explanation": "In SQL, an alias is a temporary name assigned to a table or column for query readability and convenience."
+    },
+    {
+        "text": "How do you use data from certain columns of an existing table to populate a new table with a matching structure?",
+        "options": [
+            "a. Execute a CREATE TABLE command with an INSERT clause.",
+            "b. Copy the existing table and delete the unwanted columns.",
+            "c. Place a SELECT command within an INSERT command.",
+            "d. Add an INSERT clause after the WHERE clause in a SELECT command."
+        ],
+        "correctAnswer": "c. Place a SELECT command within an INSERT command.",
+        "explanation": "To insert data from an existing table into a new table, you can use a SELECT statement inside an INSERT command."
+    },
+    {
+        "text": "All SELECT statements require a WHERE clause.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "explanation": "A WHERE clause is optional in a SELECT statement. It is used to filter rows, but a SELECT statement can run without it to retrieve all rows from a table."
+    },
+    {
+        "text": "A relational database _____.",
+        "options": [
+            "a. consists of relationships between entities",
+            "b. consists of tables called relations",
+            "c. implements relationships through repeating groups",
+            "d. implements relationships through common table rows"
+        ],
+        "correctAnswer": "b. consists of tables called relations",
+        "explanation": "In relational databases, data is organized into tables, which are also referred to as 'relations.'"
+    },
+    {
+        "text": "You indicate the end of a SQL command by typing a ____.",
+        "options": [
+            "a. semicolon",
+            "b. period",
+            "c. column",
+            "d. comma"
+        ],
+        "correctAnswer": "a. semicolon",
+        "explanation": "A semicolon (;) is used to indicate the end of an SQL statement, especially when writing multiple statements in SQL scripts."
+    },
+    {
+        "text": "Using SQL, you can increase the length of an existing table column but you cannot decrease the length of a column.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "explanation": "SQL allows increasing the length of a column with the ALTER command, but decreasing it might lead to data loss and is not permitted by all databases without special operations."
+    },
+    {
+        "text": "It is possible to use both a WHERE clause and a HAVING clause in a SELECT statement.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "explanation": "A SELECT statement can include both a WHERE clause (to filter individual rows) and a HAVING clause (to filter groups after aggregation)."
+    },
+    {
+        "text": "Name and briefly describe the tables in the StayWell database.",
+        "options": [],
+        "correctAnswer": "",
+        "explanation": "This question is open-ended, requiring the user to provide descriptions of the tables within the StayWell database. These tables might include entities such as Patients, Appointments, Medications, or Billing."
+    },
+    {
+        "text": "Which function determines the number of rows in a table?",
+        "options": [
+            "a. ROW",
+            "b. NUMBER",
+            "c. CALCULATE",
+            "d. COUNT"
+        ],
+        "correctAnswer": "d. COUNT",
+        "explanation": "The COUNT function is used in SQL to return the number of rows in a table or that match a specific condition."
+    },
+    {
+        "text": "The system catalog is also called the _____.",
+        "options": [
+            "a. data dictionary",
+            "b. system database",
+            "c. transaction database",
+            "d. master data table"
+        ],
+        "correctAnswer": "a. data dictionary",
+        "explanation": "The data dictionary, also known as the system catalog, stores metadata about the database, such as table structures and constraints."
+    },
+    {
+        "text": "What function can you use to obtain today’s date in MySQL?",
+        "options": [
+            "a. TODAYS_DATE()",
+            "b. CURDATE()",
+            "c. CURRENT_DATE()",
+            "d. DATE()"
+        ],
+        "correctAnswer": "b. CURDATE()",
+        "explanation": "The CURDATE() function in MySQL returns the current date in 'YYYY-MM-DD' format."
+    },
+    {
+        "text": "Describe the format for the UPDATE command.",
+        "options": [],
+        "correctAnswer": "",
+        "explanation": "The basic syntax for the UPDATE command is:\n\n<pre><code>UPDATE table_name\nSET column1 = value1, column2 = value2, ...\nWHERE condition;</code></pre>\n\nThe WHERE clause is optional but recommended to ensure only specific rows are updated."
+    },
+    {
+        "text": "In which type of join are all rows from the table listed first in the query included, regardless of whether they match rows from the table listed second in the query?",
+        "options": [
+            "a. right inner join",
+            "b. left outer join",
+            "c. right outer join",
+            "d. left inner join"
+        ],
+        "correctAnswer": "b. left outer join",
+        "explanation": "A left outer join returns all rows from the first (left) table, even if there are no matching rows in the second (right) table."
+    },
+    {
+        "text": "You can use the IN operator to retrieve data from multiple tables.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "explanation": "The IN operator is used to filter a column’s values based on a list but is not intended to retrieve data from multiple tables."
+    },
+    {
+        "text": "Which general guideline for naming identifiers should you follow when creating a database and adding objects to it?",
+        "options": [
+            "a. Begin the identifier with a number.",
+            "b. Make identifiers at least 35 characters long.",
+            "c. Use spaces to separate words.",
+            "d. Include letters, numbers, and/or underscores."
+        ],
+        "correctAnswer": "d. Include letters, numbers, and/or underscores.",
+        "explanation": "A good practice is to use alphanumeric characters and underscores, avoiding spaces or starting with numbers to ensure compatibility across systems."
+    },
+    {
+        "text": "A relation that does not contain any repeating groups is in _____.",
+        "options": [
+            "a. Boyce-Codd normal form",
+            "b. third normal form",
+            "c. first normal form",
+            "d. second normal form"
+        ],
+        "correctAnswer": "c. first normal form",
+        "explanation": "First normal form (1NF) ensures that there are no repeating groups or arrays within tables, and each cell contains a single value."
+    },
+    {
+        "text": "When a StayWell property is owned by more than one person, the OWNER table includes _____.",
+        "options": [
+            "a. a group ID instead of an owner ID",
+            "b. an owner ID for each person",
+            "c. only the primary contact",
+            "d. a row for each individual owner"
+        ],
+        "correctAnswer": "d. a row for each individual owner",
+        "explanation": "In relational databases, each owner would typically have their own row to ensure normalization and proper tracking of ownership."
+    },
+    {
+        "text": "A database can be readily updated through a view when that view is derived from joining two base tables on a shared _____.",
+        "options": [
+            "a. primary key",
+            "b. row-column",
+            "c. index",
+            "d. foreign key"
+        ],
+        "correctAnswer": "a. primary key",
+        "explanation": "A view can be updated if it is based on a join with a shared primary key, as this ensures consistency across tables."
+    },
+    {
+        "text": "Which is the correct sequence of elements for a SQL command that will change a value in an existing table row?",
+        "options": [
+            "a. UPDATE, table name, SELECT, column name, SET, new value",
+            "b. SELECT, table name, UPDATE, column name, equal sign, new value",
+            "c. IN, table name dot column name, SET, equal sign, new value",
+            "d. UPDATE, table name, SET, column name, equal sign, new value"
+        ],
+        "correctAnswer": "d. UPDATE, table name, SET, column name, equal sign, new value",
+        "explanation": "The correct syntax for updating a row in SQL is: UPDATE table_name SET column_name = new_value WHERE condition."
+    },
+    {
+        "text": "James converts a table with this notation:\n\n<pre><code>INVOICES (INVOICE_NUM, INVOICE_DATE, (ITEM_ID, QUANTITY))</code></pre>\n\ninto a table with this notation:\n\n<pre><code>INVOICES (INVOICE_NUM, INVOICE_DATE, ITEM_ID, QUANTITY)</code></pre>\n\nJames has _____.",
+        "options": [
+            "a. converted an unnormalized relation into a table in first normal form",
+            "b. converted a table in first normal form into a table in second normal form",
+            "c. added a repeating group to a table",
+            "d. made the table design worse"
+        ],
+        "correctAnswer": "a. converted an unnormalized relation into a table in first normal form",
+        "explanation": "The conversion eliminates repeating groups, which is a requirement for a table to meet the conditions of first normal form (1NF)."
+    },
+    {
+        "text": "How can you correct errors in data?",
+        "options": [],
+        "correctAnswer": "",
+        "explanation": "This is an open-ended question. Correcting data errors typically involves updating incorrect values using SQL commands like <pre><code>UPDATE</code></pre>, applying data validation rules, or running consistency checks to identify and rectify mismatches."
+    },
+    {
+        "text": "To display all the rows and columns in a table, type the word SELECT, followed by aNo _____, followed by the keyword FROM and then the name of the table containing the data you want to view.",
+        "options": [
+            "a. double quote",
+            "b. single quote",
+            "c. slash",
+            "d. asterisk"
+        ],
+        "correctAnswer": "d. asterisk",
+        "explanation": "An asterisk (*) is used in SQL to select all columns from a table: <pre><code>SELECT * FROM table_name;</code></pre>"
+    },
+    {
+        "text": "Diamonds are sometimes used in E-R diagrams to _____.",
+        "options": [
+            "a. indicate which entity is on the 'many' side of a one-to-many relationship",
+            "b. represent individual tables",
+            "c. identify the names of entities in a database",
+            "d. describe the relationship between two tables"
+        ],
+        "correctAnswer": "d. describe the relationship between two tables",
+        "explanation": "In an Entity-Relationship (E-R) diagram, diamonds are used to represent relationships between entities, describing how the entities interact."
+    },
+    {
+        "text": "Why does the POSTAL_CODE column in the REP table of the KimTay database have a data type of CHAR, if a postal code is made up of numbers?",
+        "options": [],
+        "correctAnswer": "",
+        "explanation": "This is an open-ended question. In many cases, postal codes are stored as CHAR because they may include leading zeros or non-numeric characters, such as dashes or spaces, which are not treated properly by numeric data types."
+    },
+    {
+        "text": "Which statement about nested queries in SQL is FALSE?",
+        "options": [
+            "a. A nested query is a subquery within a subquery.",
+            "b. Typically, nested subqueries perform faster than queries that join tables.",
+            "c. In small databases, there is not a significant time difference between nested subqueries and table joins.",
+            "d. Executing each subquery in a nested query produces a temporary table."
+        ],
+        "correctAnswer": "b. Typically, nested subqueries perform faster than queries that join tables.",
+        "explanation": "Joins are generally more optimized than nested subqueries, especially in large datasets, because they are processed more efficiently by relational databases."
+    },
+    {
+        "text": "In an entity-relationship (E-R) diagram, tables are represented by _____.",
+        "options": [
+            "a. circles",
+            "b. ovals",
+            "c. diamonds",
+            "d. rectangles"
+        ],
+        "correctAnswer": "d. rectangles",
+        "explanation": "In E-R diagrams, entities (which often map to tables) are represented by rectangles, while relationships are represented by diamonds."
+    },
+    {
+        "text": "Each line in a KimTay invoice contains an item ID, the number of units of the item ordered, the quoted price, and ____.",
+        "options": [
+            "a. the customer ID",
+            "b. an item description",
+            "c. an office location",
+            "d. the wholesale price"
+        ],
+        "correctAnswer": "b. an item description",
+        "explanation": "Invoices typically contain an item description to provide details about the product or service associated with each line item."
+    },
+    {
+        "text": "You cannot use functions in WHERE clauses.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "explanation": "SQL allows the use of functions like <pre><code>UPPER()</code></pre>, <pre><code>LOWER()</code></pre>, and <pre><code>DATEDIFF()</code></pre> in WHERE clauses to filter query results."
+    },
+    {
+        "text": "List three practical issues that would need to be dealt with if the INVOICES table and the INVOICE_LINE table in the KimTay database were combined.",
+        "options": [],
+        "correctAnswer": "",
+        "explanation": "This is an open-ended question. Issues could include redundancy of data, increased complexity in data updates, and loss of normalization, leading to inconsistent records."
+    },
+    {
+        "text": "When you need to sort data on two columns, the less important column is called the _____.",
+        "options": [
+            "a. double sort key",
+            "b. minor sort key",
+            "c. primary sort key",
+            "d. foreign sort key"
+        ],
+        "correctAnswer": "b. minor sort key",
+        "explanation": "The minor sort key is the secondary column used for sorting when multiple columns are involved. The primary sort key takes precedence."
+    },
+    {
+        "text": "Applying the function ROUND(PRICE,0) to the price 24.95 results in 24.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "explanation": "The <pre><code>ROUND()</code></pre> function rounds 24.95 to 25, as it rounds to the nearest whole number when the decimal part is 0.5 or greater."
+    },
+    {
+        "text": "Which command do you use to write a procedure that should be executed automatically when a certain database operation is performed?",
+        "options": [
+            "a. CREATE TRIGGER",
+            "b. SET AFTER",
+            "c. SET ON UPDATE",
+            "d. CREATE PROCEDURE"
+        ],
+        "correctAnswer": "a. CREATE TRIGGER",
+        "explanation": "The <pre><code>CREATE TRIGGER</code></pre> command creates a trigger that automatically executes a predefined action in response to a specified event on a table."
+    },
+    {
+        "text": "When renaming columns for a view, you include the new column names in _____ following the name of the view.",
+        "options": [
+            "a. single quotes",
+            "b. parentheses",
+            "c. square brackets",
+            "d. double quotes"
+        ],
+        "correctAnswer": "b. parentheses",
+        "explanation": "In SQL, when renaming columns in a view, the new names are enclosed in parentheses after the view name."
+    },
+    {
+        "text": "What steps should you take to construct the SQL command to join (relate) tables?",
+        "options": [],
+        "correctAnswer": "",
+        "explanation": "This is an open-ended question. The steps include: 1) Identifying the common column(s) between the tables, 2) Deciding on the type of join (INNER, LEFT, RIGHT, etc.), and 3) Writing the SQL command using the JOIN clause, followed by the ON clause to specify the join condition."
+    },
+    {
+        "text": "You can use the APPEND command to add additional rows to tables.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "explanation": "SQL uses the <pre><code>INSERT</code></pre> command to add new rows to tables. There is no APPEND command in standard SQL."
+    },
+    {
+        "text": "Imagine you are working with a MySQL table called LIBRARY_MEMBERS that includes the following columns: MEMBER_ID, MOBILE_NUMBER, MAX_BOOKS (the maximum number of books that member can check out at one time), and BOOKS_CHECKED_OUT (the number of books currently checked out). Write a SQL query that will display a grid including the MEMBER_ID for all rows plus a column called CAN_CHECK_OUT that indicates how many more books that library member must check out to reach his or her maximum.",
+        "options": [],
+        "correctAnswer": "",
+        "explanation": "The query could be written as:\n\n<pre><code>SELECT MEMBER_ID, (MAX_BOOKS - BOOKS_CHECKED_OUT) AS CAN_CHECK_OUT\nFROM LIBRARY_MEMBERS;</code></pre>\n\nThis query calculates the remaining books each member can borrow by subtracting the number of books currently checked out from the maximum allowed."
+    },
+    {
+        "text": "Adding rows to a view is most troublesome for the view user when that view contains _____.",
+        "options": [
+            "a. data from more than one base table",
+            "b. statistics calculated from base tables",
+            "c. more than five columns",
+            "d. a base table's primary key"
+        ],
+        "correctAnswer": "a. data from more than one base table",
+        "explanation": "Inserting data into a view is difficult if it involves multiple base tables, as the SQL engine might not know how to distribute the new data across the underlying tables."
+    }
+]
+}
