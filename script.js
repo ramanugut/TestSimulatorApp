@@ -317,23 +317,48 @@ document.addEventListener("DOMContentLoaded", function () {
       questionTextElement.innerHTML = `${actualIndex + 1}. ${question.text}`;
       questionElement.appendChild(questionTextElement);
 
+      // Determine if the question has multiple correct answers
+      const isMultipleCorrect = Array.isArray(question.correctAnswer);
+
       if (question.options && question.options.length > 0) {
         const optionsList = document.createElement("ul");
         optionsList.classList.add("options");
+
         question.options.forEach((option) => {
           const optionElement = document.createElement("li");
           const optionId = `question-${actualIndex}-option-${option}`;
 
-          optionElement.innerHTML = `
-                    <label>
-                        <input type="radio" id="${optionId}" name="question-${actualIndex}" value="${option}">
-                        ${option}
-                    </label>
-                `;
+          // Use checkbox for multiple correct answers, radio button otherwise
+          const inputType = isMultipleCorrect ? "checkbox" : "radio";
 
-          const radioInput = optionElement.querySelector('input[type="radio"]');
-          radioInput.addEventListener("change", (event) => {
-            userAnswers[actualIndex] = event.target.value;
+          optionElement.innerHTML = `
+                  <label>
+                      <input type="${inputType}" id="${optionId}" name="question-${actualIndex}" value="${option}">
+                      ${option}
+                  </label>
+              `;
+
+          const input = optionElement.querySelector(
+            `input[type="${inputType}"]`
+          );
+          input.addEventListener("change", (event) => {
+            if (isMultipleCorrect) {
+              // Handle multiple selections
+              if (!Array.isArray(userAnswers[actualIndex])) {
+                userAnswers[actualIndex] = [];
+              }
+              if (event.target.checked) {
+                userAnswers[actualIndex].push(event.target.value);
+              } else {
+                userAnswers[actualIndex] = userAnswers[actualIndex].filter(
+                  (value) => value !== event.target.value
+                );
+              }
+            } else {
+              // Handle single selection
+              userAnswers[actualIndex] = event.target.value;
+            }
+
             updateProgress();
             if (!timerStarted) {
               startTimer();
@@ -344,18 +369,22 @@ document.addEventListener("DOMContentLoaded", function () {
             saveProgress();
           });
 
-          if (userAnswers[actualIndex] === option) {
-            radioInput.checked = true;
+          // Restore user selections
+          if (isMultipleCorrect && Array.isArray(userAnswers[actualIndex])) {
+            input.checked = userAnswers[actualIndex].includes(option);
+          } else if (userAnswers[actualIndex] === option) {
+            input.checked = true;
           }
 
           if (testSubmitted) {
-            radioInput.disabled = true;
+            input.disabled = true;
           }
 
           optionsList.appendChild(optionElement);
         });
         questionElement.appendChild(optionsList);
       } else {
+        // Handle questions without options (e.g., short answer questions)
         const inputElement = document.createElement("input");
         inputElement.type = "text";
         inputElement.name = `question-${actualIndex}`;
