@@ -9,7 +9,7 @@
             "c. commission rates",
             "d. invoice numbers"
         ],
-        "correctAnswer": "a. total sales",
+        "correctAnswer": "c. commission rates",
         "explanation": "In many business databases, the 'total sales' metric is commonly stored alongside other commission data for sales representatives to track performance."
     },
     {
@@ -109,7 +109,7 @@
         "text": "Name and briefly describe the tables in the StayWell database.",
         "options": [],
         "correctAnswer": "",
-        "explanation": "This question is open-ended, requiring the user to provide descriptions of the tables within the StayWell database. These tables might include entities such as Patients, Appointments, Medications, or Billing."
+        "explanation": "<p>The StayWell Student Accommodation database manages properties and services for student accommodation across two areas in Seattle: Columbia City and Georgetown. The company ensures smooth operation by storing information about properties, residents, owners, and services in a structured relational database.</p> <p>Staywell dabase consist of Office, Owner, Property,Service Category, Service Request and Residents</p>"
     },
     {
         "text": "Which function determines the number of rows in a table?",
@@ -190,7 +190,7 @@
             "d. second normal form"
         ],
         "correctAnswer": "c. first normal form",
-        "explanation": "First normal form (1NF) ensures that there are no repeating groups or arrays within tables, and each cell contains a single value."
+        "explanation": "<div><strong>1NF:</strong> Each column has one value, no lists; <strong>2NF:</strong> All non-key columns depend on the full primary key; <strong>3NF:</strong> All columns depend only on the primary key; <strong>BCNF:</strong> Information is determined by a candidate key; <strong>4NF:</strong> No multi-valued dependencies, store info separately.</div>"
     },
     {
         "text": "When a StayWell property is owned by more than one person, the OWNER table includes _____.",
@@ -243,7 +243,7 @@
         "explanation": "This is an open-ended question. Correcting data errors typically involves updating incorrect values using SQL commands like <pre><code>UPDATE</code></pre>, applying data validation rules, or running consistency checks to identify and rectify mismatches."
     },
     {
-        "text": "To display all the rows and columns in a table, type the word SELECT, followed by aNo _____, followed by the keyword FROM and then the name of the table containing the data you want to view.",
+        "text": "To display all the rows and columns in a table, type the word SELECT, followed by a(an) _____, followed by the keyword FROM and then the name of the table containing the data you want to view.",
         "options": [
             "a. double quote",
             "b. single quote",
@@ -268,7 +268,7 @@
         "text": "Why does the POSTAL_CODE column in the REP table of the KimTay database have a data type of CHAR, if a postal code is made up of numbers?",
         "options": [],
         "correctAnswer": "",
-        "explanation": "This is an open-ended question. In many cases, postal codes are stored as CHAR because they may include leading zeros or non-numeric characters, such as dashes or spaces, which are not treated properly by numeric data types."
+        "explanation": "CHAR:<br> <p><b>Fixed Length:<b> CHAR is a fixed-length data type. If you define a CHAR(n) column, it will always use n characters. If the actual string is shorter than n, it will be padded with spaces to the right.</p><p><b>Storage:</b> Uses a consistent amount of storage. For example, CHAR(5) always uses 5 bytes, regardless of the actual string length.</p> <p><b>Use Cases:</b> Best for storing data where the length is consistent, such as country codes, fixed-length IDs, etc.</p>"
     },
     {
         "text": "Which statement about nested queries in SQL is FALSE?",
@@ -316,7 +316,7 @@
         "text": "List three practical issues that would need to be dealt with if the INVOICES table and the INVOICE_LINE table in the KimTay database were combined.",
         "options": [],
         "correctAnswer": "",
-        "explanation": "This is an open-ended question. Issues could include redundancy of data, increased complexity in data updates, and loss of normalization, leading to inconsistent records."
+        "explanation": "<p><strong>1. Data Redundancy and Inconsistency:</strong> Problem: Each invoice with multiple line items would repeat the same invoice-related data (e.g., invoice number, invoice date, customer name) across multiple rows. Impact: This increases the likelihood of inconsistent data if one row's invoice-related information (like the date or customer name) is incorrectly modified without updating the others. <strong>2. Increased Storage and Maintenance Overhead:</strong> Problem: Storing repeated information (such as customer details and invoice numbers) across multiple rows wastes storage space. Impact: This could lead to inefficient data management because queries retrieving invoice details would process redundant data, impacting performance, especially as the table grows. <strong>3. Complicated Updates and Deletions:</strong> Problem: If invoice-level information (like changing the customer name or invoice date) needs to be updated, the system would need to update multiple rows. Impact: Update anomalies could occur if some rows are updated while others are not, leading to inconsistent or partial updates. Similarly, deleting an invoice would require deleting multiple rows, increasing the risk of errors. <strong>Summary:</strong> Combining the INVOICES and INVOICE_LINE tables would introduce the following issues: Data redundancy and inconsistency due to repeated invoice-related data. Increased storage and performance overhead from duplicated data. Complex updates and deletions, leading to update anomalies and errors.</p>"
     },
     {
         "text": "When you need to sort data on two columns, the less important column is called the _____.",
@@ -378,7 +378,7 @@
     {
         "text": "Imagine you are working with a MySQL table called LIBRARY_MEMBERS that includes the following columns: MEMBER_ID, MOBILE_NUMBER, MAX_BOOKS (the maximum number of books that member can check out at one time), and BOOKS_CHECKED_OUT (the number of books currently checked out). Write a SQL query that will display a grid including the MEMBER_ID for all rows plus a column called CAN_CHECK_OUT that indicates how many more books that library member must check out to reach his or her maximum.",
         "options": [],
-        "correctAnswer": "",
+        "correctAnswer": "SELECT MEMBER_ID, (MAX_BOOKS - BOOKS_CHECKED_OUT) AS CAN_CHECK_OUT FROM LIBRARY_MEMBERS;",
         "explanation": "The query could be written as:\n\n<pre><code>SELECT MEMBER_ID, (MAX_BOOKS - BOOKS_CHECKED_OUT) AS CAN_CHECK_OUT\nFROM LIBRARY_MEMBERS;</code></pre>\n\nThis query calculates the remaining books each member can borrow by subtracting the number of books currently checked out from the maximum allowed."
     },
     {
