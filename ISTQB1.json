@@ -1,0 +1,391 @@
+{
+    "testName": "ISTQB – Foundation Level Test1",
+    "questions": [
+        {
+            "text": "A company recently purchased a commercial off-the-shelf application to automate their bill-paying process. They now plan to run an acceptance test against the package prior to putting it into production. Which of the following is their most likely reason for testing?",
+            "options": [
+                "a. To build confidence in the application",
+                "b. To detect bugs in the application",
+                "c. To gather evidence for a lawsuit",
+                "d. To train the users"
+            ],
+            "correctAnswer": "b. To detect bugs in the application",
+            "explanation": "Acceptance testing is primarily conducted to identify any defects in the application before it goes live."
+        },
+        {
+            "text": "According to the ISTQB Syllabus, a risk relates to which of the following?",
+            "options": [
+                "a. Negative feedback to the tester",
+                "b. Negative consequences that will occur",
+                "c. Negative consequences that could occur",
+                "d. Negative consequences for the test object"
+            ],
+            "correctAnswer": "c. Negative consequences that could occur",
+            "explanation": "Risk in software testing refers to the potential for negative consequences that might arise."
+        },
+        {
+            "text": "According to the ISTQB Syllabus, the word ‘bug’ is synonymous with which of the following?",
+            "options": [
+                "a. Incident",
+                "b. Defect",
+                "c. Mistake",
+                "d. Error"
+            ],
+            "correctAnswer": "b. Defect",
+            "explanation": "In the context of ISTQB, a 'bug' is synonymous with a 'defect'."
+        },
+        {
+            "text": "Ensuring that test design starts during the requirements definition phase is important to enable which of the following test objectives?",
+            "options": [
+                "a. Preventing defects in the system",
+                "b. Finding defects through dynamic testing",
+                "c. Gaining confidence in the system",
+                "d. Finishing the project on time"
+            ],
+            "correctAnswer": "a. Preventing defects in the system",
+            "explanation": "Early test design helps in identifying and preventing defects during the requirements phase."
+        },
+        {
+            "text": "A test team consistently finds between 90% and 95% of the defects present in the system under test. While the test manager understands that this is a good defect-detection percentage for her test team and industry, senior management and executives remain disappointed in the test group, saying that the team misses too many bugs. Given that the users are generally happy with the system and that the failures which have occurred have generally been low impact, which of the following test principles is most likely to help the test manager to explain to these managers and executives why some defects are likely to be missed?",
+            "options": [
+                "a. Exhaustive testing is impossible",
+                "b. Defect clustering",
+                "c. Pesticide paradox",
+                "d. Absence-of-errors fallacy"
+            ],
+            "correctAnswer": "a. Exhaustive testing is impossible",
+            "explanation": "It's impossible to test all scenarios; hence, some defects may remain despite high detection rates."
+        },
+        {
+            "text": "Which of the following statements describe a valid test objective?",
+            "options": [
+                "a. To prove that there are no unfixed defects in the system under test",
+                "b. To prove that there will be no failures after the implementation of the system into production",
+                "c. To reduce the risk level of the test object and to build confidence in the quality level",
+                "d. To verify that there are no untested combinations of inputs"
+            ],
+            "correctAnswer": "c. To reduce the risk level of the test object and to build confidence in the quality level",
+            "explanation": "Valid test objectives focus on risk reduction and building confidence in the system's quality."
+        },
+        {
+            "text": "Which of the statements below is the best assessment of how the test principles apply across the test life cycle?",
+            "options": [
+                "a. Test principles only affect the preparation for testing",
+                "b. Test principles only affect test execution activities",
+                "c. Test principles affect the early test activities such as reviews",
+                "d. Test principles affect activities throughout the test life cycle"
+            ],
+            "correctAnswer": "d. Test principles affect activities throughout the test life cycle",
+            "explanation": "Test principles are applicable at all stages of the test life cycle, ensuring consistent quality and effectiveness."
+        },
+        {
+            "text": "Which of the following are MAJOR test implementation and execution tasks?\nI. Repeating test activities\nII. Creating test suites\nIII. Reporting discrepancies\nIV. Logging the outcome\nV. Analyzing lessons learned",
+            "options": [
+                "a. II, III and IV",
+                "b. I, III, IV and V",
+                "c. I, II, III and IV",
+                "d. III, IV and V"
+            ],
+            "correctAnswer": "c. I, II, III and IV",
+            "explanation": "Repeating test activities, creating test suites, reporting discrepancies, and logging outcomes are key implementation and execution tasks."
+        },
+        {
+            "text": "Which of the following is a KEY test control task",
+            "options": [
+                "a. Initiating corrective actions",
+                "b. Determining the scope",
+                "c. Implementing the test policy",
+                "d. Scheduling test implementation"
+            ],
+            "correctAnswer": "a. Initiating corrective actions",
+            "explanation": "Initiating corrective actions is essential for controlling the testing process and addressing issues."
+        },
+        {
+            "text": "Which of the following is a MAJOR task when evaluating the exit criteria?",
+            "options": [
+                "a. Creating test suites and cases for efficient execution",
+                "b. Writing a test summary report for stakeholders",
+                "c. Handing the testware to the maintenance organization",
+                "d. Identifying any required infrastructure and tools"
+            ],
+            "correctAnswer": "b. Writing a test summary report for stakeholders",
+            "explanation": "Evaluating exit criteria often involves summarizing and reporting the testing outcomes to stakeholders."
+        },
+        {
+            "text": "What would usually have a set of input values and execution conditions?",
+            "options": [
+                "a. Test basis",
+                "b. Test case",
+                "c. Test objective",
+                "d. Test control"
+            ],
+            "correctAnswer": "b. Test case",
+            "explanation": "A test case typically includes specific input values and execution conditions to validate functionality."
+        },
+        {
+            "text": "Which of the following is a MAJOR test planning task?",
+            "options": [
+                "a. Determining the exit criteria",
+                "b. Measuring and analyzing results",
+                "c. Implementing corrective actions",
+                "d. Monitoring and documenting progress"
+            ],
+            "correctAnswer": "a. Determining the exit criteria",
+            "explanation": "Determining exit criteria is crucial during test planning to define when testing is considered complete."
+        },
+        {
+            "text": "Which of the following is a KEY test closure task",
+            "options": [
+                "a. Ensuring proper environment setup",
+                "b. Writing a test summary report",
+                "c. Assessing the need for additional tests",
+                "d. Finalizing and archiving testware"
+            ],
+            "correctAnswer": "d. Finalizing and archiving testware",
+            "explanation": "Finalizing and archiving testware ensures that all test artifacts are properly stored for future reference."
+        },
+        {
+            "text": "Which one of the following is the BEST description of a test condition?",
+            "options": [
+                "a. An attribute of a component or system specified or implied by requirements documentation.",
+                "b. An aspect of the test basis that is relevant to achieve specific test objectives.",
+                "c. The capability of the software product to provide functions which meet stated and implied needs when the software is used under specified conditions.",
+                "d. The percentage of all single condition outcomes that independently affect a decision outcome that have been exercised by a test case suite."
+            ],
+            "correctAnswer": "b. An aspect of the test basis that is relevant to achieve specific test objectives.",
+            "explanation": "A test condition is derived from the test basis and is relevant to fulfilling specific test objectives."
+        },
+        {
+            "text": "Which of the following statements is a valid objective for testing?",
+            "options": [
+                "a. To determine whether enough component tests were executed within system testing.",
+                "b. To find as many failures as possible so that defects can be identified and corrected.",
+                "c. To prove that all possible defects are identified.",
+                "d. To prove that any remaining defects will not cause any failures."
+            ],
+            "correctAnswer": "b. To find as many failures as possible so that defects can be identified and corrected.",
+            "explanation": "A primary objective of testing is to uncover defects to improve the quality of the software."
+        },
+        {
+            "text": "Which of the following statements correctly describes the difference between testing and debugging?",
+            "options": [
+                "a. Testing identifies the source of defects; debugging analyzes the defects and proposes prevention activities.",
+                "b. Testing shows failures caused by defects; debugging finds, analyzes, and removes the causes of failures in the software.",
+                "c. Testing removes faults; debugging identifies the causes of failures.",
+                "d. Testing prevents the causes of failures; debugging removes the failures."
+            ],
+            "correctAnswer": "b. Testing shows failures caused by defects; debugging finds, analyzes, and removes the causes of failures in the software.",
+            "explanation": "Testing is the process of identifying failures, while debugging involves diagnosing and fixing the underlying issues."
+        },
+        {
+            "text": "Which one of the statements below describes a failure discovered during testing or in production?",
+            "options": [
+                "a. The product crashed when the user selected an option in a dialog box.",
+                "b. The wrong version of one source code file was included in the build.",
+                "c. The computation algorithm used the wrong input variables.",
+                "d. The developer misinterpreted the requirement for the algorithm."
+            ],
+            "correctAnswer": "a. The product crashed when the user selected an option in a dialog box.",
+            "explanation": "A failure occurs when the software does not perform as expected during execution."
+        },
+        {
+            "text": "Which of the following statements CORRECTLY describes one of the seven key principles of software testing?",
+            "options": [
+                "a. By using automated testing it is possible to test everything.",
+                "b. With sufficient effort and tool support, exhaustive testing is feasible for all software.",
+                "c. It is impossible to test all input and precondition combinations in a system.",
+                "d. The purpose of testing is to prove the absence of defects."
+            ],
+            "correctAnswer": "c. It is impossible to test all input and precondition combinations in a system.",
+            "explanation": "One key principle is that exhaustive testing is impractical; hence, risk-based testing is essential."
+        },
+        {
+            "text": "In what way can testing be part of Quality Assurance?",
+            "options": [
+                "a. It ensures that requirements are detailed enough.",
+                "b. It reduces the level of risk to the quality of the system.",
+                "c. It ensures that standards in the organization are followed.",
+                "d. It measures the quality of software in terms of number of executed test cases."
+            ],
+            "correctAnswer": "b. It reduces the level of risk to the quality of the system.",
+            "explanation": "Testing helps identify and mitigate risks, thereby enhancing the overall quality assurance process."
+        },
+        {
+            "text": "Which of the below tasks is performed during the test analysis activity of the ISTQB Test Process?",
+            "options": [
+                "a. Identifying any required infrastructure and tools.",
+                "b. Creating test suites from test procedures.",
+                "c. Analyzing lessons learned for process improvement.",
+                "d. Evaluating the test basis for testability."
+            ],
+            "correctAnswer": "d. Evaluating the test basis for testability.",
+            "explanation": "Test analysis involves examining the test basis to determine its suitability and testability."
+        },
+        {
+            "text": "Differentiate the following test work products (1-4) by mapping them to the right description (A-D).\n1. Test suite\n2. Test case\n3. Test script\n4. Test charter\nA. A group of test scripts or test execution schedule.\nB. A set of instructions for the automated execution of test procedures.\nC. Contains expected results.\nD. An event that could be verified.",
+            "options": [
+                "a. 1A, 2C, 3B, 4D.",
+                "b. 1D, 2B, 3A, 4C.",
+                "c. 1A, 2C, 3D, 4B.",
+                "d. 1D, 2C, 3B, 4A."
+            ],
+            "correctAnswer": "a. 1A, 2C, 3B, 4D.",
+            "explanation": "Mapping each work product to its correct description ensures clarity in test documentation."
+        },
+        {
+            "text": "Which of the following provides the BEST description of a test case?",
+            "options": [
+                "a. A document specifying a sequence of actions for the execution of a test. Also known as test script or manual test script",
+                "b. A set of input values and expected results, with execution preconditions and execution postconditions, developed for a particular test condition",
+                "c. An attribute of a system specified by requirements documentation (for example reliability, usability or design constraints) that is executed in a test",
+                "d. An item or event of a system that could be verified by one or more test conditions, e.g., a function, transaction, feature, quality attribute, or structural element"
+            ],
+            "correctAnswer": "b. A set of input values and expected results, with execution preconditions and execution postconditions, developed for a particular test condition",
+            "explanation": "A test case includes inputs, expected outcomes, and conditions for execution to validate specific functionality."
+        },
+        {
+            "text": "Which of the following is a major objective of testing?",
+            "options": [
+                "a. To prevent defects",
+                "b. To validate the project plan works as required",
+                "c. To gain confidence in the development team",
+                "d. To make release decisions for the system under test"
+            ],
+            "correctAnswer": "d. To make release decisions for the system under test",
+            "explanation": "Testing provides the necessary information to decide whether the system is ready for release."
+        },
+        {
+            "text": "Which of the following is an example of a failure in a car cruise control system?",
+            "options": [
+                "a. The developer of the system forgot to rename variables after a cut-and-paste operation",
+                "b. Unnecessary code that sounds an alarm when reversing was included in the system",
+                "c. The system stops maintaining a set speed when the radio volume is increased or decreased",
+                "d. The design specification for the system wrongly states speeds in km/h"
+            ],
+            "correctAnswer": "c. The system stops maintaining a set speed when the radio volume is increased or decreased",
+            "explanation": "A failure is when the system does not perform as intended during operation."
+        },
+        {
+            "text": "Which of the following is a defect rather than a root cause (in a fitness tracker)?",
+            "options": [
+                "a. Because he was unfamiliar with the domain of fitness training, the author of the requirements wrongly assumed that users wanted heartbeat in beats per hour",
+                "b. The tester of the smartphone interface had not been trained in state transition testing, so missed a major defect",
+                "c. An incorrect configuration variable included for the GPS function could cause location problems during daylight saving times",
+                "d. Because she had never worked on wearable devices before, the designer of the user interface misunderstood the effects of reflected sunlight"
+            ],
+            "correctAnswer": "c. An incorrect configuration variable included for the GPS function could cause location problems during daylight saving times",
+            "explanation": "A defect is an actual issue in the system, whereas root causes are underlying reasons for defects."
+        },
+        {
+            "text": "As a result of risk analysis, more testing is being directed to those areas of the system under test where initial testing found more defects than average. Which of the following testing principles is being applied?",
+            "options": [
+                "a. Beware of the pesticide paradox",
+                "b. Testing is context dependent",
+                "c. Absence-of-errors is a fallacy",
+                "d. Defects cluster together"
+            ],
+            "correctAnswer": "d. Defects cluster together",
+            "explanation": "Defect clustering suggests that defects are often found in specific areas, guiding focused testing efforts."
+        },
+        {
+            "text": "Given the following test activities and tasks:\na. Test design\nb. Test implementation\nc. Test execution\nd. Test completion\n1. Entering change requests for open defect reports\n2. Identifying test data to support the test cases\n3. Prioritizing test procedures and creating test data\n4. Analyzing discrepancies to determine their cause\nWhich of the following BEST matches the activities with the tasks?",
+            "options": [
+                "a. a-2, b-3, c-4, d-1",
+                "b. a-2, b-1, c-3, d-4",
+                "c. a-3, b-2, c-4, d-1",
+                "d. a-3, b-2, c-1, d-4"
+            ],
+            "correctAnswer": "c. a-3, b-2, c-4, d-1",
+            "explanation": "Test design involves prioritizing and creating test data, implementation involves identifying test data, execution involves analyzing discrepancies, and completion involves entering change requests."
+        },
+        {
+            "text": "Which of the following BEST describes how value is added by maintaining traceability between the test basis and test artifacts?",
+            "options": [
+                "a. Maintenance testing can be fully automated based on changes to the initial requirements",
+                "b. It is possible to determine if a new test case has increased coverage of the requirements",
+                "c. Test managers can identify which testers found the highest severity defects",
+                "d. Areas that may be impacted by side-effects of a change can be targeted by confirmation testing"
+            ],
+            "correctAnswer": "b. It is possible to determine if a new test case has increased coverage of the requirements",
+            "explanation": "Traceability ensures that all requirements are covered by test cases, allowing for assessment of coverage."
+        },
+        {
+            "text": "Which of the following options shows an example of test activities that contribute to success?",
+            "options": [
+                "a. Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products",
+                "b. Testers try not to disturb the developers while coding, so that the developers write better code",
+                "c. Testers collaborating with end users help to improve the quality of defect reports during component integration and system testing",
+                "d. Certified testers will design much better test cases than non-certified testers"
+            ],
+            "correctAnswer": "a. Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products",
+            "explanation": "Early and continuous involvement of testers in the SDLC enhances defect detection and product quality."
+        },
+        {
+            "text": "You have been assigned as a tester to a team producing a new system incrementally. You have noticed that no changes have been made to the existing regression test cases for several iterations and no new regression defects were identified. Your manager is happy, but you are not. Which testing principle explains your skepticism?",
+            "options": [
+                "a. Tests wear out",
+                "b. Absence-of-errors fallacy",
+                "c. Defects cluster together",
+                "d. Exhaustive testing is impossible"
+            ],
+            "correctAnswer": "a. Tests wear out",
+            "explanation": "Tests can become less effective over time if they are not updated to reflect changes in the system."
+        },
+        {
+            "text": "You work in a team that develops a mobile application for food ordering. In the current iteration the team decided to implement the payment functionality. Which of the following activities is a part of test analysis?",
+            "options": [
+                "a. Estimating that testing the integration with the payment service will take 8 person-days",
+                "b. Deciding that the team should test if it is possible to properly share payment between many users",
+                "c. Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid",
+                "d. Analyzing the discrepancy between the actual result and expected result after executing a test case that checks the process of payment with a credit card, and reporting a defect"
+            ],
+            "correctAnswer": "c. Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid",
+            "explanation": "Test analysis involves designing test cases and deriving test data based on techniques like BVA."
+        },
+        {
+            "text": "Which of the following factors (i-v) have SIGNIFICANT influence on the test process?\ni. The SDLC\nii. The number of defects detected in previous projects\niii. The identified product risks\niv. New regulatory requirements forcing formal white-box testing\nv. The test environment setup",
+            "options": [
+                "a. i, ii have significant influence; iii, iv, v have not",
+                "b. i, iii, iv have significant influence; ii, v have not",
+                "c. ii, iv, v have significant influence; i, iii have not",
+                "d. iii, v have significant influence; i, ii, iv have not"
+            ],
+            "correctAnswer": "b. i, iii, iv have significant influence; ii, v have not",
+            "explanation": "The SDLC, product risks, and regulatory requirements significantly impact the testing process."
+        },
+        {
+            "text": "Which TWO of the following tasks belong MAINLY to a testing role?",
+            "options": [
+                "a. Configure test environments",
+                "b. Maintain the product backlog",
+                "c. Design solutions to new requirements",
+                "d. Create the test plan",
+                "e. Report on achieved coverage"
+            ],
+            "correctAnswer": ["d. Create the test plan", "e. Report on achieved coverage"],
+            "explanation": "Creating test plans and reporting coverage are primary responsibilities of testers."
+        },
+        {
+            "text": "Which of the following skills (i-v) are the MOST important skills of a tester?\ni. Having domain knowledge\nii. Creating a product vision\niii. Being a good team player\niv. Planning and organizing the work of the team\nv. Critical thinking",
+            "options": [
+                "a. ii and iv are important; i, iii and v are not",
+                "b. i, iii and v are important; ii and iv are not",
+                "c. i, ii and v are important; iii and iv are not",
+                "d. iii and iv are important; i, ii and v are not"
+            ],
+            "correctAnswer": "b. i, iii and v are important; ii and iv are not",
+            "explanation": "Domain knowledge, teamwork, and critical thinking are essential skills for testers."
+        },
+        {
+            "text": "How is the whole team approach present in the interactions between testers and business representatives?",
+            "options": [
+                "a) Business representatives decide on test automation approaches",
+                "b) Testers help business representatives to define test strategy",
+                "c) Business representatives are not part of the whole team approach",
+                "d) Testers help business representatives to create suitable acceptance tests"
+            ],
+            "correctAnswer": "d. Testers help business representatives to create suitable acceptance tests",
+            "explanation": "Collaboration between testers and business representatives ensures that acceptance tests align with business requirements."
+        }
+    ]
+}

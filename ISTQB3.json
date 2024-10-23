@@ -1,0 +1,296 @@
+{
+    "testName": "ISTQB – Foundation Level Test 2.1",
+    "questions": [
+    {
+    "text": "Question #A1 (1 Point)\nYou were given a task to analyze and fix causes of failures in a new system to be released.\nWhich activity are you performing?\na) Debugging\nb) Software testing\nc) Requirement elicitation\nd) Defect management\nSelect ONE option.",
+    "options": [
+      "a) Debugging",
+      "b) Software testing",
+      "c) Requirement elicitation",
+      "d) Defect management"
+    ],
+    "correctAnswer": "a) Debugging",
+    "explanation": "Debugging involves analyzing and fixing the causes of failures in the system."
+  },
+  {
+    "text": "Question #A2 (1 Point)\nIn many software organizations the test department is called the Quality Assurance (QA) department. Is this sentence correct or not and why?\na) It is correct. Testing and QA mean exactly the same thing\nb) It is correct. These names can be used interchangeably because both testing and QA focus their activities on the same quality issues\nc) It is not correct. Testing is something more; testing includes all activities with regard to quality. QA focuses on quality-related processes\nd) It is not correct. QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects\nSelect ONE option.",
+    "options": [
+      "a) It is correct. Testing and QA mean exactly the same thing",
+      "b) It is correct. These names can be used interchangeably because both testing and QA focus their activities on the same quality issues",
+      "c) It is not correct. Testing is something more; testing includes all activities with regard to quality. QA focuses on quality-related processes",
+      "d) It is not correct. QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects"
+    ],
+    "correctAnswer": "d) It is not correct. QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects",
+    "explanation": "Quality Assurance (QA) encompasses processes and standards to ensure quality, while testing specifically focuses on evaluating the system's functionality and detecting defects."
+  },
+  {
+    "text": "Question #A3 (1 Point)\nA phone ringing in a neighboring cubicle distracts a programmer causing him to improperly program the logic that checks the upper boundary of an input variable. Later, during system testing, a tester notices that this input field accepts invalid input values.\nWhich of the following correctly describes an incorrectly coded upper bound?\na) The root cause\nb) A failure\nc) An error\nd) A defect\nSelect ONE option.",
+    "options": [
+      "a) The root cause",
+      "b) A failure",
+      "c) An error",
+      "d) A defect"
+    ],
+    "correctAnswer": "c) An error",
+    "explanation": "An incorrectly coded upper bound is classified as an error, which is a mistake made by the developer. The resulting acceptance of invalid input values is considered a defect."
+  },
+  {
+    "text": "Question #A4 (1 Point)\nConsider the following testware.\n\n<table border='1' cellpadding='5' cellspacing='0'>\n  <tr>\n    <th colspan='2'>Test Charter #04.018</th>\n    <th>Session time: 1h</th>\n  </tr>\n  <tr>\n    <td>Explore:</td>\n    <td colspan='2'>Registration page</td>\n  </tr>\n  <tr>\n    <td>With:</td>\n    <td colspan='2'>Different sets of incorrect input data</td>\n  </tr>\n  <tr>\n    <td>To discover:</td>\n    <td colspan='2'>Defects related to accepting the registration process with the incorrect input</td>\n  </tr>\n</table>\n\nWhich test activity produces this testware as an output?",
+    "options": [
+        "a) Test planning",
+        "b) Test monitoring and control",
+        "c) Test analysis",
+        "d) Test design"
+    ],
+    "correctAnswer": "c) Test analysis",
+    "explanation": "Test analysis involves analyzing requirements and designing tests, which leads to creating test charters like the one shown."
+}
+,
+  {
+    "text": "Question #A5 (1 Point)\nWhich of the following is the BEST example of how traceability supports testing?\na) Performing the impact analysis of a change will give information about the completion of the tests\nb) Analyzing the traceability between test cases and test results will give information about the estimated level of residual risk\nc) Performing the impact analysis of a change will help selecting the right test cases for regression testing\nd) Analyzing the traceability between the test basis, the test objects and the test cases will help in selecting test data to achieve the assumed coverage of the test object\nSelect ONE option.",
+    "options": [
+      "a) Performing the impact analysis of a change will give information about the completion of the tests",
+      "b) Analyzing the traceability between test cases and test results will give information about the estimated level of residual risk",
+      "c) Performing the impact analysis of a change will help selecting the right test cases for regression testing",
+      "d) Analyzing the traceability between the test basis, the test objects and the test cases will help in selecting test data to achieve the assumed coverage of the test object"
+    ],
+    "correctAnswer": "c) Performing the impact analysis of a change will help selecting the right test cases for regression testing",
+    "explanation": "Traceability allows mapping changes to specific test cases, which is crucial for effective regression testing."
+  },
+  {
+    "text": "Question #A6 (1 Point)\nWhich of the following BEST explains a benefit of independence of testing?\na) The use of an independent test team allows project management to assign responsibility for the quality of the final deliverable to the test team\nb) If a test team external to the organization can be afforded, then there are distinct benefits in terms of this external team not being so easily swayed by the delivery concerns of project management and the need to meet strict delivery deadlines\nc) An independent test team can work separately from the developers, need not be distracted with project requirement changes, and can restrict communication with the developers to defect reporting through the defect management system\nd) When specifications contain ambiguities and inconsistencies, assumptions are made on their interpretation, and an independent tester can be useful in questioning those assumptions and the interpretation made by the developer\nSelect ONE option.",
+    "options": [
+      "a) The use of an independent test team allows project management to assign responsibility for the quality of the final deliverable to the test team",
+      "b) If a test team external to the organization can be afforded, then there are distinct benefits in terms of this external team not being so easily swayed by the delivery concerns of project management and the need to meet strict delivery deadlines",
+      "c) An independent test team can work separately from the developers, need not be distracted with project requirement changes, and can restrict communication with the developers to defect reporting through the defect management system",
+      "d) When specifications contain ambiguities and inconsistencies, assumptions are made on their interpretation, and an independent tester can be useful in questioning those assumptions and the interpretation made by the developer"
+    ],
+    "correctAnswer": "d) When specifications contain ambiguities and inconsistencies, assumptions are made on their interpretation, and an independent tester can be useful in questioning those assumptions and the interpretation made by the developer",
+    "explanation": "Independent testers provide an unbiased perspective, helping to identify and question assumptions and interpretations, thus enhancing quality."
+  },
+  {
+    "text": "Question #A7 (1 Point)\nYou are working as a tester in the team that follows the V-model. Which of the following activities CAN be performed in the initial phases of the SDLC?\na) Dynamic test execution\nb) Static testing\nc) Test planning\nd) Acceptance test execution\ne) Maintenance testing\nSelect TWO options.",
+    "options": [
+      "a) Dynamic test execution",
+      "b) Static testing",
+      "c) Test planning",
+      "d) Acceptance test execution",
+      "e) Maintenance testing"
+    ],
+    "correctAnswer": "b) Static testing and c) Test planning",
+    "explanation": "Static testing and test planning are activities typically performed in the initial phases of the SDLC, especially in the V-model."
+  },
+  {
+    "text": "Question #A8 (1 Point)\nWhich of the following are advantages of DevOps?\ni. Faster product release and faster time to market\nii. Increases the need for repetitive manual testing\niii. Constant availability of executable software\niv. Reduction in the number of regression tests associated with code refactoring\nv. Setting up the test automation framework is inexpensive since everything is automated\na) i, ii, iv are advantages\nb) iii, v are advantages\nc) i, iii are advantages\nd) ii, iv, v are advantages\nSelect ONE option.",
+    "options": [
+      "a) i, ii, iv are advantages",
+      "b) iii, v are advantages",
+      "c) i, iii are advantages",
+      "d) ii, iv, v are advantages"
+    ],
+    "correctAnswer": "c) i, iii are advantages",
+    "explanation": "DevOps leads to faster releases and constant availability of executable software. It may reduce the need for manual testing through automation, but setting up automation frameworks can be costly."
+  },
+  {
+    "text": "Question #A9 (1 Point)\nYou work as a tester in a project on a mobile application for food ordering for one of your clients. The client sent you a list of requirements. One of them, with high priority, says\n“The order must be processed in less than 10 seconds in 95% of the cases”.\nYou created a set of test cases in which a number of random orders were made, the processing time measured, and the test results were checked against the requirements.\nWhat test type did you perform?\na) Functional, because the test cases cover the user’s business requirement for the system\nb) Non-functional, because they measure the system’s performance\nc) Functional, because the test cases interact with the user interface\nd) Structural, because we need to know the internal structure of the program to measure the order processing time\nSelect ONE option.",
+    "options": [
+      "a) Functional, because the test cases cover the user’s business requirement for the system",
+      "b) Non-functional, because they measure the system’s performance",
+      "c) Functional, because the test cases interact with the user interface",
+      "d) Structural, because we need to know the internal structure of the program to measure the order processing time"
+    ],
+    "correctAnswer": "b) Non-functional, because they measure the system’s performance",
+    "explanation": "Measuring processing time relates to performance, which is a non-functional aspect."
+  },
+  {
+    "text": "Question #A10 (1 Point)\nYour organization’s test strategy suggests that once a system is going to be retired, data migration shall be tested. As part of what test type is this testing MOST likely to be performed?\na) Maintenance testing\nb) Regression testing\nc) Component testing\nd) Integration testing\nSelect ONE option.",
+    "options": [
+      "a) Maintenance testing",
+      "b) Regression testing",
+      "c) Component testing",
+      "d) Integration testing"
+    ],
+    "correctAnswer": "a) Maintenance testing",
+    "explanation": "Testing activities related to retiring a system, such as data migration, fall under maintenance testing."
+  },
+  {
+    "text": "Question #A11 (1 Point)\nThe following is a list of the work products produced in the SDLC.\ni. Business requirements\nii. Schedule\niii. Test budget\niv. Third-party executable code\nv. User stories and their acceptance criteria\n\nWhich of them can be reviewed?\na) i and iv can be reviewed\nb) i, ii, iii and iv can be reviewed\nc) i, ii, iii, and v can be reviewed\nd) iii, iv, v can be reviewed\nSelect ONE option.",
+    "options": [
+      "a) i and iv can be reviewed",
+      "b) i, ii, iii and iv can be reviewed",
+      "c) i, ii, iii, and v can be reviewed",
+      "d) iii, iv, v can be reviewed"
+    ],
+    "correctAnswer": "c) i, ii, iii, and v can be reviewed",
+    "explanation": "Business requirements, schedule, test budget, and user stories can be reviewed. Third-party executable code typically cannot be reviewed by the internal team."
+  },
+  {
+    "text": "Question #A12 (1 Point)\nDecide which of the following statements (i-v) are true for static testing.\ni. Abnormal external behaviors are easier to identify with this testing\nii. Discrepancies from a coding standard are easier to find with this testing\niii. It identifies failures caused by defects when the software is run\niv. Its test objective is to identify defects as early as possible\nv. Missing coverage for critical security requirements is easier to find and fix\na) i, iv, v are true for static testing\nb) i, iii, iv are true for static testing\nc) ii, iii are true for static testing\nd) ii, iv, v are true for static testing\nSelect ONE option.",
+    "options": [
+      "a) i, iv, v are true for static testing",
+      "b) i, iii, iv are true for static testing",
+      "c) ii, iii are true for static testing",
+      "d) ii, iv, v are true for static testing"
+    ],
+    "correctAnswer": "d) ii, iv, v are true for static testing",
+    "explanation": "Static testing helps identify discrepancies from coding standards, aims to find defects early, and can detect missing security requirements. Abnormal external behaviors and runtime failures are not typically identified through static testing."
+  },
+  {
+    "text": "Question #A13 (1 Point)\nWhich of the following statements about formal reviews is TRUE?\na) Some reviews do not require more than one role\nb) The review process has several activities\nc) Documentation to be reviewed is not distributed before the review meeting, with the exception of the work product for specific review types\nd) Defects found during the review are not reported since they are not found by dynamic testing\nSelect ONE option.",
+    "options": [
+      "a) Some reviews do not require more than one role",
+      "b) The review process has several activities",
+      "c) Documentation to be reviewed is not distributed before the review meeting, with the exception of the work product for specific review types",
+      "d) Defects found during the review are not reported since they are not found by dynamic testing"
+    ],
+    "correctAnswer": "b) The review process has several activities",
+    "explanation": "Formal reviews consist of multiple activities, such as planning, individual preparation, review meetings, defect identification, and reporting."
+  },
+  {
+    "text": "Question #A14 (1 Point)\nWhat task may management take on during a formal review?\na) Taking overall responsibility for the review\nb) Deciding what is to be reviewed\nc) Ensuring the effective running of review meetings, and mediating, if necessary\nd) Recording review information such as review decisions\nSelect ONE option.",
+    "options": [
+      "a) Taking overall responsibility for the review",
+      "b) Deciding what is to be reviewed",
+      "c) Ensuring the effective running of review meetings, and mediating, if necessary",
+      "d) Recording review information such as review decisions"
+    ],
+    "correctAnswer": "c) Ensuring the effective running of review meetings, and mediating, if necessary",
+    "explanation": "Management typically oversees and facilitates the review process to ensure it runs smoothly and any issues are mediated appropriately."
+  },
+  {
+    "text": "Question #A15 (1 Point)\nA wine storage system uses a control device that measures the wine cell temperature T (measured in °C, rounded to the nearest degree) and alarms the user if it deviates from the optimal value of 12, according to the following rules:\n• if T = 12, the system says, “optimal temperature”\n• if T < 12, the system says, “temperature is too low!”\n• if T > 12, the system says, “temperature is too high!”\n\nYou want to use the 3-point boundary value analysis (BVA) to verify the behavior of the control device. A test input is a temperature in °C provided by the device.\n\nWhat is the MINIMAL set of test inputs that achieves 100% of the desired coverage?\na) 11, 12, 13\nb) 10, 12, 14\nc) 10, 11, 12, 13, 14\nd) 10, 11, 13, 14\nSelect ONE option.",
+    "options": [
+      "a) 11, 12, 13",
+      "b) 10, 12, 14",
+      "c) 10, 11, 12, 13, 14",
+      "d) 10, 11, 13, 14"
+    ],
+    "correctAnswer": "a) 11, 12, 13",
+    "explanation": "Using 3-point BVA, you test the boundary value (12) and its immediate neighbors (11 and 13) to cover all scenarios."
+  },
+  {
+    "text": "Question #A16 (1 Point)\nWhich of the following statements about branch testing is CORRECT?\na) If a program includes only unconditional branches, then 100% branch coverage can be achieved without executing any test cases\nb) If the test cases exercise all unconditional branches in the code, then 100% branch coverage is achieved\nc) If 100% statement coverage is achieved, then 100% branch coverage is also achieved\nd) If 100% branch coverage is achieved, then all decision outcomes in each decision statement in the code are exercised\nSelect ONE option.",
+    "options": [
+      "a) If a program includes only unconditional branches, then 100% branch coverage can be achieved without executing any test cases",
+      "b) If the test cases exercise all unconditional branches in the code, then 100% branch coverage is achieved",
+      "c) If 100% statement coverage is achieved, then 100% branch coverage is also achieved",
+      "d) If 100% branch coverage is achieved, then all decision outcomes in each decision statement in the code are exercised"
+    ],
+    "correctAnswer": "d) If 100% branch coverage is achieved, then all decision outcomes in each decision statement in the code are exercised",
+    "explanation": "Branch coverage ensures that every possible path (true and false) in each decision statement is executed."
+  },
+  {
+    "text": "Question #A17 (1 Point)\nYou are testing a mobile application that allows customers to access and manage their bank accounts. You are running a test suite that involves evaluating each screen, and each field on each screen, against a general list of user interface best practices derived from a popular book on the topic that maximizes attractiveness, ease-of-use, and accessibility for such applications. Which of the following options BEST categorizes the test technique you are using?\na) Black-box\nb) Exploratory\nc) Checklist-based\nd) Error guessing\nSelect ONE option.",
+    "options": [
+      "a) Black-box",
+      "b) Exploratory",
+      "c) Checklist-based",
+      "d) Error guessing"
+    ],
+    "correctAnswer": "c) Checklist-based",
+    "explanation": "Using a predefined list of best practices to evaluate the UI aligns with checklist-based testing."
+  },
+  {
+    "text": "Question #A18 (1 Point)\nWhich of the following BEST describe the collaborative approach to user story writing?\na) User stories are created by testers and developers and then accepted by business representatives\nb) User stories are created by business representatives, developers, and testers together\nc) User stories are created by business representatives and verified by developers and testers\nd) User stories are created in a way that they are independent, negotiable, valuable, estimable, small, and testable\nSelect ONE option.",
+    "options": [
+      "a) User stories are created by testers and developers and then accepted by business representatives",
+      "b) User stories are created by business representatives, developers, and testers together",
+      "c) User stories are created by business representatives and verified by developers and testers",
+      "d) User stories are created in a way that they are independent, negotiable, valuable, estimable, small, and testable"
+    ],
+    "correctAnswer": "b) User stories are created by business representatives, developers, and testers together",
+    "explanation": "A collaborative approach involves all relevant stakeholders, including business reps, developers, and testers, in creating user stories."
+  },
+  {
+    "text": "Question #A19 (1 Point)\nConsider the following part of a test plan.\nTesting will be performed using component testing and component integration testing. The regulations require to demonstrate that 100% branch coverage is achieved for each component classified as critical.\n\nWhich part of the test plan does this part belong to?\na) Communication\nb) Risk register\nc) Context of testing\nd) Test approach\nSelect ONE option.",
+    "options": [
+      "a) Communication",
+      "b) Risk register",
+      "c) Context of testing",
+      "d) Test approach"
+    ],
+    "correctAnswer": "d) Test approach",
+    "explanation": "This section outlines the testing strategies and coverage requirements, which are part of the test approach."
+  },
+  {
+    "text": "Question #A20 (1 Point)\nYour team uses planning poker to estimate the test effort for a newly required feature. There is a rule in your team that if there is no time to reach full agreement and the variation in the results is small, applying rules like “accept the number with the most votes” can be applied.\n\nAfter two rounds, the consensus was not reached, so the third round was initiated. You can see the test estimation results in the table below:\n\n<table border='1' cellpadding='5' cellspacing='0'>\n  <tr>\n    <th></th>\n    <th colspan='8'>Team members' estimations</th>\n  </tr>\n  <tr>\n    <td>Round 1</td>\n    <td>21</td>\n    <td>2</td>\n    <td>5</td>\n    <td>34</td>\n    <td>13</td>\n    <td>8</td>\n    <td>2</td>\n  </tr>\n  <tr>\n    <td>Round 2</td>\n    <td>13</td>\n    <td>8</td>\n    <td>8</td>\n    <td>34</td>\n    <td>13</td>\n    <td>8</td>\n    <td>5</td>\n  </tr>\n  <tr>\n    <td>Round 3</td>\n    <td>13</td>\n    <td>8</td>\n    <td>13</td>\n    <td>13</td>\n    <td>13</td>\n    <td>13</td>\n    <td>8</td>\n  </tr>\n</table>\n\nWhich of the following is the BEST example of the next step?",
+    "options": [
+        "a) The product owner has to step in and make a final decision",
+        "b) Accept 13 as the final test estimate as this has most of the votes",
+        "c) No further action is needed. Consensus has been reached",
+        "d) Remove the new feature from the current release because consensus has not been reached"
+    ],
+    "correctAnswer": "b) Accept 13 as the final test estimate as this has most of the votes",
+    "explanation": "Since the majority of votes in the third round aligned on the estimate of 13, the team can accept it as the final estimate based on the pre-established rule."
+},
+  {
+    "text": "Question #A21 (1 Point)\nWhich of the following is TRUE regarding the test pyramid?\na) It emphasizes having far more tests at the lower test levels\nb) It suggests that each low-level test checks a large part of the functionality\nc) It describes distribution of test types across SDLC\nd) It has no impact on the construction of automated tests\nSelect ONE option.",
+    "options": [
+      "a) It emphasizes having far more tests at the lower test levels",
+      "b) It suggests that each low-level test checks a large part of the functionality",
+      "c) It describes distribution of test types across SDLC",
+      "d) It has no impact on the construction of automated tests"
+    ],
+    "correctAnswer": "a) It emphasizes having far more tests at the lower test levels",
+    "explanation": "The test pyramid advocates for a larger number of unit tests (lower levels) and fewer integration and system tests, promoting efficiency and effectiveness."
+  },
+  {
+    "text": "Question #A22 (1 Point)\nDuring risk analysis the team considered the following risk: “The system allows too high a discount for a customer”. The team estimated the risk impact to be very high.\nWhat can one say about the risk likelihood?\na) It is also very high. High risk impact always implies high risk likelihood\nb) It is very low. High risk impact always implies low risk likelihood\nc) One cannot say anything about risk likelihood. Risk impact and risk likelihood are independent.\nd) Risk likelihood is not important with such a high-risk impact. One does not need to define it.\nSelect ONE option.",
+    "options": [
+      "a) It is also very high. High risk impact always implies high risk likelihood",
+      "b) It is very low. High risk impact always implies low risk likelihood",
+      "c) One cannot say anything about risk likelihood. Risk impact and risk likelihood are independent.",
+      "d) Risk likelihood is not important with such a high-risk impact. One does not need to define it."
+    ],
+    "correctAnswer": "c) One cannot say anything about risk likelihood. Risk impact and risk likelihood are independent.",
+    "explanation": "Risk impact and likelihood are assessed separately. A high impact does not necessarily mean the likelihood is high."
+  },
+  {
+    "text": "Question #A23 (1 Point)\nThe following list contains risks that have been identified for a new software product to be developed:\ni. Management moves two experienced testers to another project\nii. The system does not comply with functional safety standards\niii. System response time exceeds user requirements\niv. Stakeholders have inaccurate expectations\nv. Disabled people have problems when using the system\n\nWhich of them are project risks?\na) i, iv are project risks\nb) iv, v are project risks\nc) i, iii are project risks\nd) ii, v are project risks\nSelect ONE option.",
+    "options": [
+      "a) i, iv are project risks",
+      "b) iv, v are project risks",
+      "c) i, iii are project risks",
+      "d) ii, v are project risks"
+    ],
+    "correctAnswer": "a) i, iv are project risks",
+    "explanation": "Project risks relate to project management aspects such as resource allocation (i) and stakeholder expectations (iv). Risks like compliance and system performance are product risks."
+  },
+  {
+    "text": "Question #A24 (1 Point)\nWhich of the following is an example of how product risk analysis influences thoroughness and scope of testing?\na) The test manager monitors and reports the level of all known risks on a daily basis so the stakeholders can make an informed decision on the release date\nb) One of the identified risks was \"Lack of support of open-source databases\", so the team decided to integrate the system with an open-source database\nc) During the quantitative risk analysis, the team estimated the total level of all identified risks and reported it as the total residual risk before testing\nd) Risk assessment revealed a very high level of performance risks, so it was decided to perform detailed performance efficiency testing early in the SDLC\nSelect ONE option.",
+    "options": [
+      "a) The test manager monitors and reports the level of all known risks on a daily basis so the stakeholders can make an informed decision on the release date",
+      "b) One of the identified risks was \"Lack of support of open-source databases\", so the team decided to integrate the system with an open-source database",
+      "c) During the quantitative risk analysis, the team estimated the total level of all identified risks and reported it as the total residual risk before testing",
+      "d) Risk assessment revealed a very high level of performance risks, so it was decided to perform detailed performance efficiency testing early in the SDLC"
+    ],
+    "correctAnswer": "d) Risk assessment revealed a very high level of performance risks, so it was decided to perform detailed performance efficiency testing early in the SDLC",
+    "explanation": "Identifying high performance risks leads to allocating more thorough and early testing efforts in that area to mitigate the risk."
+  },
+  {
+    "text": "Question #A25 (1 Point)\nWhich TWO of the following options are common metrics used for reporting on the quality level of the test object?\na) Number of defects found during system testing\nb) Total effort on test design divided by the number of designed test cases\nc) Number of executed test procedures\nd) Number of defects found divided by the size of a work product\ne) Time needed to repair a defect\nSelect TWO options.",
+    "options": [
+      "a) Number of defects found during system testing",
+      "b) Total effort on test design divided by the number of designed test cases",
+      "c) Number of executed test procedures",
+      "d) Number of defects found divided by the size of a work product",
+      "e) Time needed to repair a defect"
+    ],
+    "correctAnswer": "a) Number of defects found during system testing and d) Number of defects found divided by the size of a work product",
+    "explanation": "Common quality metrics include defect counts and defect density, which is defects per size of work product."
+  },
+  {
+    "text": "Question #A26 (1 Point)\nWhich of the following pieces of information contained in a test progress report is the LEAST useful for business representatives?\na) Impediments to testing\nb) Branch coverage achieved\nc) Test progress\nd) New risks within the test cycle\nSelect ONE option.",
+    "options": [
+      "a) Impediments to testing",
+      "b) Branch coverage achieved",
+      "c) Test progress",
+      "d) New risks within the test cycle"
+    ],
+    "correctAnswer": "b) Branch coverage achieved",
+    "explanation": "Branch coverage is a technical metric that is less relevant to business representatives, who are more interested in overall progress and risks."
+  }
+]
+          
+
+}

@@ -1,0 +1,451 @@
+{
+    "testName": "ISTQB – Foundation Level Test 2",
+    "questions": [
+        {
+            "text": "Question #1 (1 Point)\nWhich of the following statements describe a valid test objective?\na) To prove that there are no unfixed defects in the system under test\nb) To prove that there will be no failures after the implementation of the system into production\nc) To reduce the risk level of the test object and to build confidence in the quality level\nd) To verify that there are no untested combinations of inputs\nSelect ONE option.",
+            "options": [
+              "a) To prove that there are no unfixed defects in the system under test",
+              "b) To prove that there will be no failures after the implementation of the system into production",
+              "c) To reduce the risk level of the test object and to build confidence in the quality level",
+              "d) To verify that there are no untested combinations of inputs"
+            ],
+            "correctAnswer": "c) To reduce the risk level of the test object and to build confidence in the quality level",
+            "explanation": "Valid test objectives aim to reduce risk and build confidence in quality, rather than trying to prove no defects or failures exist."
+          },
+          {
+            "text": "Question #2 (1 Point)\nWhich of the following options shows an example of test activities that contribute to success?\na) Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products\nb) Testers try not to disturb the developers while coding, so that the developers write better code\nc) Testers collaborating with end users help to improve the quality of defect reports during component integration and system testing\nd) Certified testers will design much better test cases than non-certified testers\nSelect ONE option.",
+            "options": [
+              "a) Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products",
+              "b) Testers try not to disturb the developers while coding, so that the developers write better code",
+              "c) Testers collaborating with end users help to improve the quality of defect reports during component integration and system testing",
+              "d) Certified testers will design much better test cases than non-certified testers"
+            ],
+            "correctAnswer": "a) Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products",
+            "explanation": "Involving testers throughout SDLC activities helps detect defects early, contributing to the success of the project."
+          },
+          {
+            "text": "Question #3 (1 Point)\nYou have been assigned as a tester to a team producing a new system incrementally. You have noticed that no changes have been made to the existing regression test cases for several iterations and no new regression defects were identified. Your manager is happy, but you are not. Which testing principle explains your skepticism?\na) Tests wear out\nb) Absence-of-errors fallacy\nc) Defects cluster together\nd) Exhaustive testing is impossible\nSelect ONE option.",
+            "options": [
+              "a) Tests wear out",
+              "b) Absence-of-errors fallacy",
+              "c) Defects cluster together",
+              "d) Exhaustive testing is impossible"
+            ],
+            "correctAnswer": "b) Absence-of-errors fallacy",
+            "explanation": "The absence of new defects may give a false sense of security, indicating the absence-of-errors fallacy."
+          },
+          {
+            "text": "Question #4 (1 Point)\nYou work in a team that develops a mobile application for food ordering. In the current iteration the team decided to implement the payment functionality. Which of the following activities is a part of test analysis?\na) Estimating that testing the integration with the payment service will take 8 person-days\nb) Deciding that the team should test if it is possible to properly share payment between many users\nc) Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid\nd) Analyzing the discrepancy between the actual result and expected result after executing a test case that checks the process of payment with a credit card, and reporting a defect\nSelect ONE option.",
+            "options": [
+              "a) Estimating that testing the integration with the payment service will take 8 person-days",
+              "b) Deciding that the team should test if it is possible to properly share payment between many users",
+              "c) Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid",
+              "d) Analyzing the discrepancy between the actual result and expected result after executing a test case that checks the process of payment with a credit card, and reporting a defect"
+            ],
+            "correctAnswer": "c) Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid",
+            "explanation": "Test analysis involves deriving test cases and test data, such as using boundary value analysis."
+          },
+          {
+            "text": "Question #5 (1 Point)\nWhich of the following factors have a SIGNIFICANT influence on the test approach?\n\n<ol type='i'>\n  <li>The SDLC</li>\n  <li>The number of defects detected in previous projects</li>\n  <li>The identified product risks</li>\n  <li>New regulatory requirements forcing formal white-box testing</li>\n  <li>The test environment setup</li>\n</ol>\n\nSelect ONE option:",
+            "options": [
+                "a) i, ii have significant influence",
+                "b) i, iii, iv have significant influence",
+                "c) ii, iv, v have significant influence",
+                "d) iii, v have significant influence"
+            ],
+            "correctAnswer": "c) ii, iv, v have significant influence",
+            "explanation": "The number of defects, regulatory requirements, and the test environment are key factors that directly impact the test approach."
+        }
+        ,
+          {
+            "text": "Question #6 (1 Point)\nWhich TWO of the following tasks belong MAINLY to a testing role?\na) Configure test environments\nb) Maintain the product backlog\nc) Design solutions to new requirements\nd) Create the test plan\ne) Analyze the test basis\nSelect TWO options.",
+            "options": [
+              "a) Configure test environments",
+              "b) Maintain the product backlog",
+              "c) Design solutions to new requirements",
+              "d) Create the test plan",
+              "e) Analyze the test basis"
+            ],
+            "correctAnswer": "d) Create the test plan and e) Analyze the test basis",
+            "explanation": "Creating test plans and analyzing the test basis are primary testing tasks."
+          },
+          {
+            "text": "Question #7 (1 Point)\nWhich of the following skills (i-v) are the MOST important skills of a tester?\n\n<ol type='i'>\n  <li>Having domain knowledge</li>\n  <li>Creating a product vision</li>\n  <li>Being a good team player</li>\n  <li>Planning and organizing the work of the team</li>\n  <li>Critical thinking</li>\n</ol>\n\nSelect ONE option:",
+            "options": [
+                "a) ii and iv are important",
+                "b) i, iii and v are important",
+                "c) i, ii and v are important",
+                "d) iii and iv are important"
+            ],
+            "correctAnswer": "b) i, iii and v are important",
+            "explanation": "The most important skills for a tester include domain knowledge, teamwork, and critical thinking, as these directly contribute to understanding requirements, working effectively with the team, and identifying potential issues."
+        }
+        ,
+          {
+            "text": "Question #8 (1 Point)\nHow is the whole team approach present in the interactions between testers and business representatives?\na) Business representatives decide on test automation approaches\nb) Testers help business representatives to define test strategy\nc) Business representatives are not part of the whole team approach\nd) Testers help business representatives to create suitable acceptance tests\nSelect ONE option.",
+            "options": [
+              "a) Business representatives decide on test automation approaches",
+              "b) Testers help business representatives to define test strategy",
+              "c) Business representatives are not part of the whole team approach",
+              "d) Testers help business representatives to create suitable acceptance tests"
+            ],
+            "correctAnswer": "d) Testers help business representatives to create suitable acceptance tests",
+            "explanation": "Testers collaborating with business reps to create acceptance tests exemplifies a whole team approach."
+          },
+          {
+            "text": "Question #9 (1 Point)\nConsider the following rule: “for every SDLC activity there is a corresponding test activity”. In which SDLC models does this rule hold?\na) Only in sequential SDLC models\nb) Only in iterative SDLC models\nc) Only in iterative and incremental SDLC models\nd) In sequential, incremental, and iterative SDLC models\nSelect ONE option.",
+            "options": [
+              "a) Only in sequential SDLC models",
+              "b) Only in iterative SDLC models",
+              "c) Only in iterative and incremental SDLC models",
+              "d) In sequential, incremental, and iterative SDLC models"
+            ],
+            "correctAnswer": "d) In sequential, incremental, and iterative SDLC models",
+            "explanation": "The rule applies across different SDLC models including sequential, incremental, and iterative."
+          },
+          {
+            "text": "Question #10 (1 Point)\nWhich of the following statements BEST describes the acceptance test-driven development (ATDD) approach?\na) In ATDD, acceptance criteria are typically created based on the given/when/then format\nb) In ATDD, test cases are mainly created at component testing and are code-oriented\nc) In ATDD, tests are created, based on acceptance criteria to drive the development of the related software\nd) in ATDD, tests are based on the desired behavior of the software, which makes it easier for team members to understand them\nSelect ONE option.",
+            "options": [
+              "a) In ATDD, acceptance criteria are typically created based on the given/when/then format",
+              "b) In ATDD, test cases are mainly created at component testing and are code-oriented",
+              "c) In ATDD, tests are created, based on acceptance criteria to drive the development of the related software",
+              "d) in ATDD, tests are based on the desired behavior of the software, which makes it easier for team members to understand them"
+            ],
+            "correctAnswer": "c) In ATDD, tests are created, based on acceptance criteria to drive the development of the related software",
+            "explanation": "ATDD involves creating tests based on acceptance criteria to guide software development."
+          },
+          {
+            "text": "Question #11 (1 Point)\nWhich of the following is NOT an example of the shift left approach?\na) Reviewing the user requirements before they are formally accepted by the stakeholders\nb) Writing a component test before the corresponding code is written\nc) Executing a performance efficiency test for a component during component testing\nd) Writing a test script before setting up the configuration management process\nSelect ONE option.",
+            "options": [
+              "a) Reviewing the user requirements before they are formally accepted by the stakeholders",
+              "b) Writing a component test before the corresponding code is written",
+              "c) Executing a performance efficiency test for a component during component testing",
+              "d) Writing a test script before setting up the configuration management process"
+            ],
+            "correctAnswer": "d) Writing a test script before setting up the configuration management process",
+            "explanation": "Writing a test script before setting up configuration management is not directly related to the shift left approach."
+          },
+          {
+            "text": "Question #12 (1 Point)\nWhich of the arguments below would you use to convince your manager to organize retrospectives at the end of each release cycle?\na) Retrospectives are very popular these days and clients would appreciate it if we added them to our processes\nb) Organizing retrospectives will save the organization money because without them end user representatives do not provide immediate feedback about the product\nc) Process weaknesses identified during the retrospective can be analyzed and serve as a to do list for the organization’s continuous process improvement program\nd) Retrospectives embrace five values including courage and respect, which are crucial to maintain continuous improvement in the organization\nSelect ONE option.",
+            "options": [
+              "a) Retrospectives are very popular these days and clients would appreciate it if we added them to our processes",
+              "b) Organizing retrospectives will save the organization money because without them end user representatives do not provide immediate feedback about the product",
+              "c) Process weaknesses identified during the retrospective can be analyzed and serve as a to do list for the organization’s continuous process improvement program",
+              "d) Retrospectives embrace five values including courage and respect, which are crucial to maintain continuous improvement in the organization"
+            ],
+            "correctAnswer": "c) Process weaknesses identified during the retrospective can be analyzed and serve as a to do list for the organization’s continuous process improvement program",
+            "explanation": "Identifying and analyzing process weaknesses during retrospectives supports continuous improvement."
+          },
+          {
+            "text": "Question #13 (1 Point)\nWhich types of failures (1-4) fit which test levels (A-D) BEST?\n\n<ol>\n  <li>Failures in system behavior as it deviates from the user’s business needs</li>\n  <li>Failures in communication between components</li>\n  <li>Failures in logic in a module</li>\n  <li>Failures in not correctly implemented business rules</li>\n</ol>\n\n<ul>\n  <li>A. Component testing</li>\n  <li>B. Component integration testing</li>\n  <li>C. System testing</li>\n  <li>D. Acceptance testing</li>\n</ul>\n\nSelect the correct mapping of failures to test levels:",
+            "options": [
+                "a) 1D, 2B, 3A, 4C",
+                "b) 1D, 2B, 3C, 4A",
+                "c) 1B, 2A, 3D, 4C",
+                "d) 1C, 2B, 3A, 4D"
+            ],
+            "correctAnswer": "a) 1D, 2B, 3A, 4C",
+            "explanation": "Acceptance testing (D) focuses on validating business needs, component integration testing (B) targets communication issues between components, component testing (A) focuses on module logic, and system testing (C) checks implemented business rules."
+        }
+        ,
+          {
+            "text": "Question #14 (1 Point)You are testing a user story with three acceptance criteria: AC1, AC2, and AC3. AC1 is covered by test case TC1, AC2 by TC2, and AC3 by TC3. The test execution history had three test runs on three consecutive versions of the software as follows:\n\n<table border='1'>\n  <tr>\n    <th>Test Case</th>\n    <th>Execution 1</th>\n    <th>Execution 2</th>\n    <th>Execution 3</th>\n  </tr>\n  <tr>\n    <td>TC1</td>\n    <td>(1) Failed</td>\n    <td>(4) Passed</td>\n    <td>(7) Passed</td>\n  </tr>\n  <tr>\n    <td>TC2</td>\n    <td>(2) Passed</td>\n    <td>(5) Failed</td>\n    <td>(8) Passed</td>\n  </tr>\n  <tr>\n    <td>TC3</td>\n    <td>(3) Failed</td>\n    <td>(6) Failed</td>\n    <td>(9) Passed</td>\n  </tr>\n</table>\n\nTests are repeated once you are informed that all defects found in the test run are corrected and a new version of the software is available. Which of the above tests are executed as regression tests?",
+            "options": [
+                "a) Only 4, 7, 8, 9",
+                "b) Only 5, 7",
+                "c) Only 4, 6, 8, 9",
+                "d) Only 5, 6"
+            ],
+            "correctAnswer": "a) Only 4, 7, 8, 9",
+            "explanation": "Regression testing ensures that new changes don’t introduce defects in previously working parts of the system. Test cases 4, 7, 8, and 9 are re-executions to validate these fixes."
+        },
+          {
+            "text": "Question #15 (1 Point)\nWhich of the following is NOT a benefit of static testing?\na) Having less expensive defect management due to the ease of detecting defects later in the SDLC\nb) Fixing defects found during static testing is generally much less expensive than fixing defects found during dynamic testing\nc) Finding coding defects that might not have been found by only performing dynamic testing\nd) Detecting gaps and inconsistencies in requirements\nSelect ONE option.",
+            "options": [
+              "a) Having less expensive defect management due to the ease of detecting defects later in the SDLC",
+              "b) Fixing defects found during static testing is generally much less expensive than fixing defects found during dynamic testing",
+              "c) Finding coding defects that might not have been found by only performing dynamic testing",
+              "d) Detecting gaps and inconsistencies in requirements"
+            ],
+            "correctAnswer": "a) Having less expensive defect management due to the ease of detecting defects later in the SDLC",
+            "explanation": "Static testing allows early defect detection, making defect management less expensive, not later."
+          },
+          {
+            "text": "Question #16 (1 Point)\nWhich of the following is a benefit of early and frequent feedback?\na) It improves the test process for future projects\nb) It forces customers to prioritize their requirements based on agreed risks\nc) It provides a measure for the quality of changes\nd) It helps avoid requirements misunderstandings\nSelect ONE option.",
+            "options": [
+              "a) It improves the test process for future projects",
+              "b) It forces customers to prioritize their requirements based on agreed risks",
+              "c) It provides a measure for the quality of changes",
+              "d) It helps avoid requirements misunderstandings"
+            ],
+            "correctAnswer": "d) It helps avoid requirements misunderstandings",
+            "explanation": "Early and frequent feedback helps in clarifying requirements, thus avoiding misunderstandings."
+          },
+          {
+            "text": "Question #17 (1 Point)\nThe reviews being used in your organization have the following attributes:\n\n<ul>\n  <li>There is the role of a scribe</li>\n  <li>The main purpose is to evaluate quality</li>\n  <li>The meeting is led by the author of the work product</li>\n  <li>There is individual preparation</li>\n  <li>A review report is produced</li>\n</ul>\n\nWhich of the following review types is MOST likely being used?",
+            "options": [
+                "a) Informal review",
+                "b) Walkthrough",
+                "c) Technical review",
+                "d) Inspection"
+            ],
+            "correctAnswer": "b) Walkthrough",
+            "explanation": "The described attributes align closely with a walkthrough, where the author leads the session, there is individual preparation, and the goal is to evaluate the quality of the work product."
+        }
+        ,
+          {
+            "text": "Question #18 (1 Point)\nWhich of these statements is NOT a factor that contributes to successful reviews?\na) Participants should dedicate adequate time for the review\nb) Splitting large work products into small parts to make the required effort less intense\nc) Participants should avoid behaviors that might indicate boredom, exasperation, or hostility to other participants\nd) Failures found should be acknowledged, appreciated, and handled objectively\nSelect ONE option.",
+            "options": [
+              "a) Participants should dedicate adequate time for the review",
+              "b) Splitting large work products into small parts to make the required effort less intense",
+              "c) Participants should avoid behaviors that might indicate boredom, exasperation, or hostility to other participants",
+              "d) Failures found should be acknowledged, appreciated, and handled objectively"
+            ],
+            "correctAnswer": "b) Splitting large work products into small parts to make the required effort less intense",
+            "explanation": "Splitting large work products helps, so the statement suggests the opposite, making it NOT a contributing factor."
+          },
+          {
+            "text": "Question #19 (1 Point)\nWhich of the following is a characteristic of experience-based test techniques?\na) Test cases are created based on detailed design information\nb) Items tested within the interface code section are used to measure coverage\nc) The techniques heavily rely on the tester’s knowledge of the software and the business domain\nd) The test cases are used to identify deviations from the requirements\nSelect ONE option.",
+            "options": [
+              "a) Test cases are created based on detailed design information",
+              "b) Items tested within the interface code section are used to measure coverage",
+              "c) The techniques heavily rely on the tester’s knowledge of the software and the business domain",
+              "d) The test cases are used to identify deviations from the requirements"
+            ],
+            "correctAnswer": "c) The techniques heavily rely on the tester’s knowledge of the software and the business domain",
+            "explanation": "Experience-based techniques depend on the tester's knowledge and expertise in the domain."
+          },
+          {
+            "text": "Question #20 (1 Point)\nYou are testing a simplified apartment search form which has only two search criteria:\n\n<ul>\n  <li>floor (with three possible options: ground floor; first floor; second or higher floor)</li>\n  <li>garden type (with three possible options: no garden; small garden; large garden)</li>\n</ul>\n\nOnly apartments on the ground floor have gardens. The form has a built-in validation mechanism that will not allow you to use the search criteria which violate this rule.\n\nEach test has two input values: floor and garden type. You want to apply equivalence partitioning (EP) to cover each floor and each garden type in your tests.\n\nWhat is the minimal number of test cases to achieve 100% EP coverage?",
+            "options": [
+                "a) 3",
+                "b) 4",
+                "c) 5",
+                "d) 6"
+            ],
+            "correctAnswer": "b) 4",
+            "explanation": "With equivalence partitioning, four tests are sufficient to cover each floor and garden type combination, while considering the rule that only ground floor apartments can have gardens."
+        }
+        ,
+          {
+            "text": "Question #21 (1 Point)\nYou are testing a system that calculates the final course grade for a given student.\n\nThe final grade is assigned based on the final result, according to the following rules:\n\n<ul>\n  <li>0 – 50 points: failed</li>\n  <li>51 – 60 points: fair</li>\n  <li>61 – 70 points: satisfactory</li>\n  <li>71 – 80 points: good</li>\n  <li>81 – 90 points: very good</li>\n  <li>91 – 100 points: excellent</li>\n</ul>\n\nYou have prepared the following set of test cases:\n\n<table border='1' cellpadding='5' cellspacing='0'>\n  <tr>\n    <th>Final result</th>\n    <th>Final grade</th>\n  </tr>\n  <tr>\n    <td>TC1</td>\n    <td>91</td>\n    <td>excellent</td>\n  </tr>\n  <tr>\n    <td>TC2</td>\n    <td>50</td>\n    <td>failed</td>\n  </tr>\n  <tr>\n    <td>TC3</td>\n    <td>81</td>\n    <td>very good</td>\n  </tr>\n  <tr>\n    <td>TC4</td>\n    <td>60</td>\n    <td>fair</td>\n  </tr>\n  <tr>\n    <td>TC5</td>\n    <td>70</td>\n    <td>satisfactory</td>\n  </tr>\n  <tr>\n    <td>TC6</td>\n    <td>80</td>\n    <td>good</td>\n  </tr>\n</table>\n\nWhat is the 2-value Boundary Value Analysis (BVA) coverage for the final result that is achieved with the existing test cases?",
+            "options": [
+                "a) 50%",
+                "b) 60%",
+                "c) 33.3%",
+                "d) 100%"
+            ],
+            "correctAnswer": "b) 60%",
+            "explanation": "The 2-value BVA coverage is calculated by checking if both the upper and lower boundary values of each range are tested. In this case, the test cases cover 60% of the relevant boundary values."
+        } ,
+            {
+                "text": "Question #22 (1 Point)\nYour favorite bicycle daily rental store has just introduced a new Customer Relationship Management system and asked you, one of their most loyal members, to test it.\n\nThe implemented features are as follows:\n<ul>\n<li>Anyone can rent a bicycle, but members receive a 20% discount.</li>\n<li>However, if the return deadline is missed, the discount is no longer available.</li>\n<li>After 15 rentals, members get a gift: a T-Shirt.</li>\n</ul>\n\nDecision table describing the implemented features looks as follows:\n\n<table border='1'>\n  <tr>\n    <th>Conditions</th>\n    <th>R1</th>\n    <th>R2</th>\n    <th>R3</th>\n    <th>R4</th>\n    <th>R5</th>\n    <th>R6</th>\n    <th>R7</th>\n    <th>R8</th>\n  </tr>\n  <tr>\n    <td>Being a member</td>\n    <td>T</td>\n    <td>T</td>\n    <td>T</td>\n    <td>T</td>\n    <td>F</td>\n    <td>F</td>\n    <td>F</td>\n    <td>F</td>\n  </tr>\n  <tr>\n    <td>Missed deadline</td>\n    <td>T</td>\n    <td>F</td>\n    <td>T</td>\n    <td>F</td>\n    <td>T</td>\n    <td>F</td>\n    <td>T</td>\n    <td>F</td>\n  </tr>\n  <tr>\n    <td>15th rental</td>\n    <td>F</td>\n    <td>F</td>\n    <td>F</td>\n    <td>T</td>\n    <td>F</td>\n    <td>F</td>\n    <td>T</td>\n    <td>T</td>\n  </tr>\n  <tr>\n    <td>20% discount</td>\n    <td>X</td>\n    <td>X</td>\n    <td></td>\n    <td></td>\n    <td></td>\n    <td></td>\n    <td></td>\n    <td></td>\n  </tr>\n  <tr>\n    <td>Gift T-Shirt</td>\n    <td></td>\n    <td></td>\n    <td></td>\n    <td>X</td>\n    <td></td>\n    <td></td>\n    <td>X</td>\n    <td>X</td>\n  </tr>\n</table>\n\nBased ONLY on the feature description of the Customer Relationship Management system, which of the above rules describes an impossible situation?",
+                "options": [
+                    "a) R4",
+                    "b) R2",
+                    "c) R6",
+                    "d) R8"
+                ],
+                "correctAnswer": "b) R2",
+                "explanation": "R2 describes an impossible situation because a member cannot receive a discount without meeting the conditions."
+            }
+            ,
+            {
+              "text": "Question #24 (1 Point)\nYour test suite achieved 100% statement coverage. What is the consequence of this fact?\na) Each instruction in the code that contains a defect has been executed at least once\nb) Any test suite containing more test cases than your test suite will also achieve 100% statement coverage\nc) Each path in the code has been executed at least once\nd) Every combination of input values has been tested at least once\nSelect ONE option.",
+              "options": [
+                "a) Each instruction in the code that contains a defect has been executed at least once",
+                "b) Any test suite containing more test cases than your test suite will also achieve 100% statement coverage",
+                "c) Each path in the code has been executed at least once",
+                "d) Every combination of input values has been tested at least once"
+              ],
+              "correctAnswer": "a) Each instruction in the code that contains a defect has been executed at least once",
+              "explanation": "100% statement coverage ensures each statement is executed, meaning any defect in a statement has been executed at least once."
+            },
+            {
+              "text": "Question #25 (1 Point)\nWhich of the following is NOT true for white-box testing?\na) During white-box testing the entire software implementation is considered\nb) White-box coverage metrics can help identify additional tests to increase code coverage\nc) White-box test techniques can be used in static testing\nd) White-box testing can help identify gaps in requirements implementation\nSelect ONE option.",
+              "options": [
+                "a) During white-box testing the entire software implementation is considered",
+                "b) White-box coverage metrics can help identify additional tests to increase code coverage",
+                "c) White-box test techniques can be used in static testing",
+                "d) White-box testing can help identify gaps in requirements implementation"
+              ],
+              "correctAnswer": "c) White-box test techniques can be used in static testing",
+              "explanation": "White-box testing is a dynamic testing technique; it is not used in static testing."
+            },
+            {
+              "text": "Question #26 (1 Point)\nWhich of the following BEST describes the concept behind error guessing?\na) Error guessing involves using your knowledge and experience of defects found in the past and typical errors made by developers\nb) Error guessing involves using your personal experience of development and the errors you made as a developer\nc) Error guessing requires you to imagine that you are the user of the test object and to guess errors the user could make interacting with it\nd) Error guessing requires you to rapidly duplicate the development task to identify the sort of errors a developer might make\nSelect ONE option.",
+              "options": [
+                "a) Error guessing involves using your knowledge and experience of defects found in the past and typical errors made by developers",
+                "b) Error guessing involves using your personal experience of development and the errors you made as a developer",
+                "c) Error guessing requires you to imagine that you are the user of the test object and to guess errors the user could make interacting with it",
+                "d) Error guessing requires you to rapidly duplicate the development task to identify the sort of errors a developer might make"
+              ],
+              "correctAnswer": "a) Error guessing involves using your knowledge and experience of defects found in the past and typical errors made by developers",
+              "explanation": "Error guessing leverages past defect experience and common developer mistakes to anticipate potential errors."
+            },
+            {
+              "text": "Question #27 (1 Point)\nIn your project there has been a delay in the release of a brand-new application and test execution started late, but you have very detailed domain knowledge and good analytical skills. The full list of requirements has not yet been shared with the team, but management is asking for some test results to be presented.\nWhich test technique fits BEST in this situation?\na) Checklist-based testing\nb) Error guessing\nc) Exploratory testing\nd) Branch testing\nSelect ONE option.",
+              "options": [
+                "a) Checklist-based testing",
+                "b) Error guessing",
+                "c) Exploratory testing",
+                "d) Branch testing"
+              ],
+              "correctAnswer": "c) Exploratory testing",
+              "explanation": "Exploratory testing is suitable when requirements are incomplete, leveraging domain knowledge and analytical skills."
+            },
+            {
+              "text": "Question #28 (1 Point)\nWhich of the following BEST describes the way acceptance criteria can be documented?\na) Performing retrospectives to determine the actual needs of the stakeholders regarding a given user story\nb) Using the given/when/then format to describe an example test condition related to a given user story\nc) Using verbal communication to reduce the risk of misunderstanding the acceptance criteria by others\nd) Documenting risks related to a given user story in a test plan to facilitate the risk-based testing of a given user story\nSelect ONE option.",
+              "options": [
+                "a) Performing retrospectives to determine the actual needs of the stakeholders regarding a given user story",
+                "b) Using the given/when/then format to describe an example test condition related to a given user story",
+                "c) Using verbal communication to reduce the risk of misunderstanding the acceptance criteria by others",
+                "d) Documenting risks related to a given user story in a test plan to facilitate the risk-based testing of a given user story"
+              ],
+              "correctAnswer": "b) Using the given/when/then format to describe an example test condition related to a given user story",
+              "explanation": "The given/when/then format is a structured way to document acceptance criteria effectively."
+            },
+            {
+                "text": "Question #29 (1 Point)\nConsider the following user story:\n\n<i>As an Editor<br>I want to review content before it is published<br>so that I can assure the grammar is correct</i>\n\nand its acceptance criteria:\n\n<ul>\n  <li>The user can log in to the content management system with \"Editor\" role</li>\n  <li>The editor can view existing content pages</li>\n  <li>The editor can edit the page content</li>\n  <li>The editor can add markup comments</li>\n  <li>The editor can save changes</li>\n  <li>The editor can reassign to the \"content owner\" role to make updates</li>\n</ul>\n\nWhich of the following is the BEST example of an ATDD test for this user story?",
+                "options": [
+                    "a) Test if the editor can save the document after editing the page content",
+                    "b) Test if the content owner can log in and make updates to the content",
+                    "c) Test if the editor can schedule the edited content for publication",
+                    "d) Test if the editor can reassign to another editor to make updates"
+                ],
+                "correctAnswer": "a) Test if the editor can save the document after editing the page content",
+                "explanation": "The most relevant ATDD test would focus on the editor's ability to save changes, aligning with the user story's focus on content review and editing."
+            }
+            ,
+            {
+              "text": "Question #30 (1 Point)\nHow do testers add value to iteration and release planning?\na) Testers determine the priority of the user stories to be developed\nb) Testers focus only on the functional aspects of the system to be tested\nc) Testers participate in the detailed risk identification and risk assessment of user stories\nd) Testers guarantee the release of high-quality software through early test design during the release planning\nSelect ONE option.",
+              "options": [
+                "a) Testers determine the priority of the user stories to be developed",
+                "b) Testers focus only on the functional aspects of the system to be tested",
+                "c) Testers participate in the detailed risk identification and risk assessment of user stories",
+                "d) Testers guarantee the release of high-quality software through early test design during the release planning"
+              ],
+              "correctAnswer": "c) Testers participate in the detailed risk identification and risk assessment of user stories",
+              "explanation": "Participating in risk identification helps in planning and prioritizing testing efforts effectively."
+            },
+            {
+                "text": "Question #31 (1 Point)\nWhich TWO of the following options are the exit criteria for testing a system?\na) Test environment readiness\nb) The ability to log in to the test object by the tester\nc) Estimated defect density is reached\nd) Requirements are translated into given/when/then format\ne) Regression tests are automated\nSelect TWO options.",
+                "options": [
+                  "a) Test environment readiness",
+                  "b) The ability to log in to the test object by the tester",
+                  "c) Estimated defect density is reached",
+                  "d) Requirements are translated into given/when/then format",
+                  "e) Regression tests are automated"
+                ],
+                "correctAnswer": "a) Test environment readiness and c) Estimated defect density is reached",
+                "explanation": "Exit criteria typically include readiness of the test environment and achieving target defect density."
+              },
+              {
+                "text": "Question #32 (1 Point)\nYour team uses the three-point estimation technique to estimate the test effort for a new high-risk feature. The following estimates were made:\n\n<ul>\n  <li>Most optimistic estimation: 2 person-hours</li>\n  <li>Most likely estimation: 11 person-hours</li>\n  <li>Most pessimistic estimation: 14 person-hours</li>\n</ul>\n\nWhat is the final estimate?",
+                "options": [
+                    "a) 9 person-hours",
+                    "b) 14 person-hours",
+                    "c) 11 person-hours",
+                    "d) 10 person-hours"
+                ],
+                "correctAnswer": "d) 10 person-hours",
+                "explanation": "The final estimate using the three-point estimation formula is (Optimistic + 4 × Most Likely + Pessimistic) / 6 = (2 + 4(11) + 14) / 6 = 10 person-hours."
+            }
+            ,
+              {
+                "text": "Question #33 (1 Point)\nYou are testing a mobile application that allows users to find a nearby restaurant based on the type of food they want to eat. Consider the following list of test cases, priorities (i.e., a smaller number means a higher priority), and dependencies:\n\n<table border='1'>\n  <tr>\n    <th>Test case number</th>\n    <th>Test condition covered</th>\n    <th>Priority</th>\n    <th>Logical dependency</th>\n  </tr>\n  <tr>\n    <td>TC 001</td>\n    <td>Select type of food</td>\n    <td>3</td>\n    <td>none</td>\n  </tr>\n  <tr>\n    <td>TC 002</td>\n    <td>Select restaurant</td>\n    <td>2</td>\n    <td>TC 001</td>\n  </tr>\n  <tr>\n    <td>TC 003</td>\n    <td>Get direction</td>\n    <td>1</td>\n    <td>TC 002</td>\n  </tr>\n  <tr>\n    <td>TC 004</td>\n    <td>Call restaurant</td>\n    <td>2</td>\n    <td>TC 002</td>\n  </tr>\n  <tr>\n    <td>TC 005</td>\n    <td>Make reservation</td>\n    <td>3</td>\n    <td>TC 002</td>\n  </tr>\n</table>\n\nWhich of the following test cases should be executed as the third one?",
+                "options": [
+                    "a) TC 003",
+                    "b) TC 005",
+                    "c) TC 002",
+                    "d) TC 001"
+                ],
+                "correctAnswer": "a) TC 003",
+                "explanation": "TC 003 is executed third as it has the highest priority and depends on TC 002, which must be executed first."
+            }
+            ,
+            {
+                "text": "Question #34 (1 Point)\nConsider the following test categories (1-4) and agile testing quadrants (A-D):\n\n<ul>\n  <li>1. Usability testing</li>\n  <li>2. Component testing</li>\n  <li>3. Functional testing</li>\n  <li>4. Reliability testing</li>\n</ul>\n\n<ul>\n  <li>A. Agile testing quadrant Q1: technology facing, supporting the development team</li>\n  <li>B. Agile testing quadrant Q2: business facing, supporting the development team</li>\n  <li>C. Agile testing quadrant Q3: business facing, critique the product</li>\n  <li>D. Agile testing quadrant Q4: technology facing, critique the product</li>\n</ul>\n\nHow do the following test categories map onto the agile testing quadrants?",
+                "options": [
+                    "a) 1C, 2A, 3B, 4D",
+                    "b) 1D, 2A, 3C, 4B",
+                    "c) 1C, 2B, 3D, 4A",
+                    "d) 1D, 2B, 3C, 4A"
+                ],
+                "correctAnswer": "a) 1C, 2A, 3B, 4D",
+                "explanation": "This mapping aligns usability testing with Q3 (critique the product), component testing with Q1 (supporting the team), functional testing with Q2 (business facing), and reliability testing with Q4 (critique the product)."
+            },
+            {
+                "text": "Question #35 (1 Point)\nDuring a risk analysis, the following risk was identified and assessed:\n\n<ul>\n  <li><b>Risk:</b> Response time is too long to generate a report</li>\n  <li><b>Risk likelihood:</b> medium; <b>Risk impact:</b> high</li>\n  <li><b>Response to risk:</b>\n    <ul>\n      <li>An independent test team performs performance testing during system testing</li>\n      <li>A selected sample of end users performs alpha and beta acceptance testing before the release</li>\n    </ul>\n  </li>\n</ul>\n\nWhat measure is proposed to be taken in response to this analyzed risk?",
+                "options": [
+                    "a) Risk acceptance",
+                    "b) Contingency plan",
+                    "c) Risk mitigation",
+                    "d) Risk transfer"
+                ],
+                "correctAnswer": "c) Risk mitigation",
+                "explanation": "The measures described are aimed at reducing the impact and likelihood of the risk, which is a form of risk mitigation."
+            }
+            ,
+              {
+                "text": "Question #36 (1 Point)\nWhich work product can be used by an agile team to show the amount of work that has been completed and the amount of total work remaining for a given iteration?\na) Acceptance criteria\nb) Defect report\nc) Test completion report\nd) Burndown chart\nSelect ONE option.",
+                "options": [
+                  "a) Acceptance criteria",
+                  "b) Defect report",
+                  "c) Test completion report",
+                  "d) Burndown chart"
+                ],
+                "correctAnswer": "d) Burndown chart",
+                "explanation": "A burndown chart visually represents completed work versus remaining work in an iteration."
+              },
+              {
+                "text": "Question #37 (1 Point)\nYou need to update one of the automated test scripts to be in line with a new requirement. Which process indicates that you create a new version of the test script in the test repository?\na) Traceability management\nb) Maintenance testing\nc) Configuration management\nd) Requirements engineering\nSelect ONE option.",
+                "options": [
+                  "a) Traceability management",
+                  "b) Maintenance testing",
+                  "c) Configuration management",
+                  "d) Requirements engineering"
+                ],
+                "correctAnswer": "c) Configuration management",
+                "explanation": "Configuration management handles version control of test scripts and other artifacts."
+              },
+              {
+                "text": "Question #38 (1 Point)\nYou received the following defect report from the developers stating that the anomaly described in this test report is not reproducible:\n\n<i>Application hangs up</i>\n<br><br>\n2022-May-03 — John Doe — Rejected\n<br><br>\nThe application hangs up after entering <b>“Test input: $ä”</b> in the Name field on the new user creation screen. Tried to log off, log in with <i>test_admin01</i> account, same issue. Tried with other test admin accounts, same issue. No error message received; log (see attached) contains fatal error notification. Based on the test case <b>TC-1305</b>, the application should accept the provided input and create the user. Please fix with high priority; this feature is related to <b>REQ-0012</b>, which is a critical new business requirement.\n\nWhat critical information is MISSING from this test report that would have been useful for the developers?",
+                "options": [
+                    "a) Expected result and actual result",
+                    "b) References and defect status",
+                    "c) Test environment and test item",
+                    "d) Priority and severity"
+                ],
+                "correctAnswer": "c) Test environment and test item",
+                "explanation": "Information about the test environment and specific test items is critical for reproducing the issue, as it helps identify any environmental or setup differences that may affect the behavior."
+            }
+            ,
+              {
+                "text": "Question #39 (1 Point)\nWhich test activity does a data preparation tool support?\na) Test monitoring and control\nb) Test analysis\nc) Test design and implementation\nd) Test completion\nSelect ONE option.",
+                "options": [
+                  "a) Test monitoring and control",
+                  "b) Test analysis",
+                  "c) Test design and implementation",
+                  "d) Test completion"
+                ],
+                "correctAnswer": "c) Test design and implementation",
+                "explanation": "Data preparation tools assist in designing and implementing test data required for test cases."
+              },
+              {
+                "text": "Question #40 (1 Point)\nWhich item correctly identifies a potential risk of performing test automation?\na) It may introduce unknown regressions in production\nb) Sufficient efforts to maintain testware may not be properly allocated\nc) Testing tools and associated testware may not be sufficiently relied upon\nd) It may reduce the time allocated for manual testing\nSelect ONE option.",
+                "options": [
+                  "a) It may introduce unknown regressions in production",
+                  "b) Sufficient efforts to maintain testware may not be properly allocated",
+                  "c) Testing tools and associated testware may not be sufficiently relied upon",
+                  "d) It may reduce the time allocated for manual testing"
+                ],
+                "correctAnswer": "b) Sufficient efforts to maintain testware may not be properly allocated",
+                "explanation": "A common risk in test automation is inadequate allocation of resources for maintaining automated test scripts."
+              }
+          ]
+          
+
+}
+
+  
