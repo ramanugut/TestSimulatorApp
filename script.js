@@ -176,6 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test26.json",
     "test27.json",
     "test28.json",
+    "test29.json"
     "ISTQB1.json",
     "ISTQB2.json",
     "ISTQB3.json",
@@ -280,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  //************************ SECTION 6: RENDERING QUESTIONS ************************//
+ //************************ SECTION 6: RENDERING QUESTIONS ************************//
 
   function renderQuestions() {
     questionsContainer.innerHTML = "";
@@ -333,11 +334,13 @@ document.addEventListener("DOMContentLoaded", function () {
           const inputType = isMultipleCorrect ? "checkbox" : "radio";
 
           optionElement.innerHTML = `
-                  <label>
-                      <input type="${inputType}" id="${optionId}" name="question-${actualIndex}" value="${option}">
-                      ${option}
-                  </label>
-              `;
+          <label>
+              <input type="${inputType}" id="${optionId}" name="question-${actualIndex}${
+            isMultipleCorrect ? "-" + optionId : ""
+          }" value="${option}">
+              ${option}
+          </label>
+        `;
 
           const input = optionElement.querySelector(
             `input[type="${inputType}"]`
@@ -386,13 +389,13 @@ document.addEventListener("DOMContentLoaded", function () {
         questionElement.appendChild(optionsList);
       } else {
         // Handle questions without options (e.g., short answer questions)
-        const inputElement = document.createElement("input");
-        inputElement.type = "text";
-        inputElement.name = `question-${actualIndex}`;
-        inputElement.classList.add("text-input");
-        inputElement.placeholder = "Enter your answer here...";
+        const textareaElement = document.createElement("textarea");
+        textareaElement.name = `question-${actualIndex}`;
+        textareaElement.classList.add("text-area-input");
+        textareaElement.placeholder = "Enter your answer here...";
+        textareaElement.rows = 5; // Adjust the number of rows as needed
 
-        inputElement.addEventListener("input", (event) => {
+        textareaElement.addEventListener("input", (event) => {
           userAnswers[actualIndex] = event.target.value;
           updateProgress();
           if (!timerStarted) {
@@ -405,14 +408,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (userAnswers[actualIndex]) {
-          inputElement.value = userAnswers[actualIndex];
+          textareaElement.value = userAnswers[actualIndex];
         }
 
         if (testSubmitted) {
-          inputElement.disabled = true;
+          textareaElement.disabled = true;
         }
 
-        questionElement.appendChild(inputElement);
+        questionElement.appendChild(textareaElement);
       }
 
       // Apply feedback if the test has been submitted
@@ -437,7 +440,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     updateProgress();
   }
-
   //************************ SECTION 7: PAGINATION CONTROLS ************************//
 
   function updatePaginationControls() {
