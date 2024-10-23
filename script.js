@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test26.json",
     "test27.json",
     "test28.json",
-    "test29.json"
+    "test29.json",
     "ISTQB1.json",
     "ISTQB2.json",
     "ISTQB3.json",
@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
- //************************ SECTION 6: RENDERING QUESTIONS ************************//
+  //************************ SECTION 6: RENDERING QUESTIONS ************************//
 
   function renderQuestions() {
     questionsContainer.innerHTML = "";
@@ -440,6 +440,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     updateProgress();
   }
+
   //************************ SECTION 7: PAGINATION CONTROLS ************************//
 
   function updatePaginationControls() {
@@ -1021,3 +1022,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load progress on page load
   loadProgress();
 });
+
+//************************ SECTION 209: MODAL BUTTON ************************//
+
+/* Get the modal, open button, and close button
+const modal1 = document.getElementById("modal1");
+const modal2 = document.getElementById("modal2");
+
+const openModal1 = document.getElementById("openModal1");
+const openModal2 = document.getElementById("openModal2");
+
+const closeModal1 = document.getElementById("closeModal1");
+const closeModal2 = document.getElementById("closeModal2");
+
+openModal1.onclick = () => (modal1.style.display = "block");
+openModal2.onclick = () => (modal2.style.display = "block");
+
+closeModal1.onclick = () => (modal1.style.display = "none");
+closeModal2.onclick = () => (modal2.style.display = "none");
+
+window.onclick = (event) => {
+  if (event.target == modal1) modal1.style.display = "none";
+  if (event.target == modal2) modal2.style.display = "none";
+}; */
