@@ -1,5 +1,5 @@
 {
-    "testName": "2024 ICT1521 MOC EXAM",
+    "testName": "ICT1521 MOC EXAM",
     "questions": [
     {
       "text": "In which type of join are all rows from the table listed first in the query included, regardless of whether they match rows from the table listed second in the query?",
@@ -197,14 +197,14 @@
     {
       "text": "Which MySQL command displays all tables in the ELPATRON database?",
       "options": [
-        "```sql\nSELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');\n```",
-        "```sql\nSHOW TABLES WHERE TABLE_SCHEMA = ELPATRON;\n```",
-        "```sql\nSELECT * FROM USER_OBJECTS 'ELPATRON';\n```",
-        "```sql\nSELECT * FROM INFORMATION_SCHEMA.VIEWS WHERE (TABLE_SCHEMA = 'ELPATRON');\n```"
+          "<pre><code class='language-sql'>SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');</code></pre>",
+          "<pre><code class='language-sql'>SHOW TABLES WHERE TABLE_SCHEMA = ELPATRON;</code></pre>",
+          "<pre><code class='language-sql'>SELECT * FROM USER_OBJECTS 'ELPATRON';</code></pre>",
+          "<pre><code class='language-sql'>SELECT * FROM INFORMATION_SCHEMA.VIEWS WHERE (TABLE_SCHEMA = 'ELPATRON');</code></pre>"
       ],
-      "correctAnswer": "```sql\nSELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');\n```",
+      "correctAnswer": "<pre><code class='language-sql'>SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');</code></pre>",
       "explanation": "This query lists all tables in the specified schema."
-    },
+  },
     {
       "text": "Once you've verified that an update is correct, which command makes it permanent?",
       "options": [
@@ -412,14 +412,14 @@
     {
       "text": "Which MySQL command displays all tables in the ELPATRON database?",
       "options": [
-        "```sql\nSELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');\n```",
-        "```sql\nSHOW TABLES WHERE TABLE_SCHEMA = ELPATRON;\n```",
-        "```sql\nSELECT * FROM USER_OBJECTS 'ELPATRON';\n```",
-        "```sql\nSELECT * FROM INFORMATION_SCHEMA.VIEWS WHERE (TABLE_SCHEMA = 'ELPATRON');\n```"
+          "<pre><code class='language-sql'>SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');</code></pre>",
+          "<pre><code class='language-sql'>SHOW TABLES WHERE TABLE_SCHEMA = ELPATRON;</code></pre>",
+          "<pre><code class='language-sql'>SELECT * FROM USER_OBJECTS 'ELPATRON';</code></pre>",
+          "<pre><code class='language-sql'>SELECT * FROM INFORMATION_SCHEMA.VIEWS WHERE (TABLE_SCHEMA = 'ELPATRON');</code></pre>"
       ],
-      "correctAnswer": "```sql\nSELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');\n```",
+      "correctAnswer": "<pre><code class='language-sql'>SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE (TABLE_SCHEMA = 'ELPATRON');</code></pre>",
       "explanation": "This query lists all tables in the specified schema."
-    },
+  },  
     {
       "text": "Once you've verified that an update is correct, which command makes it permanent?",
       "options": [

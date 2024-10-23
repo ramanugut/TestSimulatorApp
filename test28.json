@@ -1,5 +1,5 @@
 {
-    "testName": "2024 ICT1521 Self Assessment Questions",
+    "testName": "2024 ICT1521 Test Questions",
     "questions": [
       {
         "text": "The DESCRIBE TABLE command defines a SQL table’s structure by listing its columns, data types, and column lengths.",
@@ -10,18 +10,12 @@
         "correctAnswer": "a. True",
         "explanation": "The DESCRIBE command is used to view the structure of a table, including its columns, data types, and column lengths."
       },
-{
-  "text": "Write a MySQL command to create a table called CANDY that contains the following columns: Candy ID, five characters; will function as a primary key. Candy name, 25 characters. Description, 50 characters. Quantity per unit, whole number.",
-  "options": [
-    "a. <pre><code>CREATE TABLE Candy (\n    CandyID CHAR(5) PRIMARY KEY,\n    CandyName VARCHAR(25),\n    Description TEXT,\n    QuantityPerUnit INTEGER\n);</code></pre>",
-    "b. <pre><code>CREATE TABLE Candy (\n    CandyID VARCHAR(5) PRIMARY KEY,\n    CandyName VARCHAR(25),\n    Description VARCHAR(50),\n    QuantityPerUnit INT\n);</code></pre>",
-    "c. <pre><code>CREATE TABLE Candy (\n    CandyID VARCHAR(5),\n    CandyName VARCHAR(25),\n    Description VARCHAR(50),\n    QuantityPerUnit INT\n);</code></pre>",
-    "d. <pre><code>CREATE TABLE Candy (\n    CandyID VARCHAR(5) NOT NULL,\n    CandyName VARCHAR(25) UNIQUE,\n    Description CHAR(50),\n    QuantityPerUnit INT,\n    PRIMARY KEY (CandyID)\n);</code></pre>"
-  ],
-  "correctAnswer": "b. <pre><code>CREATE TABLE Candy (\n    CandyID VARCHAR(5) PRIMARY KEY,\n    CandyName VARCHAR(25),\n    Description VARCHAR(50),\n    QuantityPerUnit INT\n);</code></pre>",
-  "explanation": "Option B is correct because CandyID is declared as VARCHAR(5) with a primary key constraint. CandyName and Description have the correct VARCHAR lengths of 25 and 50, respectively. QuantityPerUnit is a whole number represented correctly by INT."
-},
-
+      {
+        "text": "Write a MySQL command to create a table called CANDY that contains the following columns: Candy ID, five characters; will function as primary key. Candy name, 25 characters. Description, 50 characters. Quantity per unit, whole number.",
+        "options": [],
+        "correctAnswer": "CREATE TABLE Candy (CandyID VARCHAR(5) PRIMARY KEY, CandyName VARCHAR(25), Description VARCHAR(50), QuantityPerUnit INT);",
+        "explanation": "The command includes a primary key and sets data types for each column, ensuring appropriate length for strings."
+      },
       {
         "text": "In an entity-relationship (E-R) diagram, tables are represented by _____.",
         "options": [
@@ -42,18 +36,12 @@
         "correctAnswer": "b. False",
         "explanation": "The SERVICE_CATEGORY table includes service details but does not store service fees."
       },
-{
-  "text": "What are a script file and a script repository?",
-  "options": [
-    "a. Script File = A binary file used to store compiled code; Script Repository = A library of only compiled scripts for execution.",
-    "b. Script File = A file containing SQL queries that run automatically on startup; Script Repository = A temporary cache where scripts are stored until executed.",
-    "c. Script File = A plain text file containing instructions written in a specific scripting language like SQL; Script Repository = A storage where a collection of script files are stored, organized, and managed.",
-    "d. Script File = A web-based tool to generate SQL queries; Script Repository = An online platform that executes SQL scripts in real-time."
-  ],
-  "correctAnswer": "c. Script File = A plain text file containing instructions written in a specific scripting language like SQL; Script Repository = A storage where a collection of script files are stored, organized, and managed.",
-  "explanation": "Script files store executable commands, while repositories manage collections of these scripts."
-},
-
+      {
+        "text": "What are a script file and a script repository?",
+        "options": [],
+        "correctAnswer": "Script File = A plain text file containing instructions written in a specific scripting language like SQL; Script Repository = A storage where a collection of script files are stored, organized, and managed.",
+        "explanation": "Script files store executable commands, while repositories manage collections of these scripts."
+      },
       {
         "text": "How many tables make up the KimTay database?",
         "options": [
@@ -157,159 +145,159 @@
         "explanation": "The sp_columns command in SQL Server can be used to list all columns in a specified table."
       },
       {
-        "text": "StayWell has twelve offices, one to manage each of their twelve rental locations.",
-        "options": [
-          "a. True",
-          "b. False"
-        ],
-        "correctAnswer": "a. True",
-        "explanation": "StayWell has a dedicated office for each of its twelve rental locations."
-      },
-      {
-        "text": "Pete would like to set up a database called BAKE_SALE_FUNDRAISER so that he can begin defining the objects within it. Which MySQL command should Pete use?",
-        "options": [
-          "a. CREATE DATABASE BAKE_SALE_FUNDRAISER;",
-          "b. ACTIVATE DATABASE BAKE_SALE_FUNDRAISER;",
-          "c. ACTIVATE DATABASE: BAKE_SALE_FUNDRAISER",
-          "d. CREATE DATABASE: BAKE_SALE_FUNDRAISER"
-        ],
-        "correctAnswer": "a. CREATE DATABASE BAKE_SALE_FUNDRAISER;",
-        "explanation": "The correct command to create a new database in MySQL is 'CREATE DATABASE database_name;'."
-      },
-      {
-        "text": "If column A in a relational database determines a single value for column B at any point in time, then column B is functionally dependent on column A.",
-        "options": [
-          "a. True",
-          "b. False"
-        ],
-        "correctAnswer": "a. True",
-        "explanation": "Functional dependence means that the value of one column is determined by another column."
-      },
-      {
-        "text": "The GROUP BY clause sorts the data in a particular order.",
-        "options": [
-          "a. True",
-          "b. False"
-        ],
-        "correctAnswer": "b. False",
-        "explanation": "The GROUP BY clause groups data for aggregation, but it does not sort the data by default."
-      },
-      {
-        "text": "SQL was developed in the mid-____.",
-        "options": [
-          "a. 2000s",
-          "b. 1990s",
-          "c. 1970s",
-          "d. 1950s"
-        ],
-        "correctAnswer": "c. 1970s",
-        "explanation": "SQL was developed in the early 1970s by IBM for managing and manipulating relational databases."
-      },
-      {
-        "text": "Why have Social Security numbers traditionally been used as primary keys for database tables that store personal data on individual people?",
-        "options": [
-          "a. They are unique to each individual.",
-          "b. They are easy to remember.",
-          "c. They are assigned by the government.",
-          "d. They are commonly used for identification."
-        ],
-        "correctAnswer": "a. They are unique to each individual.",
-        "explanation": "SSNs are unique, making them suitable as primary keys, though modern best practices often avoid using them for privacy reasons."
-      },
-      {
-        "text": "The process of determining the particular tables and columns that will comprise a database is known as _____.",
-        "options": [
-          "a. normalization",
-          "b. relational management",
-          "c. database design",
-          "d. qualification"
-        ],
-        "correctAnswer": "c. database design",
-        "explanation": "Database design is the process of defining the structure, tables, and relationships of a database."
-      },
-      {
-        "text": "How can you correct errors in data?",
-        "options": [
-          "a. Using the SELECT statement",
-          "b. Using the DELETE statement",
-          "c. Using the UPDATE statement",
-          "d. Using the INSERT statement"
-        ],
-        "correctAnswer": "c. Using the UPDATE statement",
-        "explanation": "The UPDATE statement is used in SQL to modify existing records in a table."
-      },
-      {
-        "text": "What was the original name for SQL?",
-        "options": [
-          "a. DBase",
-          "b. MYSEQUEL",
-          "c. MySQL",
-          "d. SEQUEL"
-        ],
-        "correctAnswer": "d. SEQUEL",
-        "explanation": "The original name for SQL was SEQUEL, which stood for Structured English Query Language."
-      },
-      {
-        "text": "In this text, Boyce-Codd normal form is the same as _____.",
-        "options": [
-          "a. unnormalized",
-          "b. third normal form",
-          "c. first normal form",
-          "d. second normal form"
-        ],
-        "correctAnswer": "b. third normal form",
-        "explanation": "Boyce-Codd normal form (BCNF) is a stricter version of third normal form (3NF). In many cases, they are considered equivalent."
-      },
-      {
-        "text": "Which SQL command do you use to remove an entire row from a table?",
-        "options": [
-          "a. DELETE",
-          "b. REMOVE",
-          "c. DROP",
-          "d. CLEAR"
-        ],
-        "correctAnswer": "a. DELETE",
-        "explanation": "The DELETE statement is used to remove one or more rows from a table."
-      },
-      {
-        "text": "A property of an entity is _____.",
-        "options": [
-          "a. its association with other entities",
-          "b. a table row",
-          "c. an attribute",
-          "d. like a noun"
-        ],
-        "correctAnswer": "c. an attribute",
-        "explanation": "An attribute is a property or characteristic of an entity in a database."
-      },
-      {
-        "text": "To list all the columns in a table and their properties in MySQL, use the LIST COLUMNS command.",
-        "options": [
-          "a. True",
-          "b. False"
-        ],
-        "correctAnswer": "b. False",
-        "explanation": "In MySQL, the DESCRIBE command or SHOW COLUMNS is used to list the columns of a table."
-      },
-      {
-        "text": "To display all the rows and columns in a table, type the word SELECT, followed by a (n) _____.",
-        "options": [
-          "a. asterisk",
-          "b. ampersand",
-          "c. period",
-          "d. colon"
-        ],
-        "correctAnswer": "a. asterisk",
-        "explanation": "The asterisk (*) is used in a SELECT statement to indicate all columns should be selected."
-      },
-      {
-        "text": "The statement 'A sales rep’s pay class functionally determines his or her pay rate' means that if you know the pay class, you can determine the pay rate.",
-        "options": [
-          "a. True",
-          "b. False"
-        ],
-        "correctAnswer": "a. True",
-        "explanation": "Functional dependence means that one attribute determines another, such as a pay class determining a pay rate."
-      }
+      "text": "StayWell has twelve offices, one to manage each of their twelve rental locations.",
+      "options": [
+        "a. True",
+        "b. False"
+      ],
+      "correctAnswer": "a. True",
+      "explanation": "StayWell has a dedicated office for each of its twelve rental locations."
+    },
+    {
+      "text": "Pete would like to set up a database called BAKE_SALE_FUNDRAISER so that he can begin defining the objects within it. Which MySQL command should Pete use?",
+      "options": [
+        "a. CREATE DATABASE BAKE_SALE_FUNDRAISER;",
+        "b. ACTIVATE DATABASE BAKE_SALE_FUNDRAISER;",
+        "c. ACTIVATE DATABASE: BAKE_SALE_FUNDRAISER",
+        "d. CREATE DATABASE: BAKE_SALE_FUNDRAISER"
+      ],
+      "correctAnswer": "a. CREATE DATABASE BAKE_SALE_FUNDRAISER;",
+      "explanation": "The correct command to create a new database in MySQL is 'CREATE DATABASE database_name;'."
+    },
+    {
+      "text": "If column A in a relational database determines a single value for column B at any point in time, then column B is functionally dependent on column A.",
+      "options": [
+        "a. True",
+        "b. False"
+      ],
+      "correctAnswer": "a. True",
+      "explanation": "Functional dependence means that the value of one column is determined by another column."
+    },
+    {
+      "text": "The GROUP BY clause sorts the data in a particular order.",
+      "options": [
+        "a. True",
+        "b. False"
+      ],
+      "correctAnswer": "b. False",
+      "explanation": "The GROUP BY clause groups data for aggregation, but it does not sort the data by default."
+    },
+    {
+      "text": "SQL was developed in the mid-____.",
+      "options": [
+        "a. 2000s",
+        "b. 1990s",
+        "c. 1970s",
+        "d. 1950s"
+      ],
+      "correctAnswer": "c. 1970s",
+      "explanation": "SQL was developed in the early 1970s by IBM for managing and manipulating relational databases."
+    },
+    {
+      "text": "Why have Social Security numbers traditionally been used as primary keys for database tables that store personal data on individual people?",
+      "options": [
+        "a. They are unique to each individual.",
+        "b. They are easy to remember.",
+        "c. They are assigned by the government.",
+        "d. They are commonly used for identification."
+      ],
+      "correctAnswer": "a. They are unique to each individual.",
+      "explanation": "SSNs are unique, making them suitable as primary keys, though modern best practices often avoid using them for privacy reasons."
+    },
+    {
+      "text": "The process of determining the particular tables and columns that will comprise a database is known as _____.",
+      "options": [
+        "a. normalization",
+        "b. relational management",
+        "c. database design",
+        "d. qualification"
+      ],
+      "correctAnswer": "c. database design",
+      "explanation": "Database design is the process of defining the structure, tables, and relationships of a database."
+    },
+    {
+      "text": "How can you correct errors in data?",
+      "options": [
+        "a. Using the SELECT statement",
+        "b. Using the DELETE statement",
+        "c. Using the UPDATE statement",
+        "d. Using the INSERT statement"
+      ],
+      "correctAnswer": "c. Using the UPDATE statement",
+      "explanation": "The UPDATE statement is used in SQL to modify existing records in a table."
+    },
+    {
+      "text": "What was the original name for SQL?",
+      "options": [
+        "a. DBase",
+        "b. MYSEQUEL",
+        "c. MySQL",
+        "d. SEQUEL"
+      ],
+      "correctAnswer": "d. SEQUEL",
+      "explanation": "The original name for SQL was SEQUEL, which stood for Structured English Query Language."
+    },
+    {
+      "text": "In this text, Boyce-Codd normal form is the same as _____.",
+      "options": [
+        "a. unnormalized",
+        "b. third normal form",
+        "c. first normal form",
+        "d. second normal form"
+      ],
+      "correctAnswer": "b. third normal form",
+      "explanation": "Boyce-Codd normal form (BCNF) is a stricter version of third normal form (3NF). In many cases, they are considered equivalent."
+    },
+    {
+      "text": "Which SQL command do you use to remove an entire row from a table?",
+      "options": [
+        "a. DELETE",
+        "b. REMOVE",
+        "c. DROP",
+        "d. CLEAR"
+      ],
+      "correctAnswer": "a. DELETE",
+      "explanation": "The DELETE statement is used to remove one or more rows from a table."
+    },
+    {
+      "text": "A property of an entity is _____.",
+      "options": [
+        "a. its association with other entities",
+        "b. a table row",
+        "c. an attribute",
+        "d. like a noun"
+      ],
+      "correctAnswer": "c. an attribute",
+      "explanation": "An attribute is a property or characteristic of an entity in a database."
+    },
+    {
+      "text": "To list all the columns in a table and their properties in MySQL, use the LIST COLUMNS command.",
+      "options": [
+        "a. True",
+        "b. False"
+      ],
+      "correctAnswer": "b. False",
+      "explanation": "In MySQL, the DESCRIBE command or SHOW COLUMNS is used to list the columns of a table."
+    },
+    {
+      "text": "To display all the rows and columns in a table, type the word SELECT, followed by a (n) _____.",
+      "options": [
+        "a. asterisk",
+        "b. ampersand",
+        "c. period",
+        "d. colon"
+      ],
+      "correctAnswer": "a. asterisk",
+      "explanation": "The asterisk (*) is used in a SELECT statement to indicate all columns should be selected."
+    },
+    {
+      "text": "The statement 'A sales rep’s pay class functionally determines his or her pay rate' means that if you know the pay class, you can determine the pay rate.",
+      "options": [
+        "a. True",
+        "b. False"
+      ],
+      "correctAnswer": "a. True",
+      "explanation": "Functional dependence means that one attribute determines another, such as a pay class determining a pay rate."
+    }
     ]
   }
