@@ -190,7 +190,7 @@
             "d. second normal form"
         ],
         "correctAnswer": "c. first normal form",
-        "explanation": "<div><strong>1NF:</strong> Each column has one value, no lists; <strong>2NF:</strong> All non-key columns depend on the full primary key; <strong>3NF:</strong> All columns depend only on the primary key; <strong>BCNF:</strong> Information is determined by a candidate key; <strong>4NF:</strong> No multi-valued dependencies, store info separately.</div>"
+        "explanation": "<div><strong>1NF:</strong> Each column has one value, no lists;<br> <strong>2NF:</strong> All non-key columns depend on the full primary key; <br><strong>3NF:</strong> All columns depend only on the primary key;<br> <strong>BCNF:</strong> Information is determined by a candidate key; <br><strong>4NF:</strong> No multi-valued dependencies, store info separately.</div>"
     },
     {
         "text": "When a StayWell property is owned by more than one person, the OWNER table includes _____.",
@@ -268,7 +268,7 @@
         "text": "Why does the POSTAL_CODE column in the REP table of the KimTay database have a data type of CHAR, if a postal code is made up of numbers?",
         "options": [],
         "correctAnswer": "",
-        "explanation": "CHAR:<br> <p><b>Fixed Length:<b> CHAR is a fixed-length data type. If you define a CHAR(n) column, it will always use n characters. If the actual string is shorter than n, it will be padded with spaces to the right.</p><p><b>Storage:</b> Uses a consistent amount of storage. For example, CHAR(5) always uses 5 bytes, regardless of the actual string length.</p> <p><b>Use Cases:</b> Best for storing data where the length is consistent, such as country codes, fixed-length IDs, etc.</p>"
+        "explanation": "CHAR:<br> <p><b>Fixed Length:</b> CHAR is a fixed-length data type. If you define a CHAR(n) column, it will always use n characters. If the actual string is shorter than n, it will be padded with spaces to the right.</p><p><b>Storage:</b> Uses a consistent amount of storage. For example, CHAR(5) always uses 5 bytes, regardless of the actual string length.</p> <p><b>Use Cases:</b> Best for storing data where the length is consistent, such as country codes, fixed-length IDs, etc.</p>"
     },
     {
         "text": "Which statement about nested queries in SQL is FALSE?",
@@ -316,7 +316,7 @@
         "text": "List three practical issues that would need to be dealt with if the INVOICES table and the INVOICE_LINE table in the KimTay database were combined.",
         "options": [],
         "correctAnswer": "",
-        "explanation": "<p><strong>1. Data Redundancy and Inconsistency:</strong> Problem: Each invoice with multiple line items would repeat the same invoice-related data (e.g., invoice number, invoice date, customer name) across multiple rows. Impact: This increases the likelihood of inconsistent data if one row's invoice-related information (like the date or customer name) is incorrectly modified without updating the others. <strong>2. Increased Storage and Maintenance Overhead:</strong> Problem: Storing repeated information (such as customer details and invoice numbers) across multiple rows wastes storage space. Impact: This could lead to inefficient data management because queries retrieving invoice details would process redundant data, impacting performance, especially as the table grows. <strong>3. Complicated Updates and Deletions:</strong> Problem: If invoice-level information (like changing the customer name or invoice date) needs to be updated, the system would need to update multiple rows. Impact: Update anomalies could occur if some rows are updated while others are not, leading to inconsistent or partial updates. Similarly, deleting an invoice would require deleting multiple rows, increasing the risk of errors. <strong>Summary:</strong> Combining the INVOICES and INVOICE_LINE tables would introduce the following issues: Data redundancy and inconsistency due to repeated invoice-related data. Increased storage and performance overhead from duplicated data. Complex updates and deletions, leading to update anomalies and errors.</p>"
+        "explanation": "<p><strong>1. Data Redundancy and Inconsistency:</strong> Problem: Each invoice with multiple line items would repeat the same invoice-related data (e.g., invoice number, invoice date, customer name) across multiple rows. Impact: This increases the likelihood of inconsistent data if one row's invoice-related information (like the date or customer name) is incorrectly modified without updating the others. <br><strong>2. Increased Storage and Maintenance Overhead:</strong> Problem: Storing repeated information (such as customer details and invoice numbers) across multiple rows wastes storage space. Impact: This could lead to inefficient data management because queries retrieving invoice details would process redundant data, impacting performance, especially as the table grows.<br> <strong>3. Complicated Updates and Deletions:</strong> Problem: If invoice-level information (like changing the customer name or invoice date) needs to be updated, the system would need to update multiple rows. Impact: Update anomalies could occur if some rows are updated while others are not, leading to inconsistent or partial updates. Similarly, deleting an invoice would require deleting multiple rows, increasing the risk of errors.<p></p> <strong>Summary:</strong> Combining the INVOICES and INVOICE_LINE tables would introduce the following issues: <br><i>Data redundancy and inconsistency due to repeated invoice-related data. <br>Increased storage and performance overhead from duplicated data. <br>Complex updates and deletions, leading to update anomalies and errors.</i></p>"
     },
     {
         "text": "When you need to sort data on two columns, the less important column is called the _____.",
@@ -364,7 +364,7 @@
         "text": "What steps should you take to construct the SQL command to join (relate) tables?",
         "options": [],
         "correctAnswer": "",
-        "explanation": "This is an open-ended question. The steps include: 1) Identifying the common column(s) between the tables, 2) Deciding on the type of join (INNER, LEFT, RIGHT, etc.), and 3) Writing the SQL command using the JOIN clause, followed by the ON clause to specify the join condition."
+        "explanation": "This is an open-ended question. The steps include: <br>1) Identifying the common column(s) between the tables,<br> 2) Deciding on the type of join (INNER, LEFT, RIGHT, etc.), and <br> 3) Writing the SQL command using the JOIN clause, followed by the ON clause to specify the join condition."
     },
     {
         "text": "You can use the APPEND command to add additional rows to tables.",
