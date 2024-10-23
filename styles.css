@@ -677,3 +677,20 @@ label[for] {
 .hidden {
     display: none;
 }
+
+
+.text-area-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--input-background);
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    resize: vertical; /* Allow users to resize vertically if needed */
+  }
+  
+  .text-area-input:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+  }
