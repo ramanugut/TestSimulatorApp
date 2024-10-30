@@ -1,0 +1,758 @@
+{
+    "testName": "ICT1532 ALL ASSESSMENTS 2024",
+    "questions": [
+      {
+        "text": "True or false? When a NIC is in promiscuous mode, it will process only the frames in which the destination MAC address matches its own MAC address.",
+        "options": ["True", "False"],
+        "correctAnswer": "False",
+        "explanation": "In promiscuous mode, the NIC captures all traffic regardless of the destination MAC address."
+      },
+      {
+        "text": "The interface on the access point used to connect to the existing wired network is typically called.",
+        "options": ["Port Antenna", "WAN", "Transmitter", "Wireless NIC"],
+        "correctAnswer": "WAN",
+        "explanation": "A WAN port connects the access point to the wired network."
+      },
+      {
+        "text": "An IPv6 subnet ID is how many bits long?",
+        "options": ["16", "64", "32", "128"],
+        "correctAnswer": "16",
+        "explanation": "The IPv6 subnet ID field is 16 bits long."
+      },
+      {
+        "text": "What type of network do you need to implement to separate traffic while maintaining access to other network resources?",
+        "options": ["Wireless network", "WAN", "Internetwork", "WPAN"],
+        "correctAnswer": "Internetwork",
+        "explanation": "An internetwork separates and manages traffic across multiple networks."
+      },
+      {
+        "text": "What problem occurs when signals weaken over a long cable distance?",
+        "options": ["Electromagnetic interference", "Attenuation", "RF interference", "Crosstalk"],
+        "correctAnswer": "Attenuation",
+        "explanation": "Attenuation refers to the weakening of signal strength over distance."
+      },
+      {
+        "text": "True or false? SSL is not considered a secure transfer protocol.",
+        "options": ["True", "False"],
+        "correctAnswer": "False",
+        "explanation": "SSL provides encrypted and secure data transmission."
+      },
+      {
+        "text": "In a computer's IP settings, what is the router address for packets intended for external networks?",
+        "options": ["Default gateway", "External gateway", "DMZ firewall", "Default subnet mask"],
+        "correctAnswer": "Default gateway",
+        "explanation": "The default gateway routes packets outside of the local network."
+      },
+      {
+        "text": "Which of the following is a unique NIC identifier?",
+        "options": ["WINS", "MAC", "SSH", "DNS"],
+        "correctAnswer": "MAC",
+        "explanation": "A MAC address uniquely identifies a NIC."
+      },
+      {
+        "text": "What is the 12-digit hexadecimal address used by every NIC called?",
+        "options": ["MAC address", "Default gateway", "IPv6 address", "Subnet mask"],
+        "correctAnswer": "MAC address",
+        "explanation": "The MAC address is a unique hardware address for each NIC."
+      },
+      {
+        "text": "True or false? A WAN is the only way to connect computers across different countries.",
+        "options": ["True", "False"],
+        "correctAnswer": "False",
+        "explanation": "Technologies like VPNs can also connect geographically distant networks."
+      },
+      {
+        "text": "Which Ethernet standard supports 40 and 100 Gbps over copper up to 7 meters?",
+        "options": ["802.3ae", "802.3u", "802.3z", "802.3ba"],
+        "correctAnswer": "802.3ba",
+        "explanation": "The 802.3ba standard specifies high-speed Ethernet."
+      },
+      {
+        "text": "Which path would a signal follow from the WAN to a network node?",
+        "options": [
+          "2, 1, 5, 1, 3, 4, 6",
+          "6, 1, 3, 4, 5, 4, 6",
+          "2, 1, 3, 1, 5, 4, 6",
+          "2, 1, 3, 4, 5, 4, 6"
+        ],
+        "correctAnswer": "2, 1, 3, 1, 5, 4, 6",
+        "explanation": "The correct route uses entrance facility, backbone cabling, and other connections."
+      },
+      {
+        "text": "True or false? IANA implemented classful IPv6 addresses to distinguish between network and host portions.",
+        "options": ["True", "False"],
+        "correctAnswer": "False",
+        "explanation": "IPv6 uses CIDR, not classful addressing."
+      },
+      {
+        "text": "What type of cable connects a computer to an RJ-45 jack?",
+        "options": ["Patch cable", "Cable segment", "Patch panel", "Backbone cable"],
+        "correctAnswer": "Patch cable",
+        "explanation": "A patch cable connects devices to network ports or jacks."
+      },
+      {
+        "text": "What media access method does Ethernet use?",
+        "options": ["CSMA/CD", "Polling", "CSMA/CA", "Token passing"],
+        "correctAnswer": "CSMA/CD",
+        "explanation": "Ethernet uses CSMA/CD to manage network traffic and avoid collisions."
+      },
+      {
+        "text": "What device serves as the endpoint for a dedicated connection between an ISP and a customer?",
+        "options": ["NIU", "CSU/DSU", "DTE", "Line driver"],
+        "correctAnswer": "CSU/DSU",
+        "explanation": "A CSU/DSU provides connectivity between the ISP and customer."
+      },
+      {
+        "text": "What happens to Wi-Fi signals when they pass through walls?",
+        "options": [
+          "Reflections occur causing attenuation.",
+          "Absorption occurs and the signals attenuate.",
+          "Scattering and multipath occurs.",
+          "Diffraction occurs and the signals are amplified."
+        ],
+        "correctAnswer": "Absorption occurs and the signals attenuate.",
+        "explanation": "Walls absorb Wi-Fi signals, reducing their strength."
+      },
+      {
+        "text": "What is the name of cabling that connects floors in a building?",
+        "options": ["Lateral", "Routing", "Plenum", "Vertical"],
+        "correctAnswer": "Vertical",
+        "explanation": "Vertical cabling runs between floors."
+      },
+      {
+        "text": "What information is required to connect to a wireless network?",
+        "options": ["Frequency", "Username", "Password", "SSID"],
+        "correctAnswer": "SSID",
+        "explanation": "The SSID identifies the wireless network to connect to."
+      },
+      {
+        "text": "Which record must be configured in DNS to deliver mail to an IP address?",
+        "options": ["CNAME", "SMTP record", "DNS record", "MX record"],
+        "correctAnswer": "MX record",
+        "explanation": "An MX record directs email to the correct server."
+      },
+      {
+        "text": "What are the original four NAPs called?",
+        "options": [
+          "Commercial Internet Exchange (CIX) points",
+          "Private Internet exchange points",
+          "Public Internet exchange points",
+          "Federal Internet Exchange (FIX) points"
+        ],
+        "correctAnswer": "Public Internet exchange points",
+        "explanation": "Public Internet exchange points were part of the original internet backbone."
+      },
+      {
+        "text": "What could prevent you from connecting to a radio wireless device?",
+        "options": [
+          "All of the options are correct",
+          "Security settings preventing connections",
+          "Wireless router turned off",
+          "Out of range"
+        ],
+        "correctAnswer": "All of the options are correct",
+        "explanation": "Any of these factors could disrupt wireless connectivity."
+      },
+      {
+        "text": "What must be done after installing a DHCP Server in a domain?",
+        "options": [
+          "Enable the Active Directory.",
+          "Modify the firewall rules.",
+          "Authorize it.",
+          "Activate it."
+        ],
+        "correctAnswer": "Authorize it.",
+        "explanation": "The DHCP server must be authorized in Active Directory before it can lease addresses."
+      },
+      {
+        "text": "Which subnet mask provides 16 bits of host address space?",
+        "options": [
+          "255.255.255.0",
+          "255.255.0.0",
+          "255.16.0.0",
+          "255.255.255.16"
+        ],
+        "correctAnswer": "255.255.0.0",
+        "explanation": "A subnet mask of 255.255.0.0 provides 16 bits for host addresses."
+      },
+      {
+        "text": "What properties of a cable are distorted by sharp bends?",
+        "options": ["Replaceability", "Reliability", "Electrical", "Fire resistance"],
+        "correctAnswer": "Electrical",
+        "explanation": "Sharp bends can distort the electrical properties of a cable."
+      },
+      {
+        "text": "Wi-Fi networks use the _____ band of the electromagnetic as a carrier to data.",
+        "options": [
+          "infra-red",
+          "sound",
+          "electrical",
+          "radio"
+        ],
+        "correctAnswer": "radio",
+        "explanation": "Wi-Fi networks use the radio band of the electromagnetic spectrum as a carrier for data transmission."
+      },
+      {
+        "text": "One way to solve the issues associated with narrowband transmission is:",
+        "options": [
+          "Use a more efficient schema.",
+          "Use a wider frequency band.",
+          "Use a different carrier.",
+          "Encode data using the inverse square law."
+        ],
+        "correctAnswer": "Use a wider frequency band.",
+        "explanation": "Using a wider frequency band is a solution to issues associated with narrowband transmission."
+      },
+      {
+        "text": "If a host has a netmask of 255.255.255.255, it can be concluded that:",
+        "options": [
+          "The IPv4 routing table entry represent the host",
+          "The network portion of the address is 32 byte",
+          "The first octet of the IP address is reserved",
+          "The Network is quite large"
+        ],
+        "correctAnswer": "The IPv4 routing table entry represent the host",
+        "explanation": "A netmask of 255.255.255.255 indicates that the IPv4 routing table entry represents a specific host, not a network."
+      },
+      {
+        "text": "According to the inverse Square law, the signal strength will be the strongest at",
+        "options": [
+          "The antenna",
+          "This law does not relate to signal strength",
+          "The receiver module",
+          "The perimeter"
+        ],
+        "correctAnswer": "The antenna",
+        "explanation": "The inverse square law states that signal strength is strongest at the source, which in this case is the antenna."
+      },
+      {
+        "text": "When data is encoded on an electromagnetic carrier such as the radio band using more than one channel, the transceiver is only half-duplex communication.",
+        "options": [
+          "Depends on the modulation used.",
+          "True",
+          "Depends on the protocol used.",
+          "False"
+        ],
+        "correctAnswer": "False",
+        "explanation": "Using multiple channels does not necessarily limit communication to half-duplex. Full-duplex communication is possible with multiple channels."
+      },
+      {
+        "text": "For a point-to-point connection using radio technology, a ________ antenna is used.",
+        "options": [
+          "Long throw",
+          "Yagi",
+          "Omnidirectional",
+          "Dipole"
+        ],
+        "correctAnswer": "Yagi",
+        "explanation": "A Yagi antenna is often used for point-to-point connections due to its directional properties."
+      },
+      {
+        "text": "If you double the distance from a radio antenna, the signal strength will be.",
+        "options": [
+          "The same",
+          "Double",
+          "Half",
+          "Quarter"
+        ],
+        "correctAnswer": "Quarter",
+        "explanation": "According to the inverse square law, doubling the distance reduces the signal strength to one-quarter of its original value."
+      },
+      {
+        "text": "When data is encoded on an electromagnetic carrier such as the radio band, the transceiver is only half-duplex communication.",
+        "options": [
+          "False",
+          "Depends on the modulation used.",
+          "True",
+          "Depends on the protocol used."
+        ],
+        "correctAnswer": "True",
+        "explanation": "In basic radio communication, the transceiver typically operates in half-duplex mode, meaning it can either transmit or receive at a given time, but not both simultaneously."
+      },
+      {
+        "text": "To prevent switching loops, the following can be used:",
+        "options": [
+          "POP3",
+          "STP",
+          "TCP/IP",
+          "CSMA/CD"
+        ],
+        "correctAnswer": "STP",
+        "explanation": "STP (Spanning Tree Protocol) is used to prevent switching loops in network topologies with redundant paths."
+      },
+      {
+        "text": "POE is often associated with:",
+        "options": [
+          "Hubs",
+          "RS232C",
+          "WIFI AP",
+          "ViOP"
+        ],
+        "correctAnswer": "WIFI AP",
+        "explanation": "POE (Power over Ethernet) is often used with Wi-Fi Access Points (AP) to provide both power and data connection over a single Ethernet cable."
+      },
+      {
+        "text": "For a point-to-point connection using radio technology, a ________ antenna is used.",
+        "options": [
+          "Unidirectional",
+          "Omnidirectional",
+          "Long throw",
+          "broadcast"
+        ],
+        "correctAnswer": "Unidirectional",
+        "explanation": "A unidirectional (or directional) antenna is typically used for point-to-point connections to focus the signal in a specific direction."
+      },
+      {
+        "text": "In large networks, using switches with redundant links, what is a typical issue you need to be careful of?",
+        "options": [
+          "Reliability",
+          "Low propagation",
+          "Switching loops",
+          "Too much interference"
+        ],
+        "correctAnswer": "Switching loops",
+        "explanation": "Switching loops are a common issue in networks with redundant links, which can cause broadcast storms and network instability."
+      },
+      {
+        "text": "What does a switch do if it does not find the destination MAC address in its switching table?",
+        "options": [
+          "Forwards the frame out all ports",
+          "Sends an error to the sending device",
+          "Discards the frame",
+          "Sends an ARP to learn the MAC address"
+        ],
+        "correctAnswer": "Forwards the frame out all ports",
+        "explanation": "If a switch doesn't find the destination MAC address in its switching table, it floods the frame out all ports except the one it was received on."
+      },
+      {
+        "text": "When payment is made using your cell phone, the standard used is:",
+        "options": [
+          "RF",
+          "RFID",
+          "NFC",
+          "IR"
+        ],
+        "correctAnswer": "NFC",
+        "explanation": "NFC (Near Field Communication) is the standard typically used for mobile payments with cell phones."
+      },
+      {
+        "text": "Signal bonding does not solve:",
+        "options": [
+          "Cost issues",
+          "Interference issues",
+          "Distance issues",
+          "Speed issues"
+        ],
+        "correctAnswer": "Interference issues",
+        "explanation": "Signal bonding can help with speed, distance, and potentially cost issues, but it does not directly address interference problems."
+      },
+      {
+        "text": "When managing a switch using an RS-232C cable, the management approach is considered as _______ management.",
+        "options": [
+          "Out-of-band",
+          "In-bound",
+          "Admin",
+          "Administrator"
+        ],
+        "correctAnswer": "Out-of-band",
+        "explanation": "Using an RS-232C cable for switch management is considered out-of-band management because it uses a separate physical connection outside the main data path."
+      },
+      {
+        "text": "When managing a Switch using telnet, the management approach is considered as _____ management.",
+        "options": [
+          "Out-of-land",
+          "None of the options are correct.",
+          "Support",
+          "Domain Admin"
+        ],
+        "correctAnswer": "None of the options are correct.",
+        "explanation": "Managing a switch using telnet is typically considered in-band management, which is not listed among the options."
+      },
+      {
+        "text": "Switches with basic functionality, using a web-based configuration tool is known as:",
+        "options": [
+          "Dumb Switch",
+          "Smart Switches",
+          "Rudimentary Switches",
+          "Unmanaged switch"
+        ],
+        "correctAnswer": "Smart Switches",
+        "explanation": "Switches with basic functionality and web-based configuration are typically referred to as Smart Switches."
+      },
+      {
+        "text": "The newer Wi-Fi standard uses the following to modulate data onto a carrier.",
+        "options": [
+          "CSMA/CD",
+          "CDMA",
+          "OFDM",
+          "DSSS"
+        ],
+        "correctAnswer": "OFDM",
+        "explanation": "Newer Wi-Fi standards use OFDM (Orthogonal Frequency-Division Multiplexing) for data modulation."
+      },
+      {
+        "text": "When managing a switch using a dedicated RJ45 connection on the switch, the management approach is considered as _______ management.",
+        "options": [
+          "In-bound",
+          "Admin",
+          "Administrator",
+          "Out-of-band"
+        ],
+        "correctAnswer": "Out-of-band",
+        "explanation": "Using a dedicated RJ45 connection for switch management is considered out-of-band management as it's separate from the main data path."
+      },
+      {
+        "text": "Switches are pretty easy to configure when using the following:",
+        "options": [
+          "Local admin",
+          "Office rule",
+          "FTP session",
+          "Tree topology"
+        ],
+        "correctAnswer": "Tree topology",
+        "explanation": "While tree topology can simplify network design, it doesn't directly make switch configuration easier. This question may be problematic or have an error."
+      },
+      {
+        "text": "To allow a device to effortlessly roam between various Wi-Fi APs, a ___________ Wi-Fi is required.",
+        "options": [
+          "Mesh",
+          "direct",
+          "linked",
+          "Looped"
+        ],
+        "correctAnswer": "Mesh",
+        "explanation": "A mesh Wi-Fi network allows devices to roam seamlessly between multiple access points."
+      },
+      {
+        "text": "A wireless bridge is used for:",
+        "options": [
+          "bridge a TCP/IP network with a Token-ring Wi-Fi network",
+          "Bridge a LAN to a Wi-Fi network",
+          "linking two wireless networks",
+          "None of the options are correct"
+        ],
+        "correctAnswer": "linking two wireless networks",
+        "explanation": "A wireless bridge is primarily used to connect or 'bridge' two wireless networks."
+      },
+      {
+        "text": "When managing a Switch using SNMP, the management approach is considered as _______ management.",
+        "options": [
+          "Admin",
+          "Administrator",
+          "Out-of-land",
+          "In-bound"
+        ],
+        "correctAnswer": "In-bound",
+        "explanation": "SNMP (Simple Network Management Protocol) is typically considered an in-band management approach as it uses the network itself for management traffic."
+      },
+      {
+        "text": "Wi-Fi access points are identified by their service set identifier, which is a string of only 16 octets.",
+        "options": [
+          "False",
+          "True",
+          "Depends if the 802.11a or 802.11g standard is used.",
+          "Depends if the 802.11bg or 802.11b standard is used."
+        ],
+        "correctAnswer": "False",
+        "explanation": "This statement is false. An SSID can be up to 32 octets (not just 16) in length."
+      },
+      {
+      "text": "If IPsec is used to provide a secure network tunnel over the internet, ____________ negotiates the security associations.",
+      "options": [
+        "None of the options are correct",
+        "WEP-AES",
+        "ESP",
+        "L2TP",
+        "IKE"
+      ],
+      "correctAnswer": "IKE",
+      "explanation": "IKE (Internet Key Exchange) is responsible for negotiating security associations in IPsec."
+    },
+    {
+      "text": "If a number of Virtual machines are connected to a physical NIC a _____ can be installed to provide VLAN functions.",
+      "options": [
+        "Virtual switch",
+        "Install a VNIC",
+        "VLAN switch",
+        "Only option is to have a physical switch connected to each NIC on the Host machine.",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "Virtual switch",
+      "explanation": "A virtual switch can be installed to provide VLAN functions for multiple virtual machines connected to a physical NIC."
+    },
+    {
+      "text": "In what way does a PKI certificate differ from a self-signed SSL certificate?",
+      "options": [
+        "None of the options are correct",
+        "The one will be signed by the CA's private key.",
+        "They are the same.",
+        "The one will be signed by the CA's public key.",
+        "The one will be 64bit."
+      ],
+      "correctAnswer": "The one will be signed by the CA's private key.",
+      "explanation": "A PKI certificate is signed by a Certificate Authority's private key, while a self-signed certificate is signed by its own private key."
+    },
+    {
+      "text": "If an attack focus the exploit the applications of a system, the ________ of the OSI model is targeted.",
+      "options": [
+        "Network layer",
+        "None of the options are correct",
+        "Session layer",
+        "Layer 3",
+        "Hardware layer"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "Application-level attacks typically target the Application layer (Layer 7) of the OSI model, which is not listed among the options."
+    },
+    {
+      "text": "When a message to be sent over a public network such as the Internet, is hashed, _________ is enforced.",
+      "options": [
+        "Confidentiality",
+        "Trust",
+        "Access control",
+        "Integrity",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "Integrity",
+      "explanation": "Hashing a message ensures its integrity, allowing the recipient to verify that the message hasn't been altered during transmission."
+    },
+    {
+      "text": "Which VoIP protocol provides integrity features?",
+      "options": [
+        "H.323",
+        "None of the options are correct",
+        "H.232",
+        "SIP",
+        "RTP"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "The listed VoIP protocols (H.323, SIP, RTP) do not inherently provide integrity features. Integrity in VoIP is typically provided by additional security protocols like SRTP or IPSec."
+    },
+    {
+      "text": "In what way does a PKI certificate differ from a self-signed SSL certificate?",
+      "options": [
+        "The one will have a CA signature.",
+        "X.509 format",
+        "PKL",
+        "None of the options are correct.",
+        "The SSL certificate binds to the arp"
+      ],
+      "correctAnswer": "The one will have a CA signature.",
+      "explanation": "A PKI certificate is signed by a trusted Certificate Authority (CA), while a self-signed certificate is signed by its own creator."
+    },
+    {
+      "text": "Policies used to discourage users from ignoring good security practices are considered to be a security tool known as:",
+      "options": [
+        "None of the options are correct",
+        "Selective",
+        "Corrective",
+        "Integrity",
+        "Availability"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "Policies used to discourage users from ignoring good security practices are typically referred to as 'Deterrent' controls, which is not listed among the options."
+    },
+    {
+      "text": "VPN access is often associated with using a ______",
+      "options": [
+        "Rado server",
+        "PKE",
+        "Asymmetric encryption",
+        "None of the options are correct",
+        "Ticket"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "VPN access is often associated with using a RADIUS server for authentication, which is not listed among the options."
+    },
+    {
+      "text": "In order to block users from accessing outside email servers not part of the corporate network a firewall rule can be set to:",
+      "options": [
+        "Deny port packets routed via port 25",
+        "None of the options are correct",
+        "Deny POP3 packets",
+        "Alter the Level 7 header",
+        "Deny \"email\" from external to internal"
+      ],
+      "correctAnswer": "Deny POP3 packets",
+      "explanation": "Blocking POP3 packets would prevent users from accessing outside email servers, as POP3 is a common protocol for retrieving email from a server."
+    },
+    {
+      "text": "Compared to SFTP, FTPS is basically the same protocol.",
+      "options": [
+        "False, FTPS uses 3DES.",
+        "False, as SFTP replaced FTP.",
+        "Indeed, as it uses port 23.",
+        "None of the options are correct.",
+        "True"
+      ],
+      "correctAnswer": "False, as SFTP replaced FTP.",
+      "explanation": "SFTP (SSH File Transfer Protocol) and FTPS (FTP over SSL/TLS) are different protocols. SFTP is a separate protocol that provides file transfer functionality over SSH, while FTPS is FTP with added SSL/TLS encryption."
+    },
+    {
+      "text": "A network based firewall is typically a firewall are often a ________.",
+      "options": [
+        "Part of Windows",
+        "Application",
+        "Hardware appliance",
+        "None of the options are correct",
+        "Hub"
+      ],
+      "correctAnswer": "Hardware appliance",
+      "explanation": "Network-based firewalls are typically implemented as dedicated hardware appliances designed specifically for firewall functionality."
+    },
+    {
+      "text": "The fundamental technology used for SAN storage approaches is",
+      "options": [
+        "Fibre channel",
+        "Hive",
+        "Nvme",
+        "None of the options are correct",
+        "HVAC"
+      ],
+      "correctAnswer": "Fibre channel",
+      "explanation": "Fibre Channel is a fundamental technology used in Storage Area Network (SAN) approaches, providing high-speed data transfer between servers and storage devices."
+    },
+    {
+      "text": "__________ allows a host to exist only as software.",
+      "options": [
+        "Instantiation",
+        "Virtualization",
+        "None of the options are correct",
+        "Hyper Linking",
+        "Outlining"
+      ],
+      "correctAnswer": "Virtualization",
+      "explanation": "Virtualization technology allows a host to exist as software, creating virtual instances of computer hardware platforms, storage devices, and network resources."
+    },
+    {
+      "text": "Considering the fact that analogue video or audio uses a lot of data to digitize, __________ can be used to mitigate this.",
+      "options": [
+        "a trunk",
+        "None of the options are correct",
+        "an assembler",
+        "a codec",
+        "SIP"
+      ],
+      "correctAnswer": "a codec",
+      "explanation": "A codec (coder-decoder) is used to compress and decompress digital audio and video data, reducing the amount of data needed to represent the analogue signal."
+    },
+    {
+      "text": "When a message to be sent over a public network such as the Internet, is encrypted, _________ is enforced.",
+      "options": [
+        "Access control",
+        "Hashing",
+        "Integrity",
+        "Trust",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "Encryption of a message primarily enforces confidentiality, which is not listed among the options."
+    },
+    {
+      "text": "What feature primary helps to protect against DoS attacks?",
+      "options": [
+        "dictionaries",
+        "Loop protection",
+        "DMZ",
+        "firewalls",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "Loop protection",
+      "explanation": "Loop protection is a feature that can help prevent certain types of DoS attacks, particularly those that exploit network loops to overwhelm systems."
+    },
+    {
+      "text": "Compared to HTTP, HTTPS is a new protocol.",
+      "options": [
+        "Depends if SMTPS is part of the transmission.",
+        "Indeed, as it uses port 8080.",
+        "False, as it is basically HTTP through TLS",
+        "False, HTTPS uses a PGP session.",
+        "None of the options are correct."
+      ],
+      "correctAnswer": "False, as it is basically HTTP through TLS",
+      "explanation": "HTTPS is not a new protocol, but rather HTTP transmitted over a secure TLS/SSL connection."
+    },
+    {
+      "text": "True or false. Biometrics systems cannot be subverted.",
+      "options": [
+        "False",
+        "True"
+      ],
+      "correctAnswer": "False",
+      "explanation": "Biometric systems, while generally secure, can still be subverted through various means such as spoofing or replay attacks."
+    },
+    {
+      "text": "When a site-to-site VPN is instantiated, the secure tunnel will run from:",
+      "options": [
+        "Node to Node",
+        "Switch to Firewall",
+        "None of the options are correct",
+        "Node to Firewall",
+        "Firewall to Firewall"
+      ],
+      "correctAnswer": "Firewall to Firewall",
+      "explanation": "In a site-to-site VPN, the secure tunnel typically runs from one site's firewall to the other site's firewall, creating a secure connection between the two networks."
+    },
+    {
+      "text": "A protocol analyser is also known as a:",
+      "options": [
+        "scanner",
+        "network scanner",
+        "port scanner",
+        "network mapper",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "A protocol analyzer is also known as a packet sniffer or network analyzer, which are not listed among the options."
+    },
+    {
+      "text": "To see what TCP vulnerabilities are found on a host a _____________ can be used.",
+      "options": [
+        "Security policy",
+        "Host address",
+        "None of the options are correct",
+        "Port Scanner",
+        "Sniffer"
+      ],
+      "correctAnswer": "Port Scanner",
+      "explanation": "A port scanner is used to identify open ports on a host, which can reveal potential TCP vulnerabilities."
+    },
+    {
+      "text": "Upper Layers of the OSI model use ____ to secure the network environment.",
+      "options": [
+        "Symmetric Encryption.",
+        "PGP.",
+        "None of the options are correct",
+        "SSH.",
+        "Blowfish."
+      ],
+      "correctAnswer": "None of the options are correct",
+      "explanation": "Upper layers of the OSI model typically use various security protocols and mechanisms, not just one specific encryption method. The correct answer would depend on the specific application and security requirements."
+    },
+    {
+      "text": "Kerberos uses a _______ approach to allow users to gain access to certain network facilities.",
+      "options": [
+        "Handshake",
+        "SOCKS",
+        "None of the options are correct",
+        "Asymmetric",
+        "Ticket"
+      ],
+      "correctAnswer": "Ticket",
+      "explanation": "Kerberos uses a ticket-based approach for authentication and authorization, allowing users to access network resources securely."
+    },
+    {
+      "text": "VPN access is often associated with using a ______",
+      "options": [
+        "RADIUS server",
+        "Asymmetric encryption",
+        "PKE",
+        "Fibre trunk",
+        "None of the options are correct"
+      ],
+      "correctAnswer": "RADIUS server",
+      "explanation": "VPN access is often associated with using a RADIUS (Remote Authentication Dial-In User Service) server for authentication and authorization of remote users."
+    }
+    ]
+  }
+  
