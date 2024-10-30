@@ -752,7 +752,307 @@
       ],
       "correctAnswer": "RADIUS server",
       "explanation": "VPN access is often associated with using a RADIUS (Remote Authentication Dial-In User Service) server for authentication and authorization of remote users."
-    }
+    },
+  {
+    "text": "Due to limited internet bandwidth you have been advised to add a proxy server to the network. You do not wish to configure each browser used by the network users individually, for this reason you decide to setup a ____ proxy server.",
+    "options": [
+      "perimeter",
+      "active",
+      "transparent",
+      "passive",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "transparent",
+    "explanation": "A transparent proxy server intercepts client requests without requiring any special browser configuration, making it ideal for situations where individual browser setup is impractical."
+  },
+  {
+    "text": "If the archive bit has been set for a file _______ will back up the file and clear the archive bit.",
+    "options": [
+      "snapshot",
+      "archive backup",
+      "differential backup",
+      "None of the options are correct",
+      "full backup"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "An incremental backup will back up files with the archive bit set and then clear the bit. This option was not listed among the choices."
+  },
+  {
+    "text": "An NMS is often associated with _________.",
+    "options": [
+      "FTP",
+      "SMTP",
+      "RDP",
+      "None of the options are correct",
+      "HTTPS"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "An NMS (Network Management System) is often associated with SNMP (Simple Network Management Protocol), which is not listed among the options."
+  },
+  {
+    "text": "If a network administrator need to look at the packets flowing on the network, the following can be used:",
+    "options": [
+      "NIC",
+      "Npcap",
+      "TCP/IP",
+      "Nslookup",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "Npcap",
+    "explanation": "Npcap is a packet capture and analysis library for Windows that allows administrators to inspect network traffic."
+  },
+  {
+    "text": "In order to collect packets from a network, the NIC must:",
+    "options": [
+      "collect TCP/IP packets",
+      "contact the network switch",
+      "log packets",
+      "run in promiscuous mode",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "run in promiscuous mode",
+    "explanation": "For a NIC to collect all packets on a network segment, including those not addressed to it, it must be set to promiscuous mode."
+  },
+  {
+    "text": "For a network node, the following can be considered as a single point of failure, rendering the network node offline:",
+    "options": [
+      "None of the options are correct",
+      "Human optical interface device",
+      "Nvme drive used for temporary storage",
+      "Universal serial bus",
+      "Server log files"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "None of the listed options would typically be considered a single point of failure that would render a network node offline."
+  },
+  {
+    "text": "A ________ is often found where channel bonding is used.",
+    "options": [
+      "None of the options are correct",
+      "trunk",
+      "Firewall",
+      "Hub",
+      "Switch"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "A load balancer is often found where channel bonding is used, but this option was not listed."
+  },
+  {
+    "text": "If a specific operating system setup is required to ensure the functioning of a server on the network, the following backup would be the best option",
+    "options": [
+      "Snapshot",
+      "Full",
+      "None of the options are correct",
+      "Distributed",
+      "Differential"
+    ],
+    "correctAnswer": "Snapshot",
+    "explanation": "A snapshot backup is ideal for capturing the exact state of a system, including its operating system configuration, at a specific point in time."
+  },
+  {
+    "text": "Scrutinizing the System Log, you see many \"security\" events listed for the users. From this is must be concluded that:",
+    "options": [
+      "Users forgot their usernames",
+      "The log file is not collecting the correct information",
+      "No user can manage to log in",
+      "The log file is set too lenient",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "Seeing many security events in the system log doesn't necessarily lead to any of the listed conclusions. It could indicate various security-related activities or attempts."
+  },
+  {
+    "text": "If a specific operating system setup is required to ensure the functioning of a server on the network, the following backup would be the best option",
+    "options": [
+      "Full",
+      "None of the options are correct",
+      "Distributed",
+      "Incremental",
+      "Differential"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "For a specific operating system setup, a snapshot backup would be the best option, which is not listed among the choices."
+  },
+  {
+    "text": "As a proxy can be considered a potential bottle neck, the following is often associated with load balancing technology:",
+    "options": [
+      "channel bonding",
+      "link state routing",
+      "reverse proxy",
+      "None of the options are correct",
+      "NAT"
+    ],
+    "correctAnswer": "reverse proxy",
+    "explanation": "A reverse proxy is often used in conjunction with load balancing technology to distribute incoming requests across multiple servers, helping to alleviate potential bottlenecks."
+  },
+  {
+    "text": "An NMS is often associated with _________ .",
+    "options": [
+      "RDP",
+      "SNMP",
+      "None of the options are correct",
+      "POP3",
+      "Telnet"
+    ],
+    "correctAnswer": "SNMP",
+    "explanation": "A Network Management System (NMS) is often associated with SNMP (Simple Network Management Protocol) for monitoring and managing network devices."
+  },
+  {
+    "text": "The best description for eDiscovery is:",
+    "options": [
+      "a process for discovery electronic resources",
+      "a process for sharing forensic data.",
+      "None of the options are correct",
+      "a software application to analyse intrusion attempts",
+      "a standard for discovery system breaches"
+    ],
+    "correctAnswer": "a process for sharing forensic data.",
+    "explanation": "eDiscovery (electronic discovery) is the process of identifying, collecting, and producing electronically stored information in response to a request for production in a lawsuit or investigation."
+  },
+  {
+    "text": "In order to collect packets from a network, the NIC must:",
+    "options": [
+      "act as a network switch",
+      "route port 25 packets",
+      "Collect ARP information",
+      "offload packet TCP headers",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "To collect packets from a network, the NIC must be in promiscuous mode, which is not listed among the options."
+  },
+  {
+    "text": "On the ABSA network, there are many failover nodes on the network that are always online, so all work are shared among all online servers. This approach is used to ensure higher availability and is referred to as ____ approach:",
+    "options": [
+      "a passive",
+      "a backup",
+      "online",
+      "loader",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "This approach is typically referred to as an 'active-active' or 'load-balancing' approach, which is not listed among the options."
+  },
+  {
+    "text": "A ________ is often found where channel bonding is used.",
+    "options": [
+      "None of the options are correct",
+      "Load balancer",
+      "SIP trunk",
+      "radio antenna",
+      "modem"
+    ],
+    "correctAnswer": "Load balancer",
+    "explanation": "A load balancer is often used in conjunction with channel bonding to distribute traffic across multiple bonded channels."
+  },
+  {
+    "text": "Unisa is entering into an agreement to replace the current LMS. Timelines and milestones will typically be documented in the:",
+    "options": [
+      "Work policy",
+      "Statement of work",
+      "Agreement of understanding",
+      "None of the options are correct",
+      "NDA"
+    ],
+    "correctAnswer": "Statement of work",
+    "explanation": "A Statement of Work (SOW) typically includes project timelines, deliverables, and milestones for a specific project or service."
+  },
+  {
+    "text": "The server room must be well protected against possible fire, however, when a fire does occur, the following is advisable and a practical solution to control the fire:",
+    "options": [
+      "Shut down all electricity to the building immediately",
+      "two of the options are correct",
+      "use carbon dioxide to extinguish the fire",
+      "remove all oxygen from the room.",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "use carbon dioxide to extinguish the fire",
+    "explanation": "Carbon dioxide fire extinguishers are ideal for server rooms as they don't leave residue and don't conduct electricity, making them safe for use on electrical fires."
+  },
+  {
+    "text": "The typical installation size used by modular network components in a server cabinet is:",
+    "options": [
+      "4u",
+      "Two of the options are correct",
+      "None of the options are correct",
+      "3u",
+      "842.6cm"
+    ],
+    "correctAnswer": "842.6cm",
+    "explanation": "842.6cm (33.17 inches) is the typical width of a standard 19-inch rack, which is used for mounting network and server equipment."
+  },
+  {
+    "text": "In network design and planning, the best practices are usually captured in:",
+    "options": [
+      "notice",
+      "a blue print",
+      "a white paper",
+      "guideline",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "guideline",
+    "explanation": "Best practices in network design and planning are typically captured in guidelines, which provide recommendations and standards for implementation."
+  },
+  {
+    "text": "The objective of a network policy is_______:",
+    "options": [
+      "to protect an organization's assets from harm",
+      "give notice of network layout",
+      "specify a specific procedure",
+      "to outline the best practices",
+      "None of the options are correct"
+    ],
+    "correctAnswer": "to protect an organization's assets from harm",
+    "explanation": "The primary objective of a network policy is to protect an organization's assets, including data and infrastructure, from potential harm or misuse."
+  },
+  {
+    "text": "In most cases it is advisable to not delay the installation of ___________ .",
+    "options": [
+      "None of the options are correct",
+      "exe files",
+      "RJ45 cables on a token ring network",
+      "Firewall DNS rules",
+      "Firmware"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "It's typically advisable not to delay the installation of security patches or updates, which is not listed among the options."
+  },
+  {
+    "text": "Advice on how to design a strong password is usually captured in:",
+    "options": [
+      "a policy",
+      "procedure",
+      "None of the options are correct",
+      "notice",
+      "a standard"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "Advice on designing strong passwords is typically captured in a guideline, which is not listed among the options."
+  },
+  {
+    "text": "The objective of a network policy is_______:",
+    "options": [
+      "provide insight in risk mitigation",
+      "to provide a network blue print",
+      "specify a specific guideline",
+      "None of the options are correct",
+      "to test an organization's contingency to disaster"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "The primary objective of a network policy is to protect an organization's assets and define acceptable use of network resources, which is not explicitly stated in the options."
+  },
+  {
+    "text": "BYOD is associated with:",
+    "options": [
+      "None of the options are correct",
+      "a printout provided at the security office to allow personal devices to be used on the network",
+      "a special notice placed on the daily network policy resource page of the company",
+      "an employer providing an employee with a mobile device to be used for work and personal benefit",
+      "a guideline which is provided by the YOD office to describe network security policies"
+    ],
+    "correctAnswer": "None of the options are correct",
+    "explanation": "BYOD (Bring Your Own Device) is a policy that allows employees to use their personal devices for work purposes. This exact definition is not provided in the options."
+  }
     ]
   }
   
