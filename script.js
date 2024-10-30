@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test27.json",
     "test28.json",
     "test29.json",
+    "test30.json",
     "ISTQB1.json",
     "ISTQB2.json",
     "ISTQB3.json",
