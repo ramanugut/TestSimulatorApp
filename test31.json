@@ -101,9 +101,7 @@
             "correctAnswer": "a. Autocommit",
             "explanation": "Autocommit is Oracle's default transaction mode where each query is automatically committed upon execution."
         },
-{
-    "testName": "ICT151 Database Test",
-    "questions": [
+
         {
             "text": "Adding a ORDER BY UNIT_PRICE clause to a SQL query will _____.",
             "options": [
@@ -374,9 +372,7 @@
             "correctAnswer": "a. nonkey",
             "explanation": "A nonkey column is any column that is not part of the primary key of the table."
         },
-{
-    "testName": "ICT151 Database Test",
-    "questions": [
+
         {
             "text": "A program's or an individual user's picture of the database is called a(n) _____.",
             "options": [
@@ -522,7 +518,5 @@
             "correctAnswer": "a. left outer join",
             "explanation": "A left outer join includes all rows from the left table and matching rows from the right table."
         }
-    ]
-}
     ]
 }
