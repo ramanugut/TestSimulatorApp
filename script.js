@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test28.json",
     "test29.json",
     "test30.json",
+    "test31.json",
     "ISTQB1.json",
     "ISTQB2.json",
     "ISTQB3.json",
