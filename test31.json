@@ -1,0 +1,528 @@
+{
+    "testName": "ICT151 Database Test",
+    "questions": [
+        {
+            "text": "What do you need to know to complete the FIRST step in the process of creating a new table using data from an existing table, called CANDY, in MySQL?",
+            "options": [
+                "a. The name of the new table",
+                "b. The columns from CANDY that you want to include and their characteristics",
+                "c. The primary key of CANDY",
+                "d. The data types of all columns"
+            ],
+            "correctAnswer": "b. The columns from CANDY that you want to include and their characteristics",
+            "explanation": "When creating a new table from an existing one, you first need to identify which columns you want to include and understand their characteristics to properly structure the new table."
+        },
+        {
+            "text": "When you specify a foreign key, the table referenced by the foreign key is the _____.",
+            "options": [
+                "a. child",
+                "b. parent",
+                "c. reference",
+                "d. master"
+            ],
+            "correctAnswer": "b. parent",
+            "explanation": "The table referenced by a foreign key is called the parent table, as it contains the primary key that the foreign key references."
+        },
+        {
+            "text": "A condition is true if it satisfies any value (one or more) produced by a subquery that is preceded by the _____.",
+            "options": [
+                "a. ALL operator",
+                "b. ANY operator",
+                "c. SOME operator",
+                "d. EACH operator"
+            ],
+            "correctAnswer": "b. ANY operator",
+            "explanation": "The ANY operator returns true if the condition is true for any of the values returned by the subquery."
+        },
+        {
+            "text": "You can create and maintain an index on any row in any table.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "Indexes are created on columns, not rows, and have specific requirements for creation and maintenance."
+        },
+        {
+            "text": "The duplication of data is formally called _____.",
+            "options": [
+                "a. redundancy",
+                "b. replication",
+                "c. repetition",
+                "d. reproduction"
+            ],
+            "correctAnswer": "a. redundancy",
+            "explanation": "In database terminology, redundancy is the formal term for data duplication."
+        },
+        {
+            "text": "When joining tables, it is always necessary to qualify a column name.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "When joining tables, column qualification is necessary to avoid ambiguity when the same column name exists in multiple tables."
+        },
+        {
+            "text": "The system catalog is also called the _____.",
+            "options": [
+                "a. data dictionary",
+                "b. meta database",
+                "c. system index",
+                "d. master catalog"
+            ],
+            "correctAnswer": "a. data dictionary",
+            "explanation": "The system catalog, which contains metadata about the database structure, is also known as the data dictionary."
+        },
+        {
+            "text": "Which SQL command do you use to remove an entire row from a table?",
+            "options": [
+                "a. REMOVE",
+                "b. DELETE",
+                "c. DROP",
+                "d. ERASE"
+            ],
+            "correctAnswer": "b. DELETE",
+            "explanation": "The DELETE command is used to remove rows from a table in SQL."
+        },
+        {
+            "text": "A logical unit of work, often conceptualized as a sequence of steps that accomplish a single task, is called a _____.",
+            "options": [
+                "a. transaction",
+                "b. procedure",
+                "c. function",
+                "d. operation"
+            ],
+            "correctAnswer": "a. transaction",
+            "explanation": "A transaction is a logical unit of work that consists of one or more SQL statements that must be executed as a single unit."
+        },
+        {
+            "text": "The default transaction mode in Oracle, which commits each action query as soon as the user executes the query, is _____.",
+            "options": [
+                "a. Autocommit",
+                "b. Immediate",
+                "c. Direct",
+                "d. Instant"
+            ],
+            "correctAnswer": "a. Autocommit",
+            "explanation": "Autocommit is Oracle's default transaction mode where each query is automatically committed upon execution."
+        },
+{
+    "testName": "ICT151 Database Test",
+    "questions": [
+        {
+            "text": "Adding a ORDER BY UNIT_PRICE clause to a SQL query will _____.",
+            "options": [
+                "a. display the results in ascending order by UNIT_PRICE",
+                "b. display the results in descending order by UNIT_PRICE",
+                "c. group the results by UNIT_PRICE",
+                "d. filter the results by UNIT_PRICE"
+            ],
+            "correctAnswer": "a. display the results in ascending order by UNIT_PRICE",
+            "explanation": "The ORDER BY clause without DESC sorts results in ascending order by default."
+        },
+        {
+            "text": "In SQL Server, you use the & symbol to concatenate columns.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "SQL Server uses the + operator, not the & symbol, for string concatenation."
+        },
+        {
+            "text": "A trigger is executed _____.",
+            "options": [
+                "a. in response to a command such as INSERT, UPDATE, or DELETE",
+                "b. only when manually activated",
+                "c. at scheduled intervals",
+                "d. when the database starts"
+            ],
+            "correctAnswer": "a. in response to a command such as INSERT, UPDATE, or DELETE",
+            "explanation": "Triggers are automatically executed in response to specific DML operations (INSERT, UPDATE, DELETE) on a table."
+        },
+        {
+            "text": "When you need to complete tasks that are beyond the capabilities of SQL, you need to use a procedural language.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Procedural languages extend beyond SQL's capabilities by allowing complex logic, loops, and conditional statements."
+        },
+        {
+            "text": "The DATE_ADD function has one argument.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "The DATE_ADD function requires at least two arguments: the date to modify and the interval to add."
+        },
+        {
+            "text": "What function can you use in Oracle, MySQL, and SQL Server to truncate everything to the right of the decimal point?",
+            "options": [
+                "a. FLOOR",
+                "b. TRUNCATE",
+                "c. ROUND",
+                "d. DECIMAL"
+            ],
+            "correctAnswer": "a. FLOOR",
+            "explanation": "The FLOOR function is available in all three database systems and removes all decimal places, returning the largest integer less than or equal to the number."
+        },
+        {
+            "text": "Percy is promoted and is no longer responsible for making updates to several database tables. Which command should Percy's database administrator use to prevent Percy from making future updates?",
+            "options": [
+                "a. REVOKE",
+                "b. DENY",
+                "c. REMOVE",
+                "d. RESTRICT"
+            ],
+            "correctAnswer": "a. REVOKE",
+            "explanation": "The REVOKE command is used to remove previously granted privileges from a user."
+        },
+        {
+            "text": "Which privilege can be granted to allow a user to retrieve data?",
+            "options": [
+                "a. SELECT",
+                "b. READ",
+                "c. VIEW",
+                "d. RETRIEVE"
+            ],
+            "correctAnswer": "a. SELECT",
+            "explanation": "The SELECT privilege allows users to query and retrieve data from specified tables."
+        },
+        {
+            "text": "The CREATE VIEW command includes the words CREATE VIEW, followed by the name of the view, the word ____, and then a query.",
+            "options": [
+                "a. AS",
+                "b. IS",
+                "c. WITH",
+                "d. USING"
+            ],
+            "correctAnswer": "a. AS",
+            "explanation": "The standard syntax for creating a view is: CREATE VIEW view_name AS select_statement"
+        },
+        {
+            "text": "Views furnish a certain amount of security; if users are accessing the database through a view, they cannot access any data that is not included in the view.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Views provide security by limiting users to only seeing the data specified in the view definition, preventing access to other data in the base tables."
+        },
+        {
+            "text": "SQL is Structured ____ Language.",
+            "options": [
+                "a. QUERY",
+                "b. QUESTION",
+                "c. QUEUE",
+                "d. QUALITY"
+            ],
+            "correctAnswer": "a. QUERY",
+            "explanation": "SQL stands for Structured Query Language, used for managing and manipulating relational databases."
+        },
+        {
+            "text": "In Oracle, the data type STRING(n) stores a character string n characters long.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "Oracle uses VARCHAR2 or CHAR for character strings, not STRING(n)."
+        },
+        {
+            "text": "The data type DECIMAL(5,2) represents a number with three places to the left and two places to the right of the decimal.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "In DECIMAL(5,2), 5 is the total number of digits (3 left + 2 right of decimal) and 2 is the number of decimal places."
+        },
+        {
+            "text": "What happens if you run a DELETE command that does not contain a WHERE clause?",
+            "options": [
+                "a. All rows will be deleted from the table",
+                "b. Only the first row will be deleted",
+                "c. Nothing happens",
+                "d. An error message is displayed"
+            ],
+            "correctAnswer": "a. All rows will be deleted from the table",
+            "explanation": "A DELETE command without a WHERE clause will remove all rows from the specified table since no filtering condition is provided."
+        },
+        {
+            "text": "The ____ data type is used to store integers.",
+            "options": [
+                "a. INT",
+                "b. FLOAT",
+                "c. DECIMAL",
+                "d. NUMBER"
+            ],
+            "correctAnswer": "a. INT",
+            "explanation": "INT is the standard data type used for storing whole numbers (integers) in databases."
+        },
+        {
+            "text": "To create a table, type the command DESCRIBE TABLE followed by the name of the table to be created and then by the names and data types of the columns that will comprise the table.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "The CREATE TABLE command, not DESCRIBE TABLE, is used to create new tables. DESCRIBE is used to view table structure."
+        },
+        {
+            "text": "A primary key always comprises a single column.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "A primary key can be composed of multiple columns (composite primary key) or a single column."
+        },
+        {
+            "text": "How do you add a specific number of days to a date in MySQL?",
+            "options": [
+                "a. use an expression with a plus (+) operator such as '+ 14'",
+                "b. use the ADD_DAYS function",
+                "c. use the DATEADD function",
+                "d. use the INCREMENT_DATE function"
+            ],
+            "correctAnswer": "a. use an expression with a plus (+) operator such as '+ 14'",
+            "explanation": "In MySQL, you can add days to a date using the + operator with the number of days to add."
+        },
+        {
+            "text": "In a relational database, relationships are implemented by having common columns in two or more tables.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Relationships between tables are implemented through common columns, typically using primary and foreign keys."
+        },
+        {
+            "text": "Which is the correct sequence of elements for a SQL command that will change a value in an existing table row?",
+            "options": [
+                "a. UPDATE, table name, SET, column name, equal sign, new value",
+                "b. SET, table name, UPDATE, column name, equal sign, new value",
+                "c. CHANGE, table name, TO, column name, equal sign, new value",
+                "d. MODIFY, column name, IN, table name, TO, new value"
+            ],
+            "correctAnswer": "a. UPDATE, table name, SET, column name, equal sign, new value",
+            "explanation": "The correct SQL UPDATE syntax is: UPDATE table_name SET column_name = new_value [WHERE condition]"
+        },
+        {
+            "text": "The ____ operator finds rows that do not contain a null value in the specified column.",
+            "options": [
+                "a. IS NOT NULL",
+                "b. NOT NULL",
+                "c. NO NULL",
+                "d. ISNOTNULL"
+            ],
+            "correctAnswer": "a. IS NOT NULL",
+            "explanation": "The IS NOT NULL operator is used to find rows where the specified column contains a non-null value."
+        },
+        {
+            "text": "The ____ clause lets you group data on a particular column.",
+            "options": [
+                "a. GROUP BY",
+                "b. ORDER BY",
+                "c. CLUSTER BY",
+                "d. ARRANGE BY"
+            ],
+            "correctAnswer": "a. GROUP BY",
+            "explanation": "The GROUP BY clause is used to group rows that have the same values in specified columns."
+        },
+        {
+            "text": "A relation is in ____ if it does not contain any repeating groups.",
+            "options": [
+                "a. First Normal Form",
+                "b. Second Normal Form",
+                "c. Third Normal Form",
+                "d. Boyce-Codd Normal Form"
+            ],
+            "correctAnswer": "a. First Normal Form",
+            "explanation": "First Normal Form (1NF) requires that each column contains atomic values and there are no repeating groups."
+        },
+        {
+            "text": "You can join tables by using a condition in the WHERE clause.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "Tables can be joined using conditions in the WHERE clause that match values between tables."
+        },
+        {
+            "text": "In SQL Server, you can obtain today's date using the _____.",
+            "options": [
+                "a. GETDATE() function",
+                "b. TODAY()",
+                "c. CURRENT_DATE()",
+                "d. NOW()"
+            ],
+            "correctAnswer": "a. GETDATE() function",
+            "explanation": "GETDATE() is the SQL Server function used to obtain the current date and time."
+        },
+        {
+            "text": "When you use the ____ function, you can use the asterisk (*) to represent any column.",
+            "options": [
+                "a. COUNT",
+                "b. SUM",
+                "c. AVG",
+                "d. MAX"
+            ],
+            "correctAnswer": "a. COUNT",
+            "explanation": "COUNT(*) is a valid syntax that counts all rows, while other aggregate functions require specific column names."
+        },
+        {
+            "text": "The HAVING clause is used to restrict groups that are included in a query result.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "The HAVING clause filters groups created by the GROUP BY clause, similar to how WHERE filters individual rows."
+        },
+        {
+            "text": "The COUNT function only applies to columns with numeric values.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "The COUNT function can be used with any type of column, not just numeric ones."
+        },
+        {
+            "text": "In an entity-relationship (E-R) diagram, ____ are used to represent an entity.",
+            "options": [
+                "a. rectangles",
+                "b. circles",
+                "c. triangles",
+                "d. diamonds"
+            ],
+            "correctAnswer": "a. rectangles",
+            "explanation": "In E-R diagrams, entities are conventionally represented by rectangles."
+        },
+        {
+            "text": "A(n) ____ column is a column that is not part of the primary key.",
+            "options": [
+                "a. nonkey",
+                "b. secondary",
+                "c. auxiliary",
+                "d. dependent"
+            ],
+            "correctAnswer": "a. nonkey",
+            "explanation": "A nonkey column is any column that is not part of the primary key of the table."
+        },
+{
+    "testName": "ICT151 Database Test",
+    "questions": [
+        {
+            "text": "A program's or an individual user's picture of the database is called a(n) _____.",
+            "options": [
+                "a. view",
+                "b. snapshot",
+                "c. image",
+                "d. perspective"
+            ],
+            "correctAnswer": "a. view",
+            "explanation": "A view is a virtual table that represents a specific user's perspective of the database."
+        },
+        {
+            "text": "Applying the function ROUND(PRICE,0) to the price 24.95 results in 24.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "ROUND(24.95,0) would result in 25, as it rounds to the nearest whole number."
+        },
+        {
+            "text": "To permanently remove both a table and its data, you must execute both a DROP TABLE command and a DELETE command.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "The DROP TABLE command alone is sufficient to remove both the table structure and its data."
+        },
+        {
+            "text": "An owner number in the OWNER table in the StayWell database consists of _____ uppercase letters followed by a three-digit number.",
+            "options": [
+                "a. two",
+                "b. three",
+                "c. four",
+                "d. five"
+            ],
+            "correctAnswer": "a. two",
+            "explanation": "The owner number format consists of two uppercase letters followed by three digits."
+        },
+        {
+            "text": "When users create, alter, or drop tables or create or drop indexes, the DBMS updates the system catalog automatically.",
+            "options": ["True", "False"],
+            "correctAnswer": "True",
+            "explanation": "The system catalog (data dictionary) is automatically maintained by the DBMS to reflect all structural changes to the database."
+        },
+        {
+            "text": "Which statement regarding primary keys is true?",
+            "options": [
+                "a. Some tables include more than one column that can be used as a primary key",
+                "b. A primary key must be a single column",
+                "c. Primary keys cannot contain NULL values",
+                "d. Primary keys must be numeric"
+            ],
+            "correctAnswer": "a. Some tables include more than one column that can be used as a primary key",
+            "explanation": "Tables can have multiple columns or combinations of columns that could potentially serve as the primary key."
+        },
+        {
+            "text": "The types of constraints supported in SQL are ____.",
+            "options": [
+                "a. primary keys, foreign keys, and legal values",
+                "b. unique keys and check constraints only",
+                "c. indexes and triggers",
+                "d. views and procedures"
+            ],
+            "correctAnswer": "a. primary keys, foreign keys, and legal values",
+            "explanation": "SQL supports primary key constraints, foreign key constraints, and constraints on legal values (like CHECK constraints)."
+        },
+        {
+            "text": "Which function can you use to obtain today's date in MySQL?",
+            "options": [
+                "a. CURDATE()",
+                "b. GETDATE()",
+                "c. TODAY()",
+                "d. NOW()"
+            ],
+            "correctAnswer": "a. CURDATE()",
+            "explanation": "CURDATE() is the MySQL function that returns the current date."
+        },
+        {
+            "text": "The product of two tables is formally called the _____.",
+            "options": [
+                "a. Cartesian product",
+                "b. Cross join",
+                "c. Table multiplication",
+                "d. Full join"
+            ],
+            "correctAnswer": "a. Cartesian product",
+            "explanation": "The Cartesian product is the formal term for combining every row of one table with every row of another table."
+        },
+        {
+            "text": "When a subquery involves a table listed in the outer query, the subquery is called a(n) _____.",
+            "options": [
+                "a. correlated subquery",
+                "b. nested query",
+                "c. inner query",
+                "d. dependent query"
+            ],
+            "correctAnswer": "a. correlated subquery",
+            "explanation": "A correlated subquery references one or more columns in the outer query."
+        },
+        {
+            "text": "Variable names in PL/SQL must start with a letter and can contain letters, dollar signs, underscores, and number signs, but cannot exceed _____.",
+            "options": [
+                "a. 30 characters",
+                "b. 20 characters",
+                "c. 25 characters",
+                "d. 40 characters"
+            ],
+            "correctAnswer": "a. 30 characters",
+            "explanation": "PL/SQL variable names are limited to 30 characters in length."
+        },
+        {
+            "text": "You can join three tables together but not four tables.",
+            "options": ["True", "False"],
+            "correctAnswer": "False",
+            "explanation": "You can join any number of tables together as long as appropriate join conditions are specified."
+        },
+        {
+            "text": "To qualify a column name, precede the name of the column with the name of the table, followed by a(n) ____.",
+            "options": [
+                "a. Period(.)",
+                "b. Comma",
+                "c. Colon",
+                "d. Semicolon"
+            ],
+            "correctAnswer": "a. Period(.)",
+            "explanation": "Column qualification uses the format table_name.column_name with a period separating the table and column names."
+        },
+        {
+            "text": "If you precede the subquery by the ____ operator, the condition is true only if it satisfies all values produced by the subquery.",
+            "options": [
+                "a. ALL",
+                "b. ANY",
+                "c. SOME",
+                "d. EVERY"
+            ],
+            "correctAnswer": "a. ALL",
+            "explanation": "The ALL operator requires the condition to be true for all values returned by the subquery."
+        },
+        {
+            "text": "In a ____, all rows from the table on the left will be included regardless of whether they match rows from the table on the right.",
+            "options": [
+                "a. left outer join",
+                "b. right outer join",
+                "c. inner join",
+                "d. full outer join"
+            ],
+            "correctAnswer": "a. left outer join",
+            "explanation": "A left outer join includes all rows from the left table and matching rows from the right table."
+        }
+    ]
+}
+    ]
+}
