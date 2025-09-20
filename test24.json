@@ -1,302 +1,241 @@
 {
-  "testName": "ICT1532 Assessment 3 2024",
+  "testName": "ICT2611 Self Assessment 1 Quiz",
   "questions": [
     {
-      "text": "If IPsec is used to provide a secure network tunnel over the internet, ____________ negotiates the security associations.",
+      "text": "What will the result be of the following expression?\n```csharp\nbool a = false;\nbool b = true;\nConsole.WriteLine(a && b);\n```",
       "options": [
-        "None of the options are correct",
-        "WEP-AES",
-        "ESP",
-        "L2TP",
-        "IKE"
+        "true",
+        "false",
+        "1",
+        "0"
       ],
-      "correctAnswer": "IKE",
-      "explanation": "IKE (Internet Key Exchange) is responsible for negotiating security associations in IPsec."
+      "correctAnswer": "false",
+      "explanation": "The logical AND (`&&`) operator returns `true` only if both operands are `true`. Since `a` is `false`, the expression `a && b` evaluates to `false`."
     },
     {
-      "text": "If a number of Virtual machines are connected to a physical NIC a _____ can be installed to provide VLAN functions.",
+      "text": "What is the default value of an uninitialized `int` variable in C#?",
       "options": [
-        "Virtual switch",
-        "Install a VNIC",
-        "VLAN switch",
-        "Only option is to have a physical switch connected to each NIC on the Host machine.",
-        "None of the options are correct"
+        "1",
+        "zero",
+        "0",
+        "`null`"
       ],
-      "correctAnswer": "Virtual switch",
-      "explanation": "A virtual switch can be installed to provide VLAN functions for multiple virtual machines connected to a physical NIC."
+      "correctAnswer": "0",
+      "explanation": "In C#, the default value for built-in numeric types, including `int`, is zero."
     },
     {
-      "text": "In what way does a PKI certificate differ from a self-signed SSL certificate?",
+      "text": "Consider the incomplete code:\n```csharp\nint x = 5;\n// How do you increment the value of x by 1 here?\nConsole.WriteLine(\"Value of x = \" + x.ToString());\n```\nWhich of the following are valid ways to increment `x`?",
       "options": [
-        "None of the options are correct",
-        "The one will be signed by the CA's private key.",
-        "They are the same.",
-        "The one will be signed by the CA's public key.",
-        "The one will be 64bit."
+        "`x+`",
+        "`++x;`",
+        "`x = x + 1;`",
+        "`x++;`"
       ],
-      "correctAnswer": "The one will be signed by the CA's private key.",
-      "explanation": "A PKI certificate is signed by a Certificate Authority's private key, while a self-signed certificate is signed by its own private key."
+      "correctAnswer": [
+        "`++x;`",
+        "`x = x + 1;`",
+        "`x++;`"
+      ],
+      "explanation": "`++x;` (pre-increment), `x++;` (post-increment), and `x = x + 1;` are all valid methods to increment an integer by 1. The syntax `x+` is invalid."
     },
     {
-      "text": "If an attack focus the exploit the applications of a system, the ________ of the OSI model is targeted.",
+      "text": "Can you store a `float` value in a `double` variable without casting in C#?",
       "options": [
-        "Network layer",
-        "None of the options are correct",
-        "Session layer",
-        "Layer 3",
-        "Hardware layer"
+        "True",
+        "False"
       ],
-      "correctAnswer": "None of the options are correct",
-      "explanation": "Application-level attacks typically target the Application layer (Layer 7) of the OSI model, which is not listed among the options."
+      "correctAnswer": "True",
+      "explanation": "Yes, this is an implicit (widening) conversion because a `double` has a larger range and precision than a `float`, so no data will be lost."
     },
     {
-      "text": "When a message to be sent over a public network such as the Internet, is hashed, _________ is enforced.",
-      "options": [
-        "Confidentiality",
-        "Trust",
-        "Access control",
-        "Integrity",
-        "None of the options are correct"
-      ],
-      "correctAnswer": "Integrity",
-      "explanation": "Hashing a message ensures its integrity, allowing the recipient to verify that the message hasn't been altered during transmission."
+      "text": "What will the following code print?\n```csharp\nchar letter = 'A'; \nConsole.WriteLine(char.ToLower(letter));\n```",
+      "options": [],
+      "correctAnswer": "a",
+      "explanation": "The `char.ToLower()` method converts an uppercase character to its lowercase equivalent. Thus, 'A' becomes 'a'."
     },
     {
-      "text": "Which VoIP protocol provides integrity features?",
+      "text": "What exception will be thrown when you try to divide an integer by 0?\n```csharp\nint val1 = 10;\nint val2 = 0;\nint answer = val1 / val2;\n```",
       "options": [
-        "H.323",
-        "None of the options are correct",
-        "H.232",
-        "SIP",
-        "RTP"
+        "`System.Exception`",
+        "`System.ArgumentException`",
+        "`System.NullReferenceException`",
+        "`System.IndexOutOfRangeException`",
+        "`System.DivideByZeroException`"
       ],
-      "correctAnswer": "None of the options are correct",
-      "explanation": "The listed VoIP protocols (H.323, SIP, RTP) do not inherently provide integrity features. Integrity in VoIP is typically provided by additional security protocols like SRTP or IPSec."
+      "correctAnswer": "`System.DivideByZeroException`",
+      "explanation": "Attempting to divide an integer by zero in C# throws a `System.DivideByZeroException`."
     },
     {
-      "text": "In what way does a PKI certificate differ from a self-signed SSL certificate?",
-      "options": [
-        "The one will have a CA signature.",
-        "X.509 format",
-        "PKL",
-        "None of the options are correct.",
-        "The SSL certificate binds to the arp"
-      ],
-      "correctAnswer": "The one will have a CA signature.",
-      "explanation": "A PKI certificate is signed by a trusted Certificate Authority (CA), while a self-signed certificate is signed by its own creator."
+      "text": "What will be the output of the following code?\n```csharp\nint x = 5;\nint y = 3;\nConsole.WriteLine(x / y);\n```",
+      "options": [],
+      "correctAnswer": "1",
+      "explanation": "When dividing two integers in C#, the result is also an integer, and the fractional part is truncated. Therefore, 5 divided by 3 is 1."
     },
     {
-      "text": "Policies used to discourage users from ignoring good security practices are considered to be a security tool known as:",
-      "options": [
-        "None of the options are correct",
-        "Selective",
-        "Corrective",
-        "Integrity",
-        "Availability"
-      ],
-      "correctAnswer": "None of the options are correct",
-      "explanation": "Policies used to discourage users from ignoring good security practices are typically referred to as 'Deterrent' controls, which is not listed among the options."
+      "text": "What is the range of values that can be stored in an `int` data type in C#?",
+      "options": [],
+      "correctAnswer": "-2,147,483,648 to 2,147,483,647",
+      "explanation": "A C# `int` is a 32-bit signed integer, which can store values from $-2^{31}$ to $2^{31}-1$."
     },
     {
-      "text": "VPN access is often associated with using a ______",
-      "options": [
-        "Rado server",
-        "PKE",
-        "Asymmetric encryption",
-        "None of the options are correct",
-        "Ticket"
-      ],
-      "correctAnswer": "None of the options are correct",
-      "explanation": "VPN access is often associated with using a RADIUS server for authentication, which is not listed among the options."
+      "text": "What will be the output of the following code?\n```csharp\nchar c = 'Z';\nConsole.WriteLine(c + 1);\n```",
+      "options": [],
+      "correctAnswer": "91",
+      "explanation": "When an arithmetic operation is performed on a `char`, it is implicitly converted to its integer ASCII/Unicode value. The ASCII value of 'Z' is 90, so adding 1 results in 91."
     },
     {
-      "text": "In order to block users from accessing outside email servers not part of the corporate network a firewall rule can be set to:",
-      "options": [
-        "Deny port packets routed via port 25",
-        "None of the options are correct",
-        "Deny POP3 packets",
-        "Alter the Level 7 header",
-        "Deny \"email\" from external to internal"
-      ],
-      "correctAnswer": "Deny POP3 packets",
-      "explanation": "Blocking POP3 packets would prevent users from accessing outside email servers, as POP3 is a common protocol for retrieving email from a server."
+      "text": "How would you cast a `double` value of `3.14` to an `int` in C#?",
+      "options": [],
+      "correctAnswer": "`(int)3.14`",
+      "explanation": "To explicitly cast a `double` to an `int`, you place the target type `(int)` in parentheses before the value. This truncates the decimal portion."
     },
     {
-      "text": "Compared to SFTP, FTPS is basically the same protocol.",
-      "options": [
-        "False, FTPS uses 3DES.",
-        "False, as SFTP replaced FTP.",
-        "Indeed, as it uses port 23.",
-        "None of the options are correct.",
-        "True"
-      ],
-      "correctAnswer": "False, as SFTP replaced FTP.",
-      "explanation": "SFTP (SSH File Transfer Protocol) and FTPS (FTP over SSL/TLS) are different protocols. SFTP is a separate protocol that provides file transfer functionality over SSH, while FTPS is FTP with added SSL/TLS encryption."
+      "text": "What will be the value of `x` after this code executes?\n```csharp\nint x = 10; \nx = x * 2;\n```",
+      "options": [],
+      "correctAnswer": "20",
+      "explanation": "The variable `x` is initialized to 10. The expression `x * 2` evaluates to 20, which is then assigned back to `x`."
     },
     {
-      "text": "A network based firewall is typically a firewall are often a ________.",
+      "text": "Which of the following correctly casts the `double` value `x` to a `float` value `y`?\n```csharp\ndouble x = 3.14159;\n// insert code here\nConsole.WriteLine(y);\n```",
       "options": [
-        "Part of Windows",
-        "Application",
-        "Hardware appliance",
-        "None of the options are correct",
-        "Hub"
+        "`float y = x.float;`",
+        "`float y = (float)x;`",
+        "`float y = x.float();`",
+        "`float y = float(x);`"
       ],
-      "correctAnswer": "Hardware appliance",
-      "explanation": "Network-based firewalls are typically implemented as dedicated hardware appliances designed specifically for firewall functionality."
+      "correctAnswer": "`float y = (float)x;`",
+      "explanation": "The correct syntax for explicit casting in C# is to place the target data type in parentheses before the variable, like `(float)x`."
     },
     {
-      "text": "The fundamental technology used for SAN storage approaches is",
+      "text": "What would the output be?\n```csharp\ndouble x = 3.7;\ndouble y = 2.3;\ndouble answer = x * y;\nConsole.WriteLine(answer.ToString(\"F3\"));\n```",
       "options": [
-        "Fibre channel",
-        "Hive",
-        "Nvme",
-        "None of the options are correct",
-        "HVAC"
+        "8.510",
+        "8.6",
+        "8.659",
+        "8.51"
       ],
-      "correctAnswer": "Fibre channel",
-      "explanation": "Fibre Channel is a fundamental technology used in Storage Area Network (SAN) approaches, providing high-speed data transfer between servers and storage devices."
+      "correctAnswer": "8.510",
+      "explanation": "The product of 3.7 and 2.3 is 8.51. The `.ToString(\"F3\")` method formats the result to exactly three fixed decimal places, which results in `8.510`."
     },
     {
-      "text": "__________ allows a host to exist only as software.",
-      "options": [
-        "Instantiation",
-        "Virtualization",
-        "None of the options are correct",
-        "Hyper Linking",
-        "Outlining"
-      ],
-      "correctAnswer": "Virtualization",
-      "explanation": "Virtualization technology allows a host to exist as software, creating virtual instances of computer hardware platforms, storage devices, and network resources."
+      "text": "What is the default value of a `bool` variable in C#?",
+      "options": [],
+      "correctAnswer": "`false`",
+      "explanation": "The default value for a `bool` variable in C# is `false`."
     },
     {
-      "text": "Considering the fact that analogue video or audio uses a lot of data to digitize, __________ can be used to mitigate this.",
+      "text": "Which of the following is a valid `int` declaration in C#?",
       "options": [
-        "a trunk",
-        "None of the options are correct",
-        "an assembler",
-        "a codec",
-        "SIP"
+        "`int x = 100;`",
+        "`int x = 1.5;`",
+        "`int x = \"hello\";`"
       ],
-      "correctAnswer": "a codec",
-      "explanation": "A codec (coder-decoder) is used to compress and decompress digital audio and video data, reducing the amount of data needed to represent the analogue signal."
+      "correctAnswer": "`int x = 100;`",
+      "explanation": "An `int` data type can only store whole numbers. `1.5` is a floating-point number, and `\"hello\"` is a string."
     },
     {
-      "text": "When a message to be sent over a public network such as the Internet, is encrypted, _________ is enforced.",
-      "options": [
-        "Access control",
-        "Hashing",
-        "Integrity",
-        "Trust",
-        "None of the options are correct"
-      ],
-      "correctAnswer": "None of the options are correct",
-      "explanation": "Encryption of a message primarily enforces confidentiality, which is not listed among the options."
+      "text": "What will the output be?\n```csharp\nstring name = \"Ben\";\nstring surname = \"Seopa\";\nConsole.WriteLine(name + \" \" + surname.ToUpper());\n```",
+      "options": [],
+      "correctAnswer": "Ben SEOPA",
+      "explanation": "The code concatenates the `name`, a space, and the uppercase version of the `surname`. The `ToUpper()` method converts 'Seopa' to 'SEOPA'."
     },
     {
-      "text": "What feature primary helps to protect against DoS attacks?",
-      "options": [
-        "dictionaries",
-        "Loop protection",
-        "DMZ",
-        "firewalls",
-        "None of the options are correct"
-      ],
-      "correctAnswer": "Loop protection",
-      "explanation": "Loop protection is a feature that can help prevent certain types of DoS attacks, particularly those that exploit network loops to overwhelm systems."
+      "text": "What will be the output?\n```csharp\nfloat x = 5.5f;\nfloat y = 2.2f;\nConsole.WriteLine(x - y);\n```",
+      "options": [],
+      "correctAnswer": "3.3",
+      "explanation": "The code subtracts `y` (2.2) from `x` (5.5), resulting in 3.3."
     },
     {
-      "text": "Compared to HTTP, HTTPS is a new protocol.",
-      "options": [
-        "Depends if SMTPS is part of the transmission.",
-        "Indeed, as it uses port 8080.",
-        "False, as it is basically HTTP through TLS",
-        "False, HTTPS uses a PGP session.",
-        "None of the options are correct."
-      ],
-      "correctAnswer": "False, as it is basically HTTP through TLS",
-      "explanation": "HTTPS is not a new protocol, but rather HTTP transmitted over a secure TLS/SSL connection."
+      "text": "What is the default value of a `float` variable in C#?",
+      "options": [],
+      "correctAnswer": "`0.0f`",
+      "explanation": "The default value for a `float` variable is `0.0f`. The 'f' suffix is important as it distinguishes it from a `double`."
     },
     {
-      "text": "True or false. Biometrics systems cannot be subverted.",
+      "text": "Which of the following is a valid declaration for a `float` variable in C#?",
       "options": [
-        "False",
-        "True"
+        "`float x = 1.23;`",
+        "`float x = \"hello\";`",
+        "`float x = 1.23f;`"
+      ],
+      "correctAnswer": "`float x = 1.23f;`",
+      "explanation": "In C#, a literal number with a decimal point is treated as a `double` by default. To declare it as a `float`, you must append the `f` or `F` suffix."
+    },
+    {
+      "text": "What will the output be of the following code?\n```csharp\nstring name = \"Allen\";\nstring surname = \"Naidoo\";\nConsole.WriteLine(name + \" \" + surname);\n```",
+      "options": [],
+      "correctAnswer": "Allen Naidoo",
+      "explanation": "The `+` operator concatenates the `name` string, a space, and the `surname` string into 'Allen Naidoo'."
+    },
+    {
+      "text": "What will be the output?\n```csharp\nbool isTrue = true;\nbool isFalse = false;\nConsole.WriteLine(isTrue && isFalse);\n```",
+      "options": [],
+      "correctAnswer": "False",
+      "explanation": "The logical AND (`&&`) operator returns `true` only if both operands are `true`. Since `isFalse` is `false`, the result is `False`."
+    },
+    {
+      "text": "Which of the following is the correct way to declare a `char` variable in C#?",
+      "options": [
+        "`char letter = 'A';`",
+        "`char letter = A;`",
+        "`char letter = \"A\";`"
+      ],
+      "correctAnswer": "`char letter = 'A';`",
+      "explanation": "A `char` literal in C# must be enclosed in single quotes (`'`). Double quotes (`\"`) are used for strings."
+    },
+    {
+      "text": "True or False: You can assign a `double` value to a `float` variable without an explicit cast.",
+      "options": [
+        "True",
+        "False"
       ],
       "correctAnswer": "False",
-      "explanation": "Biometric systems, while generally secure, can still be subverted through various means such as spoofing or replay attacks."
+      "explanation": "You cannot implicitly assign a `double` to a `float` because it is a narrowing conversion that could lead to data loss. An explicit cast `(float)` is required."
     },
     {
-      "text": "When a site-to-site VPN is instantiated, the secure tunnel will run from:",
-      "options": [
-        "Node to Node",
-        "Switch to Firewall",
-        "None of the options are correct",
-        "Node to Firewall",
-        "Firewall to Firewall"
-      ],
-      "correctAnswer": "Firewall to Firewall",
-      "explanation": "In a site-to-site VPN, the secure tunnel typically runs from one site's firewall to the other site's firewall, creating a secure connection between the two networks."
+      "text": "What will the output be?\n```csharp\nstring name = \"Mary\";\nstring surname = \"Mtsweni\";\nsurname.ToUpper();\nConsole.WriteLine(name + \" \" + surname);\n```",
+      "options": [],
+      "correctAnswer": "Mary Mtsweni",
+      "explanation": "Strings in C# are immutable. The `ToUpper()` method returns a new uppercase string but does not modify the original. Since the result was not assigned back to `surname`, the original value is printed."
     },
     {
-      "text": "A protocol analyser is also known as a:",
+      "text": "Given `string title = \"The big red hen...\";`, which method is used to replace a substring?",
       "options": [
-        "scanner",
-        "network scanner",
-        "port scanner",
-        "network mapper",
-        "None of the options are correct"
+        "`title = title.Modify(\"big\", \"small\");`",
+        "`title = title.Replace(\"big\", \"small\");`",
+        "`title = title.Swap(\"big\", \"small\");`",
+        "`title.Change(\"big\", \"small\");`"
       ],
-      "correctAnswer": "None of the options are correct",
-      "explanation": "A protocol analyzer is also known as a packet sniffer or network analyzer, which are not listed among the options."
+      "correctAnswer": "`title = title.Replace(\"big\", \"small\");`",
+      "explanation": "The `String.Replace()` method is used to replace all occurrences of a specified substring with another substring. Since strings are immutable, the result must be assigned back to the variable."
     },
     {
-      "text": "To see what TCP vulnerabilities are found on a host a _____________ can be used.",
+      "text": "Which string method is used to remove leading and trailing whitespace characters?",
       "options": [
-        "Security policy",
-        "Host address",
-        "None of the options are correct",
-        "Port Scanner",
-        "Sniffer"
+        "`title.Reduce();`",
+        "`title.RemoveSpaces();`",
+        "`title.Trim();`",
+        "`title.Clean();`"
       ],
-      "correctAnswer": "Port Scanner",
-      "explanation": "A port scanner is used to identify open ports on a host, which can reveal potential TCP vulnerabilities."
+      "correctAnswer": "`title.Trim();`",
+      "explanation": "The `String.Trim()` method removes all leading and trailing white-space characters from a string object."
     },
     {
-      "text": "Upper Layers of the OSI model use ____ to secure the network environment.",
+      "text": "Which method correctly checks if a string contains the substring 'red'?",
       "options": [
-        "Symmetric Encryption.",
-        "PGP.",
-        "None of the options are correct",
-        "SSH.",
-        "Blowfish."
+        "`bool containsRed = title.IsSubstring(\"red\");`",
+        "`bool containsRed = title.Has(\"red\");`",
+        "`bool containsRed = title.SubstringContains(\"red\");`",
+        "`bool containsRed = title.Contains(\"red\");`"
       ],
-      "correctAnswer": "None of the options are correct",
-      "explanation": "Upper layers of the OSI model typically use various security protocols and mechanisms, not just one specific encryption method. The correct answer would depend on the specific application and security requirements."
+      "correctAnswer": "`bool containsRed = title.Contains(\"red\");`",
+      "explanation": "The `String.Contains()` method returns a boolean (`true` or `false`) indicating whether the specified substring exists within the string."
     },
     {
-      "text": "Kerberos uses a _______ approach to allow users to gain access to certain network facilities.",
-      "options": [
-        "Handshake",
-        "SOCKS",
-        "None of the options are correct",
-        "Asymmetric",
-        "Ticket"
-      ],
-      "correctAnswer": "Ticket",
-      "explanation": "Kerberos uses a ticket-based approach for authentication and authorization, allowing users to access network resources securely."
-    },
-    {
-      "text": "VPN access is often associated with using a ______",
-      "options": [
-        "RADIUS server",
-        "Asymmetric encryption",
-        "PKE",
-        "Fibre trunk",
-        "None of the options are correct"
-      ],
-      "correctAnswer": "RADIUS server",
-      "explanation": "VPN access is often associated with using a RADIUS (Remote Authentication Dial-In User Service) server for authentication and authorization of remote users."
+      "text": "What will the result be of the following expression?\n```csharp\nbool a = false;\nbool b = true;\nConsole.WriteLine(a || b);\n```",
+      "options": [],
+      "correctAnswer": "True",
+      "explanation": "The logical OR (`||`) operator returns `true` if at least one of its operands is `true`. Since `b` is `true`, the expression evaluates to `true`."
     }
   ]
 }
