@@ -1,280 +1,445 @@
 {
-    "testName": "ICT1532 Assessment 2 2024",
-    "questions": [
-      {
-        "text": "Wi-Fi networks use the _____ band of the electromagnetic as a carrier to data.",
-        "options": [
-          "infra-red",
-          "sound",
-          "electrical",
-          "radio"
-        ],
-        "correctAnswer": "radio",
-        "explanation": "Wi-Fi networks use the radio band of the electromagnetic spectrum as a carrier for data transmission."
-      },
-      {
-        "text": "One way to solve the issues associated with narrowband transmission is:",
-        "options": [
-          "Use a more efficient schema.",
-          "Use a wider frequency band.",
-          "Use a different carrier.",
-          "Encode data using the inverse square law."
-        ],
-        "correctAnswer": "Use a wider frequency band.",
-        "explanation": "Using a wider frequency band is a solution to issues associated with narrowband transmission."
-      },
-      {
-        "text": "If a host has a netmask of 255.255.255.255, it can be concluded that:",
-        "options": [
-          "The IPv4 routing table entry represent the host",
-          "The network portion of the address is 32 byte",
-          "The first octet of the IP address is reserved",
-          "The Network is quite large"
-        ],
-        "correctAnswer": "The IPv4 routing table entry represent the host",
-        "explanation": "A netmask of 255.255.255.255 indicates that the IPv4 routing table entry represents a specific host, not a network."
-      },
-      {
-        "text": "According to the inverse Square law, the signal strength will be the strongest at",
-        "options": [
-          "The antenna",
-          "This law does not relate to signal strength",
-          "The receiver module",
-          "The perimeter"
-        ],
-        "correctAnswer": "The antenna",
-        "explanation": "The inverse square law states that signal strength is strongest at the source, which in this case is the antenna."
-      },
-      {
-        "text": "When data is encoded on an electromagnetic carrier such as the radio band using more than one channel, the transceiver is only half-duplex communication.",
-        "options": [
-          "Depends on the modulation used.",
-          "True",
-          "Depends on the protocol used.",
-          "False"
-        ],
-        "correctAnswer": "False",
-        "explanation": "Using multiple channels does not necessarily limit communication to half-duplex. Full-duplex communication is possible with multiple channels."
-      },
-      {
-        "text": "For a point-to-point connection using radio technology, a ________ antenna is used.",
-        "options": [
-          "Long throw",
-          "Yagi",
-          "Omnidirectional",
-          "Dipole"
-        ],
-        "correctAnswer": "Yagi",
-        "explanation": "A Yagi antenna is often used for point-to-point connections due to its directional properties."
-      },
-      {
-        "text": "If you double the distance from a radio antenna, the signal strength will be.",
-        "options": [
-          "The same",
-          "Double",
-          "Half",
-          "Quarter"
-        ],
-        "correctAnswer": "Quarter",
-        "explanation": "According to the inverse square law, doubling the distance reduces the signal strength to one-quarter of its original value."
-      },
-      {
-        "text": "When data is encoded on an electromagnetic carrier such as the radio band, the transceiver is only half-duplex communication.",
-        "options": [
-          "False",
-          "Depends on the modulation used.",
-          "True",
-          "Depends on the protocol used."
-        ],
-        "correctAnswer": "True",
-        "explanation": "In basic radio communication, the transceiver typically operates in half-duplex mode, meaning it can either transmit or receive at a given time, but not both simultaneously."
-      },
-      {
-        "text": "To prevent switching loops, the following can be used:",
-        "options": [
-          "POP3",
-          "STP",
-          "TCP/IP",
-          "CSMA/CD"
-        ],
-        "correctAnswer": "STP",
-        "explanation": "STP (Spanning Tree Protocol) is used to prevent switching loops in network topologies with redundant paths."
-      },
-      {
-        "text": "POE is often associated with:",
-        "options": [
-          "Hubs",
-          "RS232C",
-          "WIFI AP",
-          "ViOP"
-        ],
-        "correctAnswer": "WIFI AP",
-        "explanation": "POE (Power over Ethernet) is often used with Wi-Fi Access Points (AP) to provide both power and data connection over a single Ethernet cable."
-      },
-      {
-        "text": "For a point-to-point connection using radio technology, a ________ antenna is used.",
-        "options": [
-          "Unidirectional",
-          "Omnidirectional",
-          "Long throw",
-          "broadcast"
-        ],
-        "correctAnswer": "Unidirectional",
-        "explanation": "A unidirectional (or directional) antenna is typically used for point-to-point connections to focus the signal in a specific direction."
-      },
-      {
-        "text": "In large networks, using switches with redundant links, what is a typical issue you need to be careful of?",
-        "options": [
-          "Reliability",
-          "Low propagation",
-          "Switching loops",
-          "Too much interference"
-        ],
-        "correctAnswer": "Switching loops",
-        "explanation": "Switching loops are a common issue in networks with redundant links, which can cause broadcast storms and network instability."
-      },
-      {
-        "text": "What does a switch do if it does not find the destination MAC address in its switching table?",
-        "options": [
-          "Forwards the frame out all ports",
-          "Sends an error to the sending device",
-          "Discards the frame",
-          "Sends an ARP to learn the MAC address"
-        ],
-        "correctAnswer": "Forwards the frame out all ports",
-        "explanation": "If a switch doesn't find the destination MAC address in its switching table, it floods the frame out all ports except the one it was received on."
-      },
-      {
-        "text": "When payment is made using your cell phone, the standard used is:",
-        "options": [
-          "RF",
-          "RFID",
-          "NFC",
-          "IR"
-        ],
-        "correctAnswer": "NFC",
-        "explanation": "NFC (Near Field Communication) is the standard typically used for mobile payments with cell phones."
-      },
-      {
-        "text": "Signal bonding does not solve:",
-        "options": [
-          "Cost issues",
-          "Interference issues",
-          "Distance issues",
-          "Speed issues"
-        ],
-        "correctAnswer": "Interference issues",
-        "explanation": "Signal bonding can help with speed, distance, and potentially cost issues, but it does not directly address interference problems."
-      },
-      {
-        "text": "When managing a switch using an RS-232C cable, the management approach is considered as _______ management.",
-        "options": [
-          "Out-of-band",
-          "In-bound",
-          "Admin",
-          "Administrator"
-        ],
-        "correctAnswer": "Out-of-band",
-        "explanation": "Using an RS-232C cable for switch management is considered out-of-band management because it uses a separate physical connection outside the main data path."
-      },
-      {
-        "text": "When managing a Switch using telnet, the management approach is considered as _____ management.",
-        "options": [
-          "Out-of-land",
-          "None of the options are correct.",
-          "Support",
-          "Domain Admin"
-        ],
-        "correctAnswer": "None of the options are correct.",
-        "explanation": "Managing a switch using telnet is typically considered in-band management, which is not listed among the options."
-      },
-      {
-        "text": "Switches with basic functionality, using a web-based configuration tool is known as:",
-        "options": [
-          "Dumb Switch",
-          "Smart Switches",
-          "Rudimentary Switches",
-          "Unmanaged switch"
-        ],
-        "correctAnswer": "Smart Switches",
-        "explanation": "Switches with basic functionality and web-based configuration are typically referred to as Smart Switches."
-      },
-      {
-        "text": "The newer Wi-Fi standard uses the following to modulate data onto a carrier.",
-        "options": [
-          "CSMA/CD",
-          "CDMA",
-          "OFDM",
-          "DSSS"
-        ],
-        "correctAnswer": "OFDM",
-        "explanation": "Newer Wi-Fi standards use OFDM (Orthogonal Frequency-Division Multiplexing) for data modulation."
-      },
-      {
-        "text": "When managing a switch using a dedicated RJ45 connection on the switch, the management approach is considered as _______ management.",
-        "options": [
-          "In-bound",
-          "Admin",
-          "Administrator",
-          "Out-of-band"
-        ],
-        "correctAnswer": "Out-of-band",
-        "explanation": "Using a dedicated RJ45 connection for switch management is considered out-of-band management as it's separate from the main data path."
-      },
-      {
-        "text": "Switches are pretty easy to configure when using the following:",
-        "options": [
-          "Local admin",
-          "Office rule",
-          "FTP session",
-          "Tree topology"
-        ],
-        "correctAnswer": "Tree topology",
-        "explanation": "While tree topology can simplify network design, it doesn't directly make switch configuration easier. This question may be problematic or have an error."
-      },
-      {
-        "text": "To allow a device to effortlessly roam between various Wi-Fi APs, a ___________ Wi-Fi is required.",
-        "options": [
-          "Mesh",
-          "direct",
-          "linked",
-          "Looped"
-        ],
-        "correctAnswer": "Mesh",
-        "explanation": "A mesh Wi-Fi network allows devices to roam seamlessly between multiple access points."
-      },
-      {
-        "text": "A wireless bridge is used for:",
-        "options": [
-          "bridge a TCP/IP network with a Token-ring Wi-Fi network",
-          "Bridge a LAN to a Wi-Fi network",
-          "linking two wireless networks",
-          "None of the options are correct"
-        ],
-        "correctAnswer": "linking two wireless networks",
-        "explanation": "A wireless bridge is primarily used to connect or 'bridge' two wireless networks."
-      },
-      {
-        "text": "When managing a Switch using SNMP, the management approach is considered as _______ management.",
-        "options": [
-          "Admin",
-          "Administrator",
-          "Out-of-land",
-          "In-bound"
-        ],
-        "correctAnswer": "In-bound",
-        "explanation": "SNMP (Simple Network Management Protocol) is typically considered an in-band management approach as it uses the network itself for management traffic."
-      },
-      {
-        "text": "Wi-Fi access points are identified by their service set identifier, which is a string of only 16 octets.",
-        "options": [
-          "False",
-          "True",
-          "Depends if the 802.11a or 802.11g standard is used.",
-          "Depends if the 802.11bg or 802.11b standard is used."
-        ],
-        "correctAnswer": "False",
-        "explanation": "This statement is false. An SSID can be up to 32 octets (not just 16) in length."
-      }
-    ]
-  }
+  "testName": "ICT2632 Assignment 1 2025",
+  "questions": [
+    {
+      "text": "What is the basic building block of digital circuits?",
+      "options": [
+        "Transistor",
+        "Capacitor",
+        "Resistor",
+        "Inductor"
+      ],
+      "correctAnswer": "Transistor",
+      "explanation": "Transistors act as electronic switches or amplifiers. They are the fundamental components used to build logic gates, which are the foundation of all digital circuits."
+    },
+    {
+      "text": "In binary code, how many bits make up a byte?",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "32"
+      ],
+      "correctAnswer": "8",
+      "explanation": "A byte is a standard unit of digital information in computing that consists of 8 bits."
+    },
+    {
+      "text": "Which logic gate performs the logical AND operation?",
+      "options": [
+        "OR gate",
+        "XOR gate",
+        "NOT gate",
+        "AND gate"
+      ],
+      "correctAnswer": "AND gate",
+      "explanation": "The AND gate is a basic digital logic gate that implements logical conjunction. It outputs a high signal (1) only if all its inputs are high."
+    },
+    {
+      "text": "What does the term 'Boolean algebra' refer to in digital logic?",
+      "options": [
+        "Algebra with real numbers",
+        "Algebra with complex numbers",
+        "Algebra with binary variables",
+        "Algebra with irrational numbers"
+      ],
+      "correctAnswer": "Algebra with binary variables",
+      "explanation": "Boolean algebra is a branch of algebra where variable values are the truth values *true* (1) and *false* (0). It is the mathematical foundation for digital logic circuits."
+    },
+    {
+      "text": "In a binary numbering system, what does each digit represent?",
+      "options": [
+        "Powers of 10",
+        "Powers of 2",
+        "Powers of 8",
+        "Powers of 16"
+      ],
+      "correctAnswer": "Powers of 2",
+      "explanation": "The binary system is a base-2 number system. Each digit (bit) represents an increasing power of 2, starting from $2^0$ on the rightmost side."
+    },
+    {
+      "text": "What is the binary representation of the decimal number 13?",
+      "options": [
+        "1101",
+        "1011",
+        "1110",
+        "1001"
+      ],
+      "correctAnswer": "1101",
+      "explanation": "To convert 13 to binary: $13 = 8 + 4 + 0 + 1$. In powers of 2, this is $1 \\cdot 2^3 + 1 \\cdot 2^2 + 0 \\cdot 2^1 + 1 \\cdot 2^0$, which is written as 1101 in binary."
+    },
+    {
+      "text": "In a half-adder circuit, what does XOR stand for?",
+      "options": [
+        "Exclusive OR",
+        "Exclusive NOR",
+        "Inclusive OR",
+        "Inclusive NOR"
+      ],
+      "correctAnswer": "Exclusive OR",
+      "explanation": "XOR stands for Exclusive OR. A half-adder circuit uses an XOR gate to calculate the sum bit and an AND gate to calculate the carry bit."
+    },
+    {
+      "text": "What is the result of the logical AND operation for inputs $A=1$ and $B=0$?",
+      "options": [
+        "0",
+        "1",
+        "A",
+        "B"
+      ],
+      "correctAnswer": "0",
+      "explanation": "The logical AND operation outputs 1 only if *all* inputs are 1. Since input B is 0, the output is 0."
+    },
+    {
+      "text": "Which component is commonly used to store a single binary digit in digital memory?",
+      "options": [
+        "Transistor",
+        "Capacitor",
+        "Resistor",
+        "Inductor"
+      ],
+      "correctAnswer": "Capacitor",
+      "explanation": "A capacitor stores an electrical charge that can represent a binary 1 (charged) or 0 (discharged). This is the fundamental principle used for storing bits in Dynamic Random-Access Memory (DRAM)."
+    },
+    {
+      "text": "What is the purpose of a multiplexer in digital circuits?",
+      "options": [
+        "Converts analog to digital signals",
+        "Combines multiple signals into one",
+        "Increases signal amplitude",
+        "Performs logical operations"
+      ],
+      "correctAnswer": "Combines multiple signals into one",
+      "explanation": "A multiplexer (or MUX) is a device that selects one of several input signals and forwards the selected input into a single output line."
+    },
+    {
+      "text": "How many bits make a nibble?",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "32"
+      ],
+      "correctAnswer": "4",
+      "explanation": "A nibble is a four-bit unit, which is half of an 8-bit byte. A nibble can represent one hexadecimal digit."
+    },
+    {
+      "text": "Which gate is also known as an inverter?",
+      "options": [
+        "OR gate",
+        "XOR gate",
+        "NOT gate",
+        "AND gate"
+      ],
+      "correctAnswer": "NOT gate",
+      "explanation": "A NOT gate is also called an inverter because it inverts the input signal. A HIGH input (1) results in a LOW output (0), and vice versa."
+    },
+    {
+      "text": "What is the purpose of a flip-flop in digital circuits?",
+      "options": [
+        "Performs addition",
+        "Stores one bit of data",
+        "Combines signals",
+        "Converts analog to digital signals"
+      ],
+      "correctAnswer": "Stores one bit of data",
+      "explanation": "A flip-flop is a fundamental memory element in digital logic. It is a bistable circuit, meaning it has two stable states (0 and 1) and can be used to store one bit of information."
+    },
+    {
+      "text": "In a truth table, what is the output when both inputs A and B are 1 for an XOR gate?",
+      "options": [
+        "0",
+        "1",
+        "A",
+        "B"
+      ],
+      "correctAnswer": "0",
+      "explanation": "The Exclusive OR (XOR) gate produces a high output (1) only when its inputs are different. If both inputs are the same (e.g., A=1 and B=1), the output is low (0)."
+    },
+    {
+      "text": "What is the hexadecimal equivalent of the binary number 1101?",
+      "options": [
+        "D",
+        "13",
+        "1A",
+        "9"
+      ],
+      "correctAnswer": "D",
+      "explanation": "The binary number 1101 is equal to the decimal number 13 ($8+4+1$). In the hexadecimal (base-16) system, the decimal number 13 is represented by the letter D."
+    },
+    {
+      "text": "Which type of flip-flop has two stable states and is often used for storing one bit of data?",
+      "options": [
+        "D flip-flop",
+        "JK flip-flop",
+        "SR flip-flop",
+        "T flip-flop"
+      ],
+      "correctAnswer": "D flip-flop",
+      "explanation": "While all listed flip-flops store one bit, the D (Data) flip-flop is specifically designed to pass its D input to the output on the clock edge, making it the standard choice for data storage in registers."
+    },
+    {
+      "text": "What does the term 'combinatorial logic' refer to in digital circuits?",
+      "options": [
+        "Logic circuits with memory elements",
+        "Logic circuits without feedback",
+        "Logic circuits using only flip-flops",
+        "Logic circuits with dynamic elements"
+      ],
+      "correctAnswer": "Logic circuits without feedback",
+      "explanation": "Combinatorial logic circuits are memoryless. Their output at any moment is determined solely by the current combination of inputs. They do not have feedback paths or memory elements like flip-flops."
+    },
+    {
+      "text": "In digital signal processing, what is the purpose of a low-pass filter?",
+      "options": [
+        "Allows low-frequency signals to pass through",
+        "Allows high-frequency signals to pass through",
+        "Amplifies all frequencies equally",
+        "Converts analog signals to digital signals"
+      ],
+      "correctAnswer": "Allows low-frequency signals to pass through",
+      "explanation": "A low-pass filter allows signals with a frequency lower than a specific cutoff frequency to pass while blocking or attenuating higher-frequency signals."
+    },
+    {
+      "text": "Which of the following is a characteristic of synchronous counters?",
+      "options": [
+        "Counting is dependent on external clock pulses",
+        "Counting is independent of external clock pulses",
+        "Counting is random",
+        "Counting is based on internal timing circuits"
+      ],
+      "correctAnswer": "Counting is dependent on external clock pulses",
+      "explanation": "In a synchronous counter, all the flip-flops are connected to the same clock signal, so they change state at the same time, synchronized with the clock pulse."
+    },
+    {
+      "text": "What is the primary function of a decoder in digital circuits?",
+      "options": [
+        "Converts analog signals to digital signals",
+        "Combines multiple signals into one",
+        "Converts binary-coded decimal (BCD) to binary",
+        "Performs logical operations"
+      ],
+      "correctAnswer": "Performs logical operations",
+      "explanation": "A decoder's primary function is to convert a binary code from 'n' input lines into a maximum of '2^n' unique output lines. This conversion is a specific, predefined logical operation implemented with logic gates."
+    },
+    {
+      "text": "In binary addition, what is the sum of $1+1$?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "10"
+      ],
+      "correctAnswer": "10",
+      "explanation": "In binary, $1 + 1 = 2$ (decimal). The binary representation for the decimal value 2 is 10. This is a sum of 0 in the current position and a carry of 1 to the next position."
+    },
+    {
+      "text": "Which logic gate is represented by the symbol with a curved arrow pointing to a circle?",
+      "options": [
+        "AND gate",
+        "OR gate",
+        "NOT gate",
+        "XOR gate"
+      ],
+      "correctAnswer": "NOT gate",
+      "explanation": "The circle (or 'bubble') in a logic gate symbol signifies inversion (the NOT operation). The standard symbol for a NOT gate is a triangle followed by a circle. The question's description is non-standard, but the circle is the defining feature of inversion."
+    },
+    {
+      "text": "What is the purpose of a multiplexer in digital circuits?",
+      "options": [
+        "Converts analog to digital signals",
+        "Combines multiple signals into one",
+        "Increases signal amplitude",
+        "Performs logical operations"
+      ],
+      "correctAnswer": "Combines multiple signals into one",
+      "explanation": "A multiplexer (MUX) acts like a digital switch. It selects one of several input lines and routes the signal from that line to a single output line based on a control signal."
+    },
+    {
+      "text": "In digital electronics, what is the role of a comparator?",
+      "options": [
+        "Converts analog signals to digital signals",
+        "Compares two binary numbers and determines their relationship",
+        "Combines multiple signals into one",
+        "Stores binary information"
+      ],
+      "correctAnswer": "Compares two binary numbers and determines their relationship",
+      "explanation": "A digital comparator is a circuit that compares two binary numbers (A and B) and outputs whether A is greater than B, less than B, or equal to B."
+    },
+    {
+      "text": "What is the primary function of a flip-flop in sequential circuits?",
+      "options": [
+        "Arithmetic operations",
+        "Memory storage",
+        "Signal amplification",
+        "Logical AND operation"
+      ],
+      "correctAnswer": "Memory storage",
+      "explanation": "Flip-flops are the building blocks of memory in sequential circuits. Their ability to store a single bit of data allows the circuit's output to depend on past inputs as well as current ones."
+    },
+    {
+      "text": "In a synchronous sequential circuit, what controls the timing of state transitions?",
+      "options": [
+        "External clock pulses",
+        "Input signals",
+        "Output signals",
+        "Power supply"
+      ],
+      "correctAnswer": "External clock pulses",
+      "explanation": "Synchronous circuits rely on a master clock signal. All state changes in the circuit's memory elements (flip-flops) occur in unison, triggered by the rising or falling edge of the clock pulse."
+    },
+    {
+      "text": "What is the difference between a latch and a flip-flop?",
+      "options": [
+        "Latches are level-triggered, while flip-flops are edge-triggered.",
+        "Flip-flops are level-triggered, while latches are edge-triggered.",
+        "Latches have one stable state, while flip-flops have two stable states.",
+        "Flip-flops have one stable state, while latches have two stable states."
+      ],
+      "correctAnswer": "Latches are level-triggered, while flip-flops are edge-triggered.",
+      "explanation": "The main distinction is their triggering mechanism. A latch's output can change whenever the clock signal is at a specific level (e.g., HIGH). A flip-flop's output only changes at the precise moment of a clock transition (edge)."
+    },
+    {
+      "text": "In a state diagram of a sequential circuit, what do the arrows represent?",
+      "options": [
+        "Input signals",
+        "Output signals",
+        "State transitions",
+        "Clock pulses"
+      ],
+      "correctAnswer": "State transitions",
+      "explanation": "State diagrams visualize the behavior of sequential circuits. The circles represent the states, and the directed arrows between them represent the transitions from one state to another, which are caused by specific inputs."
+    },
+    {
+      "text": "What is the purpose of a counter in sequential circuits?",
+      "options": [
+        "Memory storage",
+        "Arithmetic operations",
+        "Counting and sequencing",
+        "Signal amplification"
+      ],
+      "correctAnswer": "Counting and sequencing",
+      "explanation": "A counter is a specialized sequential circuit designed to follow a predetermined sequence of states, effectively counting events (like clock pulses) or generating control sequences."
+    },
+    {
+      "text": "What is the significance of the term 'clock edge' in sequential circuits?",
+      "options": [
+        "It represents the speed of data transfer.",
+        "It indicates the rate of power consumption.",
+        "It defines the timing for state transitions.",
+        "It signifies the number of memory elements."
+      ],
+      "correctAnswer": "It defines the timing for state transitions.",
+      "explanation": "The clock edge (the rapid transition from low-to-high or high-to-low) is the specific instant in time that triggers edge-sensitive components like flip-flops to change their state, ensuring synchronized operation."
+    },
+    {
+      "text": "In a shift register, what is the purpose of a serial-in/parallel-out configuration?",
+      "options": [
+        "Shift data sequentially through the register.",
+        "Load data in parallel and output it sequentially.",
+        "Load data sequentially and output it in parallel.",
+        "Perform logical operations on parallel data."
+      ],
+      "correctAnswer": "Load data sequentially and output it in parallel.",
+      "explanation": "A Serial-In, Parallel-Out (SIPO) shift register is used to convert data from a serial stream (one bit at a time) to a parallel format, where all bits are available simultaneously on separate output lines."
+    },
+    {
+      "text": "What is the primary advantage of a synchronous sequential circuit over an asynchronous one?",
+      "options": [
+        "Simplicity in design",
+        "Faster operation",
+        "Independence from clock signals",
+        "Reduced power consumption"
+      ],
+      "correctAnswer": "Simplicity in design",
+      "explanation": "Synchronous designs are generally much simpler and more reliable. Because all operations are tied to a global clock, it's easier to manage timing and avoid issues like race conditions that are common in more complex asynchronous designs."
+    },
+    {
+      "text": "What is the output of an OR gate when both inputs are HIGH?",
+      "options": [
+        "HIGH",
+        "LOW",
+        "Depends on other conditions",
+        "Indeterminate"
+      ],
+      "correctAnswer": "HIGH",
+      "explanation": "The output of an OR gate is HIGH if one *or* more of its inputs are HIGH. Therefore, if both inputs are HIGH, the output is also HIGH."
+    },
+    {
+      "text": "What is the result of a NAND gate with inputs LOW and HIGH?",
+      "options": [
+        "HIGH",
+        "LOW",
+        "Depends on other conditions",
+        "Indeterminate"
+      ],
+      "correctAnswer": "HIGH",
+      "explanation": "A NAND gate is a 'Not-AND' gate. An AND gate with inputs LOW (0) and HIGH (1) would produce a LOW (0) output. The NAND gate inverts this result, producing a HIGH (1) output."
+    },
+    {
+      "text": "In a XOR gate, what is the output when both inputs are HIGH?",
+      "options": [
+        "HIGH",
+        "LOW",
+        "Depends on other conditions",
+        "Indeterminate"
+      ],
+      "correctAnswer": "LOW",
+      "explanation": "The Exclusive OR (XOR) gate outputs HIGH only when the inputs are different from each other. When both inputs are the same (both HIGH), the output is LOW."
+    },
+    {
+      "text": "If you connect the output of an AND gate to the input of a NOT gate, what type of gate is created?",
+      "options": [
+        "OR gate",
+        "XOR gate",
+        "NAND gate",
+        "NOR gate"
+      ],
+      "correctAnswer": "NAND gate",
+      "explanation": "This configuration performs an AND operation followed by a NOT operation, which is the exact definition of a NAND (Not-AND) gate."
+    },
+    {
+      "text": "Convert binary $101111110010_2$ to hexadecimal.",
+      "options": [
+        "$BF2_{16}$",
+        "$CA_{16}$",
+        "$BE_{16}$",
+        "$AD_{16}$"
+      ],
+      "correctAnswer": "$BF2_{16}$",
+      "explanation": "Group the binary digits into sets of four from right to left: 1011 1111 0010. Then convert each group: $1011_2 = B_{16}$, $1111_2 = F_{16}$, $0010_2 = 2_{16}$. Combining them gives $BF2_{16}$."
+    },
+    {
+      "text": "The BCD number for decimal 345 is:",
+      "options": [
+        "101101000101",
+        "001101000101",
+        "100010101111",
+        "100000011101"
+      ],
+      "correctAnswer": "001101000101",
+      "explanation": "In Binary-Coded Decimal (BCD), each decimal digit is represented by its own 4-bit binary equivalent. $3 = 0011$, $4 = 0100$, $5 = 0101$. Concatenating these gives 0011 0100 0101."
+    },
+    {
+      "text": "Convert the following decimal number $187_{10}$ to binary.",
+      "options": [
+        "$1011010_2$",
+        "$0011010_2$",
+        "$10111011_2$",
+        "$1000000_2$"
+      ],
+      "correctAnswer": "$10111011_2$",
+      "explanation": "To convert decimal 187 to binary, you can sum powers of 2: $128 + 32 + 16 + 8 + 2 + 1 = 1 \\cdot 2^7 + 0 \\cdot 2^6 + 1 \\cdot 2^5 + 1 \\cdot 2^4 + 1 \\cdot 2^3 + 0 \\cdot 2^2 + 1 \\cdot 2^1 + 1 \\cdot 2^0$, which is $10111011_2$."
+    },
+    {
+      "text": "Add $23_{16}$ to $16_{16}$.",
+      "options": [
+        "$28_{16}$",
+        "$29_{16}$",
+        "$38_{16}$",
+        "$39_{16}$"
+      ],
+      "correctAnswer": "$39_{16}$",
+      "explanation": "Hexadecimal addition is performed column by column. Right column: $3 + 6 = 9$. Left column: $2 + 1 = 3$. The result is $39_{16}$."
+    }
+  ]
+}
