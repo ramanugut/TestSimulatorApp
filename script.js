@@ -720,9 +720,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     } else {
       // Handle text-based answers
-      const textInput = questionElement.querySelector('input[type="text"]');
+      const textInput = questionElement.querySelector(".text-area-input");
       if (textInput) {
-        textInput.value = userAnswer || "";
+        if (typeof userAnswer === "string") {
+          textInput.value = userAnswer;
+        }
         textInput.disabled = true; // Disable text input after submission
       }
     }
@@ -791,9 +793,10 @@ document.addEventListener("DOMContentLoaded", function () {
         answer.toString().trim() !== ""
       );
     }).length;
-    const progressPercent = Math.round(
-      (answeredQuestions / totalQuestions) * 100
-    );
+    const progressPercent =
+      totalQuestions === 0
+        ? 0
+        : Math.round((answeredQuestions / totalQuestions) * 100);
     floatingProgressDisplay.querySelector(
       "#progress-text"
     ).textContent = `${progressPercent}%`;
@@ -803,6 +806,47 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //************************ SECTION 13: DOWNLOAD RESULTS ************************//
+
+  function formatAnswerForDisplay(answer) {
+    if (Array.isArray(answer)) {
+      return answer.join(", ");
+    }
+    if (answer === null || answer === undefined) {
+      return "";
+    }
+    return answer.toString();
+  }
+
+  function normalizeAnswerForComparison(answer) {
+    if (Array.isArray(answer)) {
+      return answer
+        .map((value) =>
+          value === null || value === undefined
+            ? ""
+            : value.toString().trim().toLowerCase()
+        )
+        .filter((value) => value !== "")
+        .sort();
+    }
+    if (answer === null || answer === undefined) {
+      return "";
+    }
+    return answer.toString().trim().toLowerCase();
+  }
+
+  function answersMatch(userAnswer, correctAnswer) {
+    const normalizedUser = normalizeAnswerForComparison(userAnswer);
+    const normalizedCorrect = normalizeAnswerForComparison(correctAnswer);
+
+    if (Array.isArray(normalizedUser) || Array.isArray(normalizedCorrect)) {
+      if (!Array.isArray(normalizedUser) || !Array.isArray(normalizedCorrect)) {
+        return false;
+      }
+      return JSON.stringify(normalizedUser) === JSON.stringify(normalizedCorrect);
+    }
+
+    return normalizedUser === normalizedCorrect;
+  }
 
   function downloadResultsAsPDF() {
     const { jsPDF } = window.jspdf;
@@ -821,10 +865,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const questionText = `Question ${index + 1}: ${question.text}`;
-      const userAnswer = userAnswers[index] || "No Answer Provided";
+      const rawUserAnswer = userAnswers[index];
+      const hasUserAnswer = Array.isArray(rawUserAnswer)
+        ? rawUserAnswer.length > 0
+        : rawUserAnswer !== null &&
+          rawUserAnswer !== undefined &&
+          rawUserAnswer.toString().trim() !== "";
+      const userAnswer = hasUserAnswer
+        ? formatAnswerForDisplay(rawUserAnswer)
+        : "No Answer Provided";
+      const correctAnswer = formatAnswerForDisplay(question.correctAnswer);
       const isCorrect =
-        userAnswer.trim().toLowerCase() ===
-        question.correctAnswer.trim().toLowerCase();
+        hasUserAnswer && answersMatch(rawUserAnswer, question.correctAnswer);
       if (isCorrect) correctAnswersCount++;
 
       const pageWidth = doc.internal.pageSize.getWidth();
@@ -840,7 +892,7 @@ document.addEventListener("DOMContentLoaded", function () {
       doc.text(userAnswerLines, margin, yPosition);
       yPosition += userAnswerLines.length * 7;
 
-      const correctAnswerText = `Correct Answer: ${question.correctAnswer}`;
+      const correctAnswerText = `Correct Answer: ${correctAnswer}`;
       const correctAnswerLines = doc.splitTextToSize(
         correctAnswerText,
         maxLineWidth
