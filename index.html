@@ -74,6 +74,26 @@
         </header>
 
         <!-- Questions Container -->
+        <section id="study-tools">
+            <div class="tool-card" id="motivation-card">
+                <h2>Motivation Station</h2>
+                <p id="motivation-message">Ready to learn something new today?</p>
+                <button id="new-motivation">Inspire Me!</button>
+            </div>
+            <div class="tool-card" id="bookmark-card">
+                <h2>Bookmark Navigator</h2>
+                <p class="tool-description">Bookmark tricky questions and jump back to them anytime.</p>
+                <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
+                <button id="cycle-bookmarks">Jump to Next Bookmark</button>
+            </div>
+            <div class="tool-card" id="achievement-card">
+                <h2>Achievement Board</h2>
+                <ul id="achievement-list" class="achievement-list">
+                    <li class="empty">Complete a test to start earning badges!</li>
+                </ul>
+            </div>
+        </section>
+
         <main id="questions-container">
             <!-- Questions will be dynamically inserted here using JavaScript -->
         </main>
@@ -101,6 +121,8 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top" title="Go to top">&#8679;</button>
+
+    <div id="achievement-toast" class="hidden"></div>
 
     <!-- Link the JavaScript file -->
     <script src="script.js"></script>
