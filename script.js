@@ -176,31 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Update stats display
   function updateStatsDisplay() {
-    const statsContent = document.getElementById("stats-content");
-    if (statsContent) {
-      statsContent.innerHTML = `
-        <h3>Today's Stats</h3>
-        <div class="stat-line"><span>Tests Completed</span><span>${
-          testStats.testsTaken
-        }</span></div>
-        <div class="stat-line"><span>Passed</span><span>${
-          testStats.testsPassed
-        }</span></div>
-        <div class="stat-line"><span>Failed</span><span>${
-          testStats.testsFailed
-        }</span></div>
-        <div class="stat-line"><span>Abandoned</span><span>${
-          testStats.testsAbandoned
-        }</span></div>
-        <button id="reset-stats-button" class="btn btn-tertiary">Reset Stats</button>
-      `;
-
-      const resetStatsButton = document.getElementById("reset-stats-button");
-      if (resetStatsButton) {
-        resetStatsButton.addEventListener("click", resetStats);
-      }
-    }
-
     updateStatsPanel();
     updateGamification();
   }
@@ -501,8 +476,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Test file references
   const testFiles = [
-    // Add your test files here
-    // "test20.json",
+    "test1.json",
+    "test2.json",
+    "test3.json",
+    "test4.json",
+    "test5.json",
+    "test6.json",
+    "test7.json",
+    "test8.json",
+    "test9.json",
+    "test10.json",
+    "test11.json",
+    "test12.json",
+    "test13.json",
+    "test14.json",
+    "test15.json",
+    "test16.json",
+    "test17.json",
+    "test18.json",
+    "test19.json",
+    "test20.json",
     "test21.json",
     "test22.json",
     "test23.json",
@@ -517,8 +510,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "ISTQB1.json",
     "ISTQB2.json",
     "ISTQB3.json",
-    // For demonstration, we'll use a sample test file
-    // "sample_test.json",
   ];
 
   // Load test files into the select element
@@ -1551,8 +1542,13 @@ document.addEventListener("DOMContentLoaded", function () {
   if (studyModeToggle) {
     studyModeToggle.addEventListener("change", () => {
       isStudyMode = studyModeToggle.checked;
+      document.body.classList.toggle("study-mode-active", isStudyMode);
       renderQuestions();
     });
+    document.body.classList.toggle(
+      "study-mode-active",
+      studyModeToggle.checked
+    );
   }
 
   //************************ SECTION 15: TEST SELECTION ************************//
