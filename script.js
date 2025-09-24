@@ -158,8 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadStats();
 
-  //************************ SECTION 2: ELEMENT REFERENCES ************************//
 
+  //************************ SECTION 2: ELEMENT REFERENCES ************************//
+  
   // HTML element references
   const questionsContainer = document.getElementById("questions-container");
   const timerInput = document.getElementById("timer-input");
@@ -194,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Math.floor(remainingTime / 60) || 0,
     Math.max(remainingTime % 60, 0)
   );
+
 
   //************************ SECTION 1B: MOTIVATION & ACHIEVEMENTS ************************//
 
@@ -291,6 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   updateAchievementDisplay();
+
 
   //************************ SECTION 3: THEME HANDLING ************************//
 
