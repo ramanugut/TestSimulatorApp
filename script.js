@@ -77,6 +77,11 @@ document.addEventListener("DOMContentLoaded", function () {
     abandonedTests: [],
   };
 
+  let streakData = {
+    count: 0,
+    lastDate: null,
+  };
+
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split("T")[0];
 
@@ -106,37 +111,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const statsContent = document.getElementById("stats-content");
     if (statsContent) {
       statsContent.innerHTML = `
-                <h3>Today's Stats</h3>
-                <div class="stat-item"><span>Total Tests Taken:</span> ${
-                  testStats.testsTaken
-                }</div>
-                <div class="stat-item passed"><span>Tests Passed:</span> ${
-                  testStats.testsPassed
-                }</div>
-                <ul>${testStats.passedTests
-                  .map((test) => `<li>${test}</li>`)
-                  .join("")}</ul>
-                <div class="stat-item failed"><span>Tests Failed:</span> ${
-                  testStats.testsFailed
-                }</div>
-                <ul>${testStats.failedTests
-                  .map((test) => `<li>${test}</li>`)
-                  .join("")}</ul>
-                <div class="stat-item abandoned"><span>Tests Abandoned:</span> ${
-                  testStats.testsAbandoned
-                }</div>
-                <ul>${testStats.abandonedTests
-                  .map((test) => `<li>${test}</li>`)
-                  .join("")}</ul>
-                <button id="reset-stats-button" class="reset-stats-button">Reset Stats</button>
-            `;
+        <h3>Today's Stats</h3>
+        <div class="stat-line"><span>Tests Completed</span><span>${
+          testStats.testsTaken
+        }</span></div>
+        <div class="stat-line"><span>Passed</span><span>${
+          testStats.testsPassed
+        }</span></div>
+        <div class="stat-line"><span>Failed</span><span>${
+          testStats.testsFailed
+        }</span></div>
+        <div class="stat-line"><span>Abandoned</span><span>${
+          testStats.testsAbandoned
+        }</span></div>
+        <button id="reset-stats-button" class="btn btn-tertiary">Reset Stats</button>
+      `;
 
-      // Add event listener for reset stats button
       const resetStatsButton = document.getElementById("reset-stats-button");
       if (resetStatsButton) {
         resetStatsButton.addEventListener("click", resetStats);
       }
     }
+
+    updateStatsPanel();
+    updateGamification();
   }
 
   function resetStats() {
@@ -150,12 +148,135 @@ document.addEventListener("DOMContentLoaded", function () {
       failedTests: [],
       abandonedTests: [],
     };
+    resetStreak();
     // Save to localStorage
     saveStats();
     // Update the stats display
     updateStatsDisplay();
   }
 
+  function updateHistoryList(listElement, items) {
+    if (!listElement) return;
+    listElement.innerHTML = "";
+    if (!items || items.length === 0) {
+      const emptyItem = document.createElement("li");
+      emptyItem.textContent = "No records yet.";
+      listElement.appendChild(emptyItem);
+      return;
+    }
+
+    items
+      .slice(-5)
+      .reverse()
+      .forEach((item) => {
+        const entry = document.createElement("li");
+        entry.textContent = item;
+        listElement.appendChild(entry);
+      });
+  }
+
+  function updateStatsPanel() {
+    if (statsTestsTakenElement) {
+      statsTestsTakenElement.textContent = testStats.testsTaken;
+    }
+    if (statsTestsPassedElement) {
+      statsTestsPassedElement.textContent = testStats.testsPassed;
+    }
+    if (statsTestsFailedElement) {
+      statsTestsFailedElement.textContent = testStats.testsFailed;
+    }
+    if (statsTestsAbandonedElement) {
+      statsTestsAbandonedElement.textContent = testStats.testsAbandoned;
+    }
+    updateHistoryList(statsPassedList, testStats.passedTests);
+    updateHistoryList(statsFailedList, testStats.failedTests);
+    updateHistoryList(statsAbandonedList, testStats.abandonedTests);
+  }
+
+  function calculateXp() {
+    const activityPoints = testStats.testsTaken * 120;
+    const successBonus = testStats.testsPassed * 80;
+    const achievementBonus = unlockedAchievements.size * 150;
+    return activityPoints + successBonus + achievementBonus;
+  }
+
+  function updateGamification() {
+    if (streakValueElement) {
+      const label = streakData.count === 1 ? "day" : "days";
+      streakValueElement.textContent = `${streakData.count} ${label}`;
+    }
+    if (xpValueElement) {
+      xpValueElement.textContent = calculateXp().toLocaleString();
+    }
+    if (badgeValueElement) {
+      const badgeCount = unlockedAchievements.size;
+      badgeValueElement.textContent = `${badgeCount} ${
+        badgeCount === 1 ? "badge" : "badges"
+      } earned`;
+    }
+  }
+
+  function saveStreak() {
+    localStorage.setItem("studyStreak", JSON.stringify(streakData));
+  }
+
+  function resetStreak() {
+    streakData = { count: 0, lastDate: null };
+    saveStreak();
+    updateGamification();
+  }
+
+  function isConsecutiveDay(previousDate, currentDate) {
+    if (!previousDate) return false;
+    const previous = new Date(previousDate);
+    const current = new Date(currentDate);
+    if (Number.isNaN(previous.getTime()) || Number.isNaN(current.getTime())) {
+      return false;
+    }
+    const diff = current.setHours(0, 0, 0, 0) - previous.setHours(0, 0, 0, 0);
+    return Math.round(diff / (1000 * 60 * 60 * 24)) === 1;
+  }
+
+  function incrementStreakIfNeeded() {
+    if (streakData.lastDate === today) {
+      return;
+    }
+    if (streakData.lastDate && isConsecutiveDay(streakData.lastDate, today)) {
+      streakData.count += 1;
+    } else {
+      streakData.count = 1;
+    }
+    streakData.lastDate = today;
+    saveStreak();
+    updateGamification();
+  }
+
+  function loadStreak() {
+    try {
+      const stored = JSON.parse(localStorage.getItem("studyStreak"));
+      if (stored && typeof stored.count === "number") {
+        streakData = stored;
+      }
+    } catch (error) {
+      console.warn("Unable to load streak data:", error);
+    }
+
+    if (
+      streakData.lastDate &&
+      streakData.lastDate !== today &&
+      !isConsecutiveDay(streakData.lastDate, today)
+    ) {
+      streakData.count = 0;
+    }
+
+    updateGamification();
+  }
+
+  if (statsResetButton) {
+    statsResetButton.addEventListener("click", resetStats);
+  }
+
+  loadStreak();
   loadStats();
 
 
@@ -189,6 +310,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const cycleBookmarksButton = document.getElementById("cycle-bookmarks");
   const achievementListElement = document.getElementById("achievement-list");
   const achievementToast = document.getElementById("achievement-toast");
+  const flashcardsGrid = document.getElementById("flashcards-grid");
+  const flashcardsEmptyState = document.getElementById("flashcards-empty");
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+  const streakValueElement = document.getElementById("streak-value");
+  const xpValueElement = document.getElementById("xp-value");
+  const badgeValueElement = document.getElementById("badge-value");
+  const statsTestsTakenElement = document.getElementById("stats-tests-taken");
+  const statsTestsPassedElement = document.getElementById("stats-tests-passed");
+  const statsTestsFailedElement = document.getElementById("stats-tests-failed");
+  const statsTestsAbandonedElement = document.getElementById(
+    "stats-tests-abandoned"
+  );
+  const statsPassedList = document.getElementById("stats-passed-list");
+  const statsFailedList = document.getElementById("stats-failed-list");
+  const statsAbandonedList = document.getElementById("stats-abandoned-list");
+  const statsResetButton = document.getElementById("stats-reset");
+  const downloadReportButton = document.getElementById("download-report");
+
+  if (flashcardsGrid) {
+    flashcardsGrid.classList.add("hidden");
+  }
 
   remainingTime = parseInt(timerInput.value, 10) * 60;
   updateTimerDisplay(
@@ -216,6 +359,28 @@ document.addEventListener("DOMContentLoaded", function () {
   updateMotivationMessage();
 
   let toastTimeoutId;
+
+  function activateTab(panelId) {
+    if (!tabButtons.length || !tabPanels.length) return;
+    tabButtons.forEach((button) => {
+      const isActive = button.dataset.tab === panelId;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-selected", isActive.toString());
+    });
+    tabPanels.forEach((panel) => {
+      const isActive = panel.id === panelId;
+      panel.classList.toggle("active", isActive);
+      panel.setAttribute("aria-hidden", (!isActive).toString());
+    });
+  }
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset && button.dataset.tab) {
+        activateTab(button.dataset.tab);
+      }
+    });
+  });
 
   function saveAchievements() {
     localStorage.setItem(
@@ -256,6 +421,8 @@ document.addEventListener("DOMContentLoaded", function () {
         achievementListElement.appendChild(item);
       }
     });
+
+    updateGamification();
   }
 
   function unlockAchievement(achievementId) {
@@ -433,6 +600,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => {
           console.error("Error loading questions:", error);
           questionsContainer.innerHTML = `<p>Unable to load questions. Please try again or select another test.</p>`;
+          renderFlashcards();
         });
     }
   }
@@ -498,6 +666,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePaginationControls();
     updateProgress();
     updateBookmarkPanel();
+    renderFlashcards();
 
     if (hasSavedProgress && testInProgress && remainingTime > 0) {
       startTimer(true);
@@ -678,6 +847,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     updateProgress();
     updateBookmarkPanel();
+  }
+
+  function renderFlashcards() {
+    if (!flashcardsGrid || !flashcardsEmptyState) return;
+
+    flashcardsGrid.innerHTML = "";
+    if (!questions.length) {
+      flashcardsGrid.classList.add("hidden");
+      flashcardsEmptyState.classList.remove("hidden");
+      return;
+    }
+
+    flashcardsGrid.classList.remove("hidden");
+    flashcardsEmptyState.classList.add("hidden");
+
+    const cardsToShow = questions.slice(0, Math.min(6, questions.length));
+    cardsToShow.forEach((question) => {
+      const card = document.createElement("div");
+      card.className = "flashcard";
+
+      const questionText = document.createElement("p");
+      questionText.className = "flashcard-question";
+      questionText.textContent = question.text;
+
+      const answerText = document.createElement("p");
+      answerText.className = "flashcard-answer";
+      const formattedAnswer = formatAnswerForDisplay(question.correctAnswer);
+      answerText.textContent = formattedAnswer || "Check the explanation";
+
+      card.appendChild(questionText);
+      card.appendChild(answerText);
+
+      card.addEventListener("click", () => {
+        card.classList.toggle("flashcard--flipped");
+      });
+
+      flashcardsGrid.appendChild(card);
+    });
   }
 
   //************************ SECTION 7: PAGINATION CONTROLS ************************//
@@ -932,7 +1139,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // Update the score display
-      scoreElement.textContent = `${score} / ${questions.length}`;
+      const scorePercent =
+        questions.length === 0
+          ? 0
+          : Math.round((score / questions.length) * 100);
+      scoreElement.textContent = `${scorePercent}%`;
       scoreContainer.style.display = "block";
       scoreContainer.classList.remove("hidden");
 
@@ -944,21 +1155,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
       testStats.testsTaken++;
 
-      if ((score / questions.length) * 100 >= passMark) {
-        resultMessageElement.textContent = "You Passed!";
+      const scoreDetail = ` (${score}/${questions.length})`;
+
+      if (scorePercent >= passMark) {
+        resultMessageElement.textContent = `You Passed!${scoreDetail}`;
         resultMessageElement.classList.add("pass-message");
         testStats.testsPassed++;
         testStats.passedTests.push(testName);
       } else {
-        resultMessageElement.textContent = "You Failed.";
+        resultMessageElement.textContent = `You Failed.${scoreDetail}`;
         resultMessageElement.classList.add("fail-message");
         testStats.testsFailed++;
         testStats.failedTests.push(testName);
       }
 
+      incrementStreakIfNeeded();
+
       // Save stats and update display
       saveStats();
       updateStatsDisplay();
+
+      activateTab("stats-panel");
 
       evaluateAchievements(score, timeLeftAtSubmission);
 
@@ -1128,6 +1345,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePaginationControls();
     updateProgress();
     updateBookmarkPanel();
+    renderFlashcards();
     clearSavedProgress();
   }
 
@@ -1281,6 +1499,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   downloadButton.addEventListener("click", downloadResultsAsPDF);
+
+  if (downloadReportButton) {
+    downloadReportButton.addEventListener("click", downloadResultsAsPDF);
+  }
 
   //************************ SECTION 14: STUDY MODE ************************//
 
