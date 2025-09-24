@@ -346,7 +346,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadStreak();
   loadStats();
+
   //************************ SECTION 1B: MOTIVATION & ACHIEVEMENTS ************************//
+
 
   function updateMotivationMessage() {
     if (!motivationMessageElement) return;
@@ -1386,6 +1388,7 @@ document.addEventListener("DOMContentLoaded", function () {
     resetButton.addEventListener("click", resetTest);
   }
 
+
   //************************ SECTION 12: PROGRESS TRACKING ************************//
 
   function updateProgress() {
@@ -1533,9 +1536,11 @@ document.addEventListener("DOMContentLoaded", function () {
     doc.save("test_results.pdf");
   }
 
+
   if (downloadButton) {
     downloadButton.addEventListener("click", downloadResultsAsPDF);
   }
+
 
   if (downloadReportButton) {
     downloadReportButton.addEventListener("click", downloadResultsAsPDF);
