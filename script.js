@@ -21,6 +21,74 @@ document.addEventListener("DOMContentLoaded", function () {
   let bookmarkCycleIndex = 0;
   let lastMotivationIndex = null;
 
+  //************************ SECTION 1A: ELEMENT REFERENCES ************************//
+
+  const questionsContainer = document.getElementById("questions-container");
+  const timerInput = document.getElementById("timer-input");
+  const passMarkInput = document.getElementById("pass-mark-input");
+  const startTestButton = document.getElementById("start-test");
+  const pauseTimerButton = document.getElementById("pause-timer");
+  const floatingTimeDisplay = document.getElementById("floating-time");
+  const submitButton = document.getElementById("submit-test");
+  const resetButton = document.getElementById("reset-test");
+  const downloadButton = document.getElementById("download-results");
+  const scoreContainer = document.getElementById("score-container");
+  const scoreElement = document.getElementById("score");
+  const resultMessageElement = document.getElementById("result-message");
+  const testSelect = document.getElementById("test-select");
+  const studyModeToggle = document.getElementById("study-mode-toggle");
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  const paginationControls = document.getElementById("pagination-controls");
+  const prevPageButton = document.getElementById("prev-page");
+  const nextPageButton = document.getElementById("next-page");
+  const pageInfo = document.getElementById("page-info");
+  const uploadTestInput = document.getElementById("upload-test-input");
+  const motivationMessageElement = document.getElementById("motivation-message");
+  const newMotivationButton = document.getElementById("new-motivation");
+  const bookmarkListElement = document.getElementById("bookmark-list");
+  const cycleBookmarksButton = document.getElementById("cycle-bookmarks");
+  const achievementListElement = document.getElementById("achievement-list");
+  const achievementToast = document.getElementById("achievement-toast");
+  const flashcardsGrid = document.getElementById("flashcards-grid");
+  const flashcardsEmptyState = document.getElementById("flashcards-empty");
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+  const streakValueElement = document.getElementById("streak-value");
+  const xpValueElement = document.getElementById("xp-value");
+  const badgeValueElement = document.getElementById("badge-value");
+  const statsTestsTakenElement = document.getElementById("stats-tests-taken");
+  const statsTestsPassedElement = document.getElementById("stats-tests-passed");
+  const statsTestsFailedElement = document.getElementById("stats-tests-failed");
+  const statsTestsAbandonedElement = document.getElementById("stats-tests-abandoned");
+  const statsPassedList = document.getElementById("stats-passed-list");
+  const statsFailedList = document.getElementById("stats-failed-list");
+  const statsAbandonedList = document.getElementById("stats-abandoned-list");
+  const statsResetButton = document.getElementById("stats-reset");
+  const downloadReportButton = document.getElementById("download-report");
+  const progressBarElement = document.getElementById("progress-bar");
+  const progressTextElement = document.getElementById("progress-text");
+
+  if (flashcardsGrid) {
+    flashcardsGrid.classList.add("hidden");
+  }
+
+  function getTimerInputSeconds() {
+    if (!timerInput) {
+      return 0;
+    }
+    const minutes = parseInt(timerInput.value, 10);
+    if (Number.isNaN(minutes)) {
+      return 0;
+    }
+    return Math.max(minutes, 0) * 60;
+  }
+
+  remainingTime = getTimerInputSeconds();
+  updateTimerDisplay(
+    Math.floor(remainingTime / 60) || 0,
+    Math.max(remainingTime % 60, 0)
+  );
+
   const motivationMessages = [
     "You're turning knowledge into power!",
     "Every answer gets you closer to your goals.",
@@ -77,6 +145,11 @@ document.addEventListener("DOMContentLoaded", function () {
     abandonedTests: [],
   };
 
+  let streakData = {
+    count: 0,
+    lastDate: null,
+  };
+
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split("T")[0];
 
@@ -106,37 +179,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const statsContent = document.getElementById("stats-content");
     if (statsContent) {
       statsContent.innerHTML = `
-                <h3>Today's Stats</h3>
-                <div class="stat-item"><span>Total Tests Taken:</span> ${
-                  testStats.testsTaken
-                }</div>
-                <div class="stat-item passed"><span>Tests Passed:</span> ${
-                  testStats.testsPassed
-                }</div>
-                <ul>${testStats.passedTests
-                  .map((test) => `<li>${test}</li>`)
-                  .join("")}</ul>
-                <div class="stat-item failed"><span>Tests Failed:</span> ${
-                  testStats.testsFailed
-                }</div>
-                <ul>${testStats.failedTests
-                  .map((test) => `<li>${test}</li>`)
-                  .join("")}</ul>
-                <div class="stat-item abandoned"><span>Tests Abandoned:</span> ${
-                  testStats.testsAbandoned
-                }</div>
-                <ul>${testStats.abandonedTests
-                  .map((test) => `<li>${test}</li>`)
-                  .join("")}</ul>
-                <button id="reset-stats-button" class="reset-stats-button">Reset Stats</button>
-            `;
+        <h3>Today's Stats</h3>
+        <div class="stat-line"><span>Tests Completed</span><span>${
+          testStats.testsTaken
+        }</span></div>
+        <div class="stat-line"><span>Passed</span><span>${
+          testStats.testsPassed
+        }</span></div>
+        <div class="stat-line"><span>Failed</span><span>${
+          testStats.testsFailed
+        }</span></div>
+        <div class="stat-line"><span>Abandoned</span><span>${
+          testStats.testsAbandoned
+        }</span></div>
+        <button id="reset-stats-button" class="btn btn-tertiary">Reset Stats</button>
+      `;
 
-      // Add event listener for reset stats button
       const resetStatsButton = document.getElementById("reset-stats-button");
       if (resetStatsButton) {
         resetStatsButton.addEventListener("click", resetStats);
       }
     }
+
+    updateStatsPanel();
+    updateGamification();
   }
 
   function resetStats() {
@@ -150,53 +216,136 @@ document.addEventListener("DOMContentLoaded", function () {
       failedTests: [],
       abandonedTests: [],
     };
+    resetStreak();
     // Save to localStorage
     saveStats();
     // Update the stats display
     updateStatsDisplay();
   }
 
+  function updateHistoryList(listElement, items) {
+    if (!listElement) return;
+    listElement.innerHTML = "";
+    if (!items || items.length === 0) {
+      const emptyItem = document.createElement("li");
+      emptyItem.textContent = "No records yet.";
+      listElement.appendChild(emptyItem);
+      return;
+    }
+
+    items
+      .slice(-5)
+      .reverse()
+      .forEach((item) => {
+        const entry = document.createElement("li");
+        entry.textContent = item;
+        listElement.appendChild(entry);
+      });
+  }
+
+  function updateStatsPanel() {
+    if (statsTestsTakenElement) {
+      statsTestsTakenElement.textContent = testStats.testsTaken;
+    }
+    if (statsTestsPassedElement) {
+      statsTestsPassedElement.textContent = testStats.testsPassed;
+    }
+    if (statsTestsFailedElement) {
+      statsTestsFailedElement.textContent = testStats.testsFailed;
+    }
+    if (statsTestsAbandonedElement) {
+      statsTestsAbandonedElement.textContent = testStats.testsAbandoned;
+    }
+    updateHistoryList(statsPassedList, testStats.passedTests);
+    updateHistoryList(statsFailedList, testStats.failedTests);
+    updateHistoryList(statsAbandonedList, testStats.abandonedTests);
+  }
+
+  function calculateXp() {
+    const activityPoints = testStats.testsTaken * 120;
+    const successBonus = testStats.testsPassed * 80;
+    const achievementBonus = unlockedAchievements.size * 150;
+    return activityPoints + successBonus + achievementBonus;
+  }
+
+  function updateGamification() {
+    if (streakValueElement) {
+      const label = streakData.count === 1 ? "day" : "days";
+      streakValueElement.textContent = `${streakData.count} ${label}`;
+    }
+    if (xpValueElement) {
+      xpValueElement.textContent = calculateXp().toLocaleString();
+    }
+    if (badgeValueElement) {
+      const badgeCount = unlockedAchievements.size;
+      badgeValueElement.textContent = `${badgeCount} ${
+        badgeCount === 1 ? "badge" : "badges"
+      } earned`;
+    }
+  }
+
+  function saveStreak() {
+    localStorage.setItem("studyStreak", JSON.stringify(streakData));
+  }
+
+  function resetStreak() {
+    streakData = { count: 0, lastDate: null };
+    saveStreak();
+    updateGamification();
+  }
+
+  function isConsecutiveDay(previousDate, currentDate) {
+    if (!previousDate) return false;
+    const previous = new Date(previousDate);
+    const current = new Date(currentDate);
+    if (Number.isNaN(previous.getTime()) || Number.isNaN(current.getTime())) {
+      return false;
+    }
+    const diff = current.setHours(0, 0, 0, 0) - previous.setHours(0, 0, 0, 0);
+    return Math.round(diff / (1000 * 60 * 60 * 24)) === 1;
+  }
+
+  function incrementStreakIfNeeded() {
+    if (streakData.lastDate === today) {
+      return;
+    }
+    if (streakData.lastDate && isConsecutiveDay(streakData.lastDate, today)) {
+      streakData.count += 1;
+    } else {
+      streakData.count = 1;
+    }
+    streakData.lastDate = today;
+    saveStreak();
+    updateGamification();
+  }
+
+  function loadStreak() {
+    try {
+      const stored = JSON.parse(localStorage.getItem("studyStreak"));
+      if (stored && typeof stored.count === "number") {
+        streakData = stored;
+      }
+    } catch (error) {
+      console.warn("Unable to load streak data:", error);
+    }
+
+    if (
+      streakData.lastDate &&
+      streakData.lastDate !== today &&
+      !isConsecutiveDay(streakData.lastDate, today)
+    ) {
+      streakData.count = 0;
+    }
+
+    updateGamification();
+  }
+
+  if (statsResetButton) {
+    statsResetButton.addEventListener("click", resetStats);
+  }
+
+  loadStreak();
   loadStats();
-
-
-  //************************ SECTION 2: ELEMENT REFERENCES ************************//
-  
-  // HTML element references
-  const questionsContainer = document.getElementById("questions-container");
-  const timerInput = document.getElementById("timer-input");
-  const passMarkInput = document.getElementById("pass-mark-input");
-  const startTestButton = document.getElementById("start-test");
-  const pauseTimerButton = document.getElementById("pause-timer");
-  const floatingTimeDisplay = document.getElementById("floating-time");
-  const submitButton = document.getElementById("submit-test");
-  const resetButton = document.getElementById("reset-test");
-  const downloadButton = document.getElementById("download-results");
-  const scoreContainer = document.getElementById("score-container");
-  const scoreElement = document.getElementById("score");
-  const resultMessageElement = document.getElementById("result-message");
-  const testSelect = document.getElementById("test-select");
-  const studyModeToggle = document.getElementById("study-mode-toggle");
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const floatingProgressDisplay = document.getElementById("floating-progress");
-  const paginationControls = document.getElementById("pagination-controls");
-  const prevPageButton = document.getElementById("prev-page");
-  const nextPageButton = document.getElementById("next-page");
-  const pageInfo = document.getElementById("page-info");
-  const uploadTestInput = document.getElementById("upload-test-input");
-  const motivationMessageElement = document.getElementById("motivation-message");
-  const newMotivationButton = document.getElementById("new-motivation");
-  const bookmarkListElement = document.getElementById("bookmark-list");
-  const cycleBookmarksButton = document.getElementById("cycle-bookmarks");
-  const achievementListElement = document.getElementById("achievement-list");
-  const achievementToast = document.getElementById("achievement-toast");
-
-  remainingTime = parseInt(timerInput.value, 10) * 60;
-  updateTimerDisplay(
-    Math.floor(remainingTime / 60) || 0,
-    Math.max(remainingTime % 60, 0)
-  );
-
-
   //************************ SECTION 1B: MOTIVATION & ACHIEVEMENTS ************************//
 
   function updateMotivationMessage() {
@@ -216,6 +365,28 @@ document.addEventListener("DOMContentLoaded", function () {
   updateMotivationMessage();
 
   let toastTimeoutId;
+
+  function activateTab(panelId) {
+    if (!tabButtons.length || !tabPanels.length) return;
+    tabButtons.forEach((button) => {
+      const isActive = button.dataset.tab === panelId;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-selected", isActive.toString());
+    });
+    tabPanels.forEach((panel) => {
+      const isActive = panel.id === panelId;
+      panel.classList.toggle("active", isActive);
+      panel.setAttribute("aria-hidden", (!isActive).toString());
+    });
+  }
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset && button.dataset.tab) {
+        activateTab(button.dataset.tab);
+      }
+    });
+  });
 
   function saveAchievements() {
     localStorage.setItem(
@@ -256,6 +427,8 @@ document.addEventListener("DOMContentLoaded", function () {
         achievementListElement.appendChild(item);
       }
     });
+
+    updateGamification();
   }
 
   function unlockAchievement(achievementId) {
@@ -298,27 +471,29 @@ document.addEventListener("DOMContentLoaded", function () {
   //************************ SECTION 3: THEME HANDLING ************************//
 
   // Handle Dark Mode theme based on user preferences
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    darkModeToggle.textContent = "Disable Dark Mode";
-  } else {
-    document.body.classList.add("light-mode");
-    darkModeToggle.textContent = "Enable Dark Mode";
-  }
-
-  darkModeToggle.addEventListener("click", () => {
-    if (document.body.classList.contains("dark-mode")) {
-      document.body.classList.remove("dark-mode");
-      document.body.classList.add("light-mode");
-      localStorage.setItem("theme", "light");
-      darkModeToggle.textContent = "Enable Dark Mode";
-    } else {
-      document.body.classList.remove("light-mode");
+  if (darkModeToggle) {
+    if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark-mode");
-      localStorage.setItem("theme", "dark");
       darkModeToggle.textContent = "Disable Dark Mode";
+    } else {
+      document.body.classList.add("light-mode");
+      darkModeToggle.textContent = "Enable Dark Mode";
     }
-  });
+
+    darkModeToggle.addEventListener("click", () => {
+      if (document.body.classList.contains("dark-mode")) {
+        document.body.classList.remove("dark-mode");
+        document.body.classList.add("light-mode");
+        localStorage.setItem("theme", "light");
+        darkModeToggle.textContent = "Enable Dark Mode";
+      } else {
+        document.body.classList.remove("light-mode");
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+        darkModeToggle.textContent = "Disable Dark Mode";
+      }
+    });
+  }
 
   //************************ SECTION 4: TEST FILE LOADING ************************//
 
@@ -433,6 +608,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => {
           console.error("Error loading questions:", error);
           questionsContainer.innerHTML = `<p>Unable to load questions. Please try again or select another test.</p>`;
+          renderFlashcards();
         });
     }
   }
@@ -460,7 +636,7 @@ document.addEventListener("DOMContentLoaded", function () {
       remainingTime =
         typeof savedProgress.remainingTime === "number"
           ? savedProgress.remainingTime
-          : parseInt(timerInput.value, 10) * 60;
+          : getTimerInputSeconds();
       currentPage = savedProgress.currentPage || 1;
       testInProgress = !!savedProgress.testInProgress && remainingTime > 0;
       testSubmitted = !!savedProgress.testSubmitted;
@@ -473,7 +649,7 @@ document.addEventListener("DOMContentLoaded", function () {
       testSubmitted = false;
       bookmarkedQuestions = new Set();
       isTimerPaused = false;
-      remainingTime = parseInt(timerInput.value, 10) * 60;
+      remainingTime = getTimerInputSeconds();
     }
 
     bookmarkCycleIndex = 0;
@@ -498,6 +674,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePaginationControls();
     updateProgress();
     updateBookmarkPanel();
+    renderFlashcards();
 
     if (hasSavedProgress && testInProgress && remainingTime > 0) {
       startTimer(true);
@@ -680,6 +857,44 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBookmarkPanel();
   }
 
+  function renderFlashcards() {
+    if (!flashcardsGrid || !flashcardsEmptyState) return;
+
+    flashcardsGrid.innerHTML = "";
+    if (!questions.length) {
+      flashcardsGrid.classList.add("hidden");
+      flashcardsEmptyState.classList.remove("hidden");
+      return;
+    }
+
+    flashcardsGrid.classList.remove("hidden");
+    flashcardsEmptyState.classList.add("hidden");
+
+    const cardsToShow = questions.slice(0, Math.min(6, questions.length));
+    cardsToShow.forEach((question) => {
+      const card = document.createElement("div");
+      card.className = "flashcard";
+
+      const questionText = document.createElement("p");
+      questionText.className = "flashcard-question";
+      questionText.textContent = question.text;
+
+      const answerText = document.createElement("p");
+      answerText.className = "flashcard-answer";
+      const formattedAnswer = formatAnswerForDisplay(question.correctAnswer);
+      answerText.textContent = formattedAnswer || "Check the explanation";
+
+      card.appendChild(questionText);
+      card.appendChild(answerText);
+
+      card.addEventListener("click", () => {
+        card.classList.toggle("flashcard--flipped");
+      });
+
+      flashcardsGrid.appendChild(card);
+    });
+  }
+
   //************************ SECTION 7: PAGINATION CONTROLS ************************//
 
   function highlightQuestion(questionIndex) {
@@ -750,6 +965,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updatePaginationControls() {
+    if (
+      !paginationControls ||
+      !pageInfo ||
+      !prevPageButton ||
+      !nextPageButton
+    ) {
+      return;
+    }
     const totalPages = Math.max(1, Math.ceil(questions.length / questionsPerPage));
     if (questions.length === 0) {
       paginationControls.classList.add("hidden");
@@ -766,22 +989,26 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPageButton.disabled = currentPage === totalPages;
   }
 
-  prevPageButton.addEventListener("click", () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderQuestions();
-      updatePaginationControls();
-    }
-  });
+  if (prevPageButton) {
+    prevPageButton.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderQuestions();
+        updatePaginationControls();
+      }
+    });
+  }
 
-  nextPageButton.addEventListener("click", () => {
-    const totalPages = Math.ceil(questions.length / questionsPerPage);
-    if (currentPage < totalPages) {
-      currentPage++;
-      renderQuestions();
-      updatePaginationControls();
-    }
-  });
+  if (nextPageButton) {
+    nextPageButton.addEventListener("click", () => {
+      const totalPages = Math.ceil(questions.length / questionsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderQuestions();
+        updatePaginationControls();
+      }
+    });
+  }
 
   //************************ SECTION 8: TIMER FUNCTIONALITY ************************//
 
@@ -791,11 +1018,11 @@ document.addEventListener("DOMContentLoaded", function () {
     isTimerPaused = false;
 
     if (!resume || typeof remainingTime !== "number" || Number.isNaN(remainingTime)) {
-      remainingTime = parseInt(timerInput.value, 10) * 60;
+      remainingTime = getTimerInputSeconds();
     }
 
     if (!resume || initialTimerSeconds === null) {
-      initialTimerSeconds = parseInt(timerInput.value, 10) * 60;
+      initialTimerSeconds = getTimerInputSeconds();
     }
 
     updateTimerDisplay(
@@ -823,7 +1050,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateTimerDisplay(minutes, seconds) {
     const timeString = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-    floatingTimeDisplay.textContent = timeString;
+    if (floatingTimeDisplay) {
+      floatingTimeDisplay.textContent = timeString;
+    }
   }
 
   function pauseOrContinueTimer() {
@@ -838,16 +1067,21 @@ document.addEventListener("DOMContentLoaded", function () {
     saveProgress();
   }
 
-  pauseTimerButton.addEventListener("click", pauseOrContinueTimer);
+  if (pauseTimerButton) {
+    pauseTimerButton.addEventListener("click", pauseOrContinueTimer);
+  }
 
-  startTestButton.addEventListener("click", () => {
-    startTimer();
-    startTestButton.disabled = true;
-    submitButton.disabled = false;
-    testInProgress = true;
-    saveProgress();
-    console.log("Start Test button clicked. Submit button enabled.");
-  });
+  if (startTestButton) {
+    startTestButton.addEventListener("click", () => {
+      startTimer();
+      startTestButton.disabled = true;
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+      testInProgress = true;
+      saveProgress();
+    });
+  }
 
   //************************ SECTION 9: TEST SUBMISSION ************************//
 
@@ -932,7 +1166,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // Update the score display
-      scoreElement.textContent = `${score} / ${questions.length}`;
+      const scorePercent =
+        questions.length === 0
+          ? 0
+          : Math.round((score / questions.length) * 100);
+      scoreElement.textContent = `${scorePercent}%`;
       scoreContainer.style.display = "block";
       scoreContainer.classList.remove("hidden");
 
@@ -944,21 +1182,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
       testStats.testsTaken++;
 
-      if ((score / questions.length) * 100 >= passMark) {
-        resultMessageElement.textContent = "You Passed!";
+      const scoreDetail = ` (${score}/${questions.length})`;
+
+      if (scorePercent >= passMark) {
+        resultMessageElement.textContent = `You Passed!${scoreDetail}`;
         resultMessageElement.classList.add("pass-message");
         testStats.testsPassed++;
         testStats.passedTests.push(testName);
       } else {
-        resultMessageElement.textContent = "You Failed.";
+        resultMessageElement.textContent = `You Failed.${scoreDetail}`;
         resultMessageElement.classList.add("fail-message");
         testStats.testsFailed++;
         testStats.failedTests.push(testName);
       }
 
+      incrementStreakIfNeeded();
+
       // Save stats and update display
       saveStats();
       updateStatsDisplay();
+
+      activateTab("stats-panel");
 
       evaluateAchievements(score, timeLeftAtSubmission);
 
@@ -978,7 +1222,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  submitButton.addEventListener("click", submitTest);
+  if (submitButton) {
+    submitButton.addEventListener("click", submitTest);
+  }
 
   //************************ SECTION 10: APPLY FEEDBACK ************************//
 
@@ -1101,7 +1347,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     clearInterval(timer);
     timer = null;
-    remainingTime = parseInt(timerInput.value, 10) * 60;
+    remainingTime = getTimerInputSeconds();
     initialTimerSeconds = null;
     updateTimerDisplay(
       Math.floor(remainingTime / 60),
@@ -1118,8 +1364,12 @@ document.addEventListener("DOMContentLoaded", function () {
     testInProgress = false;
     testSubmitted = false;
     pauseTimerButton.textContent = "Pause Timer";
-    floatingProgressDisplay.querySelector("#progress-text").textContent = `0%`;
-    floatingProgressDisplay.querySelector("#progress-bar").style.width = `0%`;
+    if (progressTextElement) {
+      progressTextElement.textContent = `0%`;
+    }
+    if (progressBarElement) {
+      progressBarElement.style.width = `0%`;
+    }
     userAnswers = {};
     bookmarkedQuestions = new Set();
     bookmarkCycleIndex = 0;
@@ -1128,10 +1378,13 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePaginationControls();
     updateProgress();
     updateBookmarkPanel();
+    renderFlashcards();
     clearSavedProgress();
   }
 
-  resetButton.addEventListener("click", resetTest);
+  if (resetButton) {
+    resetButton.addEventListener("click", resetTest);
+  }
 
   //************************ SECTION 12: PROGRESS TRACKING ************************//
 
@@ -1149,12 +1402,12 @@ document.addEventListener("DOMContentLoaded", function () {
       totalQuestions === 0
         ? 0
         : Math.round((answeredQuestions / totalQuestions) * 100);
-    floatingProgressDisplay.querySelector(
-      "#progress-text"
-    ).textContent = `${progressPercent}%`;
-    floatingProgressDisplay.querySelector(
-      "#progress-bar"
-    ).style.width = `${progressPercent}%`;
+    if (progressTextElement) {
+      progressTextElement.textContent = `${progressPercent}%`;
+    }
+    if (progressBarElement) {
+      progressBarElement.style.width = `${progressPercent}%`;
+    }
   }
 
   //************************ SECTION 13: DOWNLOAD RESULTS ************************//
@@ -1280,63 +1533,75 @@ document.addEventListener("DOMContentLoaded", function () {
     doc.save("test_results.pdf");
   }
 
-  downloadButton.addEventListener("click", downloadResultsAsPDF);
+  if (downloadButton) {
+    downloadButton.addEventListener("click", downloadResultsAsPDF);
+  }
+
+  if (downloadReportButton) {
+    downloadReportButton.addEventListener("click", downloadResultsAsPDF);
+  }
 
   //************************ SECTION 14: STUDY MODE ************************//
 
-  studyModeToggle.addEventListener("change", () => {
-    isStudyMode = studyModeToggle.checked;
-    renderQuestions();
-  });
+  if (studyModeToggle) {
+    studyModeToggle.addEventListener("change", () => {
+      isStudyMode = studyModeToggle.checked;
+      renderQuestions();
+    });
+  }
 
   //************************ SECTION 15: TEST SELECTION ************************//
 
-  testSelect.addEventListener("change", () => {
-    if (testInProgress || timerStarted) {
-      const confirmSwitch = confirm(
-        "Are you sure you want to stop the current test?"
-      );
-      if (!confirmSwitch) {
-        testSelect.value = testSelect.dataset.previousValue;
-        return;
-      } else {
-        // Update stats for abandoned test
-        testStats.testsAbandoned++;
-        const testName =
-          testSelect.options[testSelect.selectedIndex].textContent;
-        testStats.abandonedTests.push(testName);
-        saveStats();
-        updateStatsDisplay();
+  if (testSelect) {
+    testSelect.addEventListener("change", () => {
+      if (testInProgress || timerStarted) {
+        const confirmSwitch = confirm(
+          "Are you sure you want to stop the current test?"
+        );
+        if (!confirmSwitch) {
+          testSelect.value = testSelect.dataset.previousValue;
+          return;
+        } else {
+          // Update stats for abandoned test
+          testStats.testsAbandoned++;
+          const testName =
+            testSelect.options[testSelect.selectedIndex].textContent;
+          testStats.abandonedTests.push(testName);
+          saveStats();
+          updateStatsDisplay();
 
-        resetTest();
+          resetTest();
+          loadQuestions(testSelect.value);
+        }
+      } else {
         loadQuestions(testSelect.value);
       }
-    } else {
-      loadQuestions(testSelect.value);
-    }
-    testSelect.dataset.previousValue = testSelect.value;
-  });
+      testSelect.dataset.previousValue = testSelect.value;
+    });
 
-  testSelect.dataset.previousValue = testSelect.value;
+    testSelect.dataset.previousValue = testSelect.value;
+  }
 
   //************************ SECTION 16: BACK TO TOP BUTTON ************************//
 
   const backToTopButton = document.getElementById("back-to-top");
 
-  window.addEventListener("scroll", () => {
-    if (
-      document.body.scrollTop > 200 ||
-      document.documentElement.scrollTop > 200
-    ) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  });
+  if (backToTopButton) {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+      ) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    });
 
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
   //************************ SECTION 17: SHUFFLE QUESTIONS ************************//
 
@@ -1349,36 +1614,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Initially disable submit button
-  submitButton.disabled = true;
+  if (submitButton) {
+    submitButton.disabled = true;
+  }
 
   //************************ SECTION 18: UPLOAD CUSTOM TEST FILE ************************//
 
-  uploadTestInput.addEventListener("change", (event) => {
-    const file = event.target.files[0];
-    if (file && file.name.endsWith(".json")) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        try {
-          const data = JSON.parse(e.target.result);
-          const testName = data.testName || "Custom Test";
-          const option = document.createElement("option");
-          option.value = file.name;
-          option.textContent = testName;
-          testSelect.appendChild(option);
-          testSelect.value = file.name;
-          loadQuestions(file.name, data);
-          testSelect.dataset.previousValue = file.name;
-          alert("Custom test loaded successfully!");
-        } catch (error) {
-          console.error("Error parsing JSON file:", error);
-          alert("Invalid JSON file. Please select a valid test file.");
-        }
-      };
-      reader.readAsText(file);
-    } else {
-      alert("Please select a valid JSON file.");
-    }
-  });
+  if (uploadTestInput) {
+    uploadTestInput.addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      if (file && file.name.endsWith(".json")) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          try {
+            const data = JSON.parse(e.target.result);
+            const testName = data.testName || "Custom Test";
+            const option = document.createElement("option");
+            option.value = file.name;
+            option.textContent = testName;
+            if (testSelect) {
+              testSelect.appendChild(option);
+              testSelect.value = file.name;
+              loadQuestions(file.name, data);
+              testSelect.dataset.previousValue = file.name;
+            }
+            alert("Custom test loaded successfully!");
+          } catch (error) {
+            console.error("Error parsing JSON file:", error);
+            alert("Invalid JSON file. Please select a valid test file.");
+          }
+        };
+        reader.readAsText(file);
+      } else {
+        alert("Please select a valid JSON file.");
+      }
+    });
+  }
 
   //************************ SECTION 19: SAVE AND RESUME PROGRESS ************************//
 

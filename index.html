@@ -2,158 +2,224 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exam Test Application</title>
+    <title>StudyFlow - Test Simulator</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Include the Roboto font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    >
 </head>
 <body>
-    <!-- Floating Header -->
-    <div id="floating-header">
-        <div id="floating-timer">Time Remaining: <span id="floating-time">00:00</span></div>
-        <div id="floating-progress">
-            <div id="progress-bar-container">
-                <div id="progress-bar"></div>
-            </div>
-            <div id="progress-text">0%</div>
-        </div>
-        <!-- Stats Dropdown -->
-        <div id="stats-dropdown" class="dropdown">
-            <button class="dropbtn">Today's Stats</button>
-            <div id="stats-content" class="dropdown-content">
-                <!-- Stats will be dynamically inserted here by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- Header Section -->
-        <header>
-            <h1>Exam Test Application</h1>
-            <p class="app-tagline">Plan your session, stay focused, and finish strong.</p>
-        </header>
-
-        <!-- Control Panel -->
-        <section id="control-panel" aria-label="Test controls">
-            <div class="control-card" id="quick-start-card">
-                <h2>Quick Start</h2>
-                <p class="card-description">Set your timer and jump straight into the next challenge.</p>
-                <div class="control-row">
-                    <label class="input-label" for="timer-input">Timer (minutes)</label>
-                    <input type="number" id="timer-input" value="30" aria-describedby="timer-help">
-                    <div class="control-actions">
-                        <button id="start-test">Start Test</button>
-                        <button id="pause-timer">Pause Timer</button>
-                    </div>
+    <header id="floating-header" class="app-header">
+        <div class="logo">📚 StudyFlow</div>
+        <div class="header-progress">
+            <span class="progress-label">Progress</span>
+            <div id="floating-progress" class="progress-group">
+                <div class="progress-bar-container">
+                    <div id="progress-bar"></div>
                 </div>
-                <p id="timer-help" class="assistive-text">You can adjust the timer anytime, even during a test.</p>
+                <span id="progress-text">0%</span>
+            </div>
+        </div>
+        <div class="header-controls">
+            <div class="timer">⏱️ <span id="floating-time">00:00</span></div>
+            <div id="stats-dropdown" class="dropdown">
+                <button class="dropbtn">Today's Stats</button>
+                <div id="stats-content" class="dropdown-content"></div>
+            </div>
+        </div>
+    </header>
 
-                <details class="collapsible" open>
-                    <summary>Goals &amp; Focus</summary>
-                    <div class="details-content">
-                        <div class="control-row">
-                            <label class="input-label" for="pass-mark-input">Pass Mark (%)</label>
-                            <input type="number" id="pass-mark-input" value="50">
-                        </div>
-                        <div class="control-row toggle-row">
-                            <div>
-                                <label class="input-label" for="study-mode-toggle">Study Mode</label>
-                                <p class="assistive-text">Reveal answers instantly to learn as you go.</p>
+    <main class="page-wrapper">
+        <div class="page-container">
+            <header class="page-header">
+                <h1>StudyFlow Test Simulator</h1>
+                <p class="app-tagline">Plan your session, stay focused, and finish strong.</p>
+            </header>
+
+            <div class="app-tabs" role="tablist">
+                <button class="tab-button active" data-tab="test-panel" role="tab" aria-selected="true">Test</button>
+                <button class="tab-button" data-tab="flashcard-panel" role="tab" aria-selected="false">Flashcards</button>
+                <button class="tab-button" data-tab="stats-panel" role="tab" aria-selected="false">Stats</button>
+            </div>
+
+            <section class="gamification" aria-label="Progress overview">
+                <div class="badge">
+                    <h3>🔥 Streak</h3>
+                    <p id="streak-value">0 days</p>
+                </div>
+                <div class="badge">
+                    <h3>⭐ XP</h3>
+                    <p id="xp-value">0</p>
+                </div>
+                <div class="badge">
+                    <h3>🏆 Badges</h3>
+                    <p id="badge-value">0 earned</p>
+                </div>
+            </section>
+
+            <section id="test-panel" class="tab-panel active" role="tabpanel">
+                <div class="test-layout">
+                    <div class="test-sidebar">
+                        <section id="control-panel" aria-label="Test controls">
+                            <div class="control-card" id="quick-start-card">
+                                <h2>Quick Start</h2>
+                                <p class="card-description">Set your timer and jump straight into the next challenge.</p>
+                                <div class="control-row">
+                                    <label class="input-label" for="timer-input">Timer (minutes)</label>
+                                    <input type="number" id="timer-input" value="30" aria-describedby="timer-help">
+                                </div>
+                                <div class="control-actions">
+                                    <button id="start-test" class="btn btn-primary">Start Test</button>
+                                    <button id="pause-timer" class="btn btn-secondary">Pause Timer</button>
+                                </div>
+                                <p id="timer-help" class="assistive-text">You can adjust the timer anytime, even during a test.</p>
+
+                                <details class="collapsible" open>
+                                    <summary>Goals &amp; Focus</summary>
+                                    <div class="details-content">
+                                        <div class="control-row">
+                                            <label class="input-label" for="pass-mark-input">Pass Mark (%)</label>
+                                            <input type="number" id="pass-mark-input" value="50">
+                                        </div>
+                                        <div class="control-row toggle-row">
+                                            <div>
+                                                <label class="input-label" for="study-mode-toggle">Study Mode</label>
+                                                <p class="assistive-text">Reveal answers instantly to learn as you go.</p>
+                                            </div>
+                                            <input type="checkbox" id="study-mode-toggle">
+                                        </div>
+                                    </div>
+                                </details>
                             </div>
-                            <input type="checkbox" id="study-mode-toggle">
+
+                            <div class="control-card" id="library-card">
+                                <h2>Test Library</h2>
+                                <p class="card-description">Pick a practice set or bring your own questions.</p>
+                                <div class="control-row">
+                                    <label class="input-label" for="test-select">Select Test</label>
+                                    <select id="test-select"></select>
+                                </div>
+                                <details class="collapsible">
+                                    <summary>Upload &amp; Appearance</summary>
+                                    <div class="details-content">
+                                        <div class="control-row">
+                                            <label class="input-label" for="upload-test-input">Upload Test File</label>
+                                            <input type="file" id="upload-test-input" accept=".json">
+                                        </div>
+                                        <div class="control-row">
+                                            <button id="dark-mode-toggle" class="btn btn-tertiary">Toggle Dark Mode</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <div class="control-card" id="momentum-card">
+                                <h2>Momentum Tracker</h2>
+                                <p class="card-description">Stay motivated with progress tips and quick reminders.</p>
+                                <ul class="momentum-list">
+                                    <li><strong>Before you start:</strong> Skim the question pool to plan your time.</li>
+                                    <li><strong>During the test:</strong> Flag tricky questions to revisit later.</li>
+                                    <li><strong>Need a break?</strong> Pause the timer and pick up right where you left off.</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="study-tools">
+                            <div class="tool-card" id="motivation-card">
+                                <h2>Motivation Station</h2>
+                                <p id="motivation-message">Ready to learn something new today?</p>
+                                <button id="new-motivation" class="btn btn-primary">Inspire Me!</button>
+                            </div>
+                            <div class="tool-card" id="bookmark-card">
+                                <h2>Bookmark Navigator</h2>
+                                <p class="tool-description">Bookmark tricky questions and jump back to them anytime.</p>
+                                <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
+                                <button id="cycle-bookmarks" class="btn btn-secondary">Jump to Next Bookmark</button>
+                            </div>
+                            <div class="tool-card" id="achievement-card">
+                                <h2>Achievement Board</h2>
+                                <ul id="achievement-list" class="achievement-list">
+                                    <li class="empty">Complete a test to start earning badges!</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="test-content">
+                        <main id="questions-container" aria-live="polite"></main>
+
+                        <div id="pagination-controls" class="pagination hidden">
+                            <button id="prev-page" class="btn btn-secondary">Previous</button>
+                            <span id="page-info"></span>
+                            <button id="next-page" class="btn btn-primary">Next</button>
                         </div>
                     </div>
-                </details>
-            </div>
-
-            <div class="control-card" id="library-card">
-                <h2>Test Library</h2>
-                <p class="card-description">Pick a practice set or bring your own questions.</p>
-                <div class="control-row">
-                    <label class="input-label" for="test-select">Select Test</label>
-                    <select id="test-select">
-                        <!-- Options will be dynamically inserted here by JavaScript -->
-                    </select>
                 </div>
-                <details class="collapsible">
-                    <summary>Upload &amp; Appearance</summary>
-                    <div class="details-content">
-                        <div class="control-row">
-                            <label class="input-label" for="upload-test-input">Upload Test File</label>
-                            <input type="file" id="upload-test-input" accept=".json">
+            </section>
+
+            <section id="flashcard-panel" class="tab-panel" role="tabpanel" aria-hidden="true">
+                <div class="card-block">
+                    <h2>Flashcards</h2>
+                    <p class="panel-description">Tap a card to reveal the answer.</p>
+                    <div id="flashcards-grid" class="flashcards-grid"></div>
+                    <div id="flashcards-empty" class="empty-state">Load a test to generate flashcards.</div>
+                </div>
+            </section>
+
+            <section id="stats-panel" class="tab-panel" role="tabpanel" aria-hidden="true">
+                <div class="stats-layout">
+                    <div class="card-block">
+                        <h2>Daily Overview</h2>
+                        <div class="stat-summary">
+                            <div class="stat-row"><span>Tests Completed</span><span id="stats-tests-taken">0</span></div>
+                            <div class="stat-row"><span>Passed</span><span id="stats-tests-passed">0</span></div>
+                            <div class="stat-row"><span>Failed</span><span id="stats-tests-failed">0</span></div>
+                            <div class="stat-row"><span>Abandoned</span><span id="stats-tests-abandoned">0</span></div>
                         </div>
-                        <div class="control-row">
-                            <button id="dark-mode-toggle" class="wide-button">Toggle Dark Mode</button>
+                        <button id="stats-reset" class="btn btn-secondary">Reset Today's Stats</button>
+                    </div>
+                    <div id="score-container" class="card-block hidden" style="display: none;">
+                        <h2>Your Score</h2>
+                        <p class="score-value" id="score">0</p>
+                        <p id="result-message"></p>
+                        <button class="btn btn-primary" id="download-report">Download Report</button>
+                    </div>
+                    <div class="card-block">
+                        <h2>Recent Activity</h2>
+                        <div class="stat-history">
+                            <div>
+                                <h3>Passed Tests</h3>
+                                <ul id="stats-passed-list" class="history-list"></ul>
+                            </div>
+                            <div>
+                                <h3>Failed Tests</h3>
+                                <ul id="stats-failed-list" class="history-list"></ul>
+                            </div>
+                            <div>
+                                <h3>Abandoned Tests</h3>
+                                <ul id="stats-abandoned-list" class="history-list"></ul>
+                            </div>
                         </div>
                     </div>
-                </details>
-            </div>
-
-            <div class="control-card" id="momentum-card">
-                <h2>Momentum Tracker</h2>
-                <p class="card-description">Stay motivated with progress tips and quick reminders.</p>
-                <ul class="momentum-list">
-                    <li><strong>Before you start:</strong> Skim the question pool to plan your time.</li>
-                    <li><strong>During the test:</strong> Flag tricky questions to revisit later.</li>
-                    <li><strong>Need a break?</strong> Pause the timer and pick up right where you left off.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Questions Container -->
-        <section id="study-tools">
-            <div class="tool-card" id="motivation-card">
-                <h2>Motivation Station</h2>
-                <p id="motivation-message">Ready to learn something new today?</p>
-                <button id="new-motivation">Inspire Me!</button>
-            </div>
-            <div class="tool-card" id="bookmark-card">
-                <h2>Bookmark Navigator</h2>
-                <p class="tool-description">Bookmark tricky questions and jump back to them anytime.</p>
-                <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
-                <button id="cycle-bookmarks">Jump to Next Bookmark</button>
-            </div>
-            <div class="tool-card" id="achievement-card">
-                <h2>Achievement Board</h2>
-                <ul id="achievement-list" class="achievement-list">
-                    <li class="empty">Complete a test to start earning badges!</li>
-                </ul>
-            </div>
-        </section>
-
-        <main id="questions-container">
-            <!-- Questions will be dynamically inserted here using JavaScript -->
-        </main>
-
-        <!-- Pagination Controls -->
-        <div id="pagination-controls" class="hidden">
-            <button id="prev-page">Previous</button>
-            <span id="page-info"></span>
-            <button id="next-page">Next</button>
+                </div>
+            </section>
         </div>
+    </main>
 
-        <!-- Score Container -->
-        <div id="score-container" class="hidden" style="display: none;">
-            <h2>Your Score: <span id="score"></span></h2>
-            <p id="result-message"></p>
-        </div>
-    </div>
-
-    <!-- Floating Action Buttons -->
     <div id="floating-actions">
-        <button id="submit-test">Submit Test</button>
-        <button id="reset-test">Reset Test</button>
-        <button id="download-results">Download Results as PDF</button>
+        <button id="submit-test" class="btn btn-primary">Submit Test</button>
+        <button id="reset-test" class="btn btn-secondary">Reset Test</button>
+        <button id="download-results" class="btn btn-tertiary">Download Results as PDF</button>
     </div>
 
-    <!-- Back to Top Button -->
     <button id="back-to-top" title="Go to top">&#8679;</button>
 
     <div id="achievement-toast" class="hidden"></div>
 
-    <!-- Link the JavaScript file -->
+    <footer class="app-footer">StudyFlow © 2025 — Stay consistent, keep learning.</footer>
+
     <script src="script.js"></script>
-    <!-- Load jsPDF Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </body>
 </html>
