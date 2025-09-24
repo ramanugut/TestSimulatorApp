@@ -158,6 +158,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadStats();
 
+
+  //************************ SECTION 2: ELEMENT REFERENCES ************************//
+  
+  // HTML element references
+  const questionsContainer = document.getElementById("questions-container");
+  const timerInput = document.getElementById("timer-input");
+  const passMarkInput = document.getElementById("pass-mark-input");
+  const startTestButton = document.getElementById("start-test");
+  const pauseTimerButton = document.getElementById("pause-timer");
+  const floatingTimeDisplay = document.getElementById("floating-time");
+  const submitButton = document.getElementById("submit-test");
+  const resetButton = document.getElementById("reset-test");
+  const downloadButton = document.getElementById("download-results");
+  const scoreContainer = document.getElementById("score-container");
+  const scoreElement = document.getElementById("score");
+  const resultMessageElement = document.getElementById("result-message");
+  const testSelect = document.getElementById("test-select");
+  const studyModeToggle = document.getElementById("study-mode-toggle");
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  const floatingProgressDisplay = document.getElementById("floating-progress");
+  const paginationControls = document.getElementById("pagination-controls");
+  const prevPageButton = document.getElementById("prev-page");
+  const nextPageButton = document.getElementById("next-page");
+  const pageInfo = document.getElementById("page-info");
+  const uploadTestInput = document.getElementById("upload-test-input");
+  const motivationMessageElement = document.getElementById("motivation-message");
+  const newMotivationButton = document.getElementById("new-motivation");
+  const bookmarkListElement = document.getElementById("bookmark-list");
+  const cycleBookmarksButton = document.getElementById("cycle-bookmarks");
+  const achievementListElement = document.getElementById("achievement-list");
+  const achievementToast = document.getElementById("achievement-toast");
+
+  remainingTime = parseInt(timerInput.value, 10) * 60;
+  updateTimerDisplay(
+    Math.floor(remainingTime / 60) || 0,
+    Math.max(remainingTime % 60, 0)
+  );
+
+
   //************************ SECTION 1B: MOTIVATION & ACHIEVEMENTS ************************//
 
   function updateMotivationMessage() {
@@ -255,42 +294,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateAchievementDisplay();
 
-  //************************ SECTION 2: ELEMENT REFERENCES ************************//
-
-  // HTML element references
-  const questionsContainer = document.getElementById("questions-container");
-  const timerInput = document.getElementById("timer-input");
-  const passMarkInput = document.getElementById("pass-mark-input");
-  const startTestButton = document.getElementById("start-test");
-  const pauseTimerButton = document.getElementById("pause-timer");
-  const floatingTimeDisplay = document.getElementById("floating-time");
-  const submitButton = document.getElementById("submit-test");
-  const resetButton = document.getElementById("reset-test");
-  const downloadButton = document.getElementById("download-results");
-  const scoreContainer = document.getElementById("score-container");
-  const scoreElement = document.getElementById("score");
-  const resultMessageElement = document.getElementById("result-message");
-  const testSelect = document.getElementById("test-select");
-  const studyModeToggle = document.getElementById("study-mode-toggle");
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const floatingProgressDisplay = document.getElementById("floating-progress");
-  const paginationControls = document.getElementById("pagination-controls");
-  const prevPageButton = document.getElementById("prev-page");
-  const nextPageButton = document.getElementById("next-page");
-  const pageInfo = document.getElementById("page-info");
-  const uploadTestInput = document.getElementById("upload-test-input");
-  const motivationMessageElement = document.getElementById("motivation-message");
-  const newMotivationButton = document.getElementById("new-motivation");
-  const bookmarkListElement = document.getElementById("bookmark-list");
-  const cycleBookmarksButton = document.getElementById("cycle-bookmarks");
-  const achievementListElement = document.getElementById("achievement-list");
-  const achievementToast = document.getElementById("achievement-toast");
-
-  remainingTime = parseInt(timerInput.value, 10) * 60;
-  updateTimerDisplay(
-    Math.floor(remainingTime / 60) || 0,
-    Math.max(remainingTime % 60, 0)
-  );
 
   //************************ SECTION 3: THEME HANDLING ************************//
 
