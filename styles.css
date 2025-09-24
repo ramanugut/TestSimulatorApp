@@ -79,9 +79,37 @@ button {
     border-bottom: 1px solid var(--border-color);
 }
 
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
+    color: var(--accent-color);
+}
+
+.header-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.header-toggle:focus-visible,
+.header-toggle:hover {
+    border-color: var(--accent-color);
     color: var(--accent-color);
 }
 
@@ -92,6 +120,18 @@ button {
     gap: 1.5rem;
     flex-wrap: wrap;
     width: 100%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .header-main {
@@ -190,7 +230,13 @@ button {
     font-weight: 600;
     color: var(--accent-color);
     min-width: 110px;
-    text-align: right;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--subtle-surface);
+    border: 1px solid var(--border-color);
 }
 
 .header-actions {
@@ -736,12 +782,44 @@ body.study-mode-active .question {
     bottom: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    align-items: flex-end;
+    gap: 0.5rem;
     z-index: 90;
 }
 
-#floating-actions .btn {
+.floating-actions-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: stretch;
+}
+
+.floating-actions-panel .btn {
     box-shadow: var(--shadow);
+}
+
+.floating-actions-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent-color);
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.floating-actions-toggle:focus-visible,
+.floating-actions-toggle:hover {
+    filter: brightness(0.95);
+}
+
+.floating-actions.collapsed .floating-actions-panel {
+    display: none;
 }
 
 #back-to-top {
@@ -822,6 +900,14 @@ body.study-mode-active .question {
 }
 
 @media (max-width: 768px) {
+    .header-toggle {
+        display: inline-flex;
+    }
+
+    #floating-header.collapsed #header-sections {
+        display: none;
+    }
+
     .header-controls {
         align-items: stretch;
         gap: 1rem;
@@ -835,7 +921,7 @@ body.study-mode-active .question {
     }
 
     .timer-display {
-        text-align: left;
+        justify-content: flex-start;
     }
 
     .header-actions {
@@ -847,6 +933,21 @@ body.study-mode-active .question {
         position: fixed;
         right: 1rem;
         bottom: 1rem;
+        gap: 0.5rem;
+    }
+
+    .floating-actions-toggle {
+        display: inline-flex;
+    }
+
+    #floating-actions.collapsed .floating-actions-toggle {
+        background: var(--surface-color);
+        color: var(--accent-color);
+        border: 1px solid var(--accent-color);
+    }
+
+    .floating-actions-panel .btn {
+        width: 100%;
     }
 
     .gamification {

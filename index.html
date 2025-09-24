@@ -13,8 +13,20 @@
 </head>
 <body>
     <header id="floating-header" class="app-header">
-        <div class="logo">📚 StudyFlow</div>
-        <div class="header-sections">
+        <div class="header-top">
+            <div class="logo">📚 StudyFlow</div>
+            <button
+                id="header-toggle"
+                class="header-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="header-sections"
+            >
+                <span class="sr-only">Toggle header tools</span>
+                <span aria-hidden="true">☰</span>
+            </button>
+        </div>
+        <div id="header-sections" class="header-sections">
             <div class="header-main">
                 <div class="test-select-group">
                     <label class="input-label" for="test-select">Choose a Test</label>
@@ -165,10 +177,22 @@
         </div>
     </main>
 
-    <div id="floating-actions">
-        <button id="submit-test" class="btn btn-primary">Submit Test</button>
-        <button id="reset-test" class="btn btn-secondary">Reset Test</button>
-        <button id="download-results" class="btn btn-tertiary">Download Results as PDF</button>
+    <div id="floating-actions" class="floating-actions">
+        <button
+            id="floating-actions-toggle"
+            class="floating-actions-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="floating-actions-panel"
+        >
+            <span class="sr-only">Toggle quick actions</span>
+            <span aria-hidden="true">⚙️</span>
+        </button>
+        <div id="floating-actions-panel" class="floating-actions-panel">
+            <button id="submit-test" class="btn btn-primary">Submit Test</button>
+            <button id="reset-test" class="btn btn-secondary">Reset Test</button>
+            <button id="download-results" class="btn btn-tertiary">Download Results as PDF</button>
+        </div>
     </div>
 
     <button id="back-to-top" title="Go to top">&#8679;</button>

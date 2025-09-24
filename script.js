@@ -67,6 +67,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const downloadReportButton = document.getElementById("download-report");
   const progressBarElement = document.getElementById("progress-bar");
   const progressTextElement = document.getElementById("progress-text");
+  const headerElement = document.getElementById("floating-header");
+  const headerToggleButton = document.getElementById("header-toggle");
+  const floatingActionsContainer = document.getElementById("floating-actions");
+  const floatingActionsToggle = document.getElementById(
+    "floating-actions-toggle"
+  );
+
+  const MOBILE_BREAKPOINT = 768;
+  let lastViewportIsMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+  let headerCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
+  let actionsCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
 
   if (flashcardsGrid) {
     flashcardsGrid.classList.add("hidden");
@@ -178,6 +189,65 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateStatsDisplay() {
     updateStatsPanel();
     updateGamification();
+  }
+
+  function isMobileViewport() {
+    return window.innerWidth <= MOBILE_BREAKPOINT;
+  }
+
+  function syncHeaderToggleState() {
+    if (!headerElement || !headerToggleButton) {
+      return;
+    }
+
+    if (!isMobileViewport()) {
+      headerCollapsed = false;
+      headerElement.classList.remove("collapsed");
+      headerToggleButton.setAttribute("aria-expanded", "true");
+      return;
+    }
+
+    headerElement.classList.toggle("collapsed", headerCollapsed);
+    headerToggleButton.setAttribute(
+      "aria-expanded",
+      headerCollapsed ? "false" : "true"
+    );
+  }
+
+  function syncFloatingActionsState() {
+    if (!floatingActionsContainer || !floatingActionsToggle) {
+      return;
+    }
+
+    if (!isMobileViewport()) {
+      actionsCollapsed = false;
+      floatingActionsContainer.classList.remove("collapsed");
+      floatingActionsToggle.setAttribute("aria-expanded", "true");
+      return;
+    }
+
+    floatingActionsContainer.classList.toggle("collapsed", actionsCollapsed);
+    floatingActionsToggle.setAttribute(
+      "aria-expanded",
+      actionsCollapsed ? "false" : "true"
+    );
+  }
+
+  function handleResponsiveState() {
+    const isMobile = isMobileViewport();
+
+    if (isMobile && !lastViewportIsMobile) {
+      headerCollapsed = true;
+      actionsCollapsed = true;
+    } else if (!isMobile && lastViewportIsMobile) {
+      headerCollapsed = false;
+      actionsCollapsed = false;
+    }
+
+    syncHeaderToggleState();
+    syncFloatingActionsState();
+
+    lastViewportIsMobile = isMobile;
   }
 
   function resetStats() {
@@ -318,6 +388,30 @@ document.addEventListener("DOMContentLoaded", function () {
   if (statsResetButton) {
     statsResetButton.addEventListener("click", resetStats);
   }
+
+  handleResponsiveState();
+
+  if (headerToggleButton) {
+    headerToggleButton.addEventListener("click", () => {
+      if (!isMobileViewport()) {
+        return;
+      }
+      headerCollapsed = !headerCollapsed;
+      syncHeaderToggleState();
+    });
+  }
+
+  if (floatingActionsToggle) {
+    floatingActionsToggle.addEventListener("click", () => {
+      if (!isMobileViewport()) {
+        return;
+      }
+      actionsCollapsed = !actionsCollapsed;
+      syncFloatingActionsState();
+    });
+  }
+
+  window.addEventListener("resize", handleResponsiveState);
 
   loadStreak();
   loadStats();
