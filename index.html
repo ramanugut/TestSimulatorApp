@@ -30,48 +30,75 @@
         <!-- Header Section -->
         <header>
             <h1>Exam Test Application</h1>
-
-            <!-- Timer Input -->
-            <div class="timer-container">
-                <label for="timer-input">Set Timer (minutes):</label>
-                <input type="number" id="timer-input" value="30">
-                <!-- Start Test Button -->
-                <button id="start-test">Start Test</button>
-                <!-- Pause Timer Button -->
-                <button id="pause-timer">Pause Timer</button>
-            </div>
-
-            <!-- Pass Mark Input -->
-            <div class="pass-mark-container">
-                <label for="pass-mark-input">Set Pass Mark (%):</label>
-                <input type="number" id="pass-mark-input" value="50">
-            </div>
-
-            <!-- Study Mode Toggle -->
-            <div class="study-mode-container">
-                <label for="study-mode-toggle">Study Mode:</label>
-                <input type="checkbox" id="study-mode-toggle">
-            </div>
-
-            <!-- Test Selection Dropdown -->
-            <div class="test-selection">
-                <label for="test-select">Select Test:</label>
-                <select id="test-select">
-                    <!-- Options will be dynamically inserted here by JavaScript -->
-                </select>
-            </div>
-
-            <!-- Upload Test File -->
-            <div class="upload-test">
-                <label for="upload-test-input">Upload Test File:</label>
-                <input type="file" id="upload-test-input" accept=".json">
-            </div>
-
-            <!-- Dark Mode Button -->
-            <div class="dark-mode-container">
-                <button id="dark-mode-toggle">Toggle Dark Mode</button>
-            </div>
+            <p class="app-tagline">Plan your session, stay focused, and finish strong.</p>
         </header>
+
+        <!-- Control Panel -->
+        <section id="control-panel" aria-label="Test controls">
+            <div class="control-card" id="quick-start-card">
+                <h2>Quick Start</h2>
+                <p class="card-description">Set your timer and jump straight into the next challenge.</p>
+                <div class="control-row">
+                    <label class="input-label" for="timer-input">Timer (minutes)</label>
+                    <input type="number" id="timer-input" value="30" aria-describedby="timer-help">
+                    <div class="control-actions">
+                        <button id="start-test">Start Test</button>
+                        <button id="pause-timer">Pause Timer</button>
+                    </div>
+                </div>
+                <p id="timer-help" class="assistive-text">You can adjust the timer anytime, even during a test.</p>
+
+                <details class="collapsible" open>
+                    <summary>Goals &amp; Focus</summary>
+                    <div class="details-content">
+                        <div class="control-row">
+                            <label class="input-label" for="pass-mark-input">Pass Mark (%)</label>
+                            <input type="number" id="pass-mark-input" value="50">
+                        </div>
+                        <div class="control-row toggle-row">
+                            <div>
+                                <label class="input-label" for="study-mode-toggle">Study Mode</label>
+                                <p class="assistive-text">Reveal answers instantly to learn as you go.</p>
+                            </div>
+                            <input type="checkbox" id="study-mode-toggle">
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div class="control-card" id="library-card">
+                <h2>Test Library</h2>
+                <p class="card-description">Pick a practice set or bring your own questions.</p>
+                <div class="control-row">
+                    <label class="input-label" for="test-select">Select Test</label>
+                    <select id="test-select">
+                        <!-- Options will be dynamically inserted here by JavaScript -->
+                    </select>
+                </div>
+                <details class="collapsible">
+                    <summary>Upload &amp; Appearance</summary>
+                    <div class="details-content">
+                        <div class="control-row">
+                            <label class="input-label" for="upload-test-input">Upload Test File</label>
+                            <input type="file" id="upload-test-input" accept=".json">
+                        </div>
+                        <div class="control-row">
+                            <button id="dark-mode-toggle" class="wide-button">Toggle Dark Mode</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div class="control-card" id="momentum-card">
+                <h2>Momentum Tracker</h2>
+                <p class="card-description">Stay motivated with progress tips and quick reminders.</p>
+                <ul class="momentum-list">
+                    <li><strong>Before you start:</strong> Skim the question pool to plan your time.</li>
+                    <li><strong>During the test:</strong> Flag tricky questions to revisit later.</li>
+                    <li><strong>Need a break?</strong> Pause the timer and pick up right where you left off.</li>
+                </ul>
+            </div>
+        </section>
 
         <!-- Questions Container -->
         <section id="study-tools">
