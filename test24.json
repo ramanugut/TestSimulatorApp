@@ -3,239 +3,171 @@
   "questions": [
     {
       "text": "What will the result be of the following expression?\n```csharp\nbool a = false;\nbool b = true;\nConsole.WriteLine(a && b);\n```",
-      "options": [
-        "true",
-        "false",
-        "1",
-        "0"
-      ],
+      "options": ["true", "false", "1", "0"],
       "correctAnswer": "false",
       "explanation": "The logical AND (`&&`) operator returns `true` only if both operands are `true`. Since `a` is `false`, the expression `a && b` evaluates to `false`."
     },
     {
       "text": "What is the default value of an uninitialized `int` variable in C#?",
-      "options": [
-        "1",
-        "zero",
-        "0",
-        "`null`"
-      ],
+      "options": ["1", "zero", "0", "`null`"],
       "correctAnswer": "0",
       "explanation": "In C#, the default value for built-in numeric types, including `int`, is zero."
     },
     {
       "text": "Consider the incomplete code:\n```csharp\nint x = 5;\n// How do you increment the value of x by 1 here?\nConsole.WriteLine(\"Value of x = \" + x.ToString());\n```\nWhich of the following are valid ways to increment `x`?",
-      "options": [
-        "`x+`",
-        "`++x;`",
-        "`x = x + 1;`",
-        "`x++;`"
-      ],
-      "correctAnswer": [
-        "`++x;`",
-        "`x = x + 1;`",
-        "`x++;`"
-      ],
-      "explanation": "`++x;` (pre-increment), `x++;` (post-increment), and `x = x + 1;` are all valid methods to increment an integer by 1. The syntax `x+` is invalid."
+      "options": ["`x+`", "`++x;`", "`x = x + 1;`", "`x++;`"],
+      "correctAnswer": ["`++x;`", "`x = x + 1;`", "`x++;`"],
+      "explanation": "`++x;`, `x++;`, and `x = x + 1;` all increment an integer by 1. The syntax `x+` is invalid."
     },
     {
       "text": "Can you store a `float` value in a `double` variable without casting in C#?",
-      "options": [
-        "True",
-        "False"
-      ],
+      "options": ["True", "False"],
       "correctAnswer": "True",
-      "explanation": "Yes, this is an implicit (widening) conversion because a `double` has a larger range and precision than a `float`, so no data will be lost."
+      "explanation": "This is an implicit (widening) conversion because `double` has a larger range and precision than `float`."
     },
     {
       "text": "What will the following code print?\n```csharp\nchar letter = 'A'; \nConsole.WriteLine(char.ToLower(letter));\n```",
-      "options": [],
+      "options": ["A", "a", "'a'", "error"],
       "correctAnswer": "a",
-      "explanation": "The `char.ToLower()` method converts an uppercase character to its lowercase equivalent. Thus, 'A' becomes 'a'."
+      "explanation": "`char.ToLower()` converts an uppercase character to its lowercase equivalent."
     },
     {
       "text": "What exception will be thrown when you try to divide an integer by 0?\n```csharp\nint val1 = 10;\nint val2 = 0;\nint answer = val1 / val2;\n```",
-      "options": [
-        "`System.Exception`",
-        "`System.ArgumentException`",
-        "`System.NullReferenceException`",
-        "`System.IndexOutOfRangeException`",
-        "`System.DivideByZeroException`"
-      ],
+      "options": ["`System.Exception`", "`System.ArgumentException`", "`System.NullReferenceException`", "`System.DivideByZeroException`"],
       "correctAnswer": "`System.DivideByZeroException`",
-      "explanation": "Attempting to divide an integer by zero in C# throws a `System.DivideByZeroException`."
+      "explanation": "Dividing an integer by zero throws a `System.DivideByZeroException`."
     },
     {
-      "text": "What will be the output of the following code?\n```csharp\nint x = 5;\nint y = 3;\nConsole.WriteLine(x / y);\n```",
-      "options": [],
+      "text": "What will the output of the following code be?\n```csharp\nint x = 5;\nint y = 3;\nConsole.WriteLine(x / y);\n```",
+      "options": ["1", "1.6667", "2", "Error"],
       "correctAnswer": "1",
-      "explanation": "When dividing two integers in C#, the result is also an integer, and the fractional part is truncated. Therefore, 5 divided by 3 is 1."
+      "explanation": "Integer division truncates the decimal part, so `5 / 3` equals `1`."
     },
     {
       "text": "What is the range of values that can be stored in an `int` data type in C#?",
-      "options": [],
+      "options": ["0 to 4,294,967,295", "-2,147,483,648 to 2,147,483,647", "-32,768 to 32,767", "-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807"],
       "correctAnswer": "-2,147,483,648 to 2,147,483,647",
-      "explanation": "A C# `int` is a 32-bit signed integer, which can store values from $-2^{31}$ to $2^{31}-1$."
+      "explanation": "A 32-bit signed integer can store values from $-2^{31}$ to $2^{31}-1$."
     },
     {
-      "text": "What will be the output of the following code?\n```csharp\nchar c = 'Z';\nConsole.WriteLine(c + 1);\n```",
-      "options": [],
+      "text": "What will the output of the following code be?\n```csharp\nchar c = 'Z';\nConsole.WriteLine(c + 1);\n```",
+      "options": ["90", "91", "'A'", "Error"],
       "correctAnswer": "91",
-      "explanation": "When an arithmetic operation is performed on a `char`, it is implicitly converted to its integer ASCII/Unicode value. The ASCII value of 'Z' is 90, so adding 1 results in 91."
+      "explanation": "The ASCII value of 'Z' is 90. Adding 1 gives 91."
     },
     {
       "text": "How would you cast a `double` value of `3.14` to an `int` in C#?",
-      "options": [],
+      "options": ["`int(3.14)`", "`(int)3.14`", "`3.14 as int`", "`Convert.Int32(3.14)`"],
       "correctAnswer": "`(int)3.14`",
-      "explanation": "To explicitly cast a `double` to an `int`, you place the target type `(int)` in parentheses before the value. This truncates the decimal portion."
+      "explanation": "Explicit casting uses `(int)` before the value, truncating the decimal part."
     },
     {
       "text": "What will be the value of `x` after this code executes?\n```csharp\nint x = 10; \nx = x * 2;\n```",
-      "options": [],
+      "options": ["5", "10", "15", "20"],
       "correctAnswer": "20",
-      "explanation": "The variable `x` is initialized to 10. The expression `x * 2` evaluates to 20, which is then assigned back to `x`."
+      "explanation": "`x` is multiplied by 2 and reassigned, resulting in 20."
     },
     {
       "text": "Which of the following correctly casts the `double` value `x` to a `float` value `y`?\n```csharp\ndouble x = 3.14159;\n// insert code here\nConsole.WriteLine(y);\n```",
-      "options": [
-        "`float y = x.float;`",
-        "`float y = (float)x;`",
-        "`float y = x.float();`",
-        "`float y = float(x);`"
-      ],
+      "options": ["`float y = x.float;`", "`float y = (float)x;`", "`float y = x.float();`", "`float y = float(x);`"],
       "correctAnswer": "`float y = (float)x;`",
-      "explanation": "The correct syntax for explicit casting in C# is to place the target data type in parentheses before the variable, like `(float)x`."
+      "explanation": "The correct syntax for explicit casting is `(float)x`."
     },
     {
       "text": "What would the output be?\n```csharp\ndouble x = 3.7;\ndouble y = 2.3;\ndouble answer = x * y;\nConsole.WriteLine(answer.ToString(\"F3\"));\n```",
-      "options": [
-        "8.510",
-        "8.6",
-        "8.659",
-        "8.51"
-      ],
+      "options": ["8.510", "8.6", "8.659", "8.51"],
       "correctAnswer": "8.510",
-      "explanation": "The product of 3.7 and 2.3 is 8.51. The `.ToString(\"F3\")` method formats the result to exactly three fixed decimal places, which results in `8.510`."
+      "explanation": "The product is 8.51, formatted to 3 decimal places as `8.510`."
     },
     {
       "text": "What is the default value of a `bool` variable in C#?",
-      "options": [],
+      "options": ["`true`", "`false`", "`0`", "`null`"],
       "correctAnswer": "`false`",
       "explanation": "The default value for a `bool` variable in C# is `false`."
     },
     {
       "text": "Which of the following is a valid `int` declaration in C#?",
-      "options": [
-        "`int x = 100;`",
-        "`int x = 1.5;`",
-        "`int x = \"hello\";`"
-      ],
+      "options": ["`int x = 100;`", "`int x = 1.5;`", "`int x = \"hello\";`"],
       "correctAnswer": "`int x = 100;`",
-      "explanation": "An `int` data type can only store whole numbers. `1.5` is a floating-point number, and `\"hello\"` is a string."
+      "explanation": "`int` can only store whole numbers."
     },
     {
       "text": "What will the output be?\n```csharp\nstring name = \"Ben\";\nstring surname = \"Seopa\";\nConsole.WriteLine(name + \" \" + surname.ToUpper());\n```",
-      "options": [],
+      "options": ["ben seopa", "Ben SEOPA", "BEN SEOPA", "Ben Seopa"],
       "correctAnswer": "Ben SEOPA",
-      "explanation": "The code concatenates the `name`, a space, and the uppercase version of the `surname`. The `ToUpper()` method converts 'Seopa' to 'SEOPA'."
+      "explanation": "The surname is converted to uppercase before concatenation."
     },
     {
-      "text": "What will be the output?\n```csharp\nfloat x = 5.5f;\nfloat y = 2.2f;\nConsole.WriteLine(x - y);\n```",
-      "options": [],
+      "text": "What will the output be?\n```csharp\nfloat x = 5.5f;\nfloat y = 2.2f;\nConsole.WriteLine(x - y);\n```",
+      "options": ["3.3", "3", "3.30f", "3,3"],
       "correctAnswer": "3.3",
-      "explanation": "The code subtracts `y` (2.2) from `x` (5.5), resulting in 3.3."
+      "explanation": "5.5 - 2.2 equals 3.3."
     },
     {
       "text": "What is the default value of a `float` variable in C#?",
-      "options": [],
+      "options": ["`0.0`", "`0.0f`", "`null`", "`false`"],
       "correctAnswer": "`0.0f`",
-      "explanation": "The default value for a `float` variable is `0.0f`. The 'f' suffix is important as it distinguishes it from a `double`."
+      "explanation": "The default value for a `float` is `0.0f`."
     },
     {
       "text": "Which of the following is a valid declaration for a `float` variable in C#?",
-      "options": [
-        "`float x = 1.23;`",
-        "`float x = \"hello\";`",
-        "`float x = 1.23f;`"
-      ],
+      "options": ["`float x = 1.23;`", "`float x = \"hello\";`", "`float x = 1.23f;`"],
       "correctAnswer": "`float x = 1.23f;`",
-      "explanation": "In C#, a literal number with a decimal point is treated as a `double` by default. To declare it as a `float`, you must append the `f` or `F` suffix."
+      "explanation": "Appending `f` ensures the literal is a `float` instead of a `double`."
     },
     {
       "text": "What will the output be of the following code?\n```csharp\nstring name = \"Allen\";\nstring surname = \"Naidoo\";\nConsole.WriteLine(name + \" \" + surname);\n```",
-      "options": [],
+      "options": ["Allen Naidoo", "AllenNaidoo", "ALLEN NAIDOO", "Naidoo Allen"],
       "correctAnswer": "Allen Naidoo",
-      "explanation": "The `+` operator concatenates the `name` string, a space, and the `surname` string into 'Allen Naidoo'."
+      "explanation": "The strings are concatenated with a space."
     },
     {
-      "text": "What will be the output?\n```csharp\nbool isTrue = true;\nbool isFalse = false;\nConsole.WriteLine(isTrue && isFalse);\n```",
-      "options": [],
+      "text": "What will the output be?\n```csharp\nbool isTrue = true;\nbool isFalse = false;\nConsole.WriteLine(isTrue && isFalse);\n```",
+      "options": ["True", "False", "1", "0"],
       "correctAnswer": "False",
-      "explanation": "The logical AND (`&&`) operator returns `true` only if both operands are `true`. Since `isFalse` is `false`, the result is `False`."
+      "explanation": "`&&` returns `true` only if both operands are `true`."
     },
     {
       "text": "Which of the following is the correct way to declare a `char` variable in C#?",
-      "options": [
-        "`char letter = 'A';`",
-        "`char letter = A;`",
-        "`char letter = \"A\";`"
-      ],
+      "options": ["`char letter = 'A';`", "`char letter = A;`", "`char letter = \"A\";`"],
       "correctAnswer": "`char letter = 'A';`",
-      "explanation": "A `char` literal in C# must be enclosed in single quotes (`'`). Double quotes (`\"`) are used for strings."
+      "explanation": "Characters use single quotes in C#."
     },
     {
       "text": "True or False: You can assign a `double` value to a `float` variable without an explicit cast.",
-      "options": [
-        "True",
-        "False"
-      ],
+      "options": ["True", "False"],
       "correctAnswer": "False",
-      "explanation": "You cannot implicitly assign a `double` to a `float` because it is a narrowing conversion that could lead to data loss. An explicit cast `(float)` is required."
+      "explanation": "It’s a narrowing conversion, so a cast is required."
     },
     {
       "text": "What will the output be?\n```csharp\nstring name = \"Mary\";\nstring surname = \"Mtsweni\";\nsurname.ToUpper();\nConsole.WriteLine(name + \" \" + surname);\n```",
-      "options": [],
+      "options": ["Mary Mtsweni", "Mary MTSWENI", "mary mtsweni", "Error"],
       "correctAnswer": "Mary Mtsweni",
-      "explanation": "Strings in C# are immutable. The `ToUpper()` method returns a new uppercase string but does not modify the original. Since the result was not assigned back to `surname`, the original value is printed."
+      "explanation": "Strings are immutable; `ToUpper()` doesn’t modify the original unless reassigned."
     },
     {
       "text": "Given `string title = \"The big red hen...\";`, which method is used to replace a substring?",
-      "options": [
-        "`title = title.Modify(\"big\", \"small\");`",
-        "`title = title.Replace(\"big\", \"small\");`",
-        "`title = title.Swap(\"big\", \"small\");`",
-        "`title.Change(\"big\", \"small\");`"
-      ],
+      "options": ["`title = title.Modify(\"big\", \"small\");`", "`title = title.Replace(\"big\", \"small\");`", "`title = title.Swap(\"big\", \"small\");`", "`title.Change(\"big\", \"small\");`"],
       "correctAnswer": "`title = title.Replace(\"big\", \"small\");`",
-      "explanation": "The `String.Replace()` method is used to replace all occurrences of a specified substring with another substring. Since strings are immutable, the result must be assigned back to the variable."
+      "explanation": "`Replace()` substitutes all occurrences of one substring with another."
     },
     {
       "text": "Which string method is used to remove leading and trailing whitespace characters?",
-      "options": [
-        "`title.Reduce();`",
-        "`title.RemoveSpaces();`",
-        "`title.Trim();`",
-        "`title.Clean();`"
-      ],
+      "options": ["`title.Reduce();`", "`title.RemoveSpaces();`", "`title.Trim();`", "`title.Clean();`"],
       "correctAnswer": "`title.Trim();`",
-      "explanation": "The `String.Trim()` method removes all leading and trailing white-space characters from a string object."
+      "explanation": "`Trim()` removes whitespace at both ends of the string."
     },
     {
       "text": "Which method correctly checks if a string contains the substring 'red'?",
-      "options": [
-        "`bool containsRed = title.IsSubstring(\"red\");`",
-        "`bool containsRed = title.Has(\"red\");`",
-        "`bool containsRed = title.SubstringContains(\"red\");`",
-        "`bool containsRed = title.Contains(\"red\");`"
-      ],
+      "options": ["`bool containsRed = title.IsSubstring(\"red\");`", "`bool containsRed = title.Has(\"red\");`", "`bool containsRed = title.SubstringContains(\"red\");`", "`bool containsRed = title.Contains(\"red\");`"],
       "correctAnswer": "`bool containsRed = title.Contains(\"red\");`",
-      "explanation": "The `String.Contains()` method returns a boolean (`true` or `false`) indicating whether the specified substring exists within the string."
+      "explanation": "`Contains()` returns true if the substring is found."
     },
     {
       "text": "What will the result be of the following expression?\n```csharp\nbool a = false;\nbool b = true;\nConsole.WriteLine(a || b);\n```",
-      "options": [],
+      "options": ["True", "False", "1", "0"],
       "correctAnswer": "True",
-      "explanation": "The logical OR (`||`) operator returns `true` if at least one of its operands is `true`. Since `b` is `true`, the expression evaluates to `true`."
+      "explanation": "The OR (`||`) operator returns true if either operand is true."
     }
   ]
 }
