@@ -590,20 +590,20 @@ document.addEventListener("DOMContentLoaded", function () {
     "test18.json",    "ISTQB1.json",
     "ISTQB2.json",
     "ISTQB3.json",
-    "test19.json",**/
+    "test19.json",
     "test20.json",
     "test21.json",
-    "test22.json",
+    "test22.json",**/
     "test23.json",
 
     "test24.json",
     "test25.json",
     "test26.json",
     "test27.json",
-    "test28.json",
+/**    "test28.json",
     "test29.json",
     "test30.json",
-    "test31.json",
+    "test31.json",**/
 
   ];
 
@@ -1814,5 +1814,6 @@ window.onclick = (event) => {
   if (event.target == modal1) modal1.style.display = "none";
   if (event.target == modal2) modal2.style.display = "none";
 }; */
+
 
 
