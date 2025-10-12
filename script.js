@@ -570,7 +570,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Test file references
   const testFiles = [
-    "test1.json",
+ /**   "test1.json",
     "test2.json",
     "test3.json",
     "test4.json",
@@ -593,7 +593,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "test21.json",
     "test22.json",
     "test23.json",
-    "test24.json",
+    "ISTQB1.json",
+    "ISTQB2.json",
+    "ISTQB3.json",
+    "test24.json",**/
     "test25.json",
     "test26.json",
     "test27.json",
@@ -601,9 +604,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "test29.json",
     "test30.json",
     "test31.json",
-    "ISTQB1.json",
-    "ISTQB2.json",
-    "ISTQB3.json",
+
   ];
 
   // Load test files into the select element
@@ -1813,3 +1814,4 @@ window.onclick = (event) => {
   if (event.target == modal1) modal1.style.display = "none";
   if (event.target == modal2) modal2.style.display = "none";
 }; */
+
