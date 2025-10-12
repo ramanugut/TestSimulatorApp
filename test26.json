@@ -1,5 +1,5 @@
 {
-  "testName": "Self Assessment 3 Quiz (Reviewed & Extended)",
+  "testName": "ICT2611 Self Assessment 3 Quiz",
   "questions": [
     {
       "text": "Which event is triggered when a user clicks a `Button` control in a Windows Forms application?",
@@ -161,3 +161,4 @@
     }
   ]
 }
+
