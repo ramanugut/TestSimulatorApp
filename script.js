@@ -600,12 +600,12 @@ document.addEventListener("DOMContentLoaded", function () {
     "test25.json",
     "test26.json",
     "test27.json",
-/**    "test28.json",
+ "test28.json",
     "test29.json",
     "test30.json",
-    "test31.json",**/
-
-  ];
+    "test31.json",
+    
+    ];
 
   // Load test files into the select element
   function loadTestFiles() {
@@ -1814,6 +1814,7 @@ window.onclick = (event) => {
   if (event.target == modal1) modal1.style.display = "none";
   if (event.target == modal2) modal2.style.display = "none";
 }; */
+
 
 
 
