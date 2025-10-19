@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let bookmarkCycleIndex = 0;
   let lastMotivationIndex = null;
   let currentMode = "test";
+  let questionResults = [];
+  let reviewFilter = "all";
 
   //************************ SECTION 1A: ELEMENT REFERENCES ************************//
 
@@ -52,6 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const achievementToast = document.getElementById("achievement-toast");
   const flashcardsGrid = document.getElementById("flashcards-grid");
   const flashcardsEmptyState = document.getElementById("flashcards-empty");
+  const reviewFilterSelect = document.getElementById("review-filter");
+  const scoreFilterContainer = document.getElementById(
+    "score-filter-container"
+  );
+  const filterEmptyStateElement = document.getElementById(
+    "filter-empty-state"
+  );
   const modeButtons = document.querySelectorAll(".mode-tab-button");
   const modePanelTest = document.getElementById("mode-panel-test");
   const modePanelFlashcards = document.getElementById("mode-panel-flashcards");
@@ -166,6 +175,53 @@ document.addEventListener("DOMContentLoaded", function () {
     count: 0,
     lastDate: null,
   };
+
+  function resetReviewState() {
+    questionResults = [];
+    reviewFilter = "all";
+    if (reviewFilterSelect) {
+      reviewFilterSelect.value = "all";
+    }
+    if (scoreFilterContainer) {
+      scoreFilterContainer.classList.add("hidden");
+    }
+    if (filterEmptyStateElement) {
+      filterEmptyStateElement.classList.add("hidden");
+    }
+  }
+
+  function updateReviewFilterVisibility() {
+    if (!scoreFilterContainer) {
+      return;
+    }
+    if (testSubmitted && questions.length > 0 && questionResults.length > 0) {
+      scoreFilterContainer.classList.remove("hidden");
+      if (reviewFilterSelect) {
+        reviewFilterSelect.value = reviewFilter;
+      }
+    } else {
+      scoreFilterContainer.classList.add("hidden");
+    }
+  }
+
+  function getFilteredQuestionIndexes() {
+    const totalQuestions = questions.length;
+    const allIndexes = Array.from({ length: totalQuestions }, (_, index) => index);
+
+    if (!testSubmitted || questionResults.length === 0) {
+      return allIndexes;
+    }
+
+    if (reviewFilter === "correct") {
+      return allIndexes.filter((index) => questionResults[index] === "correct");
+    }
+
+    if (reviewFilter === "incorrect") {
+      return allIndexes.filter((index) => questionResults[index] !== "correct");
+    }
+
+    return allIndexes;
+  }
 
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split("T")[0];
@@ -943,6 +999,7 @@ const testFiles = [
 
   // Initialize test variables and UI
   function initializeTest() {
+    resetReviewState();
     if (questions.length === 0) {
       questionsContainer.innerHTML = `<p>No questions available in the selected file.</p>`;
       paginationControls.classList.add("hidden");
@@ -1003,6 +1060,7 @@ const testFiles = [
     updateProgress();
     updateBookmarkPanel();
     renderFlashcards();
+    updateReviewFilterVisibility();
 
     if (hasSavedProgress && testInProgress && remainingTime > 0) {
       startTimer(true);
@@ -1018,13 +1076,44 @@ const testFiles = [
   //************************ SECTION 6: RENDERING QUESTIONS ************************//
 
   function renderQuestions() {
-    questionsContainer.innerHTML = "";
-    const startIndex = (currentPage - 1) * questionsPerPage;
-    const endIndex = Math.min(startIndex + questionsPerPage, questions.length);
-    const questionsToDisplay = questions.slice(startIndex, endIndex);
+    if (!questionsContainer) {
+      return;
+    }
 
-    questionsToDisplay.forEach((question, index) => {
-      const actualIndex = startIndex + index;
+    questionsContainer.innerHTML = "";
+    if (filterEmptyStateElement) {
+      filterEmptyStateElement.classList.add("hidden");
+    }
+    updateReviewFilterVisibility();
+
+    const filteredIndexes = getFilteredQuestionIndexes();
+    const totalFiltered = filteredIndexes.length;
+
+    if (totalFiltered === 0) {
+      if (filterEmptyStateElement) {
+        filterEmptyStateElement.classList.remove("hidden");
+      } else {
+        questionsContainer.innerHTML =
+          '<p class="empty-state">No questions match your current filter.</p>';
+      }
+      return;
+    }
+
+    const totalPages = Math.max(
+      1,
+      Math.ceil(totalFiltered / questionsPerPage)
+    );
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+    const startIndex = (currentPage - 1) * questionsPerPage;
+    const indexesToDisplay = filteredIndexes.slice(
+      startIndex,
+      startIndex + questionsPerPage
+    );
+
+    indexesToDisplay.forEach((actualIndex) => {
+      const question = questions[actualIndex];
       const questionElement = document.createElement("div");
       questionElement.classList.add("question");
       questionElement.setAttribute("data-question-index", actualIndex);
@@ -1316,7 +1405,24 @@ const testFiles = [
   }
 
   function jumpToQuestion(questionIndex) {
-    currentPage = Math.floor(questionIndex / questionsPerPage) + 1;
+    let targetIndexes = getFilteredQuestionIndexes();
+    let position = targetIndexes.indexOf(questionIndex);
+
+    if (position === -1) {
+      reviewFilter = "all";
+      if (reviewFilterSelect) {
+        reviewFilterSelect.value = "all";
+      }
+      updateReviewFilterVisibility();
+      targetIndexes = getFilteredQuestionIndexes();
+      position = targetIndexes.indexOf(questionIndex);
+    }
+
+    if (position === -1) {
+      return;
+    }
+
+    currentPage = Math.floor(position / questionsPerPage) + 1;
     renderQuestions();
     updatePaginationControls();
     requestAnimationFrame(() => highlightQuestion(questionIndex));
@@ -1379,14 +1485,19 @@ const testFiles = [
     ) {
       return;
     }
-    const totalPages = Math.max(1, Math.ceil(questions.length / questionsPerPage));
-    if (questions.length === 0) {
+    const filteredIndexes = getFilteredQuestionIndexes();
+    const totalFiltered = filteredIndexes.length;
+    if (totalFiltered === 0) {
       paginationControls.classList.add("hidden");
       pageInfo.textContent = "";
       return;
     }
 
     paginationControls.classList.remove("hidden");
+    const totalPages = Math.max(
+      1,
+      Math.ceil(totalFiltered / questionsPerPage)
+    );
     if (currentPage > totalPages) {
       currentPage = totalPages;
     }
@@ -1407,12 +1518,25 @@ const testFiles = [
 
   if (nextPageButton) {
     nextPageButton.addEventListener("click", () => {
-      const totalPages = Math.ceil(questions.length / questionsPerPage);
+      const totalFiltered = getFilteredQuestionIndexes().length;
+      const totalPages = Math.max(
+        1,
+        Math.ceil(totalFiltered / questionsPerPage)
+      );
       if (currentPage < totalPages) {
         currentPage++;
         renderQuestions();
         updatePaginationControls();
       }
+    });
+  }
+
+  if (reviewFilterSelect) {
+    reviewFilterSelect.addEventListener("change", (event) => {
+      reviewFilter = event.target.value;
+      currentPage = 1;
+      renderQuestions();
+      updatePaginationControls();
     });
   }
 
@@ -1532,6 +1656,14 @@ const testFiles = [
       startTestButton.disabled = false;
       pauseTimerButton.textContent = "Pause Timer";
       let score = 0;
+      reviewFilter = "all";
+      if (reviewFilterSelect) {
+        reviewFilterSelect.value = "all";
+      }
+      questionResults = Array.from(
+        { length: questions.length },
+        () => "unanswered"
+      );
 
       submitButton.style.display = "none";
 
@@ -1540,6 +1672,11 @@ const testFiles = [
       // Calculate the score without relying on DOM elements
       questions.forEach((question, index) => {
         const userAnswer = userAnswers[index];
+        const hasAnswer = Array.isArray(userAnswer)
+          ? userAnswer.length > 0
+          : userAnswer !== null &&
+            userAnswer !== undefined &&
+            userAnswer.toString().trim() !== "";
         let isCorrect = false;
         const isMultipleCorrect = Array.isArray(question.correctAnswer);
 
@@ -1569,6 +1706,11 @@ const testFiles = [
         if (isCorrect) {
           score++;
         }
+        questionResults[index] = isCorrect
+          ? "correct"
+          : hasAnswer
+          ? "incorrect"
+          : "unanswered";
       });
 
       // Update the score display
@@ -1619,6 +1761,7 @@ const testFiles = [
 
       // Re-render current page to show feedback
       renderQuestions();
+      updatePaginationControls();
       updateBookmarkPanel();
     } catch (error) {
       console.error("Error in submitTest:", error);
@@ -1775,6 +1918,7 @@ const testFiles = [
     isTimerPaused = false;
     testInProgress = false;
     testSubmitted = false;
+    resetReviewState();
     pauseTimerButton.textContent = "Pause Timer";
     if (progressTextElement) {
       progressTextElement.textContent = `0%`;
