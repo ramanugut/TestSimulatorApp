@@ -842,7 +842,8 @@ const testFiles = [
      "test33c.json",
   "test33d.json",
      "test33e.json",
-  "test33f.json"
+  "test33f.json",
+  "test34Social.json"
 ];
 
 
