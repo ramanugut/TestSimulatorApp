@@ -1140,6 +1140,32 @@ body.study-mode-active .question {
     color: var(--accent-color);
 }
 
+#score-filter-container.result-filter-controls {
+    margin-top: 0.75rem;
+}
+
+.result-filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+
+.result-filter-controls select {
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+#filter-empty-state {
+    margin-top: 1rem;
+}
+
 #result-message {
     font-size: 1rem;
     font-weight: 500;

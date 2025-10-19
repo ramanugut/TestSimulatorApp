@@ -124,6 +124,9 @@
             <section id="mode-panel-test" class="mode-panel active" role="tabpanel" aria-labelledby="mode-tab-test">
                 <div class="test-content">
                     <main id="questions-container" aria-live="polite"></main>
+                    <div id="filter-empty-state" class="empty-state hidden">
+                        No questions match your current filter.
+                    </div>
 
                     <div id="pagination-controls" class="pagination hidden">
                         <button id="prev-page" class="btn btn-secondary">Previous</button>
@@ -250,7 +253,23 @@
                             <span class="bookmark-label">Bookmarks</span>
                             <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
                         </div>
-                        <button id="cycle-bookmarks" class="btn btn-secondary">Jump to Next Bookmark</button>
+
+                        <button id="stats-reset" class="btn btn-secondary">Reset Today's Stats</button>
+                    </div>
+                    <div id="score-container" class="card-block hidden" style="display: none;">
+                        <h2>Your Score</h2>
+                        <p class="score-value" id="score">0</p>
+                        <p id="result-message"></p>
+                        <div id="score-filter-container" class="result-filter-controls hidden">
+                            <label for="review-filter">Show</label>
+                            <select id="review-filter">
+                                <option value="all">All questions</option>
+                                <option value="incorrect">Incorrect only</option>
+                                <option value="correct">Correct only</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" id="download-report">Download Report</button>
+
                     </div>
                 </section>
 

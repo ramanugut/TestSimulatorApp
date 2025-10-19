@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let bookmarkCycleIndex = 0;
   let lastMotivationIndex = null;
   let currentMode = "test";
+  let questionResults = [];
+  let reviewFilter = "all";
 
   //************************ SECTION 1A: ELEMENT REFERENCES ************************//
 
@@ -52,6 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const achievementToast = document.getElementById("achievement-toast");
   const flashcardsGrid = document.getElementById("flashcards-grid");
   const flashcardsEmptyState = document.getElementById("flashcards-empty");
+  const reviewFilterSelect = document.getElementById("review-filter");
+  const scoreFilterContainer = document.getElementById(
+    "score-filter-container"
+  );
+  const filterEmptyStateElement = document.getElementById(
+    "filter-empty-state"
+  );
   const modeButtons = document.querySelectorAll(".mode-tab-button");
   const modePanelTest = document.getElementById("mode-panel-test");
   const modePanelFlashcards = document.getElementById("mode-panel-flashcards");
@@ -166,6 +175,53 @@ document.addEventListener("DOMContentLoaded", function () {
     count: 0,
     lastDate: null,
   };
+
+  function resetReviewState() {
+    questionResults = [];
+    reviewFilter = "all";
+    if (reviewFilterSelect) {
+      reviewFilterSelect.value = "all";
+    }
+    if (scoreFilterContainer) {
+      scoreFilterContainer.classList.add("hidden");
+    }
+    if (filterEmptyStateElement) {
+      filterEmptyStateElement.classList.add("hidden");
+    }
+  }
+
+  function updateReviewFilterVisibility() {
+    if (!scoreFilterContainer) {
+      return;
+    }
+    if (testSubmitted && questions.length > 0 && questionResults.length > 0) {
+      scoreFilterContainer.classList.remove("hidden");
+      if (reviewFilterSelect) {
+        reviewFilterSelect.value = reviewFilter;
+      }
+    } else {
+      scoreFilterContainer.classList.add("hidden");
+    }
+  }
+
+  function getFilteredQuestionIndexes() {
+    const totalQuestions = questions.length;
+    const allIndexes = Array.from({ length: totalQuestions }, (_, index) => index);
+
+    if (!testSubmitted || questionResults.length === 0) {
+      return allIndexes;
+    }
+
+    if (reviewFilter === "correct") {
+      return allIndexes.filter((index) => questionResults[index] === "correct");
+    }
+
+    if (reviewFilter === "incorrect") {
+      return allIndexes.filter((index) => questionResults[index] !== "correct");
+    }
+
+    return allIndexes;
+  }
 
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split("T")[0];
@@ -943,6 +999,7 @@ const testFiles = [
 
   // Initialize test variables and UI
   function initializeTest() {
+    resetReviewState();
     if (questions.length === 0) {
       questionsContainer.innerHTML = `<p>No questions available in the selected file.</p>`;
       paginationControls.classList.add("hidden");
@@ -1003,6 +1060,7 @@ const testFiles = [
     updateProgress();
     updateBookmarkPanel();
     renderFlashcards();
+    updateReviewFilterVisibility();
 
     if (hasSavedProgress && testInProgress && remainingTime > 0) {
       startTimer(true);
@@ -1018,13 +1076,44 @@ const testFiles = [
   //************************ SECTION 6: RENDERING QUESTIONS ************************//
 
   function renderQuestions() {
-    questionsContainer.innerHTML = "";
-    const startIndex = (currentPage - 1) * questionsPerPage;
-    const endIndex = Math.min(startIndex + questionsPerPage, questions.length);
-    const questionsToDisplay = questions.slice(startIndex, endIndex);
+    if (!questionsContainer) {
+      return;
+    }
 
-    questionsToDisplay.forEach((question, index) => {
-      const actualIndex = startIndex + index;
+    questionsContainer.innerHTML = "";
+    if (filterEmptyStateElement) {
+      filterEmptyStateElement.classList.add("hidden");
+    }
+    updateReviewFilterVisibility();
+
+    const filteredIndexes = getFilteredQuestionIndexes();
+    const totalFiltered = filteredIndexes.length;
+
+    if (totalFiltered === 0) {
+      if (filterEmptyStateElement) {
+        filterEmptyStateElement.classList.remove("hidden");
+      } else {
+        questionsContainer.innerHTML =
+          '<p class="empty-state">No questions match your current filter.</p>';
+      }
+      return;
+    }
+
+    const totalPages = Math.max(
+      1,
+      Math.ceil(totalFiltered / questionsPerPage)
+    );
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+    const startIndex = (currentPage - 1) * questionsPerPage;
+    const indexesToDisplay = filteredIndexes.slice(
+      startIndex,
+      startIndex + questionsPerPage
+    );
+
+    indexesToDisplay.forEach((actualIndex) => {
+      const question = questions[actualIndex];
       const questionElement = document.createElement("div");
       questionElement.classList.add("question");
       questionElement.setAttribute("data-question-index", actualIndex);
@@ -1316,7 +1405,24 @@ const testFiles = [
   }
 
   function jumpToQuestion(questionIndex) {
-    currentPage = Math.floor(questionIndex / questionsPerPage) + 1;
+    let targetIndexes = getFilteredQuestionIndexes();
+    let position = targetIndexes.indexOf(questionIndex);
+
+    if (position === -1) {
+      reviewFilter = "all";
+      if (reviewFilterSelect) {
+        reviewFilterSelect.value = "all";
+      }
+      updateReviewFilterVisibility();
+      targetIndexes = getFilteredQuestionIndexes();
+      position = targetIndexes.indexOf(questionIndex);
+    }
+
+    if (position === -1) {
+      return;
+    }
+
+    currentPage = Math.floor(position / questionsPerPage) + 1;
     renderQuestions();
     updatePaginationControls();
     requestAnimationFrame(() => highlightQuestion(questionIndex));
@@ -1379,14 +1485,19 @@ const testFiles = [
     ) {
       return;
     }
-    const totalPages = Math.max(1, Math.ceil(questions.length / questionsPerPage));
-    if (questions.length === 0) {
+    const filteredIndexes = getFilteredQuestionIndexes();
+    const totalFiltered = filteredIndexes.length;
+    if (totalFiltered === 0) {
       paginationControls.classList.add("hidden");
       pageInfo.textContent = "";
       return;
     }
 
     paginationControls.classList.remove("hidden");
+    const totalPages = Math.max(
+      1,
+      Math.ceil(totalFiltered / questionsPerPage)
+    );
     if (currentPage > totalPages) {
       currentPage = totalPages;
     }
@@ -1407,12 +1518,25 @@ const testFiles = [
 
   if (nextPageButton) {
     nextPageButton.addEventListener("click", () => {
-      const totalPages = Math.ceil(questions.length / questionsPerPage);
+      const totalFiltered = getFilteredQuestionIndexes().length;
+      const totalPages = Math.max(
+        1,
+        Math.ceil(totalFiltered / questionsPerPage)
+      );
       if (currentPage < totalPages) {
         currentPage++;
         renderQuestions();
         updatePaginationControls();
       }
+    });
+  }
+
+  if (reviewFilterSelect) {
+    reviewFilterSelect.addEventListener("change", (event) => {
+      reviewFilter = event.target.value;
+      currentPage = 1;
+      renderQuestions();
+      updatePaginationControls();
     });
   }
 
@@ -1532,6 +1656,14 @@ const testFiles = [
       startTestButton.disabled = false;
       pauseTimerButton.textContent = "Pause Timer";
       let score = 0;
+      reviewFilter = "all";
+      if (reviewFilterSelect) {
+        reviewFilterSelect.value = "all";
+      }
+      questionResults = Array.from(
+        { length: questions.length },
+        () => "unanswered"
+      );
 
       submitButton.style.display = "none";
 
@@ -1540,6 +1672,11 @@ const testFiles = [
       // Calculate the score without relying on DOM elements
       questions.forEach((question, index) => {
         const userAnswer = userAnswers[index];
+        const hasAnswer = Array.isArray(userAnswer)
+          ? userAnswer.length > 0
+          : userAnswer !== null &&
+            userAnswer !== undefined &&
+            userAnswer.toString().trim() !== "";
         let isCorrect = false;
         const isMultipleCorrect = Array.isArray(question.correctAnswer);
 
@@ -1569,6 +1706,11 @@ const testFiles = [
         if (isCorrect) {
           score++;
         }
+        questionResults[index] = isCorrect
+          ? "correct"
+          : hasAnswer
+          ? "incorrect"
+          : "unanswered";
       });
 
       // Update the score display
@@ -1619,6 +1761,7 @@ const testFiles = [
 
       // Re-render current page to show feedback
       renderQuestions();
+      updatePaginationControls();
       updateBookmarkPanel();
     } catch (error) {
       console.error("Error in submitTest:", error);
@@ -1775,6 +1918,7 @@ const testFiles = [
     isTimerPaused = false;
     testInProgress = false;
     testSubmitted = false;
+    resetReviewState();
     pauseTimerButton.textContent = "Pause Timer";
     if (progressTextElement) {
       progressTextElement.textContent = `0%`;
@@ -1870,18 +2014,35 @@ const testFiles = [
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    let yPosition = 20;
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const margin = 20;
+    const bottomMargin = 20;
+    const blockPadding = 4;
+    const blockSpacing = 6;
+    const blockX = margin - 2;
+    const blockWidth = pageWidth - margin * 2 + 4;
+    const maxLineWidth = blockWidth - blockPadding * 2;
+    const bodyFontSize = 11;
+
+    const defaultTextColor = { r: 33, g: 37, b: 41 };
+    const neutralFill = { r: 244, g: 247, b: 252 };
+    const correctFill = { r: 209, g: 250, b: 229 };
+    const incorrectFill = { r: 255, g: 228, b: 225 };
+    const explanationFill = { r: 255, g: 249, b: 196 };
+    const correctTextColor = { r: 21, g: 87, b: 36 };
+    const incorrectTextColor = { r: 155, g: 28, b: 28 };
+    const explanationTextColor = { r: 102, g: 60, b: 0 };
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(bodyFontSize);
+    doc.setTextColor(defaultTextColor.r, defaultTextColor.g, defaultTextColor.b);
+
     let correctAnswersCount = 0;
 
-    doc.setFontSize(14);
-    doc.text(`Test Results`, 105, 10, { align: "center" });
+    const totalQuestions = questions.length;
 
-    questions.forEach((question, index) => {
-      if (yPosition >= 270) {
-        doc.addPage();
-        yPosition = 20;
-      }
-
+    const resultsData = questions.map((question, index) => {
       const questionText = `Question ${index + 1}: ${question.text}`;
       const rawUserAnswer = userAnswers[index];
       const hasUserAnswer = Array.isArray(rawUserAnswer)
@@ -1895,53 +2056,303 @@ const testFiles = [
       const correctAnswer = formatAnswerForDisplay(question.correctAnswer);
       const isCorrect =
         hasUserAnswer && answersMatch(rawUserAnswer, question.correctAnswer);
-      if (isCorrect) correctAnswersCount++;
 
-      const pageWidth = doc.internal.pageSize.getWidth();
-      const margin = 20;
-      const maxLineWidth = pageWidth - margin * 2;
+      if (isCorrect) {
+        correctAnswersCount++;
+      }
 
+      doc.setFont("helvetica", "bold");
       const questionLines = doc.splitTextToSize(questionText, maxLineWidth);
-      doc.text(questionLines, margin, yPosition);
-      yPosition += questionLines.length * 7;
+      const questionDimensions = doc.getTextDimensions(questionLines, {
+        maxWidth: maxLineWidth,
+      });
+      doc.setFont("helvetica", "normal");
 
       const userAnswerText = `Your Answer: ${userAnswer}`;
       const userAnswerLines = doc.splitTextToSize(userAnswerText, maxLineWidth);
-      doc.text(userAnswerLines, margin, yPosition);
-      yPosition += userAnswerLines.length * 7;
+      const userAnswerDimensions = doc.getTextDimensions(userAnswerLines, {
+        maxWidth: maxLineWidth,
+      });
 
       const correctAnswerText = `Correct Answer: ${correctAnswer}`;
       const correctAnswerLines = doc.splitTextToSize(
         correctAnswerText,
         maxLineWidth
       );
-      doc.text(correctAnswerLines, margin, yPosition);
-      yPosition += correctAnswerLines.length * 7;
+      const correctAnswerDimensions = doc.getTextDimensions(
+        correctAnswerLines,
+        {
+          maxWidth: maxLineWidth,
+        }
+      );
 
+      let explanationLines = [];
+      let explanationDimensions = { h: 0 };
       if (!isCorrect && question.explanation) {
         const explanationText = `Explanation: ${question.explanation}`;
-        const explanationLines = doc.splitTextToSize(
-          explanationText,
-          maxLineWidth
-        );
-        doc.text(explanationLines, margin, yPosition);
-        yPosition += explanationLines.length * 7;
+        explanationLines = doc.splitTextToSize(explanationText, maxLineWidth);
+        explanationDimensions = doc.getTextDimensions(explanationLines, {
+          maxWidth: maxLineWidth,
+        });
       }
 
-      yPosition += 10;
+      return {
+        questionLines,
+        questionHeight: questionDimensions.h,
+        userAnswerLines,
+        userAnswerHeight: userAnswerDimensions.h,
+        correctAnswerLines,
+        correctAnswerHeight: correctAnswerDimensions.h,
+        explanationLines,
+        explanationHeight: explanationDimensions.h,
+        isCorrect,
+        hasUserAnswer,
+      };
     });
 
-    if (yPosition >= 270) {
-      doc.addPage();
-      yPosition = 20;
-    }
-    doc.setFontSize(16);
-    doc.text(
-      `Total Score: ${correctAnswersCount} / ${questions.length}`,
-      105,
-      yPosition,
-      { align: "center" }
-    );
+    const percentageScore = totalQuestions
+      ? Math.round((correctAnswersCount / totalQuestions) * 100)
+      : 0;
+    const scoreBadgeText = totalQuestions
+      ? `${correctAnswersCount}/${totalQuestions} correct (${percentageScore}%)`
+      : "No questions answered";
+
+    const headerHeight = 34;
+
+    const renderHeader = (includeLegend = false) => {
+      doc.setFillColor(35, 48, 68);
+      doc.rect(0, 0, pageWidth, headerHeight, "F");
+
+      doc.setTextColor(255, 255, 255);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(18);
+      doc.text("Test Simulator Results", margin, 18);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(11);
+      doc.text("Learning Progress Snapshot", margin, 26);
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(12);
+      const badgeWidth = doc.getTextWidth(scoreBadgeText) + 14;
+      const badgeHeight = 14;
+      const badgeX = pageWidth - margin - badgeWidth;
+      const badgeY = headerHeight / 2 - badgeHeight / 2;
+
+      doc.setFillColor(57, 181, 74);
+      doc.rect(badgeX, badgeY, badgeWidth, badgeHeight, "F");
+      doc.setTextColor(255, 255, 255);
+      doc.text(scoreBadgeText, badgeX + badgeWidth / 2, badgeY + badgeHeight / 2 + 3, {
+        align: "center",
+      });
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(bodyFontSize);
+      doc.setTextColor(
+        defaultTextColor.r,
+        defaultTextColor.g,
+        defaultTextColor.b
+      );
+
+      let yOffset = headerHeight + 12;
+
+      if (includeLegend) {
+        const legendTop = headerHeight + 5;
+        const legendHeight = 24;
+        doc.setFillColor(248, 250, 255);
+        doc.rect(margin - 4, legendTop, pageWidth - (margin - 4) * 2, legendHeight, "F");
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(11);
+        doc.setTextColor(
+          defaultTextColor.r,
+          defaultTextColor.g,
+          defaultTextColor.b
+        );
+        doc.text("Legend", margin, legendTop + 11);
+
+        const legendItems = [
+          { label: "Correct response", color: correctFill },
+          { label: "Incorrect response", color: incorrectFill },
+          { label: "Explanation", color: explanationFill },
+        ];
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(10);
+
+        let legendX = margin + 35;
+        const legendBaseline = legendTop + 11;
+
+        legendItems.forEach((item) => {
+          doc.setFillColor(item.color.r, item.color.g, item.color.b);
+          doc.rect(legendX, legendBaseline - 5, 8, 8, "F");
+          doc.setTextColor(
+            defaultTextColor.r,
+            defaultTextColor.g,
+            defaultTextColor.b
+          );
+          doc.text(item.label, legendX + 12, legendBaseline + 1);
+          legendX += doc.getTextWidth(item.label) + 32;
+        });
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(bodyFontSize);
+        doc.setTextColor(
+          defaultTextColor.r,
+          defaultTextColor.g,
+          defaultTextColor.b
+        );
+
+        yOffset = legendTop + legendHeight + 10;
+      }
+
+      return yOffset;
+    };
+
+    const ensureSpace = (requiredHeight) => {
+      if (yPosition + requiredHeight > pageHeight - bottomMargin) {
+        doc.addPage();
+        yPosition = renderHeader(false);
+      }
+    };
+
+    const drawBlock = (lines, textHeight, options = {}) => {
+      if (!lines || !lines.length) {
+        return;
+      }
+
+      const {
+        fillColor = neutralFill,
+        textColor = defaultTextColor,
+        fontStyle = "normal",
+        fontSize = bodyFontSize,
+        spacingAfter = blockSpacing,
+        badge,
+      } = options;
+
+      const blockHeight = textHeight + blockPadding * 2;
+      ensureSpace(blockHeight + spacingAfter);
+
+      doc.setFillColor(fillColor.r, fillColor.g, fillColor.b);
+      doc.rect(blockX, yPosition, blockWidth, blockHeight, "F");
+
+      if (badge) {
+        const previousFont = doc.getFont();
+        const previousFontSize = doc.getFontSize();
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(9);
+        const badgeTextWidth = doc.getTextWidth(badge.label) + 8;
+        const badgeHeight = 8;
+        const badgeX = blockX + blockWidth - badgeTextWidth - 6;
+        const badgeY = yPosition + 4;
+        doc.setFillColor(
+          badge.fillColor.r,
+          badge.fillColor.g,
+          badge.fillColor.b
+        );
+        doc.rect(badgeX, badgeY, badgeTextWidth, badgeHeight, "F");
+        doc.setTextColor(
+          badge.textColor.r,
+          badge.textColor.g,
+          badge.textColor.b
+        );
+        doc.text(
+          badge.label,
+          badgeX + badgeTextWidth / 2,
+          badgeY + badgeHeight / 2 + 2,
+          { align: "center" }
+        );
+        const previousFontName =
+          (previousFont && (previousFont.fontName || previousFont.FontName)) ||
+          "helvetica";
+        const previousFontStyle =
+          (previousFont && previousFont.fontStyle) || "normal";
+        doc.setFont(previousFontName, previousFontStyle);
+        doc.setFontSize(previousFontSize);
+      }
+
+      doc.setFont("helvetica", fontStyle);
+      doc.setFontSize(fontSize);
+      doc.setTextColor(textColor.r, textColor.g, textColor.b);
+      doc.text(lines, blockX + blockPadding, yPosition + blockPadding, {
+        baseline: "top",
+      });
+
+      yPosition += blockHeight + spacingAfter;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(bodyFontSize);
+      doc.setTextColor(
+        defaultTextColor.r,
+        defaultTextColor.g,
+        defaultTextColor.b
+      );
+    };
+
+    let yPosition = renderHeader(true);
+
+    resultsData.forEach((entry) => {
+      drawBlock(entry.questionLines, entry.questionHeight, {
+        fillColor: neutralFill,
+        textColor: defaultTextColor,
+        fontStyle: "bold",
+        spacingAfter: 4,
+      });
+
+      if (entry.hasUserAnswer) {
+        drawBlock(entry.userAnswerLines, entry.userAnswerHeight, {
+          fillColor: entry.isCorrect ? correctFill : incorrectFill,
+          textColor: entry.isCorrect ? correctTextColor : incorrectTextColor,
+          spacingAfter: 4,
+          badge: {
+            label: entry.isCorrect ? "Correct" : "Incorrect",
+            fillColor: entry.isCorrect ? correctTextColor : incorrectTextColor,
+            textColor: { r: 255, g: 255, b: 255 },
+          },
+        });
+      } else {
+        drawBlock(entry.userAnswerLines, entry.userAnswerHeight, {
+          fillColor: incorrectFill,
+          textColor: incorrectTextColor,
+          spacingAfter: 4,
+          badge: {
+            label: "No Answer",
+            fillColor: incorrectTextColor,
+            textColor: { r: 255, g: 255, b: 255 },
+          },
+        });
+      }
+
+      drawBlock(entry.correctAnswerLines, entry.correctAnswerHeight, {
+        fillColor: { r: 224, g: 242, b: 254 },
+        textColor: { r: 13, g: 60, b: 97 },
+        spacingAfter: entry.explanationLines.length ? 4 : 8,
+      });
+
+      if (entry.explanationLines.length) {
+        drawBlock(entry.explanationLines, entry.explanationHeight, {
+          fillColor: explanationFill,
+          textColor: explanationTextColor,
+          spacingAfter: 10,
+        });
+      }
+    });
+
+    const summaryText = `Summary: You answered ${correctAnswersCount} of ${totalQuestions} questions correctly (${percentageScore}%).`;
+    doc.setFont("helvetica", "bold");
+    const summaryLines = doc.splitTextToSize(summaryText, maxLineWidth);
+    const summaryDimensions = doc.getTextDimensions(summaryLines, {
+      maxWidth: maxLineWidth,
+    });
+    doc.setFont("helvetica", "normal");
+
+    drawBlock(summaryLines, summaryDimensions.h, {
+      fillColor: { r: 227, g: 242, b: 253 },
+      textColor: { r: 25, g: 74, b: 129 },
+      fontStyle: "bold",
+      spacingAfter: 0,
+    });
 
     doc.save("test_results.pdf");
   }
