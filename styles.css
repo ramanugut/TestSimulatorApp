@@ -454,11 +454,89 @@ button {
     color: var(--accent-color);
 }
 
-.modal-summary,
-.modal-section {
+
+.modal-quick-settings {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-quick-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quick-settings-grid {
+    display: grid;
+    gap: 1.25rem;
+    align-items: end;
+}
+
+@media (min-width: 600px) {
+    .quick-settings-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+.quick-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quick-item .btn,
+.quick-item .file-upload {
+    align-self: flex-start;
+}
+
+.quick-settings-grid input[type="number"] {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.9rem;
+    max-width: 120px;
+}
+
+.modal-summary {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.modal-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 720px) {
+    .modal-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        align-items: stretch;
+    }
+}
+
+.modal-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-card-description {
+    color: var(--muted-text);
+    line-height: 1.5;
+}
+
+.modal-card-wide {
+    grid-column: 1 / -1;
 }
 
 .modal-tagline {
@@ -514,45 +592,6 @@ button {
     gap: 1rem;
 }
 
-.focus-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.1rem 1.25rem;
-}
-
-.focus-toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.toolbar-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    min-width: 160px;
-}
-
-.toolbar-group input[type="number"] {
-    max-width: 120px;
-}
-
-.focus-wrapper input[type="number"],
-.focus-wrapper select {
-    padding: 0.55rem 0.7rem;
-    font-size: 0.9rem;
-}
-
-.toolbar-actions {
-    align-items: stretch;
-}
-
-.toolbar-actions .btn {
-    white-space: nowrap;
-}
-
 .file-upload {
     position: relative;
     overflow: hidden;
@@ -574,8 +613,8 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    align-items: flex-end;
+    gap: 1.25rem;
 }
 
 .bookmark-status {
