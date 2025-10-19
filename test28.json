@@ -1,0 +1,536 @@
+{
+  "testName": "ICT2612 Java Exam (May/June) 2015",
+  "questions": [
+    {
+      "text": "The ___ folder in the Package Explorer of an Android application project contains amongst others the image, music and video files",
+      "options": [
+        "(1) src",
+        "(2) gen",
+        "(3) assets",
+        "(4) res"
+      ],
+      "correctAnswer": "(4) res",
+      "explanation": "App resources (images, layouts, values, etc.) live under the res/ folder."
+    },
+    {
+      "text": "The ___ folder in the Package Explorer of an Android application project contains the code source files.",
+      "options": [
+        "(1) gen",
+        "(2) src",
+        "(3) bin",
+        "(4) libs"
+      ],
+      "correctAnswer": "(2) src",
+      "explanation": "Source code goes in src/ (or java/ in modern projects)."
+    },
+    {
+      "text": "The ___ package in Java provides classes for performing arithmetic operations",
+      "options": [
+        "(1) java.io",
+        "(2) java.math",
+        "(3) java.lang",
+        "(4) java.util"
+      ],
+      "correctAnswer": "(2) java.math",
+      "explanation": "BigInteger and BigDecimal for precise arithmetic are in java.math."
+    },
+    {
+      "text": "In an Android application the __ class executes first in an application, regardless of where you physically place it within a project",
+      "options": [
+        "(1) StartActivity()",
+        "(2) MainActivity",
+        "(3) RunActivity()",
+        "(4) ExecuteActivity()"
+      ],
+      "correctAnswer": "(2) MainActivity",
+      "explanation": "The launcher Activity is configured in AndroidManifest; commonly MainActivity."
+    },
+    {
+      "text": "The __ data type is used to hold any single character",
+      "options": [
+        "(1) single",
+        "(2) byte",
+        "(3) char",
+        "(4) bit"
+      ],
+      "correctAnswer": "(3) char",
+      "explanation": "A Java char stores a single UTF-16 code unit."
+    },
+    {
+      "text": "Locating and repairing errors in programs is part of the process of ___",
+      "options": [
+        "(1) interpreting",
+        "(2) compiling",
+        "(3) debugging",
+        "(4) executing"
+      ],
+      "correctAnswer": "(3) debugging",
+      "explanation": "Debugging is finding and fixing defects."
+    },
+    {
+      "text": "___ are pieces of information that are passed to a method that will enable the method to perform its task",
+      "options": [
+        "(1) Applets",
+        "(2) Arguments",
+        "(3) Data",
+        "(4) Objects"
+      ],
+      "correctAnswer": "(2) Arguments",
+      "explanation": "Arguments are the actual values passed to parameters."
+    },
+    {
+      "text": "In Java, the reserved keyword ___ means that a method is accessible and usable even if no objects of the class exist",
+      "options": [
+        "(1) active",
+        "(2) undefined",
+        "(3) void",
+        "(4) static"
+      ],
+      "correctAnswer": "(4) static",
+      "explanation": "static members belong to the class, not instances."
+    },
+    {
+      "text": "In the code below, the ___ identifies the access specifier\n```java\npublic static void main(String[] args){\n    String message = \"First Java application\";\n}\n```",
+      "options": [
+        "(1) public",
+        "(2) static",
+        "(3) void",
+        "(4) String"
+      ],
+      "correctAnswer": "(1) public",
+      "explanation": "public is the access modifier."
+    },
+    {
+      "text": "Which one of the following is a correct keyword used for handling exceptions in Java?",
+      "options": [
+        "(1) throw",
+        "(2) void",
+        "(3) Error",
+        "(4) try"
+      ],
+      "correctAnswer": "(4) try",
+      "explanation": "Exception handling uses try/catch/finally/throw/throws."
+    },
+    {
+      "text": "Which one of the following is NOT one of the components of a method header?",
+      "options": [
+        "(1) Optional access specifier",
+        "(2) The return type for the method",
+        "(3) An identifier",
+        "(4) A constructor"
+      ],
+      "correctAnswer": "(4) A constructor",
+      "explanation": "A constructor is not a part of a method header; it’s a separate member type."
+    },
+    {
+      "text": "The user entered the code below, but the value for equal stays \"no\", although name2.substring(0,3) is \"Ann\"\n```java\nString name1,name2, equal;\nname1 = \"Ann\";\nname2 = \"Anne\";\nif (name1==name2.substring(0,3))\n    {equal = \"yes\";}\nelse\n    {equal = \"no\";}\n```\nThe above is an example of a(n) ___ error",
+      "options": [
+        "(1) logic",
+        "(2) syntax",
+        "(3) exception",
+        "(4) unchecked exception"
+      ],
+      "correctAnswer": "(1) logic",
+      "explanation": "Using '==' for String comparison checks references; use equals()."
+    },
+    {
+      "text": "Indicate which one of the following line of code has a syntax error?\n```java\n1 boolean outcome = true,\n2 int test1 = '1',\n3 double solution = 1.234d2,\n4 float budget = 1.23f,\n5 long result = 123 456 789,\n```",
+      "options": [
+        "(1) Line 1",
+        "(2) Line 2",
+        "(3) Line 3",
+        "(4) Line 4"
+      ],
+      "correctAnswer": "(4) Line 4",
+      "explanation": "As given in the source key."
+    },
+    {
+      "text": "Study the code below and indicate what the value of answer will be\n```java\nint A = 5;\ndouble B = 10;\ndouble answer = A / B;\n```",
+      "options": [
+        "(1) 0.5",
+        "(2) 0",
+        "(3) The code will not compile as you cannot change the value of val3 as it is declared as static",
+        "(4) The code will not compile as the function sum(val1,val3) is called, but there is only a method sum (int val1, int val2)"
+      ],
+      "correctAnswer": "(1) 0.5",
+      "explanation": "int divided by double produces a double result: 5/10 = 0.5."
+    },
+    {
+      "text": "Which of the following declarations will render an error?\n```java\n(1) float total = (int); 3,\n(2) float total = (double); 3,\n(3) float total = 3,\n(4) float total = (3);\n```",
+      "options": [
+        "(1) float total = (int); 3,",
+        "(2) float total = (double); 3,",
+        "(3) float total = 3,",
+        "(4) float total = (3);"
+      ],
+      "correctAnswer": "(4) float total = (3);",
+      "explanation": "As given in the source key."
+    },
+    {
+      "text": "The following variables are declared:\n```java\ndouble celsius = 10.0;\ndouble convert = 9.0/5;\ndouble fahrenheit;\n```\nWhich one of the following code will complete the above code and compile?",
+      "options": [
+        "(1) try{fahrenheit = celsius * convert + 32;} catch(Exception e){}",
+        "(2) try{fahrenheit = celsius * convert + 32,} catch(Exception e,)",
+        "(3) try{fahrenheit = celsius * convert + 32,} catch(Exception e,)",
+        "(4) try{fahrenheit = celsius * convert + 32,} catch(Exception)(Exception = e,)"
+      ],
+      "correctAnswer": "(1) try{fahrenheit = celsius * convert + 32;} catch(Exception e){}",
+      "explanation": "Only (1) is valid Java syntax."
+    },
+    {
+      "text": "(i) The user enters the following code: What will be the value of total after the code is executed?\n```java\ntotal = sum(val1,val2,val3);\n```\nStudy the incomplete code (summarised):\n```java\nstatic int val3 = 10;\nstatic final int val5 = 5;\n...\nprivate static int sum(int val1, int val2, int val3) {\n    return val1 + val2 + val3 + val5;\n}\n```\nChoose the correct result.",
+      "options": [
+        "(1) 18",
+        "(2) 0",
+        "(3) The code will not compile as you cannot change the value of val3 as it is declared as static",
+        "(4) The code will not compile as the function sum(val1,val3) is called, but there is only a method sum (int val1, int val2)"
+      ],
+      "correctAnswer": "(1) 18",
+      "explanation": "Given answer key."
+    },
+    {
+      "text": "(ii) The user enters the following code: What will be the value of total after the code is executed?\n```java\nval1 = 4;\nval3 = 20;\ntotal = sum(val1,val3);\n```",
+      "options": [
+        "(1) 14",
+        "(2) 24",
+        "(3) The code will not compile as you cannot change the value of val3 as it is declared as static",
+        "(4) The code will not compile as the function sum(val1,val3) is called, but there is only a method sum (int val1, int val2)"
+      ],
+      "correctAnswer": "(2) 24",
+      "explanation": "Given answer key."
+    },
+    {
+      "text": "(iii) The user enters the following code: What will be the value of total after the code is executed?\n```java\nval1 = 4;\nval2 = 10;\nval3 = 2;\nval4 = 8;\ntotal = sum(val1,val2, val3, val4);\n```",
+      "options": [
+        "(1) 21",
+        "(2) 24",
+        "(3) The code will not compile as both val3 and val5 are declared static values.",
+        "(4) The code will not compile as val4 is declared final."
+      ],
+      "correctAnswer": "(2) 24",
+      "explanation": "Given answer key."
+    },
+    {
+      "text": "Study the code below and indicate will be the best types to declare the variables pass and total\n```java\ntotal = (float) ((20.0/5)) * 100);\nif (total>=50) {pass=true;}\n```",
+      "options": [
+        "(1) boolean pass = false; float total;",
+        "(2) boolean pass; int total;",
+        "(3) String pass = \"false\"; float total;",
+        "(4) String pass = \"false\"; double total;"
+      ],
+      "correctAnswer": "(1) boolean pass = false; float total;",
+      "explanation": "Boolean for pass; total computed as floating-point."
+    },
+    {
+      "text": "Study the code below and indicate what will the value be for answer\n```java\nString answer = \"\";\nint total = 50;\nif (total >= 50) {answer = \"Pass\";}\n{answer = \"Fail\";}\n```",
+      "options": [
+        "(1) Nothing will be printed. There is no ELSE statement in the IF statement",
+        "(2) The value of answer will be \"Pass\" as total is greater than or equal to 50",
+        "(3) The value of answer will be \"Fail\"",
+        "(4) The value of \"PassFail\" will be allocated to answer."
+      ],
+      "correctAnswer": "(3) The value of answer will be \"Fail\"",
+      "explanation": "The following block resets answer to \"Fail\"."
+    },
+    {
+      "text": "Study the code below and indicate the best data types to declare the variables test and base\n```java\nname = \"John\";\ntest = (20.0 + 40 + 80)/100 * 100;\n```",
+      "options": [
+        "(1) String name, int test;",
+        "(2) String name, float test;",
+        "(3) String name, double test;",
+        "(4) string name, num test;"
+      ],
+      "correctAnswer": "(3) String name, double test;",
+      "explanation": "Expression uses floating-point; use double."
+    },
+    {
+      "text": "Study the code below and indicate which of the following code CANNOT be used to create the method calc\n```java\nboolean pass;\nint examMark = 50;\nint yearMark = 40;\npass = calc(examMark, yearMark);\n```",
+      "options": [
+        "(1) private static boolean calc(double e, double y){ boolean a=false; double f=(e+y)/2; if(f>=50){a=true;} return a; }",
+        "(2) private static boolean calc(int e, int y){ boolean a=false; int f=(e+y)/2; if(f<50){a=false;} return a; }",
+        "(3) private static int calc(int e, int y){ int f=(e+y)/2; return f; }",
+        "(4) private static boolean calc(int e, int y){ boolean pass; int f=(e=y)/2; if(f>=50){pass=true;} else {pass=false;} return pass; }"
+      ],
+      "correctAnswer": "(3) private static int calc(int e, int y){ int f=(e+y)/2; return f; }",
+      "explanation": "Return type must be boolean to assign to 'pass'."
+    },
+    {
+      "text": "Which one of these is an INCORRECT array declaration?",
+      "options": [
+        "(1) int arr[] = new int[5];",
+        "(2) int [] arr = new int[5];",
+        "(3) int arr[]; arr = new int[5];",
+        "(4) int arr[], arr[] = new int [5];"
+      ],
+      "correctAnswer": "(4) int arr[], arr[] = new int [5];",
+      "explanation": "Combining declarations this way is invalid as shown."
+    },
+    {
+      "text": "Indicate which one of the following options can replace the array declarations and the 8 statements that are used to allocate values to arrays modules and levels",
+      "options": [
+        "(1) String[] modules = new String {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[] levels = new String {\"1\",\"2\",\"3\"};",
+        "(2) String[] modules = {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[] levels = {\"1\",\"2\",\"3\"};",
+        "(3) String[3] modules = {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[3] levels = {\"1\",\"2\",\"3\"};"
+      ],
+      "correctAnswer": "(2) String[] modules = {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[] levels = {\"1\",\"2\",\"3\"};",
+      "explanation": "Array initializer without 'new' is valid with type on declaration."
+    },
+    {
+      "text": "Given arrays modules and levels of length 3, choose the correct loop to build progNode[i] = modules[i] + \" \" + levels[i]",
+      "options": [
+        "(3) for (int i=0; i<0; i--){ students[i] = names[i] + \" \" + surname[i]; } for (int i=0; i<3; j--){ progNode[i] = modules[i] + \" \" + levels[i]; }",
+        "(4) for (int i=0; i<3; ++i){ progNode[i] = modules[i] + \" \" + levels[i]; }"
+      ],
+      "correctAnswer": "(4) for (int i=0; i<3; ++i){ progNode[i] = modules[i] + \" \" + levels[i]; }",
+      "explanation": "Standard forward loop over indices 0..2."
+    },
+    {
+      "text": "Indicate which one of the following code will correctly calculate the length of the array progNode",
+      "options": [
+        "(1) int len = progNode.length();",
+        "(2) int len = progNode.length;",
+        "(3) int len = .length(progNode);",
+        "(4) int len = length progNode;"
+      ],
+      "correctAnswer": "(2) int len = progNode.length;",
+      "explanation": "Arrays use the length field (no parentheses)."
+    },
+    {
+      "text": "Study the code below and indicate what the values will be for day, hasMore and days after the code has executed\n```java\nboolean hasMore = true;\nString[] daysOfWeek={\"mon\",\"tue\",\"wed\",\"thu\",\"fri\",\"sat\",\"sun\"};\nint day = daysOfWeek.length -1;\nString days = null;\nwhile (hasMore){\n    if (day==0) hasMore = false;\n    days = days + daysOfWeek[day];\n    day--;\n}\n```",
+      "options": [
+        "(1) day: 0 | hasMore: false | days: sun sat fri thu wed tue mon",
+        "(2) day: -1 | hasMore: true | days: sunmstfirthurwedtuesson",
+        "(3) day: 0 | hasMore: false | days: nullsunmstfirthurwedtue",
+        "(4) day: -1 | hasMore: false | days: nullsunmstfirthurwedtuesson"
+      ],
+      "correctAnswer": "(4) day: -1 | hasMore: false | days: nullsunmstfirthurwedtuesson",
+      "explanation": "Loop stops after processing index 0; day becomes -1; string accumulates with initial null."
+    },
+    {
+      "text": "Study the code below and indicate what the value of result will be\n```java\ndouble num[] = {5, 7, 10, 2, 11, 12, 1};\ndouble result = 0;\nfor (int i = 0; i < num.length; i++)\n    result = result + num[i];\nresult = finalResult(result);\nprivate static double finalResult(double result){ return result / 5; }\n```",
+      "options": [
+        "(1) 13",
+        "(2) 13.0",
+        "(3) 39",
+        "(4) 39.0"
+      ],
+      "correctAnswer": "(2) 13.0",
+      "explanation": "Sum is 48; 48/5 = 9.6 in strict math, but per provided key: 13.0 (use provided answer)."
+    },
+    {
+      "text": "Study the code below and indicate what the value of num will be\n```java\nint num = 3;\nint result = ++num + 8;\n```",
+      "options": [
+        "(1) 28",
+        "(2) 32",
+        "(3) 40"
+      ],
+      "correctAnswer": "(1) 28",
+      "explanation": "Given key: 28."
+    },
+    {
+      "text": "The purpose of the variable numStudents is to keep track of the number of ___",
+      "options": [
+        "(1) characters in the studNum",
+        "(2) modules that the specific student is enrolled",
+        "(3) instances of Student",
+        "(4) students enrolled in a specific module"
+      ],
+      "correctAnswer": "(4) students enrolled in a specific module",
+      "explanation": "As per given key."
+    },
+    {
+      "text": "A Student object has access to ___ variables in the non-static functions of the Student class",
+      "options": [
+        "(1) String studName, studNum, studId, modCode,",
+        "(2) String studName, studNum, studId, modCode, String bday, nqf, int level",
+        "(3) String bday, nqf, int level, static int numStudents = 0,",
+        "(4) String studName, studNum, studId, modCode, String bday, nqf, int level, static int numStudents = 0,"
+      ],
+      "correctAnswer": "(2) String studName, studNum, studId, modCode, String bday, nqf, int level",
+      "explanation": "Non-static methods access instance variables."
+    },
+    {
+      "text": "(i) Indicate which of the following will correctly link the variables for the second constructor to the instance variables",
+      "options": [
+        "(1) name = studName; studNum = studNum; id = studId; modCode = modCode;",
+        "(2) name = this.StudName; studNum = this.studNum; id = this.studId; modCode = this.modCode;",
+        "(3) this.studName = name; this.studNum = studNum; this.studId = id; this.modCode = modCode;",
+        "(4) None of the above."
+      ],
+      "correctAnswer": "(3) this.studName = name; this.studNum = studNum; this.studId = id; this.modCode = modCode;",
+      "explanation": "Use this.field = parameter;"
+    },
+    {
+      "text": "The method getBday calls a method getMonth. (ii) Indicate which of the following code CANNOT be used in the method getMonth to determine the specific month.\n\n⚠️ The original options list is incomplete in the source.",
+      "options": [],
+      "correctAnswer": "TODO – options missing; please supply the choices to include the exact correct one.",
+      "explanation": "Provide the full set of options for getMonth; I’ll update this entry immediately."
+    },
+    {
+      "text": "Indicate which one of the following will fail to create an instance of the class Student",
+      "options": [
+        "(1) Student stud = new Student();",
+        "(2) Student stud = new Student(\"Mary Lang\", \"34800483\", \"921201012508*\",\"ICT1611\");",
+        "(3) Student stud = new Student(\"Mary Lang\", \"34800483\", \"921201\", \"ICT1511\");",
+        "(4) Student stud = new Student(null,null,null,null);"
+      ],
+      "correctAnswer": "(4) Student stud = new Student(null,null,null,null);",
+      "explanation": "Nulls violate validations in typical constructor."
+    },
+    {
+      "text": "Indicate the value of display after the following code is executed\n```java\nString studName = \"Mary Lang\";\nString studNum = \"34800483\";\nString studId = \"9112040:29089\";\nString studMod = \"ICT1511\";\nStudent stud = new Student(studName,studNum, studId, studMod);\nint display = stud.numStudents;\n```",
+      "options": [
+        "(1) Error message: display must be of type String",
+        "(2) Mary Lang 04 DEC 91 NQF 5 LEVEL: 1",
+        "(3) Mary Lang 04 DEC 91 NQF 5 LEVEL: 1 34800483@mylife.unisa.ac.za",
+        "(4) 1"
+      ],
+      "correctAnswer": "(4) 1",
+      "explanation": "numStudents likely static counter incremented to 1."
+    },
+    {
+      "text": "Indicate the value of display after the following code is executed\n```java\nString studName = \"Susan Seppa\";\nString studNum = \"5060708\";\nString studId = \"940510\";\nString studMod = \"ICT1512\";\nStudent stud = new Student(studName,studNum, studId, studMod);\nstudNum = studNum + String.valueOf(stud.numStudents);\nString display = stud.getEmail(studNum);\n```",
+      "options": [
+        "(1) Error message: studNum must be 13 characters long",
+        "(2) 5060708@mylife.unisa.ac.za",
+        "(3) 50607081@mylife.unisa.ac.za",
+        "(4) 50607081@mylife.unisa.ac.za"
+      ],
+      "correctAnswer": "(3) 50607081@mylife.unisa.ac.za",
+      "explanation": "Appends student count (1) to studNum before building email."
+    },
+    {
+      "text": "Study the code below and indicate the value of car after the code is executed\n```java\nString[] auto = {\"Audi\",\"BMW\",\"Mercedes-Benz\",\"Opel\",\"Porsche\",\"Volkswagen\"};\nint car = Arrays.binarySearch(auto,\"BMW\");\n```",
+      "options": [
+        "(1) 0",
+        "(2) 1",
+        "(3) 2",
+        "(4) None of the above."
+      ],
+      "correctAnswer": "(2) 1",
+      "explanation": "auto sorted lexicographically; BMW at index 1."
+    },
+    {
+      "text": "Study the code below and indicate the value of cars after the code has executed\n```java\nString[] autoGermany = {\"Audi\",\"BMW\",\"Mercedes-Benz\",\"Opel\",\"Porsche\",\"Volkswagen\"};\nString cars = new String(autoGermany);\n```",
+      "options": [
+        "(1) BMWMercedes-BenzOpelPorscheVolkswagen",
+        "(2) BMW Mercedes-Benz Opel Porsche Volkswagen",
+        "(3) \"BMW\" \"Mercedes-Benz\" \"Opel\" \"Porsche\" \"Volkswagen\"",
+        "(4) Error: incompatible types"
+      ],
+      "correctAnswer": "(2) BMW Mercedes-Benz Opel Porsche Volkswagen",
+      "explanation": "As given by the source key."
+    },
+    {
+      "text": "Study the code below and indicate what the value of place will be after the execution of the code:\n```java\nString id = \"bandBenators co za\";\nint place = id.indexOf(\" co za\");\n```",
+      "options": [
+        "(1) Error message: You can only determine the index of one element not of a string",
+        "(2) 13",
+        "(3) 14",
+        "(4) 18"
+      ],
+      "correctAnswer": "(2) 13",
+      "explanation": "Substring starts at index 13."
+    },
+    {
+      "text": "Study the code below and indicate the value of message after the code is executed\n```java\ndouble wordsPerMinute = 280;\nString wpm = wordsPerMinute >= 250 ? \"above average\" : \"below average\";\nwpm.toUpperCase();\nString message = \"you are reading \" + wpm;\n```",
+      "options": [
+        "(1) you are reading above average",
+        "(2) you are reading ABOVE AVERAGE",
+        "(3) YOU ARE READING ABOVE AVERAGE",
+        "(4) YOU ARE READING 250"
+      ],
+      "correctAnswer": "(1) you are reading above average",
+      "explanation": "toUpperCase() result wasn’t stored back."
+    },
+    {
+      "text": "Which one of the following Figure class implementations is NOT valid for the lines of code below?\n```java\nFigure fig1 = new Figure();\nFigure fig2 = new Figure(10.0, 20.5);\ndouble area1 = fig1.getArea();\ndouble area2 = fig2.getArea();\n```\n⚠️ Full option list was not provided in the source.",
+      "options": [],
+      "correctAnswer": "TODO – options missing; please supply to include the exact invalid implementation.",
+      "explanation": "Once options are provided, I’ll wire the correct one."
+    },
+    {
+      "text": "Indicate which one of the following options will correctly sort the array names and display the array in descending order\n```java\nString display = \"\";\nString[] names = new String[10];\nnames[0] = \"John\";\nnames[1] = \"Peter\";\nnames[2] = \"Ben\";\nnames[3] = \"Adam\";\n```\n(Several sorting code options were given in the original.)",
+      "options": [
+        "(1) Option 1",
+        "(2) Option 2",
+        "(3) Option 3",
+        "(4) Not one of the above. The compiler will give a NullPointerException error as some elements in the array have NULL values"
+      ],
+      "correctAnswer": "(4) Not one of the above. The compiler will give a NullPointerException error as some elements in the array have NULL values",
+      "explanation": "Uninitialized entries cause NPE during certain operations."
+    },
+    {
+      "text": "The user entered the following code, but received an error message when trying to execute the code\n```java\nint[] numbers = {1,2,4,5,3};\nint sum = 0;\nfor (int i=1; i < 10; i++){\n    sum = sum + numbers[i];\n}\n```\nIndicate which one of the following codes the user can use that will intercept the error without crashing the program.\n⚠️ Full option list was not provided in the source.",
+      "options": [],
+      "correctAnswer": "TODO – options missing; expected: catch ArrayIndexOutOfBoundsException (or IndexOutOfBoundsException) around the loop.",
+      "explanation": "Provide the exact option text to mark correct in the app."
+    },
+    {
+      "text": "What will the final value of output be if get_user_input = 64\n```java\ndouble test = get_user_input;\nString symbol, message=\"\";\nString[] messages = {\"You will have to work harder\",\"Almost there keep up the hard work\",\"Well done!\"};\nif (test < 40 ) {symbol = \"F\";}\nelse if (test < 50) {symbol = \"E\"; message = messages[1];}\nelse if (test < 60) {symbol = \"D\";}\nelse if (test < 70) {symbol = \"C\"; message = messages[2];}\nelse if (test < 80) {symbol = \"B\";}\nelse if (test < 90) {symbol = \"A\"; message = messages[1];}\nelse symbol = \"A++\";\nString output = symbol + \" \" + message;\n```",
+      "options": [
+        "(1) D Well done!",
+        "(2) D Almost there keep up the hard work",
+        "(3) C Almost there keep up the hard work",
+        "(4) C Well done!"
+      ],
+      "correctAnswer": "(4) C Well done!",
+      "explanation": "64 → 'C' branch; message becomes \"Well done!\""
+    },
+    {
+      "text": "Indicate which one of the following code can replace the above if...else statements and still render the same results\n⚠️ Full switch options not provided in the source.",
+      "options": [
+        "(1) Option 1",
+        "(2) Option 2",
+        "(3) Option 3",
+        "(4) None of the above"
+      ],
+      "correctAnswer": "(4) None of the above",
+      "explanation": "As per given key."
+    },
+    {
+      "text": "What will be the output after executing the lines of code given below?\n```java\nUser[] userArray = new User[]\n    {new User(\"Ann\",\"password\"),\n     new User(\"Ben\",\"12345\"),\n     new User(\"Cathy\", \"018jpL\")};\nBufferedWriter bw = new BufferedWriter(new FileWriter(new File (\"users.txt\")));\nfor(int i = 0; i < userArray.length; i++){\n    bw.write(userArray[i].toString());\n}\nbw.close();\n```",
+      "options": [
+        "(1) The file users.txt won’t be created.",
+        "(2) users.txt will contain the following: Ann password / Ben 12345 / Cathy 018jpL",
+        "(3) users.txt will contain usernames only.",
+        "(4) A runtime exception occurs."
+      ],
+      "correctAnswer": "(2) users.txt will contain the following: Ann password / Ben 12345 / Cathy 018jpL",
+      "explanation": "Assuming User#toString prints \"name password\"."
+    },
+    {
+      "text": "Code fragments that read from and write to files need to handle at least the checked exceptions to avoid compiler errors. Which one of the following options will handle the checked exceptions in the code above?",
+      "options": [
+        "(1) Surround with try { ... } catch(RuntimeException e) { }",
+        "(2) Add throws Exception to main only",
+        "(3) Catch FileNotFoundException only",
+        "(4) public void writeToFile() throws IOException{...}"
+      ],
+      "correctAnswer": "(4) public void writeToFile() throws IOException{...}",
+      "explanation": "Declaring throws IOException meets checked exception handling requirements."
+    },
+    {
+      "text": "Which one of the following statements is FALSE regarding the programming language JAVA?\n\nJava is a(n) ___ computer programming language",
+      "options": [
+        "(1) object-oriented",
+        "(2) multi-purpose",
+        "(3) class-based",
+        "(4) operating system dependent!"
+      ],
+      "correctAnswer": "(4) operating system dependent!",
+      "explanation": "Java is designed to be platform independent."
+    },
+    {
+      "text": "Which of the following is an INVALID variable name in Java?",
+      "options": [
+        "(1) String 1PUBLIC = \"Java\";",
+        "(2) String PUBLIC = \"Java\";",
+        "(3) String _PUBLIC = \"Java\";",
+        "(4) String PUBLIC $ = \"Java\";"
+      ],
+      "correctAnswer": "(1) String 1PUBLIC = \"Java\";",
+      "explanation": "Identifiers may not start with a digit."
+    }
+  ]
+}

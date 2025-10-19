@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>StudyFlow - Test Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    >
+</head>
+<body>
+    <header id="floating-header" class="app-header">
+        <div class="header-top">
+            <div class="logo">dY"s StudyFlow</div>
+            <div class="header-top-actions">
+                <button
+                    id="open-options"
+                    class="header-options-btn"
+                    type="button"
+                    aria-label="Open tools"
+                aria-expanded="false"
+                aria-controls="options-modal"
+            >
+                <span aria-hidden="true" class="icon icon-tools">
+                    <svg viewBox="0 0 24 24" role="presentation">
+                        <path d="M5 6h6a1 1 0 0 0 0-2H5a1 1 0 0 0-1 1v12a1 1 0 0 0 2 0V6Zm9 0h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm-4-5H5a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2Zm0 5H5a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2Z" fill="currentColor"/>
+                        <path d="M13 17a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Zm0-4a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Zm0-4a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Z" fill="currentColor"/>
+                    </svg>
+                </span>
+                <span class="options-label">Tools</span>
+            </button>
+                <button
+                    id="header-toggle"
+                    class="header-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="header-sections"
+                >
+                    <span class="sr-only">Toggle header tools</span>
+                    <span aria-hidden="true" class="icon icon-hamburger">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M4 7h16a1 1 0 0 0 0-2H4a1 1 0 1 0 0 2zm16 4H4a1 1 0 1 0 0 2h16a1 1 0 0 0 0-2zm0 6H4a1 1 0 1 0 0 2h16a1 1 0 0 0 0-2z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div id="header-sections" class="header-sections">
+            <div class="header-main">
+                <div class="test-select-group">
+                    <label class="input-label" for="test-select">Choose a Test</label>
+                    <select id="test-select"></select>
+                </div>
+                <div class="header-progress">
+                    <span class="progress-label">Progress</span>
+                    <div id="floating-progress" class="progress-group">
+                        <div class="progress-bar-container">
+                            <div id="progress-bar"></div>
+                        </div>
+                        <span id="progress-text">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="timer-settings">
+                    <label class="input-label" for="timer-input">Timer</label>
+                    <div class="timer-input-group">
+                        <input type="number" id="timer-input" value="30" min="0" aria-describedby="timer-help">
+                        <span class="timer-unit">min</span>
+                    </div>
+                    <p id="timer-help" class="assistive-text">Adjust anytime during a test.</p>
+                </div>
+                <div class="timer-display">⏱️ <span id="floating-time">00:00</span></div>
+                <div class="header-actions">
+                    <button id="start-test" class="btn btn-primary">Start Test</button>
+                    <button id="pause-timer" class="btn btn-secondary">Pause Timer</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <div class="page-container">
+            <h1 class="page-title">StudyFlow Test Simulator</h1>
+            <section class="mode-tabs" role="tablist" aria-label="StudyFlow views">
+                <button
+                    id="mode-tab-test"
+                    class="mode-tab-button active"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="mode-panel-test"
+                    data-mode="test"
+                >
+                    Test Mode
+                </button>
+                <button
+                    id="mode-tab-study"
+                    class="mode-tab-button"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="mode-panel-test"
+                    data-mode="study"
+                >
+                    Study Mode
+                </button>
+                <button
+                    id="mode-tab-flashcards"
+                    class="mode-tab-button"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="mode-panel-flashcards"
+                    data-mode="flashcards"
+                >
+                    Flashcards
+                </button>
+            </section>
+
+            <section id="mode-panel-test" class="mode-panel active" role="tabpanel" aria-labelledby="mode-tab-test">
+                <div class="test-content">
+                    <main id="questions-container" aria-live="polite"></main>
+
+                    <div id="pagination-controls" class="pagination hidden">
+                        <button id="prev-page" class="btn btn-secondary">Previous</button>
+                        <span id="page-info"></span>
+                        <button id="next-page" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="mode-panel-flashcards"
+                class="mode-panel"
+                role="tabpanel"
+                aria-labelledby="mode-tab-flashcards"
+                aria-hidden="true"
+            >
+                <div class="card-block">
+                    <h2>Flashcards</h2>
+                    <p class="panel-description">Tap a card to reveal the answer.</p>
+                    <div id="flashcards-grid" class="flashcards-grid"></div>
+                    <div id="flashcards-empty" class="empty-state">Load a test to generate flashcards.</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="modal-backdrop" class="modal-backdrop hidden"></div>
+    <div
+        id="options-modal"
+        class="modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="options-modal-title"
+    >
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="options-modal-title">StudyFlow Tools</h2>
+                <button id="close-options" class="modal-close" type="button" aria-label="Close tools">&times;</button>
+            </header>
+
+            <section class="modal-summary">
+                <p class="modal-tagline">Plan your session, stay focused, and finish strong.</p>
+                <div class="status-chips" aria-label="Progress overview">
+                    <article class="status-chip">
+                        <span class="chip-icon" aria-hidden="true">🔥</span>
+                        <div class="chip-body">
+                            <span class="chip-label">Streak</span>
+                            <span id="streak-value" class="chip-value">0 days</span>
+                        </div>
+                    </article>
+                    <article class="status-chip">
+                        <span class="chip-icon" aria-hidden="true">⭐</span>
+                        <div class="chip-body">
+                            <span class="chip-label">XP</span>
+                            <span id="xp-value" class="chip-value">0</span>
+                        </div>
+                    </article>
+                    <article class="status-chip">
+                        <span class="chip-icon" aria-hidden="true">🏆</span>
+                        <div class="chip-body">
+                            <span class="chip-label">Badges</span>
+                            <span id="badge-value" class="chip-value">0 earned</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="modal-section" aria-label="Test controls">
+                <div class="focus-wrapper">
+                    <div class="focus-toolbar">
+                        <div class="toolbar-group">
+                            <label class="input-label" for="pass-mark-input">Pass Mark (%)</label>
+                            <input type="number" id="pass-mark-input" value="50" min="0" max="100">
+                        </div>
+                        <div class="toolbar-group">
+                            <label class="input-label" for="study-mode-toggle">Study Mode</label>
+                            <p class="assistive-text">Reveal answers instantly to learn as you go.</p>
+                            <input type="checkbox" id="study-mode-toggle">
+                        </div>
+                        <div class="toolbar-group toolbar-actions">
+                            <button id="dark-mode-toggle" class="btn btn-tertiary">Toggle Dark Mode</button>
+                            <label class="file-upload btn btn-secondary" for="upload-test-input">
+                                Upload Test
+                                <input type="file" id="upload-test-input" accept=".json">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="modal-section" aria-label="Bookmark controls">
+                <div class="bookmark-bar">
+                    <div class="bookmark-status">
+                        <span class="bookmark-label">Bookmarks</span>
+                        <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
+                    </div>
+                    <button id="cycle-bookmarks" class="btn btn-secondary">Jump to Next Bookmark</button>
+                </div>
+            </section>
+
+            <section class="modal-section" aria-label="Stats overview">
+                <div class="stats-layout">
+                    <div class="card-block">
+                        <h2>Daily Overview</h2>
+                        <div class="stat-summary">
+                            <div class="stat-row"><span>Tests Completed</span><span id="stats-tests-taken">0</span></div>
+                            <div class="stat-row"><span>Passed</span><span id="stats-tests-passed">0</span></div>
+                            <div class="stat-row"><span>Failed</span><span id="stats-tests-failed">0</span></div>
+                            <div class="stat-row"><span>Abandoned</span><span id="stats-tests-abandoned">0</span></div>
+                        </div>
+                        <button id="stats-reset" class="btn btn-secondary">Reset Today's Stats</button>
+                    </div>
+                    <div id="score-container" class="card-block hidden" style="display: none;">
+                        <h2>Your Score</h2>
+                        <p class="score-value" id="score">0</p>
+                        <p id="result-message"></p>
+                        <button class="btn btn-primary" id="download-report">Download Report</button>
+                    </div>
+                    <div class="card-block">
+                        <h2>Recent Activity</h2>
+                        <div class="stat-history">
+                            <div>
+                                <h3>Passed Tests</h3>
+                                <ul id="stats-passed-list" class="history-list"></ul>
+                            </div>
+                            <div>
+                                <h3>Failed Tests</h3>
+                                <ul id="stats-failed-list" class="history-list"></ul>
+                            </div>
+                            <div>
+                                <h3>Abandoned Tests</h3>
+                                <ul id="stats-abandoned-list" class="history-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="floating-actions" class="floating-actions">
+        <button
+            id="floating-actions-toggle"
+            class="floating-actions-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="floating-actions-panel"
+        >
+            <span class="sr-only">Toggle quick actions</span>
+            <span aria-hidden="true" class="icon icon-gear">
+                <svg viewBox="0 0 24 24" role="presentation">
+                    <path d="M19.14 12.94a7.979 7.979 0 0 0 .06-.94 7.979 7.979 0 0 0-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.05 7.05 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.88 2h-3.76a.5.5 0 0 0-.5.42l-.36 2.54a7.05 7.05 0 0 0-1.63.94l-2.39-.96a.5.5 0 0 0-.61.22L3.71 8.48a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.13.23.4.32.61.22l2.39-.96c.5.39 1.05.71 1.63.94l.36 2.54a.5.5 0 0 0 .5.42h3.76a.5.5 0 0 0 .5-.42l.36-2.54c.58-.23 1.13-.55 1.63-.94l2.39.96c.22.1.48 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58ZM12 15.25A3.25 3.25 0 1 1 12 8.75a3.25 3.25 0 0 1 0 6.5Z" fill="currentColor"/>
+                </svg>
+            </span>
+        </button>
+        <div id="floating-actions-panel" class="floating-actions-panel">
+            <button id="submit-test" class="btn btn-primary">Submit Test</button>
+            <button id="reset-test" class="btn btn-secondary">Reset Test</button>
+            <button id="download-results" class="btn btn-tertiary">Download Results as PDF</button>
+        </div>
+    </div>
+
+    <button id="back-to-top" title="Go to top">&#8679;</button>
+
+    <div id="achievement-toast" class="hidden"></div>
+
+    <footer class="app-footer">StudyFlow © 2025 — Stay consistent, keep learning.</footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
