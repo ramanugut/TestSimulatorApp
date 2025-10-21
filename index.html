@@ -123,6 +123,32 @@
 
             <section id="mode-panel-test" class="mode-panel active" role="tabpanel" aria-labelledby="mode-tab-test">
                 <div class="test-content">
+                    <div
+                        id="result-banner"
+                        class="result-banner hidden"
+                        role="status"
+                        aria-live="polite"
+                        tabindex="-1"
+                    >
+                        <div class="result-main">
+                            <div id="result-emoji" class="result-emoji" aria-hidden="true">🎉</div>
+                            <div class="result-text">
+                                <h2 id="result-headline" class="result-headline">Great job!</h2>
+                                <p id="result-summary" class="result-summary"></p>
+                            </div>
+                        </div>
+                        <div class="result-actions">
+                            <button id="result-restart" class="btn btn-primary" type="button">
+                                Restart Test
+                            </button>
+                            <button id="result-review-failed" class="btn btn-secondary" type="button">
+                                Review Missed Questions
+                            </button>
+                            <button id="result-review-all" class="btn btn-tertiary" type="button">
+                                Review All Questions
+                            </button>
+                        </div>
+                    </div>
                     <main id="questions-container" aria-live="polite"></main>
                     <div id="filter-empty-state" class="empty-state hidden">
                         No questions match your current filter.
