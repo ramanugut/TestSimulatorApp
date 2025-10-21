@@ -806,6 +806,15 @@ textarea:focus {
     animation: confetti-drift 6s linear infinite;
 }
 
+body.dark-mode .result-banner--pass {
+    color: #064e3b;
+}
+
+body.dark-mode .result-banner--pass .result-headline,
+body.dark-mode .result-banner--pass .result-summary {
+    color: inherit;
+}
+
 .result-banner--fail {
     border-color: #fca5a5;
     background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
