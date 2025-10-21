@@ -1170,6 +1170,7 @@ const testFiles = [
 
         question.options.forEach((option) => {
           const optionElement = document.createElement("li");
+          optionElement.classList.add("option-item");
           const optionId = `question-${actualIndex}-option-${option}`;
 
           // Use checkbox for multiple correct answers, radio button otherwise
@@ -1195,14 +1196,19 @@ const testFiles = [
               }
               if (event.target.checked) {
                 userAnswers[actualIndex].push(event.target.value);
+                optionElement.classList.add("selected");
               } else {
                 userAnswers[actualIndex] = userAnswers[actualIndex].filter(
                   (value) => value !== event.target.value
                 );
+                optionElement.classList.remove("selected");
               }
             } else {
               // Handle single selection
               userAnswers[actualIndex] = event.target.value;
+              const optionItems = optionsList.querySelectorAll("li");
+              optionItems.forEach((item) => item.classList.remove("selected"));
+              optionElement.classList.add("selected");
             }
 
             updateProgress();
@@ -1220,6 +1226,10 @@ const testFiles = [
             input.checked = userAnswers[actualIndex].includes(option);
           } else if (userAnswers[actualIndex] === option) {
             input.checked = true;
+          }
+
+          if (input.checked) {
+            optionElement.classList.add("selected");
           }
 
           if (testSubmitted) {
@@ -1860,6 +1870,10 @@ const testFiles = [
             input.value.trim().toLowerCase();
         }
         input.disabled = true; // Disable input to prevent changes after submission
+        const optionItem = input.closest("li");
+        if (optionItem) {
+          optionItem.classList.toggle("selected", input.checked);
+        }
       });
     } else {
       // Handle text-based answers
