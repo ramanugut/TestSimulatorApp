@@ -4,9 +4,9 @@
     {
       "text": "How can we stop the services in android?",
       "options": [
-        "By using the stopSelf() and stopService() method",
-        "By using the finish() method",
-        "By using system.exit() method",
+        "By using the <code class=\"inline-code\">stopSelf()</code> and <code class=\"inline-code\">stopService()</code> method",
+        "By using the <code class=\"inline-code\">finish()</code> method",
+        "By using <code class=\"inline-code\">System.exit()</code> method",
         "None of the options"
       ],
       "correctAnswer": "By using the stopSelf() and stopService() method",
@@ -37,10 +37,10 @@
     {
       "text": "Which of the following is the first callback method that is invoked by the system during an activity life-cycle?",
       "options": [
-        "onClick() method",
-        "onCreate() method",
-        "onStart() method",
-        "onRestart() method"
+        "<code class=\"inline-code\">onClick()</code> method",
+        "<code class=\"inline-code\">onCreate()</code> method",
+        "<code class=\"inline-code\">onStart()</code> method",
+        "<code class=\"inline-code\">onRestart()</code> method"
       ],
       "correctAnswer": "onCreate() method",
       "explanation": "onCreate() is called when the activity is first created."
@@ -125,10 +125,10 @@
     {
       "text": "All layout classes are the subclasses of:",
       "options": [
-        "android.view.View",
-        "android.view.ViewGroup",
-        "android.widget",
-        "android.method"
+        "<code class=\"inline-code\">android.view.View</code>",
+        "<code class=\"inline-code\">android.view.ViewGroup</code>",
+        "<code class=\"inline-code\">android.widget</code>",
+        "<code class=\"inline-code\">android.method</code>"
       ],
       "correctAnswer": "android.view.ViewGroup",
       "explanation": "Layouts are ViewGroups that contain and position child Views."
@@ -158,10 +158,10 @@
     {
       "text": "The following Android code displays a Toast message: Toast.makeText(this, \"Message saved as draft\", Toast.xyz).show(). Which parameter correctly replaces Toast.xyz?",
       "options": [
-        "Toast.LENGTH_LONG",
-        "Toast.shortTime",
-        "Toast.sec.4",
-        "Toast.Time.4s"
+        "<code class=\"inline-code\">Toast.LENGTH_LONG</code>",
+        "<code class=\"inline-code\">Toast.shortTime</code>",
+        "<code class=\"inline-code\">Toast.sec.4</code>",
+        "<code class=\"inline-code\">Toast.Time.4s</code>"
       ],
       "correctAnswer": "Toast.LENGTH_LONG",
       "explanation": "Valid duration constants are Toast.LENGTH_SHORT and Toast.LENGTH_LONG."
@@ -180,10 +180,10 @@
     {
       "text": "Which of the following files has the correct name for a layout design file of an activity in an Android app?",
       "options": [
-        "MainActivity.java or MainActivity.kt",
-        "activity_main.xml",
-        "Sample.class",
-        "Gradle.sql"
+        "<code class=\"inline-code\">MainActivity.java</code> or <code class=\"inline-code\">MainActivity.kt</code>",
+        "<code class=\"inline-code\">activity_main.xml</code>",
+        "<code class=\"inline-code\">Sample.class</code>",
+        "<code class=\"inline-code\">Gradle.sql</code>"
       ],
       "correctAnswer": "activity_main.xml",
       "explanation": "Layout XML files follow snake_case convention like activity_main.xml."
@@ -193,7 +193,7 @@
       "options": [
         "It only saves changes in a text field.",
         "It sets the number of clicks the user presses to run the application.",
-        "The system executes the code you write in setOnClickListener({ }) after the user presses the button.",
+        "The system executes the code you write in <code class=\"inline-code\">setOnClickListener({ })</code> after the user presses the button.",
         "It sets the time and date of run process."
       ],
       "correctAnswer": "The system executes the code you write in setOnClickListener({ }) after the user presses the button.",
@@ -224,10 +224,10 @@
     {
       "text": "If you have an Android application having 10 activities, and you want to specify one of them as launcher (startup) activity, which file configures it?",
       "options": [
-        "MainActivity.java or MainActivity.kt",
-        "AndroidManifest.xml",
-        "activity_main.xml",
-        "strings.xml"
+        "<code class=\"inline-code\">MainActivity.java</code> or <code class=\"inline-code\">MainActivity.kt</code>",
+        "<code class=\"inline-code\">AndroidManifest.xml</code>",
+        "<code class=\"inline-code\">activity_main.xml</code>",
+        "<code class=\"inline-code\">strings.xml</code>"
       ],
       "correctAnswer": "AndroidManifest.xml",
       "explanation": "The launcher is declared via intent filters in AndroidManifest.xml."
@@ -249,7 +249,7 @@
         "This permission tag allows this app to connect to the Internet.",
         "This permission tag allows other apps to make remote connection to this app.",
         "This permission tag allows this app to connect to its SQLite database.",
-        "This permission tag has been written in the wrong location; it must be written inside <application> tag."
+        "This permission tag has been written in the wrong location; it must be written inside the <code class=\"inline-code\">&lt;application&gt;</code> tag."
       ],
       "correctAnswer": "This permission tag allows this app to connect to the Internet.",
       "explanation": "INTERNET permission is declared at manifest root and enables network access."
@@ -269,9 +269,9 @@
       "text": "To capture a user’s location, what two main objects are utilized from Android SDK?",
       "options": [
         "LocationManager and LocationListener",
-        "Google.java and Maps.class",
-        "Link.object and map.object",
-        "Maps.Google.class and SQLMaps.object"
+        "<code class=\"inline-code\">Google.java</code> and <code class=\"inline-code\">Maps.class</code>",
+        "<code class=\"inline-code\">Link.object</code> and <code class=\"inline-code\">map.object</code>",
+        "<code class=\"inline-code\">Maps.Google.class</code> and <code class=\"inline-code\">SQLMaps.object</code>"
       ],
       "correctAnswer": "LocationManager and LocationListener",
       "explanation": "Use LocationManager to request updates delivered to a LocationListener."
@@ -290,10 +290,10 @@
     {
       "text": "Which method sets the Android notification title?",
       "options": [
-        "setContentTitle()",
-        "NotificationTitle()",
-        "setTitle()",
-        "Notification_setTitle()"
+        "<code class=\"inline-code\">setContentTitle()</code>",
+        "<code class=\"inline-code\">NotificationTitle()</code>",
+        "<code class=\"inline-code\">setTitle()</code>",
+        "<code class=\"inline-code\">Notification_setTitle()</code>"
       ],
       "correctAnswer": "setContentTitle()",
       "explanation": "NotificationCompat.Builder#setContentTitle sets the title."
@@ -301,10 +301,10 @@
     {
       "text": "How do you determine the number of elements in an array?\n\nint buses[] = new int[5];",
       "options": [
-        "buses.length",
-        "buses.length()",
-        "buses.size",
-        "buses.size()"
+        "<code class=\"inline-code\">buses.length</code>",
+        "<code class=\"inline-code\">buses.length()</code>",
+        "<code class=\"inline-code\">buses.size</code>",
+        "<code class=\"inline-code\">buses.size()</code>"
       ],
       "correctAnswer": "buses.length",
       "explanation": "In Java, arrays use the length field (no parentheses)."
@@ -312,9 +312,9 @@
     {
       "text": "What will be the output?\n\nString[] nums = new String[] { \"1\", \"9\", \"10\" };\nArrays.sort(nums);\nSystem.out.println(Arrays.toString(nums));",
       "options": [
-        "[1, 9, 10]",
-        "[1, 10, 9]",
-        "[10, 1, 9]",
+        "<code class=\"inline-code\">[1, 9, 10]</code>",
+        "<code class=\"inline-code\">[1, 10, 9]</code>",
+        "<code class=\"inline-code\">[10, 1, 9]</code>",
         "None of the above"
       ],
       "correctAnswer": "[1, 10, 9]",
@@ -554,10 +554,10 @@
     {
       "text": "Which class/method should you use if you want to convert the string \"123\" to the number 123?",
       "options": [
-        "parseInt()",
-        "strInt()",
-        "convertStr()",
-        "convertNum()"
+        "<code class=\"inline-code\">parseInt()</code>",
+        "<code class=\"inline-code\">strInt()</code>",
+        "<code class=\"inline-code\">convertStr()</code>",
+        "<code class=\"inline-code\">convertNum()</code>"
       ],
       "correctAnswer": "parseInt()",
       "explanation": "Use Integer.parseInt(\"123\") to get 123."
@@ -565,10 +565,10 @@
     {
       "text": "What method returns the text label from a selected Spinner item?",
       "options": [
-        "getItem()",
-        "getSelectedItem()",
-        "getSpinnerItem()",
-        "selectedItem()"
+        "<code class=\"inline-code\">getItem()</code>",
+        "<code class=\"inline-code\">getSelectedItem()</code>",
+        "<code class=\"inline-code\">getSpinnerItem()</code>",
+        "<code class=\"inline-code\">selectedItem()</code>"
       ],
       "correctAnswer": "getSelectedItem()",
       "explanation": "Spinner#getSelectedItem() returns the selected item object."
@@ -576,10 +576,10 @@
     {
       "text": "Choose the option that completes the code so that the text is displayed in a TextView named displayText.\n\nString sports = \"Football\";\nString fall = sports + \" season begins in the Fall.\";\n---- code goes here ----",
       "options": [
-        "displayText.getText(sports+fall);",
-        "displayText = fall.getText();",
-        "setText(fall).displayText;",
-        "displayText.setText(fall);"
+        "<code class=\"inline-code\">displayText.getText(sports+fall);</code>",
+        "<code class=\"inline-code\">displayText = fall.getText();</code>",
+        "<code class=\"inline-code\">setText(fall).displayText;</code>",
+        "<code class=\"inline-code\">displayText.setText(fall);</code>"
       ],
       "correctAnswer": "displayText.setText(fall);",
       "explanation": "Use setText() on the TextView instance."
@@ -609,10 +609,10 @@
     {
       "text": "Where should you place an image file that will be used as a background image for a TextView control?",
       "options": [
-        "res\\images folder",
+        "<code class=\"inline-code\">res\\images</code> folder",
         "manifests folder",
-        "res\\drawable folder",
-        "values\\backgrounds folder"
+        "<code class=\"inline-code\">res\\drawable</code> folder",
+        "<code class=\"inline-code\">values\\backgrounds</code> folder"
       ],
       "correctAnswer": "res\\drawable folder",
       "explanation": "Drawable resources belong in res/drawable."
@@ -620,10 +620,10 @@
     {
       "text": "Which is the correct statement to make a button named btnStart visible?",
       "options": [
-        "btnStart.setVisibility(Show.VIEW);",
-        "btnStart.setVisibility(Show.VISIBLE);",
-        "btnStart.setVisibility(View.SHOW);",
-        "btnStart.setVisibility(View.VISIBLE);"
+        "<code class=\"inline-code\">btnStart.setVisibility(Show.VIEW);</code>",
+        "<code class=\"inline-code\">btnStart.setVisibility(Show.VISIBLE);</code>",
+        "<code class=\"inline-code\">btnStart.setVisibility(View.SHOW);</code>",
+        "<code class=\"inline-code\">btnStart.setVisibility(View.VISIBLE);</code>"
       ],
       "correctAnswer": "btnStart.setVisibility(View.VISIBLE);",
       "explanation": "Use View.VISIBLE to show a View."
@@ -664,10 +664,10 @@
     {
       "text": "Which statement completes the code to instantiate the ImageView control named imgTween?\n\nImageView imgRotate = (ImageView) ...",
       "options": [
-        "findViewById(R.id.imgTween);",
-        "findViewById(id.imgTween);",
-        "findViewById(imgTween);",
-        "findViewById(R.imgTween.id);"
+        "<code class=\"inline-code\">findViewById(R.id.imgTween);</code>",
+        "<code class=\"inline-code\">findViewById(id.imgTween);</code>",
+        "<code class=\"inline-code\">findViewById(imgTween);</code>",
+        "<code class=\"inline-code\">findViewById(R.imgTween.id);</code>"
       ],
       "correctAnswer": "findViewById(R.id.imgTween);",
       "explanation": "Resource IDs are referenced as R.id.someId."
