@@ -16,7 +16,8 @@
     --accent-color: #10b981;
     --accent-strong: #059669;
     --accent-secondary: #0ea5e9;
-    --selected-option-color: #f97316;
+   /* --selected-option-color: #f97316; */
+    --selected-option-color: #3cfbeb;
     --danger-color: #ef4444;
     --warning-color: #f59e0b;
     --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
@@ -53,7 +54,8 @@ body.dark-mode {
     --muted-text: #cbd5f5;
     --border-color: #1f2937;
     --shadow: 0 12px 40px rgba(8, 15, 30, 0.45);
-    --selected-option-color: #fb923c;
+    /* --selected-option-color: #fb923c; */
+    --selected-option-color: #3cfbeb;
 }
 
 body.dark-mode .btn-tertiary {
