@@ -273,6 +273,10 @@ document.addEventListener("DOMContentLoaded", function () {
       resultReviewFailedButton.disabled = missedCount === 0;
     }
 
+    if (typeof window !== "undefined" && typeof window.scrollTo === "function") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     if (typeof resultBanner.scrollIntoView === "function") {
       resultBanner.scrollIntoView({ behavior: "smooth", block: "start" });
     }
