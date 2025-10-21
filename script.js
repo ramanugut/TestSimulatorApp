@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Global variables
   let questions = [];
+  let originalQuestions = [];
   let currentPage = 1;
   const questionsPerPage = 10;
   let userAnswers = {};
@@ -1062,11 +1063,58 @@ const testFiles = [
   //************************ SECTION 5: QUESTION LOADING ************************//
 
   // Load questions from selected file
+  function cloneQuestionData(question) {
+    if (!question || typeof question !== "object") {
+      return question;
+    }
+
+    const clonedQuestion = { ...question };
+
+    if (Array.isArray(question.options)) {
+      clonedQuestion.options = [...question.options];
+    }
+
+    if (Array.isArray(question.correctAnswer)) {
+      clonedQuestion.correctAnswer = [...question.correctAnswer];
+    }
+
+    return clonedQuestion;
+  }
+
+  function cloneQuestionsData(rawQuestions) {
+    if (!Array.isArray(rawQuestions)) {
+      return [];
+    }
+    return rawQuestions.map((question) => cloneQuestionData(question));
+  }
+
+  function prepareQuestionsForSession(baseQuestions) {
+    if (!Array.isArray(baseQuestions)) {
+      return [];
+    }
+
+    const questionsWithShuffledOptions = baseQuestions.map((question) => {
+      const clonedQuestion = cloneQuestionData(question);
+      if (Array.isArray(clonedQuestion.options)) {
+        clonedQuestion.options = shuffleArray([...clonedQuestion.options]);
+      }
+      return clonedQuestion;
+    });
+
+    return shuffleArray(questionsWithShuffledOptions);
+  }
+
   function loadQuestions(filename, customData = null) {
     currentTestFile = filename;
-    if (customData) {
-      questions = shuffleArray(customData.questions || []);
+
+    const initializeFromQuestions = (rawQuestions) => {
+      originalQuestions = cloneQuestionsData(rawQuestions || []);
+      questions = prepareQuestionsForSession(originalQuestions);
       initializeTest();
+    };
+
+    if (customData) {
+      initializeFromQuestions(customData.questions);
     } else {
       fetch(filename)
         .then((response) => {
@@ -1076,11 +1124,12 @@ const testFiles = [
           return response.json();
         })
         .then((data) => {
-          questions = shuffleArray(data.questions || []);
-          initializeTest();
+          initializeFromQuestions(data.questions);
         })
         .catch((error) => {
           console.error("Error loading questions:", error);
+          originalQuestions = [];
+          questions = [];
           questionsContainer.innerHTML = `<p>Unable to load questions. Please try again or select another test.</p>`;
           renderFlashcards();
         });
@@ -2055,6 +2104,9 @@ const testFiles = [
     userAnswers = {};
     bookmarkedQuestions = new Set();
     bookmarkCycleIndex = 0;
+    if (originalQuestions.length > 0) {
+      questions = prepareQuestionsForSession(originalQuestions);
+    }
     currentPage = 1;
     renderQuestions();
     updatePaginationControls();

@@ -951,6 +951,23 @@ textarea:focus {
     align-items: center;
 }
 
+.options li input[type="radio"],
+.options li input[type="checkbox"] {
+    accent-color: var(--accent-secondary);
+}
+
+.options li:has(input:checked) {
+    border-color: var(--accent-secondary);
+    background: rgba(14, 165, 233, 0.12);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.08);
+}
+
+body.dark-mode .options li:has(input:checked) {
+    background: rgba(14, 165, 233, 0.24);
+    border-color: rgba(56, 189, 248, 0.65);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
+}
+
 .options li:hover {
     border-color: var(--accent-color);
 }
