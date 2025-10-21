@@ -1334,37 +1334,41 @@ const testFiles = [
             `input[type="${inputType}"]`
           );
           input.addEventListener("change", (event) => {
-            if (isMultipleCorrect) {
-              // Handle multiple selections
-              if (!Array.isArray(userAnswers[actualIndex])) {
-                userAnswers[actualIndex] = [];
-              }
-              if (event.target.checked) {
-                userAnswers[actualIndex].push(event.target.value);
-                optionElement.classList.add("selected");
-              } else {
-                userAnswers[actualIndex] = userAnswers[actualIndex].filter(
-                  (value) => value !== event.target.value
-                );
-                optionElement.classList.remove("selected");
-              }
-            } else {
-              // Handle single selection
-              userAnswers[actualIndex] = event.target.value;
-              const optionItems = optionsList.querySelectorAll("li");
-              optionItems.forEach((item) => item.classList.remove("selected"));
+          if (isMultipleCorrect) {
+            // Handle multiple selections
+            if (!Array.isArray(userAnswers[actualIndex])) {
+              userAnswers[actualIndex] = [];
+            }
+            if (event.target.checked) {
+              userAnswers[actualIndex].push(event.target.value);
               optionElement.classList.add("selected");
+            } else {
+              userAnswers[actualIndex] = userAnswers[actualIndex].filter(
+                (value) => value !== event.target.value
+              );
+              optionElement.classList.remove("selected");
             }
+          } else {
+            // Handle single selection
+            userAnswers[actualIndex] = event.target.value;
+            const optionItems = optionsList.querySelectorAll("li");
+            optionItems.forEach((item) => item.classList.remove("selected"));
+            optionElement.classList.add("selected");
+          }
 
-            updateProgress();
-            if (!timerStarted) {
-              startTimer();
+          updateProgress();
+          if (!isStudyMode && !timerStarted) {
+            startTimer();
+            if (startTestButton) {
               startTestButton.disabled = true;
-              submitButton.disabled = false;
-              testInProgress = true;
             }
-            saveProgress();
-          });
+            if (submitButton) {
+              submitButton.disabled = false;
+            }
+            testInProgress = true;
+          }
+          saveProgress();
+        });
 
           // Restore user selections
           if (isMultipleCorrect && Array.isArray(userAnswers[actualIndex])) {
@@ -1395,10 +1399,14 @@ const testFiles = [
         textareaElement.addEventListener("input", (event) => {
           userAnswers[actualIndex] = event.target.value;
           updateProgress();
-          if (!timerStarted) {
+          if (!isStudyMode && !timerStarted) {
             startTimer();
-            startTestButton.disabled = true;
-            submitButton.disabled = false;
+            if (startTestButton) {
+              startTestButton.disabled = true;
+            }
+            if (submitButton) {
+              submitButton.disabled = false;
+            }
             testInProgress = true;
           }
           saveProgress();
@@ -1612,6 +1620,20 @@ const testFiles = [
     checkBookmarkAchievements();
   }
 
+  function scrollToQuestionsTop() {
+    if (!questionsContainer) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+    const containerTop =
+      questionsContainer.getBoundingClientRect().top + window.scrollY;
+    const targetTop = Math.max(containerTop - headerHeight - 16, 0);
+
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
+  }
+
   function checkBookmarkAchievements() {
     if (bookmarkedQuestions.size >= 5) {
       unlockAchievement("bookmark-hero");
@@ -1667,6 +1689,7 @@ const testFiles = [
         currentPage--;
         renderQuestions();
         updatePaginationControls();
+        scrollToQuestionsTop();
       }
     });
   }
@@ -1682,6 +1705,7 @@ const testFiles = [
         currentPage++;
         renderQuestions();
         updatePaginationControls();
+        scrollToQuestionsTop();
       }
     });
   }

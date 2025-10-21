@@ -17,7 +17,7 @@
     --accent-strong: #059669;
     --accent-secondary: #0ea5e9;
    /* --selected-option-color: #fb923c ; */
-    --selected-option-color: #3cfbeb;
+    --selected-option-color: #2dd4bf;
     --danger-color: #ef4444;
     --warning-color: #f59e0b;
     --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
@@ -55,7 +55,7 @@ body.dark-mode {
     --border-color: #1f2937;
     --shadow: 0 12px 40px rgba(8, 15, 30, 0.45);
     /* --selected-option-color: #fb923c; */
-    --selected-option-color: #3cfbeb;
+    --selected-option-color: #2dd4bf;
 }
 
 body.dark-mode .btn-tertiary {
@@ -971,9 +971,9 @@ body.dark-mode .result-banner--pass .result-summary {
 }
 
 .options li.selected {
-    border-color: rgba(249, 115, 22, 0.55);
-    background: linear-gradient(90deg, rgba(251, 191, 36, 0.35), rgba(253, 186, 116, 0.2));
-    box-shadow: 0 10px 24px rgba(249, 115, 22, 0.18);
+    border-color: rgba(14, 165, 233, 0.55);
+    background: linear-gradient(90deg, rgba(14, 165, 233, 0.25), rgba(16, 185, 129, 0.2));
+    box-shadow: 0 10px 24px rgba(14, 165, 233, 0.18);
 }
 
 .options li.selected label {
@@ -986,9 +986,9 @@ body.dark-mode .result-banner--pass .result-summary {
 }
 
 body.dark-mode .options li.selected {
-    border-color: rgba(249, 115, 22, 0.7);
-    background: linear-gradient(90deg, rgba(249, 115, 22, 0.35), rgba(234, 88, 12, 0.22));
-    box-shadow: 0 14px 30px rgba(249, 115, 22, 0.28);
+    border-color: rgba(14, 165, 233, 0.7);
+    background: linear-gradient(90deg, rgba(14, 165, 233, 0.35), rgba(5, 150, 105, 0.24));
+    box-shadow: 0 14px 30px rgba(14, 165, 233, 0.28);
 }
 
 body.dark-mode .options li.selected label {
