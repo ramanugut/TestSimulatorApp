@@ -990,11 +990,12 @@ const testFiles = [
   "test32.json",
    "test33a.json",
   "test33b.json",
-     "test33c.json",
+  "test33c.json",
   "test33d.json",
-     "test33e.json",
+  "test33e.json",
   "test33f.json",
-  "test34Social.json"
+  "test34Social.json",
+  "test35.json"
 ];
 
 
