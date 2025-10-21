@@ -16,6 +16,7 @@
     --accent-color: #10b981;
     --accent-strong: #059669;
     --accent-secondary: #0ea5e9;
+    --selected-option-color: #f97316;
     --danger-color: #ef4444;
     --warning-color: #f59e0b;
     --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
@@ -52,6 +53,7 @@ body.dark-mode {
     --muted-text: #cbd5f5;
     --border-color: #1f2937;
     --shadow: 0 12px 40px rgba(8, 15, 30, 0.45);
+    --selected-option-color: #fb923c;
 }
 
 body.dark-mode .btn-tertiary {
@@ -951,8 +953,35 @@ textarea:focus {
     align-items: center;
 }
 
+.options li input[type="radio"],
+.options li input[type="checkbox"] {
+    accent-color: var(--selected-option-color);
+    transition: var(--transition);
+}
+
+.options li.selected {
+    border-color: rgba(249, 115, 22, 0.55);
+    background: linear-gradient(90deg, rgba(251, 191, 36, 0.35), rgba(253, 186, 116, 0.2));
+    box-shadow: 0 10px 24px rgba(249, 115, 22, 0.18);
+}
+
+.options li.selected label {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
 .options li:hover {
     border-color: var(--accent-color);
+}
+
+body.dark-mode .options li.selected {
+    border-color: rgba(249, 115, 22, 0.7);
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.35), rgba(234, 88, 12, 0.22));
+    box-shadow: 0 14px 30px rgba(249, 115, 22, 0.28);
+}
+
+body.dark-mode .options li.selected label {
+    color: #ffedd5;
 }
 
 .text-area-input {
