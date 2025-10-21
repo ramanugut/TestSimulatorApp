@@ -1,5 +1,5 @@
 {
-  "testName": "ICT2612 Assignment 2 Quiz",
+  "testName": "ICT2612 2021 EXAM Paper",
   "questions": [
     {
       "text": "What will be the value of str after the following code execute?\n\n```java\nString str = \"7\" + 5 + 10;\n```",
