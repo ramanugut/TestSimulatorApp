@@ -700,10 +700,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const legacyCodeMatch = /^<code[^>]*>([\s\S]*?)<\/code>$/i.exec(trimmedValue);
     if (legacyCodeMatch) {
       const legacyContent = canonicalValue;
-      optionData.markup = `<pre class="code-block option-code-block"><code class="option-code">${escapeHTML(
+      optionData.markup = `<span class="option-text"><code class="inline-code option-inline-code">${escapeHTML(
         legacyContent
-      )}</code></pre>`;
-      optionData.hasCodeBlock = true;
+      )}</code></span>`;
       return optionData;
     }
 
@@ -1441,47 +1440,41 @@ const testFiles = [
           optionElement.appendChild(labelElement);
 
           input.addEventListener("change", (event) => {
-            if (isMultipleCorrect) {
-              // Handle multiple selections
-              if (!Array.isArray(userAnswers[actualIndex])) {
-                userAnswers[actualIndex] = [];
-              }
-              if (event.target.checked) {
-                if (
-                  !userAnswers[actualIndex].some((value) =>
-                    answerValuesEqual(value, event.target.value)
-                  )
-                ) {
-                  userAnswers[actualIndex].push(event.target.value);
-                }
-                optionElement.classList.add("selected");
-              } else {
-                userAnswers[actualIndex] = userAnswers[actualIndex].filter(
-                  (value) => !answerValuesEqual(value, event.target.value)
-                );
-                optionElement.classList.remove("selected");
-              }
-            } else {
-              // Handle single selection
-              userAnswers[actualIndex] = event.target.value;
-              const optionItems = optionsList.querySelectorAll("li");
-              optionItems.forEach((item) => item.classList.remove("selected"));
+          if (isMultipleCorrect) {
+            // Handle multiple selections
+            if (!Array.isArray(userAnswers[actualIndex])) {
+              userAnswers[actualIndex] = [];
+            }
+            if (event.target.checked) {
+              userAnswers[actualIndex].push(event.target.value);
               optionElement.classList.add("selected");
+            } else {
+              userAnswers[actualIndex] = userAnswers[actualIndex].filter(
+                (value) => value !== event.target.value
+              );
+              optionElement.classList.remove("selected");
             }
+          } else {
+            // Handle single selection
+            userAnswers[actualIndex] = event.target.value;
+            const optionItems = optionsList.querySelectorAll("li");
+            optionItems.forEach((item) => item.classList.remove("selected"));
+            optionElement.classList.add("selected");
+          }
 
-            updateProgress();
-            if (!isStudyMode && !timerStarted) {
-              startTimer();
-              if (startTestButton) {
-                startTestButton.disabled = true;
-              }
-              if (submitButton) {
-                submitButton.disabled = false;
-              }
-              testInProgress = true;
+          updateProgress();
+          if (!isStudyMode && !timerStarted) {
+            startTimer();
+            if (startTestButton) {
+              startTestButton.disabled = true;
             }
-            saveProgress();
-          });
+            if (submitButton) {
+              submitButton.disabled = false;
+            }
+            testInProgress = true;
+          }
+          saveProgress();
+        });
 
           // Restore user selections
           const storedAnswer = userAnswers[actualIndex];
