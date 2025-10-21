@@ -61,6 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterEmptyStateElement = document.getElementById(
     "filter-empty-state"
   );
+  const resultBanner = document.getElementById("result-banner");
+  const resultEmojiElement = document.getElementById("result-emoji");
+  const resultHeadlineElement = document.getElementById("result-headline");
+  const resultSummaryElement = document.getElementById("result-summary");
+  const resultRestartButton = document.getElementById("result-restart");
+  const resultReviewFailedButton = document.getElementById(
+    "result-review-failed"
+  );
+  const resultReviewAllButton = document.getElementById("result-review-all");
   const modeButtons = document.querySelectorAll(".mode-tab-button");
   const modePanelTest = document.getElementById("mode-panel-test");
   const modePanelFlashcards = document.getElementById("mode-panel-flashcards");
@@ -202,6 +211,87 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       scoreFilterContainer.classList.add("hidden");
     }
+  }
+
+  function hideResultBanner() {
+    if (!resultBanner) {
+      return;
+    }
+    resultBanner.classList.add("hidden");
+    resultBanner.classList.remove("result-banner--pass", "result-banner--fail");
+    if (resultEmojiElement) {
+      resultEmojiElement.classList.remove("party", "sad");
+    }
+  }
+
+  function showResultBanner({ status, scorePercent, scoreBreakdown, missedCount }) {
+    if (
+      !resultBanner ||
+      !resultEmojiElement ||
+      !resultHeadlineElement ||
+      !resultSummaryElement
+    ) {
+      return;
+    }
+
+    resultBanner.classList.remove(
+      "hidden",
+      "result-banner--pass",
+      "result-banner--fail"
+    );
+    resultEmojiElement.classList.remove("party", "sad");
+
+    const missedMessageTail =
+      missedCount === 0
+        ? ""
+        : ` ${missedCount} question${missedCount === 1 ? "" : "s"} to review.`;
+
+    if (status === "pass") {
+      resultBanner.classList.add("result-banner--pass");
+      resultEmojiElement.textContent = "🎉🥳🎊";
+      resultEmojiElement.classList.add("party");
+      resultHeadlineElement.textContent = "You Passed!";
+      const celebrationMessage =
+        missedCount === 0
+          ? "You aced every question. Incredible work!"
+          : `Amazing job—you were close!${missedMessageTail}`;
+      resultSummaryElement.textContent = `You scored ${scorePercent}% (${scoreBreakdown}). ${celebrationMessage}`;
+    } else {
+      resultBanner.classList.add("result-banner--fail");
+      resultEmojiElement.textContent = "😢";
+      resultEmojiElement.classList.add("sad");
+      resultHeadlineElement.textContent = "Keep Going!";
+      const encouragementMessage =
+        missedCount === 0
+          ? "Give it another go—you have the knowledge to improve!"
+          : `You've got this—review those tricky spots.${missedMessageTail}`;
+      resultSummaryElement.textContent = `You scored ${scorePercent}% (${scoreBreakdown}). ${encouragementMessage}`;
+    }
+
+    if (resultReviewFailedButton) {
+      resultReviewFailedButton.disabled = missedCount === 0;
+    }
+
+    if (typeof resultBanner.scrollIntoView === "function") {
+      resultBanner.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    if (typeof resultBanner.focus === "function") {
+      requestAnimationFrame(() => {
+        resultBanner.focus();
+      });
+    }
+  }
+
+  function setReviewMode(newFilter) {
+    reviewFilter = newFilter;
+    if (reviewFilterSelect) {
+      reviewFilterSelect.value = newFilter;
+    }
+    currentPage = 1;
+    renderQuestions();
+    updatePaginationControls();
+    updateBookmarkPanel();
   }
 
   function getFilteredQuestionIndexes() {
@@ -1054,6 +1144,7 @@ const testFiles = [
     scoreContainer.style.display = "none";
     resultMessageElement.textContent = "";
     resultMessageElement.classList.remove("pass-message", "fail-message");
+    hideResultBanner();
 
     renderQuestions();
     updatePaginationControls();
@@ -1540,6 +1631,30 @@ const testFiles = [
     });
   }
 
+  if (resultReviewFailedButton) {
+    resultReviewFailedButton.addEventListener("click", () => {
+      if (!testSubmitted) {
+        return;
+      }
+      setReviewMode("incorrect");
+    });
+  }
+
+  if (resultReviewAllButton) {
+    resultReviewAllButton.addEventListener("click", () => {
+      if (!testSubmitted) {
+        return;
+      }
+      setReviewMode("all");
+    });
+  }
+
+  if (resultRestartButton) {
+    resultRestartButton.addEventListener("click", () => {
+      resetTest();
+    });
+  }
+
   //************************ SECTION 8: TIMER FUNCTIONALITY ************************//
 
   function startTimer(resume = false) {
@@ -1730,27 +1845,37 @@ const testFiles = [
 
       testStats.testsTaken++;
 
-      const scoreDetail = ` (${score}/${questions.length})`;
+      const scoreBreakdown = `${score}/${questions.length}`;
+      const didPass = scorePercent >= passMark;
 
-      if (scorePercent >= passMark) {
-        resultMessageElement.textContent = `You Passed!${scoreDetail}`;
+      if (didPass) {
+        resultMessageElement.textContent = `You Passed! (${scoreBreakdown})`;
         resultMessageElement.classList.add("pass-message");
         testStats.testsPassed++;
         testStats.passedTests.push(testName);
       } else {
-        resultMessageElement.textContent = `You Failed.${scoreDetail}`;
+        resultMessageElement.textContent = `You Failed. (${scoreBreakdown})`;
         resultMessageElement.classList.add("fail-message");
         testStats.testsFailed++;
         testStats.failedTests.push(testName);
       }
+
+      const missedCount = questionResults.filter(
+        (status) => status !== "correct"
+      ).length;
+
+      showResultBanner({
+        status: didPass ? "pass" : "fail",
+        scorePercent,
+        scoreBreakdown,
+        missedCount,
+      });
 
       incrementStreakIfNeeded();
 
       // Save stats and update display
       saveStats();
       updateStatsDisplay();
-
-      openOptionsModal();
 
       evaluateAchievements(score, timeLeftAtSubmission);
 
@@ -1909,6 +2034,7 @@ const testFiles = [
       remainingTime % 60
     );
     questionsContainer.innerHTML = "";
+    hideResultBanner();
     scoreContainer.classList.add("hidden");
     scoreContainer.style.display = "none";
     submitButton.style.display = "inline-block";
