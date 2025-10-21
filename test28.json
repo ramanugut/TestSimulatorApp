@@ -26,10 +26,10 @@
     {
       "text": "The ___ package in Java provides classes for performing arithmetic operations",
       "options": [
-        "(1) java.io",
-        "(2) java.math",
-        "(3) java.lang",
-        "(4) java.util"
+        "(1) <code class=\"inline-code\">java.io</code>",
+        "(2) <code class=\"inline-code\">java.math</code>",
+        "(3) <code class=\"inline-code\">java.lang</code>",
+        "(4) <code class=\"inline-code\">java.util</code>"
       ],
       "correctAnswer": "(2) java.math",
       "explanation": "BigInteger and BigDecimal for precise arithmetic are in java.math."
@@ -37,10 +37,10 @@
     {
       "text": "In an Android application the __ class executes first in an application, regardless of where you physically place it within a project",
       "options": [
-        "(1) StartActivity()",
+        "(1) <code class=\"inline-code\">StartActivity()</code>",
         "(2) MainActivity",
-        "(3) RunActivity()",
-        "(4) ExecuteActivity()"
+        "(3) <code class=\"inline-code\">RunActivity()</code>",
+        "(4) <code class=\"inline-code\">ExecuteActivity()</code>"
       ],
       "correctAnswer": "(2) MainActivity",
       "explanation": "The launcher Activity is configured in AndroidManifest; commonly MainActivity."
@@ -158,10 +158,10 @@
     {
       "text": "Which of the following declarations will render an error?\n```java\n(1) float total = (int); 3,\n(2) float total = (double); 3,\n(3) float total = 3,\n(4) float total = (3);\n```",
       "options": [
-        "(1) float total = (int); 3,",
-        "(2) float total = (double); 3,",
-        "(3) float total = 3,",
-        "(4) float total = (3);"
+        "(1) <code class=\"inline-code\">float total = (int); 3,</code>",
+        "(2) <code class=\"inline-code\">float total = (double); 3,</code>",
+        "(3) <code class=\"inline-code\">float total = 3,</code>",
+        "(4) <code class=\"inline-code\">float total = (3);</code>"
       ],
       "correctAnswer": "(4) float total = (3);",
       "explanation": "As given in the source key."
@@ -169,10 +169,10 @@
     {
       "text": "The following variables are declared:\n```java\ndouble celsius = 10.0;\ndouble convert = 9.0/5;\ndouble fahrenheit;\n```\nWhich one of the following code will complete the above code and compile?",
       "options": [
-        "(1) try{fahrenheit = celsius * convert + 32;} catch(Exception e){}",
-        "(2) try{fahrenheit = celsius * convert + 32,} catch(Exception e,)",
-        "(3) try{fahrenheit = celsius * convert + 32,} catch(Exception e,)",
-        "(4) try{fahrenheit = celsius * convert + 32,} catch(Exception)(Exception = e,)"
+        "(1) <code class=\"inline-code\">try{fahrenheit = celsius * convert + 32;} catch(Exception e){}</code>",
+        "(2) <code class=\"inline-code\">try{fahrenheit = celsius * convert + 32,} catch(Exception e,)</code>",
+        "(3) <code class=\"inline-code\">try{fahrenheit = celsius * convert + 32,} catch(Exception e,)</code>",
+        "(4) <code class=\"inline-code\">try{fahrenheit = celsius * convert + 32,} catch(Exception)(Exception = e,)</code>"
       ],
       "correctAnswer": "(1) try{fahrenheit = celsius * convert + 32;} catch(Exception e){}",
       "explanation": "Only (1) is valid Java syntax."
@@ -213,10 +213,10 @@
     {
       "text": "Study the code below and indicate will be the best types to declare the variables pass and total\n```java\ntotal = (float) ((20.0/5)) * 100);\nif (total>=50) {pass=true;}\n```",
       "options": [
-        "(1) boolean pass = false; float total;",
-        "(2) boolean pass; int total;",
-        "(3) String pass = \"false\"; float total;",
-        "(4) String pass = \"false\"; double total;"
+        "(1) <code class=\"inline-code\">boolean pass = false; float total;</code>",
+        "(2) <code class=\"inline-code\">boolean pass; int total;</code>",
+        "(3) <code class=\"inline-code\">String pass = &quot;false&quot;; float total;</code>",
+        "(4) <code class=\"inline-code\">String pass = &quot;false&quot;; double total;</code>"
       ],
       "correctAnswer": "(1) boolean pass = false; float total;",
       "explanation": "Boolean for pass; total computed as floating-point."
@@ -235,10 +235,10 @@
     {
       "text": "Study the code below and indicate the best data types to declare the variables test and base\n```java\nname = \"John\";\ntest = (20.0 + 40 + 80)/100 * 100;\n```",
       "options": [
-        "(1) String name, int test;",
-        "(2) String name, float test;",
-        "(3) String name, double test;",
-        "(4) string name, num test;"
+        "(1) <code class=\"inline-code\">String name, int test;</code>",
+        "(2) <code class=\"inline-code\">String name, float test;</code>",
+        "(3) <code class=\"inline-code\">String name, double test;</code>",
+        "(4) <code class=\"inline-code\">string name, num test;</code>"
       ],
       "correctAnswer": "(3) String name, double test;",
       "explanation": "Expression uses floating-point; use double."
@@ -246,10 +246,10 @@
     {
       "text": "Study the code below and indicate which of the following code CANNOT be used to create the method calc\n```java\nboolean pass;\nint examMark = 50;\nint yearMark = 40;\npass = calc(examMark, yearMark);\n```",
       "options": [
-        "(1) private static boolean calc(double e, double y){ boolean a=false; double f=(e+y)/2; if(f>=50){a=true;} return a; }",
-        "(2) private static boolean calc(int e, int y){ boolean a=false; int f=(e+y)/2; if(f<50){a=false;} return a; }",
-        "(3) private static int calc(int e, int y){ int f=(e+y)/2; return f; }",
-        "(4) private static boolean calc(int e, int y){ boolean pass; int f=(e=y)/2; if(f>=50){pass=true;} else {pass=false;} return pass; }"
+        "(1) <code class=\"inline-code\">private static boolean calc(double e, double y){ boolean a=false; double f=(e+y)/2; if(f>=50){a=true;} return a; }</code>",
+        "(2) <code class=\"inline-code\">private static boolean calc(int e, int y){ boolean a=false; int f=(e+y)/2; if(f<50){a=false;} return a; }</code>",
+        "(3) <code class=\"inline-code\">private static int calc(int e, int y){ int f=(e+y)/2; return f; }</code>",
+        "(4) <code class=\"inline-code\">private static boolean calc(int e, int y){ boolean pass; int f=(e=y)/2; if(f>=50){pass=true;} else {pass=false;} return pass; }</code>"
       ],
       "correctAnswer": "(3) private static int calc(int e, int y){ int f=(e+y)/2; return f; }",
       "explanation": "Return type must be boolean to assign to 'pass'."
@@ -257,10 +257,10 @@
     {
       "text": "Which one of these is an INCORRECT array declaration?",
       "options": [
-        "(1) int arr[] = new int[5];",
-        "(2) int [] arr = new int[5];",
-        "(3) int arr[]; arr = new int[5];",
-        "(4) int arr[], arr[] = new int [5];"
+        "(1) <code class=\"inline-code\">int arr[] = new int[5];</code>",
+        "(2) <code class=\"inline-code\">int [] arr = new int[5];</code>",
+        "(3) <code class=\"inline-code\">int arr[]; arr = new int[5];</code>",
+        "(4) <code class=\"inline-code\">int arr[], arr[] = new int [5];</code>"
       ],
       "correctAnswer": "(4) int arr[], arr[] = new int [5];",
       "explanation": "Combining declarations this way is invalid as shown."
@@ -268,9 +268,9 @@
     {
       "text": "Indicate which one of the following options can replace the array declarations and the 8 statements that are used to allocate values to arrays modules and levels",
       "options": [
-        "(1) String[] modules = new String {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[] levels = new String {\"1\",\"2\",\"3\"};",
-        "(2) String[] modules = {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[] levels = {\"1\",\"2\",\"3\"};",
-        "(3) String[3] modules = {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[3] levels = {\"1\",\"2\",\"3\"};"
+        "(1) <code class=\"inline-code\">String[] modules = new String {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[] levels = new String {\"1\",\"2\",\"3\"};</code>",
+        "(2) <code class=\"inline-code\">String[] modules = {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[] levels = {\"1\",\"2\",\"3\"};</code>",
+        "(3) <code class=\"inline-code\">String[3] modules = {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[3] levels = {\"1\",\"2\",\"3\"};</code>"
       ],
       "correctAnswer": "(2) String[] modules = {\"ICT1511\",\"ICT2611\",\"ICT3611\"}; String[] levels = {\"1\",\"2\",\"3\"};",
       "explanation": "Array initializer without 'new' is valid with type on declaration."
@@ -278,8 +278,8 @@
     {
       "text": "Given arrays modules and levels of length 3, choose the correct loop to build progNode[i] = modules[i] + \" \" + levels[i]",
       "options": [
-        "(3) for (int i=0; i<0; i--){ students[i] = names[i] + \" \" + surname[i]; } for (int i=0; i<3; j--){ progNode[i] = modules[i] + \" \" + levels[i]; }",
-        "(4) for (int i=0; i<3; ++i){ progNode[i] = modules[i] + \" \" + levels[i]; }"
+        "(3) <code class=\"inline-code\">for (int i=0; i<0; i--){ students[i] = names[i] + \" \" + surname[i]; } for (int i=0; i<3; j--){ progNode[i] = modules[i] + \" \" + levels[i]; }</code>",
+        "(4) <code class=\"inline-code\">for (int i=0; i<3; ++i){ progNode[i] = modules[i] + \" \" + levels[i]; }</code>"
       ],
       "correctAnswer": "(4) for (int i=0; i<3; ++i){ progNode[i] = modules[i] + \" \" + levels[i]; }",
       "explanation": "Standard forward loop over indices 0..2."
@@ -287,10 +287,10 @@
     {
       "text": "Indicate which one of the following code will correctly calculate the length of the array progNode",
       "options": [
-        "(1) int len = progNode.length();",
-        "(2) int len = progNode.length;",
-        "(3) int len = .length(progNode);",
-        "(4) int len = length progNode;"
+        "(1) <code class=\"inline-code\">int len = progNode.length();</code>",
+        "(2) <code class=\"inline-code\">int len = progNode.length;</code>",
+        "(3) <code class=\"inline-code\">int len = .length(progNode);</code>",
+        "(4) <code class=\"inline-code\">int len = length progNode;</code>"
       ],
       "correctAnswer": "(2) int len = progNode.length;",
       "explanation": "Arrays use the length field (no parentheses)."
@@ -343,8 +343,8 @@
       "options": [
         "(1) String studName, studNum, studId, modCode,",
         "(2) String studName, studNum, studId, modCode, String bday, nqf, int level",
-        "(3) String bday, nqf, int level, static int numStudents = 0,",
-        "(4) String studName, studNum, studId, modCode, String bday, nqf, int level, static int numStudents = 0,"
+        "(3) <code class=\"inline-code\">String bday, nqf, int level, static int numStudents = 0,</code>",
+        "(4) <code class=\"inline-code\">String studName, studNum, studId, modCode, String bday, nqf, int level, static int numStudents = 0,</code>"
       ],
       "correctAnswer": "(2) String studName, studNum, studId, modCode, String bday, nqf, int level",
       "explanation": "Non-static methods access instance variables."
@@ -352,9 +352,9 @@
     {
       "text": "(i) Indicate which of the following will correctly link the variables for the second constructor to the instance variables",
       "options": [
-        "(1) name = studName; studNum = studNum; id = studId; modCode = modCode;",
-        "(2) name = this.StudName; studNum = this.studNum; id = this.studId; modCode = this.modCode;",
-        "(3) this.studName = name; this.studNum = studNum; this.studId = id; this.modCode = modCode;",
+        "(1) <code class=\"inline-code\">name = studName; studNum = studNum; id = studId; modCode = modCode;</code>",
+        "(2) <code class=\"inline-code\">name = this.StudName; studNum = this.studNum; id = this.studId; modCode = this.modCode;</code>",
+        "(3) <code class=\"inline-code\">this.studName = name; this.studNum = studNum; this.studId = id; this.modCode = modCode;</code>",
         "(4) None of the above."
       ],
       "correctAnswer": "(3) this.studName = name; this.studNum = studNum; this.studId = id; this.modCode = modCode;",
@@ -369,10 +369,10 @@
     {
       "text": "Indicate which one of the following will fail to create an instance of the class Student",
       "options": [
-        "(1) Student stud = new Student();",
-        "(2) Student stud = new Student(\"Mary Lang\", \"34800483\", \"921201012508*\",\"ICT1611\");",
-        "(3) Student stud = new Student(\"Mary Lang\", \"34800483\", \"921201\", \"ICT1511\");",
-        "(4) Student stud = new Student(null,null,null,null);"
+        "(1) <code class=\"inline-code\">Student stud = new Student();</code>",
+        "(2) <code class=\"inline-code\">Student stud = new Student(\"Mary Lang\", \"34800483\", \"921201012508*\",\"ICT1611\");</code>",
+        "(3) <code class=\"inline-code\">Student stud = new Student(\"Mary Lang\", \"34800483\", \"921201\", \"ICT1511\");</code>",
+        "(4) <code class=\"inline-code\">Student stud = new Student(null,null,null,null);</code>"
       ],
       "correctAnswer": "(4) Student stud = new Student(null,null,null,null);",
       "explanation": "Nulls violate validations in typical constructor."
@@ -502,10 +502,10 @@
     {
       "text": "Code fragments that read from and write to files need to handle at least the checked exceptions to avoid compiler errors. Which one of the following options will handle the checked exceptions in the code above?",
       "options": [
-        "(1) Surround with try { ... } catch(RuntimeException e) { }",
+        "(1) <code class=\"inline-code\">Surround with try { ... } catch(RuntimeException e) { }</code>",
         "(2) Add throws Exception to main only",
         "(3) Catch FileNotFoundException only",
-        "(4) public void writeToFile() throws IOException{...}"
+        "(4) <code class=\"inline-code\">public void writeToFile() throws IOException{...}</code>"
       ],
       "correctAnswer": "(4) public void writeToFile() throws IOException{...}",
       "explanation": "Declaring throws IOException meets checked exception handling requirements."
@@ -524,10 +524,10 @@
     {
       "text": "Which of the following is an INVALID variable name in Java?",
       "options": [
-        "(1) String 1PUBLIC = \"Java\";",
-        "(2) String PUBLIC = \"Java\";",
-        "(3) String _PUBLIC = \"Java\";",
-        "(4) String PUBLIC $ = \"Java\";"
+        "(1) <code class=\"inline-code\">String 1PUBLIC = &quot;Java&quot;;</code>",
+        "(2) <code class=\"inline-code\">String PUBLIC = &quot;Java&quot;;</code>",
+        "(3) <code class=\"inline-code\">String _PUBLIC = &quot;Java&quot;;</code>",
+        "(4) <code class=\"inline-code\">String PUBLIC $ = &quot;Java&quot;;</code>"
       ],
       "correctAnswer": "(1) String 1PUBLIC = \"Java\";",
       "explanation": "Identifiers may not start with a digit."
