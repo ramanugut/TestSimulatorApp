@@ -566,6 +566,35 @@ document.addEventListener("DOMContentLoaded", function () {
       .replace(/'/g, "&#39;");
   }
 
+  function canonicalizeAnswerValue(value) {
+    if (value === null || value === undefined) {
+      return "";
+    }
+    const stringValue = typeof value === "string" ? value : String(value);
+    const normalizedLineEndings = stringValue.replace(/\r\n/g, "\n");
+    const trimmedValue = normalizedLineEndings.trim();
+
+    const legacyCodeMatch = /^<code[^>]*>([\s\S]*?)<\/code>$/i.exec(
+      trimmedValue
+    );
+    if (legacyCodeMatch) {
+      return legacyCodeMatch[1].replace(/\r\n/g, "\n").trim();
+    }
+
+    return trimmedValue;
+  }
+
+  function answerValuesEqual(a, b) {
+    return canonicalizeAnswerValue(a) === canonicalizeAnswerValue(b);
+  }
+
+  function hasProvidedAnswer(answer) {
+    if (Array.isArray(answer)) {
+      return answer.some((value) => canonicalizeAnswerValue(value) !== "");
+    }
+    return canonicalizeAnswerValue(answer) !== "";
+  }
+
   function formatInlineRichText(segment) {
     if (!segment) {
       return "";
@@ -631,6 +660,65 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .join("")
       .trim();
+  }
+
+  function createOptionMarkup(optionValue) {
+    const safeValue =
+      optionValue === null || optionValue === undefined
+        ? ""
+        : typeof optionValue === "string"
+          ? optionValue
+          : String(optionValue);
+    const normalizedValue = safeValue.replace(/\r\n/g, "\n");
+    const trimmedValue = normalizedValue.trim();
+    const canonicalValue = canonicalizeAnswerValue(optionValue);
+
+    const optionData = {
+      markup: "",
+      canonicalValue,
+      hasCodeBlock: false,
+    };
+
+    const fencedMatch = /^```(\w+)?\n([\s\S]*?)\n?```$/.exec(trimmedValue);
+    if (fencedMatch) {
+      const language = fencedMatch[1] ? fencedMatch[1].trim().toLowerCase() : "";
+      const codeClasses = ["option-code"];
+      if (language) {
+        codeClasses.push(`language-${language}`);
+      }
+      const codeClass = codeClasses.join(" ");
+      const codeContent = fencedMatch[2]
+        ? fencedMatch[2].replace(/^\n+|\n+$/g, "")
+        : "";
+      optionData.markup = `<pre class="code-block option-code-block"><code class="${codeClass}">${escapeHTML(
+        codeContent
+      )}</code></pre>`;
+      optionData.hasCodeBlock = true;
+      return optionData;
+    }
+
+    const legacyCodeMatch = /^<code[^>]*>([\s\S]*?)<\/code>$/i.exec(trimmedValue);
+    if (legacyCodeMatch) {
+      const legacyContent = canonicalValue;
+      optionData.markup = `<span class="option-text"><code class="inline-code option-inline-code">${escapeHTML(
+        legacyContent
+      )}</code></span>`;
+      return optionData;
+    }
+
+    if (canonicalValue.includes("\n")) {
+      const blockContent = canonicalValue.replace(/\n+$/, "");
+      optionData.markup = `<pre class="code-block option-code-block"><code class="option-code">${escapeHTML(
+        blockContent
+      )}</code></pre>`;
+      optionData.hasCodeBlock = true;
+      return optionData;
+    }
+
+    optionData.markup = `<span class="option-text">${escapeHTML(
+      canonicalValue
+    )}</span>`;
+    return optionData;
   }
 
 
@@ -1313,26 +1401,44 @@ const testFiles = [
         const optionsList = document.createElement("ul");
         optionsList.classList.add("options");
 
-        question.options.forEach((option) => {
+        question.options.forEach((option, optionIndex) => {
           const optionElement = document.createElement("li");
           optionElement.classList.add("option-item");
-          const optionId = `question-${actualIndex}-option-${option}`;
+
+          const optionValue =
+            option === null || option === undefined
+              ? ""
+              : typeof option === "string"
+                ? option
+                : String(option);
+          const optionId = `question-${actualIndex}-option-${optionIndex}`;
 
           // Use checkbox for multiple correct answers, radio button otherwise
           const inputType = isMultipleCorrect ? "checkbox" : "radio";
 
-          optionElement.innerHTML = `
-          <label>
-              <input type="${inputType}" id="${optionId}" name="question-${actualIndex}${
-            isMultipleCorrect ? "-" + optionId : ""
-          }" value="${option}">
-              ${option}
-          </label>
-        `;
+          const labelElement = document.createElement("label");
+          labelElement.setAttribute("for", optionId);
 
-          const input = optionElement.querySelector(
-            `input[type="${inputType}"]`
-          );
+          const input = document.createElement("input");
+          input.type = inputType;
+          input.id = optionId;
+          input.name = isMultipleCorrect
+            ? `question-${actualIndex}-option-${optionIndex}`
+            : `question-${actualIndex}`;
+
+          const optionContent = document.createElement("div");
+          optionContent.classList.add("option-content");
+          const optionMarkupData = createOptionMarkup(optionValue);
+          optionContent.innerHTML = optionMarkupData.markup;
+          input.value = optionMarkupData.canonicalValue;
+          if (optionMarkupData.hasCodeBlock) {
+            optionElement.classList.add("option-has-code");
+          }
+
+          labelElement.appendChild(input);
+          labelElement.appendChild(optionContent);
+          optionElement.appendChild(labelElement);
+
           input.addEventListener("change", (event) => {
           if (isMultipleCorrect) {
             // Handle multiple selections
@@ -1371,14 +1477,21 @@ const testFiles = [
         });
 
           // Restore user selections
-          if (isMultipleCorrect && Array.isArray(userAnswers[actualIndex])) {
-            input.checked = userAnswers[actualIndex].includes(option);
-          } else if (userAnswers[actualIndex] === option) {
-            input.checked = true;
-          }
-
-          if (input.checked) {
-            optionElement.classList.add("selected");
+          const storedAnswer = userAnswers[actualIndex];
+          if (Array.isArray(storedAnswer)) {
+            if (
+              storedAnswer.some((value) =>
+                answerValuesEqual(value, input.value)
+              )
+            ) {
+              input.checked = true;
+              optionElement.classList.add("selected");
+            }
+          } else if (typeof storedAnswer === "string") {
+            if (answerValuesEqual(storedAnswer, input.value)) {
+              input.checked = true;
+              optionElement.classList.add("selected");
+            }
           }
 
           if (testSubmitted) {
@@ -1875,36 +1988,10 @@ const testFiles = [
       // Calculate the score without relying on DOM elements
       questions.forEach((question, index) => {
         const userAnswer = userAnswers[index];
-        const hasAnswer = Array.isArray(userAnswer)
-          ? userAnswer.length > 0
-          : userAnswer !== null &&
-            userAnswer !== undefined &&
-            userAnswer.toString().trim() !== "";
-        let isCorrect = false;
-        const isMultipleCorrect = Array.isArray(question.correctAnswer);
-
-        // Determine if the answer is correct
-        if (isMultipleCorrect) {
-          const selectedOptions = Array.isArray(userAnswer)
-            ? userAnswer.map((option) => option.trim().toLowerCase())
-            : [];
-
-          const correctAnswers = question.correctAnswer.map((answer) =>
-            answer.trim().toLowerCase()
-          );
-          selectedOptions.sort();
-          correctAnswers.sort();
-          isCorrect =
-            JSON.stringify(selectedOptions) === JSON.stringify(correctAnswers);
-        } else {
-          if (
-            typeof userAnswer === "string" &&
-            userAnswer.trim().toLowerCase() ===
-              question.correctAnswer.trim().toLowerCase()
-          ) {
-            isCorrect = true;
-          }
-        }
+        const hasAnswer = hasProvidedAnswer(userAnswer);
+        const isCorrect = hasAnswer
+          ? answersMatch(userAnswer, question.correctAnswer)
+          : false;
 
         if (isCorrect) {
           score++;
@@ -1992,31 +2079,10 @@ const testFiles = [
 
   function applyFeedback(questionElement, question, index) {
     const userAnswer = userAnswers[index];
-    let isCorrect = false;
-    const isMultipleCorrect = Array.isArray(question.correctAnswer);
-
-    // Determine if the answer is correct
-    if (isMultipleCorrect) {
-      const selectedOptions = Array.isArray(userAnswer)
-        ? userAnswer.map((option) => option.trim().toLowerCase())
-        : [];
-
-      const correctAnswers = question.correctAnswer.map((answer) =>
-        answer.trim().toLowerCase()
-      );
-      selectedOptions.sort();
-      correctAnswers.sort();
-      isCorrect =
-        JSON.stringify(selectedOptions) === JSON.stringify(correctAnswers);
-    } else {
-      if (
-        typeof userAnswer === "string" &&
-        userAnswer.trim().toLowerCase() ===
-          question.correctAnswer.trim().toLowerCase()
-      ) {
-        isCorrect = true;
-      }
-    }
+    const hasAnswer = hasProvidedAnswer(userAnswer);
+    const isCorrect = hasAnswer
+      ? answersMatch(userAnswer, question.correctAnswer)
+      : false;
 
     // Apply feedback to the question element
     let feedbackElement = document.createElement("p");
@@ -2062,15 +2128,12 @@ const testFiles = [
       inputs.forEach((input) => {
         if (Array.isArray(userAnswer)) {
           // Handle multiple answers (checkbox)
-          input.checked = userAnswer.some(
-            (answer) =>
-              answer.trim().toLowerCase() === input.value.trim().toLowerCase()
+          input.checked = userAnswer.some((answer) =>
+            answerValuesEqual(answer, input.value)
           );
         } else if (typeof userAnswer === "string") {
           // Handle single answer (radio)
-          input.checked =
-            userAnswer.trim().toLowerCase() ===
-            input.value.trim().toLowerCase();
+          input.checked = answerValuesEqual(userAnswer, input.value);
         }
         input.disabled = true; // Disable input to prevent changes after submission
         const optionItem = input.closest("li");
@@ -2170,11 +2233,7 @@ const testFiles = [
     const totalQuestions = questions.length;
     const answeredQuestions = Object.keys(userAnswers).filter((index) => {
       const answer = userAnswers[index];
-      return (
-        answer !== null &&
-        answer !== undefined &&
-        answer.toString().trim() !== ""
-      );
+      return hasProvidedAnswer(answer);
     }).length;
     const progressPercent =
       totalQuestions === 0
@@ -2192,29 +2251,27 @@ const testFiles = [
 
   function formatAnswerForDisplay(answer) {
     if (Array.isArray(answer)) {
-      return answer.join(", ");
+      return answer
+        .map((value) => canonicalizeAnswerValue(value))
+        .join(", ");
     }
     if (answer === null || answer === undefined) {
       return "";
     }
-    return answer.toString();
+    return canonicalizeAnswerValue(answer);
   }
 
   function normalizeAnswerForComparison(answer) {
     if (Array.isArray(answer)) {
       return answer
-        .map((value) =>
-          value === null || value === undefined
-            ? ""
-            : value.toString().trim().toLowerCase()
-        )
+        .map((value) => canonicalizeAnswerValue(value).toLowerCase())
         .filter((value) => value !== "")
         .sort();
     }
     if (answer === null || answer === undefined) {
       return "";
     }
-    return answer.toString().trim().toLowerCase();
+    return canonicalizeAnswerValue(answer).toLowerCase();
   }
 
   function answersMatch(userAnswer, correctAnswer) {
@@ -2266,11 +2323,7 @@ const testFiles = [
     const resultsData = questions.map((question, index) => {
       const questionText = `Question ${index + 1}: ${question.text}`;
       const rawUserAnswer = userAnswers[index];
-      const hasUserAnswer = Array.isArray(rawUserAnswer)
-        ? rawUserAnswer.length > 0
-        : rawUserAnswer !== null &&
-          rawUserAnswer !== undefined &&
-          rawUserAnswer.toString().trim() !== "";
+      const hasUserAnswer = hasProvidedAnswer(rawUserAnswer);
       const userAnswer = hasUserAnswer
         ? formatAnswerForDisplay(rawUserAnswer)
         : "No Answer Provided";
