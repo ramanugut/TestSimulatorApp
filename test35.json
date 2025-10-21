@@ -92,19 +92,19 @@
       "explanation": "Inheritance allows a class to acquire fields and methods of another class."
     },
     {
-      "text": "What will be the output of the following program?\n\n```java\npublic class Print {\n  public static void main(String[] args) {\n    int c = 4;\n    System.out.println(c = c++);\n  }\n}\n```",
+      "text": "What will be the output of the following program?\n\n```java\npublic class Print {\n  public static void main(String[] args) {\n    int c = 4\n    System.out.println(c = c++);\n  }\n}\n```",
       "options": ["2", "4", "5", "8", "Syntax error."],
       "correctAnswer": "Syntax error.",
       "explanation": "Missing semicolon after 'int c = 4' causes a syntax error."
     },
     {
-      "text": "17. Study the code below and indicate what the value of i_total will be.\n\n```java\ndouble d_total = 123.5;\nint i_total = (int)d_total;\n```",
+      "text": " Study the code below and indicate what the value of i_total will be.\n\n```java\ndouble d_total = 123.5;\nint i_total = (int)d_total;\n```",
       "options": ["123", "124", "123.0", "123.5", "error message"],
       "correctAnswer": "123",
       "explanation": "Casting from double to int truncates the decimal portion, resulting in 123."
     },
     {
-      "text": "18. Indicate which of the following declarations will render an error?",
+      "text": "Indicate which of the following declarations will render an error?",
       "options": [
         "boolean result = true;",
         "int result = 10.0;",
@@ -116,13 +116,13 @@
       "explanation": "10.0 is a double literal and cannot be directly assigned to an int variable."
     },
     {
-      "text": "19. Study the code below and indicate what the value of answer will be.\n\n```java\nint x = 5, y = 6, z = 0, k = 2;\nint answer = (x + y) * z / k;\n```",
+      "text": "Study the code below and indicate what the value of answer will be.\n\n```java\nint x = 5, y = 6, z = 0, k = 2;\nint answer = (x + y) * z / k;\n```",
       "options": ["0", "0.0", "5", "5.0", "Division by zero error message."],
       "correctAnswer": "0",
       "explanation": "Since z = 0, the multiplication makes the whole expression 0 before division."
     },
     {
-      "text": "20. Study the code below and indicate what the values will be for hasMore, total and place.\n\n```java\nboolean hasMore = true;\nint[] numbers = {1,2,4,3,2,1};\nint place = numbers.length - 1, total = 0;\nwhile (hasMore) {\n  total = total + numbers[place];\n  place--;\n  if (place == 0) hasMore = false;\n}\n```",
+      "text": " Study the code below and indicate what the values will be for hasMore, total and place.\n\n```java\nboolean hasMore = true;\nint[] numbers = {1,2,4,3,2,1};\nint place = numbers.length - 1, total = 0;\nwhile (hasMore) {\n  total = total + numbers[place];\n  place--;\n  if (place == 0) hasMore = false;\n}\n```",
       "options": [
         "total: 12 place: 0 hasMore: false",
         "total: 11 place: 0 hasMore: false",
@@ -134,7 +134,7 @@
       "explanation": "Loop sums from the last element to index 1: 1+2+3+4+2 = 11; loop ends when place == 0."
     },
     {
-      "text": "21. Indicate which of the following will correctly link the variables for the first constructor (i) to the instance variables in class Car.",
+      "text": " Indicate which of the following will correctly link the variables for the first constructor (i) to the instance variables in class Car.",
       "options": [
         "this.b = b; this.f = f; this.m = m; this.p = sell_price(p);",
         "this.b = brand; this.f = fueltype; this.m = manual_auto; this.p = sell_price(p);",
@@ -146,7 +146,7 @@
       "explanation": "The 'this' keyword links parameters to instance variables."
     },
     {
-      "text": "22. Indicate which of the following code (ii) will correctly calculate a discount of 10% and return the new discount price in the sell_price_special() method.",
+      "text": "Indicate which of the following code (ii) will correctly calculate a discount of 10% and return the new discount price in the sell_price_special() method.",
       "options": [
         "float discount, newprice; discount = (float)(p * 0.10); newprice = p / discount; return newprice;",
         "double discount, newprice; discount = (float)(p * 0.10); newprice = p - discount; return newprice;",
@@ -158,7 +158,7 @@
       "explanation": "10% discount means subtracting 10% of p from p; option (2) correctly applies that."
     },
     {
-      "text": "23. Indicate which of the following will correctly create two new instances (car1 and car2) of the class Car.",
+      "text": " Indicate which of the following will correctly create two new instances (car1 and car2) of the class Car.",
       "options": [
         "Car car1 = new Car(\"mazda\",\"petrol\",150000); Car car2 = new Car(\"nissan\",\"diesel\",\"manual\",250000);",
         "Car = car(); car1 = new Car(\"mazda\",\"petrol\",150000.00); car2 = new Car(\"nissan\",\"diesel\",\"manual\",250000.00);",
@@ -170,7 +170,7 @@
       "explanation": "Correctly calls both constructors defined in the Car class."
     },
     {
-      "text": "24. Indicate what the value of display will be:\n\n```java\nCar car3 = new Car(\"toyota\",\"diesel\",170000,\"red\");\nString display = car3.display();\n```",
+      "text": " Indicate what the value of display will be:\n\n```java\nCar car3 = new Car(\"toyota\",\"diesel\",170000,\"red\");\nString display = car3.display();\n```",
       "options": [
         "toyota R 153000.0",
         "toyota R 187000.0",
@@ -182,7 +182,7 @@
       "explanation": "No matching constructor exists that accepts four arguments."
     },
     {
-      "text": "25. The purpose of the static variable numCars is to keep track of the number of instances of Car. Which of the following commands will correctly call this variable from the main program?",
+      "text": "The purpose of the static variable numCars is to keep track of the number of instances of Car. Which of the following commands will correctly call this variable from the main program?",
       "options": [
         "Error message. You cannot call a static variable directly from the main program.",
         "int numCars = Car.numCars;",
@@ -194,7 +194,7 @@
       "explanation": "Static variables are accessed through the class name, not an instance."
     },
     {
-      "text": "26. Indicate the value of message.\n\n```java\nCar car1 = new Car(\"mazda\",\"petrol\",150000);\nString message = car1.getFuelType();\n```",
+      "text": " Indicate the value of message.\n\n```java\nCar car1 = new Car(\"mazda\",\"petrol\",150000);\nString message = car1.getFuelType();\n```",
       "options": [
         "Error message. You cannot call the method getFuelType() from the main program.",
         "mazda R 135000.0 petrol",
@@ -206,7 +206,7 @@
       "explanation": "Assuming getFuelType() returns the string representing the fuel type."
     },
     {
-      "text": "27. Indicate which of the following statements can replace the array declaration that allocates the values to the array brands.",
+      "text": " Indicate which of the following statements can replace the array declaration that allocates the values to the array brands.",
       "options": [
         "String[] brands = new String[4]; brands[0] = \"Mazda\"; brands[1] = \"Nissan\"; brands[2] = \"BMW\"; brands[3] = \"Toyota\";",
         "String[4] brands; brands[0] = \"Mazda\"; brands[1] = \"Nissan\"; brands[2] = \"BMW\"; brands[3] = \"Toyota\";",
@@ -218,7 +218,7 @@
       "explanation": "This correctly declares and assigns elements to a String array."
     },
     {
-      "text": "28. Indicate which of the following code will correctly combine the array brands and fueltypes and initialise the array cars.",
+      "text": "Indicate which of the following code will correctly combine the array brands and fueltypes and initialise the array cars.",
       "options": [
         "for (int i = 0; i < brands.length-1; i++){ car[i] = brands[i] + \" : \" + fueltypes[i]; }",
         "for (int i = 1; i < brands.length-1; i++){ car[i] = brands[i] + \" : \" + fueltypes[i]; }",
@@ -230,7 +230,7 @@
       "explanation": "Loops correctly across both arrays of equal length."
     },
     {
-      "text": "29. Indicate the value of myDoors.\n\n```java\nchar[] doors = {'2','3','4','5'};\nString myDoors = new String(doors);\n```",
+      "text": " Indicate the value of myDoors.\n\n```java\nchar[] doors = {'2','3','4','5'};\nString myDoors = new String(doors);\n```",
       "options": [
         "Error message: incompatible types.",
         "2345",
@@ -242,7 +242,7 @@
       "explanation": "The String constructor converts a char array into a concatenated string."
     },
     {
-      "text": "30. Indicate which of the following commands will correctly sort the array drive in ascending order.",
+      "text": " Indicate which of the following commands will correctly sort the array drive in ascending order.",
       "options": [
         "Arrays.sort(drive,Collections Order());",
         "Arrays.sort(drive);",
@@ -254,7 +254,7 @@
       "explanation": "Arrays.sort() sorts an array in ascending order."
     },
     {
-      "text": "31. Indicate which statement will correctly calculate the length of the array drive.",
+      "text": " Indicate which statement will correctly calculate the length of the array drive.",
       "options": [
         "int len = drive.length();",
         "int len = drive.len();",
@@ -266,13 +266,13 @@
       "explanation": "Arrays use the 'length' field (no parentheses) to get their size."
     },
     {
-      "text": "32. Study the code and indicate the value of place.\n\n```java\nString id = \"640423\";\nint place = id.indexOf(\"4\");\n```",
+      "text": " Study the code and indicate the value of place.\n\n```java\nString id = \"640423\";\nint place = id.indexOf(\"4\");\n```",
       "options": ["1", "2", "1 3", "2 4", "24"],
       "correctAnswer": "1",
       "explanation": "indexOf returns the first index of '4', which is position 1 (0-based)."
     },
     {
-      "text": "33. Which one of the following is NOT an example of an exception error that can occur in Java?",
+      "text": " Which one of the following is NOT an example of an exception error that can occur in Java?",
       "options": [
         "A user entered invalid data.",
         "A file that needs to be opened cannot be found.",
@@ -284,7 +284,7 @@
       "explanation": "Syntax errors occur at compile time, not as runtime exceptions."
     },
     {
-      "text": "34. Which option will intercept the error without crashing the program?\n\n```java\nint[] daysInMonth = {31,28,31,30,31,30};\nint totalDays = 0;\nfor (int i=0; i < 12; i++){\n  totalDays = totalDays + daysInMonth[i];\n}\n```",
+      "text": " Which option will intercept the error without crashing the program?\n\n```java\nint[] daysInMonth = {31,28,31,30,31,30};\nint totalDays = 0;\nfor (int i=0; i < 12; i++){\n  totalDays = totalDays + daysInMonth[i];\n}\n```",
       "options": [
         "for (int i=0; i < 12; i++){ try{ totalDays += daysInMonth[i]; } catch (Exception e){ boolean error = true; } }",
         "for (int i=0; i < 12; i++){ try{ totalDays += daysInMonth[i]; } (catch e){ boolean error = true; } }",
@@ -296,13 +296,13 @@
       "explanation": "Proper try-catch syntax ensures safe error handling."
     },
     {
-      "text": "35. Which one of the following is NOT an access modifier in Java?",
+      "text": " Which one of the following is NOT an access modifier in Java?",
       "options": ["private", "protected", "public", "void"],
       "correctAnswer": "void",
       "explanation": "‘void’ is a return type, not an access modifier."
     },
     {
-      "text": "36. Which of the following is correct regarding this code:\n\n```java\nString s = \"30564.5\";\nchar[] cArray = s.toCharArray();\nint answer = cArray.length;\n```",
+      "text": " Which of the following is correct regarding this code:\n\n```java\nString s = \"30564.5\";\nchar[] cArray = s.toCharArray();\nint answer = cArray.length;\n```",
       "options": [
         "No compiler error and the value of answer is 7.",
         "Compiler errors in line 1 and line 2.",
@@ -314,7 +314,7 @@
       "explanation": "The string has 7 characters including the period."
     },
     {
-      "text": "37. Indicate the value of result:\n\n```java\nint val1 = 11;\nint val2 = 2;\ndouble result = val1 % val2;\n```",
+      "text": " Indicate the value of result:\n\n```java\nint val1 = 11;\nint val2 = 2;\ndouble result = val1 % val2;\n```",
       "options": [
         "Error message. Reason: There is no such operator as %",
         "Error message. Reason: you cannot assign the result of % to a double value.",
@@ -326,13 +326,13 @@
       "explanation": "Modulo gives remainder 1, and is stored as a double."
     },
     {
-      "text": "38. Study the code and indicate the value of place.\n\n```java\nString email = \"john.nell@gmail.com\";\nint place = email.indexOf(\"@\");\n```",
+      "text": "Study the code and indicate the value of place.\n\n```java\nString email = \"john.nell@gmail.com\";\nint place = email.indexOf(\"@\");\n```",
       "options": ["Error message. You should search for '@'", "8", "9", "10", "@"],
       "correctAnswer": "9",
       "explanation": "The '@' character is found at index 9 (0-based counting)."
     },
     {
-      "text": "39. Which one of the following is correct regarding the Compare class and Main class code?",
+      "text": " Which one of the following is correct regarding the Compare class and Main class code?",
       "options": [
         "Java does not allow multiple methods with the same name in a class.",
         "The values for s1,s2,s3 and s4 are: s1: 20 s2: b s3: hope s4: 11.0",
@@ -344,7 +344,7 @@
       "explanation": "Method overloading selects correct types; results match option (3)."
     },
     {
-      "text": "40. Which one of the following expressions will NOT enforce the rules for the car rental agency?",
+      "text": " Which one of the following expressions will NOT enforce the rules for the car rental agency?",
       "options": [
         "valid = ((license==true) && (fines==false) && (((age>=23) && (MF==\"F\" ))||((age>=25) && (MF == \"M\"))));",
         "valid = ((license) && !(fines) && (((age>=23) && (MF==\"F\" ))||((age>=25) && (MF == \"M\"))));",
@@ -356,7 +356,7 @@
       "explanation": "Uses assignment (=) instead of comparison (==), making it invalid."
     },
     {
-      "text": "41. Which one of the following statements explains the contents of activity_main.xml in an Android app?",
+      "text": " Which one of the following statements explains the contents of activity_main.xml in an Android app?",
       "options": [
         "It contains information about the sound and image files used in the application.",
         "It contains information about the default Graphical User Interface of the application.",
@@ -368,7 +368,7 @@
       "explanation": "activity_main.xml defines the UI layout components in Android."
     },
     {
-      "text": "42. Choose the correct data types for the variables:\n\n```java\nheight = 165;\nweight = 70.3;\nbmi = weight / height / height * 10000;\n```",
+      "text": " Choose the correct data types for the variables:\n\n```java\nheight = 165;\nweight = 70.3;\nbmi = weight / height / height * 10000;\n```",
       "options": [
         "float height = 165; float weight = 70.3; float bmi = weight / height / height * 10000;",
         "double height = 165; double weight = 70.3; float bmi = weight / height / height * 10000;",
@@ -380,43 +380,43 @@
       "explanation": "Using consistent float types ensures correct arithmetic precision for BMI."
     },
     {
-      "text": "43. A _____ variable that is not accessible by any other method, class or program is defined inside a method, constructor or block.",
+      "text": " A _____ variable that is not accessible by any other method, class or program is defined inside a method, constructor or block.",
       "options": ["local", "instance", "class", "open", "close"],
       "correctAnswer": "local",
       "explanation": "Local variables exist only within the method or block they're declared in."
     },
     {
-      "text": "44. The _____ of a class are instructions that the class uses to manipulate values, generate output or perform actions.",
+      "text": " The _____ of a class are instructions that the class uses to manipulate values, generate output or perform actions.",
       "options": ["attributes", "classes", "overloading", "methods", "objects"],
       "correctAnswer": "methods",
       "explanation": "Methods define behavior or actions of a class."
     },
     {
-      "text": "45. In object-oriented terminology, the characteristics of an object are defined by its ___",
+      "text": " In object-oriented terminology, the characteristics of an object are defined by its ___",
       "options": ["attributes", "classes", "instances", "triggers", "Variables"],
       "correctAnswer": "attributes",
       "explanation": "Attributes (fields) represent the data or characteristics of an object."
     },
     {
-      "text": "46. Which is the correct keyword that indicates inheritance between two classes in Java?",
+      "text": " Which is the correct keyword that indicates inheritance between two classes in Java?",
       "options": ["attributes", "enlarge", "extends", "inherits", "super"],
       "correctAnswer": "extends",
       "explanation": "The 'extends' keyword defines subclass–superclass relationships."
     },
     {
-      "text": "47. The ____ package of Java provides classes for performing arithmetic operations.",
+      "text": " The ____ package of Java provides classes for performing arithmetic operations.",
       "options": ["java.io", "java.calc", "java.lang", "java.math", "java.util"],
       "correctAnswer": "java.math",
       "explanation": "java.math includes BigInteger and BigDecimal for arithmetic operations."
     },
     {
-      "text": "48. The data type Boolean can store data up to ___ that store(s) true/false flags.",
+      "text": "The data type Boolean can store data up to ___ that store(s) true/false flags.",
       "options": ["1 bit", "2 bits", "1 byte (8 bits)", "2 bytes", "4 bytes"],
       "correctAnswer": "1 byte (8 bits)",
       "explanation": "In Java, boolean values are stored as 1 byte, representing true or false."
     },
     {
-      "text": "49. Indicate which one of the following best describes a public access modifier:",
+      "text": "Indicate which one of the following best describes a public access modifier:",
       "options": [
         "Only allows access from inside the same class.",
         "Allows access inside the class, subclass or other classes of the same package.",
@@ -428,7 +428,7 @@
       "explanation": "The 'public' modifier gives global visibility."
     },
     {
-      "text": "50. Which one of the following statements describes inheritance correctly?",
+      "text": " Which one of the following statements describes inheritance correctly?",
       "options": [
         "It allows generic code to be placed in a superclass and more specialized code in subclasses, thus promoting code reuse.",
         "It is used when a subclass is more general than a superclass thereby creating a class hierarchy.",
