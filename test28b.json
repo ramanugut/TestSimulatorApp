@@ -103,10 +103,10 @@
     {
       "text": "Which logical condition evaluates true if the age is under 25 and the average is at least 60?",
       "options": [
-        "<code class=\"inline-code\">if(age &lt;= 25 || average &gt;= 60)</code>",
-        "<code class=\"inline-code\">if(age &lt; 25 &amp;&amp; average &gt;= 60)</code>",
-        "<code class=\"inline-code\">if(age &gt; 25 &amp;&amp; average &lt; 60)</code>",
-        "<code class=\"inline-code\">if(age &gt;= 25 &amp;&amp; average == 60)</code>"
+        "<code class=\"inline-code\">if(age <= 25 || average >= 60)</code>",
+        "<code class=\"inline-code\">if(age < 25 && average >= 60)</code>",
+        "<code class=\"inline-code\">if(age > 25 && average < 60)</code>",
+        "<code class=\"inline-code\">if(age >= 25 && average == 60)</code>"
       ],
       "correctAnswer": "if(age < 25 && average >= 60)",
       "explanation": "The && operator ensures both conditions must be true: age must be below 25 and average must be 60 or higher."

@@ -249,7 +249,7 @@
         "This permission tag allows this app to connect to the Internet.",
         "This permission tag allows other apps to make remote connection to this app.",
         "This permission tag allows this app to connect to its SQLite database.",
-        "This permission tag has been written in the wrong location; it must be written inside the <code class=\"inline-code\">&lt;application&gt;</code> tag."
+        "This permission tag has been written in the wrong location; it must be written inside the <code class=\"inline-code\"><application></code> tag."
       ],
       "correctAnswer": "This permission tag allows this app to connect to the Internet.",
       "explanation": "INTERNET permission is declared at manifest root and enables network access."
