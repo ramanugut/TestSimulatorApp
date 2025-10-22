@@ -215,8 +215,8 @@
       "options": [
         "(1) <code class=\"inline-code\">boolean pass = false; float total;</code>",
         "(2) <code class=\"inline-code\">boolean pass; int total;</code>",
-        "(3) <code class=\"inline-code\">String pass = &quot;false&quot;; float total;</code>",
-        "(4) <code class=\"inline-code\">String pass = &quot;false&quot;; double total;</code>"
+        "(3) <code class=\"inline-code\">String pass = \"false\"; float total;</code>",
+        "(4) <code class=\"inline-code\">String pass = \"false\"; double total;</code>"
       ],
       "correctAnswer": "(1) boolean pass = false; float total;",
       "explanation": "Boolean for pass; total computed as floating-point."
@@ -524,10 +524,10 @@
     {
       "text": "Which of the following is an INVALID variable name in Java?",
       "options": [
-        "(1) <code class=\"inline-code\">String 1PUBLIC = &quot;Java&quot;;</code>",
-        "(2) <code class=\"inline-code\">String PUBLIC = &quot;Java&quot;;</code>",
-        "(3) <code class=\"inline-code\">String _PUBLIC = &quot;Java&quot;;</code>",
-        "(4) <code class=\"inline-code\">String PUBLIC $ = &quot;Java&quot;;</code>"
+        "(1) <code class=\"inline-code\">String 1PUBLIC = \"Java\";</code>",
+        "(2) <code class=\"inline-code\">String PUBLIC = \"Java\";</code>",
+        "(3) <code class=\"inline-code\">String _PUBLIC = \"Java\";</code>",
+        "(4) <code class=\"inline-code\">String PUBLIC $ = \"Java\";</code>"
       ],
       "correctAnswer": "(1) String 1PUBLIC = \"Java\";",
       "explanation": "Identifiers may not start with a digit."

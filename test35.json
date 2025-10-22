@@ -210,7 +210,7 @@
       "options": [
         "<code class=\"inline-code\">boolean result = true;</code>",
         "<code class=\"inline-code\">int result = 10.0;</code>",
-        "<code class=\"inline-code\">int result = &#x27;a&#x27;;</code>",
+        "<code class=\"inline-code\">int result = 'a';</code>",
         "<code class=\"inline-code\">float result = 1.23;</code>",
         "<code class=\"inline-code\">long result = 123_456_789;</code>"
       ],
@@ -268,11 +268,11 @@
     {
       "text": " Indicate which of the following will correctly create two new instances (car1 and car2) of the class Car.",
       "options": [
-        "<code class=\"inline-code\">Car car1 = new Car(&quot;mazda&quot;,&quot;petrol&quot;,150000); Car car2 = new Car(&quot;nissan&quot;,&quot;diesel&quot;,&quot;manual&quot;,250000);</code>",
-        "<code class=\"inline-code\">Car = car(); car1 = new Car(&quot;mazda&quot;,&quot;petrol&quot;,150000.00); car2 = new Car(&quot;nissan&quot;,&quot;diesel&quot;,&quot;manual&quot;,250000.00);</code>",
-        "<code class=\"inline-code\">car1 = new Car(&quot;mazda&quot;,&quot;petrol&quot;,150000); car2 = new Car(&quot;nissan&quot;,&quot;diesel&quot;,&quot;manual&quot;,250000);</code>",
-        "<code class=\"inline-code\">Car car1 = new Car(brand=&quot;mazda&quot;,fueltype=&quot;petrol&quot;,price=150000); Car car2 = new Car(b=&quot;nissan&quot;,f=&quot;diesel&quot;,m=&quot;manual&quot;,p=250000);</code>",
-        "<code class=\"inline-code\">Car car1 = new Car(brand=&quot;mazda&quot;,fueltype=&quot;petrol&quot;,price=150000.00); Car car2 = new Car(b=&quot;nissan&quot;,f=&quot;diesel&quot;,m=&quot;manual&quot;,p=250000.00);</code>"
+        "<code class=\"inline-code\">Car car1 = new Car(\"mazda\",\"petrol\",150000); Car car2 = new Car(\"nissan\",\"diesel\",\"manual\",250000);</code>",
+        "<code class=\"inline-code\">Car = car(); car1 = new Car(\"mazda\",\"petrol\",150000.00); car2 = new Car(\"nissan\",\"diesel\",\"manual\",250000.00);</code>",
+        "<code class=\"inline-code\">car1 = new Car(\"mazda\",\"petrol\",150000); car2 = new Car(\"nissan\",\"diesel\",\"manual\",250000);</code>",
+        "<code class=\"inline-code\">Car car1 = new Car(brand=\"mazda\",fueltype=\"petrol\",price=150000); Car car2 = new Car(b=\"nissan\",f=\"diesel\",m=\"manual\",p=250000);</code>",
+        "<code class=\"inline-code\">Car car1 = new Car(brand=\"mazda\",fueltype=\"petrol\",price=150000.00); Car car2 = new Car(b=\"nissan\",f=\"diesel\",m=\"manual\",p=250000.00);</code>"
       ],
       "correctAnswer": "Car car1 = new Car(\"mazda\",\"petrol\",150000); Car car2 = new Car(\"nissan\",\"diesel\",\"manual\",250000);",
       "explanation": "Correctly calls both constructors defined in the Car class."
@@ -316,11 +316,11 @@
     {
       "text": " Indicate which of the following statements can replace the array declaration that allocates the values to the array brands.",
       "options": [
-        "<code class=\"inline-code\">String[] brands = new String[4]; brands[0] = &quot;Mazda&quot;; brands[1] = &quot;Nissan&quot;; brands[2] = &quot;BMW&quot;; brands[3] = &quot;Toyota&quot;;</code>",
-        "<code class=\"inline-code\">String[4] brands; brands[0] = &quot;Mazda&quot;; brands[1] = &quot;Nissan&quot;; brands[2] = &quot;BMW&quot;; brands[3] = &quot;Toyota&quot;;</code>",
-        "<code class=\"inline-code\">String[] brands[4]; brands[0] = &quot;Mazda&quot;; brands[1] = &quot;Nissan&quot;; brands[2] = &quot;BMW&quot;; brands[3] = &quot;Toyota&quot;;</code>",
-        "<code class=\"inline-code\">String[] brands[4]; brands[0] = new brands{&quot;Mazda&quot;}; brands[1] = new brands{&quot;Nissan&quot;}; brands[2] = new brands{&quot;BMW&quot;}; brands[3] = new brands{&quot;Toyota&quot;};</code>",
-        "<code class=\"inline-code\">String[] brands; brands[0] = new String{&quot;Mazda&quot;}; brands[1] = new String{&quot;Nissan&quot;}; brands[2] = new String{&quot;BMW&quot;}; brands[3] = new String{&quot;Toyota&quot;};</code>"
+        "<code class=\"inline-code\">String[] brands = new String[4]; brands[0] = \"Mazda\"; brands[1] = \"Nissan\"; brands[2] = \"BMW\"; brands[3] = \"Toyota\";</code>",
+        "<code class=\"inline-code\">String[4] brands; brands[0] = \"Mazda\"; brands[1] = \"Nissan\"; brands[2] = \"BMW\"; brands[3] = \"Toyota\";</code>",
+        "<code class=\"inline-code\">String[] brands[4]; brands[0] = \"Mazda\"; brands[1] = \"Nissan\"; brands[2] = \"BMW\"; brands[3] = \"Toyota\";</code>",
+        "<code class=\"inline-code\">String[] brands[4]; brands[0] = new brands{\"Mazda\"}; brands[1] = new brands{\"Nissan\"}; brands[2] = new brands{\"BMW\"}; brands[3] = new brands{\"Toyota\"};</code>",
+        "<code class=\"inline-code\">String[] brands; brands[0] = new String{\"Mazda\"}; brands[1] = new String{\"Nissan\"}; brands[2] = new String{\"BMW\"}; brands[3] = new String{\"Toyota\"};</code>"
       ],
       "correctAnswer": "String[] brands = new String[4]; brands[0] = \"Mazda\"; brands[1] = \"Nissan\"; brands[2] = \"BMW\"; brands[3] = \"Toyota\";",
       "explanation": "This correctly declares and assigns elements to a String array."
@@ -328,11 +328,11 @@
     {
       "text": "Indicate which of the following code will correctly combine the array brands and fueltypes and initialise the array cars.",
       "options": [
-        "<code class=\"inline-code\">for (int i = 0; i &lt; brands.length-1; i++){ car[i] = brands[i] + &quot; : &quot; + fueltypes[i]; }</code>",
-        "<code class=\"inline-code\">for (int i = 1; i &lt; brands.length-1; i++){ car[i] = brands[i] + &quot; : &quot; + fueltypes[i]; }</code>",
-        "<code class=\"inline-code\">for (int i = 0; i &lt; brands.length; i++){ car[i] = brands[i] + &quot; : &quot; + fueltypes[i]; }</code>",
-        "<code class=\"inline-code\">for (int i = 0; i &lt; brands.length+1; i++){ car[i] = brands[i] + &quot; : &quot; + fueltypes[i]; }</code>",
-        "<code class=\"inline-code\">for (int i = 0; i &lt; brands.length-1; i++){ for (int j = i; j &lt; brands.length; j++) car[i] = brands[i] + &quot; : &quot; + fueltypes[j]; }</code>"
+        "<code class=\"inline-code\">for (int i = 0; i < brands.length-1; i++){ car[i] = brands[i] + \" : \" + fueltypes[i]; }</code>",
+        "<code class=\"inline-code\">for (int i = 1; i < brands.length-1; i++){ car[i] = brands[i] + \" : \" + fueltypes[i]; }</code>",
+        "<code class=\"inline-code\">for (int i = 0; i < brands.length; i++){ car[i] = brands[i] + \" : \" + fueltypes[i]; }</code>",
+        "<code class=\"inline-code\">for (int i = 0; i < brands.length+1; i++){ car[i] = brands[i] + \" : \" + fueltypes[i]; }</code>",
+        "<code class=\"inline-code\">for (int i = 0; i < brands.length-1; i++){ for (int j = i; j < brands.length; j++) car[i] = brands[i] + \" : \" + fueltypes[j]; }</code>"
       ],
       "correctAnswer": "for (int i = 0; i < brands.length; i++){ car[i] = brands[i] + \" : \" + fueltypes[i]; }",
       "explanation": "Loops correctly across both arrays of equal length."
@@ -343,7 +343,7 @@
         "Error message: incompatible types.",
         "2345",
         "2 3 4 5",
-        "<code class=\"inline-code\">[&#x27;2&#x27;,&#x27;3&#x27;,&#x27;4&#x27;,&#x27;5&#x27;]</code>",
+        "<code class=\"inline-code\">['2','3','4','5']</code>",
         "<code class=\"inline-code\">[2345]</code>"
       ],
       "correctAnswer": "2345",
@@ -400,11 +400,11 @@
     {
       "text": " Which option will intercept the error without crashing the program?\n\n```java\nint[] daysInMonth = {31,28,31,30,31,30};\nint totalDays = 0;\nfor (int i=0; i < 12; i++){\n  totalDays = totalDays + daysInMonth[i];\n}\n```",
       "options": [
-        "<code class=\"inline-code\">for (int i=0; i &lt; 12; i++){ try{ totalDays += daysInMonth[i]; } catch (Exception e){ boolean error = true; } }</code>",
-        "<code class=\"inline-code\">for (int i=0; i &lt; 12; i++){ try{ totalDays += daysInMonth[i]; } (catch e){ boolean error = true; } }</code>",
-        "<code class=\"inline-code\">for (int i=0; i &lt; 12; i++){ try{ totalDays += daysInMonth[i]; } exception (Catch e){ boolean error = true; } }</code>",
-        "<code class=\"inline-code\">for (int i=0; i &lt; 12; i++){ try{ totalDays += daysInMonth[i]; } catch (Exception e) }</code>",
-        "<code class=\"inline-code\">for (int i=1; i &lt; 12; i++){ try{ totalDays += daysInMonth[i]; } catch e { boolean error = true; } }</code>"
+        "<code class=\"inline-code\">for (int i=0; i < 12; i++){ try{ totalDays += daysInMonth[i]; } catch (Exception e){ boolean error = true; } }</code>",
+        "<code class=\"inline-code\">for (int i=0; i < 12; i++){ try{ totalDays += daysInMonth[i]; } (catch e){ boolean error = true; } }</code>",
+        "<code class=\"inline-code\">for (int i=0; i < 12; i++){ try{ totalDays += daysInMonth[i]; } exception (Catch e){ boolean error = true; } }</code>",
+        "<code class=\"inline-code\">for (int i=0; i < 12; i++){ try{ totalDays += daysInMonth[i]; } catch (Exception e) }</code>",
+        "<code class=\"inline-code\">for (int i=1; i < 12; i++){ try{ totalDays += daysInMonth[i]; } catch e { boolean error = true; } }</code>"
       ],
       "correctAnswer": "for (int i=0; i < 12; i++){ try{ totalDays += daysInMonth[i]; } catch (Exception e){ boolean error = true; } }",
       "explanation": "Proper try-catch syntax ensures safe error handling."
@@ -469,16 +469,16 @@
       "explanation": "Method overloading selects correct types; results match option (3)."
     },
     {
-      "text": " Which one of the following expressions will NOT enforce the rules for the car rental agency?",
+      "text": "Which one of the following expressions correctly enforces the rules for the car rental agency?",
       "options": [
-        "<code class=\"inline-code\">valid = ((license==true) &amp;&amp; (fines==false) &amp;&amp; (((age&gt;=23) &amp;&amp; (MF==&quot;F&quot; ))||((age&gt;=25) &amp;&amp; (MF == &quot;M&quot;))));</code>",
-        "<code class=\"inline-code\">valid = ((license) &amp;&amp; !(fines) &amp;&amp; (((age&gt;=23) &amp;&amp; (MF==&quot;F&quot; ))||((age&gt;=25) &amp;&amp; (MF == &quot;M&quot;))));</code>",
-        "<code class=\"inline-code\">valid = ((license==true) &amp;&amp; (fines==false) &amp;&amp; (((age&gt;=23) &amp;&amp; (MF.equals(&quot;F&quot;) ))||((age&gt;=25) &amp;&amp; (MF.equals(&quot;M&quot;)))));</code>",
-        "<code class=\"inline-code\">valid = ((license) &amp;&amp; !(fines) &amp;&amp; (((age&gt;=23) &amp;&amp; (MF.equals(&quot;F&quot;) ))||((age&gt;=25) &amp;&amp; (MF.equals(&quot;M&quot;)))));</code>",
-        "<code class=\"inline-code\">valid = ((license=true) &amp;&amp; (fines=false) &amp;&amp; (((age&gt;=23) &amp;&amp; (MF=&quot;F&quot; ))||((age&gt;=25) &amp;&amp; (MF = &quot;M&quot;))));</code>"
+        "<code class=\"inline-code\">valid = ((license==true) && (fines==false) && (((age>=23) && (MF==\"F\")) || ((age>=25) && (MF == \"M\"))));</code>",
+        "<code class=\"inline-code\">valid = ((license) && !(fines) && (((age>=23) && (MF==\"F\")) || ((age>=25) && (MF == \"M\"))));</code>",
+        "<code class=\"inline-code\">valid = ((license==true) && (fines==false) && (((age>=23) && (MF.equals(\"F\"))) || ((age>=25) && (MF.equals(\"M\"))))));</code>",
+        "<code class=\"inline-code\">valid = ((license) && !(fines) && (((age>23) && (MF.equals(\"F\"))) || ((age>=25) && (MF.equals(\"M\"))))));</code>",
+        "<code class=\"inline-code\">valid = ((license=true) && (fines=false) && (((age>=23) && (MF=\"F\")) || ((age>=25) && (MF = \"M\")))));</code>"
       ],
-      "correctAnswer": "valid = ((license=true) && (fines=false) && (((age>=23) && (MF=\"F\" ))||((age>=25) && (MF = \"M\"))));",
-      "explanation": "Uses assignment (=) instead of comparison (==), making it invalid."
+      "correctAnswer": "valid = ((license==true) && (fines==false) && (((age>=23) && (MF.equals(\"F\"))) || ((age>=25) && (MF.equals(\"M\"))))));",
+      "explanation": "This expression requires a valid license, no fines, and uses String.equals to enforce the age rules for female (23+) and male (25+) renters. The other expressions either compare strings with ==, loosen the age constraint, or use assignment instead of comparison."
     },
     {
       "text": " Which one of the following statements explains the contents of activity_main.xml in an Android app?",
