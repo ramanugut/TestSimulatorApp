@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let questionResults = [];
   let reviewFilter = "all";
   let showAllQuestions = false;
+  let activeSourceFilter = "all";
+
+  const CUSTOM_TEST_VALUE = "__custom_session__";
+  let currentCustomSession = null;
+  let lastRegularTestValue = null;
+  let availableTestsMetadata = [];
 
   //************************ SECTION 1A: ELEMENT REFERENCES ************************//
 
@@ -58,6 +64,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const flashcardsGrid = document.getElementById("flashcards-grid");
   const flashcardsEmptyState = document.getElementById("flashcards-empty");
   const reviewFilterSelect = document.getElementById("review-filter");
+  const reviewSourceFilterContainer = document.getElementById(
+    "review-source-filter-container"
+  );
+  const reviewSourceFilterSelect = document.getElementById(
+    "review-source-filter"
+  );
   const scoreFilterContainer = document.getElementById(
     "score-filter-container"
   );
@@ -80,6 +92,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeOptionsButton = document.getElementById("close-options");
   const optionsModal = document.getElementById("options-modal");
   const modalBackdrop = document.getElementById("modal-backdrop");
+  const defineTestButton = document.getElementById("define-test");
+  const defineTestModal = document.getElementById("define-test-modal");
+  const closeDefineTestButton = document.getElementById("close-define-test");
+  const cancelDefineTestButton = document.getElementById("cancel-define-test");
+  const defineTestForm = document.getElementById("define-test-form");
+  const defineTestList = document.getElementById("define-test-list");
+  const defineTestQuestionInput = document.getElementById(
+    "define-test-question-count"
+  );
+  const defineTestTimerInput = document.getElementById("define-test-timer");
+  const defineTestSummary = document.getElementById("define-test-summary");
+  const defineTestError = document.getElementById("define-test-error");
+  const defineTestStartButton = document.getElementById("define-test-start");
+  const customSessionChip = document.getElementById("custom-session-chip");
+  const customSessionSummary = document.getElementById(
+    "custom-session-summary"
+  );
+  const exitCustomSessionButton = document.getElementById(
+    "exit-custom-session"
+  );
   const streakValueElement = document.getElementById("streak-value");
   const xpValueElement = document.getElementById("xp-value");
   const badgeValueElement = document.getElementById("badge-value");
@@ -194,8 +226,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (reviewFilterSelect) {
       reviewFilterSelect.value = "all";
     }
+    activeSourceFilter = "all";
+    if (reviewSourceFilterSelect) {
+      reviewSourceFilterSelect.value = "all";
+    }
     if (scoreFilterContainer) {
       scoreFilterContainer.classList.add("hidden");
+    }
+    if (reviewSourceFilterContainer) {
+      reviewSourceFilterContainer.classList.add("hidden");
     }
     if (filterEmptyStateElement) {
       filterEmptyStateElement.classList.add("hidden");
@@ -206,7 +245,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!scoreFilterContainer) {
       return;
     }
-    if (testSubmitted && questions.length > 0 && questionResults.length > 0) {
+    const hasResults =
+      testSubmitted && questions.length > 0 && questionResults.length > 0;
+
+    if (hasResults) {
       scoreFilterContainer.classList.remove("hidden");
       if (reviewFilterSelect) {
         reviewFilterSelect.value = reviewFilter;
@@ -214,6 +256,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       scoreFilterContainer.classList.add("hidden");
     }
+
+    updateReviewSourceFilter(hasResults);
   }
 
   function hideResultBanner() {
@@ -290,6 +334,453 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function isCustomSessionActive() {
+    return currentTestFile === CUSTOM_TEST_VALUE && !!currentCustomSession;
+  }
+
+  function ensureCustomTestOption(label) {
+    if (!testSelect) {
+      return;
+    }
+    let customOption = testSelect.querySelector(
+      `option[value="${CUSTOM_TEST_VALUE}"]`
+    );
+    if (!customOption) {
+      customOption = document.createElement("option");
+      customOption.value = CUSTOM_TEST_VALUE;
+      customOption.dataset.customSession = "true";
+      testSelect.appendChild(customOption);
+    }
+    customOption.textContent = label;
+  }
+
+  function clearCustomTestOption() {
+    if (!testSelect) {
+      return;
+    }
+    const customOption = testSelect.querySelector(
+      `option[value="${CUSTOM_TEST_VALUE}"]`
+    );
+    if (customOption) {
+      customOption.remove();
+    }
+  }
+
+  function getCustomSessionSourceSummary(sources) {
+    if (!Array.isArray(sources) || sources.length === 0) {
+      return "Custom Mix";
+    }
+
+    const names = sources
+      .map((source) => source?.name || source?.file)
+      .filter(Boolean);
+
+    if (names.length === 0) {
+      return "Custom Mix";
+    }
+
+    if (names.length === 1) {
+      return `Custom Mix: ${names[0]}`;
+    }
+
+    if (names.length === 2) {
+      return `Custom Mix: ${names[0]} + ${names[1]}`;
+    }
+
+    return `Custom Mix (${names.length} tests)`;
+  }
+
+  function updateCustomSessionChip() {
+    if (!customSessionChip) {
+      return;
+    }
+
+    if (!isCustomSessionActive()) {
+      customSessionChip.classList.add("hidden");
+      if (customSessionSummary) {
+        customSessionSummary.textContent = "";
+      }
+      return;
+    }
+
+    const sources = currentCustomSession?.sources || [];
+    const summaryLabel =
+      currentCustomSession?.displayName ||
+      getCustomSessionSourceSummary(sources);
+    const questionCount = Array.isArray(questions) ? questions.length : 0;
+    const questionLabel = `${questionCount} question${
+      questionCount === 1 ? "" : "s"
+    }`;
+
+    if (customSessionSummary) {
+      customSessionSummary.textContent = `${summaryLabel} • ${questionLabel}`;
+    }
+
+    customSessionChip.classList.remove("hidden");
+  }
+
+  function getUniqueQuestionSources() {
+    const sources = new Map();
+    const baseQuestions = Array.isArray(originalQuestions)
+      ? originalQuestions
+      : [];
+    baseQuestions.forEach((question) => {
+      if (!question || !question.sourceTestId) {
+        return;
+      }
+      if (!sources.has(question.sourceTestId)) {
+        sources.set(
+          question.sourceTestId,
+          question.sourceTestName || question.sourceTestId
+        );
+      }
+    });
+    return sources;
+  }
+
+  function refreshSourceFilterOptions() {
+    if (!reviewSourceFilterContainer || !reviewSourceFilterSelect) {
+      return;
+    }
+
+    const sources = getUniqueQuestionSources();
+    const entries = Array.from(sources.entries());
+
+    reviewSourceFilterSelect.innerHTML = "";
+
+    const allOption = document.createElement("option");
+    allOption.value = "all";
+    allOption.textContent = "All sources";
+    reviewSourceFilterSelect.appendChild(allOption);
+
+    entries.forEach(([id, name]) => {
+      const option = document.createElement("option");
+      option.value = id;
+      option.textContent = name;
+      reviewSourceFilterSelect.appendChild(option);
+    });
+
+    if (!entries.some(([id]) => id === activeSourceFilter)) {
+      activeSourceFilter = "all";
+    }
+
+    reviewSourceFilterSelect.value = activeSourceFilter;
+
+    if (entries.length <= 1) {
+      reviewSourceFilterSelect.value = "all";
+      reviewSourceFilterContainer.classList.add("hidden");
+      return;
+    }
+
+    reviewSourceFilterContainer.classList.remove("hidden");
+  }
+
+  function updateReviewSourceFilter(hasResults) {
+    if (!reviewSourceFilterContainer || !reviewSourceFilterSelect) {
+      return;
+    }
+
+    if (!hasResults || !isCustomSessionActive()) {
+      activeSourceFilter = "all";
+      reviewSourceFilterSelect.value = "all";
+      reviewSourceFilterContainer.classList.add("hidden");
+      return;
+    }
+
+    refreshSourceFilterOptions();
+  }
+
+  function getTestMetadataByFile(file) {
+    if (!file) {
+      return null;
+    }
+    return availableTestsMetadata.find((item) => item.file === file) || null;
+  }
+
+  function populateDefineTestModal() {
+    if (!defineTestList) {
+      return;
+    }
+
+    const previouslySelected = new Set(
+      Array.from(
+        defineTestList.querySelectorAll('input[type="checkbox"]:checked')
+      ).map((input) => input.value)
+    );
+
+    defineTestList.innerHTML = "";
+
+    if (!availableTestsMetadata.length) {
+      const emptyState = document.createElement("p");
+      emptyState.textContent = "No tests available to combine.";
+      emptyState.classList.add("define-test-empty");
+      defineTestList.appendChild(emptyState);
+      updateDefineTestSummary();
+      return;
+    }
+
+    availableTestsMetadata.forEach((test, index) => {
+      const item = document.createElement("div");
+      item.className = "define-test-item";
+
+      const checkboxId = `define-test-${index}`;
+
+      const label = document.createElement("label");
+      label.setAttribute("for", checkboxId);
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.id = checkboxId;
+      checkbox.value = test.file;
+      checkbox.dataset.questionCount = String(test.questionCount || 0);
+      checkbox.dataset.name = test.name || test.file;
+      if (previouslySelected.has(test.file)) {
+        checkbox.checked = true;
+      }
+
+      const nameSpan = document.createElement("span");
+      nameSpan.className = "define-test-name";
+      nameSpan.textContent = test.name || test.file;
+
+      label.appendChild(checkbox);
+      label.appendChild(nameSpan);
+
+      const meta = document.createElement("div");
+      meta.className = "define-test-meta";
+      meta.innerHTML = `<span>${test.questionCount} question${
+        test.questionCount === 1 ? "" : "s"
+      }</span>`;
+
+      item.appendChild(label);
+      item.appendChild(meta);
+      defineTestList.appendChild(item);
+
+      checkbox.addEventListener("change", () => {
+        updateDefineTestSummary();
+      });
+    });
+
+    updateDefineTestSummary();
+  }
+
+  function getSelectedDefineTests() {
+    if (!defineTestList) {
+      return [];
+    }
+
+    const selectedCheckboxes = Array.from(
+      defineTestList.querySelectorAll('input[type="checkbox"]:checked')
+    );
+
+    return selectedCheckboxes.map((input) => {
+      const file = input.value;
+      const questionCount = parseInt(input.dataset.questionCount || "0", 10);
+      const name = input.dataset.name || file;
+      return { file, questionCount: Math.max(questionCount, 0), name };
+    });
+  }
+
+  function updateDefineTestSummary() {
+    if (!defineTestSummary || !defineTestQuestionInput) {
+      return;
+    }
+
+    const selectedTests = getSelectedDefineTests();
+    const totalAvailable = selectedTests.reduce(
+      (sum, test) => sum + test.questionCount,
+      0
+    );
+
+    let requestedCount = parseInt(defineTestQuestionInput.value, 10);
+    const hasRequestedValue =
+      Number.isInteger(requestedCount) && requestedCount > 0;
+
+    if (!hasRequestedValue && totalAvailable > 0) {
+      requestedCount = totalAvailable;
+      defineTestQuestionInput.value = String(requestedCount);
+    }
+
+    const selectionLabel =
+      selectedTests.length === 0
+        ? "Select at least one test to begin."
+        : `${selectedTests.length} test${
+            selectedTests.length === 1 ? "" : "s"
+          } selected • ${totalAvailable} question${
+            totalAvailable === 1 ? "" : "s"
+          } available`;
+
+    defineTestSummary.textContent = selectionLabel;
+
+    let errorMessage = "";
+    let canStart = selectedTests.length > 0 && totalAvailable > 0;
+
+    if (!selectedTests.length) {
+      canStart = false;
+    } else if (totalAvailable === 0) {
+      errorMessage = "The selected tests have no questions.";
+      canStart = false;
+    } else if (!hasRequestedValue) {
+      errorMessage = "Enter how many questions you'd like.";
+      canStart = false;
+    } else if (requestedCount > totalAvailable) {
+      errorMessage = `Only ${totalAvailable} question${
+        totalAvailable === 1 ? "" : "s"
+      } available. We'll use them all.`;
+    }
+
+    if (defineTestError) {
+      defineTestError.textContent = errorMessage;
+    }
+
+    if (defineTestStartButton) {
+      defineTestStartButton.disabled = !canStart;
+    }
+  }
+
+  async function handleDefineTestSubmit(event) {
+    event.preventDefault();
+
+    if (!defineTestStartButton) {
+      return;
+    }
+
+    const selectedTests = getSelectedDefineTests();
+    const requestedCount = parseInt(defineTestQuestionInput.value, 10);
+    const timerValue = defineTestTimerInput
+      ? parseInt(defineTestTimerInput.value, 10)
+      : null;
+    const timerMinutes =
+      Number.isInteger(timerValue) && timerValue >= 0 ? timerValue : null;
+
+    if (selectedTests.length === 0) {
+      if (defineTestError) {
+        defineTestError.textContent = "Select at least one test.";
+      }
+      updateDefineTestSummary();
+      return;
+    }
+
+    if (!Number.isInteger(requestedCount) || requestedCount <= 0) {
+      if (defineTestError) {
+        defineTestError.textContent = "Enter how many questions you'd like.";
+      }
+      updateDefineTestSummary();
+      return;
+    }
+
+    defineTestStartButton.disabled = true;
+    const originalLabel = defineTestStartButton.textContent;
+    defineTestStartButton.textContent = "Creating...";
+    if (defineTestError) {
+      defineTestError.textContent = "";
+    }
+
+    try {
+      await createCustomSession({
+        selectedTests,
+        requestedCount,
+        timerMinutes,
+      });
+      closeDefineTestModal();
+    } catch (error) {
+      console.error("Unable to create custom session:", error);
+      if (defineTestError) {
+        defineTestError.textContent =
+          error?.message || "Unable to create the custom test. Please try again.";
+      }
+    } finally {
+      defineTestStartButton.textContent = originalLabel;
+      defineTestStartButton.disabled = false;
+      updateDefineTestSummary();
+    }
+  }
+
+  function isDefineTestModalOpen() {
+    return defineTestModal && !defineTestModal.classList.contains("hidden");
+  }
+
+  function showModalBackdrop() {
+    if (!modalBackdrop) {
+      return;
+    }
+    modalBackdrop.classList.remove("hidden");
+    modalBackdrop.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  }
+
+  function hideModalBackdropIfNoModal() {
+    if (!modalBackdrop) {
+      return;
+    }
+    if (!isOptionsModalOpen() && !isDefineTestModalOpen()) {
+      modalBackdrop.classList.add("hidden");
+      modalBackdrop.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+  }
+
+  function openDefineTestModal() {
+    if (!defineTestModal) {
+      return;
+    }
+
+    if (isDefineTestModalOpen()) {
+      return;
+    }
+
+    closeOptionsModal();
+    defineTestModal.classList.remove("hidden");
+    defineTestModal.setAttribute("aria-hidden", "false");
+    showModalBackdrop();
+
+    if (defineTestButton) {
+      defineTestButton.setAttribute("aria-expanded", "true");
+    }
+
+    if (defineTestError) {
+      defineTestError.textContent = "";
+    }
+
+    if (defineTestTimerInput && timerInput) {
+      defineTestTimerInput.value = timerInput.value || "";
+    }
+
+    populateDefineTestModal();
+    updateDefineTestSummary();
+
+    if (closeDefineTestButton) {
+      closeDefineTestButton.focus();
+    }
+  }
+
+  function closeDefineTestModal() {
+    if (!defineTestModal || !isDefineTestModalOpen()) {
+      return;
+    }
+
+    defineTestModal.classList.add("hidden");
+    defineTestModal.setAttribute("aria-hidden", "true");
+
+    if (defineTestButton) {
+      defineTestButton.setAttribute("aria-expanded", "false");
+      if (defineTestModal.contains(document.activeElement)) {
+        defineTestButton.focus();
+      }
+    }
+
+    hideModalBackdropIfNoModal();
+  }
+
+  function closeActiveModal() {
+    if (isDefineTestModalOpen()) {
+      closeDefineTestModal();
+      return;
+    }
+    if (isOptionsModalOpen()) {
+      closeOptionsModal();
+    }
+  }
+
   function setReviewMode(newFilter) {
     reviewFilter = newFilter;
     if (reviewFilterSelect) {
@@ -305,19 +796,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalQuestions = questions.length;
     const allIndexes = Array.from({ length: totalQuestions }, (_, index) => index);
 
+    let filteredIndexes = allIndexes;
+
+    if (isCustomSessionActive() && activeSourceFilter !== "all") {
+      filteredIndexes = filteredIndexes.filter((index) => {
+        const question = questions[index];
+        return question && question.sourceTestId === activeSourceFilter;
+      });
+    }
+
     if (!testSubmitted || questionResults.length === 0) {
-      return allIndexes;
+      return filteredIndexes;
     }
 
     if (reviewFilter === "correct") {
-      return allIndexes.filter((index) => questionResults[index] === "correct");
+      return filteredIndexes.filter(
+        (index) => questionResults[index] === "correct"
+      );
     }
 
     if (reviewFilter === "incorrect") {
-      return allIndexes.filter((index) => questionResults[index] !== "correct");
+      return filteredIndexes.filter(
+        (index) => questionResults[index] !== "correct"
+      );
     }
 
-    return allIndexes;
+    return filteredIndexes;
   }
 
   // Get today's date in YYYY-MM-DD format
@@ -442,7 +946,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function openOptionsModal() {
-    if (!optionsModal || !modalBackdrop) {
+    if (!optionsModal) {
       return;
     }
 
@@ -450,11 +954,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    closeDefineTestModal();
     optionsModal.classList.remove("hidden");
-    modalBackdrop.classList.remove("hidden");
     optionsModal.setAttribute("aria-hidden", "false");
-    modalBackdrop.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
+    showModalBackdrop();
     if (openOptionsButton) {
       openOptionsButton.setAttribute("aria-expanded", "true");
     }
@@ -465,7 +968,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function closeOptionsModal() {
-    if (!optionsModal || !modalBackdrop) {
+    if (!optionsModal) {
       return;
     }
 
@@ -474,10 +977,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     optionsModal.classList.add("hidden");
-    modalBackdrop.classList.add("hidden");
     optionsModal.setAttribute("aria-hidden", "true");
-    modalBackdrop.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
     if (openOptionsButton) {
       openOptionsButton.setAttribute("aria-expanded", "false");
     }
@@ -485,6 +985,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (openOptionsButton && optionsModal.contains(document.activeElement)) {
       openOptionsButton.focus();
     }
+
+    hideModalBackdropIfNoModal();
   }
 
   function setMode(mode) {
@@ -875,7 +1377,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "aria-hidden",
       modalBackdrop.classList.contains("hidden") ? "true" : "false"
     );
-    modalBackdrop.addEventListener("click", closeOptionsModal);
+    modalBackdrop.addEventListener("click", closeActiveModal);
   }
 
   if (modeButtons.length) {
@@ -897,8 +1399,53 @@ document.addEventListener("DOMContentLoaded", function () {
     closeOptionsButton.addEventListener("click", closeOptionsModal);
   }
 
+  if (defineTestButton) {
+    defineTestButton.addEventListener("click", openDefineTestModal);
+  }
+
+  if (closeDefineTestButton) {
+    closeDefineTestButton.addEventListener("click", closeDefineTestModal);
+  }
+
+  if (cancelDefineTestButton) {
+    cancelDefineTestButton.addEventListener("click", closeDefineTestModal);
+  }
+
+  if (defineTestForm) {
+    defineTestForm.addEventListener("submit", handleDefineTestSubmit);
+  }
+
+  if (defineTestQuestionInput) {
+    defineTestQuestionInput.addEventListener("input", () => {
+      updateDefineTestSummary();
+    });
+  }
+
+  if (defineTestTimerInput) {
+    defineTestTimerInput.addEventListener("input", () => {
+      if (defineTestError && defineTestError.textContent) {
+        defineTestError.textContent = "";
+      }
+    });
+  }
+
+  if (exitCustomSessionButton) {
+    exitCustomSessionButton.addEventListener("click", handleExitCustomSession);
+  }
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && isOptionsModalOpen()) {
+    if (event.key !== "Escape") {
+      return;
+    }
+
+    if (isDefineTestModalOpen()) {
+      event.preventDefault();
+      closeDefineTestModal();
+      return;
+    }
+
+    if (isOptionsModalOpen()) {
+      event.preventDefault();
       closeOptionsModal();
     }
   });
@@ -1091,20 +1638,29 @@ const testFiles = [
 
   // Load test files into the select element
   function loadTestFiles() {
-    testSelect.innerHTML = ""; // Clear existing options
+    testSelect.innerHTML = "";
+    availableTestsMetadata = [];
     let firstTestLoaded = false;
     let savedProgressFile = null;
+    let savedProgressData = null;
+
     try {
-      const storedProgress = JSON.parse(localStorage.getItem("testProgress"));
-      if (storedProgress && storedProgress.currentTestFile) {
-        savedProgressFile = storedProgress.currentTestFile;
+      savedProgressData = JSON.parse(localStorage.getItem("testProgress"));
+      if (savedProgressData && savedProgressData.currentTestFile) {
+        savedProgressFile = savedProgressData.currentTestFile;
+      }
+      if (
+        savedProgressData &&
+        typeof savedProgressData.lastRegularTestValue === "string"
+      ) {
+        lastRegularTestValue = savedProgressData.lastRegularTestValue;
       }
     } catch (error) {
       console.warn("Unable to read saved progress metadata:", error);
     }
 
-    let fetchPromises = testFiles.map((filename) => {
-      return fetch(filename)
+    const fetchPromises = testFiles.map((filename) =>
+      fetch(filename)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`Error loading file: ${response.statusText}`);
@@ -1119,8 +1675,18 @@ const testFiles = [
             : filename.replace(".json", "").replace(/_/g, " ");
           testSelect.appendChild(option);
 
+          const questionCount = Array.isArray(data.questions)
+            ? data.questions.length
+            : 0;
+          availableTestsMetadata.push({
+            file: filename,
+            name: option.textContent,
+            questionCount,
+          });
+
           const shouldLoadThisFile = savedProgressFile
-            ? filename === savedProgressFile
+            ? savedProgressFile !== CUSTOM_TEST_VALUE &&
+              filename === savedProgressFile
             : !firstTestLoaded;
 
           if (!firstTestLoaded && shouldLoadThisFile) {
@@ -1135,12 +1701,26 @@ const testFiles = [
           errorOption.textContent = `Error loading ${filename}`;
           errorOption.disabled = true;
           testSelect.appendChild(errorOption);
-        });
-    });
+        })
+    );
 
     Promise.all(fetchPromises)
       .then(() => {
         console.log("All test files loaded");
+        populateDefineTestModal();
+
+        if (
+          savedProgressFile === CUSTOM_TEST_VALUE &&
+          savedProgressData &&
+          savedProgressData.customSession
+        ) {
+          const restored = restoreCustomSessionFromProgress(savedProgressData);
+          if (restored) {
+            testSelect.dataset.previousValue = testSelect.value;
+            return;
+          }
+        }
+
         if (!firstTestLoaded && testFiles.length > 0) {
           testSelect.value = testFiles[0];
           loadQuestions(testFiles[0]);
@@ -1201,6 +1781,9 @@ const testFiles = [
 
   function loadQuestions(filename, customData = null) {
     currentTestFile = filename;
+    if (filename !== CUSTOM_TEST_VALUE) {
+      lastRegularTestValue = filename;
+    }
 
     const initializeFromQuestions = (rawQuestions) => {
       originalQuestions = cloneQuestionsData(rawQuestions || []);
@@ -1229,6 +1812,290 @@ const testFiles = [
           renderFlashcards();
         });
     }
+  }
+
+  async function createCustomSession({
+    selectedTests,
+    requestedCount,
+    timerMinutes = null,
+  }) {
+    if (!Array.isArray(selectedTests) || selectedTests.length === 0) {
+      throw new Error("Select at least one test.");
+    }
+
+    const fetchPromises = selectedTests.map((test) =>
+      fetch(test.file)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Error loading ${test.name || test.file}`);
+          }
+          return response.json();
+        })
+        .then((data) => ({ file: test.file, data }))
+    );
+
+    const results = await Promise.allSettled(fetchPromises);
+    const successful = results
+      .filter((result) => result.status === "fulfilled")
+      .map((result) => result.value);
+
+    if (!successful.length) {
+      throw new Error("Unable to load the selected tests.");
+    }
+
+    const aggregatedQuestions = [];
+    const countsByFile = new Map();
+
+    successful.forEach(({ file, data }) => {
+      const meta = getTestMetadataByFile(file);
+      const testName =
+        meta?.name ||
+        (data && typeof data.testName === "string" && data.testName.trim()
+          ? data.testName.trim()
+          : file);
+
+      const sourceQuestions = Array.isArray(data.questions)
+        ? data.questions
+        : [];
+
+      countsByFile.set(file, sourceQuestions.length);
+
+      sourceQuestions.forEach((question, index) => {
+        const questionCopy = cloneQuestionData(question);
+        questionCopy.sourceTestId = file;
+        questionCopy.sourceTestName = testName;
+        questionCopy.sourceQuestionIndex = index;
+        aggregatedQuestions.push(questionCopy);
+      });
+    });
+
+    if (!aggregatedQuestions.length) {
+      throw new Error("The selected tests have no questions.");
+    }
+
+    const totalAvailable = aggregatedQuestions.length;
+    const effectiveRequested = Math.max(1, requestedCount);
+    const limit = Math.min(effectiveRequested, totalAvailable);
+    const sampled = shuffleArray([...aggregatedQuestions]).slice(0, limit);
+    const activeQuestions = cloneQuestionsData(sampled);
+
+    const sources = successful.map(({ file, data }) => {
+      const meta = getTestMetadataByFile(file);
+      const derivedName =
+        meta?.name ||
+        (data && typeof data.testName === "string" && data.testName.trim()
+          ? data.testName.trim()
+          : file);
+      const questionCount = countsByFile.get(file) || 0;
+      return { file, name: derivedName, questionCount };
+    });
+
+    if (typeof timerMinutes === "number" && timerInput) {
+      timerInput.value = String(timerMinutes);
+    }
+
+    currentCustomSession = {
+      id: `custom-${Date.now()}`,
+      sources,
+      requestedCount: effectiveRequested,
+      questionCount: activeQuestions.length,
+      totalAvailableQuestions: totalAvailable,
+      timerMinutes: typeof timerMinutes === "number" ? timerMinutes : null,
+      sourceQuestions: cloneQuestionsData(aggregatedQuestions),
+      activeQuestions,
+      displayName: getCustomSessionSourceSummary(sources),
+    };
+
+    ensureCustomTestOption(currentCustomSession.displayName);
+
+    if (testSelect) {
+      if (!isCustomSessionActive() && testSelect.value !== CUSTOM_TEST_VALUE) {
+        lastRegularTestValue = testSelect.value;
+      }
+      testSelect.value = CUSTOM_TEST_VALUE;
+      testSelect.dataset.previousValue = CUSTOM_TEST_VALUE;
+    }
+
+    clearSavedProgress();
+    loadQuestions(CUSTOM_TEST_VALUE, { questions: activeQuestions });
+
+    const failed = results.filter((result) => result.status === "rejected");
+    if (failed.length) {
+      console.warn(
+        `Some selected tests could not be loaded: ${failed
+          .map((item) => item.reason?.message || "Unknown error")
+          .join(", ")}`
+      );
+    }
+  }
+
+  function sampleQuestionsFromCustomSession() {
+    if (
+      !currentCustomSession ||
+      !Array.isArray(currentCustomSession.sourceQuestions)
+    ) {
+      return [];
+    }
+
+    const pool = cloneQuestionsData(currentCustomSession.sourceQuestions);
+    if (!pool.length) {
+      return [];
+    }
+
+    const effectiveRequested = Math.max(
+      1,
+      currentCustomSession.requestedCount || pool.length
+    );
+    const limit = Math.min(effectiveRequested, pool.length);
+    return shuffleArray(pool).slice(0, limit);
+  }
+
+  function regenerateCustomSessionQuestions() {
+    if (!isCustomSessionActive()) {
+      return;
+    }
+
+    const nextQuestions = sampleQuestionsFromCustomSession();
+    if (!nextQuestions.length) {
+      console.warn("No questions available to regenerate the custom session.");
+      return;
+    }
+
+    currentCustomSession.activeQuestions = cloneQuestionsData(nextQuestions);
+    currentCustomSession.questionCount = nextQuestions.length;
+    clearSavedProgress();
+    if (testSelect) {
+      testSelect.value = CUSTOM_TEST_VALUE;
+      testSelect.dataset.previousValue = CUSTOM_TEST_VALUE;
+    }
+    loadQuestions(CUSTOM_TEST_VALUE, {
+      questions: currentCustomSession.activeQuestions,
+    });
+  }
+
+  function restoreCustomSessionFromProgress(progressData) {
+    if (!progressData || !progressData.customSession) {
+      return false;
+    }
+
+    const session = progressData.customSession;
+    const activeQuestions = Array.isArray(session.activeQuestions)
+      ? session.activeQuestions
+      : [];
+
+    if (!activeQuestions.length) {
+      return false;
+    }
+
+    const sources = Array.isArray(session.sources) ? session.sources : [];
+
+    currentCustomSession = {
+      id: session.id || `custom-${Date.now()}`,
+      sources,
+      requestedCount:
+        typeof session.requestedCount === "number"
+          ? session.requestedCount
+          : activeQuestions.length,
+      questionCount:
+        typeof session.questionCount === "number"
+          ? session.questionCount
+          : activeQuestions.length,
+      totalAvailableQuestions:
+        typeof session.totalAvailableQuestions === "number"
+          ? session.totalAvailableQuestions
+          : Array.isArray(session.sourceQuestions)
+          ? session.sourceQuestions.length
+          : activeQuestions.length,
+      timerMinutes:
+        typeof session.timerMinutes === "number" ? session.timerMinutes : null,
+      sourceQuestions: cloneQuestionsData(
+        session.sourceQuestions || activeQuestions
+      ),
+      activeQuestions: cloneQuestionsData(activeQuestions),
+      displayName:
+        session.displayName || getCustomSessionSourceSummary(sources),
+    };
+
+    ensureCustomTestOption(currentCustomSession.displayName);
+    if (testSelect) {
+      testSelect.value = CUSTOM_TEST_VALUE;
+      testSelect.dataset.previousValue = CUSTOM_TEST_VALUE;
+    }
+
+    if (
+      typeof currentCustomSession.timerMinutes === "number" &&
+      timerInput
+    ) {
+      timerInput.value = String(currentCustomSession.timerMinutes);
+    }
+
+    loadQuestions(CUSTOM_TEST_VALUE, {
+      questions: currentCustomSession.activeQuestions,
+    });
+    return true;
+  }
+
+  function exitCustomSession({ loadFallback = true } = {}) {
+    if (!currentCustomSession) {
+      return;
+    }
+
+    currentCustomSession = null;
+    activeSourceFilter = "all";
+    if (reviewSourceFilterSelect) {
+      reviewSourceFilterSelect.value = "all";
+    }
+    clearCustomTestOption();
+    updateCustomSessionChip();
+    clearSavedProgress();
+
+    if (!loadFallback) {
+      return;
+    }
+
+    let fallbackValue =
+      lastRegularTestValue && lastRegularTestValue !== CUSTOM_TEST_VALUE
+        ? lastRegularTestValue
+        : null;
+
+    if (testSelect && (!fallbackValue || !testSelect.value)) {
+      const firstOption = testSelect.querySelector("option");
+      fallbackValue = firstOption ? firstOption.value : null;
+    }
+
+    if (testSelect && fallbackValue) {
+      testSelect.value = fallbackValue;
+      testSelect.dataset.previousValue = fallbackValue;
+      lastRegularTestValue = fallbackValue;
+      loadQuestions(fallbackValue);
+    }
+  }
+
+  function handleExitCustomSession() {
+    if (!isCustomSessionActive()) {
+      return;
+    }
+
+    if (testInProgress || timerStarted) {
+      const confirmExit = confirm(
+        "Are you sure you want to exit this custom test?"
+      );
+      if (!confirmExit) {
+        return;
+      }
+
+      testStats.testsAbandoned++;
+      const testName = testSelect
+        ? testSelect.options[testSelect.selectedIndex]?.textContent || "Custom Mix"
+        : "Custom Mix";
+      testStats.abandonedTests.push(testName);
+      saveStats();
+      updateStatsDisplay();
+    }
+
+    clearInterval(timer);
+    timer = null;
+    exitCustomSession({ loadFallback: true });
   }
 
   // Initialize test variables and UI
@@ -1297,6 +2164,7 @@ const testFiles = [
     updateProgress();
     updateBookmarkPanel();
     renderFlashcards();
+    updateCustomSessionChip();
     updateReviewFilterVisibility();
 
     if (hasSavedProgress && testInProgress && remainingTime > 0) {
@@ -1396,6 +2264,16 @@ const testFiles = [
       questionTextElement.appendChild(questionBodyElement);
 
       questionElement.appendChild(questionTextElement);
+
+      if (question.sourceTestName) {
+        const questionMetaElement = document.createElement("div");
+        questionMetaElement.classList.add("question-meta");
+        const sourceBadge = document.createElement("span");
+        sourceBadge.classList.add("question-source-badge");
+        sourceBadge.textContent = question.sourceTestName;
+        questionMetaElement.appendChild(sourceBadge);
+        questionElement.appendChild(questionMetaElement);
+      }
 
       // Determine if the question has multiple correct answers
       const isMultipleCorrect = Array.isArray(question.correctAnswer);
@@ -1626,6 +2504,13 @@ const testFiles = [
         "aria-label",
         `Flashcard ${cardIndex + 1}: ${trimmedSummary}`
       );
+
+      if (question.sourceTestName) {
+        const sourceTag = document.createElement("span");
+        sourceTag.className = "flashcard-source";
+        sourceTag.textContent = question.sourceTestName;
+        card.appendChild(sourceTag);
+      }
 
       card.appendChild(questionText);
       card.appendChild(answerText);
@@ -1889,6 +2774,16 @@ const testFiles = [
       currentPage = 1;
       renderQuestions();
       updatePaginationControls();
+    });
+  }
+
+  if (reviewSourceFilterSelect) {
+    reviewSourceFilterSelect.addEventListener("change", (event) => {
+      activeSourceFilter = event.target.value;
+      currentPage = 1;
+      renderQuestions();
+      updatePaginationControls();
+      updateBookmarkPanel();
     });
   }
 
@@ -2224,6 +3119,7 @@ const testFiles = [
   //************************ SECTION 11: TEST RESET ************************//
 
   function resetTest() {
+    const wasCustomSession = isCustomSessionActive();
     if (testInProgress || timerStarted) {
       const confirmReset = confirm(
         "Are you sure you want to reset the current test?"
@@ -2242,6 +3138,12 @@ const testFiles = [
     }
     clearInterval(timer);
     timer = null;
+
+    if (wasCustomSession) {
+      regenerateCustomSessionQuestions();
+      return;
+    }
+
     remainingTime = getTimerInputSeconds();
     initialTimerSeconds = null;
     updateTimerDisplay(
@@ -2714,6 +3616,10 @@ const testFiles = [
 
   if (testSelect) {
     testSelect.addEventListener("change", () => {
+      const selectedValue = testSelect.value;
+      const leavingCustomSession =
+        selectedValue !== CUSTOM_TEST_VALUE && isCustomSessionActive();
+
       if (testInProgress || timerStarted) {
         const confirmSwitch = confirm(
           "Are you sure you want to stop the current test?"
@@ -2731,10 +3637,16 @@ const testFiles = [
           updateStatsDisplay();
 
           resetTest();
-          loadQuestions(testSelect.value);
+          if (leavingCustomSession) {
+            exitCustomSession({ loadFallback: false });
+          }
+          loadQuestions(selectedValue);
         }
       } else {
-        loadQuestions(testSelect.value);
+        if (leavingCustomSession) {
+          exitCustomSession({ loadFallback: false });
+        }
+        loadQuestions(selectedValue);
       }
       testSelect.dataset.previousValue = testSelect.value;
     });
@@ -2798,6 +3710,17 @@ const testFiles = [
               loadQuestions(file.name, data);
               testSelect.dataset.previousValue = file.name;
             }
+            availableTestsMetadata = availableTestsMetadata.filter(
+              (item) => item.file !== file.name
+            );
+            availableTestsMetadata.push({
+              file: file.name,
+              name: testName,
+              questionCount: Array.isArray(data.questions)
+                ? data.questions.length
+                : 0,
+            });
+            populateDefineTestModal();
             alert("Custom test loaded successfully!");
           } catch (error) {
             console.error("Error parsing JSON file:", error);
@@ -2825,6 +3748,30 @@ const testFiles = [
       showAllQuestions,
       bookmarkedQuestions: Array.from(bookmarkedQuestions),
     };
+    progressData.lastRegularTestValue = lastRegularTestValue;
+
+    if (isCustomSessionActive()) {
+      progressData.customSession = {
+        id: currentCustomSession?.id,
+        sources: currentCustomSession?.sources || [],
+        requestedCount: currentCustomSession?.requestedCount || 0,
+        questionCount: currentCustomSession?.questionCount || 0,
+        totalAvailableQuestions:
+          currentCustomSession?.totalAvailableQuestions || 0,
+        timerMinutes:
+          typeof currentCustomSession?.timerMinutes === "number"
+            ? currentCustomSession.timerMinutes
+            : null,
+        displayName: currentCustomSession?.displayName || null,
+        activeQuestions: cloneQuestionsData(originalQuestions),
+        sourceQuestions: currentCustomSession?.sourceQuestions
+          ? cloneQuestionsData(currentCustomSession.sourceQuestions)
+          : cloneQuestionsData(originalQuestions),
+      };
+    } else {
+      progressData.customSession = null;
+    }
+
     localStorage.setItem("testProgress", JSON.stringify(progressData));
   }
 
