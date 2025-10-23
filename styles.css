@@ -82,9 +82,10 @@ button {
     top: 0;
     z-index: 100;
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.55rem 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+    padding: 0.85rem 1.5rem;
     background: var(--surface-color);
     box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
     border-bottom: 1px solid var(--border-color);
@@ -93,14 +94,57 @@ button {
 .header-top {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    flex: 0 0 auto;
+    justify-content: space-between;
+    gap: 1.25rem;
+    width: 100%;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .header-top-actions {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.header-summary {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.summary-chip {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background: var(--subtle-surface);
+    min-width: 96px;
+}
+
+.summary-chip-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted-text);
+}
+
+.summary-chip-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-color);
 }
 
 .header-options-btn {
@@ -372,11 +416,11 @@ button {
     font-size: 0.95rem;
 }
 
-.header-actions {
+.header-primary-actions {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     flex-wrap: wrap;
-    justify-content: flex-end;
 }
 
 
@@ -1724,10 +1768,33 @@ body.study-mode-active .question {
 
 @media (max-width: 1024px) {
     .app-header {
-        flex-direction: column;
-        align-items: stretch;
         gap: 1rem;
         padding: 0.75rem 1rem;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .header-brand {
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .header-summary {
+        width: 100%;
+    }
+
+    .header-top-actions {
+        justify-content: flex-start;
+        gap: 0.6rem;
+    }
+
+    .header-primary-actions {
+        width: 100%;
+        justify-content: flex-start;
     }
 
     .header-sections {
@@ -1761,8 +1828,21 @@ body.study-mode-active .question {
         align-items: stretch;
     }
 
-
+    .header-toggle {
+        display: inline-flex;
+    }
 }
+
+@media (max-height: 600px) {
+    .app-header {
+        gap: 0.75rem;
+    }
+
+    .header-toggle {
+        display: inline-flex;
+    }
+}
+
 @media (max-width: 768px) {
     .app-header {
         position: fixed;
@@ -1787,14 +1867,13 @@ body.study-mode-active .question {
     }
 
     .app-header.collapsed .header-top {
-        flex-direction: row;
-        justify-content: center;
-        gap: 0.4rem;
+        align-items: stretch;
+        gap: 0.5rem;
     }
 
     .app-header.collapsed .logo {
         font-size: 1rem;
-        max-width: 80px;
+        max-width: 120px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -1805,7 +1884,18 @@ body.study-mode-active .question {
     }
 
     .header-top {
-        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .header-top-actions {
+        width: 100%;
+    }
+
+    .header-primary-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0.6rem;
     }
 
     .header-options-btn .options-label {
@@ -1861,7 +1951,7 @@ body.study-mode-active .question {
         justify-content: flex-start;
     }
 
-    .header-actions {
+    .header-primary-actions {
         width: 100%;
         justify-content: flex-start;
         flex-direction: column;
@@ -1901,12 +1991,12 @@ body.study-mode-active .question {
         gap: 0.5rem;
     }
 
-    .header-actions {
+    .header-primary-actions {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .header-actions .btn {
+    .header-primary-actions .btn {
         width: 100%;
     }
 

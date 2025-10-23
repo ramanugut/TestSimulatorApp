@@ -126,6 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const downloadReportButton = document.getElementById("download-report");
   const progressBarElement = document.getElementById("progress-bar");
   const progressTextElement = document.getElementById("progress-text");
+  const headerProgressChip = document.getElementById("header-progress-chip");
+  const headerTimeChip = document.getElementById("header-time-chip");
   const headerElement = document.getElementById("floating-header");
   const headerToggleButton = document.getElementById("header-toggle");
   const floatingActionsContainer = document.getElementById("floating-actions");
@@ -134,8 +136,19 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   const MOBILE_BREAKPOINT = 768;
+  const HEADER_COLLAPSE_BREAKPOINT = 1024;
+  const SHORT_VIEWPORT_HEIGHT = 600;
+
+  function shouldEnableHeaderCollapse() {
+    return (
+      window.innerWidth <= HEADER_COLLAPSE_BREAKPOINT ||
+      window.innerHeight <= SHORT_VIEWPORT_HEIGHT
+    );
+  }
+
   let lastViewportIsMobile = window.innerWidth <= MOBILE_BREAKPOINT;
-  let headerCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
+  let lastHeaderCollapseEligible = shouldEnableHeaderCollapse();
+  let headerCollapsed = lastHeaderCollapseEligible;
   let actionsCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
 
   if (flashcardsGrid) {
@@ -863,7 +876,9 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    if (!isMobileViewport()) {
+    const collapseEnabled = shouldEnableHeaderCollapse();
+
+    if (!collapseEnabled) {
       headerCollapsed = false;
       headerElement.classList.remove("collapsed");
       headerToggleButton.setAttribute("aria-expanded", "true");
@@ -1040,6 +1055,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleResponsiveState() {
     const isMobile = isMobileViewport();
+    const headerCollapseEligible = shouldEnableHeaderCollapse();
 
     if (isMobile && !lastViewportIsMobile) {
       headerCollapsed = true;
@@ -1047,14 +1063,23 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isOptionsModalOpen()) {
         closeOptionsModal();
       }
-    } else if (!isMobile && lastViewportIsMobile) {
+    }
+
+    if (headerCollapseEligible && !lastHeaderCollapseEligible) {
+      headerCollapsed = true;
+    } else if (!headerCollapseEligible && lastHeaderCollapseEligible) {
       headerCollapsed = false;
+    }
+
+    if (!isMobile && lastViewportIsMobile) {
+      actionsCollapsed = false;
     }
 
     syncHeaderToggleState();
     syncFloatingActionsState();
 
     lastViewportIsMobile = isMobile;
+    lastHeaderCollapseEligible = headerCollapseEligible;
   }
 
   function escapeHTML(value) {
@@ -2854,6 +2879,9 @@ const testFiles = [
     if (floatingTimeDisplay) {
       floatingTimeDisplay.textContent = timeString;
     }
+    if (headerTimeChip) {
+      headerTimeChip.textContent = timeString;
+    }
   }
 
   function pauseOrContinueTimer() {
@@ -3166,6 +3194,9 @@ const testFiles = [
     if (progressTextElement) {
       progressTextElement.textContent = `0%`;
     }
+    if (headerProgressChip) {
+      headerProgressChip.textContent = `0%`;
+    }
     if (progressBarElement) {
       progressBarElement.style.width = `0%`;
     }
@@ -3203,6 +3234,9 @@ const testFiles = [
         : Math.round((answeredQuestions / totalQuestions) * 100);
     if (progressTextElement) {
       progressTextElement.textContent = `${progressPercent}%`;
+    }
+    if (headerProgressChip) {
+      headerProgressChip.textContent = `${progressPercent}%`;
     }
     if (progressBarElement) {
       progressBarElement.style.width = `${progressPercent}%`;
