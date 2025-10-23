@@ -1070,11 +1070,11 @@ const testFiles = [
  /* "test23.json",
   "test24.json",
   "test25.json",
-  "test26.json", **/
+  "test26.json", 
   "test27.json",
   "test28.json",
   "test28b.json",
-  "test29.json",
+  "test29.json",**/
   "test30.json",
   "test31.json",
   "test32.json",
