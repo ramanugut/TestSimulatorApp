@@ -53,6 +53,22 @@
                 <div class="test-select-group">
                     <label class="input-label" for="test-select">Choose a Test</label>
                     <select id="test-select"></select>
+                    <div
+                        id="custom-session-chip"
+                        class="custom-session-chip hidden"
+                        role="status"
+                        aria-live="polite"
+                    >
+                        <span id="custom-session-summary"></span>
+                        <button
+                            id="exit-custom-session"
+                            class="chip-dismiss"
+                            type="button"
+                            aria-label="Exit custom session"
+                        >
+                            &times;
+                        </button>
+                    </div>
                 </div>
                 <div class="header-progress">
                     <span class="progress-label">Progress</span>
@@ -75,6 +91,15 @@
                 </div>
                 <div class="timer-display">⏱️ <span id="floating-time">00:00</span></div>
                 <div class="header-actions">
+                    <button
+                        id="define-test"
+                        class="btn btn-tertiary"
+                        type="button"
+                        aria-haspopup="dialog"
+                        aria-expanded="false"
+                    >
+                        Define Test
+                    </button>
                     <button id="start-test" class="btn btn-primary">Start Test</button>
                     <button id="pause-timer" class="btn btn-secondary">Pause Timer</button>
                 </div>
@@ -191,6 +216,68 @@
 
     <div id="modal-backdrop" class="modal-backdrop hidden"></div>
     <div
+        id="define-test-modal"
+        class="modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="define-test-title"
+    >
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="define-test-title">Define Custom Test</h2>
+                <button
+                    id="close-define-test"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close define test"
+                >&times;</button>
+            </header>
+            <form id="define-test-form" class="define-test-form">
+                <section class="define-test-section">
+                    <h3>Select Tests</h3>
+                    <p class="modal-card-description">
+                        Combine questions from multiple tests to build a custom practice session.
+                    </p>
+                    <div id="define-test-list" class="define-test-list" role="group"></div>
+                </section>
+                <section class="define-test-section">
+                    <h3>Session Settings</h3>
+                    <div class="define-test-settings">
+                        <label class="input-label" for="define-test-question-count">
+                            Number of Questions
+                        </label>
+                        <input
+                            type="number"
+                            id="define-test-question-count"
+                            min="1"
+                            value="10"
+                            aria-describedby="define-test-summary"
+                        >
+                        <label class="input-label" for="define-test-timer">
+                            Timer (minutes)
+                        </label>
+                        <input
+                            type="number"
+                            id="define-test-timer"
+                            min="0"
+                            placeholder="Use current"
+                        >
+                    </div>
+                </section>
+                <p id="define-test-summary" class="define-test-summary" role="status"></p>
+                <p id="define-test-error" class="define-test-error" role="alert"></p>
+                <footer class="modal-footer">
+                    <button type="button" id="cancel-define-test" class="btn btn-secondary">
+                        Cancel
+                    </button>
+                    <button type="submit" id="define-test-start" class="btn btn-primary">
+                        Start Custom Test
+                    </button>
+                </footer>
+            </form>
+        </div>
+    </div>
+    <div
         id="options-modal"
         class="modal hidden"
         role="dialog"
@@ -303,6 +390,15 @@
                                 <option value="incorrect">Incorrect only</option>
                                 <option value="correct">Correct only</option>
                             </select>
+                            <div
+                                id="review-source-filter-container"
+                                class="result-filter-source hidden"
+                            >
+                                <label for="review-source-filter">Source</label>
+                                <select id="review-source-filter">
+                                    <option value="all">All sources</option>
+                                </select>
+                            </div>
                         </div>
                         <button class="btn btn-primary" id="download-report">Download Report</button>
 
