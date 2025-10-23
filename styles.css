@@ -1186,6 +1186,13 @@ body.study-mode-active .question {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.pagination-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .pagination span {

@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentMode = "test";
   let questionResults = [];
   let reviewFilter = "all";
+  let showAllQuestions = false;
 
   //************************ SECTION 1A: ELEMENT REFERENCES ************************//
 
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevPageButton = document.getElementById("prev-page");
   const nextPageButton = document.getElementById("next-page");
   const pageInfo = document.getElementById("page-info");
+  const viewToggleButton = document.getElementById("view-toggle");
   const uploadTestInput = document.getElementById("upload-test-input");
   const motivationMessageElement = document.getElementById("motivation-message");
   const newMotivationButton = document.getElementById("new-motivation");
@@ -1259,6 +1261,7 @@ const testFiles = [
       testSubmitted = !!savedProgress.testSubmitted;
       bookmarkedQuestions = new Set(savedProgress.bookmarkedQuestions || []);
       isTimerPaused = !!savedProgress.isTimerPaused;
+      showAllQuestions = !!savedProgress.showAllQuestions;
     } else {
       currentPage = 1;
       userAnswers = {};
@@ -1267,6 +1270,7 @@ const testFiles = [
       bookmarkedQuestions = new Set();
       isTimerPaused = false;
       remainingTime = getTimerInputSeconds();
+      showAllQuestions = false;
     }
 
     bookmarkCycleIndex = 0;
@@ -1340,10 +1344,9 @@ const testFiles = [
       currentPage = totalPages;
     }
     const startIndex = (currentPage - 1) * questionsPerPage;
-    const indexesToDisplay = filteredIndexes.slice(
-      startIndex,
-      startIndex + questionsPerPage
-    );
+    const indexesToDisplay = showAllQuestions
+      ? filteredIndexes
+      : filteredIndexes.slice(startIndex, startIndex + questionsPerPage);
 
     indexesToDisplay.forEach((actualIndex) => {
       const question = questions[actualIndex];
@@ -1780,10 +1783,28 @@ const testFiles = [
     if (totalFiltered === 0) {
       paginationControls.classList.add("hidden");
       pageInfo.textContent = "";
+      if (viewToggleButton) {
+        viewToggleButton.classList.add("hidden");
+        viewToggleButton.setAttribute("aria-pressed", "false");
+      }
       return;
     }
 
     paginationControls.classList.remove("hidden");
+    if (viewToggleButton) {
+      viewToggleButton.classList.remove("hidden");
+      const viewAllLabel =
+        totalFiltered === 1
+          ? "View All (1)"
+          : `View All (${totalFiltered})`;
+      viewToggleButton.textContent = showAllQuestions
+        ? "Show Pages"
+        : viewAllLabel;
+      viewToggleButton.setAttribute(
+        "aria-pressed",
+        showAllQuestions.toString()
+      );
+    }
     const totalPages = Math.max(
       1,
       Math.ceil(totalFiltered / questionsPerPage)
@@ -1791,9 +1812,22 @@ const testFiles = [
     if (currentPage > totalPages) {
       currentPage = totalPages;
     }
-    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-    prevPageButton.disabled = currentPage === 1;
-    nextPageButton.disabled = currentPage === totalPages;
+    if (showAllQuestions) {
+      pageInfo.textContent =
+        totalFiltered === 1
+          ? "Showing all 1 question"
+          : `Showing all ${totalFiltered} questions`;
+      prevPageButton.disabled = true;
+      nextPageButton.disabled = true;
+      prevPageButton.classList.add("hidden");
+      nextPageButton.classList.add("hidden");
+    } else {
+      prevPageButton.classList.remove("hidden");
+      nextPageButton.classList.remove("hidden");
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+      prevPageButton.disabled = currentPage === 1;
+      nextPageButton.disabled = currentPage === totalPages;
+    }
   }
 
   if (prevPageButton) {
@@ -1820,6 +1854,32 @@ const testFiles = [
         updatePaginationControls();
         scrollToQuestionsTop();
       }
+    });
+  }
+
+  if (viewToggleButton) {
+    viewToggleButton.addEventListener("click", () => {
+      const totalFiltered = getFilteredQuestionIndexes().length;
+      if (totalFiltered === 0) {
+        return;
+      }
+
+      showAllQuestions = !showAllQuestions;
+
+      if (!showAllQuestions) {
+        const totalPages = Math.max(
+          1,
+          Math.ceil(totalFiltered / questionsPerPage)
+        );
+        if (currentPage > totalPages) {
+          currentPage = totalPages;
+        }
+      }
+
+      renderQuestions();
+      updatePaginationControls();
+      scrollToQuestionsTop();
+      saveProgress();
     });
   }
 
@@ -2762,6 +2822,7 @@ const testFiles = [
       testSubmitted,
       currentTestFile,
       isTimerPaused,
+      showAllQuestions,
       bookmarkedQuestions: Array.from(bookmarkedQuestions),
     };
     localStorage.setItem("testProgress", JSON.stringify(progressData));
