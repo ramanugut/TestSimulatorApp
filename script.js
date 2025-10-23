@@ -2282,6 +2282,14 @@ const testFiles = [
         const optionsList = document.createElement("ul");
         optionsList.classList.add("options");
 
+        const canonicalCorrectAnswers = Array.isArray(question.correctAnswer)
+          ? question.correctAnswer
+              .map((value) => canonicalizeAnswerValue(value))
+              .filter((value) => value !== "")
+          : [
+              canonicalizeAnswerValue(question.correctAnswer),
+            ].filter((value) => value !== "");
+
         question.options.forEach((option, optionIndex) => {
           const optionElement = document.createElement("li");
           optionElement.classList.add("option-item");
@@ -2320,42 +2328,52 @@ const testFiles = [
           labelElement.appendChild(optionContent);
           optionElement.appendChild(labelElement);
 
-          input.addEventListener("change", (event) => {
-          if (isMultipleCorrect) {
-            // Handle multiple selections
-            if (!Array.isArray(userAnswers[actualIndex])) {
-              userAnswers[actualIndex] = [];
-            }
-            if (event.target.checked) {
-              userAnswers[actualIndex].push(event.target.value);
-              optionElement.classList.add("selected");
-            } else {
-              userAnswers[actualIndex] = userAnswers[actualIndex].filter(
-                (value) => value !== event.target.value
-              );
-              optionElement.classList.remove("selected");
-            }
-          } else {
-            // Handle single selection
-            userAnswers[actualIndex] = event.target.value;
-            const optionItems = optionsList.querySelectorAll("li");
-            optionItems.forEach((item) => item.classList.remove("selected"));
-            optionElement.classList.add("selected");
+          if (
+            isStudyMode &&
+            canonicalCorrectAnswers.length > 0 &&
+            canonicalCorrectAnswers.some((correctValue) =>
+              answerValuesEqual(correctValue, input.value)
+            )
+          ) {
+            optionElement.classList.add("option-correct");
           }
 
-          updateProgress();
-          if (!isStudyMode && !timerStarted) {
-            startTimer();
-            if (startTestButton) {
-              startTestButton.disabled = true;
+          input.addEventListener("change", (event) => {
+            if (isMultipleCorrect) {
+              // Handle multiple selections
+              if (!Array.isArray(userAnswers[actualIndex])) {
+                userAnswers[actualIndex] = [];
+              }
+              if (event.target.checked) {
+                userAnswers[actualIndex].push(event.target.value);
+                optionElement.classList.add("selected");
+              } else {
+                userAnswers[actualIndex] = userAnswers[actualIndex].filter(
+                  (value) => value !== event.target.value
+                );
+                optionElement.classList.remove("selected");
+              }
+            } else {
+              // Handle single selection
+              userAnswers[actualIndex] = event.target.value;
+              const optionItems = optionsList.querySelectorAll("li");
+              optionItems.forEach((item) => item.classList.remove("selected"));
+              optionElement.classList.add("selected");
             }
-            if (submitButton) {
-              submitButton.disabled = false;
+
+            updateProgress();
+            if (!isStudyMode && !timerStarted) {
+              startTimer();
+              if (startTestButton) {
+                startTestButton.disabled = true;
+              }
+              if (submitButton) {
+                submitButton.disabled = false;
+              }
+              testInProgress = true;
             }
-            testInProgress = true;
-          }
-          saveProgress();
-        });
+            saveProgress();
+          });
 
           // Restore user selections
           const storedAnswer = userAnswers[actualIndex];
