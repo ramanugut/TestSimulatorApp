@@ -1136,6 +1136,12 @@ body.dark-mode .result-banner--pass .result-summary {
     font-weight: 600;
 }
 
+.options li.option-correct:not(.selected) {
+    border-color: rgba(16, 185, 129, 0.45);
+    background: rgba(16, 185, 129, 0.14);
+    box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.18);
+}
+
 .options li:hover {
     border-color: var(--accent-color);
 }
@@ -1148,6 +1154,12 @@ body.dark-mode .options li.selected {
 
 body.dark-mode .options li.selected label {
     color: #ffedd5;
+}
+
+body.dark-mode .options li.option-correct:not(.selected) {
+    border-color: rgba(16, 185, 129, 0.55);
+    background: rgba(16, 185, 129, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.32);
 }
 
 .option-content {
