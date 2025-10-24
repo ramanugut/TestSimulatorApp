@@ -1,107 +1,150 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>StudyFlow - Test Simulator</title>
     <link rel="stylesheet" href="styles.css">
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
-    <header id="floating-header" class="app-header">
-        <div class="header-top">
-            <div class="logo">dY"s StudyFlow</div>
-            <div class="header-top-actions">
+    <header id="floating-header" class="studyflow-header">
+        <div class="header-nav">
+            <div class="brand-group">
+                <div class="brand-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+                <div class="brand-meta">
+                    <span class="brand-name">StudyFlow</span>
+                    <span class="brand-tag">Focus. Practice. Win.</span>
+                </div>
+            </div>
+            <div class="nav-links" role="tablist" aria-label="StudyFlow sections">
+                <button class="nav-link active" data-view="dashboard" type="button" aria-selected="true">
+                    <i data-lucide="home"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-link" data-view="practice" type="button" aria-selected="false">
+                    <i data-lucide="book-open"></i>
+                    <span>Practice</span>
+                </button>
+                <button class="nav-link" data-view="analytics" type="button" aria-selected="false">
+                    <i data-lucide="bar-chart-3"></i>
+                    <span>Analytics</span>
+                </button>
+            </div>
+            <div class="nav-actions">
+                <button id="nav-theme-toggle" class="icon-button" type="button" aria-label="Toggle theme">
+                    <i data-lucide="sun"></i>
+                </button>
                 <button
                     id="open-options"
-                    class="header-options-btn"
+                    class="icon-button"
                     type="button"
                     aria-label="Open tools"
-                aria-expanded="false"
-                aria-controls="options-modal"
-            >
-                <span aria-hidden="true" class="icon icon-tools">
-                    <svg viewBox="0 0 24 24" role="presentation">
-                        <path d="M5 6h6a1 1 0 0 0 0-2H5a1 1 0 0 0-1 1v12a1 1 0 0 0 2 0V6Zm9 0h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm-4-5H5a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2Zm0 5H5a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2Z" fill="currentColor"/>
-                        <path d="M13 17a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Zm0-4a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Zm0-4a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Z" fill="currentColor"/>
-                    </svg>
-                </span>
-                <span class="options-label">Tools</span>
-            </button>
+                    aria-expanded="false"
+                    aria-controls="options-modal"
+                >
+                    <i data-lucide="settings"></i>
+                </button>
                 <button
                     id="header-toggle"
-                    class="header-toggle"
+                    class="icon-button"
                     type="button"
                     aria-expanded="false"
                     aria-controls="header-sections"
                 >
                     <span class="sr-only">Toggle header tools</span>
-                    <span aria-hidden="true" class="icon icon-hamburger">
-                        <svg viewBox="0 0 24 24" role="presentation">
-                            <path d="M4 7h16a1 1 0 0 0 0-2H4a1 1 0 1 0 0 2zm16 4H4a1 1 0 1 0 0 2h16a1 1 0 0 0 0-2zm0 6H4a1 1 0 1 0 0 2h16a1 1 0 0 0 0-2z" fill="currentColor"/>
-                        </svg>
-                    </span>
+                    <i data-lucide="menu"></i>
                 </button>
             </div>
         </div>
         <div id="header-sections" class="header-sections">
-            <div class="header-main">
-                <div class="test-select-group">
-                    <label class="input-label" for="test-select">Choose a Test</label>
-                    <select id="test-select"></select>
-                    <div
-                        id="custom-session-chip"
-                        class="custom-session-chip hidden"
-                        role="status"
-                        aria-live="polite"
-                    >
-                        <span id="custom-session-summary"></span>
-                        <button
-                            id="exit-custom-session"
-                            class="chip-dismiss"
-                            type="button"
-                            aria-label="Exit custom session"
-                        >
-                            &times;
-                        </button>
-                    </div>
-                </div>
-                <div class="header-progress">
-                    <span class="progress-label">Progress</span>
-                    <div id="floating-progress" class="progress-group">
-                        <div class="progress-bar-container">
-                            <div id="progress-bar"></div>
+            <div class="header-section-grid">
+                <div class="header-card">
+                    <div class="card-header">
+                        <span class="card-icon gradient">
+                            <i data-lucide="sparkles"></i>
+                        </span>
+                        <div>
+                            <p class="card-title">Choose a Test</p>
+                            <p class="card-subtitle">Jump into your next challenge</p>
                         </div>
-                        <span id="progress-text">0%</span>
+                    </div>
+                    <div class="test-select-group">
+                        <label class="input-label" for="test-select">Test Library</label>
+                        <select id="test-select"></select>
+                        <div
+                            id="custom-session-chip"
+                            class="custom-session-chip hidden"
+                            role="status"
+                            aria-live="polite"
+                        >
+                            <span id="custom-session-summary"></span>
+                            <button
+                                id="exit-custom-session"
+                                class="chip-dismiss"
+                                type="button"
+                                aria-label="Exit custom session"
+                            >
+                                &times;
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="header-controls">
-                <div class="timer-settings">
-                    <label class="input-label" for="timer-input">Timer</label>
-                    <div class="timer-input-group">
-                        <input type="number" id="timer-input" value="30" min="0" aria-describedby="timer-help">
-                        <span class="timer-unit">min</span>
+                <div class="header-card">
+                    <div class="card-header">
+                        <span class="card-icon gradient">
+                            <i data-lucide="target"></i>
+                        </span>
+                        <div>
+                            <p class="card-title">Progress</p>
+                            <p class="card-subtitle">Track how far you've come</p>
+                        </div>
                     </div>
-                    <p id="timer-help" class="assistive-text">Adjust anytime during a test.</p>
+                    <div class="header-progress">
+                        <div class="progress-group">
+                            <div class="progress-bar-container">
+                                <div id="progress-bar"></div>
+                            </div>
+                            <span id="progress-text">0%</span>
+                        </div>
+                        <div class="timer-display">⏱️ <span id="floating-time">00:00</span></div>
+                    </div>
                 </div>
-                <div class="timer-display">⏱️ <span id="floating-time">00:00</span></div>
-                <div class="header-actions">
-                    <button
-                        id="define-test"
-                        class="btn btn-tertiary"
-                        type="button"
-                        aria-haspopup="dialog"
-                        aria-expanded="false"
-                    >
-                        Define Test
-                    </button>
-                    <button id="start-test" class="btn btn-primary">Start Test</button>
-                    <button id="pause-timer" class="btn btn-secondary">Pause Timer</button>
+                <div class="header-card">
+                    <div class="card-header">
+                        <span class="card-icon gradient">
+                            <i data-lucide="clock"></i>
+                        </span>
+                        <div>
+                            <p class="card-title">Session Controls</p>
+                            <p class="card-subtitle">Fine-tune your practice</p>
+                        </div>
+                    </div>
+                    <div class="session-controls">
+                        <div class="timer-settings">
+                            <label class="input-label" for="timer-input">Timer (minutes)</label>
+                            <div class="timer-input-group">
+                                <input type="number" id="timer-input" value="30" min="0" aria-describedby="timer-help">
+                                <span class="timer-unit">min</span>
+                            </div>
+                            <p id="timer-help" class="assistive-text">Adjust anytime during a test.</p>
+                        </div>
+                        <div class="header-buttons">
+                            <button id="define-test" class="btn btn-ghost" type="button" aria-haspopup="dialog" aria-expanded="false">
+                                <i data-lucide="zap"></i>
+                                Custom Mix
+                            </button>
+                            <button id="start-test" class="btn btn-primary" type="button">
+                                <i data-lucide="play"></i>
+                                Start Test
+                            </button>
+                            <button id="pause-timer" class="btn btn-secondary" type="button">
+                                <i data-lucide="pause"></i>
+                                Pause Timer
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,52 +152,148 @@
 
     <main class="page-wrapper">
         <div class="page-container">
-            <h1 class="page-title">StudyFlow Test Simulator</h1>
-            <section class="mode-tabs" role="tablist" aria-label="StudyFlow views">
-                <button
-                    id="mode-tab-test"
-                    class="mode-tab-button active"
-                    type="button"
-                    role="tab"
-                    aria-selected="true"
-                    aria-controls="mode-panel-test"
-                    data-mode="test"
-                >
-                    Test Mode
-                </button>
-                <button
-                    id="mode-tab-study"
-                    class="mode-tab-button"
-                    type="button"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="mode-panel-test"
-                    data-mode="study"
-                >
-                    Study Mode
-                </button>
-                <button
-                    id="mode-tab-flashcards"
-                    class="mode-tab-button"
-                    type="button"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="mode-panel-flashcards"
-                    data-mode="flashcards"
-                >
-                    Flashcards
-                </button>
+            <section id="dashboard-view" class="view-panel active" aria-label="Dashboard">
+                <div class="hero-card">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i data-lucide="sparkles"></i>
+                            <span>Welcome back, Scholar!</span>
+                        </div>
+                        <h1 class="hero-title">Ready to excel today?</h1>
+                        <p class="hero-subtitle">Your next achievement is just one test away.</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-light js-open-test-selector" type="button">
+                                <i data-lucide="play"></i>
+                                Choose Test
+                            </button>
+                            <button class="btn btn-outline js-open-custom-test" type="button">
+                                <i data-lucide="zap"></i>
+                                Custom Mix
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-graphic">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card gradient-orange">
+                        <div class="stat-icon"><i data-lucide="flame"></i></div>
+                        <div class="stat-value" id="streak-value">0 days</div>
+                        <div class="stat-label">Day Streak</div>
+                    </article>
+                    <article class="stat-card gradient-amber">
+                        <div class="stat-icon"><i data-lucide="star"></i></div>
+                        <div class="stat-value" id="xp-value">0</div>
+                        <div class="stat-label">Total XP</div>
+                    </article>
+                    <article class="stat-card gradient-purple">
+                        <div class="stat-icon"><i data-lucide="trophy"></i></div>
+                        <div class="stat-value" id="badge-value">0 badges</div>
+                        <div class="stat-label">Badges</div>
+                    </article>
+                    <article class="stat-card gradient-blue">
+                        <div class="stat-icon"><i data-lucide="target"></i></div>
+                        <div class="stat-value" id="pass-rate-value">0%</div>
+                        <div class="stat-label">Pass Rate</div>
+                    </article>
+                </div>
+
+                <div class="dashboard-grid">
+                    <section class="dashboard-card" aria-labelledby="recent-activity-title">
+                        <div class="dashboard-card-header">
+                            <h2 id="recent-activity-title">
+                                <i data-lucide="trending-up"></i>
+                                Recent Activity
+                            </h2>
+                            <button class="btn btn-link" type="button" data-view="analytics">View analytics</button>
+                        </div>
+                        <div id="dashboard-activity-list" class="activity-list"></div>
+                    </section>
+
+                    <section class="dashboard-card" aria-labelledby="dashboard-achievements-title">
+                        <div class="dashboard-card-header">
+                            <h2 id="dashboard-achievements-title">
+                                <i data-lucide="award"></i>
+                                Achievements
+                            </h2>
+                        </div>
+                        <div id="dashboard-achievement-grid" class="achievement-grid"></div>
+                    </section>
+                </div>
+
+                <section class="dashboard-card" aria-labelledby="available-tests-title">
+                    <div class="dashboard-card-header">
+                        <h2 id="available-tests-title">
+                            <i data-lucide="book-open"></i>
+                            Available Tests
+                        </h2>
+                        <button class="btn btn-link js-open-test-selector" type="button">
+                            View all <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                    <div id="dashboard-tests-grid" class="tests-grid"></div>
+                </section>
+
+                <section class="dashboard-card motivation-card" aria-labelledby="motivation-title">
+                    <div class="dashboard-card-header">
+                        <h2 id="motivation-title">
+                            <i data-lucide="sparkles"></i>
+                            Motivation Boost
+                        </h2>
+                        <button id="new-motivation" class="btn btn-outline" type="button">
+                            <i data-lucide="refresh-cw"></i>
+                            New quote
+                        </button>
+                    </div>
+                    <p id="motivation-message" class="motivation-message">Stay curious and keep exploring!</p>
+                </section>
             </section>
 
-            <section id="mode-panel-test" class="mode-panel active" role="tabpanel" aria-labelledby="mode-tab-test">
-                <div class="test-content">
-                    <div
-                        id="result-banner"
-                        class="result-banner hidden"
-                        role="status"
-                        aria-live="polite"
-                        tabindex="-1"
+            <section id="practice-view" class="view-panel" aria-label="Practice">
+                <div class="panel-header">
+                    <h1 class="panel-title">StudyFlow Test Simulator</h1>
+                    <p class="panel-subtitle">Master your modules with adaptive practice modes.</p>
+                </div>
+                <section class="mode-tabs" role="tablist" aria-label="StudyFlow views">
+                    <button
+                        id="mode-tab-test"
+                        class="mode-tab-button active"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="mode-panel-test"
+                        data-mode="test"
                     >
+                        Test Mode
+                    </button>
+                    <button
+                        id="mode-tab-study"
+                        class="mode-tab-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="mode-panel-test"
+                        data-mode="study"
+                    >
+                        Study Mode
+                    </button>
+                    <button
+                        id="mode-tab-flashcards"
+                        class="mode-tab-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="mode-panel-flashcards"
+                        data-mode="flashcards"
+                    >
+                        Flashcards
+                    </button>
+                </section>
+
+                <section id="mode-panel-test" class="mode-panel active" role="tabpanel" aria-labelledby="mode-tab-test">
+                    <div id="result-banner" class="result-banner hidden" role="status" aria-live="polite" tabindex="-1">
                         <div class="result-main">
                             <div id="result-emoji" class="result-emoji" aria-hidden="true">🎉</div>
                             <div class="result-text">
@@ -169,7 +308,7 @@
                             <button id="result-review-failed" class="btn btn-secondary" type="button">
                                 Review Missed Questions
                             </button>
-                            <button id="result-review-all" class="btn btn-tertiary" type="button">
+                            <button id="result-review-all" class="btn btn-ghost" type="button">
                                 Review All Questions
                             </button>
                         </div>
@@ -178,7 +317,6 @@
                     <div id="filter-empty-state" class="empty-state hidden">
                         No questions match your current filter.
                     </div>
-
                     <div id="pagination-controls" class="pagination hidden">
                         <div id="pagination-nav" class="pagination-nav">
                             <button id="prev-page" class="btn btn-secondary">Previous</button>
@@ -187,34 +325,162 @@
                         </div>
                         <button
                             id="view-toggle"
-                            class="btn btn-tertiary"
+                            class="btn btn-ghost"
                             type="button"
                             aria-pressed="false"
                         >
                             View All
                         </button>
                     </div>
-                </div>
+                </section>
+
+                <section
+                    id="mode-panel-flashcards"
+                    class="mode-panel"
+                    role="tabpanel"
+                    aria-labelledby="mode-tab-flashcards"
+                    aria-hidden="true"
+                >
+                    <div class="card-block">
+                        <h2>Flashcards</h2>
+                        <p class="panel-description">Tap a card to reveal the answer.</p>
+                        <div id="flashcards-grid" class="flashcards-grid"></div>
+                        <div id="flashcards-empty" class="empty-state">Load a test to generate flashcards.</div>
+                    </div>
+                </section>
             </section>
 
-            <section
-                id="mode-panel-flashcards"
-                class="mode-panel"
-                role="tabpanel"
-                aria-labelledby="mode-tab-flashcards"
-                aria-hidden="true"
-            >
-                <div class="card-block">
-                    <h2>Flashcards</h2>
-                    <p class="panel-description">Tap a card to reveal the answer.</p>
-                    <div id="flashcards-grid" class="flashcards-grid"></div>
-                    <div id="flashcards-empty" class="empty-state">Load a test to generate flashcards.</div>
+            <section id="analytics-view" class="view-panel" aria-label="Analytics">
+                <div class="panel-header">
+                    <h1 class="panel-title">Performance Insights</h1>
+                    <p class="panel-subtitle">Understand your learning trends and celebrate progress.</p>
+                </div>
+                <div class="analytics-grid">
+                    <section class="analytics-card" aria-labelledby="analytics-overview-title">
+                        <div class="analytics-card-header">
+                            <h2 id="analytics-overview-title">
+                                <i data-lucide="bar-chart-3"></i>
+                                Daily Overview
+                            </h2>
+                            <button id="stats-reset" class="btn btn-outline" type="button">
+                                <i data-lucide="refresh-cw"></i>
+                                Reset today's stats
+                            </button>
+                        </div>
+                        <div class="stat-summary">
+                            <div class="stat-row"><span>Tests Completed</span><span id="stats-tests-taken">0</span></div>
+                            <div class="stat-row"><span>Passed</span><span id="stats-tests-passed">0</span></div>
+                            <div class="stat-row"><span>Failed</span><span id="stats-tests-failed">0</span></div>
+                            <div class="stat-row"><span>Abandoned</span><span id="stats-tests-abandoned">0</span></div>
+                        </div>
+                    </section>
+                    <section class="analytics-card" aria-labelledby="score-report-title">
+                        <div class="analytics-card-header">
+                            <h2 id="score-report-title">
+                                <i data-lucide="award"></i>
+                                Latest Score
+                            </h2>
+                            <button class="btn btn-outline" id="download-report" type="button">
+                                <i data-lucide="download"></i>
+                                Export PDF
+                            </button>
+                        </div>
+                        <div id="score-container" class="score-card hidden">
+                            <p class="score-value" id="score">0%</p>
+                            <p id="result-message"></p>
+                            <div id="score-filter-container" class="result-filter-controls hidden">
+                                <label for="review-filter">Show</label>
+                                <select id="review-filter">
+                                    <option value="all">All questions</option>
+                                    <option value="incorrect">Incorrect only</option>
+                                    <option value="correct">Correct only</option>
+                                </select>
+                                <div id="review-source-filter-container" class="result-filter-source hidden">
+                                    <label for="review-source-filter">Source</label>
+                                    <select id="review-source-filter">
+                                        <option value="all">All sources</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="analytics-card" aria-labelledby="history-title">
+                        <div class="analytics-card-header">
+                            <h2 id="history-title">
+                                <i data-lucide="clock"></i>
+                                Recent Runs
+                            </h2>
+                        </div>
+                        <div class="history-columns">
+                            <div>
+                                <h3>Passed</h3>
+                                <ul id="stats-passed-list" class="history-list"></ul>
+                            </div>
+                            <div>
+                                <h3>Failed</h3>
+                                <ul id="stats-failed-list" class="history-list"></ul>
+                            </div>
+                            <div>
+                                <h3>Abandoned</h3>
+                                <ul id="stats-abandoned-list" class="history-list"></ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="analytics-card" aria-labelledby="bookmarks-title">
+                        <div class="analytics-card-header">
+                            <h2 id="bookmarks-title">
+                                <i data-lucide="bookmark"></i>
+                                Bookmark Navigator
+                            </h2>
+                            <button id="cycle-bookmarks" class="btn btn-outline" type="button">
+                                <i data-lucide="chevron-right"></i>
+                                Cycle saved
+                            </button>
+                        </div>
+                        <div class="bookmark-status">
+                            <span class="bookmark-label">Bookmarked questions</span>
+                            <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
+                        </div>
+                    </section>
+                    <section class="analytics-card" aria-labelledby="achievements-list-title">
+                        <div class="analytics-card-header">
+                            <h2 id="achievements-list-title">
+                                <i data-lucide="sparkles"></i>
+                                Achievement Log
+                            </h2>
+                        </div>
+                        <ul id="achievement-list" class="achievement-log"></ul>
+                    </section>
                 </div>
             </section>
         </div>
     </main>
 
     <div id="modal-backdrop" class="modal-backdrop hidden"></div>
+
+    <div id="test-selector-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="test-selector-title">
+        <div class="modal-content wide">
+            <header class="modal-header">
+                <h2 id="test-selector-title">
+                    <i data-lucide="book-open"></i>
+                    Choose a Test
+                </h2>
+                <button id="close-test-selector" class="modal-close" type="button" aria-label="Close selector">&times;</button>
+            </header>
+            <p class="modal-description">
+                Select a test to begin your practice session. Each set is crafted to sharpen a specific skill.
+            </p>
+            <div id="test-selector-grid" class="modal-grid tests-grid"></div>
+            <footer class="modal-footer">
+                <button class="btn btn-outline" id="cancel-test-selector" type="button">Cancel</button>
+                <button class="btn btn-primary js-open-custom-test" type="button">
+                    <i data-lucide="zap"></i>
+                    Create Custom Mix
+                </button>
+            </footer>
+        </div>
+    </div>
+
     <div
         id="define-test-modal"
         class="modal hidden"
@@ -224,7 +490,10 @@
     >
         <div class="modal-content">
             <header class="modal-header">
-                <h2 id="define-test-title">Define Custom Test</h2>
+                <h2 id="define-test-title">
+                    <i data-lucide="zap"></i>
+                    Create Custom Test
+                </h2>
                 <button
                     id="close-define-test"
                     class="modal-close"
@@ -267,7 +536,7 @@
                 <p id="define-test-summary" class="define-test-summary" role="status"></p>
                 <p id="define-test-error" class="define-test-error" role="alert"></p>
                 <footer class="modal-footer">
-                    <button type="button" id="cancel-define-test" class="btn btn-secondary">
+                    <button type="button" id="cancel-define-test" class="btn btn-outline">
                         Cancel
                     </button>
                     <button type="submit" id="define-test-start" class="btn btn-primary">
@@ -277,6 +546,7 @@
             </form>
         </div>
     </div>
+
     <div
         id="options-modal"
         class="modal hidden"
@@ -286,7 +556,10 @@
     >
         <div class="modal-content">
             <header class="modal-header">
-                <h2 id="options-modal-title">StudyFlow Tools</h2>
+                <h2 id="options-modal-title">
+                    <i data-lucide="settings"></i>
+                    Study Tools
+                </h2>
                 <button id="close-options" class="modal-close" type="button" aria-label="Close tools">&times;</button>
             </header>
 
@@ -300,7 +573,7 @@
                         <span class="input-label">Dark Mode</span>
                         <button
                             id="dark-mode-toggle"
-                            class="btn btn-tertiary"
+                            class="btn btn-outline"
                             type="button"
                             aria-describedby="dark-mode-help"
                         >
@@ -322,10 +595,7 @@
                     </div>
                     <div class="quick-item">
                         <span class="input-label">Upload Test</span>
-                        <label
-                            class="file-upload btn btn-secondary"
-                            for="upload-test-input"
-                        >
+                        <label class="file-upload btn btn-secondary" for="upload-test-input">
                             Upload Test
                             <input
                                 type="file"
@@ -346,105 +616,25 @@
                         <span class="chip-icon" aria-hidden="true">🔥</span>
                         <div class="chip-body">
                             <span class="chip-label">Streak</span>
-                            <span id="streak-value" class="chip-value">0 days</span>
+                            <span id="modal-streak-value" class="chip-value">0 days</span>
                         </div>
                     </article>
                     <article class="status-chip">
                         <span class="chip-icon" aria-hidden="true">⭐</span>
                         <div class="chip-body">
                             <span class="chip-label">XP</span>
-                            <span id="xp-value" class="chip-value">0</span>
+                            <span id="modal-xp-value" class="chip-value">0</span>
                         </div>
                     </article>
                     <article class="status-chip">
                         <span class="chip-icon" aria-hidden="true">🏆</span>
                         <div class="chip-body">
                             <span class="chip-label">Badges</span>
-                            <span id="badge-value" class="chip-value">0 earned</span>
+                            <span id="modal-badge-value" class="chip-value">0 earned</span>
                         </div>
                     </article>
                 </div>
             </section>
-
-            <div class="modal-grid">
-
-                <section class="modal-card" aria-labelledby="modal-bookmark-tools-title">
-                    <h3 id="modal-bookmark-tools-title">Bookmark Navigator</h3>
-                    <p class="modal-card-description">Collect tricky questions and jump back to them whenever you need a refresher.</p>
-                    <div class="bookmark-bar">
-                        <div class="bookmark-status">
-                            <span class="bookmark-label">Bookmarks</span>
-                            <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
-                        </div>
-
-                        <button id="stats-reset" class="btn btn-secondary">Reset Today's Stats</button>
-                    </div>
-                    <div id="score-container" class="card-block hidden" style="display: none;">
-                        <h2>Your Score</h2>
-                        <p class="score-value" id="score">0</p>
-                        <p id="result-message"></p>
-                        <div id="score-filter-container" class="result-filter-controls hidden">
-                            <label for="review-filter">Show</label>
-                            <select id="review-filter">
-                                <option value="all">All questions</option>
-                                <option value="incorrect">Incorrect only</option>
-                                <option value="correct">Correct only</option>
-                            </select>
-                            <div
-                                id="review-source-filter-container"
-                                class="result-filter-source hidden"
-                            >
-                                <label for="review-source-filter">Source</label>
-                                <select id="review-source-filter">
-                                    <option value="all">All sources</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary" id="download-report">Download Report</button>
-
-                    </div>
-                </section>
-
-                <section class="modal-card modal-card-wide" aria-labelledby="modal-stats-title">
-                    <h3 id="modal-stats-title">Session Insights</h3>
-                    <p class="modal-card-description">Track daily progress, review your latest runs, and export detailed reports.</p>
-                    <div class="stats-layout">
-                        <div class="card-block">
-                            <h4>Daily Overview</h4>
-                            <div class="stat-summary">
-                                <div class="stat-row"><span>Tests Completed</span><span id="stats-tests-taken">0</span></div>
-                                <div class="stat-row"><span>Passed</span><span id="stats-tests-passed">0</span></div>
-                                <div class="stat-row"><span>Failed</span><span id="stats-tests-failed">0</span></div>
-                                <div class="stat-row"><span>Abandoned</span><span id="stats-tests-abandoned">0</span></div>
-                            </div>
-                            <button id="stats-reset" class="btn btn-secondary">Reset Today's Stats</button>
-                        </div>
-                        <div id="score-container" class="card-block hidden" style="display: none;">
-                            <h4>Your Score</h4>
-                            <p class="score-value" id="score">0</p>
-                            <p id="result-message"></p>
-                            <button class="btn btn-primary" id="download-report">Download Report</button>
-                        </div>
-                        <div class="card-block">
-                            <h4>Recent Activity</h4>
-                            <div class="stat-history">
-                                <div>
-                                    <h5>Passed Tests</h5>
-                                    <ul id="stats-passed-list" class="history-list"></ul>
-                                </div>
-                                <div>
-                                    <h5>Failed Tests</h5>
-                                    <ul id="stats-failed-list" class="history-list"></ul>
-                                </div>
-                                <div>
-                                    <h5>Abandoned Tests</h5>
-                                    <ul id="stats-abandoned-list" class="history-list"></ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
         </div>
     </div>
 
@@ -457,36 +647,23 @@
             aria-controls="floating-actions-panel"
         >
             <span class="sr-only">Toggle quick actions</span>
-            <span aria-hidden="true" class="icon icon-gear">
-                <svg viewBox="0 0 24 24" role="presentation">
-                    <path d="M19.14 12.94a7.979 7.979 0 0 0 .06-.94 7.979 7.979 0 0 0-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.05 7.05 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.88 2h-3.76a.5.5 0 0 0-.5.42l-.36 2.54a7.05 7.05 0 0 0-1.63.94l-2.39-.96a.5.5 0 0 0-.61.22L3.71 8.48a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.13.23.4.32.61.22l2.39-.96c.5.39 1.05.71 1.63.94l.36 2.54a.5.5 0 0 0 .5.42h3.76a.5.5 0 0 0 .5-.42l.36-2.54c.58-.23 1.13-.55 1.63-.94l2.39.96c.22.1.48 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58ZM12 15.25A3.25 3.25 0 1 1 12 8.75a3.25 3.25 0 0 1 0 6.5Z" fill="currentColor"/>
-                </svg>
-            </span>
+            <i data-lucide="settings"></i>
         </button>
         <div id="floating-actions-panel" class="floating-actions-panel">
             <button id="submit-test" class="btn btn-primary">Submit Test</button>
             <button id="reset-test" class="btn btn-secondary">Reset Test</button>
-            <button id="download-results" class="btn btn-tertiary">Download Results as PDF</button>
+            <button id="download-results" class="btn btn-ghost">Download Results as PDF</button>
         </div>
     </div>
 
     <button id="back-to-top" title="Go to top">&#8679;</button>
 
-    <div id="achievement-toast" class="hidden"></div>
+    <div id="achievement-toast" class="achievement-toast hidden"></div>
 
     <footer class="app-footer">StudyFlow © 2025 — Developed by Marven Ramanugu, keep learning.</footer>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
