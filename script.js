@@ -132,11 +132,84 @@ document.addEventListener("DOMContentLoaded", function () {
   const floatingActionsToggle = document.getElementById(
     "floating-actions-toggle"
   );
+  const navButtons = document.querySelectorAll(".nav-link");
+  const viewPanels = {
+    dashboard: document.getElementById("dashboard-view"),
+    practice: document.getElementById("practice-view"),
+    analytics: document.getElementById("analytics-view"),
+  };
+  const navThemeToggle = document.getElementById("nav-theme-toggle");
+  const dashboardTestsGrid = document.getElementById("dashboard-tests-grid");
+  const dashboardActivityList = document.getElementById(
+    "dashboard-activity-list"
+  );
+  const dashboardAchievementGrid = document.getElementById(
+    "dashboard-achievement-grid"
+  );
+  const passRateValueElement = document.getElementById("pass-rate-value");
+  const testSelectorModal = document.getElementById("test-selector-modal");
+  const testSelectorGrid = document.getElementById("test-selector-grid");
+  const closeTestSelectorButton = document.getElementById(
+    "close-test-selector"
+  );
+  const cancelTestSelectorButton = document.getElementById(
+    "cancel-test-selector"
+  );
+  const testSelectorTriggers = document.querySelectorAll(
+    ".js-open-test-selector"
+  );
+  const customTestTriggers = document.querySelectorAll(".js-open-custom-test");
+  const modalStreakValue = document.getElementById("modal-streak-value");
+  const modalXpValue = document.getElementById("modal-xp-value");
+  const modalBadgeValue = document.getElementById("modal-badge-value");
 
   const MOBILE_BREAKPOINT = 768;
   let lastViewportIsMobile = window.innerWidth <= MOBILE_BREAKPOINT;
   let headerCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
   let actionsCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
+  let currentPrimaryView = "dashboard";
+
+  function refreshIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons();
+    }
+  }
+
+  function setPrimaryView(view) {
+    if (!viewPanels[view]) {
+      return;
+    }
+
+    currentPrimaryView = view;
+
+    Object.entries(viewPanels).forEach(([name, panel]) => {
+      if (!panel) {
+        return;
+      }
+      if (name === view) {
+        panel.classList.add("active");
+      } else {
+        panel.classList.remove("active");
+      }
+    });
+
+    navButtons.forEach((button) => {
+      if (!button.dataset.view) {
+        return;
+      }
+      const isActive = button.dataset.view === view;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-selected", isActive.toString());
+    });
+
+    if (view === "practice" && headerElement) {
+      headerElement.classList.remove("collapsed");
+      headerCollapsed = false;
+      syncHeaderToggleState();
+    }
+
+    refreshIcons();
+  }
 
   if (flashcardsGrid) {
     flashcardsGrid.classList.add("hidden");
@@ -219,6 +292,398 @@ document.addEventListener("DOMContentLoaded", function () {
     count: 0,
     lastDate: null,
   };
+
+  const HISTORY_LIMIT = 50;
+
+  function normalizeHistoryEntry(entry, fallbackStatus) {
+    if (!entry) {
+      return null;
+    }
+
+    if (typeof entry === "string") {
+      return {
+        name: entry,
+        status: fallbackStatus,
+        scorePercent: null,
+        scoreBreakdown: null,
+        timestamp: null,
+      };
+    }
+
+    let timestampValue = null;
+    if (entry.timestamp) {
+      const parsed = new Date(entry.timestamp);
+      if (!Number.isNaN(parsed.getTime())) {
+        timestampValue = parsed.toISOString();
+      }
+    }
+
+    const normalized = {
+      name: entry.name || entry.testName || "Untitled Test",
+      status: entry.status || fallbackStatus,
+      scorePercent:
+        typeof entry.scorePercent === "number"
+          ? entry.scorePercent
+          : typeof entry.score === "number"
+          ? entry.score
+          : null,
+      scoreBreakdown:
+        typeof entry.scoreBreakdown === "string"
+          ? entry.scoreBreakdown
+          : null,
+      timestamp: timestampValue,
+    };
+
+    return normalized;
+  }
+
+  function normalizeStatsHistory(stats) {
+    [
+      { key: "passedTests", status: "passed" },
+      { key: "failedTests", status: "failed" },
+      { key: "abandonedTests", status: "abandoned" },
+    ].forEach(({ key, status }) => {
+      if (!Array.isArray(stats[key])) {
+        stats[key] = [];
+        return;
+      }
+      stats[key] = stats[key]
+        .map((entry) => normalizeHistoryEntry(entry, status))
+        .filter(Boolean);
+    });
+  }
+
+  function pushHistoryEntry(list, entry) {
+    if (!Array.isArray(list)) {
+      return;
+    }
+    list.push(entry);
+    if (list.length > HISTORY_LIMIT) {
+      list.splice(0, list.length - HISTORY_LIMIT);
+    }
+  }
+
+  function createActivityEntry({
+    name,
+    status,
+    scorePercent = null,
+    scoreBreakdown = null,
+    timestamp = new Date().toISOString(),
+  }) {
+    return {
+      name: name || "Untitled Test",
+      status,
+      scorePercent,
+      scoreBreakdown,
+      timestamp,
+    };
+  }
+
+  function formatRelativeTime(timestamp) {
+    if (!timestamp) {
+      return "Just now";
+    }
+
+    const reference = new Date(timestamp);
+    if (Number.isNaN(reference.getTime())) {
+      return "Just now";
+    }
+
+    const now = new Date();
+    const diffMs = now - reference;
+    const minutes = Math.round(diffMs / 60000);
+
+    if (minutes < 1) return "Just now";
+    if (minutes < 60) {
+      return `${minutes} min${minutes === 1 ? "" : "s"} ago`;
+    }
+    const hours = Math.round(minutes / 60);
+    if (hours < 24) {
+      return `${hours} hour${hours === 1 ? "" : "s"} ago`;
+    }
+    const days = Math.round(hours / 24);
+    if (days < 7) {
+      return `${days} day${days === 1 ? "" : "s"} ago`;
+    }
+    const weeks = Math.round(days / 7);
+    if (weeks < 5) {
+      return `${weeks} week${weeks === 1 ? "" : "s"} ago`;
+    }
+    const months = Math.round(days / 30);
+    if (months < 12) {
+      return `${months} month${months === 1 ? "" : "s"} ago`;
+    }
+    const years = Math.round(days / 365);
+    return `${years} year${years === 1 ? "" : "s"} ago`;
+  }
+
+  function getRecentActivities(limit = 5) {
+    const collections = [
+      { list: testStats.passedTests, status: "passed" },
+      { list: testStats.failedTests, status: "failed" },
+      { list: testStats.abandonedTests, status: "abandoned" },
+    ];
+
+    const combined = [];
+
+    collections.forEach(({ list, status }) => {
+      if (!Array.isArray(list)) {
+        return;
+      }
+      list.forEach((entry) => {
+        if (!entry) return;
+        combined.push({
+          name: entry.name || "Untitled Test",
+          status: entry.status || status,
+          scorePercent:
+            typeof entry.scorePercent === "number"
+              ? entry.scorePercent
+              : null,
+          scoreBreakdown: entry.scoreBreakdown || null,
+          timestamp: entry.timestamp || null,
+        });
+      });
+    });
+
+    combined.sort((a, b) => {
+      const timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+      const timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+      return timeB - timeA;
+    });
+
+    return combined.slice(0, limit);
+  }
+
+  function renderDashboardActivity() {
+    if (!dashboardActivityList) {
+      return;
+    }
+
+    dashboardActivityList.innerHTML = "";
+    const recent = getRecentActivities(4);
+
+    if (!recent.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty-state";
+      empty.textContent = "Complete a test to see your latest activity.";
+      dashboardActivityList.appendChild(empty);
+      return;
+    }
+
+    recent.forEach((entry) => {
+      const item = document.createElement("div");
+      item.className = "activity-item";
+      const statusClass =
+        entry.status === "passed"
+          ? "pass"
+          : entry.status === "failed"
+          ? "fail"
+          : "abandoned";
+      const scoreMarkup =
+        typeof entry.scorePercent === "number"
+          ? `${entry.scorePercent}%`
+          : "";
+
+      item.innerHTML = `
+        <div class="activity-title">${escapeHTML(entry.name)}</div>
+        <div class="activity-meta">${formatRelativeTime(entry.timestamp)}</div>
+        <div class="activity-footer">
+          <span class="activity-badge ${statusClass}">
+            ${
+              entry.status === "passed"
+                ? "Passed"
+                : entry.status === "failed"
+                ? "Failed"
+                : "Abandoned"
+            }
+          </span>
+          ${
+            scoreMarkup
+              ? `<span class="activity-score">${scoreMarkup}</span>`
+              : ""
+          }
+        </div>
+      `;
+
+      dashboardActivityList.appendChild(item);
+    });
+
+    refreshIcons();
+  }
+
+  function renderDashboardAchievements() {
+    if (!dashboardAchievementGrid) {
+      return;
+    }
+
+    dashboardAchievementGrid.innerHTML = "";
+    achievementDefinitions.forEach((achievement) => {
+      const unlocked = unlockedAchievements.has(achievement.id);
+      const card = document.createElement("div");
+      card.className = "achievement-card";
+      if (!unlocked) {
+        card.classList.add("locked");
+      }
+      card.innerHTML = `
+        <div class="achievement-icon">${achievement.icon}</div>
+        <div class="achievement-content">
+          <strong>${escapeHTML(achievement.title)}</strong>
+          <span>${escapeHTML(achievement.description)}</span>
+          <span class="achievement-status">${
+            unlocked ? "Unlocked" : "Locked"
+          }</span>
+        </div>
+      `;
+      dashboardAchievementGrid.appendChild(card);
+    });
+  }
+
+  function getDifficultyLabel(questionCount) {
+    if (questionCount >= 45) {
+      return "Hard";
+    }
+    if (questionCount >= 30) {
+      return "Medium";
+    }
+    return "Easy";
+  }
+
+  function getDifficultyClass(label) {
+    const normalized = (label || "").toLowerCase();
+    if (normalized === "hard") return "hard";
+    if (normalized === "medium") return "medium";
+    return "easy";
+  }
+
+  function renderDashboardTests() {
+    if (!dashboardTestsGrid) {
+      return;
+    }
+
+    dashboardTestsGrid.innerHTML = "";
+
+    if (!availableTestsMetadata.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty-state";
+      empty.textContent = "Tests will appear here once loaded.";
+      dashboardTestsGrid.appendChild(empty);
+      return;
+    }
+
+    availableTestsMetadata.slice(0, 4).forEach((test) => {
+      const card = document.createElement("article");
+      card.className = "test-card";
+      const difficultyLabel = test.difficulty || getDifficultyLabel(test.questionCount);
+      const difficultyClass = getDifficultyClass(difficultyLabel);
+
+      card.innerHTML = `
+        <h3>${escapeHTML(test.name)}</h3>
+        <div class="test-meta">
+          <span>${test.questionCount} questions</span>
+          <span class="test-badge ${difficultyClass}">${difficultyLabel}</span>
+        </div>
+        <button class="btn btn-primary" data-test-file="${escapeHTML(
+          test.file
+        )}">
+          <i data-lucide="play"></i>
+          Start Test
+        </button>
+      `;
+
+      const startButton = card.querySelector("button[data-test-file]");
+      if (startButton) {
+        startButton.addEventListener("click", () => {
+          startPracticeWithTest(test.file);
+        });
+      }
+
+      dashboardTestsGrid.appendChild(card);
+    });
+
+    refreshIcons();
+  }
+
+  function renderTestSelector() {
+    if (!testSelectorGrid) {
+      return;
+    }
+
+    testSelectorGrid.innerHTML = "";
+
+    if (!availableTestsMetadata.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty-state";
+      empty.textContent = "No tests available.";
+      testSelectorGrid.appendChild(empty);
+      return;
+    }
+
+    availableTestsMetadata.forEach((test) => {
+      const card = document.createElement("article");
+      card.className = "test-card";
+      const difficultyLabel = test.difficulty || getDifficultyLabel(test.questionCount);
+      const difficultyClass = getDifficultyClass(difficultyLabel);
+
+      card.innerHTML = `
+        <h3>${escapeHTML(test.name)}</h3>
+        <div class="test-meta">
+          <span>${test.questionCount} questions</span>
+          <span class="test-badge ${difficultyClass}">${difficultyLabel}</span>
+        </div>
+        <button class="btn btn-primary" data-test-file="${escapeHTML(
+          test.file
+        )}">
+          <i data-lucide="check"></i>
+          Select Test
+        </button>
+      `;
+
+      const selectButton = card.querySelector("button[data-test-file]");
+      if (selectButton) {
+        selectButton.addEventListener("click", () => {
+          startPracticeWithTest(test.file);
+          closeTestSelectorModal();
+        });
+      }
+
+      testSelectorGrid.appendChild(card);
+    });
+
+    refreshIcons();
+  }
+
+  function calculatePassRate() {
+    if (!testStats.testsTaken) {
+      return 0;
+    }
+    return Math.round((testStats.testsPassed / testStats.testsTaken) * 100);
+  }
+
+  function updatePassRateDisplay() {
+    if (passRateValueElement) {
+      passRateValueElement.textContent = `${calculatePassRate()}%`;
+    }
+  }
+
+  function startPracticeWithTest(file) {
+    if (!testSelect || !file) {
+      return;
+    }
+
+    const previousValue = testSelect.value;
+    testSelect.value = file;
+
+    const changeEvent = new Event("change", { bubbles: true });
+    testSelect.dispatchEvent(changeEvent);
+
+    setTimeout(() => {
+      if (testSelect.value === file) {
+        setPrimaryView("practice");
+      } else if (previousValue !== testSelect.value) {
+        setPrimaryView("practice");
+      }
+    }, 0);
+  }
 
   function resetReviewState() {
     questionResults = [];
@@ -708,15 +1173,54 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("modal-open");
   }
 
+  function isTestSelectorOpen() {
+    return testSelectorModal && !testSelectorModal.classList.contains("hidden");
+  }
+
   function hideModalBackdropIfNoModal() {
     if (!modalBackdrop) {
       return;
     }
-    if (!isOptionsModalOpen() && !isDefineTestModalOpen()) {
+    if (!isOptionsModalOpen() && !isDefineTestModalOpen() && !isTestSelectorOpen()) {
       modalBackdrop.classList.add("hidden");
       modalBackdrop.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
     }
+  }
+
+  function openTestSelectorModal() {
+    if (!testSelectorModal) {
+      return;
+    }
+
+    if (isTestSelectorOpen()) {
+      return;
+    }
+
+    closeOptionsModal();
+    closeDefineTestModal();
+    closeTestSelectorModal();
+
+    testSelectorModal.classList.remove("hidden");
+    testSelectorModal.setAttribute("aria-hidden", "false");
+    showModalBackdrop();
+    refreshIcons();
+
+    const focusTarget =
+      closeTestSelectorButton || testSelectorModal.querySelector("button");
+    if (focusTarget) {
+      focusTarget.focus();
+    }
+  }
+
+  function closeTestSelectorModal() {
+    if (!testSelectorModal || !isTestSelectorOpen()) {
+      return;
+    }
+
+    testSelectorModal.classList.add("hidden");
+    testSelectorModal.setAttribute("aria-hidden", "true");
+    hideModalBackdropIfNoModal();
   }
 
   function openDefineTestModal() {
@@ -729,6 +1233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     closeOptionsModal();
+    closeTestSelectorModal();
     defineTestModal.classList.remove("hidden");
     defineTestModal.setAttribute("aria-hidden", "false");
     showModalBackdrop();
@@ -774,6 +1279,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeActiveModal() {
     if (isDefineTestModalOpen()) {
       closeDefineTestModal();
+      return;
+    }
+    if (isTestSelectorOpen()) {
+      closeTestSelectorModal();
       return;
     }
     if (isOptionsModalOpen()) {
@@ -832,8 +1341,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const storedDate = localStorage.getItem("statsDate");
     if (storedDate === today) {
       const storedStats = JSON.parse(localStorage.getItem("testStats"));
-      if (storedStats) {
-        testStats = storedStats;
+      if (storedStats && typeof storedStats === "object") {
+        testStats = {
+          ...testStats,
+          ...storedStats,
+        };
+        normalizeStatsHistory(testStats);
       }
     } else {
       // New day, reset stats
@@ -852,6 +1365,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateStatsDisplay() {
     updateStatsPanel();
     updateGamification();
+    updatePassRateDisplay();
+    renderDashboardActivity();
   }
 
   function isMobileViewport() {
@@ -1244,6 +1759,32 @@ document.addEventListener("DOMContentLoaded", function () {
     updateStatsDisplay();
   }
 
+  function formatHistoryEntry(item) {
+    if (!item) {
+      return "No records yet.";
+    }
+    if (typeof item === "string") {
+      return item;
+    }
+
+    const segments = [];
+    segments.push(item.name || "Untitled Test");
+
+    if (typeof item.scorePercent === "number") {
+      segments.push(`${item.scorePercent}%`);
+    }
+
+    if (item.scoreBreakdown) {
+      segments.push(item.scoreBreakdown);
+    }
+
+    if (item.timestamp) {
+      segments.push(formatRelativeTime(item.timestamp));
+    }
+
+    return segments.join(" • ");
+  }
+
   function updateHistoryList(listElement, items) {
     if (!listElement) return;
     listElement.innerHTML = "";
@@ -1259,7 +1800,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .reverse()
       .forEach((item) => {
         const entry = document.createElement("li");
-        entry.textContent = item;
+        entry.textContent = formatHistoryEntry(item);
         listElement.appendChild(entry);
       });
   }
@@ -1294,12 +1835,25 @@ document.addEventListener("DOMContentLoaded", function () {
       const label = streakData.count === 1 ? "day" : "days";
       streakValueElement.textContent = `${streakData.count} ${label}`;
     }
+    if (modalStreakValue) {
+      const label = streakData.count === 1 ? "day" : "days";
+      modalStreakValue.textContent = `${streakData.count} ${label}`;
+    }
     if (xpValueElement) {
       xpValueElement.textContent = calculateXp().toLocaleString();
+    }
+    if (modalXpValue) {
+      modalXpValue.textContent = calculateXp().toLocaleString();
     }
     if (badgeValueElement) {
       const badgeCount = unlockedAchievements.size;
       badgeValueElement.textContent = `${badgeCount} ${
+        badgeCount === 1 ? "badge" : "badges"
+      } earned`;
+    }
+    if (modalBadgeValue) {
+      const badgeCount = unlockedAchievements.size;
+      modalBadgeValue.textContent = `${badgeCount} ${
         badgeCount === 1 ? "badge" : "badges"
       } earned`;
     }
@@ -1444,6 +1998,12 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    if (isTestSelectorOpen()) {
+      event.preventDefault();
+      closeTestSelectorModal();
+      return;
+    }
+
     if (isOptionsModalOpen()) {
       event.preventDefault();
       closeOptionsModal();
@@ -1457,6 +2017,37 @@ document.addEventListener("DOMContentLoaded", function () {
   setMode(currentMode);
 
   handleResponsiveState();
+
+  setPrimaryView(currentPrimaryView);
+
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.view) {
+        setPrimaryView(button.dataset.view);
+      }
+    });
+  });
+
+  testSelectorTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      renderTestSelector();
+      openTestSelectorModal();
+    });
+  });
+
+  customTestTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      openDefineTestModal();
+    });
+  });
+
+  if (closeTestSelectorButton) {
+    closeTestSelectorButton.addEventListener("click", closeTestSelectorModal);
+  }
+
+  if (cancelTestSelectorButton) {
+    cancelTestSelectorButton.addEventListener("click", closeTestSelectorModal);
+  }
 
   if (headerToggleButton) {
     headerToggleButton.addEventListener("click", () => {
@@ -1525,24 +2116,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateAchievementDisplay() {
-    if (!achievementListElement) return;
-    achievementListElement.innerHTML = "";
-    if (unlockedAchievements.size === 0) {
-      const emptyState = document.createElement("li");
-      emptyState.classList.add("empty");
-      emptyState.textContent = "Complete a test to start earning badges!";
-      achievementListElement.appendChild(emptyState);
-      return;
+    if (achievementListElement) {
+      achievementListElement.innerHTML = "";
+      if (unlockedAchievements.size === 0) {
+        const emptyState = document.createElement("li");
+        emptyState.classList.add("empty");
+        emptyState.textContent = "Complete a test to start earning badges!";
+        achievementListElement.appendChild(emptyState);
+      } else {
+        achievementDefinitions.forEach((achievement) => {
+          if (unlockedAchievements.has(achievement.id)) {
+            const item = document.createElement("li");
+            item.innerHTML = `<strong>${achievement.title}:</strong> ${achievement.description}`;
+            achievementListElement.appendChild(item);
+          }
+        });
+      }
     }
 
-    achievementDefinitions.forEach((achievement) => {
-      if (unlockedAchievements.has(achievement.id)) {
-        const item = document.createElement("li");
-        item.innerHTML = `<strong>${achievement.title}:</strong> ${achievement.description}`;
-        achievementListElement.appendChild(item);
-      }
-    });
-
+    renderDashboardAchievements();
     updateGamification();
   }
 
@@ -1586,28 +2178,54 @@ document.addEventListener("DOMContentLoaded", function () {
   //************************ SECTION 3: THEME HANDLING ************************//
 
   // Handle Dark Mode theme based on user preferences
-  if (darkModeToggle) {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
-      darkModeToggle.textContent = "Disable Dark Mode";
-    } else {
-      document.body.classList.add("light-mode");
-      darkModeToggle.textContent = "Enable Dark Mode";
+  function applyTheme(theme) {
+    const isDark = theme === "dark";
+    document.body.classList.toggle("dark-mode", isDark);
+    document.body.classList.toggle("light-mode", !isDark);
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    if (darkModeToggle) {
+      darkModeToggle.textContent = isDark
+        ? "Disable Dark Mode"
+        : "Enable Dark Mode";
     }
 
-    darkModeToggle.addEventListener("click", () => {
-      if (document.body.classList.contains("dark-mode")) {
-        document.body.classList.remove("dark-mode");
-        document.body.classList.add("light-mode");
-        localStorage.setItem("theme", "light");
-        darkModeToggle.textContent = "Enable Dark Mode";
-      } else {
-        document.body.classList.remove("light-mode");
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-        darkModeToggle.textContent = "Disable Dark Mode";
-      }
-    });
+    if (navThemeToggle) {
+      navThemeToggle.innerHTML = "";
+      const icon = document.createElement("i");
+      icon.dataset.lucide = isDark ? "sun" : "moon";
+      navThemeToggle.appendChild(icon);
+      refreshIcons();
+      navThemeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light mode" : "Switch to dark mode"
+      );
+    }
+  }
+
+  function getPreferredTheme() {
+    const stored = localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") {
+      return stored;
+    }
+    return "dark";
+  }
+
+  function toggleTheme() {
+    const nextTheme = document.body.classList.contains("dark-mode")
+      ? "light"
+      : "dark";
+    applyTheme(nextTheme);
+  }
+
+  applyTheme(getPreferredTheme());
+
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", toggleTheme);
+  }
+
+  if (navThemeToggle) {
+    navThemeToggle.addEventListener("click", toggleTheme);
   }
 
   //************************ SECTION 4: TEST FILE LOADING ************************//
@@ -1682,6 +2300,7 @@ const testFiles = [
             file: filename,
             name: option.textContent,
             questionCount,
+            difficulty: getDifficultyLabel(questionCount),
           });
 
           const shouldLoadThisFile = savedProgressFile
@@ -1708,6 +2327,8 @@ const testFiles = [
       .then(() => {
         console.log("All test files loaded");
         populateDefineTestModal();
+        renderDashboardTests();
+        renderTestSelector();
 
         if (
           savedProgressFile === CUSTOM_TEST_VALUE &&
@@ -2088,7 +2709,13 @@ const testFiles = [
       const testName = testSelect
         ? testSelect.options[testSelect.selectedIndex]?.textContent || "Custom Mix"
         : "Custom Mix";
-      testStats.abandonedTests.push(testName);
+      pushHistoryEntry(
+        testStats.abandonedTests,
+        createActivityEntry({
+          name: testName,
+          status: "abandoned",
+        })
+      );
       saveStats();
       updateStatsDisplay();
     }
@@ -2996,16 +3623,23 @@ const testFiles = [
       const scoreBreakdown = `${score}/${questions.length}`;
       const didPass = scorePercent >= passMark;
 
+      const activityEntry = createActivityEntry({
+        name: testName,
+        status: didPass ? "passed" : "failed",
+        scorePercent,
+        scoreBreakdown,
+      });
+
       if (didPass) {
         resultMessageElement.textContent = `You Passed! (${scoreBreakdown})`;
         resultMessageElement.classList.add("pass-message");
         testStats.testsPassed++;
-        testStats.passedTests.push(testName);
+        pushHistoryEntry(testStats.passedTests, activityEntry);
       } else {
         resultMessageElement.textContent = `You Failed. (${scoreBreakdown})`;
         resultMessageElement.classList.add("fail-message");
         testStats.testsFailed++;
-        testStats.failedTests.push(testName);
+        pushHistoryEntry(testStats.failedTests, activityEntry);
       }
 
       const missedCount = questionResults.filter(
@@ -3149,7 +3783,13 @@ const testFiles = [
         testStats.testsAbandoned++;
         const testName =
           testSelect.options[testSelect.selectedIndex].textContent;
-        testStats.abandonedTests.push(testName);
+        pushHistoryEntry(
+          testStats.abandonedTests,
+          createActivityEntry({
+            name: testName,
+            status: "abandoned",
+          })
+        );
         saveStats();
         updateStatsDisplay();
       }
@@ -3650,7 +4290,13 @@ const testFiles = [
           testStats.testsAbandoned++;
           const testName =
             testSelect.options[testSelect.selectedIndex].textContent;
-          testStats.abandonedTests.push(testName);
+          pushHistoryEntry(
+            testStats.abandonedTests,
+            createActivityEntry({
+              name: testName,
+              status: "abandoned",
+            })
+          );
           saveStats();
           updateStatsDisplay();
 
@@ -3731,14 +4377,18 @@ const testFiles = [
             availableTestsMetadata = availableTestsMetadata.filter(
               (item) => item.file !== file.name
             );
+            const questionCount = Array.isArray(data.questions)
+              ? data.questions.length
+              : 0;
             availableTestsMetadata.push({
               file: file.name,
               name: testName,
-              questionCount: Array.isArray(data.questions)
-                ? data.questions.length
-                : 0,
+              questionCount,
+              difficulty: getDifficultyLabel(questionCount),
             });
             populateDefineTestModal();
+            renderDashboardTests();
+            renderTestSelector();
             alert("Custom test loaded successfully!");
           } catch (error) {
             console.error("Error parsing JSON file:", error);
