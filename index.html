@@ -1,160 +1,184 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>StudyFlow - Test Simulator</title>
     <link rel="stylesheet" href="styles.css">
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
-    <header id="floating-header" class="app-header">
-        <div class="header-top">
-            <div class="logo">dY"s StudyFlow</div>
-            <div class="header-top-actions">
-                <button
-                    id="open-options"
-                    class="header-options-btn"
-                    type="button"
-                    aria-label="Open tools"
-                aria-expanded="false"
-                aria-controls="options-modal"
-            >
-                <span aria-hidden="true" class="icon icon-tools">
-                    <svg viewBox="0 0 24 24" role="presentation">
-                        <path d="M5 6h6a1 1 0 0 0 0-2H5a1 1 0 0 0-1 1v12a1 1 0 0 0 2 0V6Zm9 0h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm0 4h5a1 1 0 1 0 0-2h-5a1 1 0 0 0 0 2Zm-4-5H5a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2Zm0 5H5a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2Z" fill="currentColor"/>
-                        <path d="M13 17a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Zm0-4a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Zm0-4a1 1 0 0 1-1 1H9a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1Z" fill="currentColor"/>
+    <nav id="floating-header" class="sf-navbar">
+        <div class="sf-navbar__inner">
+            <div class="sf-navbar__brand">
+                <div class="sf-navbar__logo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2a1 1 0 0 0-.894.553L8.382 8H5a1 1 0 0 0-.832 1.555l7 10a1 1 0 0 0 1.664 0l7-10A1 1 0 0 0 19 8h-3.382l-2.724-5.447A1 1 0 0 0 12 2Z" fill="currentColor"/>
                     </svg>
-                </span>
-                <span class="options-label">Tools</span>
-            </button>
-                <button
-                    id="header-toggle"
-                    class="header-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="header-sections"
-                >
-                    <span class="sr-only">Toggle header tools</span>
-                    <span aria-hidden="true" class="icon icon-hamburger">
-                        <svg viewBox="0 0 24 24" role="presentation">
-                            <path d="M4 7h16a1 1 0 0 0 0-2H4a1 1 0 1 0 0 2zm16 4H4a1 1 0 1 0 0 2h16a1 1 0 0 0 0-2zm0 6H4a1 1 0 1 0 0 2h16a1 1 0 0 0 0-2z" fill="currentColor"/>
-                        </svg>
-                    </span>
+                </div>
+                <span class="sf-navbar__title">StudyFlow</span>
+            </div>
+            <div class="sf-navbar__links" role="tablist" aria-label="Primary views">
+                <button class="sf-navbar__link active" data-view="dashboard" role="tab" aria-selected="true">Dashboard</button>
+                <button class="sf-navbar__link" data-view="practice" role="tab" aria-selected="false">Practice</button>
+                <button class="sf-navbar__link" data-view="analytics" role="tab" aria-selected="false">Analytics</button>
+            </div>
+            <div class="sf-navbar__actions">
+                <div class="sf-navbar__select">
+                    <label for="test-select" class="sr-only">Choose a test</label>
+                    <select id="test-select"></select>
+                </div>
+                <button id="nav-theme-toggle" class="sf-icon-button" type="button" aria-label="Toggle theme">
+                    <span class="sf-icon-button__sun" aria-hidden="true">☀️</span>
+                    <span class="sf-icon-button__moon" aria-hidden="true">🌙</span>
+                </button>
+                <button id="open-options" class="sf-icon-button" type="button" aria-label="Open tools" aria-controls="options-modal" aria-expanded="false">
+                    <span aria-hidden="true">⚙️</span>
+                </button>
+                <button id="header-toggle" class="sf-icon-button sf-icon-button--menu" type="button" aria-expanded="false" aria-controls="sf-nav-drawer">
+                    <span class="sr-only">Toggle menu</span>
+                    <span aria-hidden="true">☰</span>
                 </button>
             </div>
         </div>
-        <div id="header-sections" class="header-sections">
-            <div class="header-main">
-                <div class="test-select-group">
-                    <label class="input-label" for="test-select">Choose a Test</label>
-                    <select id="test-select"></select>
-                    <div
-                        id="custom-session-chip"
-                        class="custom-session-chip hidden"
-                        role="status"
-                        aria-live="polite"
-                    >
-                        <span id="custom-session-summary"></span>
-                        <button
-                            id="exit-custom-session"
-                            class="chip-dismiss"
-                            type="button"
-                            aria-label="Exit custom session"
-                        >
-                            &times;
-                        </button>
-                    </div>
-                </div>
-                <div class="header-progress">
-                    <span class="progress-label">Progress</span>
-                    <div id="floating-progress" class="progress-group">
-                        <div class="progress-bar-container">
-                            <div id="progress-bar"></div>
-                        </div>
-                        <span id="progress-text">0%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="header-controls">
-                <div class="timer-settings">
-                    <label class="input-label" for="timer-input">Timer</label>
-                    <div class="timer-input-group">
-                        <input type="number" id="timer-input" value="30" min="0" aria-describedby="timer-help">
-                        <span class="timer-unit">min</span>
-                    </div>
+        <div id="sf-nav-drawer" class="sf-navbar__drawer">
+            <div class="sf-drawer__group">
+                <div class="sf-drawer__field">
+                    <label for="timer-input">Timer (minutes)</label>
+                    <input type="number" id="timer-input" value="30" min="0" aria-describedby="timer-help">
                     <p id="timer-help" class="assistive-text">Adjust anytime during a test.</p>
                 </div>
-                <div class="timer-display">⏱️ <span id="floating-time">00:00</span></div>
-                <div class="header-actions">
-                    <button
-                        id="define-test"
-                        class="btn btn-tertiary"
-                        type="button"
-                        aria-haspopup="dialog"
-                        aria-expanded="false"
-                    >
-                        Define Test
-                    </button>
-                    <button id="start-test" class="btn btn-primary">Start Test</button>
-                    <button id="pause-timer" class="btn btn-secondary">Pause Timer</button>
+                <div class="sf-drawer__field">
+                    <label for="pass-mark-input">Pass mark (%)</label>
+                    <input type="number" id="pass-mark-input" value="50" min="0" max="100">
+                </div>
+                <div class="sf-drawer__actions">
+                    <button id="define-test" class="btn btn-subtle" type="button" aria-haspopup="dialog" aria-expanded="false">Custom Mix</button>
+                    <button id="start-test" class="btn btn-primary" type="button">Start Test</button>
+                    <button id="pause-timer" class="btn btn-secondary" type="button">Pause Timer</button>
                 </div>
             </div>
+            <div class="sf-drawer__progress">
+                <div class="sf-progress">
+                    <span class="sf-progress__label">Progress</span>
+                    <div class="sf-progress__bar">
+                        <div id="progress-bar"></div>
+                    </div>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div class="sf-drawer__timer">⏱️ <span id="floating-time">00:00</span></div>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="page-wrapper">
-        <div class="page-container">
-            <h1 class="page-title">StudyFlow Test Simulator</h1>
-            <section class="mode-tabs" role="tablist" aria-label="StudyFlow views">
-                <button
-                    id="mode-tab-test"
-                    class="mode-tab-button active"
-                    type="button"
-                    role="tab"
-                    aria-selected="true"
-                    aria-controls="mode-panel-test"
-                    data-mode="test"
-                >
-                    Test Mode
-                </button>
-                <button
-                    id="mode-tab-study"
-                    class="mode-tab-button"
-                    type="button"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="mode-panel-test"
-                    data-mode="study"
-                >
-                    Study Mode
-                </button>
-                <button
-                    id="mode-tab-flashcards"
-                    class="mode-tab-button"
-                    type="button"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="mode-panel-flashcards"
-                    data-mode="flashcards"
-                >
-                    Flashcards
-                </button>
+    <main class="sf-main">
+        <section id="dashboard-view" class="sf-view active" aria-labelledby="dashboard-tab">
+            <div class="sf-hero">
+                <div class="sf-hero__content">
+                    <div class="sf-hero__badge">
+                        <span>Welcome back, Scholar!</span>
+                    </div>
+                    <h1>Ready to excel today?</h1>
+                    <p>Your next achievement is just one test away.</p>
+                    <div class="sf-hero__actions">
+                        <button id="dashboard-choose-test" class="btn btn-light">Choose Test</button>
+                        <button id="dashboard-custom-test" class="btn btn-outline">Custom Mix</button>
+                    </div>
+                </div>
+                <div class="sf-hero__illustration" aria-hidden="true">🎓</div>
+            </div>
+
+            <div class="sf-stats-grid">
+                <article class="sf-stat-card sf-stat-card--streak">
+                    <div class="sf-stat-card__icon">🔥</div>
+                    <div class="sf-stat-card__body">
+                        <span class="sf-stat-card__label">Day Streak</span>
+                        <span id="streak-value" class="sf-stat-card__value">0 days</span>
+                    </div>
+                </article>
+                <article class="sf-stat-card sf-stat-card--xp">
+                    <div class="sf-stat-card__icon">⭐</div>
+                    <div class="sf-stat-card__body">
+                        <span class="sf-stat-card__label">Total XP</span>
+                        <span id="xp-value" class="sf-stat-card__value">0</span>
+                    </div>
+                </article>
+                <article class="sf-stat-card sf-stat-card--badges">
+                    <div class="sf-stat-card__icon">🏆</div>
+                    <div class="sf-stat-card__body">
+                        <span class="sf-stat-card__label">Badges</span>
+                        <span id="badge-value" class="sf-stat-card__value">0 earned</span>
+                    </div>
+                </article>
+                <article class="sf-stat-card sf-stat-card--pass">
+                    <div class="sf-stat-card__icon">🎯</div>
+                    <div class="sf-stat-card__body">
+                        <span class="sf-stat-card__label">Pass Rate</span>
+                        <span id="dashboard-pass-rate" class="sf-stat-card__value">0%</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sf-dashboard-grid">
+                <section class="sf-card">
+                    <header class="sf-card__header">
+                        <h2>Recent Activity</h2>
+                        <button id="dashboard-refresh-activity" class="sf-card__action" type="button">Refresh</button>
+                    </header>
+                    <ul id="dashboard-activity" class="sf-activity-list"></ul>
+                </section>
+                <section class="sf-card">
+                    <header class="sf-card__header">
+                        <h2>Achievements</h2>
+                        <button id="new-motivation" class="sf-card__action" type="button">Inspire Me</button>
+                    </header>
+                    <p id="motivation-message" class="sf-motivation"></p>
+                    <ul id="achievement-list" class="sf-achievement-list"></ul>
+                </section>
+            </div>
+
+            <section class="sf-card">
+                <header class="sf-card__header">
+                    <h2>Available Tests</h2>
+                    <button id="dashboard-view-tests" class="sf-card__action" type="button">View All</button>
+                </header>
+                <div id="dashboard-tests" class="sf-tests-grid"></div>
+                <div id="dashboard-tests-empty" class="empty-state hidden">Load tests to see available sessions.</div>
             </section>
+        </section>
+
+        <section id="practice-view" class="sf-view" aria-labelledby="practice-tab" hidden>
+            <div class="sf-practice-header">
+                <div class="sf-practice-header__info">
+                    <h2 id="practice-test-name">Practice Session</h2>
+                    <div class="sf-practice-header__meta">
+                        <span id="practice-question-range">Questions 0-0</span>
+                        <span>•</span>
+                        <span class="sf-practice-header__timer">⏱️ <span id="practice-time">00:00</span></span>
+                    </div>
+                </div>
+                <div class="sf-practice-header__actions">
+                    <button id="practice-start-timer" class="btn btn-primary" type="button">Start Timer</button>
+                    <button id="practice-pause-timer" class="btn btn-warning" type="button">Pause</button>
+                    <button id="practice-change-test" class="btn btn-outline" type="button">Change Test</button>
+                </div>
+            </div>
+
+            <div class="sf-practice-controls">
+                <div class="sf-view-toggle">
+                    <span>View:</span>
+                    <button id="view-page" class="btn btn-chip active" type="button">10 per page</button>
+                    <button id="view-all" class="btn btn-chip" type="button">View all</button>
+                </div>
+                <div class="sf-mode-tabs" role="tablist" aria-label="Modes">
+                    <button id="mode-tab-test" class="mode-tab-button active" type="button" role="tab" aria-selected="true" aria-controls="mode-panel-test" data-mode="test">Test</button>
+                    <button id="mode-tab-study" class="mode-tab-button" type="button" role="tab" aria-selected="false" aria-controls="mode-panel-test" data-mode="study">Study</button>
+                    <button id="mode-tab-flashcards" class="mode-tab-button" type="button" role="tab" aria-selected="false" aria-controls="mode-panel-flashcards" data-mode="flashcards">Flashcards</button>
+                </div>
+            </div>
 
             <section id="mode-panel-test" class="mode-panel active" role="tabpanel" aria-labelledby="mode-tab-test">
                 <div class="test-content">
-                    <div
-                        id="result-banner"
-                        class="result-banner hidden"
-                        role="status"
-                        aria-live="polite"
-                        tabindex="-1"
-                    >
+                    <div id="result-banner" class="result-banner hidden" role="status" aria-live="polite" tabindex="-1">
                         <div class="result-main">
                             <div id="result-emoji" class="result-emoji" aria-hidden="true">🎉</div>
                             <div class="result-text">
@@ -163,47 +187,25 @@
                             </div>
                         </div>
                         <div class="result-actions">
-                            <button id="result-restart" class="btn btn-primary" type="button">
-                                Restart Test
-                            </button>
-                            <button id="result-review-failed" class="btn btn-secondary" type="button">
-                                Review Missed Questions
-                            </button>
-                            <button id="result-review-all" class="btn btn-tertiary" type="button">
-                                Review All Questions
-                            </button>
+                            <button id="result-restart" class="btn btn-primary" type="button">Restart Test</button>
+                            <button id="result-review-failed" class="btn btn-secondary" type="button">Review Missed Questions</button>
+                            <button id="result-review-all" class="btn btn-subtle" type="button">Review All Questions</button>
                         </div>
                     </div>
                     <main id="questions-container" aria-live="polite"></main>
-                    <div id="filter-empty-state" class="empty-state hidden">
-                        No questions match your current filter.
-                    </div>
-
+                    <div id="filter-empty-state" class="empty-state hidden">No questions match your current filter.</div>
                     <div id="pagination-controls" class="pagination hidden">
                         <div id="pagination-nav" class="pagination-nav">
                             <button id="prev-page" class="btn btn-secondary">Previous</button>
                             <span id="page-info"></span>
                             <button id="next-page" class="btn btn-primary">Next</button>
                         </div>
-                        <button
-                            id="view-toggle"
-                            class="btn btn-tertiary"
-                            type="button"
-                            aria-pressed="false"
-                        >
-                            View All
-                        </button>
+                        <button id="view-toggle" class="btn btn-subtle" type="button" aria-pressed="false">View All</button>
                     </div>
                 </div>
             </section>
 
-            <section
-                id="mode-panel-flashcards"
-                class="mode-panel"
-                role="tabpanel"
-                aria-labelledby="mode-tab-flashcards"
-                aria-hidden="true"
-            >
+            <section id="mode-panel-flashcards" class="mode-panel" role="tabpanel" aria-labelledby="mode-tab-flashcards" aria-hidden="true">
                 <div class="card-block">
                     <h2>Flashcards</h2>
                     <p class="panel-description">Tap a card to reveal the answer.</p>
@@ -211,134 +213,137 @@
                     <div id="flashcards-empty" class="empty-state">Load a test to generate flashcards.</div>
                 </div>
             </section>
-        </div>
+        </section>
+
+        <section id="analytics-view" class="sf-view" aria-labelledby="analytics-tab" hidden>
+            <div class="sf-analytics-grid">
+                <section class="sf-card">
+                    <header class="sf-card__header">
+                        <h2>Daily Overview</h2>
+                        <button id="stats-reset" class="sf-card__action" type="button">Reset Today's Stats</button>
+                    </header>
+                    <div class="sf-analytics-summary">
+                        <div class="stat-row"><span>Tests Completed</span><span id="stats-tests-taken">0</span></div>
+                        <div class="stat-row"><span>Passed</span><span id="stats-tests-passed">0</span></div>
+                        <div class="stat-row"><span>Failed</span><span id="stats-tests-failed">0</span></div>
+                        <div class="stat-row"><span>Abandoned</span><span id="stats-tests-abandoned">0</span></div>
+                    </div>
+                </section>
+                <section class="sf-card">
+                    <header class="sf-card__header">
+                        <h2>Recent History</h2>
+                        <button id="analytics-refresh" class="sf-card__action" type="button">Refresh</button>
+                    </header>
+                    <div class="sf-analytics-history">
+                        <div>
+                            <h3>Passed Tests</h3>
+                            <ul id="stats-passed-list" class="history-list"></ul>
+                        </div>
+                        <div>
+                            <h3>Failed Tests</h3>
+                            <ul id="stats-failed-list" class="history-list"></ul>
+                        </div>
+                        <div>
+                            <h3>Abandoned</h3>
+                            <ul id="stats-abandoned-list" class="history-list"></ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="sf-card">
+                    <header class="sf-card__header">
+                        <h2>Report</h2>
+                    </header>
+                    <div class="sf-report">
+                        <p class="panel-description">Download a PDF summary of your latest session.</p>
+                        <button class="btn btn-primary" id="download-report">Download Report</button>
+                    </div>
+                </section>
+            </div>
+        </section>
     </main>
 
     <div id="modal-backdrop" class="modal-backdrop hidden"></div>
-    <div
-        id="define-test-modal"
-        class="modal hidden"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="define-test-title"
-    >
+
+    <div id="test-selector-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="test-selector-title">
         <div class="modal-content">
             <header class="modal-header">
-                <h2 id="define-test-title">Define Custom Test</h2>
-                <button
-                    id="close-define-test"
-                    class="modal-close"
-                    type="button"
-                    aria-label="Close define test"
-                >&times;</button>
+                <h2 id="test-selector-title">Choose a Test</h2>
+                <button id="close-test-selector" class="modal-close" type="button" aria-label="Close test selector">&times;</button>
+            </header>
+            <p class="modal-description">Select a test to begin your practice session. Each test includes shuffled questions to keep you challenged.</p>
+            <div id="test-selector-grid" class="selector-grid"></div>
+            <footer class="modal-footer">
+                <button id="cancel-test-selector" class="btn btn-secondary" type="button">Cancel</button>
+                <button id="test-selector-custom" class="btn btn-primary" type="button">Create Custom Mix</button>
+            </footer>
+        </div>
+    </div>
+
+    <div id="define-test-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="define-test-title">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="define-test-title">Create Custom Test</h2>
+                <button id="close-define-test" class="modal-close" type="button" aria-label="Close custom test">&times;</button>
             </header>
             <form id="define-test-form" class="define-test-form">
                 <section class="define-test-section">
                     <h3>Select Tests</h3>
-                    <p class="modal-card-description">
-                        Combine questions from multiple tests to build a custom practice session.
-                    </p>
+                    <p class="modal-card-description">Combine questions from multiple tests to build a custom practice session.</p>
                     <div id="define-test-list" class="define-test-list" role="group"></div>
                 </section>
                 <section class="define-test-section">
                     <h3>Session Settings</h3>
                     <div class="define-test-settings">
-                        <label class="input-label" for="define-test-question-count">
-                            Number of Questions
-                        </label>
-                        <input
-                            type="number"
-                            id="define-test-question-count"
-                            min="1"
-                            value="10"
-                            aria-describedby="define-test-summary"
-                        >
-                        <label class="input-label" for="define-test-timer">
-                            Timer (minutes)
-                        </label>
-                        <input
-                            type="number"
-                            id="define-test-timer"
-                            min="0"
-                            placeholder="Use current"
-                        >
+                        <label class="input-label" for="define-test-question-count">Number of Questions</label>
+                        <input type="number" id="define-test-question-count" min="1" value="10" aria-describedby="define-test-summary">
+                        <label class="input-label" for="define-test-timer">Timer (minutes)</label>
+                        <input type="number" id="define-test-timer" min="0" placeholder="Use current">
                     </div>
                 </section>
                 <p id="define-test-summary" class="define-test-summary" role="status"></p>
                 <p id="define-test-error" class="define-test-error" role="alert"></p>
                 <footer class="modal-footer">
-                    <button type="button" id="cancel-define-test" class="btn btn-secondary">
-                        Cancel
-                    </button>
-                    <button type="submit" id="define-test-start" class="btn btn-primary">
-                        Start Custom Test
-                    </button>
+                    <button type="button" id="cancel-define-test" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" id="define-test-start" class="btn btn-primary">Start Custom Test</button>
                 </footer>
             </form>
         </div>
     </div>
-    <div
-        id="options-modal"
-        class="modal hidden"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="options-modal-title"
-    >
+
+    <div id="options-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="options-modal-title">
         <div class="modal-content">
             <header class="modal-header">
-                <h2 id="options-modal-title">StudyFlow Tools</h2>
+                <h2 id="options-modal-title">Study Tools</h2>
                 <button id="close-options" class="modal-close" type="button" aria-label="Close tools">&times;</button>
             </header>
-
             <section class="modal-quick-settings" aria-labelledby="modal-quick-settings-title">
                 <div class="modal-quick-header">
-                    <h3 id="modal-quick-settings-title">Quick Setup</h3>
+                    <h3 id="modal-quick-settings-title">Quick Settings</h3>
                     <p class="modal-card-description">Adjust the essentials before you dive back into your session.</p>
                 </div>
                 <div class="quick-settings-grid">
                     <div class="quick-item">
                         <span class="input-label">Dark Mode</span>
-                        <button
-                            id="dark-mode-toggle"
-                            class="btn btn-tertiary"
-                            type="button"
-                            aria-describedby="dark-mode-help"
-                        >
-                            Toggle Dark Mode
-                        </button>
+                        <button id="dark-mode-toggle" class="btn btn-tertiary" type="button" aria-describedby="dark-mode-help">Toggle Dark Mode</button>
                         <p id="dark-mode-help" class="assistive-text">Switch the interface theme to match your lighting.</p>
                     </div>
                     <div class="quick-item">
-                        <label class="input-label" for="pass-mark-input">Pass Mark (%)</label>
-                        <input
-                            type="number"
-                            id="pass-mark-input"
-                            value="50"
-                            min="0"
-                            max="100"
-                            aria-describedby="pass-mark-help"
-                        >
-                        <p id="pass-mark-help" class="assistive-text">Set the score required to mark a test as passed.</p>
+                        <span class="input-label">Study Mode</span>
+                        <label class="switch" for="study-mode-toggle">
+                            <input type="checkbox" id="study-mode-toggle">
+                            <span class="switch-track"></span>
+                        </label>
+                        <p class="assistive-text">Enable hints and answer reveals while reviewing questions.</p>
                     </div>
                     <div class="quick-item">
-                        <span class="input-label">Upload Test</span>
-                        <label
-                            class="file-upload btn btn-secondary"
-                            for="upload-test-input"
-                        >
-                            Upload Test
-                            <input
-                                type="file"
-                                id="upload-test-input"
-                                accept=".json"
-                                aria-describedby="upload-test-help"
-                            >
+                        <label class="input-label" for="upload-test-input">Upload Test</label>
+                        <label class="file-upload btn btn-secondary" for="upload-test-input">Upload Test
+                            <input type="file" id="upload-test-input" accept=".json" aria-describedby="upload-test-help">
                         </label>
                         <p id="upload-test-help" class="assistive-text">Import a custom test in JSON format.</p>
                     </div>
                 </div>
             </section>
-
             <section class="modal-summary">
                 <p class="modal-tagline">Plan your session, stay focused, and finish strong.</p>
                 <div class="status-chips" aria-label="Progress overview">
@@ -346,122 +351,43 @@
                         <span class="chip-icon" aria-hidden="true">🔥</span>
                         <div class="chip-body">
                             <span class="chip-label">Streak</span>
-                            <span id="streak-value" class="chip-value">0 days</span>
+                            <span id="modal-streak-value" class="chip-value">0 days</span>
                         </div>
                     </article>
                     <article class="status-chip">
                         <span class="chip-icon" aria-hidden="true">⭐</span>
                         <div class="chip-body">
                             <span class="chip-label">XP</span>
-                            <span id="xp-value" class="chip-value">0</span>
+                            <span id="modal-xp-value" class="chip-value">0</span>
                         </div>
                     </article>
                     <article class="status-chip">
                         <span class="chip-icon" aria-hidden="true">🏆</span>
                         <div class="chip-body">
                             <span class="chip-label">Badges</span>
-                            <span id="badge-value" class="chip-value">0 earned</span>
+                            <span id="modal-badge-value" class="chip-value">0 earned</span>
                         </div>
                     </article>
                 </div>
             </section>
-
-            <div class="modal-grid">
-
-                <section class="modal-card" aria-labelledby="modal-bookmark-tools-title">
-                    <h3 id="modal-bookmark-tools-title">Bookmark Navigator</h3>
-                    <p class="modal-card-description">Collect tricky questions and jump back to them whenever you need a refresher.</p>
-                    <div class="bookmark-bar">
-                        <div class="bookmark-status">
-                            <span class="bookmark-label">Bookmarks</span>
-                            <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
-                        </div>
-
-                        <button id="stats-reset" class="btn btn-secondary">Reset Today's Stats</button>
+            <section class="modal-card" aria-labelledby="modal-bookmark-tools-title">
+                <h3 id="modal-bookmark-tools-title">Bookmark Navigator</h3>
+                <p class="modal-card-description">Collect tricky questions and jump back whenever you need a refresher.</p>
+                <div class="bookmark-bar">
+                    <div class="bookmark-status">
+                        <span class="bookmark-label">Bookmarks</span>
+                        <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
                     </div>
-                    <div id="score-container" class="card-block hidden" style="display: none;">
-                        <h2>Your Score</h2>
-                        <p class="score-value" id="score">0</p>
-                        <p id="result-message"></p>
-                        <div id="score-filter-container" class="result-filter-controls hidden">
-                            <label for="review-filter">Show</label>
-                            <select id="review-filter">
-                                <option value="all">All questions</option>
-                                <option value="incorrect">Incorrect only</option>
-                                <option value="correct">Correct only</option>
-                            </select>
-                            <div
-                                id="review-source-filter-container"
-                                class="result-filter-source hidden"
-                            >
-                                <label for="review-source-filter">Source</label>
-                                <select id="review-source-filter">
-                                    <option value="all">All sources</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary" id="download-report">Download Report</button>
-
-                    </div>
-                </section>
-
-                <section class="modal-card modal-card-wide" aria-labelledby="modal-stats-title">
-                    <h3 id="modal-stats-title">Session Insights</h3>
-                    <p class="modal-card-description">Track daily progress, review your latest runs, and export detailed reports.</p>
-                    <div class="stats-layout">
-                        <div class="card-block">
-                            <h4>Daily Overview</h4>
-                            <div class="stat-summary">
-                                <div class="stat-row"><span>Tests Completed</span><span id="stats-tests-taken">0</span></div>
-                                <div class="stat-row"><span>Passed</span><span id="stats-tests-passed">0</span></div>
-                                <div class="stat-row"><span>Failed</span><span id="stats-tests-failed">0</span></div>
-                                <div class="stat-row"><span>Abandoned</span><span id="stats-tests-abandoned">0</span></div>
-                            </div>
-                            <button id="stats-reset" class="btn btn-secondary">Reset Today's Stats</button>
-                        </div>
-                        <div id="score-container" class="card-block hidden" style="display: none;">
-                            <h4>Your Score</h4>
-                            <p class="score-value" id="score">0</p>
-                            <p id="result-message"></p>
-                            <button class="btn btn-primary" id="download-report">Download Report</button>
-                        </div>
-                        <div class="card-block">
-                            <h4>Recent Activity</h4>
-                            <div class="stat-history">
-                                <div>
-                                    <h5>Passed Tests</h5>
-                                    <ul id="stats-passed-list" class="history-list"></ul>
-                                </div>
-                                <div>
-                                    <h5>Failed Tests</h5>
-                                    <ul id="stats-failed-list" class="history-list"></ul>
-                                </div>
-                                <div>
-                                    <h5>Abandoned Tests</h5>
-                                    <ul id="stats-abandoned-list" class="history-list"></ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+                    <button id="cycle-bookmarks" class="btn btn-secondary" type="button">Cycle Bookmarks</button>
+                </div>
+            </section>
         </div>
     </div>
 
     <div id="floating-actions" class="floating-actions">
-        <button
-            id="floating-actions-toggle"
-            class="floating-actions-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="floating-actions-panel"
-        >
+        <button id="floating-actions-toggle" class="floating-actions-toggle" type="button" aria-expanded="false" aria-controls="floating-actions-panel">
             <span class="sr-only">Toggle quick actions</span>
-            <span aria-hidden="true" class="icon icon-gear">
-                <svg viewBox="0 0 24 24" role="presentation">
-                    <path d="M19.14 12.94a7.979 7.979 0 0 0 .06-.94 7.979 7.979 0 0 0-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.05 7.05 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.88 2h-3.76a.5.5 0 0 0-.5.42l-.36 2.54a7.05 7.05 0 0 0-1.63.94l-2.39-.96a.5.5 0 0 0-.61.22L3.71 8.48a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.13.23.4.32.61.22l2.39-.96c.5.39 1.05.71 1.63.94l.36 2.54a.5.5 0 0 0 .5.42h3.76a.5.5 0 0 0 .5-.42l.36-2.54c.58-.23 1.13-.55 1.63-.94l2.39.96c.22.1.48 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58ZM12 15.25A3.25 3.25 0 1 1 12 8.75a3.25 3.25 0 0 1 0 6.5Z" fill="currentColor"/>
-                </svg>
-            </span>
+            ⚙️
         </button>
         <div id="floating-actions-panel" class="floating-actions-panel">
             <button id="submit-test" class="btn btn-primary">Submit Test</button>
@@ -470,7 +396,7 @@
         </div>
     </div>
 
-    <button id="back-to-top" title="Go to top">&#8679;</button>
+    <button id="back-to-top" class="back-to-top" title="Go to top">⬆️</button>
 
     <div id="achievement-toast" class="hidden"></div>
 
@@ -480,13 +406,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
