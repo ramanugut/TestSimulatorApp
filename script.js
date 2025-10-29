@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentTestFile = "";
   let bookmarkedQuestions = new Set();
   let initialTimerSeconds = null;
+  let sessionStartTimestamp = null;
   let bookmarkCycleIndex = 0;
   let lastMotivationIndex = null;
   let currentMode = "test";
@@ -31,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentCustomSession = null;
   let lastRegularTestValue = null;
   let availableTestsMetadata = [];
+  let currentMainView = "dashboard";
+  const MAX_ACTIVITY_HISTORY = 20;
 
   //************************ SECTION 1A: ELEMENT REFERENCES ************************//
 
@@ -132,8 +135,63 @@ document.addEventListener("DOMContentLoaded", function () {
   const floatingActionsToggle = document.getElementById(
     "floating-actions-toggle"
   );
+  const navDrawer = document.getElementById("sf-nav-drawer");
+  const navButtons = document.querySelectorAll(".sf-navbar__link");
+  const dashboardView = document.getElementById("dashboard-view");
+  const practiceView = document.getElementById("practice-view");
+  const analyticsView = document.getElementById("analytics-view");
+  const dashboardChooseTestButton = document.getElementById(
+    "dashboard-choose-test"
+  );
+  const dashboardCustomTestButton = document.getElementById(
+    "dashboard-custom-test"
+  );
+  const dashboardViewTestsButton = document.getElementById(
+    "dashboard-view-tests"
+  );
+  const dashboardActivityList = document.getElementById("dashboard-activity");
+  const dashboardRefreshActivityButton = document.getElementById(
+    "dashboard-refresh-activity"
+  );
+  const dashboardTestsContainer = document.getElementById("dashboard-tests");
+  const dashboardTestsEmpty = document.getElementById("dashboard-tests-empty");
+  const dashboardPassRateElement = document.getElementById(
+    "dashboard-pass-rate"
+  );
+  const navThemeToggle = document.getElementById("nav-theme-toggle");
+  const practiceStartTimerButton = document.getElementById(
+    "practice-start-timer"
+  );
+  const practicePauseTimerButton = document.getElementById(
+    "practice-pause-timer"
+  );
+  const practiceChangeTestButton = document.getElementById(
+    "practice-change-test"
+  );
+  const viewPageButton = document.getElementById("view-page");
+  const viewAllButton = document.getElementById("view-all");
+  const practiceTestNameElement = document.getElementById("practice-test-name");
+  const practiceQuestionRangeElement = document.getElementById(
+    "practice-question-range"
+  );
+  const practiceTimeElement = document.getElementById("practice-time");
+  const analyticsRefreshButton = document.getElementById("analytics-refresh");
+  const testSelectorModal = document.getElementById("test-selector-modal");
+  const testSelectorGrid = document.getElementById("test-selector-grid");
+  const closeTestSelectorButton = document.getElementById(
+    "close-test-selector"
+  );
+  const cancelTestSelectorButton = document.getElementById(
+    "cancel-test-selector"
+  );
+  const testSelectorCustomButton = document.getElementById(
+    "test-selector-custom"
+  );
+  const modalStreakValue = document.getElementById("modal-streak-value");
+  const modalXpValue = document.getElementById("modal-xp-value");
+  const modalBadgeValue = document.getElementById("modal-badge-value");
 
-  const MOBILE_BREAKPOINT = 768;
+  const MOBILE_BREAKPOINT = 960;
   let lastViewportIsMobile = window.innerWidth <= MOBILE_BREAKPOINT;
   let headerCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
   let actionsCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
@@ -158,6 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Math.floor(remainingTime / 60) || 0,
     Math.max(remainingTime % 60, 0)
   );
+  updatePracticeTimerButtons();
 
   const motivationMessages = [
     "You're turning knowledge into power!",
@@ -213,6 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
     passedTests: [],
     failedTests: [],
     abandonedTests: [],
+    history: [],
   };
 
   let streakData = {
@@ -712,7 +772,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!modalBackdrop) {
       return;
     }
-    if (!isOptionsModalOpen() && !isDefineTestModalOpen()) {
+    if (!isOptionsModalOpen() && !isDefineTestModalOpen() && !isTestSelectorOpen()) {
       modalBackdrop.classList.add("hidden");
       modalBackdrop.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
@@ -772,6 +832,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function closeActiveModal() {
+    if (isTestSelectorOpen()) {
+      closeTestSelector();
+      return;
+    }
     if (isDefineTestModalOpen()) {
       closeDefineTestModal();
       return;
@@ -779,6 +843,377 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isOptionsModalOpen()) {
       closeOptionsModal();
     }
+  }
+
+  function isTestSelectorOpen() {
+    return testSelectorModal && !testSelectorModal.classList.contains("hidden");
+  }
+
+  function setMainView(view) {
+    currentMainView = view;
+    const mapping = {
+      dashboard: dashboardView,
+      practice: practiceView,
+      analytics: analyticsView,
+    };
+
+    Object.entries(mapping).forEach(([key, element]) => {
+      if (!element) {
+        return;
+      }
+      if (key === view) {
+        element.classList.add("active");
+        element.removeAttribute("hidden");
+      } else {
+        element.classList.remove("active");
+        element.setAttribute("hidden", "");
+      }
+    });
+
+    if (navButtons.length) {
+      navButtons.forEach((button) => {
+        const isActive = button.dataset.view === view;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-selected", isActive.toString());
+      });
+    }
+
+    if (view === "practice") {
+      updatePracticeSummary();
+    }
+  }
+
+  function formatRelativeTime(timestamp) {
+    if (!timestamp) {
+      return "Just now";
+    }
+    const difference = Date.now() - timestamp;
+    const minute = 60 * 1000;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    if (difference < minute) {
+      return "Just now";
+    }
+    if (difference < hour) {
+      const minutes = Math.max(1, Math.floor(difference / minute));
+      return `${minutes}m ago`;
+    }
+    if (difference < day) {
+      const hours = Math.max(1, Math.floor(difference / hour));
+      return `${hours}h ago`;
+    }
+    const days = Math.max(1, Math.floor(difference / day));
+    return `${days}d ago`;
+  }
+
+  function formatDuration(seconds) {
+    if (typeof seconds !== "number" || Number.isNaN(seconds) || seconds <= 0) {
+      return null;
+    }
+    const roundedSeconds = Math.round(seconds);
+    const minutes = Math.floor(roundedSeconds / 60);
+    const remainingSeconds = roundedSeconds % 60;
+    if (minutes >= 60) {
+      const hours = Math.floor(minutes / 60);
+      const leftoverMinutes = minutes % 60;
+      if (leftoverMinutes === 0) {
+        return `${hours}h`;
+      }
+      return `${hours}h ${leftoverMinutes}m`;
+    }
+    if (minutes > 0 && remainingSeconds > 0) {
+      return `${minutes}m ${remainingSeconds}s`;
+    }
+    if (minutes > 0) {
+      return `${minutes}m`;
+    }
+    return `${remainingSeconds}s`;
+  }
+
+  function getTimerRemainingSeconds(overrideRemaining = null) {
+    const value =
+      typeof overrideRemaining === "number" && !Number.isNaN(overrideRemaining)
+        ? overrideRemaining
+        : typeof remainingTime === "number" && !Number.isNaN(remainingTime)
+        ? remainingTime
+        : null;
+    if (typeof value !== "number" || Number.isNaN(value)) {
+      return null;
+    }
+    return Math.max(0, Math.round(value));
+  }
+
+  function getTimerElapsedSeconds(overrideRemaining = null) {
+    if (
+      typeof initialTimerSeconds !== "number" ||
+      Number.isNaN(initialTimerSeconds)
+    ) {
+      return null;
+    }
+    const remainingSeconds = getTimerRemainingSeconds(overrideRemaining);
+    if (remainingSeconds === null) {
+      return null;
+    }
+    return Math.max(0, Math.round(initialTimerSeconds - remainingSeconds));
+  }
+
+  function recordActivity(entry) {
+    if (!entry) {
+      return;
+    }
+    if (!Array.isArray(testStats.history)) {
+      testStats.history = [];
+    }
+    const normalizeSeconds = (value) => {
+      if (typeof value !== "number" || Number.isNaN(value) || value <= 0) {
+        return null;
+      }
+      return Math.round(value);
+    };
+    const normalizeCount = (value) => {
+      if (typeof value !== "number" || Number.isNaN(value) || value <= 0) {
+        return null;
+      }
+      return Math.round(value);
+    };
+    const activity = {
+      name: entry.name || "Untitled Test",
+      status: entry.status || "completed",
+      score:
+        typeof entry.score === "number"
+          ? Math.max(0, Math.min(100, Math.round(entry.score)))
+          : null,
+      timestamp: entry.timestamp || Date.now(),
+      durationSeconds: normalizeSeconds(entry.durationSeconds),
+      timeRemainingSeconds: normalizeSeconds(entry.timeRemainingSeconds),
+      timerDurationSeconds: normalizeSeconds(entry.timerDurationSeconds),
+      totalQuestions: normalizeCount(entry.totalQuestions),
+    };
+    testStats.history.push(activity);
+    if (testStats.history.length > MAX_ACTIVITY_HISTORY) {
+      testStats.history = testStats.history.slice(-MAX_ACTIVITY_HISTORY);
+    }
+  }
+
+  function renderDashboardActivity() {
+    if (!dashboardActivityList) {
+      return;
+    }
+    dashboardActivityList.innerHTML = "";
+    const history = Array.isArray(testStats.history)
+      ? [...testStats.history]
+      : [];
+    if (!history.length) {
+      const emptyItem = document.createElement("li");
+      emptyItem.textContent = "No activity yet. Complete a test to see progress.";
+      dashboardActivityList.appendChild(emptyItem);
+      return;
+    }
+
+    history
+      .slice(-6)
+      .reverse()
+      .forEach((entry) => {
+        const item = document.createElement("li");
+        const title = document.createElement("span");
+        title.textContent = entry.name || "Untitled Test";
+
+        const meta = document.createElement("span");
+        meta.className = `status-badge status-${entry.status || "completed"}`;
+        const parts = [];
+        if (entry.status === "passed") {
+          parts.push("Passed");
+        } else if (entry.status === "failed") {
+          parts.push("Failed");
+        } else if (entry.status === "abandoned") {
+          parts.push("Abandoned");
+        } else {
+          parts.push("Completed");
+        }
+        if (typeof entry.score === "number") {
+          parts.push(`${entry.score}%`);
+        }
+        if (typeof entry.totalQuestions === "number") {
+          parts.push(`${entry.totalQuestions} Qs`);
+        }
+        const durationLabel = formatDuration(entry.durationSeconds);
+        if (durationLabel) {
+          parts.push(`${durationLabel} spent`);
+        }
+        const remainingLabel = formatDuration(entry.timeRemainingSeconds);
+        if (remainingLabel) {
+          parts.push(`${remainingLabel} left`);
+        } else {
+          const timerLimitLabel = formatDuration(entry.timerDurationSeconds);
+          if (timerLimitLabel) {
+            parts.push(`${timerLimitLabel} timer`);
+          }
+        }
+        parts.push(formatRelativeTime(entry.timestamp));
+        meta.textContent = parts.join(" • ");
+
+        item.appendChild(title);
+        item.appendChild(meta);
+        dashboardActivityList.appendChild(item);
+      });
+  }
+
+  function updateDashboardPassRate() {
+    if (!dashboardPassRateElement) {
+      return;
+    }
+    const total = Math.max(testStats.testsTaken, 0);
+    const passRate = total === 0
+      ? 0
+      : Math.round((testStats.testsPassed / total) * 100);
+    dashboardPassRateElement.textContent = `${passRate}%`;
+  }
+
+  function buildTestCard(test, options = {}) {
+    const card = document.createElement("div");
+    card.className = options.cardClass || "sf-test-card";
+    const title = document.createElement("h3");
+    title.textContent = test.name || test.file;
+    const meta = document.createElement("div");
+    meta.className = "sf-test-card__meta";
+    const questionCount = document.createElement("span");
+    questionCount.textContent = `${test.questionCount || 0} questions`;
+    meta.appendChild(questionCount);
+    if (test.difficulty) {
+      const badge = document.createElement("span");
+      badge.className = "sf-test-card__badge";
+      badge.dataset.difficulty = test.difficulty;
+      badge.textContent = test.difficulty;
+      meta.appendChild(badge);
+    }
+    const action = document.createElement("button");
+    action.type = "button";
+    action.className = options.buttonClass || "btn btn-primary";
+    const isActiveTest =
+      testSelect &&
+      !isCustomSessionActive() &&
+      testSelect.value === test.file;
+    const defaultLabel = options.buttonLabel || "Start Test";
+    const activeLabel = options.activeLabel || defaultLabel;
+    action.textContent = isActiveTest ? activeLabel : defaultLabel;
+    action.setAttribute("aria-pressed", isActiveTest ? "true" : "false");
+    action.addEventListener("click", (event) => {
+      event.stopPropagation();
+      handleTestLaunch(test.file);
+      if (options.onAfterSelect) {
+        options.onAfterSelect();
+      }
+    });
+
+    card.appendChild(title);
+    card.appendChild(meta);
+    card.appendChild(action);
+
+    if (isActiveTest && options.highlightSelected !== false) {
+      card.classList.add("selected");
+      card.setAttribute("aria-current", "true");
+    }
+
+    card.addEventListener("click", () => {
+      handleTestLaunch(test.file);
+      if (options.onAfterSelect) {
+        options.onAfterSelect();
+      }
+    });
+
+    return card;
+  }
+
+  function renderDashboardTests() {
+    if (!dashboardTestsContainer || !dashboardTestsEmpty) {
+      return;
+    }
+    dashboardTestsContainer.innerHTML = "";
+    if (!availableTestsMetadata.length) {
+      dashboardTestsEmpty.classList.remove("hidden");
+      return;
+    }
+    dashboardTestsEmpty.classList.add("hidden");
+    availableTestsMetadata.slice(0, 4).forEach((test) => {
+      dashboardTestsContainer.appendChild(
+        buildTestCard(test, { onAfterSelect: () => setMainView("practice") })
+      );
+    });
+  }
+
+  function renderTestSelector() {
+    if (!testSelectorGrid) {
+      return;
+    }
+    testSelectorGrid.innerHTML = "";
+    if (!availableTestsMetadata.length) {
+      const emptyState = document.createElement("p");
+      emptyState.className = "empty-state";
+      emptyState.textContent = "No tests available. Upload a test to begin.";
+      testSelectorGrid.appendChild(emptyState);
+      return;
+    }
+    availableTestsMetadata.forEach((test) => {
+      const card = buildTestCard(test, {
+        buttonLabel: "Select",
+        activeLabel: "Selected",
+        cardClass: "selector-card",
+        onAfterSelect: closeTestSelector,
+      });
+      testSelectorGrid.appendChild(card);
+    });
+  }
+
+  function refreshTestSelectionUI() {
+    renderDashboardTests();
+    renderTestSelector();
+  }
+
+  function openTestSelector() {
+    if (!testSelectorModal) {
+      return;
+    }
+    closeOptionsModal();
+    renderTestSelector();
+    testSelectorModal.classList.remove("hidden");
+    testSelectorModal.setAttribute("aria-hidden", "false");
+    showModalBackdrop();
+    if (closeTestSelectorButton) {
+      closeTestSelectorButton.focus();
+    }
+  }
+
+  function closeTestSelector() {
+    if (!testSelectorModal || !isTestSelectorOpen()) {
+      return;
+    }
+    testSelectorModal.classList.add("hidden");
+    testSelectorModal.setAttribute("aria-hidden", "true");
+    hideModalBackdropIfNoModal();
+    if (dashboardChooseTestButton) {
+      dashboardChooseTestButton.focus();
+    }
+  }
+
+  function handleTestLaunch(file) {
+    if (!testSelect || !file) {
+      return;
+    }
+    const optionExists = Array.from(testSelect.options).some(
+      (option) => option.value === file
+    );
+    if (!optionExists) {
+      testSelect.value = file;
+      loadQuestions(file);
+    } else if (testSelect.value === file) {
+      loadQuestions(file);
+    } else {
+      testSelect.value = file;
+      const changeEvent = new Event("change");
+      testSelect.dispatchEvent(changeEvent);
+    }
+    setMainView("practice");
+    refreshTestSelectionUI();
   }
 
   function setReviewMode(newFilter) {
@@ -832,8 +1267,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const storedDate = localStorage.getItem("statsDate");
     if (storedDate === today) {
       const storedStats = JSON.parse(localStorage.getItem("testStats"));
-      if (storedStats) {
-        testStats = storedStats;
+      if (storedStats && typeof storedStats === "object") {
+        testStats = {
+          testsTaken: 0,
+          testsPassed: 0,
+          testsFailed: 0,
+          testsAbandoned: 0,
+          passedTests: [],
+          failedTests: [],
+          abandonedTests: [],
+          history: [],
+          ...storedStats,
+        };
+        if (!Array.isArray(testStats.history)) {
+          testStats.history = [];
+        }
       }
     } else {
       // New day, reset stats
@@ -845,6 +1293,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Save stats to localStorage
   function saveStats() {
+    if (Array.isArray(testStats.history)) {
+      if (testStats.history.length > MAX_ACTIVITY_HISTORY) {
+        testStats.history = testStats.history.slice(-MAX_ACTIVITY_HISTORY);
+      }
+    } else {
+      testStats.history = [];
+    }
     localStorage.setItem("testStats", JSON.stringify(testStats));
   }
 
@@ -852,6 +1307,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateStatsDisplay() {
     updateStatsPanel();
     updateGamification();
+    renderDashboardActivity();
+    updateDashboardPassRate();
+    renderDashboardTests();
   }
 
   function isMobileViewport() {
@@ -859,27 +1317,27 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function syncHeaderToggleState() {
-    if (!headerElement || !headerToggleButton) {
+    if (!headerToggleButton || !navDrawer) {
       return;
     }
 
     if (!isMobileViewport()) {
       headerCollapsed = false;
-      headerElement.classList.remove("collapsed");
-      headerToggleButton.setAttribute("aria-expanded", "true");
-      headerToggleButton.setAttribute("aria-label", "Hide header tools");
-      headerToggleButton.setAttribute("title", "Hide header tools");
+      navDrawer.classList.remove("drawer-open");
+      navDrawer.removeAttribute("aria-hidden");
+      headerToggleButton.setAttribute("aria-expanded", "false");
+      headerToggleButton.setAttribute("aria-label", "Open quick controls");
+      headerToggleButton.setAttribute("title", "Open quick controls");
       return;
     }
 
-    headerElement.classList.toggle("collapsed", headerCollapsed);
-    const headerToggleLabel = headerCollapsed
-      ? "Show header tools"
-      : "Hide header tools";
-    headerToggleButton.setAttribute(
-      "aria-expanded",
-      headerCollapsed ? "false" : "true"
-    );
+    const expanded = !headerCollapsed;
+    navDrawer.classList.toggle("drawer-open", expanded);
+    navDrawer.setAttribute("aria-hidden", expanded ? "false" : "true");
+    const headerToggleLabel = expanded
+      ? "Hide quick controls"
+      : "Open quick controls";
+    headerToggleButton.setAttribute("aria-expanded", expanded.toString());
     headerToggleButton.setAttribute("aria-label", headerToggleLabel);
     headerToggleButton.setAttribute("title", headerToggleLabel);
   }
@@ -1236,6 +1694,7 @@ document.addEventListener("DOMContentLoaded", function () {
       passedTests: [],
       failedTests: [],
       abandonedTests: [],
+      history: [],
     };
     resetStreak();
     // Save to localStorage
@@ -1294,12 +1753,25 @@ document.addEventListener("DOMContentLoaded", function () {
       const label = streakData.count === 1 ? "day" : "days";
       streakValueElement.textContent = `${streakData.count} ${label}`;
     }
+    if (modalStreakValue) {
+      const label = streakData.count === 1 ? "day" : "days";
+      modalStreakValue.textContent = `${streakData.count} ${label}`;
+    }
     if (xpValueElement) {
       xpValueElement.textContent = calculateXp().toLocaleString();
+    }
+    if (modalXpValue) {
+      modalXpValue.textContent = calculateXp().toLocaleString();
     }
     if (badgeValueElement) {
       const badgeCount = unlockedAchievements.size;
       badgeValueElement.textContent = `${badgeCount} ${
+        badgeCount === 1 ? "badge" : "badges"
+      } earned`;
+    }
+    if (modalBadgeValue) {
+      const badgeCount = unlockedAchievements.size;
+      modalBadgeValue.textContent = `${badgeCount} ${
         badgeCount === 1 ? "badge" : "badges"
       } earned`;
     }
@@ -1586,28 +2058,66 @@ document.addEventListener("DOMContentLoaded", function () {
   //************************ SECTION 3: THEME HANDLING ************************//
 
   // Handle Dark Mode theme based on user preferences
-  if (darkModeToggle) {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
-      darkModeToggle.textContent = "Disable Dark Mode";
-    } else {
-      document.body.classList.add("light-mode");
-      darkModeToggle.textContent = "Enable Dark Mode";
+  function applyTheme(theme) {
+    const normalizedTheme = theme === "dark" ? "dark" : "light";
+    document.body.classList.toggle("dark-mode", normalizedTheme === "dark");
+    document.body.classList.toggle("light-mode", normalizedTheme === "light");
+    localStorage.setItem("theme", normalizedTheme);
+
+    if (darkModeToggle) {
+      darkModeToggle.textContent =
+        normalizedTheme === "dark" ? "Disable Dark Mode" : "Enable Dark Mode";
+      darkModeToggle.setAttribute(
+        "aria-pressed",
+        normalizedTheme === "dark" ? "true" : "false"
+      );
+      darkModeToggle.setAttribute(
+        "aria-label",
+        normalizedTheme === "dark"
+          ? "Switch to light mode"
+          : "Switch to dark mode"
+      );
     }
 
-    darkModeToggle.addEventListener("click", () => {
-      if (document.body.classList.contains("dark-mode")) {
-        document.body.classList.remove("dark-mode");
-        document.body.classList.add("light-mode");
-        localStorage.setItem("theme", "light");
-        darkModeToggle.textContent = "Enable Dark Mode";
-      } else {
-        document.body.classList.remove("light-mode");
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-        darkModeToggle.textContent = "Disable Dark Mode";
-      }
-    });
+    if (navThemeToggle) {
+      navThemeToggle.setAttribute(
+        "aria-pressed",
+        normalizedTheme === "dark" ? "true" : "false"
+      );
+      const navLabel =
+        normalizedTheme === "dark"
+          ? "Switch to light mode"
+          : "Switch to dark mode";
+      navThemeToggle.setAttribute("aria-label", navLabel);
+      navThemeToggle.setAttribute("title", navLabel);
+    }
+  }
+
+  function getCurrentTheme() {
+    return document.body.classList.contains("dark-mode") ? "dark" : "light";
+  }
+
+  function toggleTheme() {
+    const currentTheme = getCurrentTheme();
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+  }
+
+  const storedTheme = localStorage.getItem("theme");
+  const prefersDark =
+    typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialTheme =
+    storedTheme === "dark" || storedTheme === "light"
+      ? storedTheme
+      : prefersDark
+      ? "dark"
+      : "light";
+
+  applyTheme(initialTheme);
+
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", toggleTheme);
   }
 
   //************************ SECTION 4: TEST FILE LOADING ************************//
@@ -1682,6 +2192,7 @@ const testFiles = [
             file: filename,
             name: option.textContent,
             questionCount,
+            difficulty: data.difficulty || null,
           });
 
           const shouldLoadThisFile = savedProgressFile
@@ -1708,6 +2219,8 @@ const testFiles = [
       .then(() => {
         console.log("All test files loaded");
         populateDefineTestModal();
+        renderDashboardTests();
+        renderTestSelector();
 
         if (
           savedProgressFile === CUSTOM_TEST_VALUE &&
@@ -1734,6 +2247,12 @@ const testFiles = [
 
   // Load the test files into the dropdown on page load
   loadTestFiles();
+
+  setMainView(currentMainView);
+  renderDashboardActivity();
+  renderDashboardTests();
+  renderTestSelector();
+  updateDashboardPassRate();
 
   //************************ SECTION 5: QUESTION LOADING ************************//
 
@@ -1789,6 +2308,7 @@ const testFiles = [
       originalQuestions = cloneQuestionsData(rawQuestions || []);
       questions = prepareQuestionsForSession(originalQuestions);
       initializeTest();
+      refreshTestSelectionUI();
     };
 
     if (customData) {
@@ -2089,12 +2609,29 @@ const testFiles = [
         ? testSelect.options[testSelect.selectedIndex]?.textContent || "Custom Mix"
         : "Custom Mix";
       testStats.abandonedTests.push(testName);
+      const elapsedSeconds = getTimerElapsedSeconds();
+      const remainingSeconds = getTimerRemainingSeconds();
+      const timerLimitSeconds =
+        typeof initialTimerSeconds === "number" &&
+        !Number.isNaN(initialTimerSeconds)
+          ? Math.max(0, Math.round(initialTimerSeconds))
+          : null;
+      recordActivity({
+        name: testName,
+        status: "abandoned",
+        totalQuestions: questions.length,
+        durationSeconds: elapsedSeconds,
+        timeRemainingSeconds: remainingSeconds,
+        timerDurationSeconds: timerLimitSeconds,
+      });
       saveStats();
       updateStatsDisplay();
     }
 
     clearInterval(timer);
     timer = null;
+    sessionStartTimestamp = null;
+    initialTimerSeconds = null;
     exitCustomSession({ loadFallback: true });
   }
 
@@ -2129,6 +2666,15 @@ const testFiles = [
       bookmarkedQuestions = new Set(savedProgress.bookmarkedQuestions || []);
       isTimerPaused = !!savedProgress.isTimerPaused;
       showAllQuestions = !!savedProgress.showAllQuestions;
+      initialTimerSeconds =
+        typeof savedProgress.initialTimerSeconds === "number" &&
+        !Number.isNaN(savedProgress.initialTimerSeconds)
+          ? savedProgress.initialTimerSeconds
+          : initialTimerSeconds;
+      sessionStartTimestamp =
+        typeof savedProgress.sessionStartTimestamp === "number"
+          ? savedProgress.sessionStartTimestamp
+          : sessionStartTimestamp;
     } else {
       currentPage = 1;
       userAnswers = {};
@@ -2138,6 +2684,7 @@ const testFiles = [
       isTimerPaused = false;
       remainingTime = getTimerInputSeconds();
       showAllQuestions = false;
+      sessionStartTimestamp = null;
     }
 
     bookmarkCycleIndex = 0;
@@ -2147,6 +2694,7 @@ const testFiles = [
     pauseTimerButton.textContent = isTimerPaused
       ? "Continue Timer"
       : "Pause Timer";
+    updatePracticeTimerButtons();
 
     updateTimerDisplay(
       Math.floor(Math.max(remainingTime, 0) / 60),
@@ -2466,6 +3014,7 @@ const testFiles = [
     });
     updateProgress();
     updateBookmarkPanel();
+    updatePracticeSummary();
   }
 
   function renderFlashcards() {
@@ -2715,6 +3264,8 @@ const testFiles = [
     if (currentPage > totalPages) {
       currentPage = totalPages;
     }
+    updateViewButtons();
+
     if (showAllQuestions) {
       pageInfo.textContent =
         totalFiltered === 1
@@ -2731,6 +3282,55 @@ const testFiles = [
       prevPageButton.disabled = currentPage === 1;
       nextPageButton.disabled = currentPage === totalPages;
     }
+
+    updatePracticeSummary();
+  }
+
+  function updateViewButtons() {
+    if (viewPageButton) {
+      viewPageButton.classList.toggle("active", !showAllQuestions);
+    }
+    if (viewAllButton) {
+      viewAllButton.classList.toggle("active", showAllQuestions);
+    }
+  }
+
+  function updatePracticeSummary() {
+    if (practiceTestNameElement && testSelect) {
+      const selectedOption = testSelect.options[testSelect.selectedIndex];
+      practiceTestNameElement.textContent = selectedOption
+        ? selectedOption.textContent
+        : "Practice Session";
+    }
+
+    if (!practiceQuestionRangeElement) {
+      return;
+    }
+
+    const filtered = getFilteredQuestionIndexes();
+    if (!filtered.length) {
+      practiceQuestionRangeElement.textContent = "No questions loaded";
+      return;
+    }
+
+    if (showAllQuestions) {
+      practiceQuestionRangeElement.textContent =
+        filtered.length === 1
+          ? "Viewing all 1 question"
+          : `Viewing all ${filtered.length} questions`;
+      return;
+    }
+
+    const startOffset = (currentPage - 1) * questionsPerPage;
+    const visible = filtered.slice(startOffset, startOffset + questionsPerPage);
+    if (!visible.length) {
+      practiceQuestionRangeElement.textContent = "No questions on this page";
+      return;
+    }
+
+    const startQuestion = visible[0] + 1;
+    const endQuestion = visible[visible.length - 1] + 1;
+    practiceQuestionRangeElement.textContent = `Questions ${startQuestion}-${endQuestion} of ${filtered.length}`;
   }
 
   if (prevPageButton) {
@@ -2786,6 +3386,31 @@ const testFiles = [
     });
   }
 
+  if (viewPageButton) {
+    viewPageButton.addEventListener("click", () => {
+      if (showAllQuestions) {
+        showAllQuestions = false;
+        currentPage = 1;
+        renderQuestions();
+        updatePaginationControls();
+        scrollToQuestionsTop();
+        saveProgress();
+      }
+    });
+  }
+
+  if (viewAllButton) {
+    viewAllButton.addEventListener("click", () => {
+      if (!showAllQuestions) {
+        showAllQuestions = true;
+        renderQuestions();
+        updatePaginationControls();
+        scrollToQuestionsTop();
+        saveProgress();
+      }
+    });
+  }
+
   if (reviewFilterSelect) {
     reviewFilterSelect.addEventListener("change", (event) => {
       reviewFilter = event.target.value;
@@ -2835,6 +3460,7 @@ const testFiles = [
     if (timerStarted) return;
     timerStarted = true;
     isTimerPaused = false;
+    updatePracticeTimerButtons();
 
     if (!resume || typeof remainingTime !== "number" || Number.isNaN(remainingTime)) {
       remainingTime = getTimerInputSeconds();
@@ -2842,6 +3468,10 @@ const testFiles = [
 
     if (!resume || initialTimerSeconds === null) {
       initialTimerSeconds = getTimerInputSeconds();
+    }
+
+    if (!resume || sessionStartTimestamp === null) {
+      sessionStartTimestamp = Date.now();
     }
 
     updateTimerDisplay(
@@ -2860,6 +3490,7 @@ const testFiles = [
       if (remainingTime <= 0) {
         clearInterval(timer);
         timerStarted = false;
+        updatePracticeTimerButtons();
         submitTest();
         return;
       }
@@ -2872,6 +3503,21 @@ const testFiles = [
     if (floatingTimeDisplay) {
       floatingTimeDisplay.textContent = timeString;
     }
+    if (practiceTimeElement) {
+      practiceTimeElement.textContent = timeString;
+    }
+  }
+
+  function updatePracticeTimerButtons() {
+    if (practiceStartTimerButton) {
+      practiceStartTimerButton.disabled = timerStarted;
+    }
+    if (practicePauseTimerButton) {
+      practicePauseTimerButton.disabled = !timerStarted;
+      practicePauseTimerButton.textContent = isTimerPaused
+        ? "Continue"
+        : "Pause";
+    }
   }
 
   function pauseOrContinueTimer() {
@@ -2883,6 +3529,7 @@ const testFiles = [
       isTimerPaused = true;
       pauseTimerButton.textContent = "Continue Timer";
     }
+    updatePracticeTimerButtons();
     saveProgress();
   }
 
@@ -2898,8 +3545,31 @@ const testFiles = [
         submitButton.disabled = false;
       }
       testInProgress = true;
+      updatePracticeTimerButtons();
       saveProgress();
     });
+  }
+
+  if (practiceStartTimerButton) {
+    practiceStartTimerButton.addEventListener("click", () => {
+      if (startTestButton) {
+        startTestButton.click();
+      } else {
+        startTimer();
+        testInProgress = true;
+        updatePracticeTimerButtons();
+      }
+    });
+  }
+
+  if (practicePauseTimerButton) {
+    practicePauseTimerButton.addEventListener("click", () => {
+      pauseOrContinueTimer();
+    });
+  }
+
+  if (practiceChangeTestButton) {
+    practiceChangeTestButton.addEventListener("click", openTestSelector);
   }
 
   //************************ SECTION 9: TEST SUBMISSION ************************//
@@ -2944,6 +3614,7 @@ const testFiles = [
       submitButton.disabled = true;
       startTestButton.disabled = false;
       pauseTimerButton.textContent = "Pause Timer";
+      updatePracticeTimerButtons();
       let score = 0;
       reviewFilter = "all";
       if (reviewFilterSelect) {
@@ -3008,6 +3679,24 @@ const testFiles = [
         testStats.failedTests.push(testName);
       }
 
+      const elapsedSeconds = getTimerElapsedSeconds(timeLeftAtSubmission);
+      const remainingSeconds = getTimerRemainingSeconds(timeLeftAtSubmission);
+      const timerLimitSeconds =
+        typeof initialTimerSeconds === "number" &&
+        !Number.isNaN(initialTimerSeconds)
+          ? Math.max(0, Math.round(initialTimerSeconds))
+          : null;
+
+      recordActivity({
+        name: testName,
+        status: didPass ? "passed" : "failed",
+        score: scorePercent,
+        totalQuestions: questions.length,
+        durationSeconds: elapsedSeconds,
+        timeRemainingSeconds: remainingSeconds,
+        timerDurationSeconds: timerLimitSeconds,
+      });
+
       const missedCount = questionResults.filter(
         (status) => status !== "correct"
       ).length;
@@ -3031,6 +3720,8 @@ const testFiles = [
 
       // Clear saved progress
       clearSavedProgress();
+      sessionStartTimestamp = null;
+      initialTimerSeconds = null;
 
       // Re-render current page to show feedback
       renderQuestions();
@@ -3150,12 +3841,28 @@ const testFiles = [
         const testName =
           testSelect.options[testSelect.selectedIndex].textContent;
         testStats.abandonedTests.push(testName);
+        const elapsedSeconds = getTimerElapsedSeconds();
+        const remainingSeconds = getTimerRemainingSeconds();
+        const timerLimitSeconds =
+          typeof initialTimerSeconds === "number" &&
+          !Number.isNaN(initialTimerSeconds)
+            ? Math.max(0, Math.round(initialTimerSeconds))
+            : null;
+        recordActivity({
+          name: testName,
+          status: "abandoned",
+          totalQuestions: questions.length,
+          durationSeconds: elapsedSeconds,
+          timeRemainingSeconds: remainingSeconds,
+          timerDurationSeconds: timerLimitSeconds,
+        });
         saveStats();
         updateStatsDisplay();
       }
     }
     clearInterval(timer);
     timer = null;
+    sessionStartTimestamp = null;
 
     if (wasCustomSession) {
       regenerateCustomSessionQuestions();
@@ -3181,6 +3888,7 @@ const testFiles = [
     testSubmitted = false;
     resetReviewState();
     pauseTimerButton.textContent = "Pause Timer";
+    updatePracticeTimerButtons();
     if (progressTextElement) {
       progressTextElement.textContent = `0%`;
     }
@@ -3204,6 +3912,62 @@ const testFiles = [
 
   if (resetButton) {
     resetButton.addEventListener("click", resetTest);
+  }
+
+
+  if (navButtons.length) {
+    navButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetView = button.dataset.view || "dashboard";
+        setMainView(targetView);
+      });
+    });
+  }
+
+  if (dashboardChooseTestButton) {
+    dashboardChooseTestButton.addEventListener("click", openTestSelector);
+  }
+
+  if (dashboardViewTestsButton) {
+    dashboardViewTestsButton.addEventListener("click", openTestSelector);
+  }
+
+  if (dashboardCustomTestButton) {
+    dashboardCustomTestButton.addEventListener("click", () => {
+      openDefineTestModal();
+      setMainView("practice");
+    });
+  }
+
+  if (dashboardRefreshActivityButton) {
+    dashboardRefreshActivityButton.addEventListener("click", () => {
+      renderDashboardActivity();
+    });
+  }
+
+  if (analyticsRefreshButton) {
+    analyticsRefreshButton.addEventListener("click", () => {
+      updateStatsDisplay();
+    });
+  }
+
+  if (closeTestSelectorButton) {
+    closeTestSelectorButton.addEventListener("click", closeTestSelector);
+  }
+
+  if (cancelTestSelectorButton) {
+    cancelTestSelectorButton.addEventListener("click", closeTestSelector);
+  }
+
+  if (testSelectorCustomButton) {
+    testSelectorCustomButton.addEventListener("click", () => {
+      closeTestSelector();
+      openDefineTestModal();
+    });
+  }
+
+  if (navThemeToggle) {
+    navThemeToggle.addEventListener("click", toggleTheme);
   }
 
 
@@ -3651,9 +4415,26 @@ const testFiles = [
           const testName =
             testSelect.options[testSelect.selectedIndex].textContent;
           testStats.abandonedTests.push(testName);
+          const elapsedSeconds = getTimerElapsedSeconds();
+          const remainingSeconds = getTimerRemainingSeconds();
+          const timerLimitSeconds =
+            typeof initialTimerSeconds === "number" &&
+            !Number.isNaN(initialTimerSeconds)
+              ? Math.max(0, Math.round(initialTimerSeconds))
+              : null;
+          recordActivity({
+            name: testName,
+            status: "abandoned",
+            totalQuestions: questions.length,
+            durationSeconds: elapsedSeconds,
+            timeRemainingSeconds: remainingSeconds,
+            timerDurationSeconds: timerLimitSeconds,
+          });
           saveStats();
           updateStatsDisplay();
 
+          testInProgress = false;
+          timerStarted = false;
           resetTest();
           if (leavingCustomSession) {
             exitCustomSession({ loadFallback: false });
@@ -3737,8 +4518,11 @@ const testFiles = [
               questionCount: Array.isArray(data.questions)
                 ? data.questions.length
                 : 0,
+              difficulty: data.difficulty || null,
             });
             populateDefineTestModal();
+            renderDashboardTests();
+            renderTestSelector();
             alert("Custom test loaded successfully!");
           } catch (error) {
             console.error("Error parsing JSON file:", error);
@@ -3765,6 +4549,15 @@ const testFiles = [
       isTimerPaused,
       showAllQuestions,
       bookmarkedQuestions: Array.from(bookmarkedQuestions),
+      initialTimerSeconds:
+        typeof initialTimerSeconds === "number" &&
+        !Number.isNaN(initialTimerSeconds)
+          ? initialTimerSeconds
+          : null,
+      sessionStartTimestamp:
+        typeof sessionStartTimestamp === "number"
+          ? sessionStartTimestamp
+          : null,
     };
     progressData.lastRegularTestValue = lastRegularTestValue;
 
