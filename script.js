@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const practicePauseTimerButton = document.getElementById(
     "practice-pause-timer"
   );
+  const practiceBackButton = document.getElementById("practice-back");
   const practiceChangeTestButton = document.getElementById(
     "practice-change-test"
   );
@@ -3568,6 +3569,12 @@ const testFiles = [
     });
   }
 
+  if (practiceBackButton) {
+    practiceBackButton.addEventListener("click", () => {
+      setMainView("dashboard");
+    });
+  }
+
   if (practiceChangeTestButton) {
     practiceChangeTestButton.addEventListener("click", openTestSelector);
   }
@@ -3748,6 +3755,14 @@ const testFiles = [
       ? answersMatch(userAnswer, question.correctAnswer)
       : false;
 
+    const canonicalCorrectAnswers = Array.isArray(question.correctAnswer)
+      ? question.correctAnswer
+          .map((value) => canonicalizeAnswerValue(value))
+          .filter((value) => value !== "")
+      : [
+          canonicalizeAnswerValue(question.correctAnswer),
+        ].filter((value) => value !== "");
+
     // Apply feedback to the question element
     let feedbackElement = document.createElement("p");
     feedbackElement.classList.add("feedback");
@@ -3803,6 +3818,14 @@ const testFiles = [
         const optionItem = input.closest("li");
         if (optionItem) {
           optionItem.classList.toggle("selected", input.checked);
+          const matchesCorrect = canonicalCorrectAnswers.some((correctValue) =>
+            answerValuesEqual(correctValue, input.value)
+          );
+          optionItem.classList.toggle("option-correct", matchesCorrect);
+          optionItem.classList.toggle(
+            "option-incorrect",
+            input.checked && !matchesCorrect
+          );
         }
       });
     } else {

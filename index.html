@@ -23,16 +23,10 @@
                 <button class="sf-navbar__link" data-view="analytics" role="tab" aria-selected="false">Analytics</button>
             </div>
             <div class="sf-navbar__actions">
-                <div class="sf-navbar__select">
-                    <label for="test-select" class="sr-only">Choose a test</label>
-                    <select id="test-select"></select>
-                </div>
+                <select id="test-select" hidden aria-hidden="true"></select>
                 <button id="nav-theme-toggle" class="sf-icon-button" type="button" aria-label="Toggle theme">
                     <span class="sf-icon-button__sun" aria-hidden="true">☀️</span>
                     <span class="sf-icon-button__moon" aria-hidden="true">🌙</span>
-                </button>
-                <button id="open-options" class="sf-icon-button" type="button" aria-label="Open tools" aria-controls="options-modal" aria-expanded="false">
-                    <span aria-hidden="true">⚙️</span>
                 </button>
                 <button id="header-toggle" class="sf-icon-button sf-icon-button--menu" type="button" aria-expanded="false" aria-controls="sf-nav-drawer">
                     <span class="sr-only">Toggle menu</span>
@@ -50,6 +44,11 @@
                 <div class="sf-drawer__field">
                     <label for="pass-mark-input">Pass mark (%)</label>
                     <input type="number" id="pass-mark-input" value="50" min="0" max="100">
+                </div>
+                <div class="sf-drawer__field sf-drawer__field--file">
+                    <label for="upload-test-input">Upload Test (JSON)</label>
+                    <input type="file" id="upload-test-input" accept=".json" aria-describedby="upload-test-help">
+                    <p id="upload-test-help" class="assistive-text">Import additional tests to expand your practice set.</p>
                 </div>
                 <div class="sf-drawer__actions">
                     <button id="define-test" class="btn btn-subtle" type="button" aria-haspopup="dialog" aria-expanded="false">Custom Mix</button>
@@ -157,6 +156,7 @@
                     </div>
                 </div>
                 <div class="sf-practice-header__actions">
+                    <button id="practice-back" class="btn btn-subtle" type="button">Back</button>
                     <button id="practice-start-timer" class="btn btn-primary" type="button">Start Timer</button>
                     <button id="practice-pause-timer" class="btn btn-warning" type="button">Pause</button>
                     <button id="practice-change-test" class="btn btn-outline" type="button">Change Test</button>
@@ -175,6 +175,14 @@
                     <button id="mode-tab-flashcards" class="mode-tab-button" type="button" role="tab" aria-selected="false" aria-controls="mode-panel-flashcards" data-mode="flashcards">Flashcards</button>
                 </div>
             </div>
+
+            <section class="sf-bookmark-panel" aria-label="Bookmarks">
+                <div class="sf-bookmark-panel__header">
+                    <h3>Bookmarks</h3>
+                    <button id="cycle-bookmarks" class="btn btn-tertiary" type="button">Next Bookmark</button>
+                </div>
+                <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
+            </section>
 
             <section id="mode-panel-test" class="mode-panel active" role="tabpanel" aria-labelledby="mode-tab-test">
                 <div class="test-content">
@@ -307,80 +315,6 @@
                     <button type="submit" id="define-test-start" class="btn btn-primary">Start Custom Test</button>
                 </footer>
             </form>
-        </div>
-    </div>
-
-    <div id="options-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="options-modal-title">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h2 id="options-modal-title">Study Tools</h2>
-                <button id="close-options" class="modal-close" type="button" aria-label="Close tools">&times;</button>
-            </header>
-            <section class="modal-quick-settings" aria-labelledby="modal-quick-settings-title">
-                <div class="modal-quick-header">
-                    <h3 id="modal-quick-settings-title">Quick Settings</h3>
-                    <p class="modal-card-description">Adjust the essentials before you dive back into your session.</p>
-                </div>
-                <div class="quick-settings-grid">
-                    <div class="quick-item">
-                        <span class="input-label">Dark Mode</span>
-                        <button id="dark-mode-toggle" class="btn btn-tertiary" type="button" aria-describedby="dark-mode-help">Toggle Dark Mode</button>
-                        <p id="dark-mode-help" class="assistive-text">Switch the interface theme to match your lighting.</p>
-                    </div>
-                    <div class="quick-item">
-                        <span class="input-label">Study Mode</span>
-                        <label class="switch" for="study-mode-toggle">
-                            <input type="checkbox" id="study-mode-toggle">
-                            <span class="switch-track"></span>
-                        </label>
-                        <p class="assistive-text">Enable hints and answer reveals while reviewing questions.</p>
-                    </div>
-                    <div class="quick-item">
-                        <label class="input-label" for="upload-test-input">Upload Test</label>
-                        <label class="file-upload btn btn-secondary" for="upload-test-input">Upload Test
-                            <input type="file" id="upload-test-input" accept=".json" aria-describedby="upload-test-help">
-                        </label>
-                        <p id="upload-test-help" class="assistive-text">Import a custom test in JSON format.</p>
-                    </div>
-                </div>
-            </section>
-            <section class="modal-summary">
-                <p class="modal-tagline">Plan your session, stay focused, and finish strong.</p>
-                <div class="status-chips" aria-label="Progress overview">
-                    <article class="status-chip">
-                        <span class="chip-icon" aria-hidden="true">🔥</span>
-                        <div class="chip-body">
-                            <span class="chip-label">Streak</span>
-                            <span id="modal-streak-value" class="chip-value">0 days</span>
-                        </div>
-                    </article>
-                    <article class="status-chip">
-                        <span class="chip-icon" aria-hidden="true">⭐</span>
-                        <div class="chip-body">
-                            <span class="chip-label">XP</span>
-                            <span id="modal-xp-value" class="chip-value">0</span>
-                        </div>
-                    </article>
-                    <article class="status-chip">
-                        <span class="chip-icon" aria-hidden="true">🏆</span>
-                        <div class="chip-body">
-                            <span class="chip-label">Badges</span>
-                            <span id="modal-badge-value" class="chip-value">0 earned</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-            <section class="modal-card" aria-labelledby="modal-bookmark-tools-title">
-                <h3 id="modal-bookmark-tools-title">Bookmark Navigator</h3>
-                <p class="modal-card-description">Collect tricky questions and jump back whenever you need a refresher.</p>
-                <div class="bookmark-bar">
-                    <div class="bookmark-status">
-                        <span class="bookmark-label">Bookmarks</span>
-                        <div id="bookmark-list" class="bookmark-list">No bookmarks yet.</div>
-                    </div>
-                    <button id="cycle-bookmarks" class="btn btn-secondary" type="button">Cycle Bookmarks</button>
-                </div>
-            </section>
         </div>
     </div>
 
