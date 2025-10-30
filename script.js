@@ -4440,12 +4440,14 @@ const testFiles = [
             exitCustomSession({ loadFallback: false });
           }
           loadQuestions(selectedValue);
+          setMainView("practice");
         }
       } else {
         if (leavingCustomSession) {
           exitCustomSession({ loadFallback: false });
         }
         loadQuestions(selectedValue);
+        setMainView("practice");
       }
       testSelect.dataset.previousValue = testSelect.value;
     });

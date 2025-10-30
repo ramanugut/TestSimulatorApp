@@ -1018,6 +1018,8 @@ body.light-mode .selector-card.selected {
     display: grid;
     gap: 0.75rem;
     z-index: 60;
+    justify-items: end;
+    max-width: min(360px, calc(100vw - 2rem));
 }
 
 .floating-actions-toggle {
@@ -1030,6 +1032,7 @@ body.light-mode .selector-card.selected {
     font-size: 1.5rem;
     cursor: pointer;
     box-shadow: var(--shadow-soft);
+    justify-self: end;
 }
 
 .floating-actions-panel {
@@ -1040,6 +1043,8 @@ body.light-mode .selector-card.selected {
     padding: 1rem;
     box-shadow: var(--shadow-soft);
     gap: 0.75rem;
+    width: clamp(240px, 80vw, 320px);
+    max-width: 100%;
 }
 
 .back-to-top {
@@ -1125,6 +1130,12 @@ body.light-mode .selector-card.selected {
 
     .floating-actions {
         right: 1rem;
+        bottom: 1.5rem;
+        max-width: calc(100vw - 2rem);
+    }
+
+    .floating-actions-panel {
+        width: 100%;
     }
 
     .back-to-top {
