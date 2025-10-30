@@ -2702,10 +2702,14 @@ const testFiles = [
       Math.max(remainingTime, 0) % 60
     );
 
-    scoreContainer.classList.add("hidden");
-    scoreContainer.style.display = "none";
-    resultMessageElement.textContent = "";
-    resultMessageElement.classList.remove("pass-message", "fail-message");
+    if (scoreContainer) {
+      scoreContainer.classList.add("hidden");
+      scoreContainer.style.display = "none";
+    }
+    if (resultMessageElement) {
+      resultMessageElement.textContent = "";
+      resultMessageElement.classList.remove("pass-message", "fail-message");
+    }
     hideResultBanner();
 
     renderQuestions();
@@ -3659,13 +3663,19 @@ const testFiles = [
         questions.length === 0
           ? 0
           : Math.round((score / questions.length) * 100);
-      scoreElement.textContent = `${scorePercent}%`;
-      scoreContainer.style.display = "block";
-      scoreContainer.classList.remove("hidden");
+      if (scoreElement) {
+        scoreElement.textContent = `${scorePercent}%`;
+      }
+      if (scoreContainer) {
+        scoreContainer.style.display = "block";
+        scoreContainer.classList.remove("hidden");
+      }
 
       // Display pass or fail message
-      resultMessageElement.textContent = "";
-      resultMessageElement.classList.remove("pass-message", "fail-message");
+      if (resultMessageElement) {
+        resultMessageElement.textContent = "";
+        resultMessageElement.classList.remove("pass-message", "fail-message");
+      }
 
       const testName = testSelect.options[testSelect.selectedIndex].textContent;
 
@@ -3675,13 +3685,17 @@ const testFiles = [
       const didPass = scorePercent >= passMark;
 
       if (didPass) {
-        resultMessageElement.textContent = `You Passed! (${scoreBreakdown})`;
-        resultMessageElement.classList.add("pass-message");
+        if (resultMessageElement) {
+          resultMessageElement.textContent = `You Passed! (${scoreBreakdown})`;
+          resultMessageElement.classList.add("pass-message");
+        }
         testStats.testsPassed++;
         testStats.passedTests.push(testName);
       } else {
-        resultMessageElement.textContent = `You Failed. (${scoreBreakdown})`;
-        resultMessageElement.classList.add("fail-message");
+        if (resultMessageElement) {
+          resultMessageElement.textContent = `You Failed. (${scoreBreakdown})`;
+          resultMessageElement.classList.add("fail-message");
+        }
         testStats.testsFailed++;
         testStats.failedTests.push(testName);
       }
@@ -3900,8 +3914,10 @@ const testFiles = [
     );
     questionsContainer.innerHTML = "";
     hideResultBanner();
-    scoreContainer.classList.add("hidden");
-    scoreContainer.style.display = "none";
+    if (scoreContainer) {
+      scoreContainer.classList.add("hidden");
+      scoreContainer.style.display = "none";
+    }
     submitButton.style.display = "inline-block";
     submitButton.disabled = true;
     startTestButton.disabled = false;

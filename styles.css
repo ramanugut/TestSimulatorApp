@@ -845,6 +845,38 @@ body.light-mode .history-list li {
     gap: 1.5rem;
 }
 
+.sf-score {
+    display: grid;
+    gap: 0.5rem;
+    align-items: flex-start;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.sf-score__value {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.sf-score__message {
+    font-size: 0.95rem;
+    color: rgba(148, 163, 184, 0.85);
+}
+
+body.light-mode .sf-score {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(15, 23, 42, 0.08);
+    box-shadow: var(--shadow-light);
+}
+
+body.light-mode .sf-score__message {
+    color: rgba(15, 23, 42, 0.55);
+}
+
 .question {
     position: relative;
     background: rgba(15, 23, 42, 0.7);
