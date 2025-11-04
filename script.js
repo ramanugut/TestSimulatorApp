@@ -131,6 +131,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressTextElement = document.getElementById("progress-text");
   const headerElement = document.getElementById("floating-header");
   const headerToggleButton = document.getElementById("header-toggle");
+  const menuBackdrop = document.getElementById("sf-menu-backdrop");
+  const headerToggleAssistiveText = headerToggleButton
+    ? headerToggleButton.querySelector(".sr-only")
+    : null;
+  const headerToggleIcon = headerToggleButton
+    ? headerToggleButton.querySelector(".sf-menu-toggle__icon")
+    : null;
   const floatingActionsContainer = document.getElementById("floating-actions");
   const floatingActionsToggle = document.getElementById(
     "floating-actions-toggle"
@@ -194,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const MOBILE_BREAKPOINT = 960;
   let lastViewportIsMobile = window.innerWidth <= MOBILE_BREAKPOINT;
-  let headerCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
+  let headerCollapsed = true;
   let actionsCollapsed = window.innerWidth <= MOBILE_BREAKPOINT;
 
   if (flashcardsGrid) {
@@ -1318,29 +1325,43 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function syncHeaderToggleState() {
-    if (!headerToggleButton || !navDrawer) {
-      return;
-    }
-
-    if (!isMobileViewport()) {
-      headerCollapsed = false;
-      navDrawer.classList.remove("drawer-open");
-      navDrawer.removeAttribute("aria-hidden");
-      headerToggleButton.setAttribute("aria-expanded", "false");
-      headerToggleButton.setAttribute("aria-label", "Open quick controls");
-      headerToggleButton.setAttribute("title", "Open quick controls");
+    if (!headerToggleButton || !headerElement) {
       return;
     }
 
     const expanded = !headerCollapsed;
-    navDrawer.classList.toggle("drawer-open", expanded);
-    navDrawer.setAttribute("aria-hidden", expanded ? "false" : "true");
-    const headerToggleLabel = expanded
-      ? "Hide quick controls"
-      : "Open quick controls";
-    headerToggleButton.setAttribute("aria-expanded", expanded.toString());
+    headerElement.classList.toggle("sf-navbar--open", expanded);
+    headerElement.setAttribute("aria-hidden", expanded ? "false" : "true");
+    document.body.classList.toggle("menu-open", expanded);
+
+    if (navDrawer) {
+      navDrawer.classList.toggle("drawer-open", expanded);
+      navDrawer.setAttribute("aria-hidden", expanded ? "false" : "true");
+    }
+
+    if (menuBackdrop) {
+      if (expanded) {
+        menuBackdrop.classList.add("active");
+        menuBackdrop.removeAttribute("hidden");
+      } else {
+        menuBackdrop.classList.remove("active");
+        menuBackdrop.setAttribute("hidden", "");
+      }
+    }
+
+    const headerToggleLabel = expanded ? "Hide menu" : "Open menu";
+    headerToggleButton.setAttribute("aria-expanded", expanded ? "true" : "false");
     headerToggleButton.setAttribute("aria-label", headerToggleLabel);
     headerToggleButton.setAttribute("title", headerToggleLabel);
+    headerToggleButton.classList.toggle("is-open", expanded);
+
+    if (headerToggleAssistiveText) {
+      headerToggleAssistiveText.textContent = headerToggleLabel;
+    }
+
+    if (headerToggleIcon) {
+      headerToggleIcon.textContent = expanded ? "✕" : "☰";
+    }
   }
 
   function syncFloatingActionsState() {
@@ -1507,7 +1528,7 @@ document.addEventListener("DOMContentLoaded", function () {
         closeOptionsModal();
       }
     } else if (!isMobile && lastViewportIsMobile) {
-      headerCollapsed = false;
+      actionsCollapsed = false;
     }
 
     syncHeaderToggleState();
@@ -1920,6 +1941,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isOptionsModalOpen()) {
       event.preventDefault();
       closeOptionsModal();
+      return;
+    }
+
+    if (!headerCollapsed) {
+      event.preventDefault();
+      headerCollapsed = true;
+      syncHeaderToggleState();
     }
   });
 
@@ -1933,11 +1961,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (headerToggleButton) {
     headerToggleButton.addEventListener("click", () => {
-      if (!isMobileViewport()) {
-        return;
-      }
       headerCollapsed = !headerCollapsed;
       syncHeaderToggleState();
+      if (headerCollapsed) {
+        headerToggleButton.focus();
+      } else if (navButtons.length > 0) {
+        navButtons[0].focus();
+      }
+    });
+  }
+
+  if (menuBackdrop) {
+    menuBackdrop.addEventListener("click", () => {
+      if (headerCollapsed) {
+        return;
+      }
+      headerCollapsed = true;
+      syncHeaderToggleState();
+      if (headerToggleButton) {
+        headerToggleButton.focus();
+      }
     });
   }
 
@@ -3959,6 +4002,13 @@ const testFiles = [
       button.addEventListener("click", () => {
         const targetView = button.dataset.view || "dashboard";
         setMainView(targetView);
+        if (!headerCollapsed) {
+          headerCollapsed = true;
+          syncHeaderToggleState();
+          if (headerToggleButton) {
+            headerToggleButton.focus();
+          }
+        }
       });
     });
   }

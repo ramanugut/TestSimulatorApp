@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
-    <nav id="floating-header" class="sf-navbar">
+    <button id="header-toggle" class="sf-menu-toggle" type="button" aria-expanded="false" aria-controls="floating-header" aria-label="Open menu" title="Open menu">
+        <span class="sr-only">Open menu</span>
+        <span class="sf-menu-toggle__icon" aria-hidden="true">☰</span>
+    </button>
+
+    <div id="sf-menu-backdrop" class="sf-menu-backdrop" aria-hidden="true" hidden></div>
+
+    <nav id="floating-header" class="sf-navbar" aria-hidden="true" role="navigation">
         <div class="sf-navbar__inner">
             <div class="sf-navbar__brand">
                 <div class="sf-navbar__logo">
@@ -28,13 +35,9 @@
                     <span class="sf-icon-button__sun" aria-hidden="true">☀️</span>
                     <span class="sf-icon-button__moon" aria-hidden="true">🌙</span>
                 </button>
-                <button id="header-toggle" class="sf-icon-button sf-icon-button--menu" type="button" aria-expanded="false" aria-controls="sf-nav-drawer">
-                    <span class="sr-only">Toggle menu</span>
-                    <span aria-hidden="true">☰</span>
-                </button>
             </div>
         </div>
-        <div id="sf-nav-drawer" class="sf-navbar__drawer">
+        <div id="sf-nav-drawer" class="sf-navbar__drawer" aria-hidden="true">
             <div class="sf-drawer__group">
                 <div class="sf-drawer__field">
                     <label for="timer-input">Timer (minutes)</label>
