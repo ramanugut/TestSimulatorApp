@@ -1,0 +1,137 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 09)",
+  "questions": [
+    {
+      "text": "Given the following two statements. X: Balancing ensures that the input and the output data flows of a parent data flow diagram (DFD) are maintained on the child DFD. Y: This third step of drawing a structured chart includes analyzing the data dictionary. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "Balancing ensures consistency between DFD levels, but analyzing the data dictionary is not part of drawing a structured chart."
+    },
+    {
+      "text": "Given the following two statements. X: Compared with the traditional methods joint application development (JAD) is more expensive if a group is too large relative to the size of the project. Y: GUI stands for guided user interface. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "JAD can become costly with large groups, but GUI stands for graphical user interface, not guided user interface."
+    },
+    {
+      "text": "Given the following two statements. X: In a company that supplies PPE products to customers who retail them to individuals, the relationship between a Customer and a Product is many-to-many. Y: The basic language of the web is HTML. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Customers can order multiple products, and products can be sold to multiple customers. HTML is indeed the core web language."
+    },
+    {
+      "text": "Given the following two statements. X: In a company that supplies PPE products to customers who retail them, the relationship between a Customer and an Order is one-to-many. Y: A gray hole has at least one input and one output, but the input is insufficient to generate the output. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "One customer can place many orders, and a gray hole represents a logical inconsistency between input and output."
+    },
+    {
+      "text": "Given the following two statements. X: In a company that supplies PPE products, the relationship between a Customer and an Order is many-to-many. Y: In terms of data security, ‘operational security’ is also called ‘maintenance security’. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Customer to order is one-to-many, not many-to-many. Operational security is also referred to as maintenance security."
+    },
+    {
+      "text": "Given the following two statements. X: In a company that supplies PPE products, the relationship between a Customer and a Product is one-to-one. Y: In terms of file security, one of the permissions can be ‘Execute a file’. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Customer-to-product is not one-to-one, but file systems commonly have execute permissions for programs."
+    },
+    {
+      "text": "Given the following two statements. X: In a PPE supplier’s order management system, the relationship between a Customer and a Product is one-to-many. Y: Projects are often composed of many user stories, which taken together form ‘epics’. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Customer-to-product is many-to-many, but user stories do indeed form epics in agile methodology."
+    },
+    {
+      "text": "Given the following two statements. X: In a company that supplies PPE products, the company’s order management system includes a Customer entity, and an Individual or Person entity. Y: Through observation, a systems analyst may find that documentation and interview data are inaccurate. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Customers and individuals exist in the model, and observation helps analysts validate or correct inaccurate data."
+    },
+    {
+      "text": "Given the following two statements. X: In a PPE supplier’s system, there is a Product and Customer entity. Y: During fact-finding, the form used to write down statements about what is occurring and suggestions for improvement is called the summative list. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "Product and Customer entities are valid; however, the correct tool is a ‘fact-finding report’ or ‘observation form’, not a summative list."
+    },
+    {
+      "text": "Given the following two statements. X: In a PPE supplier’s system, there is a Product and Individual or Person entity. Y: IT professionals recommend carrying out post-implementation evaluation after at least three months of system operation. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Person and Product entities are standard in such systems, and post-implementation reviews are typically done after several months."
+    },
+    {
+      "text": "Given the following two statements. X: In a company named WethuMedicals that supplies PPE products, the order management system includes a Customer and WethuMedicals entity. Y: File processing can be cost-effective in certain situations. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "The company’s system includes both business and customer entities, and file processing can be cost-effective for simple operations."
+    },
+    {
+      "text": "Given the following two statements. X: In a Hospital patient management system, a health worker and a mask have a many-to-many relationship. Y: System requirements are identified during the fact-finding process. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Health workers can use many masks, and each mask can be used by multiple workers. Requirements are gathered during fact-finding."
+    },
+    {
+      "text": "Given the following two statements. X: In a Hospital patient management system, a health worker and a mask have a one-to-many relationship. Y: Parallel operations as a means of system changeover has no disadvantages. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "One worker can use multiple masks, but parallel operations are costly and resource-intensive, so they have disadvantages."
+    },
+    {
+      "text": "Given the following two statements. X: In a Hospital patient management system, a health worker and a mask have a one-to-one relationship. Y: Biometric scanning systems can map an individual's facial features. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "A health worker can use multiple masks, not just one, but biometric scanners indeed map facial features."
+    },
+    {
+      "text": "Given the following two statements. X: In a Hospital patient management system, a patient and a health worker have a many-to-many relationship. Y: In structured charts, functional primitives are transformed into program modules. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Patients may interact with multiple health workers, and functional primitives become modular components in structured charts."
+    },
+    {
+      "text": "Given the following two statements. X: In a Hospital patient management system, a patient and a health worker have a one-to-many relationship. Y: In structured charts, a high degree of coupling is desirable. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "A health worker can attend multiple patients, but low coupling (not high) is desirable for modular independence."
+    },
+    {
+      "text": "Given the following two statements. X: In a Hospital patient management system, a patient and a health worker have a one-to-one relationship. Y: In structured charts, a high degree of cohesion is desirable. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Patient–health worker is not one-to-one, but high cohesion ensures each module performs a focused, unified function."
+    },
+    {
+      "text": "Given the following two statements. X: One of the reasons for systems requests is that there is a need for stronger controls. Y: Rapid application development (RAD) consists of four main phases, one of them being User Design. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Improving control is a common reason for system requests, and User Design is a key phase in RAD methodology."
+    },
+    {
+      "text": "Given the following two statements. X: The description of all fields and all tables make up a complete definition of a database. Y: One of the main reasons for systems requests is that a system has been used for many years. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "A complete database definition includes all fields and tables, and outdated systems often trigger new system requests."
+    },
+    {
+      "text": "Given the following two statements. X: Web-based characteristics include adaptability issues. Y: During systems analysis, an interview should be limited to no more than one hour. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Adaptability is a key web-based characteristic, and interviews should be concise to remain effective."
+    },
+    {
+      "text": "Given the following two statements. X: Web-based characteristics include multi-platform issues. Y: An information system can store data in various locations, called tables. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Web-based systems must work across multiple platforms, and data in databases is stored in tables."
+    },
+    {
+      "text": "Given the following two statements. X: Web-based characteristics should consider the use of standard telecommunications protocols. Y: In databases, a foreign key is a field in one table that has the same name as a field in another table. Determine which of the following options provides the correct or most correct answer.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "Web systems rely on standard communication protocols, but foreign keys link tables by reference, not necessarily by identical names."
+    }
+  ]
+}
