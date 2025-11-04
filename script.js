@@ -2168,25 +2168,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Test file references
 const testFiles = [
- /* "test23.json",
+  /* "test23.json",
   "test24.json",
   "test25.json",
-  "test26.json", 
+  "test26.json",
   "test27.json",
   "test28.json",
   "test28b.json",
-  "test29.json",**/
+  "test29.json",*/
   "test30.json",
   "test31.json",
   "test32.json",
-   "test33a.json",
+  "test33a.json",
   "test33b.json",
   "test33c.json",
   "test33d.json",
   "test33e.json",
   "test33f.json",
   "test34Social.json",
-   "test35.json"
+  "test35.json",
+  "test36a.json",
+  "test36b.json",
+  "test37a.json",
+  "test37b.json",
+  "test37c.json",
+  "test37d.json",
+  "test37e.json",
+  "test37f.json",
+  "test37g.json",
+  "test37h.json",
+  "test37i.json",
+  "test37j.json",
 ];
 
 
