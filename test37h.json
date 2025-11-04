@@ -1,0 +1,110 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 08)",
+  "questions": [
+    {
+      "text": "___________ are the most common computing devices in the world.",
+      "options": ["Smartphones", "Smartwatches", "Laptops", "Tablets"],
+      "correctAnswer": "Smartphones",
+      "explanation": "Smartphones are the most widely used computing devices globally due to their portability and multifunctionality."
+    },
+    {
+      "text": "In data flow diagrams, which of the following may have an ‘illogical’ output from a normal input?",
+      "options": ["Spontaneous generation", "Gray hole", "Black hole", "Black box"],
+      "correctAnswer": "Gray hole",
+      "explanation": "A gray hole occurs when a process has valid inputs but produces an illogical or invalid output, indicating inconsistent logic."
+    },
+    {
+      "text": "In data flow diagrams, which of the following may have two inputs but no output?",
+      "options": ["Spontaneous generation", "Gray hole", "Black hole", "Black box"],
+      "correctAnswer": "Black hole",
+      "explanation": "A black hole process accepts data inputs but produces no outputs, which is logically incomplete."
+    },
+    {
+      "text": "In order for a company to decide on its software development strategy, it has to consider three main key aspects. Which of the following is one of them?",
+      "options": ["The impact of the Internet", "The quality and number of the computers", "The human resources that are available", "The size of the project"],
+      "correctAnswer": "The impact of the Internet",
+      "explanation": "One of the three major factors in deciding a software development strategy is understanding the Internet’s impact on operations and system architecture."
+    },
+    {
+      "text": "In order for a company to decide on its software development strategy, which of the following is not one of the three key aspects?",
+      "options": ["The impact of the internet", "Software outsourcing options", "The number of required software developers", "In-house software development alternatives"],
+      "correctAnswer": "The number of required software developers",
+      "explanation": "The number of developers is an operational detail, not one of the three strategic aspects of software development decisions."
+    },
+    {
+      "text": "Systems requirements fall under different categories. Under which category does the following statement fall? ‘All students must swipe their student cards in order to gain entry to the building.’",
+      "options": ["Input", "Control", "Process", "Output"],
+      "correctAnswer": "Input",
+      "explanation": "This describes an input requirement because it involves capturing data (student card swipes) from users."
+    },
+    {
+      "text": "Systems requirements fall under different categories. Under which category does the following statement fall? ‘Because of COVID-19, the library must not accept more than 50 students.’",
+      "options": ["None of the other answers is correct.", "Control", "Process", "Output"],
+      "correctAnswer": "Control",
+      "explanation": "This is a control requirement because it defines a restriction on how the system operates based on a condition."
+    },
+    {
+      "text": "Systems requirements fall under different categories. Under which category does the following statement fall? ‘Student entry to the campus must be captured by students swiping a smart card.’",
+      "options": ["Input", "Control", "Process", "Output"],
+      "correctAnswer": "Input",
+      "explanation": "This represents an input requirement since it captures data through card swiping at the entry point."
+    },
+    {
+      "text": "Systems requirements fall under different categories. Under which category does the following statement fall? ‘The manager of the sales department must approve orders that exceed a customer's credit limit.’",
+      "options": ["Input", "Control", "Process", "Output"],
+      "correctAnswer": "Control",
+      "explanation": "This is a control requirement because it sets an authorisation condition on specific actions within the system."
+    },
+    {
+      "text": "Systems requirements fall under different categories. Under which category does the following statement fall? ‘The system must create an error log file that includes the error type, description and time.’",
+      "options": ["Input", "Control", "Process", "Output"],
+      "correctAnswer": "Output",
+      "explanation": "This is an output requirement because it defines what information the system must generate and display or record."
+    },
+    {
+      "text": "Systems requirements fall under different categories. Under which category does the following statement fall? ‘This student system must provide students with updated marks.’",
+      "options": ["Input", "Control", "Process", "Output"],
+      "correctAnswer": "Output",
+      "explanation": "This output requirement specifies the data that the system must present to the users — student marks."
+    },
+    {
+      "text": "Which of the following is a step in a cost-benefit analysis checklist?",
+      "options": [
+        "Study the results and prepare a report to management.",
+        "For each alternative, identify all costs and benefits.",
+        "For each alternative, apply financial analysis tool.",
+        "All of the other answers are correct"
+      ],
+      "correctAnswer": "All of the other answers are correct",
+      "explanation": "All listed actions form part of a complete cost-benefit analysis process, from identification to reporting."
+    },
+    {
+      "text": "Which of the following is not a step in a cost-benefit analysis checklist?",
+      "options": [
+        "Study the results and prepare a report for the end user.",
+        "For each alternative, identify all costs and benefits.",
+        "For each alternative, apply financial analysis tool.",
+        "You should consider future growth and the need for scalability."
+      ],
+      "correctAnswer": "You should consider future growth and the need for scalability.",
+      "explanation": "Scalability assessment is part of technical feasibility, not a step in the cost-benefit analysis checklist."
+    },
+    {
+      "text": "Which of the following is not a value-added service?",
+      "options": ["Software", "Consulting", "Technical support", "Hardware"],
+      "correctAnswer": "Hardware",
+      "explanation": "Hardware is a tangible product, not a value-added service like software or support."
+    },
+    {
+      "text": "Which of the following statements is least correct?",
+      "options": [
+        "The second generation of computers enables people to interact much more effectively.",
+        "The second generation of computers enables people to collaborate much more effectively.",
+        "The second generation of computers enables people to share private information much more effectively.",
+        "The second generation of computers enables people to perform routine tasks much more effectively."
+      ],
+      "correctAnswer": "The second generation of computers enables people to share private information much more effectively.",
+      "explanation": "Private information sharing became more common with later internet-based systems, not during the second generation of computers."
+    }
+  ]
+}
