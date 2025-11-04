@@ -1,0 +1,153 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 04)",
+  "questions": [
+    {
+      "text": "A _____ defines what must take place, not how it will be accomplished.",
+      "options": ["Logical design", "Physical design", "Quantitative design", "Qualitative design"],
+      "correctAnswer": "Logical design",
+      "explanation": "Logical design specifies what the system must do functionally, leaving implementation details to the physical design phase."
+    },
+    {
+      "text": "After completing integration testing, a systems analyst must perform _____, which involves the entire information system and includes all typical processing situations.",
+      "options": ["Functional testing", "Unit testing", "Total testing", "System testing"],
+      "correctAnswer": "System testing",
+      "explanation": "System testing validates that all components work together as a complete, functional system under realistic conditions."
+    },
+    {
+      "text": "Compared with character-based formats, a ______ offers a more efficient storage method.",
+      "options": ["Foreign storage format", "Unary storage format", "Tertiary storage format", "Binary storage format"],
+      "correctAnswer": "Binary storage format",
+      "explanation": "Binary formats store data in compact numerical representations, saving space and improving processing speed."
+    },
+    {
+      "text": "In an entity-relationship diagram, entities are commonly represented as _____.",
+      "options": ["Triangles", "Circles", "Rectangles", "Hexagons"],
+      "correctAnswer": "Rectangles",
+      "explanation": "Entities in ER diagrams are represented as rectangles that identify objects or concepts within the database."
+    },
+    {
+      "text": "_____ is the process of creating table designs by assigning specific fields or attributes to each table in a database.",
+      "options": ["Encapsulation", "Normalization", "Abstraction", "Encryption"],
+      "correctAnswer": "Normalization",
+      "explanation": "Normalization organizes data to reduce redundancy and ensure data integrity across related tables."
+    },
+    {
+      "text": "_____ measures actual system performance under specific circumstances and is affected by network loads and hardware efficiency.",
+      "options": ["Throughput", "Resolution", "Dimensionality", "Latency"],
+      "correctAnswer": "Throughput",
+      "explanation": "Throughput refers to the number of transactions processed within a given time period under real conditions."
+    },
+    {
+      "text": "A _____ is a formal reference point that measures system characteristics at a specific time.",
+      "options": ["Feature line", "Baseline", "Product point", "Default point"],
+      "correctAnswer": "Baseline",
+      "explanation": "A baseline serves as a fixed point for comparison when assessing system changes or improvements."
+    },
+    {
+      "text": "In terms of system maintenance management, _____ means examining the whole to learn about the individual elements.",
+      "options": ["Synthesis", "Adoption", "Analysis", "Elucidation"],
+      "correctAnswer": "Analysis",
+      "explanation": "Analysis breaks down systems into their components to better understand how each part functions."
+    },
+    {
+      "text": "_____ is the overall time between a request for system activity and the delivery of the response.",
+      "options": ["Response time", "Throughput time", "Refresh rate", "Base rate"],
+      "correctAnswer": "Response time",
+      "explanation": "Response time measures how long a system takes to respond to a user's action or request."
+    },
+    {
+      "text": "_____ graphically represents the logical rules and interaction between program modules using a series of symbols connected by arrows.",
+      "options": ["Training plans", "Acceptance tests", "Flowcharts", "Simulations"],
+      "correctAnswer": "Flowcharts",
+      "explanation": "Flowcharts visually depict program logic, showing the flow of control between processes."
+    },
+    {
+      "text": "The _____ changeover method allows the new system to be implemented in stages, or modules.",
+      "options": ["Phased operation", "Parallel operation", "Pilot operation", "Direct cutover"],
+      "correctAnswer": "Phased operation",
+      "explanation": "Phased operation introduces system components gradually, reducing risk during implementation."
+    },
+    {
+      "text": "During _____, programmers must test programs that interact with other programs and files separately before they are integrated into the system.",
+      "options": ["Unit testing", "Integrated testing", "Acceptance testing", "Functional testing"],
+      "correctAnswer": "Unit testing",
+      "explanation": "Unit testing ensures each program or component works correctly before integration."
+    },
+    {
+      "text": "Testing two or more programs that depend on each other is called _____.",
+      "options": ["Integration testing", "Double testing", "Acceptance testing", "System testing"],
+      "correctAnswer": "Integration testing",
+      "explanation": "Integration testing validates data flow and interaction between dependent software modules."
+    },
+    {
+      "text": "The environment for the actual system operation is called the _____.",
+      "options": ["Production environment", "Exploratory environment", "Implementation environment", "Globalized environment"],
+      "correctAnswer": "Production environment",
+      "explanation": "The production environment hosts the live, fully functional version of the system used by end users."
+    },
+    {
+      "text": "Which of the following is specified by the detailed procedures in a test plan?",
+      "options": [
+        "The result of the final test of all programs",
+        "How a separate operational and test environment is prepared",
+        "The test data to be used during the test plan",
+        "Who will work with the new system and ensure that all necessary features have been included"
+      ],
+      "correctAnswer": "The test data to be used during the test plan",
+      "explanation": "A test plan outlines specific data inputs, expected results, and test cases for evaluation."
+    },
+    {
+      "text": "The main objective of _____ is to avoid problems or to identify them as soon as possible.",
+      "options": ["Direct cutover", "Quality assurance", "Application development", "Cohesion"],
+      "correctAnswer": "Quality assurance",
+      "explanation": "Quality assurance aims to prevent defects by maintaining standards throughout system development."
+    },
+    {
+      "text": "_____ measures a module's scope and processing characteristics.",
+      "options": ["Coupling", "Indexing", "Cohesion", "Partitioning"],
+      "correctAnswer": "Cohesion",
+      "explanation": "Cohesion assesses how closely related the functions within a module are."
+    },
+    {
+      "text": "_____ is the process of putting a new information system online and retiring the old system.",
+      "options": ["System integration", "Online system documentation", "System override", "System changeover"],
+      "correctAnswer": "System changeover",
+      "explanation": "System changeover transitions operations from the old system to the new one, marking go-live."
+    },
+    {
+      "text": "To avoid problems, preventive maintenance _____.",
+      "options": [
+        "Adds enhancements to an operational system and makes the system easier to use",
+        "Diagnoses and corrects errors in an operational system",
+        "Involves changing an operational system to make it more efficient, reliable, or maintainable",
+        "Requires analysis of areas where trouble is likely to occur"
+      ],
+      "correctAnswer": "Requires analysis of areas where trouble is likely to occur",
+      "explanation": "Preventive maintenance anticipates potential issues to avoid future system failures."
+    },
+    {
+      "text": "_____ prevents unauthorized users from creating, modifying, or deleting information.",
+      "options": ["Availability", "Integrity", "Confidentiality", "Evacuation"],
+      "correctAnswer": "Integrity",
+      "explanation": "Integrity ensures information remains accurate and unaltered except by authorized users."
+    },
+    {
+      "text": "A(n) _____ is an attack that takes advantage of a vulnerability.",
+      "options": ["Proxy", "Exploit", "Firewall", "Archive"],
+      "correctAnswer": "Exploit",
+      "explanation": "An exploit leverages system vulnerabilities to gain unauthorized access or perform malicious actions."
+    },
+    {
+      "text": "A _____ is responsible for assigning maintenance tasks to individuals or to a maintenance team.",
+      "options": ["Tester", "Programmer", "System validator", "System administrator"],
+      "correctAnswer": "System administrator",
+      "explanation": "System administrators oversee maintenance scheduling, task assignment, and system operations."
+    },
+    {
+      "text": "A _____ is a security weakness or soft spot.",
+      "options": ["Proxy", "Vulnerability", "Firewall", "Malware"],
+      "correctAnswer": "Vulnerability",
+      "explanation": "A vulnerability is a flaw in software or systems that attackers can exploit to compromise security."
+    }
+  ]
+}
