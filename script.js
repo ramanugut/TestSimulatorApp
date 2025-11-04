@@ -2606,9 +2606,7 @@ const testFiles = [
       }
 
       testStats.testsAbandoned++;
-      const testName = testSelect
-        ? testSelect.options[testSelect.selectedIndex]?.textContent || "Custom Mix"
-        : "Custom Mix";
+      const testName = getSelectedTestName("Custom Mix");
       testStats.abandonedTests.push(testName);
       const elapsedSeconds = getTimerElapsedSeconds();
       const remainingSeconds = getTimerRemainingSeconds();
@@ -3300,12 +3298,44 @@ const testFiles = [
     }
   }
 
-  function updatePracticeSummary() {
-    if (practiceTestNameElement && testSelect) {
-      const selectedOption = testSelect.options[testSelect.selectedIndex];
-      practiceTestNameElement.textContent = selectedOption
-        ? selectedOption.textContent
+  function getSelectedTestName(fallbackName = null) {
+    const defaultName =
+      fallbackName !== null && fallbackName !== undefined
+        ? fallbackName
+        : isCustomSessionActive()
+        ? "Custom Mix"
         : "Practice Session";
+
+    if (!testSelect) {
+      return defaultName;
+    }
+
+    const selectedIndex =
+      typeof testSelect.selectedIndex === "number"
+        ? testSelect.selectedIndex
+        : -1;
+
+    if (selectedIndex < 0) {
+      return defaultName;
+    }
+
+    const selectedOption = testSelect.options[selectedIndex];
+    if (
+      !selectedOption ||
+      typeof selectedOption.textContent !== "string" ||
+      selectedOption.textContent.trim() === ""
+    ) {
+      return defaultName;
+    }
+
+    return selectedOption.textContent;
+  }
+
+  function updatePracticeSummary() {
+    if (practiceTestNameElement) {
+      practiceTestNameElement.textContent = getSelectedTestName(
+        "Practice Session"
+      );
     }
 
     if (!practiceQuestionRangeElement) {
@@ -3677,7 +3707,7 @@ const testFiles = [
         resultMessageElement.classList.remove("pass-message", "fail-message");
       }
 
-      const testName = testSelect.options[testSelect.selectedIndex].textContent;
+      const testName = getSelectedTestName();
 
       testStats.testsTaken++;
 
@@ -3875,8 +3905,7 @@ const testFiles = [
       } else {
         // Update stats for abandoned test
         testStats.testsAbandoned++;
-        const testName =
-          testSelect.options[testSelect.selectedIndex].textContent;
+        const testName = getSelectedTestName();
         testStats.abandonedTests.push(testName);
         const elapsedSeconds = getTimerElapsedSeconds();
         const remainingSeconds = getTimerRemainingSeconds();
@@ -4451,8 +4480,7 @@ const testFiles = [
         } else {
           // Update stats for abandoned test
           testStats.testsAbandoned++;
-          const testName =
-            testSelect.options[testSelect.selectedIndex].textContent;
+          const testName = getSelectedTestName();
           testStats.abandonedTests.push(testName);
           const elapsedSeconds = getTimerElapsedSeconds();
           const remainingSeconds = getTimerRemainingSeconds();
