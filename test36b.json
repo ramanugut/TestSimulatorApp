@@ -1,0 +1,380 @@
+{
+  "testName": "Assessment 2 – Systems Analysis Fundamentals (ICT2621)",
+  "questions": [
+    {
+      "text": "The _____ environment enhances interactive experiences, including wikis and blogs, and social networking applications.",
+      "options": ["command-line", "outsourcing", "Software as a Service", "Web 2.0"],
+      "correctAnswer": "Web 2.0",
+      "explanation": "Web 2.0 enhances user interactivity and collaboration through platforms like wikis, blogs, and social networks."
+    },
+    {
+      "text": "A software package that can be used by many different types of organizations is called a _____ application.",
+      "options": ["symmetric application", "horizontal application", "vertical application", "asymmetric application"],
+      "correctAnswer": "horizontal application",
+      "explanation": "Horizontal applications are designed for general use across multiple industries, such as accounting or HR systems."
+    },
+    {
+      "text": "_____ is a percentage rate that compares the total net benefits received from a project to the total costs of the project.",
+      "options": ["Acquisition process", "Payback analysis", "Return on investment (ROI)", "Net present value (NPV)"],
+      "correctAnswer": "Return on investment (ROI)",
+      "explanation": "ROI measures profitability by comparing net benefits to total project costs."
+    },
+    {
+      "text": "Given the following two statements. X: The web generation called Web 2.0 is fuelling the expansion of information sharing, user collaboration and social networking. Y: The requirements attribute of comprehensibility tries to determine whether the requirements are properly understood. Determine which of the following options provides the correct answer.",
+      "options": ["X is False and Y is True", "Both X and Y are True", "X is True and Y is False", "Both X and Y are False"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Both statements correctly describe Web 2.0 and the purpose of comprehensibility in requirements."
+    },
+    {
+      "text": "Given the following two statements. X: One reason for developing a system in-house is that it is easy to benchmark it. Y: If a system can handle increased volume in the future, it is scalable. Determine which of the following options provides the correct answer.",
+      "options": ["Both X and Y are False", "X is False and Y is True", "Both X and Y are True", "X is True and Y is False"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Scalability refers to handling growth, while benchmarking is not a reason for in-house development."
+    },
+    {
+      "text": "What is one potential positive aspect of using ChatGPT?",
+      "options": [
+        "It can be used as a shortcut for critical thinking skills.",
+        "It provides accurate information without verification.",
+        "It eliminates the need for human creativity.",
+        "It serves as a helpful tool for generating ideas and creating first drafts."
+      ],
+      "correctAnswer": "It serves as a helpful tool for generating ideas and creating first drafts.",
+      "explanation": "ChatGPT assists in brainstorming and drafting, but human judgment and editing are still needed."
+    },
+    {
+      "text": "The main reason for offshore outsourcing is to _____.",
+      "options": ["ship bulky raw materials", "manage operations only in one country", "lower bottom-line costs", "manage operations only in one country"],
+      "correctAnswer": "lower bottom-line costs",
+      "explanation": "Offshore outsourcing reduces operational and labour costs by using external providers abroad."
+    },
+    {
+      "text": "A _____ defines what must take place, not how it will be accomplished.",
+      "options": ["logical design", "physical design", "qualitative design", "quantitative design"],
+      "correctAnswer": "logical design",
+      "explanation": "A logical design focuses on what the system must do, not on its technical implementation."
+    },
+    {
+      "text": "Given the following two statements. X: Software as a Service (SaaS) increases a company’s need for maintenance and support. Y: A functional decomposition diagram is a top-down representation of a process. Determine which is correct.",
+      "options": ["Both X and Y are True", "X is True and Y is False", "Both X and Y are False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "SaaS reduces internal maintenance needs, while FDDs illustrate processes hierarchically."
+    },
+    {
+      "text": "In an interview, _____ limit or restrict the response.",
+      "options": ["open-ended questions", "range-of-response questions", "leading questions", "closed-ended questions"],
+      "correctAnswer": "closed-ended questions",
+      "explanation": "Closed-ended questions restrict responses to specific choices, making analysis easier."
+    },
+    {
+      "text": "_____ enable a systems analyst to identify a problem, evaluate key elements, and develop a useful solution.",
+      "options": ["Confrontational skills", "Interpersonal skills", "Artistic skills", "Analytical skills"],
+      "correctAnswer": "Analytical skills",
+      "explanation": "Analytical skills allow breaking down problems to find structured and logical solutions."
+    },
+    {
+      "text": "What distinguishes AI-generated writing from predictive text programs?",
+      "options": [
+        "Predictive text programs tend to be more single-purposed",
+        "AI programs are incapable of a wide range of tasks",
+        "AI programs are more limited in functionality",
+        "Predictive text programs are a subset of AI programs"
+      ],
+      "correctAnswer": "Predictive text programs tend to be more single-purposed",
+      "explanation": "Predictive text tools suggest next words, while AI-generated writing handles complex text creation."
+    },
+    {
+      "text": "Which of the following is a typical example of a system requirement for the process category?",
+      "options": [
+        "All transactions must have audit trails.",
+        "The system must not execute new rentals for overdue accounts.",
+        "The website must report online volume every four hours.",
+        "The system must be operated seven days a week."
+      ],
+      "correctAnswer": "The system must not execute new rentals for overdue accounts.",
+      "explanation": "Process requirements define actions or rules for how the system handles operations."
+    },
+    {
+      "text": "Given the following two statements. X: Internet business services provide support for transactions like CRM. Y: Only interviews, but not research, can be used for requirements elicitation. Determine which is correct.",
+      "options": ["X is False and Y is True", "Both X and Y are False", "X is True and Y is False", "Both X and Y are True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "Internet business services support CRM, and multiple elicitation methods exist beyond interviews."
+    },
+    {
+      "text": "Given the following two statements. X: The system requirements document measures performance, accuracy, and completeness. Y: Models provide a formal representation of requirements. Determine which is correct.",
+      "options": ["X is True and Y is False", "X is False and Y is True", "Both X and Y are True", "Both X and Y are False"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "The requirements document defines expectations, and models visualize those requirements."
+    },
+    {
+      "text": "Given the following two statements. X: Using commercial software packages reduces the IT staff needed. Y: During the user design phase, users and analysts build models and prototypes. Determine which is correct.",
+      "options": ["X is True and Y is False", "X is False and Y is True", "Both X and Y are False", "Both X and Y are True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Commercial software reduces workload, and user design involves collaboration through prototypes."
+    },
+    {
+      "text": "Building an application in a _____ environment can offer greater benefits, and sometimes greater risks, compared to traditional environments.",
+      "options": ["GUI", "multinational", "cloud", "web-based"],
+      "correctAnswer": "web-based",
+      "explanation": "Web-based environments enable broad accessibility but may pose security and dependency risks."
+    },
+    {
+      "text": "Software such as Microsoft OneNote is a type of _____ software.",
+      "options": [
+        "personal digital assistant (PDA)",
+        "project data management",
+        "personal data management",
+        "personal information manager (PIM)"
+      ],
+      "correctAnswer": "project data management",
+      "explanation": "OneNote is used to manage and organize data for projects and information handling."
+    },
+    {
+      "text": "As of now, what distinguishes Google Bard from other AI-type programs?",
+      "options": [
+        "It is available for a fee.",
+        "It is not as good as other models.",
+        "It is the newest version of ChatGPT.",
+        "It is connected to the internet."
+      ],
+      "correctAnswer": "It is not as good as other models.",
+      "explanation": "Google Bard differs in design and capability compared to other AI models like ChatGPT."
+    },
+    {
+      "text": "Greater user involvement in the system development process usually results in ____.",
+      "options": ["more satisfied users", "poorer communication", "lower quality deliverable", "slower development times"],
+      "correctAnswer": "more satisfied users",
+      "explanation": "User involvement improves system acceptance and ensures needs are accurately met."
+    },
+    {
+      "text": "Which statement best describes the difference between ChatGPT and other proofreading programs?",
+      "options": [
+        "ChatGPT is less accurate in detecting grammar errors.",
+        "ChatGPT is unable to identify citation errors.",
+        "ChatGPT produces complete texts, unlike other programs.",
+        "ChatGPT focuses solely on spelling errors."
+      ],
+      "correctAnswer": "ChatGPT produces complete texts, unlike other programs.",
+      "explanation": "Unlike grammar tools, ChatGPT can generate entire texts and perform higher-level writing tasks."
+    },
+    {
+      "text": "Which of the following is true regarding the use of ChatGPT in academic writing?",
+      "options": [
+        "ChatGPT's papers are always rejected by peer reviewers.",
+        "ChatGPT consistently produces error-free papers.",
+        "Peer reviewers easily identified papers written by ChatGPT.",
+        "ChatGPT's papers may pass peer review without detection."
+      ],
+      "correctAnswer": "ChatGPT's papers may pass peer review without detection.",
+      "explanation": "AI-generated writing can sometimes pass review undetected, raising ethical and academic concerns."
+    },
+    {
+      "text": "Which of the following is an example of a horizontal application?",
+      "options": ["Construction companies", "Accounting packages", "Real estate firms", "College applications"],
+      "correctAnswer": "Accounting packages",
+      "explanation": "Horizontal applications serve general functions across industries, such as accounting or HR tools."
+    },
+    {
+      "text": "Given the following two statements. X: An application service provider (ASP) offers access to software for a fee. Y: Agile methods handle system ‘creep’ better than waterfall models. Determine which is correct.",
+      "options": ["Both X and Y are False", "Both X and Y are True", "X is False and Y is True", "X is True and Y is False"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "ASP hosts software as a service, and Agile adapts more flexibly to scope changes than Waterfall."
+    },
+    {
+      "text": "_____ determines how long it takes an information system to pay for itself through reduced costs and increased benefits.",
+      "options": ["Return on investment (ROI)", "Net present value (NPV)", "Acquisition process", "Payback analysis"],
+      "correctAnswer": "Payback analysis",
+      "explanation": "Payback analysis calculates the time required for benefits to offset project costs."
+    },
+    {
+      "text": "Which event in December 2022 revolutionized the way we find, interact, and record information?",
+      "options": [
+        "The launch of a new social media platform",
+        "The development of a revolutionary search engine",
+        "The release of a new smartphone model",
+        "The emergence of ChatGPT"
+      ],
+      "correctAnswer": "The emergence of ChatGPT",
+      "explanation": "ChatGPT’s public release transformed how people access and generate information using AI."
+    },
+    {
+      "text": "Given the following two statements. X: Payback analysis determines how long it takes a system to pay for itself. Y: Creating a functional decomposition diagram is similar to drawing an organisation chart. Determine which is correct.",
+      "options": ["Both X and Y are False", "X is True and Y is False", "X is False and Y is True", "Both X and Y are True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Payback analysis measures recovery time, and FDDs visually decompose system processes like org charts."
+    },
+    {
+      "text": "Which of the following is true of a web-based systems development environment?",
+      "options": [
+        "Internet-based development treats the web only as a communication channel.",
+        "Scalability can be affected by network constraints.",
+        "Web-based solutions do not open complex security issues.",
+        "Web-based software treats applications as services less dependent on desktop computing power."
+      ],
+      "correctAnswer": "Web-based software treats applications as services less dependent on desktop computing power.",
+      "explanation": "Web-based systems rely on cloud or online infrastructure rather than local hardware."
+    },
+    {
+      "text": "What concern is raised by some academics regarding ChatGPT?",
+      "options": [
+        "It is a reliable tool for academic research",
+        "It enhances critical thinking skills",
+        "It encourages originality",
+        "It may hinder the development of critical thinking and original ideas in students"
+      ],
+      "correctAnswer": "It may hinder the development of critical thinking and original ideas in students",
+      "explanation": "Overreliance on AI tools can reduce student engagement and independent thought."
+    },
+    {
+      "text": "In most large and medium-sized companies, a _____ within the IT department is responsible for providing user support.",
+      "options": ["service desk", "evaluation team", "planning centre", "planning centre"],
+      "correctAnswer": "service desk",
+      "explanation": "A service desk handles user assistance and technical support for system operations."
+    },
+    {
+      "text": "In addition to configuring software, the IT staff can create a _____, which includes screens, commands, and features that enable users to interact with the application.",
+      "options": ["user manual", "user interface", "user story", "user agent"],
+      "correctAnswer": "user interface",
+      "explanation": "The user interface defines how users interact visually and functionally with software."
+    },
+    {
+      "text": "Some firms offer _____, which provide powerful web-based support for transactions such as order processing and billing.",
+      "options": ["application service provider (ASP)", "fixed outsourcing services (FOS)", "internet business services (IBS)", "outsource hosting provider (OHP)"],
+      "correctAnswer": "internet business services (IBS)",
+      "explanation": "IBS platforms support online business operations like CRM and order management."
+    },
+    {
+      "text": "What is one area educators should consider when integrating AI-generated writing into teaching methods?",
+      "options": [
+        "Avoiding AI tools due to ethical concerns",
+        "Using AI tools solely for time-saving",
+        "Using detection tools to prevent AI writing",
+        "Teaching students to use AI tools and address ethical concerns"
+      ],
+      "correctAnswer": "Teaching students to use AI tools and address ethical concerns",
+      "explanation": "Educators should guide students in ethical and responsible use of AI tools."
+    },
+    {
+      "text": "Which of the following is a typical example of a system requirement for the output category?",
+      "options": [
+        "Payroll system must update data and produce tax reports",
+        "All transactions must have audit trails",
+        "System must generate a daily reminder list for sales reps",
+        "Manufacturing staff must swipe ID cards to record labour"
+      ],
+      "correctAnswer": "System must generate a daily reminder list for sales reps",
+      "explanation": "Output requirements define what reports or displays the system should produce."
+    },
+    {
+      "text": "As of this time, which version of ChatGPT is accessible for free?",
+      "options": ["ChatGPT 3.5", "None of the other answers is correct", "ChatGPT 4o", "Google Bard"],
+      "correctAnswer": "ChatGPT 3.5",
+      "explanation": "ChatGPT 3.5 remains the freely accessible version for general users."
+    },
+    {
+      "text": "What does 'GPT' stand for in ChatGPT?",
+      "options": ["Generative Pre-trained Transformer", "General Purpose Technology", "Graphical Processing Tool", "Global Prediction Technique"],
+      "correctAnswer": "Generative Pre-trained Transformer",
+      "explanation": "GPT stands for Generative Pre-trained Transformer, the model architecture behind ChatGPT."
+    },
+    {
+      "text": "A questionnaire starts with a heading, which should include _____.",
+      "options": ["your suggestions", "a brief statement of purpose", "your observations", "your signature"],
+      "correctAnswer": "a brief statement of purpose",
+      "explanation": "A questionnaire heading should clearly state its purpose to guide respondents."
+    },
+    {
+      "text": "Given the following two statements. X: The system requirements document is the deliverable of the analysis phase. Y: Requirements definitions are created mainly for engineers. Determine which is correct.",
+      "options": ["Both X and Y are True", "X is True and Y is False", "Both X and Y are False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "The system requirements document concludes analysis, but serves multiple stakeholders, not only engineers."
+    },
+    {
+      "text": "Given the following two statements. X: An accounting package is a good example of a horizontal application. Y: Engaged listening means observing nonverbal communication during interviews. Determine which is correct.",
+      "options": ["Both X and Y are True", "X is False and Y is True", "X is True and Y is False", "Both X and Y are False"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Both statements accurately describe horizontal applications and engaged listening."
+    },
+    {
+      "text": "A software package developed to handle information requirements for```json
+{
+  "testName": "Assessment 2 – Systems Analysis Fundamentals (ICT2621)",
+  "questions": [
+    {
+      "text": "A software package developed to handle information requirements for a specific type of business is called a _____ application.",
+      "options": ["vertical application", "symmetric application", "asymmetric application", "horizontal application"],
+      "correctAnswer": "vertical application",
+      "explanation": "Vertical applications are tailored for specific industries or business types, such as hospital or retail systems."
+    },
+    {
+      "text": "When preparing a representative sample from a list of 200 customers who complained about errors in their statements, a _____ might select any 20 customers.",
+      "options": ["random sample", "comprehensive sample", "stratified sample", "systematic sample"],
+      "correctAnswer": "random sample",
+      "explanation": "A random sample gives all individuals an equal chance of being selected, reducing bias."
+    },
+    {
+      "text": "In addition to joint application development, another popular user-oriented method is _____, which resembles a condensed version of the entire SDLC with users involved every step of the way.",
+      "options": ["rapid application development", "agile method", "Brainstorming", "sampling"],
+      "correctAnswer": "rapid application development",
+      "explanation": "RAD accelerates development by involving users continuously and delivering prototypes quickly."
+    },
+    {
+      "text": "Which step is appropriate for improving the use of ChatGPT?",
+      "options": [
+        "Establishing policies that encourage replacement of human abilities with AI-generated content",
+        "Providing education on evaluating the trustworthiness of information generated by AI",
+        "Discouraging the use of technology in the writing process",
+        "Emphasizing human engagement and creativity in the writing process"
+      ],
+      "correctAnswer": "Providing education on evaluating the trustworthiness of information generated by AI",
+      "explanation": "Educating users about AI reliability ensures responsible and informed use of ChatGPT."
+    },
+    {
+      "text": "_____ is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources.",
+      "options": ["Grid computing", "Cloud computing", "Utility computing", "Mainframe computing"],
+      "correctAnswer": "Cloud computing",
+      "explanation": "Cloud computing allows users to access and manage computing resources online with scalability and flexibility."
+    },
+    {
+      "text": "When companies acquire web-based software as a _____, they can limit in-house involvement to a minimum.",
+      "options": ["product", "Outsource", "process", "service"],
+      "correctAnswer": "service",
+      "explanation": "When software is acquired as a service (SaaS), the provider handles hosting and maintenance."
+    },
+    {
+      "text": "Which approach is recommended for educators regarding the use of AI-generated writing tools by students?",
+      "options": [
+        "Encouraging students to rely solely on AI-generated writing",
+        "Prohibiting students from using any AI tools",
+        "Allowing unrestricted use of AI-generated content in research",
+        "Encouraging students to use AI tools as supplements, not replacements for critical thinking"
+      ],
+      "correctAnswer": "Encouraging students to use AI tools as supplements, not replacements for critical thinking",
+      "explanation": "Students should use AI tools to enhance creativity while maintaining independent thought."
+    },
+    {
+      "text": "Given the following two statements. X: If a company wants to meet constraints of existing systems, in-house development is the best option. Y: Another word for ‘systematic’ sampling is ‘stratified’ sampling. Determine which is correct.",
+      "options": ["Both X and Y are False", "X is True and Y is False", "Both X and Y are True", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "In-house development ensures compatibility, while systematic and stratified sampling differ in method."
+    },
+    {
+      "text": "When studying an information system, illustrations of actual documents should be collected using a process called _____.",
+      "options": ["indexing", "randomization", "Sampling", "stratification"],
+      "correctAnswer": "Sampling",
+      "explanation": "Sampling collects representative documents for analysis during system study."
+    },
+    {
+      "text": "Given the following two statements. X: The cost-benefit checklist should apply to only the first two alternatives. Y: “What benefits will the system bring to the organization?” is an example of a leading question. Determine which is correct.",
+      "options": ["X is False and Y is True", "Both X and Y are True", "X is True and Y is False", "Both X and Y are False"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Leading questions suggest answers, while cost-benefit analysis applies to all relevant alternatives."
+    },
+    {
+      "text": "The _____ of a project is the total value of the benefits minus the total value of the costs, adjusted for time value.",
+      "options": ["return on investment (ROI)", "acquisition process", "net present value (NPV)", "payback analysis"],
+      "correctAnswer": "net present value (NPV)",
+      "explanation": "NPV discounts future cash flows to present value, helping assess project profitability over time."
+    }
+  ]
+}
