@@ -2175,7 +2175,7 @@ const testFiles = [
   "test27.json",
   "test28.json",
   "test28b.json",
-  "test29.json",*/
+  "test29.json",
   "test30.json",
   "test31.json",
   "test32.json",
@@ -2186,7 +2186,7 @@ const testFiles = [
   "test33e.json",
   "test33f.json",
   "test34Social.json",
-  "test35.json",
+  "test35.json",*/
   "test36a.json",
   "test36b.json",
   "test37a.json",
