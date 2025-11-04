@@ -1,0 +1,178 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 02)",
+  "questions": [
+    {
+      "text": "_____ maintains consistency among data flow diagrams (DFDs) by ensuring that input and output data flows align properly.",
+      "options": ["Balancing", "Indexing", "Adapting", "Shipping"],
+      "correctAnswer": "Balancing",
+      "explanation": "Balancing ensures consistency between levels of DFDs by matching input and output data flows across diagrams."
+    },
+    {
+      "text": "Decision trees show the logic structure in a _____.",
+      "options": [
+        "vertical form that resembles a tree with the roots at the bottom and the branches at the top",
+        "horizontal form that resembles a tree with the roots at the left and the branches to the right",
+        "vertical form that resembles a tree with the roots at the top and the branches at the bottom",
+        "horizontal form that resembles a tree with the roots at the right and the branches to the left"
+      ],
+      "correctAnswer": "horizontal form that resembles a tree with the roots at the left and the branches to the right",
+      "explanation": "Decision trees use a left-to-right horizontal structure to represent conditions and resulting actions logically."
+    },
+    {
+      "text": "In a data dictionary, _____ is the maximum number of characters for an alphabetic or character data element or the maximum number of digits and number of decimal positions for a numeric data element.",
+      "options": ["domain", "valence", "length", "index"],
+      "correctAnswer": "length",
+      "explanation": "Length specifies the maximum size of a data element, defining character or numeric limits."
+    },
+    {
+      "text": "A _____ documents the details of a functional primitive, which represents a specific set of processing steps and business logic.",
+      "options": ["logical description", "primitive description", "process description", "function-based description"],
+      "correctAnswer": "process description",
+      "explanation": "A process description provides detailed documentation of how a functional primitive operates."
+    },
+    {
+      "text": "In addition to the Gane and Sarson symbol set, another popular symbol set is _____.",
+      "options": ["Mantissa", "Jira", "Zachman", "Yourdon"],
+      "correctAnswer": "Yourdon",
+      "explanation": "The Yourdon symbol set is widely used for creating DFDs and other structured analysis diagrams."
+    },
+    {
+      "text": "A _____ shows a logical structure, with all possible combinations of conditions and resulting actions.",
+      "options": ["pseudo table", "database table", "decision table", "validation table"],
+      "correctAnswer": "decision table",
+      "explanation": "Decision tables display conditions and outcomes to simplify complex logical relationships."
+    },
+    {
+      "text": "Using _____, an analyst starts with an overall view, which is a context diagram with a single process symbol, and then the analyst creates diagram 0, which shows more detail.",
+      "options": ["balancing", "indexing", "exploding", "levelling"],
+      "correctAnswer": "exploding",
+      "explanation": "Exploding involves breaking down high-level DFD processes into more detailed sub-processes."
+    },
+    {
+      "text": "Which one of the following is a typical example of a system requirement for the performance category?",
+      "options": [
+        "The purchasing system must provide suppliers with up-to-date specifications.",
+        "Each input form must include date, time, product code, customer number, and quantity.",
+        "The manager of the sales department must approve orders that exceed a customer's credit limit.",
+        "The student records system must produce class lists within five hours after the end of registration."
+      ],
+      "correctAnswer": "The student records system must produce class lists within five hours after the end of registration.",
+      "explanation": "Performance requirements specify time-related outputs or system responsiveness."
+    },
+    {
+      "text": "To evaluate _____, a systems analyst needs information about projected future volume for all outputs, inputs, and processes.",
+      "options": ["scalability", "reliability", "compatibility", "applicability"],
+      "correctAnswer": "scalability",
+      "explanation": "Scalability assesses whether the system can handle growth in volume or workload in the future."
+    },
+    {
+      "text": "A(n) _____ uses various symbols and shapes to represent data flow, processing, and storage.",
+      "options": ["process flow diagram", "object model", "data flow diagram", "network model"],
+      "correctAnswer": "data flow diagram",
+      "explanation": "A DFD illustrates how data moves through a system, showing processes, data stores, and flows."
+    },
+    {
+      "text": "A(n) _____ investigates, analyses, designs, develops, installs, evaluates, and maintains a company's information systems.",
+      "options": ["application developer", "database administrator", "network administrator", "systems analyst"],
+      "correctAnswer": "systems analyst",
+      "explanation": "A systems analyst is responsible for analysing business needs and designing effective information systems."
+    },
+    {
+      "text": "The systems requirements documents include all the following except _____.",
+      "options": ["the system database", "the user requirements", "the management requirements", "the costs"],
+      "correctAnswer": "the system database",
+      "explanation": "System requirements documents describe functional, technical, and user needs—not actual database content."
+    },
+    {
+      "text": "Transaction processing (TP) systems _____.",
+      "options": [
+        "provide job-related information to users at all levels of a company",
+        "simulate human reasoning by combining a knowledge base and inference rules",
+        "process data generated by day-to-day business operations",
+        "include email, voice mail, fax, video conferencing, and other office tools"
+      ],
+      "correctAnswer": "process data generated by day-to-day business operations",
+      "explanation": "TP systems handle routine transactions such as sales, payroll, and inventory updates."
+    },
+    {
+      "text": "In a(n) _____, team members prepare to lunge at each other to achieve their objectives.",
+      "options": ["pool", "resequencing session", "scrum", "adaptation"],
+      "correctAnswer": "scrum",
+      "explanation": "In Agile methodology, a scrum is a short, focused meeting used to coordinate and achieve goals quickly."
+    },
+    {
+      "text": "The term _____ refers to a system's ability to handle increased business volume and transactions in the future.",
+      "options": ["scalability", "reliability", "compatibility", "applicability"],
+      "correctAnswer": "scalability",
+      "explanation": "Scalability ensures a system can expand to meet future performance and capacity demands."
+    },
+    {
+      "text": "Of the measures of feasibility, questions such as: 'Does the proposed platform have sufficient capacity for future needs?' and 'Will the hardware and software environment be reliable?' should be considered while assessing _____.",
+      "options": ["schedule feasibility", "technical feasibility", "economic feasibility", "ethical feasibility"],
+      "correctAnswer": "technical feasibility",
+      "explanation": "Technical feasibility evaluates whether existing technology can support the proposed system."
+    },
+    {
+      "text": "A common tool for showing the distribution of a questionnaire or sampling results is a vertical bar chart called a _____.",
+      "options": ["flowchart", "histogram", "tree map", "streamgraph"],
+      "correctAnswer": "histogram",
+      "explanation": "A histogram graphically represents data distribution across categories using vertical bars."
+    },
+    {
+      "text": "In the rapid application development (RAD) model, the _____ phase focuses on program and application development tasks similar to the SDLC.",
+      "options": ["requirements planning", "user design", "construction", "cutover"],
+      "correctAnswer": "construction",
+      "explanation": "The construction phase in RAD involves actual development of the system’s components."
+    },
+    {
+      "text": "Which of the following is a typical example of a system requirement for the control category?",
+      "options": [
+        "The customer analysis system must produce a quarterly report identifying changes in ordering patterns.",
+        "The system must maintain separate levels of security for users and the system administrator.",
+        "The data entry screens must be uniform, except for background color, which can be changed by the user.",
+        "The warehouse distribution system must analyze daily orders and create routing patterns for delivery trucks."
+      ],
+      "correctAnswer": "The system must maintain separate levels of security for users and the system administrator.",
+      "explanation": "Control requirements define security, access, and authorisation rules within the system."
+    },
+    {
+      "text": "Which of the following is a typical example of a system requirement for the process category?",
+      "options": [
+        "The website must report online volume statistics every four hours and hourly during peak periods.",
+        "The system must be operated seven days a week, 365 days a year.",
+        "The equipment rental system must not execute new rental transactions for customers who have overdue accounts.",
+        "All transactions must have audit trails."
+      ],
+      "correctAnswer": "The equipment rental system must not execute new rental transactions for customers who have overdue accounts.",
+      "explanation": "Process requirements specify how system tasks should be executed under defined conditions."
+    },
+    {
+      "text": "_____ is a fact-finding technique that can help a systems analyst understand how the current system is supposed to work.",
+      "options": ["Document review", "Brainstorming", "A systematic sample", "Productivity software"],
+      "correctAnswer": "Document review",
+      "explanation": "Document review helps analysts study existing system records to understand operations and processes."
+    },
+    {
+      "text": "Supporters of neutral locations for interviews believe that it _____.",
+      "options": [
+        "makes the interviewee feel comfortable during the meeting",
+        "gives the interviewee easy access to supporting material that might be needed",
+        "keeps interruptions to a minimum so that people can concentrate fully",
+        "gives the interviewee an opportunity to take calls during the interview"
+      ],
+      "correctAnswer": "makes the interviewee feel comfortable during the meeting",
+      "explanation": "Neutral locations reduce perceived hierarchy and make the interviewee more relaxed and open."
+    },
+    {
+      "text": "The data dictionary usually records and describes a default value, which is the _____.",
+      "options": [
+        "the set of values permitted for the data element",
+        "identification of the user(s) responsible for changing values for the data element",
+        "specification for the origination point for the data element's value",
+        "value for the data element if a value is not entered for it"
+      ],
+      "correctAnswer": "value for the data element if a value is not entered for it",
+      "explanation": "A default value automatically applies when no explicit data value is entered."
+    }
+  ]
+}
