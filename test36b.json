@@ -295,12 +295,7 @@
       "correctAnswer": "Both X and Y are True",
       "explanation": "Both statements accurately describe horizontal applications and engaged listening."
     },
-    {
-      "text": "A software package developed to handle information requirements for```json
-{
-  "testName": "Assessment 2 – Systems Analysis Fundamentals (ICT2621)",
-  "questions": [
-    {
+   {
       "text": "A software package developed to handle information requirements for a specific type of business is called a _____ application.",
       "options": ["vertical application", "symmetric application", "asymmetric application", "horizontal application"],
       "correctAnswer": "vertical application",
