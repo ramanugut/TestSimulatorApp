@@ -1,0 +1,76 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 06)",
+  "questions": [
+    {
+      "text": "If a dialog box option is either on or off, which object is most likely to be used?",
+      "options": ["Text box", "List box", "Drop-down list box", "Toggle button"],
+      "correctAnswer": "Toggle button",
+      "explanation": "A toggle button allows users to switch an option between two states, such as on or off."
+    },
+    {
+      "text": "Ozo wants to create a code that identifies a product’s warehouse, floor, section, aisle, and bin. Which code is best suited for this purpose?",
+      "options": ["Significant digit code", "Block sequence code", "Sequence code", "Action code"],
+      "correctAnswer": "Significant digit code",
+      "explanation": "A significant digit code uses digits in specific positions to represent different attributes like warehouse and bin location."
+    },
+    {
+      "text": "If a dialog box must allow users to select one or more choices from a group, which component should be used?",
+      "options": ["Check box", "Text box", "List box", "Toggle button"],
+      "correctAnswer": "Check box",
+      "explanation": "Check boxes allow users to select multiple options independently within a group."
+    },
+    {
+      "text": "Which of the following is not another term for a combination key?",
+      "options": ["Multivalued key", "Concatenated key", "Composite key", "Foreign key"],
+      "correctAnswer": "Foreign key",
+      "explanation": "A foreign key links related tables, while a combination key (also called composite or concatenated) uniquely identifies a record using multiple fields."
+    },
+    {
+      "text": "Lerato’s team wants to test programs individually by simulating outcomes and displaying messages. What is this process called?",
+      "options": ["Integration testing", "System testing", "Link testing", "Stub testing"],
+      "correctAnswer": "Stub testing",
+      "explanation": "Stub testing simulates individual program components before integrating them with others."
+    },
+    {
+      "text": "Patricia recommends testing groups of programs that depend on each other. What type of testing is this?",
+      "options": ["Integration testing", "System testing", "Unit testing", "Stub testing"],
+      "correctAnswer": "Integration testing",
+      "explanation": "Integration testing verifies that related modules work together correctly as a combined unit."
+    },
+    {
+      "text": "In a structure chart, which symbol is used to represent a condition where one control module determines subordinate modules to be invoked?",
+      "options": ["An arrow with a filled circle", "An arrow with an empty circle", "A line with a diamond on one end", "A line with a diamond on both ends"],
+      "correctAnswer": "A line with a diamond on one end",
+      "explanation": "A line with a diamond on one end represents a conditional call between modules in a structure chart."
+    },
+    {
+      "text": "Marie’s manager wants to see total figures of sales without supporting details. In which folder is she likely to find this report?",
+      "options": ["Exception reports", "Summary reports", "Detail reports", "Control reports"],
+      "correctAnswer": "Summary reports",
+      "explanation": "Summary reports present aggregated data for management review, omitting unnecessary details."
+    },
+    {
+      "text": "In a structure chart, what symbol is used for a data couple?",
+      "options": ["An arrow with a filled circle", "An arrow with an empty circle", "A line with a diamond on one end", "A line with a diamond on both ends"],
+      "correctAnswer": "An arrow with an empty circle",
+      "explanation": "A data couple is represented by an arrow with an empty circle to indicate data passed between modules."
+    },
+    {
+      "text": "Marie’s leader needs a report of all purchases made by employees using discounts in a given week. Which category of report is this?",
+      "options": ["Exception reports", "Summary reports", "Detail reports", "Control reports"],
+      "correctAnswer": "Exception reports",
+      "explanation": "Exception reports highlight specific cases, such as employee discount transactions, outside normal criteria."
+    },
+    {
+      "text": "Sepang must choose between two candidate systems. Which of the following is a valid strategy?",
+      "options": [
+        "For vertical applications, use a demo copy to enter a few sample transactions in both.",
+        "Benchmark testing is not a good way to compare systems.",
+        "Expect mostly negative feedback from vendor references.",
+        "Consult websites maintained by consultants and software publishers with product references and links to vendors."
+      ],
+      "correctAnswer": "For vertical applications, use a demo copy to enter a few sample transactions in both.",
+      "explanation": "Using demo copies helps compare how each vertical application performs with real sample data."
+    }
+  ]
+}
