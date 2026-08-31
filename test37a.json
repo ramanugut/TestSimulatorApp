@@ -1,0 +1,198 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 01)",
+  "questions": [
+    {
+      "text": "When preparing a representative sample from a list of 280 customers who complained about errors in their statements, a _____ might select every tenth customer for review.",
+      "options": ["systematic sample", "stratified sample", "random sample", "comprehensive sample"],
+      "correctAnswer": "systematic sample",
+      "explanation": "A systematic sample selects every nth record or person from a list to ensure even distribution."
+    },
+    {
+      "text": "Identify a typical example of a system requirement for the input category.",
+      "options": [
+        "As a final step in year-end processing, the payroll system must update employee salaries, bonuses, and benefits.",
+        "Response time must not exceed four seconds.",
+        "The system must provide logon security at the operating system level and at the application level.",
+        "Student grades must be entered on machine-readable forms prepared by the instructor."
+      ],
+      "correctAnswer": "Student grades must be entered on machine-readable forms prepared by the instructor.",
+      "explanation": "Input requirements define how data enters a system; in this case, via machine-readable forms."
+    },
+    {
+      "text": "A(n) _____ is a characteristic or feature that must be included in an information system to satisfy business needs and be acceptable to users.",
+      "options": ["system requirement", "property", "questionnaire", "object"],
+      "correctAnswer": "system requirement",
+      "explanation": "A system requirement defines necessary features, functions, and constraints for the system."
+    },
+    {
+      "text": "_____ means that a project can be implemented in an acceptable time frame.",
+      "options": ["Operational feasibility", "Technical feasibility", "Schedule feasibility", "Economic feasibility"],
+      "correctAnswer": "Schedule feasibility",
+      "explanation": "Schedule feasibility checks if the project can be completed within the required time limits."
+    },
+    {
+      "text": "When studying an information system, illustrations of actual documents should be collected using a process called _____.",
+      "options": ["stratification", "randomisation", "indexing", "sampling"],
+      "correctAnswer": "sampling",
+      "explanation": "Sampling involves selecting representative examples of documents or data for study."
+    },
+    {
+      "text": "_____ design and construct webpages, monitor traffic, manage hardware and software, and link web-based applications to a company's information systems.",
+      "options": ["User support specialists", "Database administrators", "Web support specialists", "Network administrators"],
+      "correctAnswer": "Web support specialists",
+      "explanation": "Web support specialists build and maintain websites and ensure integration with company systems."
+    },
+    {
+      "text": "_____ limitations result when a system designed for a specific hardware configuration becomes obsolete when new hardware is introduced.",
+      "options": ["Accessibility", "Relationship", "Feasibility", "Performance"],
+      "correctAnswer": "Performance",
+      "explanation": "Performance limitations occur when outdated hardware cannot efficiently support system operations."
+    },
+    {
+      "text": "_____ includes ongoing support and maintenance costs, as well as acquisition costs.",
+      "options": [
+        "CRC (Customer relationship costs)",
+        "TCO (Total cost of ownership)",
+        "JIT (Just-in-time costs)",
+        "RCT (Real cost of time)"
+      ],
+      "correctAnswer": "TCO (Total cost of ownership)",
+      "explanation": "Total cost of ownership covers all expenses throughout a system’s lifecycle, including maintenance."
+    },
+    {
+      "text": "In an interview, _____ limit the responses.",
+      "options": ["open-ended questions", "closed-ended questions", "leading questions", "range-of-response questions"],
+      "correctAnswer": "closed-ended questions",
+      "explanation": "Closed-ended questions restrict answers to fixed choices for easier data comparison."
+    },
+    {
+      "text": "Which one of the following is a method of developing systems that is well suited to traditional project management tools and techniques?",
+      "options": ["Object-oriented analysis", "Adaptive method", "Structured analysis", "Rapid application development"],
+      "correctAnswer": "Structured analysis",
+      "explanation": "Structured analysis follows linear, sequential steps and aligns well with traditional project control."
+    },
+    {
+      "text": "Many hardware and software companies offer _____ for IT professionals, which verifies that an individual demonstrated a certain level of knowledge and skill on a standardised test.",
+      "options": ["spot identification", "certification", "education", "accreditation"],
+      "correctAnswer": "certification",
+      "explanation": "Certification demonstrates verified technical competence in a specific technology or methodology."
+    },
+    {
+      "text": "Which of the following is one of the main sectors of e-commerce?",
+      "options": ["C2C (consumer-to-consumer)", "B2C (business-to-consumer)", "C2B (consumer-to-business)", "BPM (business process model)"],
+      "correctAnswer": "B2C (business-to-consumer)",
+      "explanation": "B2C e-commerce involves businesses selling products or services directly to consumers online."
+    },
+    {
+      "text": "Structured analysis is called a(n) _____ technique because it focuses on processes that transform data into useful information.",
+      "options": ["iterative", "process-centered", "inferred", "model-specific"],
+      "correctAnswer": "process-centered",
+      "explanation": "Structured analysis emphasizes process flows and data transformation rather than object structures."
+    },
+    {
+      "text": "Agile methods typically use a(n) _____, which represents a series of iterations based on user feedback.",
+      "options": ["incremental model", "extreme model", "spiral model", "evaluative model"],
+      "correctAnswer": "spiral model",
+      "explanation": "The spiral model is iterative, allowing repeated refinement through user feedback and prototyping."
+    },
+    {
+      "text": "A _____ describes the information that a system must provide.",
+      "options": ["process model", "data model", "business model", "network model"],
+      "correctAnswer": "data model",
+      "explanation": "A data model defines the information structure and relationships within the system."
+    },
+    {
+      "text": "_____ controls the flow of data, provides data security, and manages network operations.",
+      "options": ["Enterprise software", "System software", "Application software", "Legacy software"],
+      "correctAnswer": "System software",
+      "explanation": "System software manages hardware, software, and communication to ensure smooth operations."
+    },
+    {
+      "text": "A _____ graphically displays one or more business processes, such as handling an airline reservation, filling a product order, or updating a customer account.",
+      "options": ["business matrix model (BMM)", "business process model (BPM)", "business indexing model (BIM)", "business strategic model (BSM)"],
+      "correctAnswer": "business process model (BPM)",
+      "explanation": "A BPM visually represents workflows to help understand and optimise business processes."
+    },
+    {
+      "text": "A(n) _____ is the set of beliefs, rules, traditions, values, and attitudes that define a company and influence its way of doing business.",
+      "options": ["corporate culture", "team guideline", "mission statement", "ongoing rule-set"],
+      "correctAnswer": "corporate culture",
+      "explanation": "Corporate culture reflects shared values and behaviors that shape how an organization operates."
+    },
+    {
+      "text": "In a data flow diagram (DFD), the Gane and Sarson symbol for a data store is a _____.",
+      "options": [
+        "rectangle with rounded corners",
+        "line with a single or double arrowhead",
+        "flat rectangle that is open on the right side and closed on the left side",
+        "rectangle, which may be shaded to make it look three-dimensional"
+      ],
+      "correctAnswer": "flat rectangle that is open on the right side and closed on the left side",
+      "explanation": "In a Gane and Sarson DFD, data stores are shown as open-ended rectangles representing data repositories."
+    },
+    {
+      "text": "The _____ is a top-down representation of a process.",
+      "options": [
+        "Unified Modelling Language (UML)",
+        "total cost of ownership (TCO)",
+        "functional decomposition diagram (FDD)",
+        "Rapid Economic Justification (REJ)"
+      ],
+      "correctAnswer": "functional decomposition diagram (FDD)",
+      "explanation": "FDDs show processes broken down hierarchically into smaller components."
+    },
+    {
+      "text": "Which of the following methods of system development stresses intense team-based effort and reflects a set of community-based values?",
+      "options": ["Object-oriented analysis", "Agile method", "Structured analysis", "Rapid application development"],
+      "correctAnswer": "Agile method",
+      "explanation": "Agile methods rely on collaboration, adaptability, and iterative development with continuous feedback."
+    },
+    {
+      "text": "A _____ shows a logical structure, with all possible combinations of conditions and resulting actions.",
+      "options": ["pseudo table", "database table", "decision table", "validation table"],
+      "correctAnswer": "decision table",
+      "explanation": "Decision tables map conditions to possible actions, clarifying complex decision logic."
+    },
+    {
+      "text": "The objective of a _____ is to use the combined judgment and experience of several analysts to evaluate system projects.",
+      "options": [
+        "computer resources committee",
+        "data storage committee",
+        "system networking committee",
+        "topology identification committee"
+      ],
+      "correctAnswer": "computer resources committee",
+      "explanation": "A computer resources or systems review committee evaluates and prioritizes proposed system projects."
+    },
+    {
+      "text": "In a(n) _____ structure, which is usually based on interpersonal relationships, some people have more influence or knowledge than appears on an organization chart.",
+      "options": ["spontaneous", "unstructured", "informal", "open-ended"],
+      "correctAnswer": "informal",
+      "explanation": "Informal structures rely on personal relationships rather than formal authority."
+    },
+    {
+      "text": "Projects where management has no choice in implementing them are called _____ projects.",
+      "options": ["discretionary", "nondiscretionary", "appended", "concatenated"],
+      "correctAnswer": "nondiscretionary",
+      "explanation": "Nondiscretionary projects are mandatory due to legal, operational, or external requirements."
+    },
+    {
+      "text": "Structured English might look familiar to programming students because it resembles _____, which is used in program design.",
+      "options": ["pseudocode", "a decision tree", "iterative code", "decision code"],
+      "correctAnswer": "pseudocode",
+      "explanation": "Structured English combines English with programming logic similar to pseudocode for clarity."
+    },
+    {
+      "text": "Greater user involvement in the system development process usually results in _____.",
+      "options": ["poorer communication", "more satisfied users", "slower development times", "lower quality deliverable"],
+      "correctAnswer": "more satisfied users",
+      "explanation": "User participation improves accuracy, satisfaction, and system acceptance."
+    },
+    {
+      "text": "Projects that have adapted an _____ methodology are prone to rapid changes throughout the system development life cycle.",
+      "options": ["structured development", "object-oriented", "agile", "waterfall"],
+      "correctAnswer": "agile",
+      "explanation": "Agile development embraces flexibility and continuous adaptation to change."
+    }
+  ]
+}

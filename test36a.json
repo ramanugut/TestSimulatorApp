@@ -1,0 +1,270 @@
+{
+  "testName": "Assessment 1 – Systems Analysis Fundamentals ICT2621",
+  "questions": [
+    {
+      "text": "In object-oriented analysis, an object is a member of a _____, which is a collection of similar objects.",
+      "options": ["property", "message", "Instance", "class"],
+      "correctAnswer": "class",
+      "explanation": "In object-oriented analysis, a class defines a group of similar objects that share common attributes and methods."
+    },
+    {
+      "text": "Which of the following is likely to be a mission-critical system?",
+      "options": [
+        "Employee wellness program website",
+        "Employee cafeteria menu display",
+        "Employee time-tracking system",
+        "Email server"
+      ],
+      "correctAnswer": "Email server",
+      "explanation": "Mission-critical systems are essential to an organisation’s operations, such as email servers that support communication."
+    },
+    {
+      "text": "Which of the following best describes schedule feasibility?",
+      "options": [
+        "The time frame required for implementing the system",
+        "The effectiveness of the proposed system after development",
+        "The technical resources and people available for the project",
+        "The estimated costs of the proposed system"
+      ],
+      "correctAnswer": "The time frame required for implementing the system",
+      "explanation": "Schedule feasibility evaluates if the project can be completed within the required time frame."
+    },
+    {
+      "text": "_____ includes ongoing support and maintenance costs, as well as acquisition costs.",
+      "options": ["TCO (total cost of ownership)", "RCT (real cost of time)", "CRC (customer relationship costs)", "JIT (just-in-time costs)"],
+      "correctAnswer": "TCO (total cost of ownership)",
+      "explanation": "Total cost of ownership considers the full lifecycle cost of a system, including support, maintenance, and acquisition."
+    },
+    {
+      "text": "Which of the following is likely to be a system request?",
+      "options": [
+        "A request for additional server maintenance.",
+        "A request for a new feature in an existing software application.",
+        "A request for a printer repair service.",
+        "A request for a software training program."
+      ],
+      "correctAnswer": "A request for a new feature in an existing software application.",
+      "explanation": "A system request initiates the process to add, modify, or enhance a system or feature."
+    },
+    {
+      "text": "A _____ graphically displays one or more business processes, such as handling an airline reservation or updating a customer account.",
+      "options": ["business matrix model (BMM)", "business indexing model (BIM)", "business strategic model (BSM)", "business process model (BPM)"],
+      "correctAnswer": "business process model (BPM)",
+      "explanation": "A BPM diagram visually represents workflows to help understand and improve business processes."
+    },
+    {
+      "text": "_____ usually focus on long-term challenges and goals, the importance of stakeholders, and a commitment to the firm’s role as a corporate citizen.",
+      "options": ["Performance assessments", "Relationship assessments", "Vision statements", "Mission statements"],
+      "correctAnswer": "Mission statements",
+      "explanation": "Mission statements define a company’s purpose, values, and long-term direction."
+    },
+    {
+      "text": "How does blockchain technology improve supply chain management?",
+      "options": [
+        "It creates new industries and technologies, such as smartphones and apps.",
+        "It provides an efficient, secure, and transparent distributed ledger system.",
+        "It enables just-in-time (JIT) inventory systems and EDI relationships.",
+        "It reshapes existing business operations through the Internet-of-Things."
+      ],
+      "correctAnswer": "It provides an efficient, secure, and transparent distributed ledger system.",
+      "explanation": "Blockchain ensures transparent and tamper-proof tracking of goods and transactions in supply chains."
+    },
+    {
+      "text": "Which of the following best describes the purpose of summarising results and recommendations in a preliminary investigation?",
+      "options": [
+        "To develop strong communication skills as a systems analyst",
+        "To estimate the costs and benefits of the proposed project",
+        "To convey information to management through a report or presentation",
+        "To evaluate the feasibility of the system request"
+      ],
+      "correctAnswer": "To convey information to management through a report or presentation",
+      "explanation": "The summary allows management to make informed decisions about continuing or rejecting the project."
+    },
+    {
+      "text": "Which of the following is not likely to be a user productivity system?",
+      "options": [
+        "Project management software",
+        "Word processing software",
+        "Database management software",
+        "Customer relationship management (CRM) software"
+      ],
+      "correctAnswer": "Database management software",
+      "explanation": "Database management software supports backend data handling rather than end-user productivity."
+    },
+    {
+      "text": "Identify a method of developing systems that is well-suited to traditional project management tools and techniques.",
+      "options": ["Structured analysis", "Rapid application development", "Adaptive method", "Object-oriented analysis"],
+      "correctAnswer": "Structured analysis",
+      "explanation": "Structured analysis follows a step-by-step linear process, aligning well with traditional project management."
+    },
+    {
+      "text": "In a _____ model, the result of each phase is called a deliverable, which flows into the next phase.",
+      "options": ["waterfall", "iterative", "spiral", "interactive"],
+      "correctAnswer": "waterfall",
+      "explanation": "The waterfall model completes one phase before moving to the next, producing deliverables at each step."
+    },
+    {
+      "text": "Which of the following is most likely to be a function of a systems review committee?",
+      "options": [
+        "Assessing the feasibility of implementing new technologies.",
+        "Conducting regular audits of organisational systems.",
+        "Reviewing and approving proposed changes to existing systems.",
+        "Identifying and resolving issues related to system performance."
+      ],
+      "correctAnswer": "Reviewing and approving proposed changes to existing systems.",
+      "explanation": "A systems review committee evaluates system change requests to ensure alignment with business goals."
+    },
+    {
+      "text": "To avoid the problem of _____, a project’s scope should be defined as clearly as possible.",
+      "options": ["project expansion", "project dilation", "project drift", "project creep"],
+      "correctAnswer": "project creep",
+      "explanation": "Project creep occurs when additional features or changes are added beyond the original plan."
+    },
+    {
+      "text": "_____ technology uses high-frequency radio waves to track physical objects.",
+      "options": [
+        "Redundant array of independent disks (RAID)",
+        "Management information system (MIS)",
+        "Radio frequency identification (RFID)",
+        "Enterprise resource planning (ERP)"
+      ],
+      "correctAnswer": "Radio frequency identification (RFID)",
+      "explanation": "RFID tags and readers use radio signals to identify and track objects automatically."
+    },
+    {
+      "text": "What is the difference between top managers and middle managers in organisational information models?",
+      "options": [
+        "Top managers have a broader scope of authority compared to middle managers.",
+        "Top managers focus on strategic decision-making, while middle managers focus on tactical decision-making.",
+        "Top managers are responsible for day-to-day operations, while middle managers handle long-term planning.",
+        "Top managers have access to more detailed information than middle managers."
+      ],
+      "correctAnswer": "Top managers focus on strategic decision-making, while middle managers focus on tactical decision-making.",
+      "explanation": "Strategic management sets direction, while middle management focuses on operational execution."
+    },
+    {
+      "text": "What is the primary purpose of an ERP system?",
+      "options": ["To analyse market trends", "To automate business processes", "To manage employee payroll", "To track inventory levels"],
+      "correctAnswer": "To automate business processes",
+      "explanation": "ERP integrates core business functions, automating workflows across departments."
+    },
+    {
+      "text": "Which of the following is likely to be an internal factor affecting systems projects?",
+      "options": [
+        "Fluctuations in the global market.",
+        "Technological advancements in the industry.",
+        "Changes in government regulations.",
+        "Limited availability of skilled personnel."
+      ],
+      "correctAnswer": "Limited availability of skilled personnel.",
+      "explanation": "Internal factors originate within the organisation, such as workforce limitations."
+    },
+    {
+      "text": "The overall aim of a _____ is to avoid seeking goals that are unrealistic, unprofitable, or unachievable.",
+      "options": [
+        "SWOT (strengths, weaknesses, opportunities, and threats) analysis",
+        "CSF (critical success factor) analysis",
+        "BCF (business case factor) analysis",
+        "SWCT (strategy, weakness, cost, and technology) analysis"
+      ],
+      "correctAnswer": "SWOT (strengths, weaknesses, opportunities, and threats) analysis",
+      "explanation": "SWOT analysis helps organisations assess realistic goals and areas for improvement."
+    },
+    {
+      "text": "What are the main yardsticks used in a feasibility study?",
+      "options": [
+        "Desirability, technical resources, economic desirability, and time frame",
+        "Operational feasibility, economic feasibility, technical feasibility, and schedule feasibility",
+        "Proposal, benefits, ease of use, and tech resources",
+        "Feasible, economic, operational, and technical"
+      ],
+      "correctAnswer": "Operational feasibility, economic feasibility, technical feasibility, and schedule feasibility",
+      "explanation": "Feasibility studies evaluate if a project is practical, cost-effective, and achievable within time limits."
+    },
+    {
+      "text": "Strategic planning starts with a _____ that reflects a firm’s vision, purpose, and values.",
+      "options": ["relationship diagram", "mission statement", "performance assessment", "feasibility study"],
+      "correctAnswer": "mission statement",
+      "explanation": "Strategic planning begins with a mission statement defining the company’s purpose and direction."
+    },
+    {
+      "text": "Which type of feasibility will likely try to determine whether legal issues need to be considered?",
+      "options": ["Schedule feasibility", "Economic feasibility", "Operational feasibility", "Technical feasibility"],
+      "correctAnswer": "Operational feasibility",
+      "explanation": "Operational feasibility assesses practical constraints, including legal and ethical considerations."
+    },
+    {
+      "text": "_____ result from a decrease in expenses, an increase in revenues, or both.",
+      "options": ["Intangible benefits", "Ethical benefits", "Agile benefits", "Tangible benefits"],
+      "correctAnswer": "Tangible benefits",
+      "explanation": "Tangible benefits are measurable improvements such as cost savings or revenue increases."
+    },
+    {
+      "text": "What is most likely to be the function of a Customer Relationship Management (CRM) system?",
+      "options": [
+        "Tracking inventory levels and stock movements.",
+        "Managing employee payroll and benefits.",
+        "Analysing market trends and consumer behaviour.",
+        "Storing and organising customer data for improved customer interactions and relationship management."
+      ],
+      "correctAnswer": "Storing and organising customer data for improved customer interactions and relationship management.",
+      "explanation": "CRM systems manage customer information to improve relationships and retention."
+    },
+    {
+      "text": "What is the purpose of just-in-time (JIT) inventory systems?",
+      "options": [
+        "To provide efficient, secure, and transparent supply chain management.",
+        "To minimise unnecessary inventory by relying on computer-to-computer data exchange.",
+        "To track food safety from grower to consumer using blockchain technology.",
+        "To improve operations for customers by using blockchain technology."
+      ],
+      "correctAnswer": "To minimise unnecessary inventory by relying on computer-to-computer data exchange.",
+      "explanation": "JIT inventory systems reduce costs by ensuring goods are received only as needed."
+    },
+    {
+      "text": "During the ______ phase the IT staff maintains, enhances and protects the system.",
+      "options": ["user support", "systems support and security", "network administration", "database administration"],
+      "correctAnswer": "systems support and security",
+      "explanation": "In the support and security phase, IT ensures continued system performance and safety."
+    },
+    {
+      "text": "What is the function of transaction processing systems?",
+      "options": [
+        "To manage employee payroll and benefits.",
+        "To automate business processes and workflows.",
+        "To track and record day-to-day business transactions.",
+        "To facilitate data analysis and decision making."
+      ],
+      "correctAnswer": "To track and record day-to-day business transactions.",
+      "explanation": "Transaction processing systems handle the daily operations that record routine transactions."
+    },
+    {
+      "text": "Projects that provide the _____ are assigned the highest priority when setting priorities for systems requests.",
+      "options": [
+        "greatest benefit, at the highest cost, in the shortest period of time",
+        "least benefit, at the lowest cost, in the longest period of time",
+        "least benefit, at the highest cost, in the longest period of time",
+        "greatest benefit, at the lowest cost, in the shortest period of time"
+      ],
+      "correctAnswer": "greatest benefit, at the lowest cost, in the shortest period of time",
+      "explanation": "High-priority projects yield the most value quickly and economically."
+    },
+    {
+      "text": "During the _____ of the systems development life cycle (SDLC), a new system is constructed.",
+      "options": [
+        "systems design phase",
+        "systems implementation phase",
+        "systems planning phase",
+        "systems support and security phase"
+      ],
+      "correctAnswer": "systems implementation phase",
+      "explanation": "The implementation phase involves building, testing, and deploying the system."
+    },
+    {
+      "text": "Which one of the following systems is normally used to support middle managers?",
+      "options": ["Operational system", "Office system", "Decision support system", "Executive information system"],
+      "correctAnswer": "Decision support system",
+      "explanation": "Decision support systems assist middle management with data-driven analysis and decision-making."
+    }
+  ]
+}

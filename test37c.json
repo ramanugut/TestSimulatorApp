@@ -1,0 +1,172 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 03)",
+  "questions": [
+    {
+      "text": "The term _____ is familiar to IT professionals, who know that the best time to avoid problems is when the data is entered.",
+      "options": ["good input, bad output (GIBO)", "garbage in, garbage out (GIGO)", "poor start, poor finish (PSPF)", "weak hand, weak hold (WHWH)"],
+      "correctAnswer": "garbage in, garbage out (GIGO)",
+      "explanation": "GIGO means that inaccurate input data will produce incorrect or meaningless output, regardless of the system’s accuracy."
+    },
+    {
+      "text": "In older systems, often the user interface mainly consisted of _____ screens that allowed a user to send commands to the system.",
+      "options": ["physical-control", "process-control", "quality-control", "network-control"],
+      "correctAnswer": "process-control",
+      "explanation": "Older systems used process-control screens that accepted command-line input to execute specific functions."
+    },
+    {
+      "text": "The goal of _____ is to build a system that is effective, reliable, and maintainable.",
+      "options": ["systems reporting", "systems analysis", "systems design", "systems auditing"],
+      "correctAnswer": "systems design",
+      "explanation": "Systems design focuses on creating a system that operates efficiently and is easy to maintain and enhance."
+    },
+    {
+      "text": "A(n) _____ does not distract a user and calls no attention to itself.",
+      "options": ["transparent interface", "translucent interface", "opaque interface", "pellucid interface"],
+      "correctAnswer": "transparent interface",
+      "explanation": "A transparent interface is seamless and allows users to focus on their tasks without distraction."
+    },
+    {
+      "text": "A(n) _____ is a data validation rule that is used to verify that data items fall between a specified minimum and maximum value.",
+      "options": ["sequence check", "range check", "asynchronous check", "existence check"],
+      "correctAnswer": "range check",
+      "explanation": "A range check ensures that entered data values fall within an acceptable numeric or character range."
+    },
+    {
+      "text": "In a source document, the main part of a form, called the _____, usually takes up at least half of the space on the form and contains captions and areas for entering variable data.",
+      "options": ["instruction zone", "authorisation zone", "body zone", "heading zone"],
+      "correctAnswer": "body zone",
+      "explanation": "The body zone of a form is where most user-entered or variable data is captured."
+    },
+    {
+      "text": "Web-based software usually requires additional layers, called _____, to communicate with existing software and legacy systems.",
+      "options": ["freeware", "shareware", "middleware", "public domain software"],
+      "correctAnswer": "middleware",
+      "explanation": "Middleware connects web-based applications with other software or databases, ensuring integration."
+    },
+    {
+      "text": "In the event of a file catastrophe, _____ can be used to restore the file or database to its current state at the time of the last backup.",
+      "options": ["recovery procedures", "market basket analysis", "crow’s foot notation", "a standard notation format"],
+      "correctAnswer": "recovery procedures",
+      "explanation": "Recovery procedures restore lost data and restore system operations after corruption or failure."
+    },
+    {
+      "text": "_____ combine data from different item attributes, or characteristics, to build a code.",
+      "options": ["Sequence codes", "Category codes", "Significant digit codes", "Derivation codes"],
+      "correctAnswer": "Derivation codes",
+      "explanation": "Derivation codes are created by combining elements from multiple characteristics to produce meaningful identifiers."
+    },
+    {
+      "text": "During the systems design phase, _____ are used to organise, access, and maintain data structures.",
+      "options": ["glossary fields", "common fields", "content fields", "key fields"],
+      "correctAnswer": "key fields",
+      "explanation": "Key fields uniquely identify records and maintain data relationships within databases."
+    },
+    {
+      "text": "The complete definition of a database, including descriptions of all fields, tables, and relationships, is called a _____.",
+      "options": ["viewport", "schema", "framework", "cell"],
+      "correctAnswer": "schema",
+      "explanation": "A schema defines the database structure, detailing tables, fields, and their interrelationships."
+    },
+    {
+      "text": "Designing tables is easier if a _____ is used to show a table’s structure, fields, and primary key.",
+      "options": ["distinct notation format", "multifaceted notation format", "user notation format", "standard notation format"],
+      "correctAnswer": "standard notation format",
+      "explanation": "A standard notation format, like Crow’s Foot notation, visually depicts database table relationships."
+    },
+    {
+      "text": "_____ is the starting point for measuring the performance, accuracy, and completeness of the finished system before entering the systems design phase.",
+      "options": ["Software requirements specification", "Request for quoting document", "Software license", "Maintenance agreement"],
+      "correctAnswer": "Software requirements specification",
+      "explanation": "The SRS document defines expected functionality and serves as the benchmark for later evaluation."
+    },
+    {
+      "text": "_____ is a model of software deployment where an application is hosted as a service provided to customers over the Internet.",
+      "options": ["Hardware as a Help", "Software as a Service", "Process as a Product", "System as a Platform"],
+      "correctAnswer": "Software as a Service",
+      "explanation": "SaaS delivers applications online, eliminating the need for local installation or maintenance."
+    },
+    {
+      "text": "The _____ environment enhances interactive experiences, including wikis and blogs, and social networking applications.",
+      "options": ["outsourcing", "Software as a Service", "Web 2.0", "command-line"],
+      "correctAnswer": "Web 2.0",
+      "explanation": "Web 2.0 promotes user interactivity and collaboration through social and content-sharing platforms."
+    },
+    {
+      "text": "When software is purchased, a _____ is being bought that gives the purchaser the right to use the software under certain terms and conditions.",
+      "options": ["fixed fee model", "request for proposal", "software license", "supplemental maintenance agreement"],
+      "correctAnswer": "software license",
+      "explanation": "A software license grants legal rights to use the software according to defined conditions."
+    },
+    {
+      "text": "_____ is the transfer of information systems development, operation, or maintenance to an outside firm that provides these services for a fee.",
+      "options": ["Outsourcing", "Commission", "Subscription", "External provisioning"],
+      "correctAnswer": "Outsourcing",
+      "explanation": "Outsourcing involves contracting external specialists to manage parts of IT operations or development."
+    },
+    {
+      "text": "_____ is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources.",
+      "options": ["Utility computing", "Mainframe computing", "Grid computing", "Cloud computing"],
+      "correctAnswer": "Cloud computing",
+      "explanation": "Cloud computing allows on-demand access to shared resources like servers, storage, and applications."
+    },
+    {
+      "text": "Which of the following is true of a traditional systems development environment?",
+      "options": [
+        "Many applications require substantial desktop computing power and resources.",
+        "Systems are developed and delivered in an Internet-based framework.",
+        "Systems are easily scalable and can run on multiple hardware environments.",
+        "Internet-based development treats the traditional environment as the platform, rather than a channel."
+      ],
+      "correctAnswer": "Many applications require substantial desktop computing power and resources.",
+      "explanation": "Traditional systems typically relied on local computing resources rather than cloud infrastructure."
+    },
+    {
+      "text": "In addition to configuring software, the IT staff can create a _____, which includes screens, commands, controls, and features that enable users to interact more effectively with the application.",
+      "options": ["user manual", "user story", "user interface", "user agent"],
+      "correctAnswer": "user interface",
+      "explanation": "A user interface defines how users interact visually and functionally with the system."
+    },
+    {
+      "text": "When companies acquire web-based software as a(n) _____, they can limit in-house involvement to a minimum.",
+      "options": ["product", "process", "service", "outsource"],
+      "correctAnswer": "service",
+      "explanation": "Acquiring software as a service minimizes internal IT workload since the provider manages it."
+    },
+    {
+      "text": "A(n) _____ is a firm that delivers a software application, or access to an application, by charging a usage or subscription fee.",
+      "options": ["software delivery service", "manufacturer outsourcing", "manufacturer outsourcing", "application service provider"],
+      "correctAnswer": "application service provider",
+      "explanation": "An ASP hosts and delivers software applications to clients over a network for a subscription fee."
+    },
+    {
+      "text": "Interface designers can obtain data, called _____, by using software that can record and measure user interaction with a system.",
+      "options": ["encapsulation metrics", "abstraction metrics", "ergonomic metrics", "usability metrics"],
+      "correctAnswer": "usability metrics",
+      "explanation": "Usability metrics measure how effectively users interact with a system, guiding interface improvements."
+    },
+    {
+      "text": "_____ protects privacy rights and shields an organisation's proprietary data from theft or unauthorised access.",
+      "options": ["Aesthetics", "Interface technology", "Ergonomics", "Output security"],
+      "correctAnswer": "Output security",
+      "explanation": "Output security ensures sensitive data is protected when displayed, printed, or transmitted."
+    },
+    {
+      "text": "A(n) _____ is a data validation rule that is used for applying to mandatory data items.",
+      "options": ["sequence check", "range check", "asynchronic check", "existence check"],
+      "correctAnswer": "existence check",
+      "explanation": "Existence checks verify that required fields contain data before processing continues."
+    },
+    {
+      "text": "A(n) _____ is a data validation rule that is performed on two or more fields to ensure that they are consistent or reasonable when considered together.",
+      "options": ["existence check", "combination check", "data type check", "reasonableness check"],
+      "correctAnswer": "reasonableness check",
+      "explanation": "A reasonableness check ensures related data values make logical sense together."
+    },
+    {
+      "text": "_____ was pioneered in the early 1980s as a user interface that enabled complete interaction using the mouse and screen icons.",
+      "options": ["Command line interface", "Binary line interface", "Character user interface", "Graphical user interface"],
+      "correctAnswer": "Graphical user interface",
+      "explanation": "The GUI revolutionised computing by enabling intuitive interaction through graphical elements."
+    }
+  ]
+}

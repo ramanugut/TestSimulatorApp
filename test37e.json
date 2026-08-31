@@ -1,0 +1,123 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 05)",
+  "questions": [
+    {
+      "text": "Etienne finds four performance examples but knows there should only be three. Which one is mislabelled as a performance example?",
+      "options": [
+        "The system must automatically generate an insurance claim form.",
+        "Response time must not exceed four seconds.",
+        "The online inventory control system must flag all low-stock items within one hour after the quantity falls below a predetermined minimum.",
+        "The records system must produce key reports within five hours of the end of each fiscal quarter."
+      ],
+      "correctAnswer": "The system must automatically generate an insurance claim form.",
+      "explanation": "Automatically generating a form describes a process requirement, not a performance metric."
+    },
+    {
+      "text": "In a JAD session, whose name would be placed next to the final task on the agenda for documenting results and preparing the report?",
+      "options": ["Zanele", "Sepang", "Linda", "Marvin"],
+      "correctAnswer": "Zanele",
+      "explanation": "The recorder, Zanele, is responsible for documenting JAD results and preparing the summary report."
+    },
+    {
+      "text": "Which one of the following is not a guideline for using structured English?",
+      "options": ["Use only three building blocks.", "Use indentation.", "Use pseudocode.", "Use limited vocabulary."],
+      "correctAnswer": "Use pseudocode.",
+      "explanation": "Structured English uses control structures, indentation, and limited vocabulary, but not pseudocode."
+    },
+    {
+      "text": "Which of the following is true regarding RFPs and RFQs?",
+      "options": [
+        "An RFP is more specific than an RFQ.",
+        "When Simone is tasked with the job, Sepang already knows the specific product or service he wants and he needs to obtain price quotations or bids.",
+        "When Marny is tasked with the job, her output can involve outright purchase or a variety of leasing options.",
+        "RFPs and RFQs have very different objectives."
+      ],
+      "correctAnswer": "RFPs and RFQs have very different objectives.",
+      "explanation": "RFPs request solution proposals, while RFQs request pricing for already-defined items."
+    },
+    {
+      "text": "Which of the following is a reason Sarah will share with new analysts for recommending a client to purchase a software package?",
+      "options": [
+        "The client wants to develop internal resources and capabilities.",
+        "The client is looking for the lowest possible costs.",
+        "The client has unique business requirements that must be satisfied by this software application.",
+        "The client has some existing technology whose requirements must be met by the new software."
+      ],
+      "correctAnswer": "The client has some existing technology whose requirements must be met by the new software.",
+      "explanation": "Clients buy off-the-shelf software when integration with existing technology is key."
+    },
+    {
+      "text": "Which of the following is a reason Sarah would give for in-house software development?",
+      "options": [
+        "The client is looking to spend the least possible time in implementation.",
+        "The client wants to be able to use fewer technical development staff members.",
+        "The client has a number of very distinctive security requirements.",
+        "The client wishes to receive future upgrades from the vendors."
+      ],
+      "correctAnswer": "The client has a number of very distinctive security requirements.",
+      "explanation": "In-house development allows customization for specific or sensitive security needs."
+    },
+    {
+      "text": "Thabang’s team has weak communication skills. Which system development method is he least likely to use?",
+      "options": [
+        "Structured analysis",
+        "Agile/adaptive methods",
+        "Object-oriented analysis",
+        "Rapid application development"
+      ],
+      "correctAnswer": "Agile/adaptive methods",
+      "explanation": "Agile methods rely heavily on collaboration and communication, making them unsuitable for teams with weak communication."
+    },
+    {
+      "text": "Rose joins a project where the systems requirement document is nearly complete. In which SDLC phase is the team?",
+      "options": ["Systems analysis", "Systems design", "Systems planning", "Systems implementation"],
+      "correctAnswer": "Systems analysis",
+      "explanation": "The systems requirement document is the deliverable of the systems analysis phase."
+    },
+    {
+      "text": "Etienne finds a system requirement stating: 'An employee record must be added, changed, or deleted only by HR staff.' What category does this requirement best fit?",
+      "options": ["Performance", "Control", "Process", "Input"],
+      "correctAnswer": "Control",
+      "explanation": "This defines an access restriction, which falls under control requirements."
+    },
+    {
+      "text": "Bala assigns a project manager to ensure a new project is completed on time. This is an example of _____.",
+      "options": [
+        "Operational feasibility",
+        "Economic feasibility",
+        "Technical feasibility",
+        "Schedule feasibility"
+      ],
+      "correctAnswer": "Schedule feasibility",
+      "explanation": "Schedule feasibility assesses whether the project can be completed within a set timeframe."
+    },
+    {
+      "text": "In a JAD session, whose name should go next to the agenda point explaining the reason for the project at the outset?",
+      "options": ["Marvin", "Petro", "Alex", "Sepang"],
+      "correctAnswer": "Sepang",
+      "explanation": "The representative from top management, Sepang, explains the project's strategic purpose."
+    },
+    {
+      "text": "David identifies the problem with structured English being used incorrectly. Which issue indicates incorrect use?",
+      "options": [
+        "The structured English is indented.",
+        "It is not using a sequence, selection, or iteration structure.",
+        "It uses a limited vocabulary.",
+        "It is shorthand for actual code."
+      ],
+      "correctAnswer": "It is not using a sequence, selection, or iteration structure.",
+      "explanation": "Structured English must be based on three control structures: sequence, selection, and iteration."
+    },
+    {
+      "text": "Analysts at Zansi InfoSystems consider the four-model approach. What is a likely outcome if they use it?",
+      "options": [
+        "Time taken to develop the model increases.",
+        "Costs needed to develop logical and physical models of the current system will be less.",
+        "It will not be possible to get a clear picture of the current system before modifications.",
+        "The requirements of a new system will always differ from the current one."
+      ],
+      "correctAnswer": "Time taken to develop the model increases.",
+      "explanation": "Developing four models (logical and physical for both current and proposed systems) takes more time."
+    }
+  ]
+}

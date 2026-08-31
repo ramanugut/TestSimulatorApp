@@ -1,0 +1,95 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 07)",
+  "questions": [
+    {
+      "text": "A _____ is a data structure that contains a set of related data elements that are stored and processed together.",
+      "options": ["Entity", "Process", "Record", "Data element"],
+      "correctAnswer": "Record",
+      "explanation": "A record groups related data elements into one structure, representing a single instance of an entity."
+    },
+    {
+      "text": "In data flow diagrams, which of the following may have two outputs but no input?",
+      "options": ["Spontaneous generation", "Gray hole", "Black hole", "Black box"],
+      "correctAnswer": "Spontaneous generation",
+      "explanation": "A spontaneous generation process in a DFD produces data flows without receiving any input, which is logically impossible."
+    },
+    {
+      "text": "A combination of fields that uniquely and minimally identify a particular member of an entity is known as a _____.",
+      "options": ["Primary key", "Concatenated key", "Candidate key", "Secondary key"],
+      "correctAnswer": "Candidate key",
+      "explanation": "A candidate key is a minimal set of attributes that can uniquely identify an entity instance."
+    },
+    {
+      "text": "A field of an entity that has the potential to serve as a primary key can best be described as a _____ key.",
+      "options": ["Referential", "Concatenated", "Candidate", "Secondary"],
+      "correctAnswer": "Candidate",
+      "explanation": "Candidate keys are attributes that can potentially serve as a primary key due to their uniqueness."
+    },
+    {
+      "text": "Which of the following best relates to ensuring referential integrity in a database table?",
+      "options": ["Secondary key", "Foreign key", "Combination key", "Integrity key"],
+      "correctAnswer": "Foreign key",
+      "explanation": "A foreign key maintains referential integrity by linking records in one table to valid entries in another."
+    },
+    {
+      "text": "In a data flow diagram (DFD), verifying the number of PPE items received for COVID-19 is an example of a(n) _____.",
+      "options": ["Data store", "Process", "Data flow", "Entity"],
+      "correctAnswer": "Process",
+      "explanation": "A process transforms input data into output, such as verifying quantities received."
+    },
+    {
+      "text": "In a data flow diagram (DFD), 'Print a report' of the PPE received can best be described as an example of a(n) _____.",
+      "options": ["Data store", "Process", "Data flow", "Entity"],
+      "correctAnswer": "Process",
+      "explanation": "‘Print a report’ represents a process that produces output data from stored or input information."
+    },
+    {
+      "text": "In a data flow diagram (DFD), a printed report of PPE received can best be described as a(n) _____.",
+      "options": ["Data store", "Process", "Data flow", "Entity"],
+      "correctAnswer": "Data flow",
+      "explanation": "The printed report represents data leaving the system, which is classified as a data flow."
+    },
+    {
+      "text": "Using Gane and Sarson naming conventions, ESSENTIAL WORKERS in a data flow diagram (DFD) is an example of a(n) _____.",
+      "options": ["Data store", "Process", "Data flow", "Entity"],
+      "correctAnswer": "Entity",
+      "explanation": "External entities, such as ESSENTIAL WORKERS, interact with the system and exchange data."
+    },
+    {
+      "text": "In terms of data flow diagrams, which of the following best describes a SINK?",
+      "options": ["Data store", "Process", "Data flow", "Entity"],
+      "correctAnswer": "Entity",
+      "explanation": "A sink is an external entity that receives data from the system but does not provide input back."
+    },
+    {
+      "text": "In terms of data flow diagrams, which of the following best describes a TERMINATOR?",
+      "options": ["Data store", "Process", "Data flow", "Entity"],
+      "correctAnswer": "Entity",
+      "explanation": "A terminator represents an external entity that interacts with the system as a source or sink of data."
+    },
+    {
+      "text": "In terms of data flow diagrams, which of the following can best be described as a SOURCE?",
+      "options": ["Data store", "Process", "Data flow", "Entity"],
+      "correctAnswer": "Entity",
+      "explanation": "A source is an external entity that supplies data to the system."
+    },
+    {
+      "text": "Analysts often use decision tables to describe a(n) _____ and ensure that they have considered all possible situations.",
+      "options": ["Data store", "Entity", "Data flow", "Process"],
+      "correctAnswer": "Process",
+      "explanation": "Decision tables help define the logic and outcomes of processes by mapping conditions and actions."
+    },
+    {
+      "text": "Following structured English rules ensures that _____ descriptions are understandable to the users.",
+      "options": ["Data store", "Entity", "Data flow", "Process"],
+      "correctAnswer": "Process",
+      "explanation": "Structured English simplifies process descriptions using clear, structured logic for user comprehension."
+    },
+    {
+      "text": "In data flow diagrams, which of the following produces the same results as a decision tree?",
+      "options": ["Decision table", "Process table", "Decision process", "Process diagram"],
+      "correctAnswer": "Decision table",
+      "explanation": "Decision tables and decision trees both represent conditional logic, with tables showing it in tabular form."
+    }
+  ]
+}

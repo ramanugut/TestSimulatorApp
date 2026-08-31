@@ -1,0 +1,101 @@
+{
+  "testName": "ICT2621 – Systems Analysis Fundamentals (Set 10)",
+  "questions": [
+    {
+      "text": "Given the following two statements. X: A disaster recovery plan refers to a plan that will be undertaken if there is a potential disaster. Y: Cloud computing can be viewed as an online SaaS (Software as a service) and data environment supported by supercomputer technology.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "A disaster recovery plan outlines actions during a potential disaster, and cloud computing provides SaaS and scalable data environments supported by powerful infrastructure."
+    },
+    {
+      "text": "Given the following two statements. X: A decision tree is a better way to handle a complex combination of conditions as compared to using a decision table. Y: Exception reports are useful when the user wants information on records that might only require action but he does not need to know the details.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Decision trees are ideal for complex conditional logic, while exception reports focus on items needing attention without detailed data."
+    },
+    {
+      "text": "Given the following two statements. X: A systems analyst can be part of an IT quality assurance team which normally reports directly to the chief financial officer. Y: In data flow diagrams, a diverging data flow travels to a different location instead of its original path.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False"],
+      "correctAnswer": "Both X and Y are False",
+      "explanation": "Quality assurance typically reports to IT management, not the CFO, and data flows in DFDs do not 'travel'; they represent logical data movement."
+    },
+    {
+      "text": "Given the following two statements. X: According to ISO 9241-11 effectiveness, user friendliness are two of the three main dimensions of human computer interaction. Y: In a typical process for handling a maintenance request, the systems analyst plays a bigger role than a system administrator.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "ISO 9241-11 defines effectiveness, efficiency, and satisfaction as key metrics, and systems analysts lead most maintenance processes."
+    },
+    {
+      "text": "Given the following two statements. X: According to ISO 9241-11, effectiveness, efficiency and satisfaction are three of the four main dimensions of human computer interaction. Y: It is predicted that a systems analyst will need business savvy and technical know-how to help an organisation take full advantage of cloud computing.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "ISO 9241-11 specifies effectiveness, efficiency, and satisfaction, and analysts need both business and technical expertise for cloud computing."
+    },
+    {
+      "text": "Given the following two statements. X: During system changeover ‘Pilot operation’ method is cheaper than ‘Direct cutover’. Y: The Zachman framework is a popular approach to modeling enterprise architectures.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Pilot operations are more controlled but not cheaper than direct cutover, and the Zachman Framework is widely used for enterprise architecture."
+    },
+    {
+      "text": "Given the following two statements. X: During system changeover, the direct cut over operation ensures that only one system is operated at a time. Y: Determining whether to use open-ended questions or close-ended question is part of the fifth step of the interview process.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "Direct cutover replaces the old system instantly, while question type selection occurs during interview preparation, not step five."
+    },
+    {
+      "text": "Given the following two statements. X: During system changeover, the system where one system is installed followed by another then another, etc., until the system is installed is called ‘Pilot operations’. Y: “The personal protective equipment (PPE) must be delivered to the hospital within three days”. This is an example of a performance requirement of system.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Sequential installations describe phased operation, not pilot operation. The PPE delivery example is a performance requirement."
+    },
+    {
+      "text": "Given the following two statements. X: Extreme programming is an agile development method. Y: IT professionals need critical thinking skills if they are to succeed in the workplace.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Extreme Programming (XP) is an agile method, and critical thinking is essential for IT problem-solving."
+    },
+    {
+      "text": "Given the following two statements. X: Human computer interaction is essential to employee productivity. Y: In the future, a systems analyst will need a mixture of business savvy and technical skills.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Effective human-computer interaction improves productivity, and analysts increasingly need both business and technical expertise."
+    },
+    {
+      "text": "Given the following two statements. X: In IT risk management, when electricity goes off, it constitutes a service failure. Y: Improved performance is one of the reasons why a company should purchase a software package.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Power loss is a service failure, and software packages are often purchased to enhance system performance."
+    },
+    {
+      "text": "Given the following two statements. X: Integrated testing means testing two or more modules of a system. Y: ‘Allow users to correct errors easily’ is part of ‘Provide users with the help and feedback’ during user interface design.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "Integration testing checks interrelated modules, and user error correction is an essential help/feedback principle."
+    },
+    {
+      "text": "Given the following two statements. X: Structured English is similar to program design. Y: A summary report may contain a few total figures and their supporting details.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "Structured English follows logic similar to program design, while summary reports usually omit supporting details."
+    },
+    {
+      "text": "Given the following two statements. X: Structured English uses only four building blocks namely, sequence, assignment, selection and iteration. Y: Programs that need a large number of maintenance changes are usually a good candidate for reengineering.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is False and Y is True",
+      "explanation": "Structured English uses only three control structures—sequence, selection, and iteration—while frequently changed systems benefit from reengineering."
+    },
+    {
+      "text": "Given the following two statements. X: The same fact-finding techniques can be applied in a post implementation evaluation that were used to determine the system requirements during the systems analysis phase. Y: In data flow diagrams (DFDs) creating aliases for an entity name is part of the characteristics of an entity.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "X is True and Y is False",
+      "explanation": "Post-implementation evaluations can use the same techniques as analysis, but entity aliases are not standard DFD characteristics."
+    },
+    {
+      "text": "Given the following two statements. X: When maintenance changes are expensive to perform, it is a sign of system obsolescence. Y: When a company considers outsourcing, it should estimate usage characteristics to determine the fee structure that would be most desirable.",
+      "options": ["Both X and Y are True", "Both X and Y are False", "X is True and Y is False", "X is False and Y is True"],
+      "correctAnswer": "Both X and Y are True",
+      "explanation": "High maintenance costs indicate obsolescence, and evaluating usage helps optimize outsourcing fee structures."
+    }
+  ]
+}
