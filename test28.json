@@ -323,12 +323,14 @@
     {
       "text": "Study the code below and indicate what the value of <code>num</code> will be.\n```java\nint num = 3;\nint result = ++num * 8;\n```",
       "options": [
+
         "25 - Reason: * has precedence thus num * 8 = 3 * 8 = 24; ++num = 25",
         "32 - Reason: ++ has precedence thus ++num = 4; 4 * 8 = 32",
         "40 - Reason: ++ has precedence thus ++num = 5; 5 * 8 = 40",
         "48 - Reason: ++ has precedence thus ++num = 3 + 3 = 6; 6 * 8 = 48"
       ],
       "correctAnswer": "32 - Reason: ++ has precedence thus ++num = 4; 4 * 8 = 32",
+
       "explanation": "The prefix increment makes num equal 4 before multiplication, so result becomes 32."
     },
     {
